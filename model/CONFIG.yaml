@@ -1,14 +1,13 @@
-model_organization:           # Name of github individual / organization where this clone exists (e.g. linkml / mygithub)
-model_name:                   # Name of target repository (e.g. my-wonderful-model)
-root_schema: sample_model     # Name of the base schema file (w/o .yaml)
-model_root_class: Person      # Name of the base class in the schema for testing
+model_organization: StroemPhi           # Name of github individual / organization where this clone exists (e.g. linkml / mygithub)   
+model_name:  NMR-assay-schema           # Name of target repository (e.g. my-wonderful-model)
+root_schema: NMR-assay-schema           # Name of the base schema file (w/o .yaml)
+model_root_class: NMRspecRecord      # Name of the base class in the schema for testing
 
-model_author:                 # Your name
-model_author_email:           # Your email
-model_synopsis: A cool model  # One liner about the model
+model_author: Philip Strömert                # Your name
+model_author_email: philip.stroemert@tib.eu          # Your email
+model_synopsis: This model is to be used to semantify NMR spectroscopy research data. # One liner about the model
 model_description: |-         # Longer description of the model
-  This is a really nice model that
-  does stuff
+  This model is to be used to semantify NMR spectroscopy research data.
 
 # Trove Classifiers (https://pypi.org/classifiers/) -- these can be omitted if the elements below are sufficient
 classifiers:
@@ -17,7 +16,7 @@ classifiers:
     - "Intended Audience :: Developers"
     - "Intended Audience :: Science/Research"
     - "Intended Audience :: Information Technology"
-    - "License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication"
+    - "License :: Attribution 4.0 International (CC BY 4.0)"
     - "Programming Language :: Python :: 3 :: Only"
     - "Programming Language :: Python :: 3.7"
     - "Programming Language :: Python :: 3.8"

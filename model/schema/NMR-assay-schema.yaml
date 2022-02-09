@@ -1,0 +1,103 @@
+id: https://git.tib.eu/lab-linked-scientific-knowledge/nmr-research-data-semantification/-/blob/main/nmr_assay_schema.yaml
+title: DRAFT:NMR spectroscopy schema (NMRspec)
+name: NMR-spectroscopy-schema
+description: |-
+  This model is to be used to semantify NMR spectroscopy research data.
+license: https://creativecommons.org/licenses/by/4.0/
+version: 0.0.1
+
+prefixes:
+  NMRspec: https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/main/model/schema/sample_model.yaml
+  linkml: https://w3id.org/linkml/
+  sdo: https://schema.org/
+  bfo: http://purl.obolibrary.org/obo/BFO_
+  chmo: http://purl.obolibrary.org/obo/CHMO_
+  nmrcv: http://nmrML.org/nmrCV#
+  chebi: http://purl.obolibrary.org/obo/CHEBI_
+  cheminf: http://purl.obolibrary.org/obo/CHEMINF_
+  ro: http://purl.obolibrary.org/obo/RO_
+  iao: http://purl.obolibrary.org/obo/IAO_
+  obi: http://purl.obolibrary.org/obo/OBI_
+  pato: http://purl.obolibrary.org/obo/PATO_
+  prov: http://www.w3.org/ns/prov#
+  isa: https://isa-specs.readthedocs.io/en/latest/isamodel.html#
+  iupac: https://github.com/IUPAC/IUPAC-FAIRSpec/blob/main/src/main/java/org/iupac/fairspec/core/
+
+default_prefix: NMRspec
+default_curi_maps:
+ - semweb_context
+
+imports:
+ - linkml:types
+
+classes:
+
+  # Mixins
+  HasProvenance:
+    mixin: true
+    description: >-
+      This is  a mixin to be used by any class that is needed a part of an audit trail to ensure the provenance of the metadata.
+    attributes:       # TODO these need to be defined properly
+      source:
+      source_uri:
+      creator:
+      publisher:
+      date_retrieved:
+
+  # Processes
+  Assay:
+    description: >-
+      A planned process with the objective to produce information about the material entity that is the evaluant, by physically examining it or its proxies.
+    class_uri: obi:0000070
+    close_mappings:
+      - isa:assay
+
+  NMRspectroscopy:
+    is_a: Assay
+    description: >-
+      An assay that exploits the magnetic properties of certain nuclei (those with a spin) to resonate when placed in particular magnetic field conditions. Instruments recording NMR spectrum and sets of analysis can be used to deduce identity of chemical as well as composition of complex chemical mixtures.
+    class_uri: obi:0000623
+    exact_mappings:
+      - chmo:0000591
+
+  PulsedNMRspectroscopy:
+    is_a: NMRspectroscopy
+    description: >-
+      Spectroscopy where the energy states of spin-active nuclei placed in a static magnetic field are interrogated by inducing transitions between the states via radio frequency irradiation. Each experiment consists of a sequence of radio frequency pulses with delay periods in between them. [ rsc:pr ] 
+    class_uri: chmo:0000613
+
+
+  # Data items
+  AssayOutput:
+    description: >-
+      A data item that is the specified output of an assay. May be a file, dataset etc.
+    class_uri: chmo:0000793 # assay output
+
+  NMRspecRecord:
+    is_a: AssayOutput
+    description: >-
+      A data item that is an NMR assay output which represents the data produced by an NMR assay of a studied sample compound.
+    attributes:
+      records_nmr_spec:
+        required: true
+        range: NMRspectroscopy
+        inlined_as_list: true
+        inlined: true
+        multivalued: true
+
+  NMRspecRecords:
+    description: >-
+      A container for holding multiple NMR assay records.
+    tree_root: true
+    slots:
+      - nmr_spec_records
+
+slots:
+  id:
+    identifier: true
+    slot_uri: sdo:identifier
+  nmr_spec_records:
+    range: NMRspecRecord
+    inlined_as_list: true
+    inlined: true
+    multivalued: true

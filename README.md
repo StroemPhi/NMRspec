@@ -1,3 +1,4 @@
-# Placeholder README
-This file will be replaced in the build process.  The details about how to use this template
-can be found in [ABOUT.md](./ABOUT.md).
+# LinkML This model is to be used to semantify NMR spectroscopy research data.
+This model is to be used to semantify NMR spectroscopy research data.
+
+## [Documentation](https://StroemPhi.github.io/NMR-assay-schema/)

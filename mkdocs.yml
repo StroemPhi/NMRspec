@@ -1,0 +1,8 @@
+site_name: "This model is to be used to semantify NMR spectroscopy research data."
+theme: readthedocs
+docs_dir: target/docs
+site_dir: docs
+nav:
+  - Home: home.md
+  - Index: index.md
+  - Credits: credits.md
