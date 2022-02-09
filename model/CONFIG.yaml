@@ -1,6 +1,6 @@
 model_organization: StroemPhi           # Name of github individual / organization where this clone exists (e.g. linkml / mygithub)   
-model_name:  NMR-assay-schema           # Name of target repository (e.g. my-wonderful-model)
-root_schema: NMR-assay-schema           # Name of the base schema file (w/o .yaml)
+model_name:  NMR-spectroscopy-schema           # Name of target repository (e.g. my-wonderful-model)
+root_schema: NNMR-spectroscopy-schema           # Name of the base schema file (w/o .yaml)
 model_root_class: NMRspecRecord      # Name of the base class in the schema for testing
 
 model_author: Philip Strömert                # Your name
