@@ -12,7 +12,7 @@ prefixes:
   sdo: https://schema.org/
   bfo: http://purl.obolibrary.org/obo/BFO_
   chmo: http://purl.obolibrary.org/obo/CHMO_
-  nmrcv: http://nmrML.org/nmrCV#
+  nmrCV: http://nmrML.org/nmrCV#
   chebi: http://purl.obolibrary.org/obo/CHEBI_
   cheminf: http://purl.obolibrary.org/obo/CHEMINF_
   ro: http://purl.obolibrary.org/obo/RO_
@@ -45,12 +45,30 @@ classes:
       date_retrieved:
 
   # Processes
+  PlannedProcess:
+    class_uri: obi:0000011
+    description: >-
+      A process that realizes a plan which is the concretization of a plan specification.
+    mixins:
+      - HasProvenance
+    slots:
+      - id
+      - name
+      - type
+      - achieves_planned_objective
+    exact_mappings:
+      - isa:investigation
+
   Assay:
+    is_a: PlannedProcess
     description: >-
       A planned process with the objective to produce information about the material entity that is the evaluant, by physically examining it or its proxies.
     class_uri: obi:0000070
-    close_mappings:
+    exact_mappings:
       - isa:assay
+    slots:
+      - has_specified_input
+      - has_specified_output
 
   NMRspectroscopy:
     is_a: Assay
@@ -65,9 +83,15 @@ classes:
     description: >-
       Spectroscopy where the energy states of spin-active nuclei placed in a static magnetic field are interrogated by inducing transitions between the states via radio frequency irradiation. Each experiment consists of a sequence of radio frequency pulses with delay periods in between them. [ rsc:pr ] 
     class_uri: chmo:0000613
+    attributes:
+      pulse_sequence:
+        range: PulseSequenceSpecification
+    slot_usage: 
+      type:
+        range: PulsedNMRSpecTypes
+        required: true
 
-
-  # Data items
+  # Information Content Entities
   AssayOutput:
     description: >-
       A data item that is the specified output of an assay. May be a file, dataset etc.
@@ -92,12 +116,62 @@ classes:
     slots:
       - nmr_spec_records
 
+  ## Protocol specifications
+
+  CategoricalValueSpecification:
+    class_uri: obi:0001930
+    description: >-
+      A value specification that is specifies one category out of a fixed number of nominal categories
+    attributes:
+      specifies_value_of:
+        slot_uri: obi:0001927
+
+  PulseSequenceSpecification:
+    is_a: CategoricalValueSpecification
+    description: >-
+      A categorical specification that is used to specify which pulse sequence has been used in a pulsed NMR spectroscopy.
+    slot_usage:
+      specifies_value_of:
+        range: PulsedNMRspectroscopy
+    mappings:
+      - nmrCV:1400037
+
+
+
 slots:
   id:
     identifier: true
     slot_uri: sdo:identifier
+  name:
+    slot_uri: dc:title
+  type:
   nmr_spec_records:
     range: NMRspecRecord
     inlined_as_list: true
     inlined: true
     multivalued: true
+  achieves_planned_objective:
+    slot_uri: obi:0000417
+  has_specified_input:
+    slot_uri: obi:0000293
+  has_specified_output:
+    slot_uri: obi:0000299
+  is_about:
+    slot_uri: iao:0000136
+
+
+
+enums:
+  PulsedNMRSpecTypes:
+    permissible_values:
+      1D-1H-NMR:
+        meaning: chmo:0002442
+      2DJ-DOSY:
+        meaning: chmo:0001953
+      3D-COSY-DOSY:
+        meaning: chmo:0001951
+      3D-DOSY-TOCSY:
+        meaning: chmo:0001950
+      3D-DOSY-HMQC:
+        meaning: chmo:0001952
+

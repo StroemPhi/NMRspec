@@ -3,8 +3,44 @@
       "Assay": {
          "additionalProperties": false,
          "description": "A planned process with the objective to produce information about the material entity that is the evaluant, by physically examining it or its proxies.",
-         "properties": {},
-         "required": [],
+         "properties": {
+            "achieves_planned_objective": {
+               "type": "string"
+            },
+            "creator": {
+               "type": "string"
+            },
+            "date_retrieved": {
+               "type": "string"
+            },
+            "has_specified_input": {
+               "type": "string"
+            },
+            "has_specified_output": {
+               "type": "string"
+            },
+            "id": {
+               "type": "string"
+            },
+            "name": {
+               "type": "string"
+            },
+            "publisher": {
+               "type": "string"
+            },
+            "source": {
+               "type": "string"
+            },
+            "source_uri": {
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
          "title": "Assay",
          "type": "object"
       },
@@ -14,6 +50,18 @@
          "properties": {},
          "required": [],
          "title": "AssayOutput",
+         "type": "object"
+      },
+      "CategoricalValueSpecification": {
+         "additionalProperties": false,
+         "description": "A value specification that is specifies one category out of a fixed number of nominal categories",
+         "properties": {
+            "specifies_value_of": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "CategoricalValueSpecification",
          "type": "object"
       },
       "NMRspecRecord": {
@@ -51,16 +99,154 @@
       "NMRspectroscopy": {
          "additionalProperties": false,
          "description": "An assay that exploits the magnetic properties of certain nuclei (those with a spin) to resonate when placed in particular magnetic field conditions. Instruments recording NMR spectrum and sets of analysis can be used to deduce identity of chemical as well as composition of complex chemical mixtures.",
-         "properties": {},
-         "required": [],
+         "properties": {
+            "achieves_planned_objective": {
+               "type": "string"
+            },
+            "creator": {
+               "type": "string"
+            },
+            "date_retrieved": {
+               "type": "string"
+            },
+            "has_specified_input": {
+               "type": "string"
+            },
+            "has_specified_output": {
+               "type": "string"
+            },
+            "id": {
+               "type": "string"
+            },
+            "name": {
+               "type": "string"
+            },
+            "publisher": {
+               "type": "string"
+            },
+            "source": {
+               "type": "string"
+            },
+            "source_uri": {
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
          "title": "NMRspectroscopy",
          "type": "object"
+      },
+      "PlannedProcess": {
+         "additionalProperties": false,
+         "description": "A process that realizes a plan which is the concretization of a plan specification.",
+         "properties": {
+            "achieves_planned_objective": {
+               "type": "string"
+            },
+            "creator": {
+               "type": "string"
+            },
+            "date_retrieved": {
+               "type": "string"
+            },
+            "id": {
+               "type": "string"
+            },
+            "name": {
+               "type": "string"
+            },
+            "publisher": {
+               "type": "string"
+            },
+            "source": {
+               "type": "string"
+            },
+            "source_uri": {
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "PlannedProcess",
+         "type": "object"
+      },
+      "PulseSequenceSpecification": {
+         "additionalProperties": false,
+         "description": "A categorical specification that is used to specify which pulse sequence has been used in a pulsed NMR spectroscopy.",
+         "properties": {
+            "specifies_value_of": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "PulseSequenceSpecification",
+         "type": "object"
+      },
+      "PulsedNMRSpecTypes": {
+         "description": "",
+         "enum": [
+            "1D-1H-NMR",
+            "2DJ-DOSY",
+            "3D-COSY-DOSY",
+            "3D-DOSY-TOCSY",
+            "3D-DOSY-HMQC"
+         ],
+         "title": "PulsedNMRSpecTypes",
+         "type": "string"
       },
       "PulsedNMRspectroscopy": {
          "additionalProperties": false,
          "description": "Spectroscopy where the energy states of spin-active nuclei placed in a static magnetic field are interrogated by inducing transitions between the states via radio frequency irradiation. Each experiment consists of a sequence of radio frequency pulses with delay periods in between them. [ rsc:pr ]",
-         "properties": {},
-         "required": [],
+         "properties": {
+            "achieves_planned_objective": {
+               "type": "string"
+            },
+            "creator": {
+               "type": "string"
+            },
+            "date_retrieved": {
+               "type": "string"
+            },
+            "has_specified_input": {
+               "type": "string"
+            },
+            "has_specified_output": {
+               "type": "string"
+            },
+            "id": {
+               "type": "string"
+            },
+            "name": {
+               "type": "string"
+            },
+            "publisher": {
+               "type": "string"
+            },
+            "pulse_sequence": {
+               "$ref": "#/$defs/PulseSequenceSpecification"
+            },
+            "source": {
+               "type": "string"
+            },
+            "source_uri": {
+               "type": "string"
+            },
+            "type": {
+               "$ref": "#/$defs/PulsedNMRSpecTypes"
+            }
+         },
+         "required": [
+            "id",
+            "type"
+         ],
          "title": "PulsedNMRspectroscopy",
          "type": "object"
       }
