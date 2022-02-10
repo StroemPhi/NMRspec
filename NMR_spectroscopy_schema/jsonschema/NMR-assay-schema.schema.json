@@ -22,9 +22,6 @@
             "id": {
                "type": "string"
             },
-            "name": {
-               "type": "string"
-            },
             "publisher": {
                "type": "string"
             },
@@ -32,6 +29,9 @@
                "type": "string"
             },
             "source_uri": {
+               "type": "string"
+            },
+            "title": {
                "type": "string"
             },
             "type": {
@@ -118,9 +118,6 @@
             "id": {
                "type": "string"
             },
-            "name": {
-               "type": "string"
-            },
             "publisher": {
                "type": "string"
             },
@@ -128,6 +125,9 @@
                "type": "string"
             },
             "source_uri": {
+               "type": "string"
+            },
+            "title": {
                "type": "string"
             },
             "type": {
@@ -156,9 +156,6 @@
             "id": {
                "type": "string"
             },
-            "name": {
-               "type": "string"
-            },
             "publisher": {
                "type": "string"
             },
@@ -166,6 +163,9 @@
                "type": "string"
             },
             "source_uri": {
+               "type": "string"
+            },
+            "title": {
                "type": "string"
             },
             "type": {
@@ -224,9 +224,6 @@
             "id": {
                "type": "string"
             },
-            "name": {
-               "type": "string"
-            },
             "publisher": {
                "type": "string"
             },
@@ -239,13 +236,15 @@
             "source_uri": {
                "type": "string"
             },
+            "title": {
+               "type": "string"
+            },
             "type": {
-               "$ref": "#/$defs/PulsedNMRSpecTypes"
+               "type": "string"
             }
          },
          "required": [
-            "id",
-            "type"
+            "id"
          ],
          "title": "PulsedNMRspectroscopy",
          "type": "object"

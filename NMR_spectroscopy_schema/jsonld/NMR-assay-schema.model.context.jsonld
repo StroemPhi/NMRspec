@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from NMR-assay-schema.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-02-10T11:48:06\n    Schema: NMR-spectroscopy-schema\n    \n    id: https://git.tib.eu/lab-linked-scientific-knowledge/nmr-research-data-semantification/-/blob/main/nmr_assay_schema.yaml\n    description: This model is to be used to semantify NMR spectroscopy research data.\n    license: https://creativecommons.org/licenses/by/4.0/\n    ",
+   "_comments": "Auto generated from NMR-assay-schema.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-02-10T12:09:53\n    Schema: NMR-spectroscopy-schema\n    \n    id: https://git.tib.eu/lab-linked-scientific-knowledge/nmr-research-data-semantification/-/blob/main/nmr_assay_schema.yaml\n    description: This model is to be used to semantify NMR spectroscopy research data.\n    license: https://creativecommons.org/licenses/by/4.0/\n    ",
    "@context": {
       "NMRspec": {
          "@id": "https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/main/model/schema/sample_model.yaml",
@@ -21,7 +21,6 @@
          "@id": "http://purl.obolibrary.org/obo/CHMO_",
          "@prefix": true
       },
-      "dc": "http://purl.org/dc/terms/",
       "iao": {
          "@id": "http://purl.obolibrary.org/obo/IAO_",
          "@prefix": true
@@ -48,9 +47,6 @@
       "achieves_planned_objective": {
          "@id": "obi:0000417"
       },
-      "specifies_value_of": {
-         "@id": "obi:0001927"
-      },
       "has_specified_input": {
          "@id": "obi:0000293"
       },
@@ -61,9 +57,6 @@
       "is_about": {
          "@id": "iao:0000136"
       },
-      "name": {
-         "@id": "dc:title"
-      },
       "nmr_spec_records": {
          "@type": "@id"
       },
@@ -72,6 +65,9 @@
       },
       "pulse_sequence": {
          "@type": "@id"
+      },
+      "specifies_value_of": {
+         "@id": "obi:0001927"
       },
       "Assay": {
          "@id": "obi:0000070"

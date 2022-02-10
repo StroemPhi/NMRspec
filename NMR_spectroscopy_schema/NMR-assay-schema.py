@@ -1,5 +1,5 @@
 # Auto generated from NMR-assay-schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-02-10T11:48:14
+# Generation date: 2022-02-10T12:10:01
 # Schema: NMR-spectroscopy-schema
 #
 # id: https://git.tib.eu/lab-linked-scientific-knowledge/nmr-research-data-semantification/-/blob/main/nmr_assay_schema.yaml
@@ -35,7 +35,6 @@ BFO = CurieNamespace('bfo', 'http://purl.obolibrary.org/obo/BFO_')
 CHEBI = CurieNamespace('chebi', 'http://purl.obolibrary.org/obo/CHEBI_')
 CHEMINF = CurieNamespace('cheminf', 'http://purl.obolibrary.org/obo/CHEMINF_')
 CHMO = CurieNamespace('chmo', 'http://purl.obolibrary.org/obo/CHMO_')
-DC = CurieNamespace('dc', 'http://purl.org/dc/terms/')
 IAO = CurieNamespace('iao', 'http://purl.obolibrary.org/obo/IAO_')
 ISA = CurieNamespace('isa', 'https://isa-specs.readthedocs.io/en/latest/isamodel.html#')
 IUPAC = CurieNamespace('iupac', 'https://github.com/IUPAC/IUPAC-FAIRSpec/blob/main/src/main/java/org/iupac/fairspec/core/')
@@ -119,7 +118,7 @@ class PlannedProcess(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = NMRSPEC.PlannedProcess
 
     id: Union[str, PlannedProcessId] = None
-    name: Optional[str] = None
+    title: Optional[str] = None
     type: Optional[str] = None
     achieves_planned_objective: Optional[str] = None
     source: Optional[str] = None
@@ -134,8 +133,8 @@ class PlannedProcess(YAMLRoot):
         if not isinstance(self.id, PlannedProcessId):
             self.id = PlannedProcessId(self.id)
 
-        if self.name is not None and not isinstance(self.name, str):
-            self.name = str(self.name)
+        if self.title is not None and not isinstance(self.title, str):
+            self.title = str(self.title)
 
         if self.type is not None and not isinstance(self.type, str):
             self.type = str(self.type)
@@ -233,7 +232,6 @@ class PulsedNMRspectroscopy(NMRspectroscopy):
     class_model_uri: ClassVar[URIRef] = NMRSPEC.PulsedNMRspectroscopy
 
     id: Union[str, PulsedNMRspectroscopyId] = None
-    type: Union[str, "PulsedNMRSpecTypes"] = None
     pulse_sequence: Optional[Union[dict, "PulseSequenceSpecification"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -241,11 +239,6 @@ class PulsedNMRspectroscopy(NMRspectroscopy):
             self.MissingRequiredField("id")
         if not isinstance(self.id, PulsedNMRspectroscopyId):
             self.id = PulsedNMRspectroscopyId(self.id)
-
-        if self._is_empty(self.type):
-            self.MissingRequiredField("type")
-        if not isinstance(self.type, PulsedNMRSpecTypes):
-            self.type = PulsedNMRSpecTypes(self.type)
 
         if self.pulse_sequence is not None and not isinstance(self.pulse_sequence, PulseSequenceSpecification):
             self.pulse_sequence = PulseSequenceSpecification(**as_dict(self.pulse_sequence))

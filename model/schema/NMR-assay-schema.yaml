@@ -53,7 +53,7 @@ classes:
       - HasProvenance
     slots:
       - id
-      - name
+      - title
       - type
       - achieves_planned_objective
     exact_mappings:
@@ -86,10 +86,6 @@ classes:
     attributes:
       pulse_sequence:
         range: PulseSequenceSpecification
-    slot_usage: 
-      type:
-        range: PulsedNMRSpecTypes
-        required: true
 
   # Information Content Entities
   AssayOutput:
@@ -122,9 +118,8 @@ classes:
     class_uri: obi:0001930
     description: >-
       A value specification that is specifies one category out of a fixed number of nominal categories
-    attributes:
-      specifies_value_of:
-        slot_uri: obi:0001927
+    slots:
+      - specifies_value_of
 
   PulseSequenceSpecification:
     is_a: CategoricalValueSpecification
@@ -136,14 +131,11 @@ classes:
     mappings:
       - nmrCV:1400037
 
-
-
 slots:
   id:
     identifier: true
     slot_uri: sdo:identifier
-  name:
-    slot_uri: dc:title
+  title:
   type:
   nmr_spec_records:
     range: NMRspecRecord
@@ -156,6 +148,8 @@ slots:
     slot_uri: obi:0000293
   has_specified_output:
     slot_uri: obi:0000299
+  specifies_value_of:
+    slot_uri: obi:0001927
   is_about:
     slot_uri: iao:0000136
 
