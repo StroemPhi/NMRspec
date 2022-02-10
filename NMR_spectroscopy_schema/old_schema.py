@@ -1,5 +1,5 @@
-# Auto generated from NMR-assay-schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-02-10T12:10:01
+# Auto generated from old_schema.yaml by pythongen.py version: 0.9.0
+# Generation date: 2022-02-10T15:20:19
 # Schema: NMR-spectroscopy-schema
 #
 # id: https://git.tib.eu/lab-linked-scientific-knowledge/nmr-research-data-semantification/-/blob/main/nmr_assay_schema.yaml

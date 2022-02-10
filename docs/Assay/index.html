@@ -94,13 +94,47 @@
                 <h1 id="class-assay">Class: Assay</h1>
 <p>A planned process with the objective to produce information about the material entity that is the evaluant, by physically examining it or its proxies.</p>
 <p>URI: <a href="https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/main/model/schema/sample_model.yamlAssay">NMRspec:Assay</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[NMRspectroscopy],[Assay]^-[NMRspectroscopy]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[NMRspectroscopy],[Assay]^-[NMRspectroscopy]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PlannedProcess],[NMRspectroscopy],[Assay&#124;has_specified_input:string%20%3F;has_specified_output:string%20%3F;id(i):string;title(i):string%20%3F;type(i):string%20%3F;achieves_planned_objective(i):string%20%3F;source(i):string%20%3F;source_uri(i):string%20%3F;creator(i):string%20%3F;publisher(i):string%20%3F;date_retrieved(i):string%20%3F]^-[NMRspectroscopy],[PlannedProcess]^-[Assay]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PlannedProcess],[NMRspectroscopy],[Assay&#124;has_specified_input:string%20%3F;has_specified_output:string%20%3F;id(i):string;title(i):string%20%3F;type(i):string%20%3F;achieves_planned_objective(i):string%20%3F;source(i):string%20%3F;source_uri(i):string%20%3F;creator(i):string%20%3F;publisher(i):string%20%3F;date_retrieved(i):string%20%3F]^-[NMRspectroscopy],[PlannedProcess]^-[Assay]" /></a></p>
+<h2 id="parents">Parents</h2>
+<ul>
+<li>is_a: <a href="../PlannedProcess/">PlannedProcess</a> - A process that realizes a plan which is the concretization of a plan specification.</li>
+</ul>
 <h2 id="children">Children</h2>
 <ul>
 <li><a href="../NMRspectroscopy/">NMRspectroscopy</a> - An assay that exploits the magnetic properties of certain nuclei (those with a spin) to resonate when placed in particular magnetic field conditions. Instruments recording NMR spectrum and sets of analysis can be used to deduce identity of chemical as well as composition of complex chemical mixtures.</li>
 </ul>
 <h2 id="referenced-by-class">Referenced by Class</h2>
 <h2 id="attributes">Attributes</h2>
+<h3 id="own">Own</h3>
+<ul>
+<li><a href="../has_specified_input/">has_specified_input</a>  <sub>0..1</sub><ul>
+<li>Range: <a href="../String/">String</a></li>
+</ul>
+</li>
+<li><a href="../has_specified_output/">has_specified_output</a>  <sub>0..1</sub><ul>
+<li>Range: <a href="../String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="inherited-from-plannedprocess">Inherited from PlannedProcess:</h3>
+<ul>
+<li><a href="../id/">id</a>  <sub>1..1</sub><ul>
+<li>Range: <a href="../String/">String</a></li>
+</ul>
+</li>
+<li><a href="../title/">title</a>  <sub>0..1</sub><ul>
+<li>Range: <a href="../String/">String</a></li>
+</ul>
+</li>
+<li><a href="../type/">type</a>  <sub>0..1</sub><ul>
+<li>Range: <a href="../String/">String</a></li>
+</ul>
+</li>
+<li><a href="../achieves_planned_objective/">achieves_planned_objective</a>  <sub>0..1</sub><ul>
+<li>Range: <a href="../String/">String</a></li>
+</ul>
+</li>
+</ul>
 <h2 id="other-properties">Other properties</h2>
 <table>
 <thead>
@@ -117,7 +151,7 @@
 <td>obi:0000070</td>
 </tr>
 <tr>
-<td><strong>Close Mappings:</strong></td>
+<td><strong>Exact Mappings:</strong></td>
 <td></td>
 <td>isa:assay</td>
 </tr>

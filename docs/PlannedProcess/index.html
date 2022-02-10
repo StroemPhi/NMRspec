@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Class: PulsedNMRspectroscopy - This model is to be used to semantify NMR spectroscopy research data.</title>
+  <title>Class: PlannedProcess - This model is to be used to semantify NMR spectroscopy research data.</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Class: PulsedNMRspectroscopy";
-    var mkdocs_page_input_path = "PulsedNMRspectroscopy.md";
+    var mkdocs_page_name = "Class: PlannedProcess";
+    var mkdocs_page_input_path = "PlannedProcess.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -79,7 +79,7 @@
     
       
     
-    <li>Class: PulsedNMRspectroscopy</li>
+    <li>Class: PlannedProcess</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -91,27 +91,21 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="class-pulsednmrspectroscopy">Class: PulsedNMRspectroscopy</h1>
-<p>Spectroscopy where the energy states of spin-active nuclei placed in a static magnetic field are interrogated by inducing transitions between the states via radio frequency irradiation. Each experiment consists of a sequence of radio frequency pulses with delay periods in between them. [ rsc:pr ]</p>
-<p>URI: <a href="https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/main/model/schema/sample_model.yamlPulsedNMRspectroscopy">NMRspec:PulsedNMRspectroscopy</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PulseSequenceSpecification]&lt;pulse_sequence%200..1-++[PulsedNMRspectroscopy&#124;has_specified_input(i):string%20%3F;has_specified_output(i):string%20%3F;id(i):string;title(i):string%20%3F;type(i):string%20%3F;achieves_planned_objective(i):string%20%3F;source(i):string%20%3F;source_uri(i):string%20%3F;creator(i):string%20%3F;publisher(i):string%20%3F;date_retrieved(i):string%20%3F],[PulseSequenceSpecification]-%20specifies_value_of%200..1&gt;[PulsedNMRspectroscopy],[NMRspectroscopy]^-[PulsedNMRspectroscopy],[PulseSequenceSpecification],[NMRspectroscopy]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PulseSequenceSpecification]&lt;pulse_sequence%200..1-++[PulsedNMRspectroscopy&#124;has_specified_input(i):string%20%3F;has_specified_output(i):string%20%3F;id(i):string;title(i):string%20%3F;type(i):string%20%3F;achieves_planned_objective(i):string%20%3F;source(i):string%20%3F;source_uri(i):string%20%3F;creator(i):string%20%3F;publisher(i):string%20%3F;date_retrieved(i):string%20%3F],[PulseSequenceSpecification]-%20specifies_value_of%200..1&gt;[PulsedNMRspectroscopy],[NMRspectroscopy]^-[PulsedNMRspectroscopy],[PulseSequenceSpecification],[NMRspectroscopy]" /></a></p>
-<h2 id="parents">Parents</h2>
+                <h1 id="class-plannedprocess">Class: PlannedProcess</h1>
+<p>A process that realizes a plan which is the concretization of a plan specification.</p>
+<p>URI: <a href="https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/main/model/schema/sample_model.yamlPlannedProcess">NMRspec:PlannedProcess</a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PlannedProcess&#124;id:string;title:string%20%3F;type:string%20%3F;achieves_planned_objective:string%20%3F;source:string%20%3F;source_uri:string%20%3F;creator:string%20%3F;publisher:string%20%3F;date_retrieved:string%20%3F]uses%20-.-&gt;[HasProvenance],[PlannedProcess]^-[Assay],[HasProvenance],[Assay]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PlannedProcess&#124;id:string;title:string%20%3F;type:string%20%3F;achieves_planned_objective:string%20%3F;source:string%20%3F;source_uri:string%20%3F;creator:string%20%3F;publisher:string%20%3F;date_retrieved:string%20%3F]uses%20-.-&gt;[HasProvenance],[PlannedProcess]^-[Assay],[HasProvenance],[Assay]" /></a></p>
+<h2 id="uses-mixin">Uses Mixin</h2>
 <ul>
-<li>is_a: <a href="../NMRspectroscopy/">NMRspectroscopy</a> - An assay that exploits the magnetic properties of certain nuclei (those with a spin) to resonate when placed in particular magnetic field conditions. Instruments recording NMR spectrum and sets of analysis can be used to deduce identity of chemical as well as composition of complex chemical mixtures.</li>
+<li>mixin: <a href="../HasProvenance/">HasProvenance</a> - This is  a mixin to be used by any class that is needed a part of an audit trail to ensure the provenance of the metadata.</li>
+</ul>
+<h2 id="children">Children</h2>
+<ul>
+<li><a href="../Assay/">Assay</a> - A planned process with the objective to produce information about the material entity that is the evaluant, by physically examining it or its proxies.</li>
 </ul>
 <h2 id="referenced-by-class">Referenced by Class</h2>
-<ul>
-<li><strong><a href="../PulseSequenceSpecification/">PulseSequenceSpecification</a></strong> <em><a href="../PulseSequenceSpecification_specifies_value_of/">PulseSequenceSpecification➞specifies_value_of</a></em>  <sub>0..1</sub>  <strong><a href="./">PulsedNMRspectroscopy</a></strong></li>
-</ul>
 <h2 id="attributes">Attributes</h2>
 <h3 id="own">Own</h3>
-<ul>
-<li><a href="../pulsedNMRspectroscopy__pulse_sequence/">➞pulse_sequence</a>  <sub>0..1</sub><ul>
-<li>Range: <a href="../PulseSequenceSpecification/">PulseSequenceSpecification</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="inherited-from-nmrspectroscopy">Inherited from NMRspectroscopy:</h3>
 <ul>
 <li><a href="../id/">id</a>  <sub>1..1</sub><ul>
 <li>Range: <a href="../String/">String</a></li>
@@ -129,11 +123,38 @@
 <li>Range: <a href="../String/">String</a></li>
 </ul>
 </li>
-<li><a href="../has_specified_input/">has_specified_input</a>  <sub>0..1</sub><ul>
+</ul>
+<h3 id="mixed-in-from-hasprovenance">Mixed in from HasProvenance:</h3>
+<ul>
+<li><a href="../hasProvenance__source/">➞source</a>  <sub>0..1</sub><ul>
 <li>Range: <a href="../String/">String</a></li>
 </ul>
 </li>
-<li><a href="../has_specified_output/">has_specified_output</a>  <sub>0..1</sub><ul>
+</ul>
+<h3 id="mixed-in-from-hasprovenance_1">Mixed in from HasProvenance:</h3>
+<ul>
+<li><a href="../hasProvenance__source_uri/">➞source_uri</a>  <sub>0..1</sub><ul>
+<li>Range: <a href="../String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-hasprovenance_2">Mixed in from HasProvenance:</h3>
+<ul>
+<li><a href="../hasProvenance__creator/">➞creator</a>  <sub>0..1</sub><ul>
+<li>Range: <a href="../String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-hasprovenance_3">Mixed in from HasProvenance:</h3>
+<ul>
+<li><a href="../hasProvenance__publisher/">➞publisher</a>  <sub>0..1</sub><ul>
+<li>Range: <a href="../String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-hasprovenance_4">Mixed in from HasProvenance:</h3>
+<ul>
+<li><a href="../hasProvenance__date_retrieved/">➞date_retrieved</a>  <sub>0..1</sub><ul>
 <li>Range: <a href="../String/">String</a></li>
 </ul>
 </li>
@@ -151,7 +172,12 @@
 <tr>
 <td><strong>Mappings:</strong></td>
 <td></td>
-<td>chmo:0000613</td>
+<td>obi:0000011</td>
+</tr>
+<tr>
+<td><strong>Exact Mappings:</strong></td>
+<td></td>
+<td>isa:investigation</td>
 </tr>
 </tbody>
 </table>

@@ -3,7 +3,7 @@ import unittest
 
 from linkml_runtime.loaders import yaml_loader, json_loader, rdf_loader
 
-from NMR_spectroscopy_schema.NNMR-spectroscopy-schema import NMRspecRecord
+from NMR_spectroscopy_schema.NMR-spectroscopy-schema import NMRspecRecord
 
 CWD = os.path.abspath(os.path.dirname(__file__))
 INPUT_DIR = os.path.join(CWD, 'input')

@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Class: PulsedNMRspectroscopy - This model is to be used to semantify NMR spectroscopy research data.</title>
+  <title>Class: CategoricalValueSpecification - This model is to be used to semantify NMR spectroscopy research data.</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Class: PulsedNMRspectroscopy";
-    var mkdocs_page_input_path = "PulsedNMRspectroscopy.md";
+    var mkdocs_page_name = "Class: CategoricalValueSpecification";
+    var mkdocs_page_input_path = "CategoricalValueSpecification.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -79,7 +79,7 @@
     
       
     
-    <li>Class: PulsedNMRspectroscopy</li>
+    <li>Class: CategoricalValueSpecification</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -91,49 +91,19 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="class-pulsednmrspectroscopy">Class: PulsedNMRspectroscopy</h1>
-<p>Spectroscopy where the energy states of spin-active nuclei placed in a static magnetic field are interrogated by inducing transitions between the states via radio frequency irradiation. Each experiment consists of a sequence of radio frequency pulses with delay periods in between them. [ rsc:pr ]</p>
-<p>URI: <a href="https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/main/model/schema/sample_model.yamlPulsedNMRspectroscopy">NMRspec:PulsedNMRspectroscopy</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PulseSequenceSpecification]&lt;pulse_sequence%200..1-++[PulsedNMRspectroscopy&#124;has_specified_input(i):string%20%3F;has_specified_output(i):string%20%3F;id(i):string;title(i):string%20%3F;type(i):string%20%3F;achieves_planned_objective(i):string%20%3F;source(i):string%20%3F;source_uri(i):string%20%3F;creator(i):string%20%3F;publisher(i):string%20%3F;date_retrieved(i):string%20%3F],[PulseSequenceSpecification]-%20specifies_value_of%200..1&gt;[PulsedNMRspectroscopy],[NMRspectroscopy]^-[PulsedNMRspectroscopy],[PulseSequenceSpecification],[NMRspectroscopy]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PulseSequenceSpecification]&lt;pulse_sequence%200..1-++[PulsedNMRspectroscopy&#124;has_specified_input(i):string%20%3F;has_specified_output(i):string%20%3F;id(i):string;title(i):string%20%3F;type(i):string%20%3F;achieves_planned_objective(i):string%20%3F;source(i):string%20%3F;source_uri(i):string%20%3F;creator(i):string%20%3F;publisher(i):string%20%3F;date_retrieved(i):string%20%3F],[PulseSequenceSpecification]-%20specifies_value_of%200..1&gt;[PulsedNMRspectroscopy],[NMRspectroscopy]^-[PulsedNMRspectroscopy],[PulseSequenceSpecification],[NMRspectroscopy]" /></a></p>
-<h2 id="parents">Parents</h2>
+                <h1 id="class-categoricalvaluespecification">Class: CategoricalValueSpecification</h1>
+<p>A value specification that is specifies one category out of a fixed number of nominal categories</p>
+<p>URI: <a href="https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/main/model/schema/sample_model.yamlCategoricalValueSpecification">NMRspec:CategoricalValueSpecification</a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PulseSequenceSpecification],[CategoricalValueSpecification&#124;specifies_value_of:string%20%3F]^-[PulseSequenceSpecification]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PulseSequenceSpecification],[CategoricalValueSpecification&#124;specifies_value_of:string%20%3F]^-[PulseSequenceSpecification]" /></a></p>
+<h2 id="children">Children</h2>
 <ul>
-<li>is_a: <a href="../NMRspectroscopy/">NMRspectroscopy</a> - An assay that exploits the magnetic properties of certain nuclei (those with a spin) to resonate when placed in particular magnetic field conditions. Instruments recording NMR spectrum and sets of analysis can be used to deduce identity of chemical as well as composition of complex chemical mixtures.</li>
+<li><a href="../PulseSequenceSpecification/">PulseSequenceSpecification</a> - A categorical specification that is used to specify which pulse sequence has been used in a pulsed NMR spectroscopy.</li>
 </ul>
 <h2 id="referenced-by-class">Referenced by Class</h2>
-<ul>
-<li><strong><a href="../PulseSequenceSpecification/">PulseSequenceSpecification</a></strong> <em><a href="../PulseSequenceSpecification_specifies_value_of/">PulseSequenceSpecification➞specifies_value_of</a></em>  <sub>0..1</sub>  <strong><a href="./">PulsedNMRspectroscopy</a></strong></li>
-</ul>
 <h2 id="attributes">Attributes</h2>
 <h3 id="own">Own</h3>
 <ul>
-<li><a href="../pulsedNMRspectroscopy__pulse_sequence/">➞pulse_sequence</a>  <sub>0..1</sub><ul>
-<li>Range: <a href="../PulseSequenceSpecification/">PulseSequenceSpecification</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="inherited-from-nmrspectroscopy">Inherited from NMRspectroscopy:</h3>
-<ul>
-<li><a href="../id/">id</a>  <sub>1..1</sub><ul>
-<li>Range: <a href="../String/">String</a></li>
-</ul>
-</li>
-<li><a href="../title/">title</a>  <sub>0..1</sub><ul>
-<li>Range: <a href="../String/">String</a></li>
-</ul>
-</li>
-<li><a href="../type/">type</a>  <sub>0..1</sub><ul>
-<li>Range: <a href="../String/">String</a></li>
-</ul>
-</li>
-<li><a href="../achieves_planned_objective/">achieves_planned_objective</a>  <sub>0..1</sub><ul>
-<li>Range: <a href="../String/">String</a></li>
-</ul>
-</li>
-<li><a href="../has_specified_input/">has_specified_input</a>  <sub>0..1</sub><ul>
-<li>Range: <a href="../String/">String</a></li>
-</ul>
-</li>
-<li><a href="../has_specified_output/">has_specified_output</a>  <sub>0..1</sub><ul>
+<li><a href="../specifies_value_of/">specifies_value_of</a>  <sub>0..1</sub><ul>
 <li>Range: <a href="../String/">String</a></li>
 </ul>
 </li>
@@ -151,7 +121,7 @@
 <tr>
 <td><strong>Mappings:</strong></td>
 <td></td>
-<td>chmo:0000613</td>
+<td>obi:0001930</td>
 </tr>
 </tbody>
 </table>
