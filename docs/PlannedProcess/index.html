@@ -94,7 +94,7 @@
                 <h1 id="class-plannedprocess">Class: PlannedProcess</h1>
 <p>A process that realizes a plan which is the concretization of a plan specification.</p>
 <p>URI: <a href="https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/main/model/schema/sample_model.yamlPlannedProcess">NMRspec:PlannedProcess</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PlannedProcess&#124;id:string;title:string%20%3F;type:string%20%3F;achieves_planned_objective:string%20%3F;source:string%20%3F;source_uri:string%20%3F;creator:string%20%3F;publisher:string%20%3F;date_retrieved:string%20%3F]uses%20-.-&gt;[HasProvenance],[PlannedProcess]^-[Assay],[HasProvenance],[Assay]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PlannedProcess&#124;id:string;title:string%20%3F;type:string%20%3F;achieves_planned_objective:string%20%3F;source:string%20%3F;source_uri:string%20%3F;creator:string%20%3F;publisher:string%20%3F;date_retrieved:string%20%3F]uses%20-.-&gt;[HasProvenance],[PlannedProcess]^-[Assay],[HasProvenance],[Assay]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PlannedProcess&#124;id:string;title:string%20%3F;type:string%20%3F;achieves_planned_objective:string%20%3F;source:string%20%3F;source_uri:string%20%3F;creator:string%20*;publisher:string%20%3F;date_retrieved:string%20%3F]uses%20-.-&gt;[HasProvenance],[PlannedProcess]^-[Assay],[HasProvenance],[Assay]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PlannedProcess&#124;id:string;title:string%20%3F;type:string%20%3F;achieves_planned_objective:string%20%3F;source:string%20%3F;source_uri:string%20%3F;creator:string%20*;publisher:string%20%3F;date_retrieved:string%20%3F]uses%20-.-&gt;[HasProvenance],[PlannedProcess]^-[Assay],[HasProvenance],[Assay]" /></a></p>
 <h2 id="uses-mixin">Uses Mixin</h2>
 <ul>
 <li>mixin: <a href="../HasProvenance/">HasProvenance</a> - This is  a mixin to be used by any class that is needed a part of an audit trail to ensure the provenance of the metadata.</li>
@@ -140,7 +140,7 @@
 </ul>
 <h3 id="mixed-in-from-hasprovenance_2">Mixed in from HasProvenance:</h3>
 <ul>
-<li><a href="../hasProvenance__creator/">➞creator</a>  <sub>0..1</sub><ul>
+<li><a href="../hasProvenance__creator/">➞creator</a>  <sub>0..*</sub><ul>
 <li>Range: <a href="../String/">String</a></li>
 </ul>
 </li>

@@ -41,6 +41,8 @@ classes:
       source:
       source_uri:
       creator:
+        multivalued: true
+        inlined_as_list: true
       publisher:
       date_retrieved:
 

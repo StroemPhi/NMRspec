@@ -1,5 +1,5 @@
 # Auto generated from NMR-spectroscopy-schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-02-10T15:20:16
+# Generation date: 2022-02-10T15:53:17
 # Schema: NMR-spectroscopy-schema
 #
 # id: https://git.tib.eu/lab-linked-scientific-knowledge/nmr-research-data-semantification/-/blob/main/nmr_assay_schema.yaml
@@ -82,7 +82,7 @@ class HasProvenance(YAMLRoot):
 
     source: Optional[str] = None
     source_uri: Optional[str] = None
-    creator: Optional[str] = None
+    creator: Optional[Union[str, List[str]]] = empty_list()
     publisher: Optional[str] = None
     date_retrieved: Optional[str] = None
 
@@ -93,8 +93,9 @@ class HasProvenance(YAMLRoot):
         if self.source_uri is not None and not isinstance(self.source_uri, str):
             self.source_uri = str(self.source_uri)
 
-        if self.creator is not None and not isinstance(self.creator, str):
-            self.creator = str(self.creator)
+        if not isinstance(self.creator, list):
+            self.creator = [self.creator] if self.creator is not None else []
+        self.creator = [v if isinstance(v, str) else str(v) for v in self.creator]
 
         if self.publisher is not None and not isinstance(self.publisher, str):
             self.publisher = str(self.publisher)
@@ -123,7 +124,7 @@ class PlannedProcess(YAMLRoot):
     achieves_planned_objective: Optional[str] = None
     source: Optional[str] = None
     source_uri: Optional[str] = None
-    creator: Optional[str] = None
+    creator: Optional[Union[str, List[str]]] = empty_list()
     publisher: Optional[str] = None
     date_retrieved: Optional[str] = None
 
@@ -148,8 +149,9 @@ class PlannedProcess(YAMLRoot):
         if self.source_uri is not None and not isinstance(self.source_uri, str):
             self.source_uri = str(self.source_uri)
 
-        if self.creator is not None and not isinstance(self.creator, str):
-            self.creator = str(self.creator)
+        if not isinstance(self.creator, list):
+            self.creator = [self.creator] if self.creator is not None else []
+        self.creator = [v if isinstance(v, str) else str(v) for v in self.creator]
 
         if self.publisher is not None and not isinstance(self.publisher, str):
             self.publisher = str(self.publisher)
