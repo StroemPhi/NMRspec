@@ -40,11 +40,13 @@ classes:
     attributes:       # TODO these need to be defined properly
       source:
       source_uri:
+        range: uriorcurie
       creator:
         multivalued: true
         inlined_as_list: true
       publisher:
       date_retrieved:
+        range: datetime
 
   # Processes
   PlannedProcess:

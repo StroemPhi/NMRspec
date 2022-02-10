@@ -94,7 +94,7 @@
                 <h1 id="class-hasprovenance">Class: HasProvenance</h1>
 <p>This is  a mixin to be used by any class that is needed a part of an audit trail to ensure the provenance of the metadata.</p>
 <p>URI: <a href="https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/main/model/schema/sample_model.yamlHasProvenance">NMRspec:HasProvenance</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PlannedProcess]uses%20-.-&gt;[HasProvenance&#124;source:string%20%3F;source_uri:string%20%3F;creator:string%20*;publisher:string%20%3F;date_retrieved:string%20%3F],[PlannedProcess]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PlannedProcess]uses%20-.-&gt;[HasProvenance&#124;source:string%20%3F;source_uri:string%20%3F;creator:string%20*;publisher:string%20%3F;date_retrieved:string%20%3F],[PlannedProcess]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PlannedProcess]uses%20-.-&gt;[HasProvenance&#124;source:string%20%3F;source_uri:uriorcurie%20%3F;creator:string%20*;publisher:string%20%3F;date_retrieved:datetime%20%3F],[PlannedProcess]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PlannedProcess]uses%20-.-&gt;[HasProvenance&#124;source:string%20%3F;source_uri:uriorcurie%20%3F;creator:string%20*;publisher:string%20%3F;date_retrieved:datetime%20%3F],[PlannedProcess]" /></a></p>
 <h2 id="mixin-for">Mixin for</h2>
 <ul>
 <li><a href="../PlannedProcess/">PlannedProcess</a> (mixin)  - A process that realizes a plan which is the concretization of a plan specification.</li>
@@ -108,7 +108,7 @@
 </ul>
 </li>
 <li><a href="../hasProvenance__source_uri/">➞source_uri</a>  <sub>0..1</sub><ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
 </ul>
 </li>
 <li><a href="../hasProvenance__creator/">➞creator</a>  <sub>0..*</sub><ul>
@@ -120,7 +120,7 @@
 </ul>
 </li>
 <li><a href="../hasProvenance__date_retrieved/">➞date_retrieved</a>  <sub>0..1</sub><ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>Range: <a href="../Datetime/">Datetime</a></li>
 </ul>
 </li>
 </ul>

@@ -1,5 +1,5 @@
 # Auto generated from NMR-spectroscopy-schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-02-10T15:53:17
+# Generation date: 2022-02-10T15:57:41
 # Schema: NMR-spectroscopy-schema
 #
 # id: https://git.tib.eu/lab-linked-scientific-knowledge/nmr-research-data-semantification/-/blob/main/nmr_assay_schema.yaml
@@ -22,7 +22,8 @@ from linkml_runtime.utils.formatutils import camelcase, underscore, sfx
 from linkml_runtime.utils.enumerations import EnumDefinitionImpl
 from rdflib import Namespace, URIRef
 from linkml_runtime.utils.curienamespace import CurieNamespace
-from linkml_runtime.linkml_model.types import String
+from linkml_runtime.linkml_model.types import Datetime, String, Uriorcurie
+from linkml_runtime.utils.metamodelcore import URIorCURIE, XSDDateTime
 
 metamodel_version = "1.7.0"
 
@@ -81,17 +82,17 @@ class HasProvenance(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = NMRSPEC.HasProvenance
 
     source: Optional[str] = None
-    source_uri: Optional[str] = None
+    source_uri: Optional[Union[str, URIorCURIE]] = None
     creator: Optional[Union[str, List[str]]] = empty_list()
     publisher: Optional[str] = None
-    date_retrieved: Optional[str] = None
+    date_retrieved: Optional[Union[str, XSDDateTime]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.source is not None and not isinstance(self.source, str):
             self.source = str(self.source)
 
-        if self.source_uri is not None and not isinstance(self.source_uri, str):
-            self.source_uri = str(self.source_uri)
+        if self.source_uri is not None and not isinstance(self.source_uri, URIorCURIE):
+            self.source_uri = URIorCURIE(self.source_uri)
 
         if not isinstance(self.creator, list):
             self.creator = [self.creator] if self.creator is not None else []
@@ -100,8 +101,8 @@ class HasProvenance(YAMLRoot):
         if self.publisher is not None and not isinstance(self.publisher, str):
             self.publisher = str(self.publisher)
 
-        if self.date_retrieved is not None and not isinstance(self.date_retrieved, str):
-            self.date_retrieved = str(self.date_retrieved)
+        if self.date_retrieved is not None and not isinstance(self.date_retrieved, XSDDateTime):
+            self.date_retrieved = XSDDateTime(self.date_retrieved)
 
         super().__post_init__(**kwargs)
 
@@ -123,10 +124,10 @@ class PlannedProcess(YAMLRoot):
     type: Optional[str] = None
     achieves_planned_objective: Optional[str] = None
     source: Optional[str] = None
-    source_uri: Optional[str] = None
+    source_uri: Optional[Union[str, URIorCURIE]] = None
     creator: Optional[Union[str, List[str]]] = empty_list()
     publisher: Optional[str] = None
-    date_retrieved: Optional[str] = None
+    date_retrieved: Optional[Union[str, XSDDateTime]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -146,8 +147,8 @@ class PlannedProcess(YAMLRoot):
         if self.source is not None and not isinstance(self.source, str):
             self.source = str(self.source)
 
-        if self.source_uri is not None and not isinstance(self.source_uri, str):
-            self.source_uri = str(self.source_uri)
+        if self.source_uri is not None and not isinstance(self.source_uri, URIorCURIE):
+            self.source_uri = URIorCURIE(self.source_uri)
 
         if not isinstance(self.creator, list):
             self.creator = [self.creator] if self.creator is not None else []
@@ -156,8 +157,8 @@ class PlannedProcess(YAMLRoot):
         if self.publisher is not None and not isinstance(self.publisher, str):
             self.publisher = str(self.publisher)
 
-        if self.date_retrieved is not None and not isinstance(self.date_retrieved, str):
-            self.date_retrieved = str(self.date_retrieved)
+        if self.date_retrieved is not None and not isinstance(self.date_retrieved, XSDDateTime):
+            self.date_retrieved = XSDDateTime(self.date_retrieved)
 
         super().__post_init__(**kwargs)
 
