@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Slot: buffer_formula - This model is to be used to semantify NMR spectroscopy research data.</title>
+  <title>Class: NmrBuffer - This model is to be used to semantify NMR spectroscopy research data.</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Slot: buffer_formula";
-    var mkdocs_page_input_path = "buffer_formula.md";
+    var mkdocs_page_name = "Class: NmrBuffer";
+    var mkdocs_page_input_path = "NmrBuffer.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -79,7 +79,7 @@
     
       
     
-    <li>Slot: buffer_formula</li>
+    <li>Class: NmrBuffer</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -91,15 +91,33 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="slot-buffer_formula">Slot: buffer_formula</h1>
-<p>URI: <a href="https://nfdi4chem/nmr/data/buffer_formula">NMRspec:buffer_formula</a></p>
-<h2 id="domain-and-range">Domain and Range</h2>
-<p><a href="../NMRspecRecord/">NMRspecRecord</a> &#8594;  <sub>0..1</sub> <a href="../String/">String</a></p>
-<h2 id="parents">Parents</h2>
-<h2 id="children">Children</h2>
-<h2 id="used-by">Used by</h2>
+                <h1 id="class-nmrbuffer">Class: NmrBuffer</h1>
+<p>URI: <a href="https://nfdi4chem/nmr/data/NmrBuffer">NMRspec:NmrBuffer</a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[NmrAssayInput]-%20buffer%200..1&gt;[NmrBuffer&#124;id:string;name:string%20%3F;formula:string%20%3F],[NmrAssayInput]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[NmrAssayInput]-%20buffer%200..1&gt;[NmrBuffer&#124;id:string;name:string%20%3F;formula:string%20%3F],[NmrAssayInput]" /></a></p>
+<h2 id="identifier-prefixes">Identifier prefixes</h2>
 <ul>
-<li><a href="../NMRspecRecord/">NMRspecRecord</a></li>
+<li>chebi</li>
+</ul>
+<h2 id="referenced-by-class">Referenced by Class</h2>
+<ul>
+<li><strong><a href="../PulsedNmrAssay/">PulsedNmrAssay</a></strong> <em><a href="../buffer/">buffer</a></em>  <sub>1..1</sub>  <strong><a href="./">NmrBuffer</a></strong></li>
+<li><strong>None</strong> <em><a href="../nmrAssayInput__buffer/">➞buffer</a></em>  <sub>0..1</sub>  <strong><a href="./">NmrBuffer</a></strong></li>
+</ul>
+<h2 id="attributes">Attributes</h2>
+<h3 id="own">Own</h3>
+<ul>
+<li><a href="../NmrBuffer_id/">NmrBuffer➞id</a>  <sub>1..1</sub><ul>
+<li>Range: <a href="../String/">String</a></li>
+</ul>
+</li>
+<li><a href="../name/">name</a>  <sub>0..1</sub><ul>
+<li>Range: <a href="../String/">String</a></li>
+</ul>
+</li>
+<li><a href="../formula/">formula</a>  <sub>0..1</sub><ul>
+<li>Range: <a href="../String/">String</a></li>
+</ul>
+</li>
 </ul>
               
             </div>

@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Class: NmrSample - This model is to be used to semantify NMR spectroscopy research data.</title>
+  <title>Enum: NmrAssayType - This model is to be used to semantify NMR spectroscopy research data.</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Class: NmrSample";
-    var mkdocs_page_input_path = "NmrSample.md";
+    var mkdocs_page_name = "Enum: NmrAssayType";
+    var mkdocs_page_input_path = "NmrAssayType.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -79,7 +79,7 @@
     
       
     
-    <li>Class: NmrSample</li>
+    <li>Enum: NmrAssayType</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -91,30 +91,68 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="class-nmrsample">Class: NmrSample</h1>
-<p>URI: <a href="https://nfdi4chem/nmr/data/NmrSample">NMRspec:NmrSample</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[NmrAssayInput]++-%20sample%201..1&gt;[NmrSample&#124;local_id:string%20%3F;name:string%20%3F;formula:string%20%3F],[NmrAssayInput]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[NmrAssayInput]++-%20sample%201..1&gt;[NmrSample&#124;local_id:string%20%3F;name:string%20%3F;formula:string%20%3F],[NmrAssayInput]" /></a></p>
-<h2 id="referenced-by-class">Referenced by Class</h2>
-<ul>
-<li><strong>None</strong> <em><a href="../nmrAssayInput__sample/">➞sample</a></em>  <sub>1..1</sub>  <strong><a href="./">NmrSample</a></strong></li>
-<li><strong><a href="../PulsedNmrAssay/">PulsedNmrAssay</a></strong> <em><a href="../sample/">sample</a></em>  <sub>1..1</sub>  <strong><a href="./">NmrSample</a></strong></li>
-</ul>
-<h2 id="attributes">Attributes</h2>
-<h3 id="own">Own</h3>
-<ul>
-<li><a href="../local_id/">local_id</a>  <sub>0..1</sub><ul>
-<li>Range: <a href="../String/">String</a></li>
-</ul>
-</li>
-<li><a href="../name/">name</a>  <sub>0..1</sub><ul>
-<li>Range: <a href="../String/">String</a></li>
-</ul>
-</li>
-<li><a href="../formula/">formula</a>  <sub>0..1</sub><ul>
-<li>Range: <a href="../String/">String</a></li>
-</ul>
-</li>
-</ul>
+                <h1 id="enum-nmrassaytype">Enum: NmrAssayType</h1>
+<p>URI: <a href="https://nfdi4chem/nmr/data/NmrAssayType">NMRspec:NmrAssayType</a></p>
+<h2 id="other-properties">Other properties</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="permissible-values">Permissible Values</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Text</th>
+<th align="center">Description</th>
+<th align="center">Meaning</th>
+<th align="right">Other Information</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">1D-1H-NMR</td>
+<td align="center"></td>
+<td align="center">chmo:0002442</td>
+<td align="right"></td>
+</tr>
+<tr>
+<td align="left">2DJ-DOSY</td>
+<td align="center"></td>
+<td align="center">chmo:0001953</td>
+<td align="right"></td>
+</tr>
+<tr>
+<td align="left">3D-COSY-DOSY</td>
+<td align="center"></td>
+<td align="center">chmo:0001951</td>
+<td align="right"></td>
+</tr>
+<tr>
+<td align="left">3D-DOSY-TOCSY</td>
+<td align="center"></td>
+<td align="center">chmo:0001950</td>
+<td align="right"></td>
+</tr>
+<tr>
+<td align="left">3D-DOSY-HMQC</td>
+<td align="center"></td>
+<td align="center">chmo:0001952</td>
+<td align="right"></td>
+</tr>
+</tbody>
+</table>
               
             </div>
           </div>

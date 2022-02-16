@@ -1,5 +1,5 @@
 # Auto generated from NMR-spectroscopy-schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-02-16T16:54:41
+# Generation date: 2022-02-17T00:30:36
 # Schema: NMR-spectroscopy-schema
 #
 # id: https://git.tib.eu/lab-linked-scientific-knowledge/nmr-research-data-semantification/-/blob/main/nmr_assay_schema.yaml
@@ -36,6 +36,7 @@ NMRSPEC = CurieNamespace('NMRspec', 'https://nfdi4chem/nmr/data/')
 BFO = CurieNamespace('bfo', 'http://purl.obolibrary.org/obo/BFO_')
 CHEBI = CurieNamespace('chebi', 'http://purl.obolibrary.org/obo/CHEBI_')
 CHEMINF = CurieNamespace('cheminf', 'http://purl.obolibrary.org/obo/CHEMINF_')
+CHEMOTION = CurieNamespace('chemotion', 'https://chemotion.de/')
 CHMO = CurieNamespace('chmo', 'http://purl.obolibrary.org/obo/CHMO_')
 DOI = CurieNamespace('doi', 'https://doi.org/')
 IAO = CurieNamespace('iao', 'http://purl.obolibrary.org/obo/IAO_')
@@ -48,18 +49,17 @@ PATO = CurieNamespace('pato', 'http://purl.obolibrary.org/obo/PATO_')
 PROV = CurieNamespace('prov', 'http://www.w3.org/ns/prov#')
 RO = CurieNamespace('ro', 'http://purl.obolibrary.org/obo/RO_')
 SDO = CurieNamespace('sdo', 'https://schema.org/')
-SOMECONTEXT = CurieNamespace('somecontext', 'https://irgendwas.de/')
 DEFAULT_ = NMRSPEC
 
 
 # Types
 
 # Class references
-class NMRspecRecordId(extended_str):
+class NmrSpecRecordId(extended_str):
     pass
 
 
-class NMRsampleChebiId(URIorCURIE):
+class NmrBufferId(extended_str):
     pass
 
 
@@ -94,22 +94,69 @@ class HasProvenanceData(YAMLRoot):
 
 
 @dataclass
-class NMRspecRecord(YAMLRoot):
+class PulsedNmrAssay(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = CHMO["0000613"]
+    class_class_curie: ClassVar[str] = "chmo:0000613"
+    class_name: ClassVar[str] = "PulsedNmrAssay"
+    class_model_uri: ClassVar[URIRef] = NMRSPEC.PulsedNmrAssay
+
+    has_specified_input: Union[Union[dict, "NmrAssayInput"], List[Union[dict, "NmrAssayInput"]]] = None
+    type: Union[str, "NmrAssayType"] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.has_specified_input):
+            self.MissingRequiredField("has_specified_input")
+        self._normalize_inlined_as_dict(slot_name="has_specified_input", slot_type=NmrAssayInput, key_name="sample", keyed=False)
+
+        if self._is_empty(self.type):
+            self.MissingRequiredField("type")
+        if not isinstance(self.type, NmrAssayType):
+            self.type = NmrAssayType(self.type)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class NmrAssayInput(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = NMRSPEC.NmrAssayInput
+    class_class_curie: ClassVar[str] = "NMRspec:NmrAssayInput"
+    class_name: ClassVar[str] = "NmrAssayInput"
+    class_model_uri: ClassVar[URIRef] = NMRSPEC.NmrAssayInput
+
+    sample: Union[dict, "NmrSample"] = None
+    buffer: Optional[Union[str, NmrBufferId]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.sample):
+            self.MissingRequiredField("sample")
+        if not isinstance(self.sample, NmrSample):
+            self.sample = NmrSample(**as_dict(self.sample))
+
+        if self.buffer is not None and not isinstance(self.buffer, NmrBufferId):
+            self.buffer = NmrBufferId(self.buffer)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class NmrSpecRecord(YAMLRoot):
     """
     A data item that is an NMR assay output which represents the data produced by an NMR assay of a studied sample
     compound.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = NMRSPEC.NMRspecRecord
-    class_class_curie: ClassVar[str] = "NMRspec:NMRspecRecord"
-    class_name: ClassVar[str] = "NMRspecRecord"
-    class_model_uri: ClassVar[URIRef] = NMRSPEC.NMRspecRecord
+    class_class_uri: ClassVar[URIRef] = NMRSPEC.NmrSpecRecord
+    class_class_curie: ClassVar[str] = "NMRspec:NmrSpecRecord"
+    class_name: ClassVar[str] = "NmrSpecRecord"
+    class_model_uri: ClassVar[URIRef] = NMRSPEC.NmrSpecRecord
 
-    id: Union[str, NMRspecRecordId] = None
-    sample: Union[dict, "NMRsample"] = None
-    buffer_formula: Optional[str] = None
-    buffer_name: Optional[str] = None
+    id: Union[str, NmrSpecRecordId] = None
+    is_specified_output_of: Union[dict, PulsedNmrAssay] = None
     source: Optional[str] = None
     source_uri: Optional[Union[str, URIorCURIE]] = None
     date_retrieved: Optional[Union[str, XSDDateTime]] = None
@@ -117,19 +164,13 @@ class NMRspecRecord(YAMLRoot):
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
-        if not isinstance(self.id, NMRspecRecordId):
-            self.id = NMRspecRecordId(self.id)
+        if not isinstance(self.id, NmrSpecRecordId):
+            self.id = NmrSpecRecordId(self.id)
 
-        if self._is_empty(self.sample):
-            self.MissingRequiredField("sample")
-        if not isinstance(self.sample, NMRsample):
-            self.sample = NMRsample(**as_dict(self.sample))
-
-        if self.buffer_formula is not None and not isinstance(self.buffer_formula, str):
-            self.buffer_formula = str(self.buffer_formula)
-
-        if self.buffer_name is not None and not isinstance(self.buffer_name, str):
-            self.buffer_name = str(self.buffer_name)
+        if self._is_empty(self.is_specified_output_of):
+            self.MissingRequiredField("is_specified_output_of")
+        if not isinstance(self.is_specified_output_of, PulsedNmrAssay):
+            self.is_specified_output_of = PulsedNmrAssay(**as_dict(self.is_specified_output_of))
 
         if self.source is not None and not isinstance(self.source, str):
             self.source = str(self.source)
@@ -144,42 +185,64 @@ class NMRspecRecord(YAMLRoot):
 
 
 @dataclass
-class NMRsample(YAMLRoot):
+class NmrSample(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = NMRSPEC.NMRsample
-    class_class_curie: ClassVar[str] = "NMRspec:NMRsample"
-    class_name: ClassVar[str] = "NMRsample"
-    class_model_uri: ClassVar[URIRef] = NMRSPEC.NMRsample
+    class_class_uri: ClassVar[URIRef] = NMRSPEC.NmrSample
+    class_class_curie: ClassVar[str] = "NMRspec:NmrSample"
+    class_name: ClassVar[str] = "NmrSample"
+    class_model_uri: ClassVar[URIRef] = NMRSPEC.NmrSample
 
-    chebi_id: Union[str, NMRsampleChebiId] = None
     local_id: Optional[str] = None
-    sample_formula: Optional[str] = None
-    sample_name: Optional[str] = None
+    name: Optional[str] = None
+    formula: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.chebi_id):
-            self.MissingRequiredField("chebi_id")
-        if not isinstance(self.chebi_id, NMRsampleChebiId):
-            self.chebi_id = NMRsampleChebiId(self.chebi_id)
-
         if self.local_id is not None and not isinstance(self.local_id, str):
             self.local_id = str(self.local_id)
 
-        if self.sample_formula is not None and not isinstance(self.sample_formula, str):
-            self.sample_formula = str(self.sample_formula)
+        if self.name is not None and not isinstance(self.name, str):
+            self.name = str(self.name)
 
-        if self.sample_name is not None and not isinstance(self.sample_name, str):
-            self.sample_name = str(self.sample_name)
+        if self.formula is not None and not isinstance(self.formula, str):
+            self.formula = str(self.formula)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class NmrBuffer(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = NMRSPEC.NmrBuffer
+    class_class_curie: ClassVar[str] = "NMRspec:NmrBuffer"
+    class_name: ClassVar[str] = "NmrBuffer"
+    class_model_uri: ClassVar[URIRef] = NMRSPEC.NmrBuffer
+
+    id: Union[str, NmrBufferId] = None
+    name: Optional[str] = None
+    formula: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, NmrBufferId):
+            self.id = NmrBufferId(self.id)
+
+        if self.name is not None and not isinstance(self.name, str):
+            self.name = str(self.name)
+
+        if self.formula is not None and not isinstance(self.formula, str):
+            self.formula = str(self.formula)
 
         super().__post_init__(**kwargs)
 
 
 # Enumerations
-class PulsedNMRSpecTypes(EnumDefinitionImpl):
+class NmrAssayType(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
-        name="PulsedNMRSpecTypes",
+        name="NmrAssayType",
     )
 
     @classmethod

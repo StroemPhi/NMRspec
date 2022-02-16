@@ -1,38 +1,76 @@
 {
    "$defs": {
-      "NMRsample": {
+      "NmrAssayInput": {
          "additionalProperties": false,
          "description": "",
          "properties": {
-            "chebi_id": {
+            "buffer": {
+               "type": "string"
+            },
+            "sample": {
+               "$ref": "#/$defs/NmrSample"
+            }
+         },
+         "required": [
+            "sample"
+         ],
+         "title": "NmrAssayInput",
+         "type": "object"
+      },
+      "NmrAssayType": {
+         "description": "",
+         "enum": [
+            "1D-1H-NMR",
+            "2DJ-DOSY",
+            "3D-COSY-DOSY",
+            "3D-DOSY-TOCSY",
+            "3D-DOSY-HMQC"
+         ],
+         "title": "NmrAssayType",
+         "type": "string"
+      },
+      "NmrBuffer": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "formula": {
+               "type": "string"
+            },
+            "id": {
+               "type": "string"
+            },
+            "name": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "NmrBuffer",
+         "type": "object"
+      },
+      "NmrSample": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "formula": {
                "type": "string"
             },
             "local_id": {
                "type": "string"
             },
-            "sample_formula": {
-               "type": "string"
-            },
-            "sample_name": {
+            "name": {
                "type": "string"
             }
          },
-         "required": [
-            "chebi_id"
-         ],
-         "title": "NMRsample",
+         "required": [],
+         "title": "NmrSample",
          "type": "object"
       },
-      "NMRspecRecord": {
+      "NmrSpecRecord": {
          "additionalProperties": false,
          "description": "A data item that is an NMR assay output which represents the data produced by an NMR assay of a studied sample compound.",
          "properties": {
-            "buffer_formula": {
-               "type": "string"
-            },
-            "buffer_name": {
-               "type": "string"
-            },
             "date_retrieved": {
                "format": "date-time",
                "type": "string"
@@ -40,8 +78,8 @@
             "id": {
                "type": "string"
             },
-            "sample": {
-               "$ref": "#/$defs/NMRsample"
+            "is_specified_output_of": {
+               "$ref": "#/$defs/PulsedNmrAssay"
             },
             "source": {
                "description": "This field can be used to provide the source of the data as String. E.g.",
@@ -53,22 +91,31 @@
          },
          "required": [
             "id",
-            "sample"
+            "is_specified_output_of"
          ],
-         "title": "NMRspecRecord",
+         "title": "NmrSpecRecord",
          "type": "object"
       },
-      "PulsedNMRSpecTypes": {
+      "PulsedNmrAssay": {
+         "additionalProperties": false,
          "description": "",
-         "enum": [
-            "1D-1H-NMR",
-            "2DJ-DOSY",
-            "3D-COSY-DOSY",
-            "3D-DOSY-TOCSY",
-            "3D-DOSY-HMQC"
+         "properties": {
+            "has_specified_input": {
+               "items": {
+                  "$ref": "#/$defs/NmrAssayInput"
+               },
+               "type": "array"
+            },
+            "type": {
+               "$ref": "#/$defs/NmrAssayType"
+            }
+         },
+         "required": [
+            "has_specified_input",
+            "type"
          ],
-         "title": "PulsedNMRSpecTypes",
-         "type": "string"
+         "title": "PulsedNmrAssay",
+         "type": "object"
       }
    },
    "$id": "https://git.tib.eu/lab-linked-scientific-knowledge/nmr-research-data-semantification/-/blob/main/nmr_assay_schema.yaml",

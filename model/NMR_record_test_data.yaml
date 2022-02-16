@@ -1,9 +1,16 @@
 
-id: somecontext:10.2034/1234
-buffer_formula: H20
-buffer_name: water
-sample:
-    local_sample_id: local_sample_id_1234
-    sample_formula: C25H28N6O
-    sample_name: 1-methylpyridin-1-ium-3-carboxylate;pyridine-3-carboxylic acid
-    chebi_id: chebi:35559
+id: doi:10.2034/1234
+source: Chemotion Repository
+source_uri: chemotion:12345
+date_retrieved: "2022-02-22"
+is_specified_output_of:
+  type: 1D-1H-NMR
+  has_specified_input:
+    sample:
+      local_id: local_sample_id_1234
+      formula: C25H28N6O
+      name: 1-methylpyridin-1-ium-3-carboxylate;pyridine-3-carboxylic acid
+    buffer:
+      formula: CDCL3
+      name: deuterated chloroform
+      #id: chebi:85365

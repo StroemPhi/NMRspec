@@ -26,7 +26,7 @@ prefixes:
   isa: https://isa-specs.readthedocs.io/en/latest/isamodel.html#
   iupac: https://github.com/IUPAC/IUPAC-FAIRSpec/blob/main/src/main/java/org/iupac/fairspec/core/
   doi: https://doi.org/
-  somecontext: https://irgendwas.de/
+  chemotion: https://chemotion.de/
 
 default_prefix: NMRspec
 default_curi_maps:
@@ -34,6 +34,11 @@ default_curi_maps:
 
 imports:
  - linkml:types
+
+emit_prefixes:
+  - sdo
+  - doi
+  - chebi
 
 #################################################
 classes:
@@ -53,9 +58,31 @@ classes:
       date_retrieved:
         range: datetime
 # Processes
+  PulsedNmrAssay:
+    class_uri: chmo:0000613
+    attributes:
+      has_specified_input:
+        required: true
+        multivalued: true
+        inlined: true
+        range: NmrAssayInput
+      type:
+        required: true
+        range: NmrAssayType
+
 # Material Entities
+  NmrAssayInput:
+    attributes:
+      sample:
+        required: true
+        range: NmrSample
+      buffer:
+        #required: true
+        range: NmrBuffer
+    todos: find out how to use "union_of" slot in linkML to provide multiple classes as ranges of a property such as obi:has_specific_input instead of this container solution
+
 # Information Content Entities
-  NMRspecRecord:
+  NmrSpecRecord:
     tree_root: true
     mixins:
       - HasProvenanceData
@@ -63,51 +90,67 @@ classes:
       A data item that is an NMR assay output which represents the data produced by an NMR assay of a studied sample compound.
     slots:
       - id
-      - buffer_formula
-      - buffer_name
-      - sample
+      - is_specified_output_of
+    slot_usage:
+      is_specified_output_of:
+        required: true
+        range: PulsedNmrAssay
 
-  NMRsample:
+  NmrSample:
     slots:
       - local_id
-      - sample_formula
-      - sample_name
-      - chebi_id
+      - name
+      - formula
+      
+  NmrBuffer:
+    slots:
+      - id 
+      - name
+      - formula
+    slot_usage:
+      id:
+        domain: NmrBuffer
+    id_prefixes:
+      - chebi
+      #- pubchem
+      #- cas"
+
 #################################################
 slots:
+#################################################
+# common metadata
   id:
     identifier: true
     slot_uri: sdo:identifier
-  local_id:
+  formula:
+    recommended: true
     range: string
+  name:
+    recommended: true
+    range: string
+# nmr assay metadata
   sample:
     inlined: true
     required: true
-    range: NMRsample
-  sample_formula:
-    domain: NMRsample
+    domain: PulsedNmrAssay
+    range: NmrSample
+  buffer:
+    inlined: true
+    required: true
+    domain: PulsedNmrAssay
+    range: NmrBuffer
+# nmr record metadata
+  is_specified_output_of:
+    required: true
+    slot_uri: obi:0000312
+# sample metadata
+  local_id:
+    recommended: true
     range: string
-  sample_name:
-    domain: NMRsample
-    range: string
-  chebi_id:
-    identifier: true
-    range: uriorcurie
-    id_prefixes:
-      - chebi
-  buffer_formula:
-    domain: NMRspecRecord
-    range: string
-  buffer_name:
-    domain: NMRspecRecord
-    range: string
-
-
-#################################################
 
 #################################################
 enums:
-  PulsedNMRSpecTypes:
+  NmrAssayType:
     permissible_values:
       1D-1H-NMR:
         meaning: chmo:0002442
@@ -119,5 +162,5 @@ enums:
         meaning: chmo:0001950
       3D-DOSY-HMQC:
         meaning: chmo:0001952
-###########################################################
+#################################################
 

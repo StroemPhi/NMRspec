@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Class: NMRspecRecord - This model is to be used to semantify NMR spectroscopy research data.</title>
+  <title>Class: NmrSpecRecord - This model is to be used to semantify NMR spectroscopy research data.</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Class: NMRspecRecord";
-    var mkdocs_page_input_path = "NMRspecRecord.md";
+    var mkdocs_page_name = "Class: NmrSpecRecord";
+    var mkdocs_page_input_path = "NmrSpecRecord.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -79,7 +79,7 @@
     
       
     
-    <li>Class: NMRspecRecord</li>
+    <li>Class: NmrSpecRecord</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -91,10 +91,10 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="class-nmrspecrecord">Class: NMRspecRecord</h1>
+                <h1 id="class-nmrspecrecord">Class: NmrSpecRecord</h1>
 <p>A data item that is an NMR assay output which represents the data produced by an NMR assay of a studied sample compound.</p>
-<p>URI: <a href="https://nfdi4chem/nmr/data/NMRspecRecord">NMRspec:NMRspecRecord</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[NMRsample]&lt;sample%201..1-++[NMRspecRecord&#124;id:string;buffer_formula:string%20%3F;buffer_name:string%20%3F;source:string%20%3F;source_uri:uriorcurie%20%3F;date_retrieved:datetime%20%3F],[NMRspecRecord]uses%20-.-&gt;[HasProvenanceData],[NMRsample],[HasProvenanceData]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[NMRsample]&lt;sample%201..1-++[NMRspecRecord&#124;id:string;buffer_formula:string%20%3F;buffer_name:string%20%3F;source:string%20%3F;source_uri:uriorcurie%20%3F;date_retrieved:datetime%20%3F],[NMRspecRecord]uses%20-.-&gt;[HasProvenanceData],[NMRsample],[HasProvenanceData]" /></a></p>
+<p>URI: <a href="https://nfdi4chem/nmr/data/NmrSpecRecord">NMRspec:NmrSpecRecord</a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[PulsedNmrAssay]&lt;is_specified_output_of%201..1-++[NmrSpecRecord&#124;id:string;source:string%20%3F;source_uri:uriorcurie%20%3F;date_retrieved:datetime%20%3F],[NmrSpecRecord]uses%20-.-&gt;[HasProvenanceData],[HasProvenanceData]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[PulsedNmrAssay]&lt;is_specified_output_of%201..1-++[NmrSpecRecord&#124;id:string;source:string%20%3F;source_uri:uriorcurie%20%3F;date_retrieved:datetime%20%3F],[NmrSpecRecord]uses%20-.-&gt;[HasProvenanceData],[HasProvenanceData]" /></a></p>
 <h2 id="uses-mixin">Uses Mixin</h2>
 <ul>
 <li>mixin: <a href="../HasProvenanceData/">HasProvenanceData</a> - This is a mixin to be used by any class that is needed as part of an audit trail to ensure the provenance of the metadata.</li>
@@ -107,16 +107,8 @@
 <li>Range: <a href="../String/">String</a></li>
 </ul>
 </li>
-<li><a href="../buffer_formula/">buffer_formula</a>  <sub>0..1</sub><ul>
-<li>Range: <a href="../String/">String</a></li>
-</ul>
-</li>
-<li><a href="../buffer_name/">buffer_name</a>  <sub>0..1</sub><ul>
-<li>Range: <a href="../String/">String</a></li>
-</ul>
-</li>
-<li><a href="../sample/">sample</a>  <sub>1..1</sub><ul>
-<li>Range: <a href="../NMRsample/">NMRsample</a></li>
+<li><a href="../NmrSpecRecord_is_specified_output_of/">NmrSpecRecord➞is_specified_output_of</a>  <sub>1..1</sub><ul>
+<li>Range: <a href="../PulsedNmrAssay/">PulsedNmrAssay</a></li>
 </ul>
 </li>
 </ul>

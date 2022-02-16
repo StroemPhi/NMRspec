@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Slot: sample_formula - This model is to be used to semantify NMR spectroscopy research data.</title>
+  <title>Class: PulsedNmrAssay - This model is to be used to semantify NMR spectroscopy research data.</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Slot: sample_formula";
-    var mkdocs_page_input_path = "sample_formula.md";
+    var mkdocs_page_name = "Class: PulsedNmrAssay";
+    var mkdocs_page_input_path = "PulsedNmrAssay.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -79,7 +79,7 @@
     
       
     
-    <li>Slot: sample_formula</li>
+    <li>Class: PulsedNmrAssay</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -91,16 +91,42 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="slot-sample_formula">Slot: sample_formula</h1>
-<p>URI: <a href="https://nfdi4chem/nmr/data/sample_formula">NMRspec:sample_formula</a></p>
-<h2 id="domain-and-range">Domain and Range</h2>
-<p><a href="../NMRsample/">NMRsample</a> &#8594;  <sub>0..1</sub> <a href="../String/">String</a></p>
-<h2 id="parents">Parents</h2>
-<h2 id="children">Children</h2>
-<h2 id="used-by">Used by</h2>
+                <h1 id="class-pulsednmrassay">Class: PulsedNmrAssay</h1>
+<p>URI: <a href="https://nfdi4chem/nmr/data/PulsedNmrAssay">NMRspec:PulsedNmrAssay</a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[NmrAssayInput]&lt;has_specified_input%201..*-++[PulsedNmrAssay&#124;type:NmrAssayType],[NmrSpecRecord]++-%20is_specified_output_of%201..1&gt;[PulsedNmrAssay],[NmrSpecRecord],[NmrAssayInput]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[NmrAssayInput]&lt;has_specified_input%201..*-++[PulsedNmrAssay&#124;type:NmrAssayType],[NmrSpecRecord]++-%20is_specified_output_of%201..1&gt;[PulsedNmrAssay],[NmrSpecRecord],[NmrAssayInput]" /></a></p>
+<h2 id="referenced-by-class">Referenced by Class</h2>
 <ul>
-<li><a href="../NMRsample/">NMRsample</a></li>
+<li><strong><a href="../NmrSpecRecord/">NmrSpecRecord</a></strong> <em><a href="../NmrSpecRecord_is_specified_output_of/">NmrSpecRecord➞is_specified_output_of</a></em>  <sub>1..1</sub>  <strong><a href="./">PulsedNmrAssay</a></strong></li>
 </ul>
+<h2 id="attributes">Attributes</h2>
+<h3 id="own">Own</h3>
+<ul>
+<li><a href="../pulsedNmrAssay__has_specified_input/">➞has_specified_input</a>  <sub>1..*</sub><ul>
+<li>Range: <a href="../NmrAssayInput/">NmrAssayInput</a></li>
+</ul>
+</li>
+<li><a href="../pulsedNmrAssay__type/">➞type</a>  <sub>1..1</sub><ul>
+<li>Range: <a href="../NmrAssayType/">NmrAssayType</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="other-properties">Other properties</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mappings:</strong></td>
+<td></td>
+<td>chmo:0000613</td>
+</tr>
+</tbody>
+</table>
               
             </div>
           </div>
