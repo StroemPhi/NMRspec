@@ -3,7 +3,7 @@ import unittest
 
 from linkml_runtime.loaders import yaml_loader, json_loader, rdf_loader
 
-from NMR_spectroscopy_schema.NMR-spectroscopy-schema import NMRspecRecord
+from NMR_spectroscopy_schema.NMR-spectroscopy-schema import NMRspecRecords
 
 CWD = os.path.abspath(os.path.dirname(__file__))
 INPUT_DIR = os.path.join(CWD, 'input')
@@ -27,15 +27,15 @@ class InputFileTestCase(unittest.TestCase):
                 try:
                     if fname.endswith('.yaml'):
                         nyaml += 1
-                        o: NMRspecRecord = yaml_loader.load(full_fname, NMRspecRecord)
+                        o: NMRspecRecords = yaml_loader.load(full_fname, NMRspecRecords)
                         pyaml += 1
                     elif fname.endswith('.json'):
                         njson += 1
-                        o: NMRspecRecord = json_loader.load(full_fname, NMRspecRecord)
+                        o: NMRspecRecords = json_loader.load(full_fname, NMRspecRecords)
                         pjson += 1
                     elif fname.endswith('.ttl'):
                         nttl += 1
-                        o: NMRspecRecord = rdf_loader.load(full_fname, NMRspecRecord)
+                        o: NMRspecRecords = rdf_loader.load(full_fname, NMRspecRecords)
                         pttl += 1
                     elif fname.endswith('.md'):
                         pass

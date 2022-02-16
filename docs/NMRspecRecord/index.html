@@ -93,21 +93,30 @@
               
                 <h1 id="class-nmrspecrecord">Class: NMRspecRecord</h1>
 <p>A data item that is an NMR assay output which represents the data produced by an NMR assay of a studied sample compound.</p>
-<p>URI: <a href="https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/main/model/schema/sample_model.yamlNMRspecRecord">NMRspec:NMRspecRecord</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[NMRspecRecords]-%20nmr_spec_records%200..*&gt;[NMRspecRecord&#124;id:string;source:string%20%3F;source_uri:uriorcurie%20%3F;date_retrieved:datetime%20%3F],[NMRspecRecord]uses%20-.-&gt;[HasProvenanceData],[NMRspecRecords],[HasProvenanceData]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[NMRspecRecords]-%20nmr_spec_records%200..*&gt;[NMRspecRecord&#124;id:string;source:string%20%3F;source_uri:uriorcurie%20%3F;date_retrieved:datetime%20%3F],[NMRspecRecord]uses%20-.-&gt;[HasProvenanceData],[NMRspecRecords],[HasProvenanceData]" /></a></p>
+<p>URI: <a href="https://nfdi4chem/nmr/data/NMRspecRecord">NMRspec:NMRspecRecord</a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[NMRsample]&lt;sample%201..1-++[NMRspecRecord&#124;id:string;buffer_formula:string%20%3F;buffer_name:string%20%3F;source:string%20%3F;source_uri:uriorcurie%20%3F;date_retrieved:datetime%20%3F],[NMRspecRecord]uses%20-.-&gt;[HasProvenanceData],[NMRsample],[HasProvenanceData]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[NMRsample]&lt;sample%201..1-++[NMRspecRecord&#124;id:string;buffer_formula:string%20%3F;buffer_name:string%20%3F;source:string%20%3F;source_uri:uriorcurie%20%3F;date_retrieved:datetime%20%3F],[NMRspecRecord]uses%20-.-&gt;[HasProvenanceData],[NMRsample],[HasProvenanceData]" /></a></p>
 <h2 id="uses-mixin">Uses Mixin</h2>
 <ul>
-<li>mixin: <a href="../HasProvenanceData/">HasProvenanceData</a> - This is a mixin to be used by any class that is needed a part of an audit trail to ensure the provenance of the metadata.</li>
+<li>mixin: <a href="../HasProvenanceData/">HasProvenanceData</a> - This is a mixin to be used by any class that is needed as part of an audit trail to ensure the provenance of the metadata.</li>
 </ul>
 <h2 id="referenced-by-class">Referenced by Class</h2>
-<ul>
-<li><strong>None</strong> <em><a href="../nMRspecRecords__nmr_spec_records/">➞nmr_spec_records</a></em>  <sub>0..*</sub>  <strong><a href="./">NMRspecRecord</a></strong></li>
-</ul>
 <h2 id="attributes">Attributes</h2>
 <h3 id="own">Own</h3>
 <ul>
-<li><a href="../nMRspecRecord__id/">➞id</a>  <sub>1..1</sub><ul>
+<li><a href="../id/">id</a>  <sub>1..1</sub><ul>
 <li>Range: <a href="../String/">String</a></li>
+</ul>
+</li>
+<li><a href="../buffer_formula/">buffer_formula</a>  <sub>0..1</sub><ul>
+<li>Range: <a href="../String/">String</a></li>
+</ul>
+</li>
+<li><a href="../buffer_name/">buffer_name</a>  <sub>0..1</sub><ul>
+<li>Range: <a href="../String/">String</a></li>
+</ul>
+</li>
+<li><a href="../sample/">sample</a>  <sub>1..1</sub><ul>
+<li>Range: <a href="../NMRsample/">NMRsample</a></li>
 </ul>
 </li>
 </ul>

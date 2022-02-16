@@ -1,15 +1,47 @@
 {
    "$defs": {
+      "NMRsample": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "chebi_id": {
+               "type": "string"
+            },
+            "local_id": {
+               "type": "string"
+            },
+            "sample_formula": {
+               "type": "string"
+            },
+            "sample_name": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "chebi_id"
+         ],
+         "title": "NMRsample",
+         "type": "object"
+      },
       "NMRspecRecord": {
          "additionalProperties": false,
          "description": "A data item that is an NMR assay output which represents the data produced by an NMR assay of a studied sample compound.",
          "properties": {
+            "buffer_formula": {
+               "type": "string"
+            },
+            "buffer_name": {
+               "type": "string"
+            },
             "date_retrieved": {
                "format": "date-time",
                "type": "string"
             },
             "id": {
                "type": "string"
+            },
+            "sample": {
+               "$ref": "#/$defs/NMRsample"
             },
             "source": {
                "description": "This field can be used to provide the source of the data as String. E.g.",
@@ -20,24 +52,10 @@
             }
          },
          "required": [
-            "id"
+            "id",
+            "sample"
          ],
          "title": "NMRspecRecord",
-         "type": "object"
-      },
-      "NMRspecRecords": {
-         "additionalProperties": false,
-         "description": "A container for holding multiple NMR assay records.",
-         "properties": {
-            "nmr_spec_records": {
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            }
-         },
-         "required": [],
-         "title": "NMRspecRecords",
          "type": "object"
       },
       "PulsedNMRSpecTypes": {

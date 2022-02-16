@@ -10,7 +10,7 @@ license: https://creativecommons.org/licenses/by/4.0/
 version: 0.0.1
 
 prefixes:
-  NMRspec: https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/main/model/schema/sample_model.yaml
+  NMRspec: https://nfdi4chem/nmr/data/
   linkml: https://w3id.org/linkml/
   sdo: https://schema.org/
   bfo: http://purl.obolibrary.org/obo/BFO_
@@ -25,6 +25,8 @@ prefixes:
   prov: http://www.w3.org/ns/prov#
   isa: https://isa-specs.readthedocs.io/en/latest/isamodel.html#
   iupac: https://github.com/IUPAC/IUPAC-FAIRSpec/blob/main/src/main/java/org/iupac/fairspec/core/
+  doi: https://doi.org/
+  somecontext: https://irgendwas.de/
 
 default_prefix: NMRspec
 default_curi_maps:
@@ -33,15 +35,14 @@ default_curi_maps:
 imports:
  - linkml:types
 
-###########################################################
+#################################################
 classes:
-###########################################################
-
+#################################################
 # Mixins
   HasProvenanceData:
     mixin: true
     description: >-
-      This is a mixin to be used by any class that is needed a part of an audit trail to ensure the provenance of the metadata.
+      This is a mixin to be used by any class that is needed as part of an audit trail to ensure the provenance of the metadata.
     attributes:       # TODO these need to be defined properly
       source:
         description: >-
@@ -53,35 +54,55 @@ classes:
         range: datetime
 # Processes
 # Material Entities
-
 # Information Content Entities
   NMRspecRecord:
+    tree_root: true
     mixins:
       - HasProvenanceData
     description: >-
       A data item that is an NMR assay output which represents the data produced by an NMR assay of a studied sample compound.
-    attributes:
-      id:
-        identifier: true
-        slot_uri: sdo:identifier
-  NMRspecRecords:
-    description: >-
-      A container for holding multiple NMR assay records.
-    tree_root: true
-    attributes:
-      nmr_spec_records:
-        range: NMRspecRecord
-        multivalued: true
+    slots:
+      - id
+      - buffer_formula
+      - buffer_name
+      - sample
 
-
-## Protocol specifications
-
-
-###########################################################
+  NMRsample:
+    slots:
+      - local_sample_id
+      - sample_formula
+      - sample_name
+      - chebi_id
+#################################################
 slots:
-###########################################################
+  id:
+    identifier: true
+    slot_uri: sdo:identifier
+  local_sample_id:
+    range: string
+  sample:
+    inlined: true
+    required: true
+    range: NMRsample
+  sample_formula:
+    domain: NMRsample
+    range: string
+  sample_name:
+    domain: NMRsample
+    range: string
+  chebi_id:
+    range: string
+  buffer_formula:
+    domain: NMRspecRecord
+    range: string
+  buffer_name:
+    domain: NMRspecRecord
+    range: string
 
-###########################################################
+
+#################################################
+
+#################################################
 enums:
   PulsedNMRSpecTypes:
     permissible_values:

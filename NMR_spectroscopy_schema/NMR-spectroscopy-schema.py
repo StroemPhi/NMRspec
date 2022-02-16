@@ -1,5 +1,5 @@
 # Auto generated from NMR-spectroscopy-schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-02-16T12:29:50
+# Generation date: 2022-02-16T16:54:41
 # Schema: NMR-spectroscopy-schema
 #
 # id: https://git.tib.eu/lab-linked-scientific-knowledge/nmr-research-data-semantification/-/blob/main/nmr_assay_schema.yaml
@@ -32,11 +32,12 @@ version = "0.0.1"
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
-NMRSPEC = CurieNamespace('NMRspec', 'https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/main/model/schema/sample_model.yaml')
+NMRSPEC = CurieNamespace('NMRspec', 'https://nfdi4chem/nmr/data/')
 BFO = CurieNamespace('bfo', 'http://purl.obolibrary.org/obo/BFO_')
 CHEBI = CurieNamespace('chebi', 'http://purl.obolibrary.org/obo/CHEBI_')
 CHEMINF = CurieNamespace('cheminf', 'http://purl.obolibrary.org/obo/CHEMINF_')
 CHMO = CurieNamespace('chmo', 'http://purl.obolibrary.org/obo/CHMO_')
+DOI = CurieNamespace('doi', 'https://doi.org/')
 IAO = CurieNamespace('iao', 'http://purl.obolibrary.org/obo/IAO_')
 ISA = CurieNamespace('isa', 'https://isa-specs.readthedocs.io/en/latest/isamodel.html#')
 IUPAC = CurieNamespace('iupac', 'https://github.com/IUPAC/IUPAC-FAIRSpec/blob/main/src/main/java/org/iupac/fairspec/core/')
@@ -47,6 +48,7 @@ PATO = CurieNamespace('pato', 'http://purl.obolibrary.org/obo/PATO_')
 PROV = CurieNamespace('prov', 'http://www.w3.org/ns/prov#')
 RO = CurieNamespace('ro', 'http://purl.obolibrary.org/obo/RO_')
 SDO = CurieNamespace('sdo', 'https://schema.org/')
+SOMECONTEXT = CurieNamespace('somecontext', 'https://irgendwas.de/')
 DEFAULT_ = NMRSPEC
 
 
@@ -57,10 +59,14 @@ class NMRspecRecordId(extended_str):
     pass
 
 
+class NMRsampleChebiId(URIorCURIE):
+    pass
+
+
 @dataclass
 class HasProvenanceData(YAMLRoot):
     """
-    This is a mixin to be used by any class that is needed a part of an audit trail to ensure the provenance of the
+    This is a mixin to be used by any class that is needed as part of an audit trail to ensure the provenance of the
     metadata.
     """
     _inherited_slots: ClassVar[List[str]] = []
@@ -101,6 +107,9 @@ class NMRspecRecord(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = NMRSPEC.NMRspecRecord
 
     id: Union[str, NMRspecRecordId] = None
+    sample: Union[dict, "NMRsample"] = None
+    buffer_formula: Optional[str] = None
+    buffer_name: Optional[str] = None
     source: Optional[str] = None
     source_uri: Optional[Union[str, URIorCURIE]] = None
     date_retrieved: Optional[Union[str, XSDDateTime]] = None
@@ -110,6 +119,17 @@ class NMRspecRecord(YAMLRoot):
             self.MissingRequiredField("id")
         if not isinstance(self.id, NMRspecRecordId):
             self.id = NMRspecRecordId(self.id)
+
+        if self._is_empty(self.sample):
+            self.MissingRequiredField("sample")
+        if not isinstance(self.sample, NMRsample):
+            self.sample = NMRsample(**as_dict(self.sample))
+
+        if self.buffer_formula is not None and not isinstance(self.buffer_formula, str):
+            self.buffer_formula = str(self.buffer_formula)
+
+        if self.buffer_name is not None and not isinstance(self.buffer_name, str):
+            self.buffer_name = str(self.buffer_name)
 
         if self.source is not None and not isinstance(self.source, str):
             self.source = str(self.source)
@@ -124,23 +144,33 @@ class NMRspecRecord(YAMLRoot):
 
 
 @dataclass
-class NMRspecRecords(YAMLRoot):
-    """
-    A container for holding multiple NMR assay records.
-    """
+class NMRsample(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = NMRSPEC.NMRspecRecords
-    class_class_curie: ClassVar[str] = "NMRspec:NMRspecRecords"
-    class_name: ClassVar[str] = "NMRspecRecords"
-    class_model_uri: ClassVar[URIRef] = NMRSPEC.NMRspecRecords
+    class_class_uri: ClassVar[URIRef] = NMRSPEC.NMRsample
+    class_class_curie: ClassVar[str] = "NMRspec:NMRsample"
+    class_name: ClassVar[str] = "NMRsample"
+    class_model_uri: ClassVar[URIRef] = NMRSPEC.NMRsample
 
-    nmr_spec_records: Optional[Union[Union[str, NMRspecRecordId], List[Union[str, NMRspecRecordId]]]] = empty_list()
+    chebi_id: Union[str, NMRsampleChebiId] = None
+    local_id: Optional[str] = None
+    sample_formula: Optional[str] = None
+    sample_name: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if not isinstance(self.nmr_spec_records, list):
-            self.nmr_spec_records = [self.nmr_spec_records] if self.nmr_spec_records is not None else []
-        self.nmr_spec_records = [v if isinstance(v, NMRspecRecordId) else NMRspecRecordId(v) for v in self.nmr_spec_records]
+        if self._is_empty(self.chebi_id):
+            self.MissingRequiredField("chebi_id")
+        if not isinstance(self.chebi_id, NMRsampleChebiId):
+            self.chebi_id = NMRsampleChebiId(self.chebi_id)
+
+        if self.local_id is not None and not isinstance(self.local_id, str):
+            self.local_id = str(self.local_id)
+
+        if self.sample_formula is not None and not isinstance(self.sample_formula, str):
+            self.sample_formula = str(self.sample_formula)
+
+        if self.sample_name is not None and not isinstance(self.sample_name, str):
+            self.sample_name = str(self.sample_name)
 
         super().__post_init__(**kwargs)
 
