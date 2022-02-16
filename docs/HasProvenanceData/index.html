@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Slot: id - This model is to be used to semantify NMR spectroscopy research data.</title>
+  <title>Class: HasProvenanceData - This model is to be used to semantify NMR spectroscopy research data.</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Slot: id";
-    var mkdocs_page_input_path = "id.md";
+    var mkdocs_page_name = "Class: HasProvenanceData";
+    var mkdocs_page_input_path = "HasProvenanceData.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -79,7 +79,7 @@
     
       
     
-    <li>Slot: id</li>
+    <li>Class: HasProvenanceData</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -91,36 +91,32 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="slot-id">Slot: id</h1>
-<p>URI: <a href="https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/main/model/schema/sample_model.yamlid">NMRspec:id</a></p>
-<h2 id="domain-and-range">Domain and Range</h2>
-<p>None &#8594;  <sub>1..1</sub> <a href="../String/">String</a></p>
-<h2 id="parents">Parents</h2>
-<h2 id="children">Children</h2>
-<h2 id="used-by">Used by</h2>
+                <h1 id="class-hasprovenancedata">Class: HasProvenanceData</h1>
+<p>This is a mixin to be used by any class that is needed a part of an audit trail to ensure the provenance of the metadata.</p>
+<p>URI: <a href="https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/main/model/schema/sample_model.yamlHasProvenanceData">NMRspec:HasProvenanceData</a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[NMRspecRecord]uses%20-.-&gt;[HasProvenanceData&#124;source:string%20%3F;source_uri:uriorcurie%20%3F;date_retrieved:datetime%20%3F],[NMRspecRecord]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[NMRspecRecord]uses%20-.-&gt;[HasProvenanceData&#124;source:string%20%3F;source_uri:uriorcurie%20%3F;date_retrieved:datetime%20%3F],[NMRspecRecord]" /></a></p>
+<h2 id="mixin-for">Mixin for</h2>
 <ul>
-<li><a href="../Assay/">Assay</a></li>
-<li><a href="../NMRspectroscopy/">NMRspectroscopy</a></li>
-<li><a href="../PlannedProcess/">PlannedProcess</a></li>
-<li><a href="../PulsedNMRspectroscopy/">PulsedNMRspectroscopy</a></li>
+<li><a href="../NMRspecRecord/">NMRspecRecord</a> (mixin)  - A data item that is an NMR assay output which represents the data produced by an NMR assay of a studied sample compound.</li>
 </ul>
-<h2 id="other-properties">Other properties</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Mappings:</strong></td>
-<td></td>
-<td>sdo:identifier</td>
-</tr>
-</tbody>
-</table>
+<h2 id="referenced-by-class">Referenced by Class</h2>
+<h2 id="attributes">Attributes</h2>
+<h3 id="own">Own</h3>
+<ul>
+<li><a href="../hasProvenanceData__source/">➞source</a>  <sub>0..1</sub><ul>
+<li>Description: This field can be used to provide the source of the data as String. E.g.</li>
+<li>Range: <a href="../String/">String</a></li>
+</ul>
+</li>
+<li><a href="../hasProvenanceData__source_uri/">➞source_uri</a>  <sub>0..1</sub><ul>
+<li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
+</ul>
+</li>
+<li><a href="../hasProvenanceData__date_retrieved/">➞date_retrieved</a>  <sub>0..1</sub><ul>
+<li>Range: <a href="../Datetime/">Datetime</a></li>
+</ul>
+</li>
+</ul>
               
             </div>
           </div>

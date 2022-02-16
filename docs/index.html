@@ -111,55 +111,26 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="nmr-spectroscopy-schema-schema">NMR-spectroscopy-schema schema</h1>
+                <h1 id="nmr-spectroscopy-schema">NMR-spectroscopy-schema</h1>
+<p><strong>metamodel version:</strong> 1.7.0</p>
+<p><strong>version:</strong> 0.0.1</p>
 <p>This model is to be used to semantify NMR spectroscopy research data.</p>
 <h3 id="classes">Classes</h3>
 <ul>
-<li><a href="AssayOutput/">AssayOutput</a> - A data item that is the specified output of an assay. May be a file, dataset etc.<ul>
 <li><a href="NMRspecRecord/">NMRspecRecord</a> - A data item that is an NMR assay output which represents the data produced by an NMR assay of a studied sample compound.</li>
-</ul>
-</li>
-<li><a href="CategoricalValueSpecification/">CategoricalValueSpecification</a> - A value specification that is specifies one category out of a fixed number of nominal categories<ul>
-<li><a href="PulseSequenceSpecification/">PulseSequenceSpecification</a> - A categorical specification that is used to specify which pulse sequence has been used in a pulsed NMR spectroscopy.</li>
-</ul>
-</li>
 <li><a href="NMRspecRecords/">NMRspecRecords</a> - A container for holding multiple NMR assay records.</li>
-<li><a href="PlannedProcess/">PlannedProcess</a> - A process that realizes a plan which is the concretization of a plan specification.<ul>
-<li><a href="Assay/">Assay</a> - A planned process with the objective to produce information about the material entity that is the evaluant, by physically examining it or its proxies.<ul>
-<li><a href="NMRspectroscopy/">NMRspectroscopy</a> - An assay that exploits the magnetic properties of certain nuclei (those with a spin) to resonate when placed in particular magnetic field conditions. Instruments recording NMR spectrum and sets of analysis can be used to deduce identity of chemical as well as composition of complex chemical mixtures.<ul>
-<li><a href="PulsedNMRspectroscopy/">PulsedNMRspectroscopy</a> - Spectroscopy where the energy states of spin-active nuclei placed in a static magnetic field are interrogated by inducing transitions between the states via radio frequency irradiation. Each experiment consists of a sequence of radio frequency pulses with delay periods in between them. [ rsc:pr ] </li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
 </ul>
 <h3 id="mixins">Mixins</h3>
 <ul>
-<li><a href="HasProvenance/">HasProvenance</a> - This is  a mixin to be used by any class that is needed a part of an audit trail to ensure the provenance of the metadata.</li>
+<li><a href="HasProvenanceData/">HasProvenanceData</a> - This is a mixin to be used by any class that is needed a part of an audit trail to ensure the provenance of the metadata.</li>
 </ul>
 <h3 id="slots">Slots</h3>
 <ul>
-<li><a href="achieves_planned_objective/">achieves_planned_objective</a></li>
-<li><a href="hasProvenance__creator/">➞creator</a></li>
-<li><a href="hasProvenance__date_retrieved/">➞date_retrieved</a></li>
-<li><a href="hasProvenance__publisher/">➞publisher</a></li>
-<li><a href="hasProvenance__source/">➞source</a></li>
-<li><a href="hasProvenance__source_uri/">➞source_uri</a></li>
-<li><a href="has_specified_input/">has_specified_input</a></li>
-<li><a href="has_specified_output/">has_specified_output</a></li>
-<li><a href="id/">id</a></li>
-<li><a href="is_about/">is_about</a></li>
-<li><a href="nMRspecRecord__records_nmr_spec/">➞records_nmr_spec</a></li>
-<li><a href="nmr_spec_records/">nmr_spec_records</a></li>
-<li><a href="pulsedNMRspectroscopy__pulse_sequence/">➞pulse_sequence</a></li>
-<li><a href="specifies_value_of/">specifies_value_of</a><ul>
-<li><a href="PulseSequenceSpecification_specifies_value_of/">PulseSequenceSpecification➞specifies_value_of</a></li>
-</ul>
-</li>
-<li><a href="title/">title</a></li>
-<li><a href="type/">type</a></li>
+<li><a href="hasProvenanceData__date_retrieved/">➞date_retrieved</a></li>
+<li><a href="hasProvenanceData__source/">➞source</a> - This field can be used to provide the source of the data as String. E.g.</li>
+<li><a href="hasProvenanceData__source_uri/">➞source_uri</a></li>
+<li><a href="nMRspecRecord__id/">➞id</a></li>
+<li><a href="nMRspecRecords__nmr_spec_records/">➞nmr_spec_records</a></li>
 </ul>
 <h3 id="enums">Enums</h3>
 <ul>
@@ -258,5 +229,5 @@
 
 <!--
 MkDocs version : 1.2.3
-Build Date UTC : 2022-02-10 14:57:20.040382+00:00
+Build Date UTC : 2022-02-16 11:29:47.540377+00:00
 -->

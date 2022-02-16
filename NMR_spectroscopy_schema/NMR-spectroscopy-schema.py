@@ -1,5 +1,5 @@
 # Auto generated from NMR-spectroscopy-schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-02-10T15:57:41
+# Generation date: 2022-02-16T12:29:50
 # Schema: NMR-spectroscopy-schema
 #
 # id: https://git.tib.eu/lab-linked-scientific-knowledge/nmr-research-data-semantification/-/blob/main/nmr_assay_schema.yaml
@@ -26,6 +26,7 @@ from linkml_runtime.linkml_model.types import Datetime, String, Uriorcurie
 from linkml_runtime.utils.metamodelcore import URIorCURIE, XSDDateTime
 
 metamodel_version = "1.7.0"
+version = "0.0.1"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -52,39 +53,25 @@ DEFAULT_ = NMRSPEC
 # Types
 
 # Class references
-class PlannedProcessId(extended_str):
-    pass
-
-
-class AssayId(PlannedProcessId):
-    pass
-
-
-class NMRspectroscopyId(AssayId):
-    pass
-
-
-class PulsedNMRspectroscopyId(NMRspectroscopyId):
+class NMRspecRecordId(extended_str):
     pass
 
 
 @dataclass
-class HasProvenance(YAMLRoot):
+class HasProvenanceData(YAMLRoot):
     """
     This is a mixin to be used by any class that is needed a part of an audit trail to ensure the provenance of the
     metadata.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = NMRSPEC.HasProvenance
-    class_class_curie: ClassVar[str] = "NMRspec:HasProvenance"
-    class_name: ClassVar[str] = "HasProvenance"
-    class_model_uri: ClassVar[URIRef] = NMRSPEC.HasProvenance
+    class_class_uri: ClassVar[URIRef] = NMRSPEC.HasProvenanceData
+    class_class_curie: ClassVar[str] = "NMRspec:HasProvenanceData"
+    class_name: ClassVar[str] = "HasProvenanceData"
+    class_model_uri: ClassVar[URIRef] = NMRSPEC.HasProvenanceData
 
     source: Optional[str] = None
     source_uri: Optional[Union[str, URIorCURIE]] = None
-    creator: Optional[Union[str, List[str]]] = empty_list()
-    publisher: Optional[str] = None
     date_retrieved: Optional[Union[str, XSDDateTime]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -94,13 +81,6 @@ class HasProvenance(YAMLRoot):
         if self.source_uri is not None and not isinstance(self.source_uri, URIorCURIE):
             self.source_uri = URIorCURIE(self.source_uri)
 
-        if not isinstance(self.creator, list):
-            self.creator = [self.creator] if self.creator is not None else []
-        self.creator = [v if isinstance(v, str) else str(v) for v in self.creator]
-
-        if self.publisher is not None and not isinstance(self.publisher, str):
-            self.publisher = str(self.publisher)
-
         if self.date_retrieved is not None and not isinstance(self.date_retrieved, XSDDateTime):
             self.date_retrieved = XSDDateTime(self.date_retrieved)
 
@@ -108,161 +88,7 @@ class HasProvenance(YAMLRoot):
 
 
 @dataclass
-class PlannedProcess(YAMLRoot):
-    """
-    A process that realizes a plan which is the concretization of a plan specification.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = OBI["0000011"]
-    class_class_curie: ClassVar[str] = "obi:0000011"
-    class_name: ClassVar[str] = "PlannedProcess"
-    class_model_uri: ClassVar[URIRef] = NMRSPEC.PlannedProcess
-
-    id: Union[str, PlannedProcessId] = None
-    title: Optional[str] = None
-    type: Optional[str] = None
-    achieves_planned_objective: Optional[str] = None
-    source: Optional[str] = None
-    source_uri: Optional[Union[str, URIorCURIE]] = None
-    creator: Optional[Union[str, List[str]]] = empty_list()
-    publisher: Optional[str] = None
-    date_retrieved: Optional[Union[str, XSDDateTime]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, PlannedProcessId):
-            self.id = PlannedProcessId(self.id)
-
-        if self.title is not None and not isinstance(self.title, str):
-            self.title = str(self.title)
-
-        if self.type is not None and not isinstance(self.type, str):
-            self.type = str(self.type)
-
-        if self.achieves_planned_objective is not None and not isinstance(self.achieves_planned_objective, str):
-            self.achieves_planned_objective = str(self.achieves_planned_objective)
-
-        if self.source is not None and not isinstance(self.source, str):
-            self.source = str(self.source)
-
-        if self.source_uri is not None and not isinstance(self.source_uri, URIorCURIE):
-            self.source_uri = URIorCURIE(self.source_uri)
-
-        if not isinstance(self.creator, list):
-            self.creator = [self.creator] if self.creator is not None else []
-        self.creator = [v if isinstance(v, str) else str(v) for v in self.creator]
-
-        if self.publisher is not None and not isinstance(self.publisher, str):
-            self.publisher = str(self.publisher)
-
-        if self.date_retrieved is not None and not isinstance(self.date_retrieved, XSDDateTime):
-            self.date_retrieved = XSDDateTime(self.date_retrieved)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class Assay(PlannedProcess):
-    """
-    A planned process with the objective to produce information about the material entity that is the evaluant, by
-    physically examining it or its proxies.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = OBI["0000070"]
-    class_class_curie: ClassVar[str] = "obi:0000070"
-    class_name: ClassVar[str] = "Assay"
-    class_model_uri: ClassVar[URIRef] = NMRSPEC.Assay
-
-    id: Union[str, AssayId] = None
-    has_specified_input: Optional[str] = None
-    has_specified_output: Optional[str] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, AssayId):
-            self.id = AssayId(self.id)
-
-        if self.has_specified_input is not None and not isinstance(self.has_specified_input, str):
-            self.has_specified_input = str(self.has_specified_input)
-
-        if self.has_specified_output is not None and not isinstance(self.has_specified_output, str):
-            self.has_specified_output = str(self.has_specified_output)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class NMRspectroscopy(Assay):
-    """
-    An assay that exploits the magnetic properties of certain nuclei (those with a spin) to resonate when placed in
-    particular magnetic field conditions. Instruments recording NMR spectrum and sets of analysis can be used to
-    deduce identity of chemical as well as composition of complex chemical mixtures.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = OBI["0000623"]
-    class_class_curie: ClassVar[str] = "obi:0000623"
-    class_name: ClassVar[str] = "NMRspectroscopy"
-    class_model_uri: ClassVar[URIRef] = NMRSPEC.NMRspectroscopy
-
-    id: Union[str, NMRspectroscopyId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, NMRspectroscopyId):
-            self.id = NMRspectroscopyId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class PulsedNMRspectroscopy(NMRspectroscopy):
-    """
-    Spectroscopy where the energy states of spin-active nuclei placed in a static magnetic field are interrogated by
-    inducing transitions between the states via radio frequency irradiation. Each experiment consists of a sequence of
-    radio frequency pulses with delay periods in between them. [ rsc:pr ]
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = CHMO["0000613"]
-    class_class_curie: ClassVar[str] = "chmo:0000613"
-    class_name: ClassVar[str] = "PulsedNMRspectroscopy"
-    class_model_uri: ClassVar[URIRef] = NMRSPEC.PulsedNMRspectroscopy
-
-    id: Union[str, PulsedNMRspectroscopyId] = None
-    pulse_sequence: Optional[Union[dict, "PulseSequenceSpecification"]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, PulsedNMRspectroscopyId):
-            self.id = PulsedNMRspectroscopyId(self.id)
-
-        if self.pulse_sequence is not None and not isinstance(self.pulse_sequence, PulseSequenceSpecification):
-            self.pulse_sequence = PulseSequenceSpecification(**as_dict(self.pulse_sequence))
-
-        super().__post_init__(**kwargs)
-
-
-class AssayOutput(YAMLRoot):
-    """
-    A data item that is the specified output of an assay. May be a file, dataset etc.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = CHMO["0000793"]
-    class_class_curie: ClassVar[str] = "chmo:0000793"
-    class_name: ClassVar[str] = "AssayOutput"
-    class_model_uri: ClassVar[URIRef] = NMRSPEC.AssayOutput
-
-
-@dataclass
-class NMRspecRecord(AssayOutput):
+class NMRspecRecord(YAMLRoot):
     """
     A data item that is an NMR assay output which represents the data produced by an NMR assay of a studied sample
     compound.
@@ -274,12 +100,25 @@ class NMRspecRecord(AssayOutput):
     class_name: ClassVar[str] = "NMRspecRecord"
     class_model_uri: ClassVar[URIRef] = NMRSPEC.NMRspecRecord
 
-    records_nmr_spec: Union[Dict[Union[str, NMRspectroscopyId], Union[dict, NMRspectroscopy]], List[Union[dict, NMRspectroscopy]]] = empty_dict()
+    id: Union[str, NMRspecRecordId] = None
+    source: Optional[str] = None
+    source_uri: Optional[Union[str, URIorCURIE]] = None
+    date_retrieved: Optional[Union[str, XSDDateTime]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.records_nmr_spec):
-            self.MissingRequiredField("records_nmr_spec")
-        self._normalize_inlined_as_list(slot_name="records_nmr_spec", slot_type=NMRspectroscopy, key_name="id", keyed=True)
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, NMRspecRecordId):
+            self.id = NMRspecRecordId(self.id)
+
+        if self.source is not None and not isinstance(self.source, str):
+            self.source = str(self.source)
+
+        if self.source_uri is not None and not isinstance(self.source_uri, URIorCURIE):
+            self.source_uri = URIorCURIE(self.source_uri)
+
+        if self.date_retrieved is not None and not isinstance(self.date_retrieved, XSDDateTime):
+            self.date_retrieved = XSDDateTime(self.date_retrieved)
 
         super().__post_init__(**kwargs)
 
@@ -296,55 +135,12 @@ class NMRspecRecords(YAMLRoot):
     class_name: ClassVar[str] = "NMRspecRecords"
     class_model_uri: ClassVar[URIRef] = NMRSPEC.NMRspecRecords
 
-    nmr_spec_records: Optional[Union[Union[dict, NMRspecRecord], List[Union[dict, NMRspecRecord]]]] = empty_list()
+    nmr_spec_records: Optional[Union[Union[str, NMRspecRecordId], List[Union[str, NMRspecRecordId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if not isinstance(self.nmr_spec_records, list):
             self.nmr_spec_records = [self.nmr_spec_records] if self.nmr_spec_records is not None else []
-        self.nmr_spec_records = [v if isinstance(v, NMRspecRecord) else NMRspecRecord(**as_dict(v)) for v in self.nmr_spec_records]
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class CategoricalValueSpecification(YAMLRoot):
-    """
-    A value specification that is specifies one category out of a fixed number of nominal categories
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = OBI["0001930"]
-    class_class_curie: ClassVar[str] = "obi:0001930"
-    class_name: ClassVar[str] = "CategoricalValueSpecification"
-    class_model_uri: ClassVar[URIRef] = NMRSPEC.CategoricalValueSpecification
-
-    specifies_value_of: Optional[str] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.specifies_value_of is not None and not isinstance(self.specifies_value_of, str):
-            self.specifies_value_of = str(self.specifies_value_of)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class PulseSequenceSpecification(CategoricalValueSpecification):
-    """
-    A categorical specification that is used to specify which pulse sequence has been used in a pulsed NMR
-    spectroscopy.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = NMRSPEC.PulseSequenceSpecification
-    class_class_curie: ClassVar[str] = "NMRspec:PulseSequenceSpecification"
-    class_name: ClassVar[str] = "PulseSequenceSpecification"
-    class_model_uri: ClassVar[URIRef] = NMRSPEC.PulseSequenceSpecification
-
-    specifies_value_of: Optional[Union[str, PulsedNMRspectroscopyId]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.specifies_value_of is not None and not isinstance(self.specifies_value_of, PulsedNMRspectroscopyId):
-            self.specifies_value_of = PulsedNMRspectroscopyId(self.specifies_value_of)
+        self.nmr_spec_records = [v if isinstance(v, NMRspecRecordId) else NMRspecRecordId(v) for v in self.nmr_spec_records]
 
         super().__post_init__(**kwargs)
 

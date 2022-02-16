@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from NMR-spectroscopy-schema.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-02-10T15:57:23\n    Schema: NMR-spectroscopy-schema\n    \n    id: https://git.tib.eu/lab-linked-scientific-knowledge/nmr-research-data-semantification/-/blob/main/nmr_assay_schema.yaml\n    description: This model is to be used to semantify NMR spectroscopy research data.\n    license: https://creativecommons.org/licenses/by/4.0/\n    ",
+   "_comments": "Auto generated from NMR-spectroscopy-schema.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-02-16T12:29:54\n    Schema: NMR-spectroscopy-schema\n    metamodel version: 1.7.0\n    model version: 0.0.1\n    \n    id: https://git.tib.eu/lab-linked-scientific-knowledge/nmr-research-data-semantification/-/blob/main/nmr_assay_schema.yaml\n    description: This model is to be used to semantify NMR spectroscopy research data.\n    license: https://creativecommons.org/licenses/by/4.0/\n    ",
    "@context": {
       "NMRspec": {
          "@id": "https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/main/model/schema/sample_model.yaml",
@@ -44,15 +44,6 @@
       },
       "sdo": "https://schema.org/",
       "@vocab": "https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/main/model/schema/sample_model.yaml",
-      "achieves_planned_objective": {
-         "@id": "obi:0000417"
-      },
-      "has_specified_input": {
-         "@id": "obi:0000293"
-      },
-      "has_specified_output": {
-         "@id": "obi:0000299"
-      },
       "date_retrieved": {
          "@type": "xsd:dateTime"
       },
@@ -60,38 +51,8 @@
          "@type": "@id"
       },
       "id": "@id",
-      "is_about": {
-         "@id": "iao:0000136"
-      },
       "nmr_spec_records": {
          "@type": "@id"
-      },
-      "records_nmr_spec": {
-         "@type": "@id"
-      },
-      "pulse_sequence": {
-         "@type": "@id"
-      },
-      "specifies_value_of": {
-         "@id": "obi:0001927"
-      },
-      "Assay": {
-         "@id": "obi:0000070"
-      },
-      "AssayOutput": {
-         "@id": "chmo:0000793"
-      },
-      "CategoricalValueSpecification": {
-         "@id": "obi:0001930"
-      },
-      "NMRspectroscopy": {
-         "@id": "obi:0000623"
-      },
-      "PlannedProcess": {
-         "@id": "obi:0000011"
-      },
-      "PulsedNMRspectroscopy": {
-         "@id": "chmo:0000613"
       }
    }
 }
