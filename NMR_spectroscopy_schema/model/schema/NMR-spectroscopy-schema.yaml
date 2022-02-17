@@ -27,6 +27,7 @@ prefixes:
   iupac: https://github.com/IUPAC/IUPAC-FAIRSpec/blob/main/src/main/java/org/iupac/fairspec/core/
   doi: https://doi.org/
   chemotion: https://chemotion.de/
+  pubchem: https://pubchem.com/
 
 
 default_prefix: NMRspec
@@ -57,71 +58,55 @@ classes:
 # Processes
   PulsedNmrAssay:
     class_uri: chmo:0000613
-    attributes:
-      sample:
-        slot_uri: obi:0000293
-        inlined: true
-        required: true
-        domain: PulsedNmrAssay
-        range: NmrSample
-      buffer:
-        slot_uri: obi:0000293
-        inlined: true
-        required: true
-        domain: PulsedNmrAssay
-        range: NmrBuffer
-      spectrometer:
-        slot_uri: obi:0000293
-        inlined: true
-        #required: true
-        domain: PulsedNmrAssay
-        range: NmrSpectrometer
+    slots:
+      #- id
+      - sample
+      - solvent
+      - spectrometer
+    slot_usage:
       type:
         required: true
         range: NmrAssayType
+    id_prefixes:
+      - doi
 
 # Material Entities      
   NmrSample:
     slots:
+      - id
       - name
       - local_id
-      - formula
-      
-  NmrBuffer:
+      - formula   
+  NmrSolvent:
     slots:
       - id
       - formula
       - name
-    id_prefixes:
-      - chebi
-
-  Instrument:
-    attributes:
-      manufacturered_by:
-        range: Manufacturer
-
   NmrSpectrometer:
-    is_a: Instrument
-    attributes:
-      magnet:
-      probe:
-      sample_tube: 
+    slots:
+      - id
+      - manufacturered_by
     slot_usage:  
       manufacturered_by:
+        inlined: true
         range: NmrManufacturer
       type:
         range: string
         todos: >-
           make the range an enum with allowed values from ontology, see also: https://github.com/StroemPhi/NMR-spectroscopy-schema/issues/2
-
-  Manufacturer:
-
+    close_mappings:
+      - obi:0000566
+      - nmrCV:1400059
+      - chmo:0001807
   NmrManufacturer:
-    is_a: Manufacturer
+    class_uri: obi:0000835
     close_mappings:
       - nmrCV:1400255
+    slots:
+      - name
     slot_usage:
-      type: NmrManufacturers
+      name: 
+        range: NmrManufacturers
 
 # Information Content Entities
   NmrSpecRecord:
@@ -156,10 +141,31 @@ slots:
   output_of_nmr_assay:
     required: true
     slot_uri: obi:0000312
+# PulsedNmrAssay
+  sample:
+    slot_uri: obi:0000293
+    inlined: true
+    required: true
+    domain: PulsedNmrAssay
+    range: NmrSample
+  solvent:
+    slot_uri: obi:0000293
+    inlined: true
+    required: true
+    domain: PulsedNmrAssay
+    range: NmrSolvent
+  spectrometer:
+    slot_uri: obi:0000293
+    inlined: true
+    required: true
+    domain: PulsedNmrAssay
+    range: NmrSpectrometer
 # sample
   local_id:
     recommended: true
-    range: string  
+    range: string
+# Instrument  
+  manufacturered_by:
 
 #################################################
 enums:
@@ -208,5 +214,11 @@ enums:
       acdlabs:
       micromass:
       tecmag:
+  Dimension:
+    permissible_values:
+      1D:
+      2D:
+      3D:
+      4D:
 #################################################
 

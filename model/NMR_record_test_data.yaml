@@ -3,9 +3,11 @@ source: Chemotion Repository
 source_uri: chemotion:12345
 date_retrieved: "2022-02-22"
 output_of_nmr_assay:
+  #id: chemotion:10.2034/1234_assay1
   type: 1D-1H-NMR
   sample:
-    local_id: local_sample_id_1234
+    id: doi:10.2034/1234_sample1234
+    local_id: sample1234
     formula: C25H28N6O
     name: pyridine-3-carboxylic acid
   solvent:
@@ -13,7 +15,9 @@ output_of_nmr_assay:
     formula: CDCL3
     name: deuterated chloroform
   spectrometer:
+    id: doi:10.2034/1234_device 
     type: Bruker Ascend 400
     manufacturered_by: 
-      type: Bruker
+      name: Bruker
+
 

@@ -1,24 +1,15 @@
 {
    "$defs": {
-      "Instrument": {
-         "additionalProperties": false,
+      "Dimension": {
          "description": "",
-         "properties": {
-            "manufacturered_by": {
-               "$ref": "#/$defs/Manufacturer"
-            }
-         },
-         "required": [],
-         "title": "Instrument",
-         "type": "object"
-      },
-      "Manufacturer": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {},
-         "required": [],
-         "title": "Manufacturer",
-         "type": "object"
+         "enum": [
+            "1D",
+            "2D",
+            "3D",
+            "4D"
+         ],
+         "title": "Dimension",
+         "type": "string"
       },
       "NmrAssayType": {
          "description": "",
@@ -32,32 +23,12 @@
          "title": "NmrAssayType",
          "type": "string"
       },
-      "NmrBuffer": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {
-            "formula": {
-               "type": "string"
-            },
-            "id": {
-               "type": "string"
-            },
-            "name": {
-               "type": "string"
-            }
-         },
-         "required": [
-            "id"
-         ],
-         "title": "NmrBuffer",
-         "type": "object"
-      },
       "NmrManufacturer": {
          "additionalProperties": false,
          "description": "",
          "properties": {
-            "type": {
-               "type": "string"
+            "name": {
+               "$ref": "#/$defs/NmrManufacturers"
             }
          },
          "required": [],
@@ -106,6 +77,9 @@
             "formula": {
                "type": "string"
             },
+            "id": {
+               "type": "string"
+            },
             "local_id": {
                "type": "string"
             },
@@ -113,8 +87,30 @@
                "type": "string"
             }
          },
-         "required": [],
+         "required": [
+            "id"
+         ],
          "title": "NmrSample",
+         "type": "object"
+      },
+      "NmrSolvent": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "formula": {
+               "type": "string"
+            },
+            "id": {
+               "type": "string"
+            },
+            "name": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "NmrSolvent",
          "type": "object"
       },
       "NmrSpecRecord": {
@@ -150,23 +146,20 @@
          "additionalProperties": false,
          "description": "",
          "properties": {
-            "magnet": {
+            "id": {
                "type": "string"
             },
             "manufacturered_by": {
                "$ref": "#/$defs/NmrManufacturer"
             },
-            "probe": {
-               "type": "string"
-            },
-            "sample_tube": {
-               "type": "string"
-            },
             "type": {
                "type": "string"
             }
          },
-         "required": [],
+         "required": [
+            "id",
+            "type"
+         ],
          "title": "NmrSpectrometer",
          "type": "object"
       },
@@ -174,11 +167,11 @@
          "additionalProperties": false,
          "description": "",
          "properties": {
-            "buffer": {
-               "$ref": "#/$defs/NmrBuffer"
-            },
             "sample": {
                "$ref": "#/$defs/NmrSample"
+            },
+            "solvent": {
+               "$ref": "#/$defs/NmrSolvent"
             },
             "spectrometer": {
                "$ref": "#/$defs/NmrSpectrometer"
@@ -189,7 +182,8 @@
          },
          "required": [
             "sample",
-            "buffer",
+            "solvent",
+            "spectrometer",
             "type"
          ],
          "title": "PulsedNmrAssay",

@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Slot: buffer - This model is to be used to semantify NMR spectroscopy research data.</title>
+  <title>Class: NmrSolvent - This model is to be used to semantify NMR spectroscopy research data.</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Slot: buffer";
-    var mkdocs_page_input_path = "pulsedNmrAssay__buffer.md";
+    var mkdocs_page_name = "Class: NmrSolvent";
+    var mkdocs_page_input_path = "NmrSolvent.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -79,7 +79,7 @@
     
       
     
-    <li>Slot: buffer</li>
+    <li>Class: NmrSolvent</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -91,33 +91,29 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="slot-buffer">Slot: buffer</h1>
-<p>URI: <a href="https://nfdi4chem/nmr/data/pulsedNmrAssay__buffer">NMRspec:pulsedNmrAssay__buffer</a></p>
-<h2 id="domain-and-range">Domain and Range</h2>
-<p><a href="../PulsedNmrAssay/">PulsedNmrAssay</a> &#8594;  <sub>1..1</sub> <a href="../NmrBuffer/">NmrBuffer</a></p>
-<h2 id="parents">Parents</h2>
-<h2 id="children">Children</h2>
-<h2 id="used-by">Used by</h2>
+                <h1 id="class-nmrsolvent">Class: NmrSolvent</h1>
+<p>URI: <a href="https://nfdi4chem/nmr/data/NmrSolvent">NMRspec:NmrSolvent</a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[PulsedNmrAssay]++-%20solvent%201..1&gt;[NmrSolvent&#124;id:string;formula:string%20%3F;name:string%20%3F]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[PulsedNmrAssay]++-%20solvent%201..1&gt;[NmrSolvent&#124;id:string;formula:string%20%3F;name:string%20%3F]" /></a></p>
+<h2 id="referenced-by-class">Referenced by Class</h2>
 <ul>
-<li><a href="../PulsedNmrAssay/">PulsedNmrAssay</a></li>
+<li><strong><a href="../PulsedNmrAssay/">PulsedNmrAssay</a></strong> <em><a href="../solvent/">solvent</a></em>  <sub>1..1</sub>  <strong><a href="./">NmrSolvent</a></strong></li>
 </ul>
-<h2 id="other-properties">Other properties</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Mappings:</strong></td>
-<td></td>
-<td>obi:0000293</td>
-</tr>
-</tbody>
-</table>
+<h2 id="attributes">Attributes</h2>
+<h3 id="own">Own</h3>
+<ul>
+<li><a href="../id/">id</a>  <sub>1..1</sub><ul>
+<li>Range: <a href="../String/">String</a></li>
+</ul>
+</li>
+<li><a href="../formula/">formula</a>  <sub>0..1</sub><ul>
+<li>Range: <a href="../String/">String</a></li>
+</ul>
+</li>
+<li><a href="../name/">name</a>  <sub>0..1</sub><ul>
+<li>Range: <a href="../String/">String</a></li>
+</ul>
+</li>
+</ul>
               
             </div>
           </div>

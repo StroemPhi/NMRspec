@@ -93,7 +93,11 @@
               
                 <h1 id="class-pulsednmrassay">Class: PulsedNmrAssay</h1>
 <p>URI: <a href="https://nfdi4chem/nmr/data/PulsedNmrAssay">NMRspec:PulsedNmrAssay</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[NmrSpectrometer]&lt;spectrometer%200..1-++[PulsedNmrAssay&#124;type:NmrAssayType],[NmrBuffer]&lt;buffer%201..1-++[PulsedNmrAssay],[NmrSample]&lt;sample%201..1-++[PulsedNmrAssay],[NmrSpecRecord]++-%20output_of_nmr_assay%201..1&gt;[PulsedNmrAssay],[NmrSpectrometer],[NmrSpecRecord],[NmrSample],[NmrBuffer]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[NmrSpectrometer]&lt;spectrometer%200..1-++[PulsedNmrAssay&#124;type:NmrAssayType],[NmrBuffer]&lt;buffer%201..1-++[PulsedNmrAssay],[NmrSample]&lt;sample%201..1-++[PulsedNmrAssay],[NmrSpecRecord]++-%20output_of_nmr_assay%201..1&gt;[PulsedNmrAssay],[NmrSpectrometer],[NmrSpecRecord],[NmrSample],[NmrBuffer]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[NmrSpectrometer]&lt;spectrometer%201..1-++[PulsedNmrAssay&#124;type:NmrAssayType],[NmrSolvent]&lt;solvent%201..1-++[PulsedNmrAssay],[NmrSample]&lt;sample%201..1-++[PulsedNmrAssay],[NmrSpecRecord]++-%20output_of_nmr_assay%201..1&gt;[PulsedNmrAssay],[NmrSpectrometer],[NmrSpecRecord],[NmrSolvent],[NmrSample]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[NmrSpectrometer]&lt;spectrometer%201..1-++[PulsedNmrAssay&#124;type:NmrAssayType],[NmrSolvent]&lt;solvent%201..1-++[PulsedNmrAssay],[NmrSample]&lt;sample%201..1-++[PulsedNmrAssay],[NmrSpecRecord]++-%20output_of_nmr_assay%201..1&gt;[PulsedNmrAssay],[NmrSpectrometer],[NmrSpecRecord],[NmrSolvent],[NmrSample]" /></a></p>
+<h2 id="identifier-prefixes">Identifier prefixes</h2>
+<ul>
+<li>doi</li>
+</ul>
 <h2 id="referenced-by-class">Referenced by Class</h2>
 <ul>
 <li><strong><a href="../NmrSpecRecord/">NmrSpecRecord</a></strong> <em><a href="../NmrSpecRecord_output_of_nmr_assay/">NmrSpecRecord➞output_of_nmr_assay</a></em>  <sub>1..1</sub>  <strong><a href="./">PulsedNmrAssay</a></strong></li>
@@ -101,19 +105,19 @@
 <h2 id="attributes">Attributes</h2>
 <h3 id="own">Own</h3>
 <ul>
-<li><a href="../pulsedNmrAssay__sample/">PulsedNmrAssay➞sample</a>  <sub>1..1</sub><ul>
+<li><a href="../sample/">sample</a>  <sub>1..1</sub><ul>
 <li>Range: <a href="../NmrSample/">NmrSample</a></li>
 </ul>
 </li>
-<li><a href="../pulsedNmrAssay__buffer/">PulsedNmrAssay➞buffer</a>  <sub>1..1</sub><ul>
-<li>Range: <a href="../NmrBuffer/">NmrBuffer</a></li>
+<li><a href="../solvent/">solvent</a>  <sub>1..1</sub><ul>
+<li>Range: <a href="../NmrSolvent/">NmrSolvent</a></li>
 </ul>
 </li>
-<li><a href="../pulsedNmrAssay__spectrometer/">PulsedNmrAssay➞spectrometer</a>  <sub>0..1</sub><ul>
+<li><a href="../spectrometer/">spectrometer</a>  <sub>1..1</sub><ul>
 <li>Range: <a href="../NmrSpectrometer/">NmrSpectrometer</a></li>
 </ul>
 </li>
-<li><a href="../pulsedNmrAssay__type/">➞type</a>  <sub>1..1</sub><ul>
+<li><a href="../PulsedNmrAssay_type/">PulsedNmrAssay➞type</a>  <sub>1..1</sub><ul>
 <li>Range: <a href="../NmrAssayType/">NmrAssayType</a></li>
 </ul>
 </li>

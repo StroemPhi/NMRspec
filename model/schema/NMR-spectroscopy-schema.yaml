@@ -58,32 +58,23 @@ classes:
 # Processes
   PulsedNmrAssay:
     class_uri: chmo:0000613
-    attributes:
-      sample:
-        slot_uri: obi:0000293
-        inlined: true
-        required: true
-        domain: PulsedNmrAssay
-        range: NmrSample
-      solvent:
-        slot_uri: obi:0000293
-        inlined: true
-        required: true
-        domain: PulsedNmrAssay
-        range: NmrSolvent
-      spectrometer:
-        slot_uri: obi:0000293
-        inlined: true
-        required: true
-        domain: PulsedNmrAssay
-        range: NmrSpectrometer
+    slots:
+      #- id
+      - sample
+      - solvent
+      - spectrometer
+      - type
+    slot_usage:
       type:
         required: true
         range: NmrAssayType
+    id_prefixes:
+      - doi
 
 # Material Entities      
   NmrSample:
     slots:
+      - id
       - name
       - local_id
       - formula   
@@ -92,10 +83,11 @@ classes:
       - id
       - formula
       - name
-
   NmrSpectrometer:
     slots:
+      - id
       - manufacturered_by
+      - type
     slot_usage:  
       manufacturered_by:
         inlined: true
@@ -104,13 +96,18 @@ classes:
         range: string
         todos: >-
           make the range an enum with allowed values from ontology, see also: https://github.com/StroemPhi/NMR-spectroscopy-schema/issues/2
-
+    close_mappings:
+      - obi:0000566
+      - nmrCV:1400059
+      - chmo:0001807
   NmrManufacturer:
     class_uri: obi:0000835
     close_mappings:
       - nmrCV:1400255
+    slots:
+      - name
     slot_usage:
-      type: 
+      name: 
         range: NmrManufacturers
 
 # Information Content Entities
@@ -142,10 +139,30 @@ slots:
   name:
     recommended: true
     range: string
+  type:
 # NmrSpecRecord
   output_of_nmr_assay:
     required: true
     slot_uri: obi:0000312
+# PulsedNmrAssay
+  sample:
+    slot_uri: obi:0000293
+    inlined: true
+    required: true
+    domain: PulsedNmrAssay
+    range: NmrSample
+  solvent:
+    slot_uri: obi:0000293
+    inlined: true
+    required: true
+    domain: PulsedNmrAssay
+    range: NmrSolvent
+  spectrometer:
+    slot_uri: obi:0000293
+    inlined: true
+    required: true
+    domain: PulsedNmrAssay
+    range: NmrSpectrometer
 # sample
   local_id:
     recommended: true
@@ -200,5 +217,11 @@ enums:
       acdlabs:
       micromass:
       tecmag:
+  Dimension:
+    permissible_values:
+      1D:
+      2D:
+      3D:
+      4D:
 #################################################
 
