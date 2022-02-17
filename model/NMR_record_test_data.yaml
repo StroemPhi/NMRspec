@@ -1,14 +1,20 @@
-id: doi:10.2034/1234
+# based on Chemotion Data: SG-V3259 (41-52)
+
+id: chemotion:SG-V325
 source: Chemotion Repository
-source_uri: chemotion:12345
+source_uri: nfdi4chem-gdrive
 date_retrieved: "2022-02-22"
 output_of_nmr_assay:
-  #id: chemotion:10.2034/1234_assay1
-  pulse_program: COSY-DOSY
-  has_dimension: 2D
+  assay_date: "2019-07-18T02:18:49"
+  id: chemotion:SG-V325_assay_ns1024
+  name: 13C_ns1024 CDCl3 /opt/topspin3.5pl6/data/complat/nmr SG 55
+  pulse_program: NMR
+  has_dimension: 1D
+  acuisition_nucleus: 
+    - 13C
   sample:
-    id: doi:10.2034/1234_sample1234
-    local_id: sample1234
+    id: chemotion:SG-V325_sample
+    local_id: "55"
     formula: C25H28N6O
     name: pyridine-3-carboxylic acid
   solvent:
@@ -16,10 +22,8 @@ output_of_nmr_assay:
     formula: CDCL3
     name: deuterated chloroform
   spectrometer:
-    id: doi:10.2034/1234_device 
+    id: chemotion:SG-V325_device 
     type: Bruker Ascend 400
     manufacturered_by: 
       name: Bruker
       website: https://www.bruker.com/
-
-

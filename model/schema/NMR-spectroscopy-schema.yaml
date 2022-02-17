@@ -30,7 +30,6 @@ prefixes:
   pubchem: https://pubchem.com/
   om: http://www.ontology-of-units-of-measure.org/resource/om-2/
 
-
 default_prefix: NMRspec
 default_curi_maps:
  - semweb_context
@@ -60,15 +59,15 @@ classes:
   PulsedNmrAssay:
     class_uri: chmo:0000613
     slots:
-      #- id
+      - id
+      - name
+      - assay_date
+      - pulse_program
+      - has_dimension
+      - acuisition_nucleus
       - sample
       - solvent
       - spectrometer
-      - pulse_program
-      - has_dimension
-    id_prefixes:
-      - chebi
-
 # Material Entities      
   NmrSample:
     slots:
@@ -121,9 +120,9 @@ classes:
       - output_of_nmr_assay
     slot_usage:
       output_of_nmr_assay:
+        inlined: true
         required: true
         range: PulsedNmrAssay
-
 
 #################################################
 slots:
@@ -131,7 +130,6 @@ slots:
 # common slots
   id:
     identifier: true
-    slot_uri: sdo:identifier
   formula:
     recommended: true
     range: string
@@ -147,6 +145,8 @@ slots:
     required: true
     slot_uri: obi:0000312
 # PulsedNmrAssay
+  assay_date:
+    range: datetime
   sample:
     slot_uri: obi:0000293
     inlined: true
@@ -171,6 +171,13 @@ slots:
   pulse_program:
     required: true
     range: PulseProgram
+  acuisition_nucleus:
+    required: true
+    multivalued: true
+    inlined_as_list: true
+    description: this is the aqu.nucleus nto be assayed as specified by the protocol
+    todos: We need to model this probably as class, if we want to properly refer to it in the sample, solvent and buffer. For now xsd:string must suffice.
+    range: string
 # sample
   local_id:
     recommended: true
@@ -182,7 +189,7 @@ slots:
 enums:
   PulseProgram:
     permissible_values:
-      1H-NMR:
+      NMR:
       COSY:
       COSY-DQF:
       DOSY:
