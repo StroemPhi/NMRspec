@@ -94,10 +94,10 @@
                 <h1 id="class-nmrspecrecord">Class: NmrSpecRecord</h1>
 <p>A data item that is an NMR assay output which represents the data produced by an NMR assay of a studied sample compound.</p>
 <p>URI: <a href="https://nfdi4chem/nmr/data/NmrSpecRecord">NMRspec:NmrSpecRecord</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[PulsedNmrAssay]&lt;is_specified_output_of%201..1-++[NmrSpecRecord&#124;id:string;source:string%20%3F;source_uri:uriorcurie%20%3F;date_retrieved:datetime%20%3F],[NmrSpecRecord]uses%20-.-&gt;[HasProvenanceData],[HasProvenanceData]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[PulsedNmrAssay]&lt;is_specified_output_of%201..1-++[NmrSpecRecord&#124;id:string;source:string%20%3F;source_uri:uriorcurie%20%3F;date_retrieved:datetime%20%3F],[NmrSpecRecord]uses%20-.-&gt;[HasProvenanceData],[HasProvenanceData]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[ProvenanceData],[PulsedNmrAssay]&lt;output_of_nmr_assay%201..1-++[NmrSpecRecord&#124;id:string;source:string%20%3F;source_uri:uriorcurie%20%3F;date_retrieved:datetime%20%3F],[NmrSpecRecord]uses%20-.-&gt;[ProvenanceData]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[ProvenanceData],[PulsedNmrAssay]&lt;output_of_nmr_assay%201..1-++[NmrSpecRecord&#124;id:string;source:string%20%3F;source_uri:uriorcurie%20%3F;date_retrieved:datetime%20%3F],[NmrSpecRecord]uses%20-.-&gt;[ProvenanceData]" /></a></p>
 <h2 id="uses-mixin">Uses Mixin</h2>
 <ul>
-<li>mixin: <a href="../HasProvenanceData/">HasProvenanceData</a> - This is a mixin to be used by any class that is needed as part of an audit trail to ensure the provenance of the metadata.</li>
+<li>mixin: <a href="../ProvenanceData/">ProvenanceData</a> - This is a mixin to be used by any class that is needed as part of an audit trail to ensure the provenance of the metadata.</li>
 </ul>
 <h2 id="referenced-by-class">Referenced by Class</h2>
 <h2 id="attributes">Attributes</h2>
@@ -107,29 +107,29 @@
 <li>Range: <a href="../String/">String</a></li>
 </ul>
 </li>
-<li><a href="../NmrSpecRecord_is_specified_output_of/">NmrSpecRecord➞is_specified_output_of</a>  <sub>1..1</sub><ul>
+<li><a href="../NmrSpecRecord_output_of_nmr_assay/">NmrSpecRecord➞output_of_nmr_assay</a>  <sub>1..1</sub><ul>
 <li>Range: <a href="../PulsedNmrAssay/">PulsedNmrAssay</a></li>
 </ul>
 </li>
 </ul>
-<h3 id="mixed-in-from-hasprovenancedata">Mixed in from HasProvenanceData:</h3>
+<h3 id="mixed-in-from-provenancedata">Mixed in from ProvenanceData:</h3>
 <ul>
-<li><a href="../hasProvenanceData__source/">➞source</a>  <sub>0..1</sub><ul>
+<li><a href="../provenanceData__source/">➞source</a>  <sub>0..1</sub><ul>
 <li>Description: This field can be used to provide the source of the data as String. E.g.</li>
 <li>Range: <a href="../String/">String</a></li>
 </ul>
 </li>
 </ul>
-<h3 id="mixed-in-from-hasprovenancedata_1">Mixed in from HasProvenanceData:</h3>
+<h3 id="mixed-in-from-provenancedata_1">Mixed in from ProvenanceData:</h3>
 <ul>
-<li><a href="../hasProvenanceData__source_uri/">➞source_uri</a>  <sub>0..1</sub><ul>
+<li><a href="../provenanceData__source_uri/">➞source_uri</a>  <sub>0..1</sub><ul>
 <li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
 </ul>
 </li>
 </ul>
-<h3 id="mixed-in-from-hasprovenancedata_2">Mixed in from HasProvenanceData:</h3>
+<h3 id="mixed-in-from-provenancedata_2">Mixed in from ProvenanceData:</h3>
 <ul>
-<li><a href="../hasProvenanceData__date_retrieved/">➞date_retrieved</a>  <sub>0..1</sub><ul>
+<li><a href="../provenanceData__date_retrieved/">➞date_retrieved</a>  <sub>0..1</sub><ul>
 <li>Range: <a href="../Datetime/">Datetime</a></li>
 </ul>
 </li>

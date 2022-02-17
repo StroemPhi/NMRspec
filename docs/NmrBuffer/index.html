@@ -93,28 +93,27 @@
               
                 <h1 id="class-nmrbuffer">Class: NmrBuffer</h1>
 <p>URI: <a href="https://nfdi4chem/nmr/data/NmrBuffer">NMRspec:NmrBuffer</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[NmrAssayInput]-%20buffer%200..1&gt;[NmrBuffer&#124;id:string;name:string%20%3F;formula:string%20%3F],[NmrAssayInput]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[NmrAssayInput]-%20buffer%200..1&gt;[NmrBuffer&#124;id:string;name:string%20%3F;formula:string%20%3F],[NmrAssayInput]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[PulsedNmrAssay]++-%20buffer%201..1&gt;[NmrBuffer&#124;id:string;formula:string%20%3F;name:string%20%3F]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[PulsedNmrAssay]++-%20buffer%201..1&gt;[NmrBuffer&#124;id:string;formula:string%20%3F;name:string%20%3F]" /></a></p>
 <h2 id="identifier-prefixes">Identifier prefixes</h2>
 <ul>
 <li>chebi</li>
 </ul>
 <h2 id="referenced-by-class">Referenced by Class</h2>
 <ul>
-<li><strong><a href="../PulsedNmrAssay/">PulsedNmrAssay</a></strong> <em><a href="../buffer/">buffer</a></em>  <sub>1..1</sub>  <strong><a href="./">NmrBuffer</a></strong></li>
-<li><strong>None</strong> <em><a href="../nmrAssayInput__buffer/">➞buffer</a></em>  <sub>0..1</sub>  <strong><a href="./">NmrBuffer</a></strong></li>
+<li><strong><a href="../PulsedNmrAssay/">PulsedNmrAssay</a></strong> <em><a href="../pulsedNmrAssay__buffer/">PulsedNmrAssay➞buffer</a></em>  <sub>1..1</sub>  <strong><a href="./">NmrBuffer</a></strong></li>
 </ul>
 <h2 id="attributes">Attributes</h2>
 <h3 id="own">Own</h3>
 <ul>
-<li><a href="../NmrBuffer_id/">NmrBuffer➞id</a>  <sub>1..1</sub><ul>
-<li>Range: <a href="../String/">String</a></li>
-</ul>
-</li>
-<li><a href="../name/">name</a>  <sub>0..1</sub><ul>
+<li><a href="../id/">id</a>  <sub>1..1</sub><ul>
 <li>Range: <a href="../String/">String</a></li>
 </ul>
 </li>
 <li><a href="../formula/">formula</a>  <sub>0..1</sub><ul>
+<li>Range: <a href="../String/">String</a></li>
+</ul>
+</li>
+<li><a href="../name/">name</a>  <sub>0..1</sub><ul>
 <li>Range: <a href="../String/">String</a></li>
 </ul>
 </li>

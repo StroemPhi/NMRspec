@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Class: PulsedNmrAssay - This model is to be used to semantify NMR spectroscopy research data.</title>
+  <title>Slot: type - This model is to be used to semantify NMR spectroscopy research data.</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Class: PulsedNmrAssay";
-    var mkdocs_page_input_path = "PulsedNmrAssay.md";
+    var mkdocs_page_name = "Slot: type";
+    var mkdocs_page_input_path = "NmrSpectrometer_type.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -79,7 +79,7 @@
     
       
     
-    <li>Class: PulsedNmrAssay</li>
+    <li>Slot: type</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -91,50 +91,19 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="class-pulsednmrassay">Class: PulsedNmrAssay</h1>
-<p>URI: <a href="https://nfdi4chem/nmr/data/PulsedNmrAssay">NMRspec:PulsedNmrAssay</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[NmrSpectrometer]&lt;spectrometer%200..1-++[PulsedNmrAssay&#124;type:NmrAssayType],[NmrBuffer]&lt;buffer%201..1-++[PulsedNmrAssay],[NmrSample]&lt;sample%201..1-++[PulsedNmrAssay],[NmrSpecRecord]++-%20output_of_nmr_assay%201..1&gt;[PulsedNmrAssay],[NmrSpectrometer],[NmrSpecRecord],[NmrSample],[NmrBuffer]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[NmrSpectrometer]&lt;spectrometer%200..1-++[PulsedNmrAssay&#124;type:NmrAssayType],[NmrBuffer]&lt;buffer%201..1-++[PulsedNmrAssay],[NmrSample]&lt;sample%201..1-++[PulsedNmrAssay],[NmrSpecRecord]++-%20output_of_nmr_assay%201..1&gt;[PulsedNmrAssay],[NmrSpectrometer],[NmrSpecRecord],[NmrSample],[NmrBuffer]" /></a></p>
-<h2 id="referenced-by-class">Referenced by Class</h2>
+                <h1 id="slot-type">Slot: type</h1>
+<p>URI: <a href="https://nfdi4chem/nmr/data/NmrSpectrometer_type">NMRspec:NmrSpectrometer_type</a></p>
+<h2 id="domain-and-range">Domain and Range</h2>
+<p><a href="../NmrSpectrometer/">NmrSpectrometer</a> &#8594;  <sub>0..1</sub> <a href="../String/">String</a></p>
+<h2 id="parents">Parents</h2>
 <ul>
-<li><strong><a href="../NmrSpecRecord/">NmrSpecRecord</a></strong> <em><a href="../NmrSpecRecord_output_of_nmr_assay/">NmrSpecRecord➞output_of_nmr_assay</a></em>  <sub>1..1</sub>  <strong><a href="./">PulsedNmrAssay</a></strong></li>
+<li>is_a: <a href="../type/">type</a></li>
 </ul>
-<h2 id="attributes">Attributes</h2>
-<h3 id="own">Own</h3>
+<h2 id="children">Children</h2>
+<h2 id="used-by">Used by</h2>
 <ul>
-<li><a href="../pulsedNmrAssay__sample/">PulsedNmrAssay➞sample</a>  <sub>1..1</sub><ul>
-<li>Range: <a href="../NmrSample/">NmrSample</a></li>
+<li><a href="../NmrSpectrometer/">NmrSpectrometer</a></li>
 </ul>
-</li>
-<li><a href="../pulsedNmrAssay__buffer/">PulsedNmrAssay➞buffer</a>  <sub>1..1</sub><ul>
-<li>Range: <a href="../NmrBuffer/">NmrBuffer</a></li>
-</ul>
-</li>
-<li><a href="../pulsedNmrAssay__spectrometer/">PulsedNmrAssay➞spectrometer</a>  <sub>0..1</sub><ul>
-<li>Range: <a href="../NmrSpectrometer/">NmrSpectrometer</a></li>
-</ul>
-</li>
-<li><a href="../pulsedNmrAssay__type/">➞type</a>  <sub>1..1</sub><ul>
-<li>Range: <a href="../NmrAssayType/">NmrAssayType</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="other-properties">Other properties</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Mappings:</strong></td>
-<td></td>
-<td>chmo:0000613</td>
-</tr>
-</tbody>
-</table>
               
             </div>
           </div>

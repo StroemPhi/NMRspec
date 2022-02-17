@@ -27,6 +27,8 @@ prefixes:
   iupac: https://github.com/IUPAC/IUPAC-FAIRSpec/blob/main/src/main/java/org/iupac/fairspec/core/
   doi: https://doi.org/
   chemotion: https://chemotion.de/
+  pubchem: https://pubchem.com/
+
 
 default_prefix: NMRspec
 default_curi_maps:
@@ -35,20 +37,15 @@ default_curi_maps:
 imports:
  - linkml:types
 
-emit_prefixes:
-  - sdo
-  - doi
-  - chebi
-
 #################################################
 classes:
 #################################################
 # Mixins
-  HasProvenanceData:
+  ProvenanceData:
     mixin: true
     description: >-
       This is a mixin to be used by any class that is needed as part of an audit trail to ensure the provenance of the metadata.
-    attributes:       # TODO these need to be defined properly
+    attributes:       
       source:
         description: >-
           This field can be used to provide the source of the data as String. E.g.
@@ -57,63 +54,85 @@ classes:
         range: uriorcurie
       date_retrieved:
         range: datetime
+    todos: # defined with PROVO or other adequate slot_uris
 # Processes
   PulsedNmrAssay:
     class_uri: chmo:0000613
     attributes:
-      has_specified_input:
+      sample:
+        slot_uri: obi:0000293
+        inlined: true
         required: true
-        range: NmrAssayInput
+        domain: PulsedNmrAssay
+        range: NmrSample
+      solvent:
+        slot_uri: obi:0000293
+        inlined: true
+        required: true
+        domain: PulsedNmrAssay
+        range: NmrSolvent
+      spectrometer:
+        slot_uri: obi:0000293
+        inlined: true
+        required: true
+        domain: PulsedNmrAssay
+        range: NmrSpectrometer
       type:
         required: true
         range: NmrAssayType
 
-# Material Entities
-  NmrAssayInput:
-    attributes:
-      sample:
-        required: true
-        range: NmrSample
-      buffer:
-        required: true
-        range: NmrBuffer
-    todos: find out how to use "union_of" slot in linkML to provide multiple classes as ranges of a property such as obi:has_specific_input instead of this container solution
+# Material Entities      
+  NmrSample:
+    slots:
+      - name
+      - local_id
+      - formula   
+  NmrSolvent:
+    slots:
+      - id
+      - formula
+      - name
+
+  NmrSpectrometer:
+    slots:
+      - manufacturered_by
+    slot_usage:  
+      manufacturered_by:
+        inlined: true
+        range: NmrManufacturer
+      type:
+        range: string
+        todos: >-
+          make the range an enum with allowed values from ontology, see also: https://github.com/StroemPhi/NMR-spectroscopy-schema/issues/2
+
+  NmrManufacturer:
+    class_uri: obi:0000835
+    close_mappings:
+      - nmrCV:1400255
+    slot_usage:
+      type: 
+        range: NmrManufacturers
 
 # Information Content Entities
   NmrSpecRecord:
     tree_root: true
     mixins:
-      - HasProvenanceData
+      - ProvenanceData
     description: >-
       A data item that is an NMR assay output which represents the data produced by an NMR assay of a studied sample compound.
     slots:
       - id
-      - is_specified_output_of
+      - output_of_nmr_assay
     slot_usage:
-      is_specified_output_of:
+      output_of_nmr_assay:
         required: true
         range: PulsedNmrAssay
 
-  NmrSample:
-    slots:
-      - local_id
-      - name
-      - formula
-      
-  NmrBuffer:
-    slots:
-#      - id 
-      - name
-      - formula
-#    id_prefixes:
-#      - chebi
-      #- pubchem
-      #- cas"
 
 #################################################
 slots:
 #################################################
-# common metadata
+# common slots
   id:
     identifier: true
     slot_uri: sdo:identifier
@@ -123,25 +142,16 @@ slots:
   name:
     recommended: true
     range: string
-# nmr assay metadata
-  sample:
-    inlined: true
-    required: true
-    domain: PulsedNmrAssay
-    range: NmrSample
-  buffer:
-    inlined: true
-    required: true
-    domain: PulsedNmrAssay
-    range: NmrBuffer
-# nmr record metadata
-  is_specified_output_of:
+# NmrSpecRecord
+  output_of_nmr_assay:
     required: true
     slot_uri: obi:0000312
-# sample metadata
+# sample
   local_id:
     recommended: true
     range: string
+# Instrument  
+  manufacturered_by:
 
 #################################################
 enums:
@@ -157,5 +167,38 @@ enums:
         meaning: chmo:0001950
       3D-DOSY-HMQC:
         meaning: chmo:0001952
+    todos: >-
+      We need to figure out, if we need to specify this via dimension (1D-4D) and pulse sequence (e.g. COSY, NOSY, ...)
+  NmrManufacturers:
+    notes: allowed values from nmrCV_1400255
+    permissible_values:
+      Acorn NMR Inc:
+      Agilent Technologies:
+      Applied Biosystems:
+      Bruker:
+      Doty Scientific:
+      FOSS:
+      General Electric:
+      JEOL:
+      JS Research:
+      Jasco:
+      Kimble Chase:
+      MR Resources:
+      OceanOptics:
+      Oxford Instruments:
+      Perkin Elmer:
+      Phillips:
+      Siemens AG:
+      Spinlock SRL:
+      TX:
+      ThermoFinnigan:
+      ThermoMattson:
+      ThermoNicolet:
+      Varian:
+      Waters:
+      Wilmad:
+      acdlabs:
+      micromass:
+      tecmag:
 #################################################
 

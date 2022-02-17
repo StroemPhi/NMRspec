@@ -117,7 +117,14 @@
 <p>This model is to be used to semantify NMR spectroscopy research data.</p>
 <h3 id="classes">Classes</h3>
 <ul>
-<li><a href="NmrAssayInput/">NmrAssayInput</a></li>
+<li><a href="Instrument/">Instrument</a><ul>
+<li><a href="NmrSpectrometer/">NmrSpectrometer</a></li>
+</ul>
+</li>
+<li><a href="Manufacturer/">Manufacturer</a><ul>
+<li><a href="NmrManufacturer/">NmrManufacturer</a></li>
+</ul>
+</li>
 <li><a href="NmrBuffer/">NmrBuffer</a></li>
 <li><a href="NmrSample/">NmrSample</a></li>
 <li><a href="NmrSpecRecord/">NmrSpecRecord</a> - A data item that is an NMR assay output which represents the data produced by an NMR assay of a studied sample compound.</li>
@@ -125,34 +132,42 @@
 </ul>
 <h3 id="mixins">Mixins</h3>
 <ul>
-<li><a href="HasProvenanceData/">HasProvenanceData</a> - This is a mixin to be used by any class that is needed as part of an audit trail to ensure the provenance of the metadata.</li>
+<li><a href="ProvenanceData/">ProvenanceData</a> - This is a mixin to be used by any class that is needed as part of an audit trail to ensure the provenance of the metadata.</li>
 </ul>
 <h3 id="slots">Slots</h3>
 <ul>
-<li><a href="buffer/">buffer</a></li>
 <li><a href="formula/">formula</a></li>
-<li><a href="hasProvenanceData__date_retrieved/">➞date_retrieved</a></li>
-<li><a href="hasProvenanceData__source/">➞source</a> - This field can be used to provide the source of the data as String. E.g.</li>
-<li><a href="hasProvenanceData__source_uri/">➞source_uri</a></li>
-<li><a href="id/">id</a><ul>
-<li><a href="NmrBuffer_id/">NmrBuffer➞id</a></li>
-</ul>
-</li>
-<li><a href="is_specified_output_of/">is_specified_output_of</a><ul>
-<li><a href="NmrSpecRecord_is_specified_output_of/">NmrSpecRecord➞is_specified_output_of</a></li>
+<li><a href="id/">id</a></li>
+<li><a href="instrument__manufacturered_by/">➞manufacturered_by</a><ul>
+<li><a href="NmrSpectrometer_manufacturered_by/">NmrSpectrometer➞manufacturered_by</a></li>
 </ul>
 </li>
 <li><a href="local_id/">local_id</a></li>
 <li><a href="name/">name</a></li>
-<li><a href="nmrAssayInput__buffer/">➞buffer</a></li>
-<li><a href="nmrAssayInput__sample/">➞sample</a></li>
-<li><a href="pulsedNmrAssay__has_specified_input/">➞has_specified_input</a></li>
+<li><a href="nmrSpectrometer__magnet/">➞magnet</a></li>
+<li><a href="nmrSpectrometer__probe/">➞probe</a></li>
+<li><a href="nmrSpectrometer__sample_tube/">➞sample_tube</a></li>
+<li><a href="output_of_nmr_assay/">output_of_nmr_assay</a><ul>
+<li><a href="NmrSpecRecord_output_of_nmr_assay/">NmrSpecRecord➞output_of_nmr_assay</a></li>
+</ul>
+</li>
+<li><a href="provenanceData__date_retrieved/">➞date_retrieved</a></li>
+<li><a href="provenanceData__source/">➞source</a> - This field can be used to provide the source of the data as String. E.g.</li>
+<li><a href="provenanceData__source_uri/">➞source_uri</a></li>
+<li><a href="pulsedNmrAssay__buffer/">PulsedNmrAssay➞buffer</a></li>
+<li><a href="pulsedNmrAssay__sample/">PulsedNmrAssay➞sample</a></li>
+<li><a href="pulsedNmrAssay__spectrometer/">PulsedNmrAssay➞spectrometer</a></li>
 <li><a href="pulsedNmrAssay__type/">➞type</a></li>
-<li><a href="sample/">sample</a></li>
+<li><a href="type/">type</a><ul>
+<li><a href="NmrManufacturer_type/">NmrManufacturer➞type</a></li>
+<li><a href="NmrSpectrometer_type/">NmrSpectrometer➞type</a></li>
+</ul>
+</li>
 </ul>
 <h3 id="enums">Enums</h3>
 <ul>
 <li><a href="NmrAssayType/">NmrAssayType</a></li>
+<li><a href="NmrManufacturers/">NmrManufacturers</a></li>
 </ul>
 <h3 id="subsets">Subsets</h3>
 <h3 id="types">Types</h3>
@@ -247,5 +262,5 @@
 
 <!--
 MkDocs version : 1.2.3
-Build Date UTC : 2022-02-16 23:30:14.766320+00:00
+Build Date UTC : 2022-02-17 10:08:11.603994+00:00
 -->

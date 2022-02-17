@@ -93,20 +93,19 @@
               
                 <h1 id="class-nmrsample">Class: NmrSample</h1>
 <p>URI: <a href="https://nfdi4chem/nmr/data/NmrSample">NMRspec:NmrSample</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[NmrAssayInput]++-%20sample%201..1&gt;[NmrSample&#124;local_id:string%20%3F;name:string%20%3F;formula:string%20%3F],[NmrAssayInput]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[NmrAssayInput]++-%20sample%201..1&gt;[NmrSample&#124;local_id:string%20%3F;name:string%20%3F;formula:string%20%3F],[NmrAssayInput]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[PulsedNmrAssay]++-%20sample%201..1&gt;[NmrSample&#124;name:string%20%3F;local_id:string%20%3F;formula:string%20%3F]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[PulsedNmrAssay]++-%20sample%201..1&gt;[NmrSample&#124;name:string%20%3F;local_id:string%20%3F;formula:string%20%3F]" /></a></p>
 <h2 id="referenced-by-class">Referenced by Class</h2>
 <ul>
-<li><strong>None</strong> <em><a href="../nmrAssayInput__sample/">➞sample</a></em>  <sub>1..1</sub>  <strong><a href="./">NmrSample</a></strong></li>
-<li><strong><a href="../PulsedNmrAssay/">PulsedNmrAssay</a></strong> <em><a href="../sample/">sample</a></em>  <sub>1..1</sub>  <strong><a href="./">NmrSample</a></strong></li>
+<li><strong><a href="../PulsedNmrAssay/">PulsedNmrAssay</a></strong> <em><a href="../pulsedNmrAssay__sample/">PulsedNmrAssay➞sample</a></em>  <sub>1..1</sub>  <strong><a href="./">NmrSample</a></strong></li>
 </ul>
 <h2 id="attributes">Attributes</h2>
 <h3 id="own">Own</h3>
 <ul>
-<li><a href="../local_id/">local_id</a>  <sub>0..1</sub><ul>
+<li><a href="../name/">name</a>  <sub>0..1</sub><ul>
 <li>Range: <a href="../String/">String</a></li>
 </ul>
 </li>
-<li><a href="../name/">name</a>  <sub>0..1</sub><ul>
+<li><a href="../local_id/">local_id</a>  <sub>0..1</sub><ul>
 <li>Range: <a href="../String/">String</a></li>
 </ul>
 </li>

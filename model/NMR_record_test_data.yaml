@@ -1,16 +1,19 @@
-
 id: doi:10.2034/1234
 source: Chemotion Repository
 source_uri: chemotion:12345
 date_retrieved: "2022-02-22"
-is_specified_output_of:
+output_of_nmr_assay:
   type: 1D-1H-NMR
-  has_specified_input:
-    sample:
-      local_id: local_sample_id_1234
-      formula: C25H28N6O
-      name: 1-methylpyridin-1-ium-3-carboxylate;pyridine-3-carboxylic acid
-    buffer:
-      formula: CDCL3
-      name: deuterated chloroform
-      #id: chebi:85365
+  sample:
+    local_id: local_sample_id_1234
+    formula: C25H28N6O
+    name: pyridine-3-carboxylic acid
+  solvent:
+    id: chebi:85365
+    formula: CDCL3
+    name: deuterated chloroform
+  spectrometer:
+    type: Bruker Ascend 400
+    manufacturered_by: 
+      type: Bruker
+

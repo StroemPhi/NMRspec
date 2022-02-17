@@ -1,20 +1,23 @@
 {
    "$defs": {
-      "NmrAssayInput": {
+      "Instrument": {
          "additionalProperties": false,
          "description": "",
          "properties": {
-            "buffer": {
-               "type": "string"
-            },
-            "sample": {
-               "$ref": "#/$defs/NmrSample"
+            "manufacturered_by": {
+               "$ref": "#/$defs/Manufacturer"
             }
          },
-         "required": [
-            "sample"
-         ],
-         "title": "NmrAssayInput",
+         "required": [],
+         "title": "Instrument",
+         "type": "object"
+      },
+      "Manufacturer": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "Manufacturer",
          "type": "object"
       },
       "NmrAssayType": {
@@ -49,6 +52,53 @@
          "title": "NmrBuffer",
          "type": "object"
       },
+      "NmrManufacturer": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "NmrManufacturer",
+         "type": "object"
+      },
+      "NmrManufacturers": {
+         "description": "",
+         "enum": [
+            "Acorn NMR Inc",
+            "Agilent Technologies",
+            "Applied Biosystems",
+            "Bruker",
+            "Doty Scientific",
+            "FOSS",
+            "General Electric",
+            "JEOL",
+            "JS Research",
+            "Jasco",
+            "Kimble Chase",
+            "MR Resources",
+            "OceanOptics",
+            "Oxford Instruments",
+            "Perkin Elmer",
+            "Phillips",
+            "Siemens AG",
+            "Spinlock SRL",
+            "TX",
+            "ThermoFinnigan",
+            "ThermoMattson",
+            "ThermoNicolet",
+            "Varian",
+            "Waters",
+            "Wilmad",
+            "acdlabs",
+            "micromass",
+            "tecmag"
+         ],
+         "title": "NmrManufacturers",
+         "type": "string"
+      },
       "NmrSample": {
          "additionalProperties": false,
          "description": "",
@@ -78,7 +128,7 @@
             "id": {
                "type": "string"
             },
-            "is_specified_output_of": {
+            "output_of_nmr_assay": {
                "$ref": "#/$defs/PulsedNmrAssay"
             },
             "source": {
@@ -91,27 +141,55 @@
          },
          "required": [
             "id",
-            "is_specified_output_of"
+            "output_of_nmr_assay"
          ],
          "title": "NmrSpecRecord",
+         "type": "object"
+      },
+      "NmrSpectrometer": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "magnet": {
+               "type": "string"
+            },
+            "manufacturered_by": {
+               "$ref": "#/$defs/NmrManufacturer"
+            },
+            "probe": {
+               "type": "string"
+            },
+            "sample_tube": {
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "NmrSpectrometer",
          "type": "object"
       },
       "PulsedNmrAssay": {
          "additionalProperties": false,
          "description": "",
          "properties": {
-            "has_specified_input": {
-               "items": {
-                  "$ref": "#/$defs/NmrAssayInput"
-               },
-               "type": "array"
+            "buffer": {
+               "$ref": "#/$defs/NmrBuffer"
+            },
+            "sample": {
+               "$ref": "#/$defs/NmrSample"
+            },
+            "spectrometer": {
+               "$ref": "#/$defs/NmrSpectrometer"
             },
             "type": {
                "$ref": "#/$defs/NmrAssayType"
             }
          },
          "required": [
-            "has_specified_input",
+            "sample",
+            "buffer",
             "type"
          ],
          "title": "PulsedNmrAssay",

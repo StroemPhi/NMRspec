@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Class: PulsedNmrAssay - This model is to be used to semantify NMR spectroscopy research data.</title>
+  <title>Class: ProvenanceData - This model is to be used to semantify NMR spectroscopy research data.</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Class: PulsedNmrAssay";
-    var mkdocs_page_input_path = "PulsedNmrAssay.md";
+    var mkdocs_page_name = "Class: ProvenanceData";
+    var mkdocs_page_input_path = "ProvenanceData.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -79,7 +79,7 @@
     
       
     
-    <li>Class: PulsedNmrAssay</li>
+    <li>Class: ProvenanceData</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -91,50 +91,32 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="class-pulsednmrassay">Class: PulsedNmrAssay</h1>
-<p>URI: <a href="https://nfdi4chem/nmr/data/PulsedNmrAssay">NMRspec:PulsedNmrAssay</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[NmrSpectrometer]&lt;spectrometer%200..1-++[PulsedNmrAssay&#124;type:NmrAssayType],[NmrBuffer]&lt;buffer%201..1-++[PulsedNmrAssay],[NmrSample]&lt;sample%201..1-++[PulsedNmrAssay],[NmrSpecRecord]++-%20output_of_nmr_assay%201..1&gt;[PulsedNmrAssay],[NmrSpectrometer],[NmrSpecRecord],[NmrSample],[NmrBuffer]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[NmrSpectrometer]&lt;spectrometer%200..1-++[PulsedNmrAssay&#124;type:NmrAssayType],[NmrBuffer]&lt;buffer%201..1-++[PulsedNmrAssay],[NmrSample]&lt;sample%201..1-++[PulsedNmrAssay],[NmrSpecRecord]++-%20output_of_nmr_assay%201..1&gt;[PulsedNmrAssay],[NmrSpectrometer],[NmrSpecRecord],[NmrSample],[NmrBuffer]" /></a></p>
-<h2 id="referenced-by-class">Referenced by Class</h2>
+                <h1 id="class-provenancedata">Class: ProvenanceData</h1>
+<p>This is a mixin to be used by any class that is needed as part of an audit trail to ensure the provenance of the metadata.</p>
+<p>URI: <a href="https://nfdi4chem/nmr/data/ProvenanceData">NMRspec:ProvenanceData</a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[NmrSpecRecord]uses%20-.-&gt;[ProvenanceData&#124;source:string%20%3F;source_uri:uriorcurie%20%3F;date_retrieved:datetime%20%3F],[NmrSpecRecord]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[NmrSpecRecord]uses%20-.-&gt;[ProvenanceData&#124;source:string%20%3F;source_uri:uriorcurie%20%3F;date_retrieved:datetime%20%3F],[NmrSpecRecord]" /></a></p>
+<h2 id="mixin-for">Mixin for</h2>
 <ul>
-<li><strong><a href="../NmrSpecRecord/">NmrSpecRecord</a></strong> <em><a href="../NmrSpecRecord_output_of_nmr_assay/">NmrSpecRecord➞output_of_nmr_assay</a></em>  <sub>1..1</sub>  <strong><a href="./">PulsedNmrAssay</a></strong></li>
+<li><a href="../NmrSpecRecord/">NmrSpecRecord</a> (mixin)  - A data item that is an NMR assay output which represents the data produced by an NMR assay of a studied sample compound.</li>
 </ul>
+<h2 id="referenced-by-class">Referenced by Class</h2>
 <h2 id="attributes">Attributes</h2>
 <h3 id="own">Own</h3>
 <ul>
-<li><a href="../pulsedNmrAssay__sample/">PulsedNmrAssay➞sample</a>  <sub>1..1</sub><ul>
-<li>Range: <a href="../NmrSample/">NmrSample</a></li>
+<li><a href="../provenanceData__source/">➞source</a>  <sub>0..1</sub><ul>
+<li>Description: This field can be used to provide the source of the data as String. E.g.</li>
+<li>Range: <a href="../String/">String</a></li>
 </ul>
 </li>
-<li><a href="../pulsedNmrAssay__buffer/">PulsedNmrAssay➞buffer</a>  <sub>1..1</sub><ul>
-<li>Range: <a href="../NmrBuffer/">NmrBuffer</a></li>
+<li><a href="../provenanceData__source_uri/">➞source_uri</a>  <sub>0..1</sub><ul>
+<li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
 </ul>
 </li>
-<li><a href="../pulsedNmrAssay__spectrometer/">PulsedNmrAssay➞spectrometer</a>  <sub>0..1</sub><ul>
-<li>Range: <a href="../NmrSpectrometer/">NmrSpectrometer</a></li>
-</ul>
-</li>
-<li><a href="../pulsedNmrAssay__type/">➞type</a>  <sub>1..1</sub><ul>
-<li>Range: <a href="../NmrAssayType/">NmrAssayType</a></li>
+<li><a href="../provenanceData__date_retrieved/">➞date_retrieved</a>  <sub>0..1</sub><ul>
+<li>Range: <a href="../Datetime/">Datetime</a></li>
 </ul>
 </li>
 </ul>
-<h2 id="other-properties">Other properties</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Mappings:</strong></td>
-<td></td>
-<td>chmo:0000613</td>
-</tr>
-</tbody>
-</table>
               
             </div>
           </div>

@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Class: PulsedNmrAssay - This model is to be used to semantify NMR spectroscopy research data.</title>
+  <title>Class: NmrManufacturer - This model is to be used to semantify NMR spectroscopy research data.</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Class: PulsedNmrAssay";
-    var mkdocs_page_input_path = "PulsedNmrAssay.md";
+    var mkdocs_page_name = "Class: NmrManufacturer";
+    var mkdocs_page_input_path = "NmrManufacturer.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -79,7 +79,7 @@
     
       
     
-    <li>Class: PulsedNmrAssay</li>
+    <li>Class: NmrManufacturer</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -91,30 +91,22 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="class-pulsednmrassay">Class: PulsedNmrAssay</h1>
-<p>URI: <a href="https://nfdi4chem/nmr/data/PulsedNmrAssay">NMRspec:PulsedNmrAssay</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[NmrSpectrometer]&lt;spectrometer%200..1-++[PulsedNmrAssay&#124;type:NmrAssayType],[NmrBuffer]&lt;buffer%201..1-++[PulsedNmrAssay],[NmrSample]&lt;sample%201..1-++[PulsedNmrAssay],[NmrSpecRecord]++-%20output_of_nmr_assay%201..1&gt;[PulsedNmrAssay],[NmrSpectrometer],[NmrSpecRecord],[NmrSample],[NmrBuffer]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[NmrSpectrometer]&lt;spectrometer%200..1-++[PulsedNmrAssay&#124;type:NmrAssayType],[NmrBuffer]&lt;buffer%201..1-++[PulsedNmrAssay],[NmrSample]&lt;sample%201..1-++[PulsedNmrAssay],[NmrSpecRecord]++-%20output_of_nmr_assay%201..1&gt;[PulsedNmrAssay],[NmrSpectrometer],[NmrSpecRecord],[NmrSample],[NmrBuffer]" /></a></p>
+                <h1 id="class-nmrmanufacturer">Class: NmrManufacturer</h1>
+<p>URI: <a href="https://nfdi4chem/nmr/data/NmrManufacturer">NMRspec:NmrManufacturer</a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[NmrSpectrometer],[NmrSpectrometer]++-%20manufacturered_by%200..1&gt;[NmrManufacturer&#124;type:string%20%3F],[Manufacturer]^-[NmrManufacturer],[Manufacturer]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[NmrSpectrometer],[NmrSpectrometer]++-%20manufacturered_by%200..1&gt;[NmrManufacturer&#124;type:string%20%3F],[Manufacturer]^-[NmrManufacturer],[Manufacturer]" /></a></p>
+<h2 id="parents">Parents</h2>
+<ul>
+<li>is_a: <a href="../Manufacturer/">Manufacturer</a></li>
+</ul>
 <h2 id="referenced-by-class">Referenced by Class</h2>
 <ul>
-<li><strong><a href="../NmrSpecRecord/">NmrSpecRecord</a></strong> <em><a href="../NmrSpecRecord_output_of_nmr_assay/">NmrSpecRecord➞output_of_nmr_assay</a></em>  <sub>1..1</sub>  <strong><a href="./">PulsedNmrAssay</a></strong></li>
+<li><strong><a href="../NmrSpectrometer/">NmrSpectrometer</a></strong> <em><a href="../NmrSpectrometer_manufacturered_by/">NmrSpectrometer➞manufacturered_by</a></em>  <sub>0..1</sub>  <strong><a href="./">NmrManufacturer</a></strong></li>
 </ul>
 <h2 id="attributes">Attributes</h2>
 <h3 id="own">Own</h3>
 <ul>
-<li><a href="../pulsedNmrAssay__sample/">PulsedNmrAssay➞sample</a>  <sub>1..1</sub><ul>
-<li>Range: <a href="../NmrSample/">NmrSample</a></li>
-</ul>
-</li>
-<li><a href="../pulsedNmrAssay__buffer/">PulsedNmrAssay➞buffer</a>  <sub>1..1</sub><ul>
-<li>Range: <a href="../NmrBuffer/">NmrBuffer</a></li>
-</ul>
-</li>
-<li><a href="../pulsedNmrAssay__spectrometer/">PulsedNmrAssay➞spectrometer</a>  <sub>0..1</sub><ul>
-<li>Range: <a href="../NmrSpectrometer/">NmrSpectrometer</a></li>
-</ul>
-</li>
-<li><a href="../pulsedNmrAssay__type/">➞type</a>  <sub>1..1</sub><ul>
-<li>Range: <a href="../NmrAssayType/">NmrAssayType</a></li>
+<li><a href="../NmrManufacturer_type/">NmrManufacturer➞type</a>  <sub>0..1</sub><ul>
+<li>Range: <a href="../String/">String</a></li>
 </ul>
 </li>
 </ul>
@@ -129,9 +121,9 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Mappings:</strong></td>
+<td><strong>Close Mappings:</strong></td>
 <td></td>
-<td>chmo:0000613</td>
+<td>nmrCV:1400255</td>
 </tr>
 </tbody>
 </table>
