@@ -28,6 +28,7 @@ prefixes:
   doi: https://doi.org/
   chemotion: https://chemotion.de/
   pubchem: https://pubchem.com/
+  om: http://www.ontology-of-units-of-measure.org/resource/om-2/
 
 
 default_prefix: NMRspec
@@ -63,13 +64,10 @@ classes:
       - sample
       - solvent
       - spectrometer
-      - type
-    slot_usage:
-      type:
-        required: true
-        range: NmrAssayType
+      - pulse_program
+      - has_dimension
     id_prefixes:
-      - doi
+      - chebi
 
 # Material Entities      
   NmrSample:
@@ -91,7 +89,7 @@ classes:
     slot_usage:  
       manufacturered_by:
         inlined: true
-        range: NmrManufacturer
+        range: Manufacturer
       type:
         range: string
         todos: >-
@@ -100,12 +98,13 @@ classes:
       - obi:0000566
       - nmrCV:1400059
       - chmo:0001807
-  NmrManufacturer:
+  Manufacturer:
     class_uri: obi:0000835
     close_mappings:
       - nmrCV:1400255
     slots:
       - name
+      - website
     slot_usage:
       name: 
         range: NmrManufacturers
@@ -139,6 +138,9 @@ slots:
   name:
     recommended: true
     range: string
+  website:
+    required: false
+    range: uri
   type:
 # NmrSpecRecord
   output_of_nmr_assay:
@@ -163,6 +165,12 @@ slots:
     required: true
     domain: PulsedNmrAssay
     range: NmrSpectrometer
+  has_dimension:
+    required: true
+    range: Dimension
+  pulse_program:
+    required: true
+    range: PulseProgram
 # sample
   local_id:
     recommended: true
@@ -172,20 +180,71 @@ slots:
 
 #################################################
 enums:
-  NmrAssayType:
+  PulseProgram:
     permissible_values:
-      1D-1H-NMR:
-        meaning: chmo:0002442
-      2DJ-DOSY:
-        meaning: chmo:0001953
-      3D-COSY-DOSY:
-        meaning: chmo:0001951
-      3D-DOSY-TOCSY:
-        meaning: chmo:0001950
-      3D-DOSY-HMQC:
-        meaning: chmo:0001952
-    todos: >-
-      We need to figure out, if we need to specify this via dimension (1D-4D) and pulse sequence (e.g. COSY, NOSY, ...)
+      1H-NMR:
+      COSY:
+      COSY-DQF:
+      DOSY:
+      SECSY:
+      RELAY:
+      TOCSY:
+      ROESY:
+      NOESY:
+      Double-Quantum:
+      J-Resolved:
+      DEPT & INEPT:
+      HECTOR:
+      COLOC:
+      Heteronuclear J-resolved:
+      HOESY:
+      INADEQUATE:
+      Inverse 1H-NMR:
+      HMQC:
+      DEPT-HMQC:
+      Multiplicity-edited HSQC:
+      CT-HSQC:
+      CT-HMBC:
+      Inverse-INEPT:
+      2D HSQC-α,β:
+      2D IPAP-HSQC:
+      2D J-modulated CT-HSQC:
+      TROSY:
+      CRINEPT:
+      HMQC-COSY:
+      H2BC:
+      HQMC-TOSCY:
+      HMQC-ROESY:
+      HMQC-NOESY:
+      HSQC-TOSCY:
+      HSQC-ROESY:
+      HSQC-NOESY:
+      HMBC:
+      Phase-sensitive HMBC:
+      J-HMBC:
+      Long-range HSQC (HSQMBC):
+      EXSIDE:
+      HETLOC:
+      HSQC-HECADE:
+      ADEQUATE:
+      1,1-ADEQUATE:
+      1,n-ADEQUATE:
+      n,1-ADEQUATE:
+      n,n-ADEQUATE:
+      STE:
+      STEBP:
+      STD-TOSCY:
+      STD-NOESY:
+      STD-HSQC:
+      CLEANEX:
+      CLEANEX-HSQC:
+      CLEANEX-TROSY:
+      DSTE:
+      DSTEBP:
+      COSY-DOSY:
+      DOSY-TOCSY:
+      DOSY-NOESY:
+      DOSY-HMQC:
   NmrManufacturers:
     notes: allowed values from nmrCV_1400255
     permissible_values:
