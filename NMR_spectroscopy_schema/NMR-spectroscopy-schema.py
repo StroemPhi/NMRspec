@@ -1,5 +1,5 @@
 # Auto generated from NMR-spectroscopy-schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-02-17T21:40:31
+# Generation date: 2022-02-17T23:40:30
 # Schema: NMR-spectroscopy-schema
 #
 # id: https://git.tib.eu/lab-linked-scientific-knowledge/nmr-research-data-semantification/-/blob/main/nmr_assay_schema.yaml
@@ -22,8 +22,8 @@ from linkml_runtime.utils.formatutils import camelcase, underscore, sfx
 from linkml_runtime.utils.enumerations import EnumDefinitionImpl
 from rdflib import Namespace, URIRef
 from linkml_runtime.utils.curienamespace import CurieNamespace
-from linkml_runtime.linkml_model.types import Datetime, String, Uriorcurie
-from linkml_runtime.utils.metamodelcore import URIorCURIE, XSDDateTime
+from linkml_runtime.linkml_model.types import Datetime, String, Uri, Uriorcurie
+from linkml_runtime.utils.metamodelcore import URI, URIorCURIE, XSDDateTime
 
 metamodel_version = "1.7.0"
 version = "0.0.1"
@@ -45,6 +45,7 @@ IUPAC = CurieNamespace('iupac', 'https://github.com/IUPAC/IUPAC-FAIRSpec/blob/ma
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
 NMRCV = CurieNamespace('nmrCV', 'http://nmrML.org/nmrCV#')
 OBI = CurieNamespace('obi', 'http://purl.obolibrary.org/obo/OBI_')
+OM = CurieNamespace('om', 'http://www.ontology-of-units-of-measure.org/resource/om-2/')
 PATO = CurieNamespace('pato', 'http://purl.obolibrary.org/obo/PATO_')
 PROV = CurieNamespace('prov', 'http://www.w3.org/ns/prov#')
 PUBCHEM = CurieNamespace('pubchem', 'https://pubchem.com/')
@@ -56,6 +57,10 @@ DEFAULT_ = NMRSPEC
 # Types
 
 # Class references
+class PulsedNmrAssayId(extended_str):
+    pass
+
+
 class NmrSampleId(extended_str):
     pass
 
@@ -111,12 +116,38 @@ class PulsedNmrAssay(YAMLRoot):
     class_name: ClassVar[str] = "PulsedNmrAssay"
     class_model_uri: ClassVar[URIRef] = NMRSPEC.PulsedNmrAssay
 
+    id: Union[str, PulsedNmrAssayId] = None
+    pulse_program: Union[str, "PulseProgram"] = None
+    has_dimension: Union[str, "Dimension"] = None
+    acuisition_nucleus: Union[str, List[str]] = None
     sample: Union[dict, "NmrSample"] = None
     solvent: Union[dict, "NmrSolvent"] = None
     spectrometer: Union[dict, "NmrSpectrometer"] = None
-    type: Union[str, "NmrAssayType"] = None
+    name: Optional[str] = None
+    assay_date: Optional[Union[str, XSDDateTime]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, PulsedNmrAssayId):
+            self.id = PulsedNmrAssayId(self.id)
+
+        if self._is_empty(self.pulse_program):
+            self.MissingRequiredField("pulse_program")
+        if not isinstance(self.pulse_program, PulseProgram):
+            self.pulse_program = PulseProgram(self.pulse_program)
+
+        if self._is_empty(self.has_dimension):
+            self.MissingRequiredField("has_dimension")
+        if not isinstance(self.has_dimension, Dimension):
+            self.has_dimension = Dimension(self.has_dimension)
+
+        if self._is_empty(self.acuisition_nucleus):
+            self.MissingRequiredField("acuisition_nucleus")
+        if not isinstance(self.acuisition_nucleus, list):
+            self.acuisition_nucleus = [self.acuisition_nucleus] if self.acuisition_nucleus is not None else []
+        self.acuisition_nucleus = [v if isinstance(v, str) else str(v) for v in self.acuisition_nucleus]
+
         if self._is_empty(self.sample):
             self.MissingRequiredField("sample")
         if not isinstance(self.sample, NmrSample):
@@ -132,10 +163,11 @@ class PulsedNmrAssay(YAMLRoot):
         if not isinstance(self.spectrometer, NmrSpectrometer):
             self.spectrometer = NmrSpectrometer(**as_dict(self.spectrometer))
 
-        if self._is_empty(self.type):
-            self.MissingRequiredField("type")
-        if not isinstance(self.type, NmrAssayType):
-            self.type = NmrAssayType(self.type)
+        if self.name is not None and not isinstance(self.name, str):
+            self.name = str(self.name)
+
+        if self.assay_date is not None and not isinstance(self.assay_date, XSDDateTime):
+            self.assay_date = XSDDateTime(self.assay_date)
 
         super().__post_init__(**kwargs)
 
@@ -210,8 +242,8 @@ class NmrSpectrometer(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = NMRSPEC.NmrSpectrometer
 
     id: Union[str, NmrSpectrometerId] = None
-    type: str = None
-    manufacturered_by: Optional[Union[dict, "NmrManufacturer"]] = None
+    manufacturered_by: Optional[Union[dict, "Manufacturer"]] = None
+    type: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -219,31 +251,33 @@ class NmrSpectrometer(YAMLRoot):
         if not isinstance(self.id, NmrSpectrometerId):
             self.id = NmrSpectrometerId(self.id)
 
-        if self._is_empty(self.type):
-            self.MissingRequiredField("type")
-        if not isinstance(self.type, str):
-            self.type = str(self.type)
+        if self.manufacturered_by is not None and not isinstance(self.manufacturered_by, Manufacturer):
+            self.manufacturered_by = Manufacturer(**as_dict(self.manufacturered_by))
 
-        if self.manufacturered_by is not None and not isinstance(self.manufacturered_by, NmrManufacturer):
-            self.manufacturered_by = NmrManufacturer(**as_dict(self.manufacturered_by))
+        if self.type is not None and not isinstance(self.type, str):
+            self.type = str(self.type)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass
-class NmrManufacturer(YAMLRoot):
+class Manufacturer(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OBI["0000835"]
     class_class_curie: ClassVar[str] = "obi:0000835"
-    class_name: ClassVar[str] = "NmrManufacturer"
-    class_model_uri: ClassVar[URIRef] = NMRSPEC.NmrManufacturer
+    class_name: ClassVar[str] = "Manufacturer"
+    class_model_uri: ClassVar[URIRef] = NMRSPEC.Manufacturer
 
     name: Optional[Union[str, "NmrManufacturers"]] = None
+    website: Optional[Union[str, URI]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.name is not None and not isinstance(self.name, NmrManufacturers):
             self.name = NmrManufacturers(self.name)
+
+        if self.website is not None and not isinstance(self.website, URI):
+            self.website = URI(self.website)
 
         super().__post_init__(**kwargs)
 
@@ -291,29 +325,116 @@ class NmrSpecRecord(YAMLRoot):
 
 
 # Enumerations
-class NmrAssayType(EnumDefinitionImpl):
+class PulseProgram(EnumDefinitionImpl):
+
+    NMR = PermissibleValue(text="NMR")
+    COSY = PermissibleValue(text="COSY")
+    DOSY = PermissibleValue(text="DOSY")
+    SECSY = PermissibleValue(text="SECSY")
+    RELAY = PermissibleValue(text="RELAY")
+    TOCSY = PermissibleValue(text="TOCSY")
+    ROESY = PermissibleValue(text="ROESY")
+    NOESY = PermissibleValue(text="NOESY")
+    HECTOR = PermissibleValue(text="HECTOR")
+    COLOC = PermissibleValue(text="COLOC")
+    HOESY = PermissibleValue(text="HOESY")
+    INADEQUATE = PermissibleValue(text="INADEQUATE")
+    HMQC = PermissibleValue(text="HMQC")
+    TROSY = PermissibleValue(text="TROSY")
+    CRINEPT = PermissibleValue(text="CRINEPT")
+    H2BC = PermissibleValue(text="H2BC")
+    HMBC = PermissibleValue(text="HMBC")
+    EXSIDE = PermissibleValue(text="EXSIDE")
+    HETLOC = PermissibleValue(text="HETLOC")
+    ADEQUATE = PermissibleValue(text="ADEQUATE")
+    STE = PermissibleValue(text="STE")
+    STEBP = PermissibleValue(text="STEBP")
+    CLEANEX = PermissibleValue(text="CLEANEX")
+    DSTE = PermissibleValue(text="DSTE")
+    DSTEBP = PermissibleValue(text="DSTEBP")
 
     _defn = EnumDefinition(
-        name="NmrAssayType",
+        name="PulseProgram",
     )
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "1D-1H-NMR",
-                PermissibleValue(text="1D-1H-NMR",
-                                 meaning=CHMO["0002442"]) )
-        setattr(cls, "2DJ-DOSY",
-                PermissibleValue(text="2DJ-DOSY",
-                                 meaning=CHMO["0001953"]) )
-        setattr(cls, "3D-COSY-DOSY",
-                PermissibleValue(text="3D-COSY-DOSY",
-                                 meaning=CHMO["0001951"]) )
-        setattr(cls, "3D-DOSY-TOCSY",
-                PermissibleValue(text="3D-DOSY-TOCSY",
-                                 meaning=CHMO["0001950"]) )
-        setattr(cls, "3D-DOSY-HMQC",
-                PermissibleValue(text="3D-DOSY-HMQC",
-                                 meaning=CHMO["0001952"]) )
+        setattr(cls, "COSY-DQF",
+                PermissibleValue(text="COSY-DQF") )
+        setattr(cls, "Double-Quantum",
+                PermissibleValue(text="Double-Quantum") )
+        setattr(cls, "J-Resolved",
+                PermissibleValue(text="J-Resolved") )
+        setattr(cls, "DEPT & INEPT",
+                PermissibleValue(text="DEPT & INEPT") )
+        setattr(cls, "Heteronuclear J-resolved",
+                PermissibleValue(text="Heteronuclear J-resolved") )
+        setattr(cls, "Inverse 1H-NMR",
+                PermissibleValue(text="Inverse 1H-NMR") )
+        setattr(cls, "DEPT-HMQC",
+                PermissibleValue(text="DEPT-HMQC") )
+        setattr(cls, "Multiplicity-edited HSQC",
+                PermissibleValue(text="Multiplicity-edited HSQC") )
+        setattr(cls, "CT-HSQC",
+                PermissibleValue(text="CT-HSQC") )
+        setattr(cls, "CT-HMBC",
+                PermissibleValue(text="CT-HMBC") )
+        setattr(cls, "Inverse-INEPT",
+                PermissibleValue(text="Inverse-INEPT") )
+        setattr(cls, "2D HSQC-α,β",
+                PermissibleValue(text="2D HSQC-α,β") )
+        setattr(cls, "2D IPAP-HSQC",
+                PermissibleValue(text="2D IPAP-HSQC") )
+        setattr(cls, "2D J-modulated CT-HSQC",
+                PermissibleValue(text="2D J-modulated CT-HSQC") )
+        setattr(cls, "HMQC-COSY",
+                PermissibleValue(text="HMQC-COSY") )
+        setattr(cls, "HQMC-TOSCY",
+                PermissibleValue(text="HQMC-TOSCY") )
+        setattr(cls, "HMQC-ROESY",
+                PermissibleValue(text="HMQC-ROESY") )
+        setattr(cls, "HMQC-NOESY",
+                PermissibleValue(text="HMQC-NOESY") )
+        setattr(cls, "HSQC-TOSCY",
+                PermissibleValue(text="HSQC-TOSCY") )
+        setattr(cls, "HSQC-ROESY",
+                PermissibleValue(text="HSQC-ROESY") )
+        setattr(cls, "HSQC-NOESY",
+                PermissibleValue(text="HSQC-NOESY") )
+        setattr(cls, "Phase-sensitive HMBC",
+                PermissibleValue(text="Phase-sensitive HMBC") )
+        setattr(cls, "J-HMBC",
+                PermissibleValue(text="J-HMBC") )
+        setattr(cls, "Long-range HSQC (HSQMBC)",
+                PermissibleValue(text="Long-range HSQC (HSQMBC)") )
+        setattr(cls, "HSQC-HECADE",
+                PermissibleValue(text="HSQC-HECADE") )
+        setattr(cls, "1,1-ADEQUATE",
+                PermissibleValue(text="1,1-ADEQUATE") )
+        setattr(cls, "1,n-ADEQUATE",
+                PermissibleValue(text="1,n-ADEQUATE") )
+        setattr(cls, "n,1-ADEQUATE",
+                PermissibleValue(text="n,1-ADEQUATE") )
+        setattr(cls, "n,n-ADEQUATE",
+                PermissibleValue(text="n,n-ADEQUATE") )
+        setattr(cls, "STD-TOSCY",
+                PermissibleValue(text="STD-TOSCY") )
+        setattr(cls, "STD-NOESY",
+                PermissibleValue(text="STD-NOESY") )
+        setattr(cls, "STD-HSQC",
+                PermissibleValue(text="STD-HSQC") )
+        setattr(cls, "CLEANEX-HSQC",
+                PermissibleValue(text="CLEANEX-HSQC") )
+        setattr(cls, "CLEANEX-TROSY",
+                PermissibleValue(text="CLEANEX-TROSY") )
+        setattr(cls, "COSY-DOSY",
+                PermissibleValue(text="COSY-DOSY") )
+        setattr(cls, "DOSY-TOCSY",
+                PermissibleValue(text="DOSY-TOCSY") )
+        setattr(cls, "DOSY-NOESY",
+                PermissibleValue(text="DOSY-NOESY") )
+        setattr(cls, "DOSY-HMQC",
+                PermissibleValue(text="DOSY-HMQC") )
 
 class NmrManufacturers(EnumDefinitionImpl):
 

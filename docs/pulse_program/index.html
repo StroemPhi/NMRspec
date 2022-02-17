@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Class: PulsedNmrAssay - This model is to be used to semantify NMR spectroscopy research data.</title>
+  <title>Slot: pulse_program - This model is to be used to semantify NMR spectroscopy research data.</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Class: PulsedNmrAssay";
-    var mkdocs_page_input_path = "PulsedNmrAssay.md";
+    var mkdocs_page_name = "Slot: pulse_program";
+    var mkdocs_page_input_path = "pulse_program.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -79,7 +79,7 @@
     
       
     
-    <li>Class: PulsedNmrAssay</li>
+    <li>Slot: pulse_program</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -91,71 +91,16 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="class-pulsednmrassay">Class: PulsedNmrAssay</h1>
-<p>URI: <a href="https://nfdi4chem/nmr/data/PulsedNmrAssay">NMRspec:PulsedNmrAssay</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[NmrSpectrometer]&lt;spectrometer%201..1-++[PulsedNmrAssay&#124;id:string;name:string%20%3F;assay_date:datetime%20%3F;pulse_program:PulseProgram;has_dimension:Dimension;acuisition_nucleus:string%20%2B],[NmrSolvent]&lt;solvent%201..1-++[PulsedNmrAssay],[NmrSample]&lt;sample%201..1-++[PulsedNmrAssay],[NmrSpecRecord]++-%20output_of_nmr_assay%201..1&gt;[PulsedNmrAssay],[NmrSpectrometer],[NmrSpecRecord],[NmrSolvent],[NmrSample]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[NmrSpectrometer]&lt;spectrometer%201..1-++[PulsedNmrAssay&#124;id:string;name:string%20%3F;assay_date:datetime%20%3F;pulse_program:PulseProgram;has_dimension:Dimension;acuisition_nucleus:string%20%2B],[NmrSolvent]&lt;solvent%201..1-++[PulsedNmrAssay],[NmrSample]&lt;sample%201..1-++[PulsedNmrAssay],[NmrSpecRecord]++-%20output_of_nmr_assay%201..1&gt;[PulsedNmrAssay],[NmrSpectrometer],[NmrSpecRecord],[NmrSolvent],[NmrSample]" /></a></p>
-<h2 id="referenced-by-class">Referenced by Class</h2>
+                <h1 id="slot-pulse_program">Slot: pulse_program</h1>
+<p>URI: <a href="https://nfdi4chem/nmr/data/pulse_program">NMRspec:pulse_program</a></p>
+<h2 id="domain-and-range">Domain and Range</h2>
+<p>None &#8594;  <sub>1..1</sub> <a href="../PulseProgram/">PulseProgram</a></p>
+<h2 id="parents">Parents</h2>
+<h2 id="children">Children</h2>
+<h2 id="used-by">Used by</h2>
 <ul>
-<li><strong><a href="../NmrSpecRecord/">NmrSpecRecord</a></strong> <em><a href="../NmrSpecRecord_output_of_nmr_assay/">NmrSpecRecord➞output_of_nmr_assay</a></em>  <sub>1..1</sub>  <strong><a href="./">PulsedNmrAssay</a></strong></li>
+<li><a href="../PulsedNmrAssay/">PulsedNmrAssay</a></li>
 </ul>
-<h2 id="attributes">Attributes</h2>
-<h3 id="own">Own</h3>
-<ul>
-<li><a href="../id/">id</a>  <sub>1..1</sub><ul>
-<li>Range: <a href="../String/">String</a></li>
-</ul>
-</li>
-<li><a href="../name/">name</a>  <sub>0..1</sub><ul>
-<li>Range: <a href="../String/">String</a></li>
-</ul>
-</li>
-<li><a href="../assay_date/">assay_date</a>  <sub>0..1</sub><ul>
-<li>Range: <a href="../Datetime/">Datetime</a></li>
-</ul>
-</li>
-<li><a href="../pulse_program/">pulse_program</a>  <sub>1..1</sub><ul>
-<li>Range: <a href="../PulseProgram/">PulseProgram</a></li>
-</ul>
-</li>
-<li><a href="../has_dimension/">has_dimension</a>  <sub>1..1</sub><ul>
-<li>Range: <a href="../Dimension/">Dimension</a></li>
-</ul>
-</li>
-<li><a href="../acuisition_nucleus/">acuisition_nucleus</a>  <sub>1..*</sub><ul>
-<li>Description: this is the aqu.nucleus nto be assayed as specified by the protocol</li>
-<li>Range: <a href="../String/">String</a></li>
-</ul>
-</li>
-<li><a href="../sample/">sample</a>  <sub>1..1</sub><ul>
-<li>Range: <a href="../NmrSample/">NmrSample</a></li>
-</ul>
-</li>
-<li><a href="../solvent/">solvent</a>  <sub>1..1</sub><ul>
-<li>Range: <a href="../NmrSolvent/">NmrSolvent</a></li>
-</ul>
-</li>
-<li><a href="../spectrometer/">spectrometer</a>  <sub>1..1</sub><ul>
-<li>Range: <a href="../NmrSpectrometer/">NmrSpectrometer</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="other-properties">Other properties</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Mappings:</strong></td>
-<td></td>
-<td>chmo:0000613</td>
-</tr>
-</tbody>
-</table>
               
             </div>
           </div>

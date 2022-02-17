@@ -11,28 +11,19 @@
          "title": "Dimension",
          "type": "string"
       },
-      "NmrAssayType": {
-         "description": "",
-         "enum": [
-            "1D-1H-NMR",
-            "2DJ-DOSY",
-            "3D-COSY-DOSY",
-            "3D-DOSY-TOCSY",
-            "3D-DOSY-HMQC"
-         ],
-         "title": "NmrAssayType",
-         "type": "string"
-      },
-      "NmrManufacturer": {
+      "Manufacturer": {
          "additionalProperties": false,
          "description": "",
          "properties": {
             "name": {
                "$ref": "#/$defs/NmrManufacturers"
+            },
+            "website": {
+               "type": "string"
             }
          },
          "required": [],
-         "title": "NmrManufacturer",
+         "title": "Manufacturer",
          "type": "object"
       },
       "NmrManufacturers": {
@@ -150,23 +141,115 @@
                "type": "string"
             },
             "manufacturered_by": {
-               "$ref": "#/$defs/NmrManufacturer"
+               "$ref": "#/$defs/Manufacturer"
             },
             "type": {
                "type": "string"
             }
          },
          "required": [
-            "id",
-            "type"
+            "id"
          ],
          "title": "NmrSpectrometer",
          "type": "object"
+      },
+      "PulseProgram": {
+         "description": "",
+         "enum": [
+            "NMR",
+            "COSY",
+            "COSY-DQF",
+            "DOSY",
+            "SECSY",
+            "RELAY",
+            "TOCSY",
+            "ROESY",
+            "NOESY",
+            "Double-Quantum",
+            "J-Resolved",
+            "DEPT & INEPT",
+            "HECTOR",
+            "COLOC",
+            "Heteronuclear J-resolved",
+            "HOESY",
+            "INADEQUATE",
+            "Inverse 1H-NMR",
+            "HMQC",
+            "DEPT-HMQC",
+            "Multiplicity-edited HSQC",
+            "CT-HSQC",
+            "CT-HMBC",
+            "Inverse-INEPT",
+            "2D HSQC-\u03b1,\u03b2",
+            "2D IPAP-HSQC",
+            "2D J-modulated CT-HSQC",
+            "TROSY",
+            "CRINEPT",
+            "HMQC-COSY",
+            "H2BC",
+            "HQMC-TOSCY",
+            "HMQC-ROESY",
+            "HMQC-NOESY",
+            "HSQC-TOSCY",
+            "HSQC-ROESY",
+            "HSQC-NOESY",
+            "HMBC",
+            "Phase-sensitive HMBC",
+            "J-HMBC",
+            "Long-range HSQC (HSQMBC)",
+            "EXSIDE",
+            "HETLOC",
+            "HSQC-HECADE",
+            "ADEQUATE",
+            "1,1-ADEQUATE",
+            "1,n-ADEQUATE",
+            "n,1-ADEQUATE",
+            "n,n-ADEQUATE",
+            "STE",
+            "STEBP",
+            "STD-TOSCY",
+            "STD-NOESY",
+            "STD-HSQC",
+            "CLEANEX",
+            "CLEANEX-HSQC",
+            "CLEANEX-TROSY",
+            "DSTE",
+            "DSTEBP",
+            "COSY-DOSY",
+            "DOSY-TOCSY",
+            "DOSY-NOESY",
+            "DOSY-HMQC"
+         ],
+         "title": "PulseProgram",
+         "type": "string"
       },
       "PulsedNmrAssay": {
          "additionalProperties": false,
          "description": "",
          "properties": {
+            "acuisition_nucleus": {
+               "description": "this is the aqu.nucleus nto be assayed as specified by the protocol",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "assay_date": {
+               "format": "date-time",
+               "type": "string"
+            },
+            "has_dimension": {
+               "$ref": "#/$defs/Dimension"
+            },
+            "id": {
+               "type": "string"
+            },
+            "name": {
+               "type": "string"
+            },
+            "pulse_program": {
+               "$ref": "#/$defs/PulseProgram"
+            },
             "sample": {
                "$ref": "#/$defs/NmrSample"
             },
@@ -175,16 +258,16 @@
             },
             "spectrometer": {
                "$ref": "#/$defs/NmrSpectrometer"
-            },
-            "type": {
-               "$ref": "#/$defs/NmrAssayType"
             }
          },
          "required": [
+            "id",
+            "pulse_program",
+            "has_dimension",
+            "acuisition_nucleus",
             "sample",
             "solvent",
-            "spectrometer",
-            "type"
+            "spectrometer"
          ],
          "title": "PulsedNmrAssay",
          "type": "object"

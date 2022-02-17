@@ -93,7 +93,7 @@
               
                 <h1 id="class-nmrspectrometer">Class: NmrSpectrometer</h1>
 <p>URI: <a href="https://nfdi4chem/nmr/data/NmrSpectrometer">NMRspec:NmrSpectrometer</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[NmrManufacturer]&lt;manufacturered_by%200..1-++[NmrSpectrometer&#124;id:string;type:string],[PulsedNmrAssay]++-%20spectrometer%201..1&gt;[NmrSpectrometer],[NmrManufacturer]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[NmrManufacturer]&lt;manufacturered_by%200..1-++[NmrSpectrometer&#124;id:string;type:string],[PulsedNmrAssay]++-%20spectrometer%201..1&gt;[NmrSpectrometer],[NmrManufacturer]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[Manufacturer]&lt;manufacturered_by%200..1-++[NmrSpectrometer&#124;id:string;type:string%20%3F],[PulsedNmrAssay]++-%20spectrometer%201..1&gt;[NmrSpectrometer],[Manufacturer]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[Manufacturer]&lt;manufacturered_by%200..1-++[NmrSpectrometer&#124;id:string;type:string%20%3F],[PulsedNmrAssay]++-%20spectrometer%201..1&gt;[NmrSpectrometer],[Manufacturer]" /></a></p>
 <h2 id="referenced-by-class">Referenced by Class</h2>
 <ul>
 <li><strong><a href="../PulsedNmrAssay/">PulsedNmrAssay</a></strong> <em><a href="../spectrometer/">spectrometer</a></em>  <sub>1..1</sub>  <strong><a href="./">NmrSpectrometer</a></strong></li>
@@ -106,10 +106,10 @@
 </ul>
 </li>
 <li><a href="../NmrSpectrometer_manufacturered_by/">NmrSpectrometer➞manufacturered_by</a>  <sub>0..1</sub><ul>
-<li>Range: <a href="../NmrManufacturer/">NmrManufacturer</a></li>
+<li>Range: <a href="../Manufacturer/">Manufacturer</a></li>
 </ul>
 </li>
-<li><a href="../NmrSpectrometer_type/">NmrSpectrometer➞type</a>  <sub>1..1</sub><ul>
+<li><a href="../NmrSpectrometer_type/">NmrSpectrometer➞type</a>  <sub>0..1</sub><ul>
 <li>Range: <a href="../String/">String</a></li>
 </ul>
 </li>

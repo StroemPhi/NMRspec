@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Enum: NmrAssayType - This model is to be used to semantify NMR spectroscopy research data.</title>
+  <title>Class: Manufacturer - This model is to be used to semantify NMR spectroscopy research data.</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Enum: NmrAssayType";
-    var mkdocs_page_input_path = "NmrAssayType.md";
+    var mkdocs_page_name = "Class: Manufacturer";
+    var mkdocs_page_input_path = "Manufacturer.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -79,7 +79,7 @@
     
       
     
-    <li>Enum: NmrAssayType</li>
+    <li>Class: Manufacturer</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -91,8 +91,25 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="enum-nmrassaytype">Enum: NmrAssayType</h1>
-<p>URI: <a href="https://nfdi4chem/nmr/data/NmrAssayType">NMRspec:NmrAssayType</a></p>
+                <h1 id="class-manufacturer">Class: Manufacturer</h1>
+<p>URI: <a href="https://nfdi4chem/nmr/data/Manufacturer">NMRspec:Manufacturer</a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[NmrSpectrometer],[NmrSpectrometer]++-%20manufacturered_by%200..1&gt;[Manufacturer&#124;name:NmrManufacturers%20%3F;website:uri%20%3F]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[NmrSpectrometer],[NmrSpectrometer]++-%20manufacturered_by%200..1&gt;[Manufacturer&#124;name:NmrManufacturers%20%3F;website:uri%20%3F]" /></a></p>
+<h2 id="referenced-by-class">Referenced by Class</h2>
+<ul>
+<li><strong><a href="../NmrSpectrometer/">NmrSpectrometer</a></strong> <em><a href="../NmrSpectrometer_manufacturered_by/">NmrSpectrometer➞manufacturered_by</a></em>  <sub>0..1</sub>  <strong><a href="./">Manufacturer</a></strong></li>
+</ul>
+<h2 id="attributes">Attributes</h2>
+<h3 id="own">Own</h3>
+<ul>
+<li><a href="../Manufacturer_name/">Manufacturer➞name</a>  <sub>0..1</sub><ul>
+<li>Range: <a href="../NmrManufacturers/">NmrManufacturers</a></li>
+</ul>
+</li>
+<li><a href="../website/">website</a>  <sub>0..1</sub><ul>
+<li>Range: <a href="../Uri/">Uri</a></li>
+</ul>
+</li>
+</ul>
 <h2 id="other-properties">Other properties</h2>
 <table>
 <thead>
@@ -104,52 +121,14 @@
 </thead>
 <tbody>
 <tr>
+<td><strong>Mappings:</strong></td>
 <td></td>
+<td>obi:0000835</td>
+</tr>
+<tr>
+<td><strong>Close Mappings:</strong></td>
 <td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h2 id="permissible-values">Permissible Values</h2>
-<table>
-<thead>
-<tr>
-<th align="left">Text</th>
-<th align="center">Description</th>
-<th align="center">Meaning</th>
-<th align="right">Other Information</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">1D-1H-NMR</td>
-<td align="center"></td>
-<td align="center">chmo:0002442</td>
-<td align="right"></td>
-</tr>
-<tr>
-<td align="left">2DJ-DOSY</td>
-<td align="center"></td>
-<td align="center">chmo:0001953</td>
-<td align="right"></td>
-</tr>
-<tr>
-<td align="left">3D-COSY-DOSY</td>
-<td align="center"></td>
-<td align="center">chmo:0001951</td>
-<td align="right"></td>
-</tr>
-<tr>
-<td align="left">3D-DOSY-TOCSY</td>
-<td align="center"></td>
-<td align="center">chmo:0001950</td>
-<td align="right"></td>
-</tr>
-<tr>
-<td align="left">3D-DOSY-HMQC</td>
-<td align="center"></td>
-<td align="center">chmo:0001952</td>
-<td align="right"></td>
+<td>nmrCV:1400255</td>
 </tr>
 </tbody>
 </table>
