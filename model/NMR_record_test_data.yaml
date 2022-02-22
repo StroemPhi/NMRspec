@@ -1,23 +1,30 @@
-# based on Chemotion Data: SG-V3259 (41-52)
+#############################################
+# based on Chemotion Data: SG-V3259 (41-52) #
+#############################################
 
+# a NmrSpecRecord
 id: chemotion:SG-V325
 source: Chemotion Repository
 source_uri: nfdi4chem-gdrive
 date_retrieved: "2022-02-22"
-output_of_nmr_assay:
+output_of_nmr_assay: 
+# PulsedNmrAssay metadata
   assay_date: "2019-07-18T02:18:49"
   id: chemotion:SG-V325_assay_ns1024
   name: 13C_ns1024 CDCl3 /opt/topspin3.5pl6/data/complat/nmr SG 55
   pulse_program: NMR
   has_dimension: 1D
+
   acuisition_nucleus: 
     - 13C
   sample:
+    # sample metadata
     id: chemotion:SG-V325_sample
     local_id: "55"
     formula: C25H28N6O
     name: pyridine-3-carboxylic acid
   solvent:
+    # solvent metatada
     id: chebi:85365
     formula: CDCL3
     name: deuterated chloroform

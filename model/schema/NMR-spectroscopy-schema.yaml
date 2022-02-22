@@ -23,12 +23,15 @@ prefixes:
   obi: http://purl.obolibrary.org/obo/OBI_
   pato: http://purl.obolibrary.org/obo/PATO_
   prov: http://www.w3.org/ns/prov#
-  isa: https://isa-specs.readthedocs.io/en/latest/isamodel.html#
-  iupac: https://github.com/IUPAC/IUPAC-FAIRSpec/blob/main/src/main/java/org/iupac/fairspec/core/
+  om: http://www.ontology-of-units-of-measure.org/resource/om-2/
+# data prefixes
   doi: https://doi.org/
   chemotion: https://chemotion.de/
   pubchem: https://pubchem.com/
-  om: http://www.ontology-of-units-of-measure.org/resource/om-2/
+# other NMR schema prefixes for mapping/interoperability purposes
+  jdx: http://www.jcamp-dx.org/protocols/dxnmr01.pdf/
+  isa: https://isa-specs.readthedocs.io/en/latest/isamodel.html#
+  FAIRspec: https://github.com/IUPAC/IUPAC-FAIRSpec/blob/main/src/main/java/org/iupac/fairspec/core/
 
 default_prefix: NMRspec
 default_curi_maps:
