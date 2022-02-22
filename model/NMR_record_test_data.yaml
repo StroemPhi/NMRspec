@@ -14,23 +14,25 @@ output_of_nmr_assay:
   name: 13C_ns1024 CDCl3 /opt/topspin3.5pl6/data/complat/nmr SG 55
   pulse_program: NMR
   has_dimension: 1D
-
-  acuisition_nucleus: 
-    - 13C
-  sample:
-    # sample metadata
-    id: chemotion:SG-V325_sample
-    local_id: "55"
-    formula: C25H28N6O
-    name: pyridine-3-carboxylic acid
-  solvent:
-    # solvent metatada
-    id: chebi:85365
-    formula: CDCL3
-    name: deuterated chloroform
+  acuisition_nuclei: 
+      - 13C
+  observed_frequencies:
+    - 100.623835930538
+  assayed_solution:   
+      sample:
+      # sample metadata
+        id: chemotion:SG-V325_sample
+        local_id: "55"
+        formula: C25H28N6O
+        name: pyridine-3-carboxylic acid
+      solvent:
+        # solvent metatada
+        id: chebi:85365
+        formula: CDCL3
+        name: deuterated chloroform
   spectrometer:
     id: chemotion:SG-V325_device 
     type: Bruker Ascend 400
-    manufacturered_by: 
+    manufactured_by: 
       name: Bruker
       website: https://www.bruker.com/
