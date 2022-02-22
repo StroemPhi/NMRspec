@@ -71,7 +71,7 @@ classes:
       - sample
       - solvent
       - spectrometer
-# Material Entities      
+# Material Entities
   NmrSample:
     slots:
       - id
@@ -113,11 +113,13 @@ classes:
 
 # Information Content Entities
   NmrSpecRecord:
+    description: >-
+      This is the tree root node of the schema. It is a data item that serves as a container for all relevant information about one NMR spectroscopy assay record. The properties of this class represent the required metadata of an NMR assay, such as: 
+      * what kind of assay was performed (e.g. 2D 13C COSY) and what devices where used for that (e.g. spectrometer, magnet, solvent, buffer, ...)
+      * what are the detail infos of the assayed sample (name, formula, structure, concentration, preperation process, ...)
     tree_root: true
     mixins:
       - ProvenanceData
-    description: >-
-      A data item that is an NMR assay output which represents the data produced by an NMR assay of a studied sample compound.
     slots:
       - id
       - output_of_nmr_assay
