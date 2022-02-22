@@ -174,7 +174,9 @@ slots:
     required: true
     range: Dimension
   pulse_program:
+    description: The pulse program of a PulsedNmrAssay is a required property and must be conform to one of the values defined in the PulseProgram enum class. The possible values there are defined according to common pulse programs, e.g. NMR for basic 1H-NMR, or COSY and COSY-DOSY, etc. 
     required: true
+    domain: PulsedNmrAssay
     range: PulseProgram
   acuisition_nucleus:
     required: true
