@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Class: PulsedNmrAssay - This model is to be used to semantify NMR spectroscopy research data.</title>
+  <title>Slot: sample - This model is to be used to semantify NMR spectroscopy research data.</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Class: PulsedNmrAssay";
-    var mkdocs_page_input_path = "PulsedNmrAssay.md";
+    var mkdocs_page_name = "Slot: sample";
+    var mkdocs_page_input_path = "nmrSolution__sample.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -79,7 +79,7 @@
     
       
     
-    <li>Class: PulsedNmrAssay</li>
+    <li>Slot: sample</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -91,61 +91,15 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="class-pulsednmrassay">Class: PulsedNmrAssay</h1>
-<p>URI: <a href="https://nfdi4chem/nmr/data/PulsedNmrAssay">NMRspec:PulsedNmrAssay</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[NmrSpectrometer]&lt;spectrometer%201..1-++[PulsedNmrAssay&#124;id:uriorcurie;name:string%20%3F;assay_date:datetime%20%3F;has_dimension:Dimension;pulse_program:PulseProgram;acuisition_nuclei:string%20%2B;observed_frequencies:float%20*],[NmrSolution]&lt;assayed_solution%201..1-++[PulsedNmrAssay],[NmrSpecRecord]++-%20output_of_nmr_assay%201..1&gt;[PulsedNmrAssay],[PulsedNmrAssay]uses%20-.-&gt;[NamedThing],[NmrSpectrometer],[NmrSpecRecord],[NmrSolution],[NamedThing]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[NmrSpectrometer]&lt;spectrometer%201..1-++[PulsedNmrAssay&#124;id:uriorcurie;name:string%20%3F;assay_date:datetime%20%3F;has_dimension:Dimension;pulse_program:PulseProgram;acuisition_nuclei:string%20%2B;observed_frequencies:float%20*],[NmrSolution]&lt;assayed_solution%201..1-++[PulsedNmrAssay],[NmrSpecRecord]++-%20output_of_nmr_assay%201..1&gt;[PulsedNmrAssay],[PulsedNmrAssay]uses%20-.-&gt;[NamedThing],[NmrSpectrometer],[NmrSpecRecord],[NmrSolution],[NamedThing]" /></a></p>
-<h2 id="uses-mixin">Uses Mixin</h2>
+                <h1 id="slot-sample">Slot: sample</h1>
+<p>URI: <a href="https://nfdi4chem/nmr/data/nmrSolution__sample">NMRspec:nmrSolution__sample</a></p>
+<h2 id="domain-and-range">Domain and Range</h2>
+<p><a href="../NmrSolution/">NmrSolution</a> &#8594;  <sub>1..1</sub> <a href="../NmrSample/">NmrSample</a></p>
+<h2 id="parents">Parents</h2>
+<h2 id="children">Children</h2>
+<h2 id="used-by">Used by</h2>
 <ul>
-<li>mixin: <a href="../NamedThing/">NamedThing</a></li>
-</ul>
-<h2 id="referenced-by-class">Referenced by Class</h2>
-<ul>
-<li><strong><a href="../NmrSpecRecord/">NmrSpecRecord</a></strong> <em><a href="../NmrSpecRecord_output_of_nmr_assay/">NmrSpecRecord➞output_of_nmr_assay</a></em>  <sub>1..1</sub>  <strong><a href="./">PulsedNmrAssay</a></strong></li>
-</ul>
-<h2 id="attributes">Attributes</h2>
-<h3 id="own">Own</h3>
-<ul>
-<li><a href="../id/">id</a>  <sub>1..1</sub><ul>
-<li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
-</ul>
-</li>
-<li><a href="../name/">name</a>  <sub>0..1</sub><ul>
-<li>Description: a generic property to provide a string that is used to name a something</li>
-<li>Range: <a href="../String/">String</a></li>
-</ul>
-</li>
-<li><a href="../pulsedNmrAssay__assay_date/">PulsedNmrAssay➞assay_date</a>  <sub>0..1</sub><ul>
-<li>Description: the date the assay was carried out by someone</li>
-<li>Range: <a href="../Datetime/">Datetime</a></li>
-</ul>
-</li>
-<li><a href="../pulsedNmrAssay__assayed_solution/">PulsedNmrAssay➞assayed_solution</a>  <sub>1..1</sub><ul>
-<li>Description: the property refering to solution in which the assayed sample is disolved in</li>
-<li>Range: <a href="../NmrSolution/">NmrSolution</a></li>
-</ul>
-</li>
-<li><a href="../pulsedNmrAssay__spectrometer/">PulsedNmrAssay➞spectrometer</a>  <sub>1..1</sub><ul>
-<li>Range: <a href="../NmrSpectrometer/">NmrSpectrometer</a></li>
-</ul>
-</li>
-<li><a href="../pulsedNmrAssay__has_dimension/">➞has_dimension</a>  <sub>1..1</sub><ul>
-<li>Range: <a href="../Dimension/">Dimension</a></li>
-</ul>
-</li>
-<li><a href="../pulsedNmrAssay__pulse_program/">PulsedNmrAssay➞pulse_program</a>  <sub>1..1</sub><ul>
-<li>Description: The pulse program of a PulsedNmrAssay is a required property and must be conform to one of the values defined in the PulseProgram enum class. The possible values there are defined according to common pulse programs, e.g. NMR for basic 1H-NMR, or COSY and COSY-DOSY, etc.</li>
-<li>Range: <a href="../PulseProgram/">PulseProgram</a></li>
-</ul>
-</li>
-<li><a href="../pulsedNmrAssay__acuisition_nuclei/">PulsedNmrAssay➞acuisition_nuclei</a>  <sub>1..*</sub><ul>
-<li>Description: the nuclei to be assayed as specified by the protocol</li>
-<li>Range: <a href="../String/">String</a></li>
-</ul>
-</li>
-<li><a href="../pulsedNmrAssay__observed_frequencies/">PulsedNmrAssay➞observed_frequencies</a>  <sub>0..*</sub><ul>
-<li>Range: <a href="../Float/">Float</a></li>
-</ul>
-</li>
+<li><a href="../NmrSolution/">NmrSolution</a></li>
 </ul>
 <h2 id="other-properties">Other properties</h2>
 <table>
@@ -160,7 +114,7 @@
 <tr>
 <td><strong>Mappings:</strong></td>
 <td></td>
-<td>chmo:0000613</td>
+<td>bfo:0000051</td>
 </tr>
 </tbody>
 </table>

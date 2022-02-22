@@ -1,5 +1,26 @@
 {
    "$defs": {
+      "ChemicalMetadata": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "formula": {
+               "type": "string"
+            },
+            "inchi": {
+               "type": "string"
+            },
+            "inchikey": {
+               "type": "string"
+            },
+            "smiles": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "ChemicalMetadata",
+         "type": "object"
+      },
       "Dimension": {
          "description": "",
          "enum": [
@@ -16,14 +37,64 @@
          "description": "",
          "properties": {
             "name": {
-               "$ref": "#/$defs/NmrManufacturers"
+               "$ref": "#/$defs/NmrManufacturers",
+               "description": "a generic property to provide a string that is used to name a something"
             },
             "website": {
+               "description": "a generic property to be used in classes that represent something which has a website",
                "type": "string"
             }
          },
          "required": [],
          "title": "Manufacturer",
+         "type": "object"
+      },
+      "NamedThing": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "type": "string"
+            },
+            "name": {
+               "description": "a generic property to provide a string that is used to name a something",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "NamedThing",
+         "type": "object"
+      },
+      "NmrBuffer": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "formula": {
+               "type": "string"
+            },
+            "id": {
+               "type": "string"
+            },
+            "inchi": {
+               "type": "string"
+            },
+            "inchikey": {
+               "type": "string"
+            },
+            "name": {
+               "description": "a generic property to provide a string that is used to name a something",
+               "type": "string"
+            },
+            "smiles": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "NmrBuffer",
          "type": "object"
       },
       "NmrManufacturers": {
@@ -71,10 +142,21 @@
             "id": {
                "type": "string"
             },
+            "inchi": {
+               "type": "string"
+            },
+            "inchikey": {
+               "type": "string"
+            },
             "local_id": {
+               "description": "This property should be used to provide the local identifier with which something is denoted in a local context (e.g. your lab notebook).",
                "type": "string"
             },
             "name": {
+               "description": "a generic property to provide a string that is used to name a something",
+               "type": "string"
+            },
+            "smiles": {
                "type": "string"
             }
          },
@@ -82,6 +164,27 @@
             "id"
          ],
          "title": "NmrSample",
+         "type": "object"
+      },
+      "NmrSolution": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "buffer": {
+               "$ref": "#/$defs/NmrBuffer"
+            },
+            "sample": {
+               "$ref": "#/$defs/NmrSample"
+            },
+            "solvent": {
+               "$ref": "#/$defs/NmrSolvent"
+            }
+         },
+         "required": [
+            "solvent",
+            "sample"
+         ],
+         "title": "NmrSolution",
          "type": "object"
       },
       "NmrSolvent": {
@@ -94,7 +197,17 @@
             "id": {
                "type": "string"
             },
+            "inchi": {
+               "type": "string"
+            },
+            "inchikey": {
+               "type": "string"
+            },
             "name": {
+               "description": "a generic property to provide a string that is used to name a something",
+               "type": "string"
+            },
+            "smiles": {
                "type": "string"
             }
          },
@@ -106,7 +219,7 @@
       },
       "NmrSpecRecord": {
          "additionalProperties": false,
-         "description": "A data item that is an NMR assay output which represents the data produced by an NMR assay of a studied sample compound.",
+         "description": "This is the tree root node of the schema. It is a data item that serves as a container for all relevant information about one NMR spectroscopy assay record. The properties of this class represent the required metadata of an NMR assay, such as:  * what kind of assay was performed (e.g. 2D 13C COSY) and what devices where used for that (e.g. spectrometer, magnet, solvent, buffer, ...) * what are the detail infos of the assayed sample (name, formula, structure, concentration, preperation process, ...)",
          "properties": {
             "date_retrieved": {
                "format": "date-time",
@@ -119,10 +232,11 @@
                "$ref": "#/$defs/PulsedNmrAssay"
             },
             "source": {
-               "description": "This field can be used to provide the source of the data as String. E.g.",
+               "description": "a property to be used to provide the source of the data as String",
                "type": "string"
             },
             "source_uri": {
+               "description": "a property to be used to provide the source of the data as URL or CURIE",
                "type": "string"
             }
          },
@@ -140,8 +254,13 @@
             "id": {
                "type": "string"
             },
-            "manufacturered_by": {
-               "$ref": "#/$defs/Manufacturer"
+            "manufactured_by": {
+               "$ref": "#/$defs/Manufacturer",
+               "description": "a property to be used on any class that represents some form of atrefact, in order to refer to the artefacts maker."
+            },
+            "name": {
+               "description": "a generic property to provide a string that is used to name a something",
+               "type": "string"
             },
             "type": {
                "type": "string"
@@ -159,6 +278,7 @@
             "NMR",
             "COSY",
             "COSY-DQF",
+            "COSY-DOSY",
             "DOSY",
             "SECSY",
             "RELAY",
@@ -215,7 +335,6 @@
             "CLEANEX-TROSY",
             "DSTE",
             "DSTEBP",
-            "COSY-DOSY",
             "DOSY-TOCSY",
             "DOSY-NOESY",
             "DOSY-HMQC"
@@ -227,16 +346,21 @@
          "additionalProperties": false,
          "description": "",
          "properties": {
-            "acuisition_nucleus": {
-               "description": "this is the aqu.nucleus nto be assayed as specified by the protocol",
+            "acuisition_nuclei": {
+               "description": "the nuclei to be assayed as specified by the protocol",
                "items": {
                   "type": "string"
                },
                "type": "array"
             },
             "assay_date": {
+               "description": "the date the assay was carried out by someone",
                "format": "date-time",
                "type": "string"
+            },
+            "assayed_solution": {
+               "$ref": "#/$defs/NmrSolution",
+               "description": "the property refering to solution in which the assayed sample is disolved in"
             },
             "has_dimension": {
                "$ref": "#/$defs/Dimension"
@@ -245,16 +369,18 @@
                "type": "string"
             },
             "name": {
+               "description": "a generic property to provide a string that is used to name a something",
                "type": "string"
             },
+            "observed_frequencies": {
+               "items": {
+                  "type": "number"
+               },
+               "type": "array"
+            },
             "pulse_program": {
-               "$ref": "#/$defs/PulseProgram"
-            },
-            "sample": {
-               "$ref": "#/$defs/NmrSample"
-            },
-            "solvent": {
-               "$ref": "#/$defs/NmrSolvent"
+               "$ref": "#/$defs/PulseProgram",
+               "description": "The pulse program of a PulsedNmrAssay is a required property and must be conform to one of the values defined in the PulseProgram enum class. The possible values there are defined according to common pulse programs, e.g. NMR for basic 1H-NMR, or COSY and COSY-DOSY, etc."
             },
             "spectrometer": {
                "$ref": "#/$defs/NmrSpectrometer"
@@ -262,12 +388,11 @@
          },
          "required": [
             "id",
-            "pulse_program",
+            "assayed_solution",
+            "spectrometer",
             "has_dimension",
-            "acuisition_nucleus",
-            "sample",
-            "solvent",
-            "spectrometer"
+            "pulse_program",
+            "acuisition_nuclei"
          ],
          "title": "PulsedNmrAssay",
          "type": "object"

@@ -23,12 +23,16 @@ prefixes:
   obi: http://purl.obolibrary.org/obo/OBI_
   pato: http://purl.obolibrary.org/obo/PATO_
   prov: http://www.w3.org/ns/prov#
-  isa: https://isa-specs.readthedocs.io/en/latest/isamodel.html#
-  iupac: https://github.com/IUPAC/IUPAC-FAIRSpec/blob/main/src/main/java/org/iupac/fairspec/core/
+  om: http://www.ontology-of-units-of-measure.org/resource/om-2/
+  dct: http://purl.org/dc/terms/
+# data prefixes
   doi: https://doi.org/
   chemotion: https://chemotion.de/
   pubchem: https://pubchem.com/
-  om: http://www.ontology-of-units-of-measure.org/resource/om-2/
+# other NMR schema prefixes for mapping/interoperability purposes
+  jdx: http://www.jcamp-dx.org/protocols/dxnmr01.pdf/
+  isa: https://isa-specs.readthedocs.io/en/latest/isamodel.html#
+  FAIRspec: https://github.com/IUPAC/IUPAC-FAIRSpec/blob/main/src/main/java/org/iupac/fairspec/core/
 
 default_prefix: NMRspec
 default_curi_maps:
@@ -47,52 +51,143 @@ classes:
       This is a mixin to be used by any class that is needed as part of an audit trail to ensure the provenance of the metadata.
     attributes:       
       source:
-        description: >-
-          This field can be used to provide the source of the data as String. E.g.
+        description: a property to be used to provide the source of the data as String
         range: string
       source_uri:
+        description: a property to be used to provide the source of the data as URL or CURIE
+        slot_uri: dct:source
         range: uriorcurie
       date_retrieved:
         range: datetime
     todos: # defined with PROVO or other adequate slot_uris
+  ChemicalMetadata:
+    attributes:
+      formula:
+        recommended: true
+        range: string
+      inchi:
+        recommended: true
+        range: string
+      inchikey:
+        recommended: true
+        range: string
+      smiles:
+        recommended: true
+        range: string
+  NamedThing:
+    class_uri:
+      sdo:Thing
+    slots:
+      - id
+      - name
+      
 # Processes
   PulsedNmrAssay:
+    mixins:
+      - NamedThing
     class_uri: chmo:0000613
     slots:
       - id
       - name
-      - assay_date
-      - pulse_program
-      - has_dimension
-      - acuisition_nucleus
-      - sample
-      - solvent
-      - spectrometer
-# Material Entities      
-  NmrSample:
-    slots:
-      - id
-      - name
-      - local_id
-      - formula   
-  NmrSolvent:
-    slots:
-      - id
-      - formula
-      - name
-  NmrSpectrometer:
-    slots:
-      - id
-      - manufacturered_by
-      - type
-    slot_usage:  
-      manufacturered_by:
+    attributes:
+      assay_date:
+        description: the date the assay was carried out by someone
+        domain: PulsedNmrAssay
+        range: datetime
+      assayed_solution:
+        description: the property refering to solution in which the assayed sample is disolved in
+        slot_uri: obi:0000293
         inlined: true
-        range: Manufacturer
-      type:
+        required: true
+        domain: PulsedNmrAssay
+        range: NmrSolution
+      spectrometer:
+        slot_uri: obi:0000293
+        inlined: true
+        required: true
+        domain: PulsedNmrAssay
+        range: NmrSpectrometer
+      has_dimension:
+        required: true
+        range: Dimension
+      pulse_program:
+        description: The pulse program of a PulsedNmrAssay is a required property and must be conform to one of the values defined in the PulseProgram enum class. The possible values there are defined according to common pulse programs, e.g. NMR for basic 1H-NMR, or COSY and COSY-DOSY, etc.
+        required: true
+        domain: PulsedNmrAssay
+        range: PulseProgram
+        see_also:
+          - jdx:PULSE_SEQUENCE
+      acuisition_nuclei:
+        required: true
+        multivalued: true
+        inlined_as_list: true
+        description: the nuclei to be assayed as specified by the protocol
+        todos: We might need to model this probably as class, if we want to properly refer to it in the sample, solvent and buffer. For now xsd:string must suffice.
+        domain: PulsedNmrAssay
         range: string
+        exact_mappings:
+          - jdx:OBSERVE_NUCLEUS
+      observed_frequencies:
+        multivalued: true
+        inlined_as_list: true
+        domain: PulsedNmrAssay
+        range: float
+
+# Material Entities
+  NmrSolution:
+    class_uri: chebi:75958
+    attributes:
+      solvent:
+        slot_uri: bfo:0000051
+        inlined: true
+        required: true
+        domain: NmrSolution
+        range: NmrSolvent
+      sample:
+        slot_uri: bfo:0000051
+        inlined: true
+        required: true
+        domain: NmrSolution
+        range: NmrSample
+      buffer:
+        slot_uri: bfo:0000051
+        inlined: true
+        domain: NmrSolution
+        range: NmrBuffer
+  NmrSample:
+    mixins:
+      - ChemicalMetadata
+      - NamedThing
+    slots:
+      - local_id 
+  NmrSolvent:
+    mixins:
+      - ChemicalMetadata
+      - NamedThing
+    slot_usage:
+      name:
+        close_mappings:
+          - jdx:SOLVENT_NAME
+  NmrBuffer:
+    mixins:
+      - ChemicalMetadata
+      - NamedThing
+  NmrSpectrometer:
+    mixins:
+      - NamedThing
+    slots:  
+      - manufactured_by
+      - type
+    slot_usage:
+      manufactured_by:
+        slot_uri: obi:0000304
+        inlined: true
+        domain: NmrSpectrometer
+      type:
+        domain: NmrSpectrometer
         todos: >-
           make the range an enum with allowed values from ontology, see also: https://github.com/StroemPhi/NMR-spectroscopy-schema/issues/2
+
     close_mappings:
       - obi:0000566
       - nmrCV:1400059
@@ -110,11 +205,13 @@ classes:
 
 # Information Content Entities
   NmrSpecRecord:
+    description: >-
+      This is the tree root node of the schema. It is a data item that serves as a container for all relevant information about one NMR spectroscopy assay record. The properties of this class represent the required metadata of an NMR assay, such as: 
+      * what kind of assay was performed (e.g. 2D 13C COSY) and what devices where used for that (e.g. spectrometer, magnet, solvent, buffer, ...)
+      * what are the detail infos of the assayed sample (name, formula, structure, concentration, preperation process, ...)
     tree_root: true
     mixins:
       - ProvenanceData
-    description: >-
-      A data item that is an NMR assay output which represents the data produced by an NMR assay of a studied sample compound.
     slots:
       - id
       - output_of_nmr_assay
@@ -129,69 +226,49 @@ slots:
 #################################################
 # common slots
   id:
+    slot_uri: iao:0000235
+    description: 
     identifier: true
-  formula:
+    range: uriorcurie
+    exact_mappings:
+      - sdo:identifier
+  local_id:
+    description: This property should be used to provide the local identifier with which something is denoted in a local context (e.g. your lab notebook).
     recommended: true
     range: string
   name:
+    slot_uri: rdfs:label
+    description: a generic property to provide a string that is used to name a something
     recommended: true
     range: string
   website:
+    description: a generic property to be used in classes that represent something which has a website
     required: false
     range: uri
+  manufactured_by:
+    description: a property to be used on any class that represents some form of atrefact, in order to refer to the artefacts maker.
+    slot_uri: obi:0000304
+    inlined: true
+    range: Manufacturer
   type:
+    range: string
 # NmrSpecRecord
   output_of_nmr_assay:
     required: true
     slot_uri: obi:0000312
-# PulsedNmrAssay
-  assay_date:
-    range: datetime
-  sample:
-    slot_uri: obi:0000293
-    inlined: true
-    required: true
-    domain: PulsedNmrAssay
-    range: NmrSample
-  solvent:
-    slot_uri: obi:0000293
-    inlined: true
-    required: true
-    domain: PulsedNmrAssay
-    range: NmrSolvent
-  spectrometer:
-    slot_uri: obi:0000293
-    inlined: true
-    required: true
-    domain: PulsedNmrAssay
-    range: NmrSpectrometer
-  has_dimension:
-    required: true
-    range: Dimension
-  pulse_program:
-    required: true
-    range: PulseProgram
-  acuisition_nucleus:
-    required: true
-    multivalued: true
-    inlined_as_list: true
-    description: this is the aqu.nucleus nto be assayed as specified by the protocol
-    todos: We need to model this probably as class, if we want to properly refer to it in the sample, solvent and buffer. For now xsd:string must suffice.
-    range: string
-# sample
-  local_id:
-    recommended: true
-    range: string
-# Instrument  
-  manufacturered_by:
+# Instrument
+
 
 #################################################
 enums:
   PulseProgram:
     permissible_values:
       NMR:
+        see_also:
+          - zgpg30
       COSY:
       COSY-DQF:
+      COSY-DOSY:
       DOSY:
       SECSY:
       RELAY:
@@ -248,7 +325,6 @@ enums:
       CLEANEX-TROSY:
       DSTE:
       DSTEBP:
-      COSY-DOSY:
       DOSY-TOCSY:
       DOSY-NOESY:
       DOSY-HMQC:

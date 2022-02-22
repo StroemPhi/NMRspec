@@ -93,24 +93,57 @@
               
                 <h1 id="class-nmrsolvent">Class: NmrSolvent</h1>
 <p>URI: <a href="https://nfdi4chem/nmr/data/NmrSolvent">NMRspec:NmrSolvent</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[PulsedNmrAssay]++-%20solvent%201..1&gt;[NmrSolvent&#124;id:string;formula:string%20%3F;name:string%20%3F]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[PulsedNmrAssay]++-%20solvent%201..1&gt;[NmrSolvent&#124;id:string;formula:string%20%3F;name:string%20%3F]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[NmrSolution]++-%20solvent%201..1&gt;[NmrSolvent&#124;name:string%20%3F;formula:string%20%3F;inchi:string%20%3F;inchikey:string%20%3F;smiles:string%20%3F;id:uriorcurie],[NmrSolvent]uses%20-.-&gt;[ChemicalMetadata],[NmrSolvent]uses%20-.-&gt;[NamedThing],[NmrSolution],[NamedThing],[ChemicalMetadata]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[NmrSolution]++-%20solvent%201..1&gt;[NmrSolvent&#124;name:string%20%3F;formula:string%20%3F;inchi:string%20%3F;inchikey:string%20%3F;smiles:string%20%3F;id:uriorcurie],[NmrSolvent]uses%20-.-&gt;[ChemicalMetadata],[NmrSolvent]uses%20-.-&gt;[NamedThing],[NmrSolution],[NamedThing],[ChemicalMetadata]" /></a></p>
+<h2 id="uses-mixin">Uses Mixin</h2>
+<ul>
+<li>mixin: <a href="../ChemicalMetadata/">ChemicalMetadata</a></li>
+<li>mixin: <a href="../NamedThing/">NamedThing</a></li>
+</ul>
 <h2 id="referenced-by-class">Referenced by Class</h2>
 <ul>
-<li><strong><a href="../PulsedNmrAssay/">PulsedNmrAssay</a></strong> <em><a href="../solvent/">solvent</a></em>  <sub>1..1</sub>  <strong><a href="./">NmrSolvent</a></strong></li>
+<li><strong><a href="../NmrSolution/">NmrSolution</a></strong> <em><a href="../nmrSolution__solvent/">NmrSolution➞solvent</a></em>  <sub>1..1</sub>  <strong><a href="./">NmrSolvent</a></strong></li>
 </ul>
 <h2 id="attributes">Attributes</h2>
 <h3 id="own">Own</h3>
 <ul>
+<li><a href="../NmrSolvent_name/">NmrSolvent➞name</a>  <sub>0..1</sub><ul>
+<li>Description: a generic property to provide a string that is used to name a something</li>
+<li>Range: <a href="../String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-chemicalmetadata">Mixed in from ChemicalMetadata:</h3>
+<ul>
+<li><a href="../chemicalMetadata__formula/">➞formula</a>  <sub>0..1</sub><ul>
+<li>Range: <a href="../String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-chemicalmetadata_1">Mixed in from ChemicalMetadata:</h3>
+<ul>
+<li><a href="../chemicalMetadata__inchi/">➞inchi</a>  <sub>0..1</sub><ul>
+<li>Range: <a href="../String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-chemicalmetadata_2">Mixed in from ChemicalMetadata:</h3>
+<ul>
+<li><a href="../chemicalMetadata__inchikey/">➞inchikey</a>  <sub>0..1</sub><ul>
+<li>Range: <a href="../String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-chemicalmetadata_3">Mixed in from ChemicalMetadata:</h3>
+<ul>
+<li><a href="../chemicalMetadata__smiles/">➞smiles</a>  <sub>0..1</sub><ul>
+<li>Range: <a href="../String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-namedthing">Mixed in from NamedThing:</h3>
+<ul>
 <li><a href="../id/">id</a>  <sub>1..1</sub><ul>
-<li>Range: <a href="../String/">String</a></li>
-</ul>
-</li>
-<li><a href="../formula/">formula</a>  <sub>0..1</sub><ul>
-<li>Range: <a href="../String/">String</a></li>
-</ul>
-</li>
-<li><a href="../name/">name</a>  <sub>0..1</sub><ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
 </ul>
 </li>
 </ul>

@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Slot: sample - This model is to be used to semantify NMR spectroscopy research data.</title>
+  <title>Slot: name - This model is to be used to semantify NMR spectroscopy research data.</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Slot: sample";
-    var mkdocs_page_input_path = "sample.md";
+    var mkdocs_page_name = "Slot: name";
+    var mkdocs_page_input_path = "NmrSolvent_name.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -79,7 +79,7 @@
     
       
     
-    <li>Slot: sample</li>
+    <li>Slot: name</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -91,15 +91,19 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="slot-sample">Slot: sample</h1>
-<p>URI: <a href="https://nfdi4chem/nmr/data/sample">NMRspec:sample</a></p>
+                <h1 id="slot-name">Slot: name</h1>
+<p>a generic property to provide a string that is used to name a something</p>
+<p>URI: <a href="https://nfdi4chem/nmr/data/NmrSolvent_name">NMRspec:NmrSolvent_name</a></p>
 <h2 id="domain-and-range">Domain and Range</h2>
-<p><a href="../PulsedNmrAssay/">PulsedNmrAssay</a> &#8594;  <sub>1..1</sub> <a href="../NmrSample/">NmrSample</a></p>
+<p><a href="../NmrSolvent/">NmrSolvent</a> &#8594;  <sub>0..1</sub> <a href="../String/">String</a></p>
 <h2 id="parents">Parents</h2>
+<ul>
+<li>is_a: <a href="../name/">name</a></li>
+</ul>
 <h2 id="children">Children</h2>
 <h2 id="used-by">Used by</h2>
 <ul>
-<li><a href="../PulsedNmrAssay/">PulsedNmrAssay</a></li>
+<li><a href="../NmrSolvent/">NmrSolvent</a></li>
 </ul>
 <h2 id="other-properties">Other properties</h2>
 <table>
@@ -114,7 +118,12 @@
 <tr>
 <td><strong>Mappings:</strong></td>
 <td></td>
-<td>obi:0000293</td>
+<td>rdfs:label</td>
+</tr>
+<tr>
+<td><strong>Close Mappings:</strong></td>
+<td></td>
+<td>jdx:SOLVENT_NAME</td>
 </tr>
 </tbody>
 </table>

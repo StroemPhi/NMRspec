@@ -6,7 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-    
+  
+  
   <link rel="shortcut icon" href="../img/favicon.ico">
   <title>Class: NmrSpecRecord - This model is to be used to semantify NMR spectroscopy research data.</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
@@ -91,9 +92,9 @@
             <div class="section">
               
                 <h1 id="class-nmrspecrecord">Class: NmrSpecRecord</h1>
-<p>A data item that is an NMR assay output which represents the data produced by an NMR assay of a studied sample compound.</p>
+<p>This is the tree root node of the schema. It is a data item that serves as a container for all relevant information about one NMR spectroscopy assay record. The properties of this class represent the required metadata of an NMR assay, such as:  * what kind of assay was performed (e.g. 2D 13C COSY) and what devices where used for that (e.g. spectrometer, magnet, solvent, buffer, ...) * what are the detail infos of the assayed sample (name, formula, structure, concentration, preperation process, ...)</p>
 <p>URI: <a href="https://nfdi4chem/nmr/data/NmrSpecRecord">NMRspec:NmrSpecRecord</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[ProvenanceData],[PulsedNmrAssay]&lt;output_of_nmr_assay%201..1-++[NmrSpecRecord&#124;id:string;source:string%20%3F;source_uri:uriorcurie%20%3F;date_retrieved:datetime%20%3F],[NmrSpecRecord]uses%20-.-&gt;[ProvenanceData]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[ProvenanceData],[PulsedNmrAssay]&lt;output_of_nmr_assay%201..1-++[NmrSpecRecord&#124;id:string;source:string%20%3F;source_uri:uriorcurie%20%3F;date_retrieved:datetime%20%3F],[NmrSpecRecord]uses%20-.-&gt;[ProvenanceData]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[ProvenanceData],[PulsedNmrAssay]&lt;output_of_nmr_assay%201..1-++[NmrSpecRecord&#124;id:uriorcurie;source:string%20%3F;source_uri:uriorcurie%20%3F;date_retrieved:datetime%20%3F],[NmrSpecRecord]uses%20-.-&gt;[ProvenanceData]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[ProvenanceData],[PulsedNmrAssay]&lt;output_of_nmr_assay%201..1-++[NmrSpecRecord&#124;id:uriorcurie;source:string%20%3F;source_uri:uriorcurie%20%3F;date_retrieved:datetime%20%3F],[NmrSpecRecord]uses%20-.-&gt;[ProvenanceData]" /></a></p>
 <h2 id="uses-mixin">Uses Mixin</h2>
 <ul>
 <li>mixin: <a href="../ProvenanceData/">ProvenanceData</a> - This is a mixin to be used by any class that is needed as part of an audit trail to ensure the provenance of the metadata.</li>
@@ -103,7 +104,7 @@
 <h3 id="own">Own</h3>
 <ul>
 <li><a href="../id/">id</a>  <sub>1..1</sub><ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
 </ul>
 </li>
 <li><a href="../NmrSpecRecord_output_of_nmr_assay/">NmrSpecRecord➞output_of_nmr_assay</a>  <sub>1..1</sub><ul>
@@ -114,7 +115,7 @@
 <h3 id="mixed-in-from-provenancedata">Mixed in from ProvenanceData:</h3>
 <ul>
 <li><a href="../provenanceData__source/">➞source</a>  <sub>0..1</sub><ul>
-<li>Description: This field can be used to provide the source of the data as String. E.g.</li>
+<li>Description: a property to be used to provide the source of the data as String</li>
 <li>Range: <a href="../String/">String</a></li>
 </ul>
 </li>
@@ -122,6 +123,7 @@
 <h3 id="mixed-in-from-provenancedata_1">Mixed in from ProvenanceData:</h3>
 <ul>
 <li><a href="../provenanceData__source_uri/">➞source_uri</a>  <sub>0..1</sub><ul>
+<li>Description: a property to be used to provide the source of the data as URL or CURIE</li>
 <li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
 </ul>
 </li>

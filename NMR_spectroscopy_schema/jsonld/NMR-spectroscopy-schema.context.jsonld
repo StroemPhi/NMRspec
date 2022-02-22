@@ -1,6 +1,7 @@
 {
-   "_comments": "Auto generated from NMR-spectroscopy-schema.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-02-17T23:40:09\n    Schema: NMR-spectroscopy-schema\n    metamodel version: 1.7.0\n    model version: 0.0.1\n    \n    id: https://git.tib.eu/lab-linked-scientific-knowledge/nmr-research-data-semantification/-/blob/main/nmr_assay_schema.yaml\n    description: This model is to be used to semantify NMR spectroscopy research data.\n    license: https://creativecommons.org/licenses/by/4.0/\n    ",
+   "_comments": "Auto generated from NMR-spectroscopy-schema.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-02-22T15:53:55\n    Schema: NMR-spectroscopy-schema\n    metamodel version: 1.7.0\n    model version: 0.0.1\n    \n    id: https://git.tib.eu/lab-linked-scientific-knowledge/nmr-research-data-semantification/-/blob/main/nmr_assay_schema.yaml\n    description: This model is to be used to semantify NMR spectroscopy research data.\n    license: https://creativecommons.org/licenses/by/4.0/\n    ",
    "@context": {
+      "FAIRspec": "https://github.com/IUPAC/IUPAC-FAIRSpec/blob/main/src/main/java/org/iupac/fairspec/core/",
       "NMRspec": "https://nfdi4chem/nmr/data/",
       "bfo": {
          "@id": "http://purl.obolibrary.org/obo/BFO_",
@@ -19,13 +20,14 @@
          "@id": "http://purl.obolibrary.org/obo/CHMO_",
          "@prefix": true
       },
+      "dct": "http://purl.org/dc/terms/",
       "doi": "https://doi.org/",
       "iao": {
          "@id": "http://purl.obolibrary.org/obo/IAO_",
          "@prefix": true
       },
       "isa": "https://isa-specs.readthedocs.io/en/latest/isamodel.html#",
-      "iupac": "https://github.com/IUPAC/IUPAC-FAIRSpec/blob/main/src/main/java/org/iupac/fairspec/core/",
+      "jdx": "http://www.jcamp-dx.org/protocols/dxnmr01.pdf/",
       "linkml": "https://w3id.org/linkml/",
       "nmrCV": "http://nmrML.org/nmrCV#",
       "obi": {
@@ -39,6 +41,7 @@
       },
       "prov": "http://www.w3.org/ns/prov#",
       "pubchem": "https://pubchem.com/",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
       "ro": {
          "@id": "http://purl.obolibrary.org/obo/RO_",
          "@prefix": true
@@ -46,8 +49,42 @@
       "sdo": "https://schema.org/",
       "skos": "http://www.w3.org/2004/02/skos/core#",
       "@vocab": "https://nfdi4chem/nmr/data/",
+      "id": "@id",
+      "manufactured_by": {
+         "@type": "@id",
+         "@id": "obi:0000304"
+      },
+      "name": {
+         "@id": "rdfs:label"
+      },
+      "buffer": {
+         "@type": "@id",
+         "@id": "bfo:0000051"
+      },
+      "sample": {
+         "@type": "@id",
+         "@id": "bfo:0000051"
+      },
+      "solvent": {
+         "@type": "@id",
+         "@id": "bfo:0000051"
+      },
+      "output_of_nmr_assay": {
+         "@id": "obi:0000312"
+      },
+      "date_retrieved": {
+         "@type": "xsd:dateTime"
+      },
+      "source_uri": {
+         "@type": "@id",
+         "@id": "dct:source"
+      },
       "assay_date": {
          "@type": "xsd:dateTime"
+      },
+      "assayed_solution": {
+         "@type": "@id",
+         "@id": "obi:0000293"
       },
       "has_dimension": {
          "@context": {
@@ -57,15 +94,8 @@
             "meaning": "@id"
          }
       },
-      "id": "@id",
-      "output_of_nmr_assay": {
-         "@id": "obi:0000312"
-      },
-      "date_retrieved": {
-         "@type": "xsd:dateTime"
-      },
-      "source_uri": {
-         "@type": "@id"
+      "observed_frequencies": {
+         "@type": "xsd:float"
       },
       "pulse_program": {
          "@context": {
@@ -74,14 +104,6 @@
             "description": "skos:prefLabel",
             "meaning": "@id"
          }
-      },
-      "sample": {
-         "@type": "@id",
-         "@id": "obi:0000293"
-      },
-      "solvent": {
-         "@type": "@id",
-         "@id": "obi:0000293"
       },
       "spectrometer": {
          "@type": "@id",
@@ -92,6 +114,12 @@
       },
       "Manufacturer": {
          "@id": "obi:0000835"
+      },
+      "NamedThing": {
+         "@id": "sdo:Thing"
+      },
+      "NmrSolution": {
+         "@id": "chebi:75958"
       },
       "PulsedNmrAssay": {
          "@id": "chmo:0000613"
