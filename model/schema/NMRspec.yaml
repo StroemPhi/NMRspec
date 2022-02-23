@@ -213,7 +213,7 @@ classes:
     mixins: 
       - Provenance
     description: This class represents a collection of NMR spectroscopy records. It is to be used when multiple NMR assays were made in order to analyse a given sample.
-    slot_usage:
+    attributes:
       has_part:
         required: true
         multivalued: true
@@ -255,8 +255,6 @@ slots:
     range: Manufacturer
   type:
     range: string
-  has_part:
-    slot_uri: bfo:0000051
 # NmrSpecRecord
   output_of_nmr_assay:
     required: true
