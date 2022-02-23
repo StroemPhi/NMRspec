@@ -119,18 +119,18 @@
 <ul>
 <li><a href="ChemicalMetadata/">ChemicalMetadata</a></li>
 <li><a href="Manufacturer/">Manufacturer</a></li>
-<li><a href="NamedThing/">NamedThing</a></li>
 <li><a href="NmrBuffer/">NmrBuffer</a></li>
 <li><a href="NmrSample/">NmrSample</a></li>
 <li><a href="NmrSolution/">NmrSolution</a></li>
 <li><a href="NmrSolvent/">NmrSolvent</a></li>
-<li><a href="NmrSpecRecord/">NmrSpecRecord</a> - This is the tree root node of the schema. It is a data item that serves as a container for all relevant information about one NMR spectroscopy assay record. The properties of this class represent the required metadata of an NMR assay, such as:  * what kind of assay was performed (e.g. 2D 13C COSY) and what devices where used for that (e.g. spectrometer, magnet, solvent, buffer, ...) * what are the detail infos of the assayed sample (name, formula, structure, concentration, preperation process, ...)</li>
+<li><a href="NmrSpecRecord/">NmrSpecRecord</a> - This is the tree root node of the schema. It is a data item that serves as a container for all relevant information about <em>one</em> NMR spectroscopy assay record. The properties of this class represent the required metadata of an NMR assay, such as:  * what kind of assay was performed (e.g. 2D 13C COSY) and what devices where used for that (e.g. spectrometer, magnet, solvent, buffer, ...) * what are the detail infos of the assayed sample (name, formula, structure, concentration, preperation process, ...)</li>
 <li><a href="NmrSpectrometer/">NmrSpectrometer</a></li>
 <li><a href="PulsedNmrAssay/">PulsedNmrAssay</a></li>
 </ul>
 <h3 id="mixins">Mixins</h3>
 <ul>
-<li><a href="ProvenanceData/">ProvenanceData</a> - This is a mixin to be used by any class that is needed as part of an audit trail to ensure the provenance of the metadata.</li>
+<li><a href="NamedThing/">NamedThing</a> - a mixin to be used by any class that has a name and unique id</li>
+<li><a href="Provenance/">Provenance</a> - This is a mixin to be used by any class that is needed as part of an audit trail to ensure the provenance of the metadata.</li>
 </ul>
 <h3 id="slots">Slots</h3>
 <ul>
@@ -138,7 +138,10 @@
 <li><a href="chemicalMetadata__inchi/">➞inchi</a></li>
 <li><a href="chemicalMetadata__inchikey/">➞inchikey</a></li>
 <li><a href="chemicalMetadata__smiles/">➞smiles</a></li>
-<li><a href="id/">id</a></li>
+<li><a href="id/">id</a><ul>
+<li><a href="NmrSpecRecord_id/">NmrSpecRecord➞id</a> - the URI of a NMR spectroscopy record, which gets generated upon ingest source data</li>
+</ul>
+</li>
 <li><a href="local_id/">local_id</a> - This property should be used to provide the local identifier with which something is denoted in a local context (e.g. your lab notebook).</li>
 <li><a href="manufactured_by/">manufactured_by</a> - a property to be used on any class that represents some form of atrefact, in order to refer to the artefacts maker.<ul>
 <li><a href="NmrSpectrometer_manufactured_by/">NmrSpectrometer➞manufactured_by</a></li>
@@ -156,9 +159,12 @@
 <li><a href="NmrSpecRecord_output_of_nmr_assay/">NmrSpecRecord➞output_of_nmr_assay</a></li>
 </ul>
 </li>
-<li><a href="provenanceData__date_retrieved/">➞date_retrieved</a></li>
-<li><a href="provenanceData__source/">➞source</a> - a property to be used to provide the source of the data as String</li>
-<li><a href="provenanceData__source_uri/">➞source_uri</a> - a property to be used to provide the source of the data as URL or CURIE</li>
+<li><a href="provenance__date_retrieved/">provenance➞date_retrieved</a> - the datetime when the source data has been retrieved</li>
+<li><a href="provenance__licence_str/">provenance➞licence_str</a> - the licence of the ingested raw data as string</li>
+<li><a href="provenance__licence_url/">provenance➞licence_url</a> - the licence of the ingested raw data in machine readable format as URL</li>
+<li><a href="provenance__source/">provenance➞source</a> - This property is used to describe the source of the data as string (e.g. "Chemotion Repository").</li>
+<li><a href="provenance__source_file/">provenance➞source_file</a> - This property must be used to describe the name of the source file (e.g. SG-V3259 (41-52)_11.dx) from which the metadata is to be parsed.</li>
+<li><a href="provenance__source_uri/">provenance➞source_uri</a> - This property can be used to provide the URL or CURIE of the the source file, if it has one.</li>
 <li><a href="pulsedNmrAssay__acuisition_nuclei/">PulsedNmrAssay➞acuisition_nuclei</a> - the nuclei to be assayed as specified by the protocol</li>
 <li><a href="pulsedNmrAssay__assay_date/">PulsedNmrAssay➞assay_date</a> - the date the assay was carried out by someone</li>
 <li><a href="pulsedNmrAssay__assayed_solution/">PulsedNmrAssay➞assayed_solution</a> - the property refering to solution in which the assayed sample is disolved in</li>
@@ -167,7 +173,7 @@
 <li><a href="pulsedNmrAssay__pulse_program/">PulsedNmrAssay➞pulse_program</a> - The pulse program of a PulsedNmrAssay is a required property and must be conform to one of the values defined in the PulseProgram enum class. The possible values there are defined according to common pulse programs, e.g. NMR for basic 1H-NMR, or COSY and COSY-DOSY, etc.</li>
 <li><a href="pulsedNmrAssay__spectrometer/">PulsedNmrAssay➞spectrometer</a></li>
 <li><a href="type/">type</a><ul>
-<li><a href="NmrSpectrometer_type/">NmrSpectrometer➞type</a></li>
+<li><a href="NmrSpectrometer_type/">NmrSpectrometer➞type</a> - This property represents the type of spectrometer used in the NMR assay as string. Often this information will not be present in the JCAMP-DX file, but it can be parsed from Bricker source files</li>
 </ul>
 </li>
 <li><a href="website/">website</a> - a generic property to be used in classes that represent something which has a website</li>
@@ -271,5 +277,5 @@
 
 <!--
 MkDocs version : 1.2.3
-Build Date UTC : 2022-02-23 07:58:42.890179+00:00
+Build Date UTC : 2022-02-23 14:21:26.099273+00:00
 -->

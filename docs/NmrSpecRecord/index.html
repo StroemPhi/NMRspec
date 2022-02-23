@@ -92,18 +92,19 @@
             <div class="section">
               
                 <h1 id="class-nmrspecrecord">Class: NmrSpecRecord</h1>
-<p>This is the tree root node of the schema. It is a data item that serves as a container for all relevant information about one NMR spectroscopy assay record. The properties of this class represent the required metadata of an NMR assay, such as:  * what kind of assay was performed (e.g. 2D 13C COSY) and what devices where used for that (e.g. spectrometer, magnet, solvent, buffer, ...) * what are the detail infos of the assayed sample (name, formula, structure, concentration, preperation process, ...)</p>
-<p>URI: <a href="https://nfdi4chem/nmr/data/NmrSpecRecord">NMRspec:NmrSpecRecord</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[ProvenanceData],[PulsedNmrAssay]&lt;output_of_nmr_assay%201..1-++[NmrSpecRecord&#124;id:uriorcurie;source:string%20%3F;source_uri:uriorcurie%20%3F;date_retrieved:datetime%20%3F],[NmrSpecRecord]uses%20-.-&gt;[ProvenanceData]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[ProvenanceData],[PulsedNmrAssay]&lt;output_of_nmr_assay%201..1-++[NmrSpecRecord&#124;id:uriorcurie;source:string%20%3F;source_uri:uriorcurie%20%3F;date_retrieved:datetime%20%3F],[NmrSpecRecord]uses%20-.-&gt;[ProvenanceData]" /></a></p>
+<p>This is the tree root node of the schema. It is a data item that serves as a container for all relevant information about <em>one</em> NMR spectroscopy assay record. The properties of this class represent the required metadata of an NMR assay, such as:  * what kind of assay was performed (e.g. 2D 13C COSY) and what devices where used for that (e.g. spectrometer, magnet, solvent, buffer, ...) * what are the detail infos of the assayed sample (name, formula, structure, concentration, preperation process, ...)</p>
+<p>URI: <a href="https://github.com/StroemPhi/NMR-spectroscopy-schema/NmrSpecRecord">NMRspec:NmrSpecRecord</a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Provenance],[PulsedNmrAssay],[PulsedNmrAssay]&lt;output_of_nmr_assay%201..1-++[NmrSpecRecord&#124;id:uriorcurie;source:string;source_file:string;source_uri:uriorcurie%20%3F;date_retrieved:datetime%20%3F;licence_str:string%20%3F;licence_url:uriorcurie%20%3F],[NmrSpecRecord]uses%20-.-&gt;[Provenance]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Provenance],[PulsedNmrAssay],[PulsedNmrAssay]&lt;output_of_nmr_assay%201..1-++[NmrSpecRecord&#124;id:uriorcurie;source:string;source_file:string;source_uri:uriorcurie%20%3F;date_retrieved:datetime%20%3F;licence_str:string%20%3F;licence_url:uriorcurie%20%3F],[NmrSpecRecord]uses%20-.-&gt;[Provenance]" /></a></p>
 <h2 id="uses-mixin">Uses Mixin</h2>
 <ul>
-<li>mixin: <a href="../ProvenanceData/">ProvenanceData</a> - This is a mixin to be used by any class that is needed as part of an audit trail to ensure the provenance of the metadata.</li>
+<li>mixin: <a href="../Provenance/">Provenance</a> - This is a mixin to be used by any class that is needed as part of an audit trail to ensure the provenance of the metadata.</li>
 </ul>
 <h2 id="referenced-by-class">Referenced by Class</h2>
 <h2 id="attributes">Attributes</h2>
 <h3 id="own">Own</h3>
 <ul>
-<li><a href="../id/">id</a>  <sub>1..1</sub><ul>
+<li><a href="../NmrSpecRecord_id/">NmrSpecRecord➞id</a>  <sub>1..1</sub><ul>
+<li>Description: the URI of a NMR spectroscopy record, which gets generated upon ingest source data</li>
 <li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
 </ul>
 </li>
@@ -112,26 +113,51 @@
 </ul>
 </li>
 </ul>
-<h3 id="mixed-in-from-provenancedata">Mixed in from ProvenanceData:</h3>
+<h3 id="mixed-in-from-provenance">Mixed in from provenance:</h3>
 <ul>
-<li><a href="../provenanceData__source/">➞source</a>  <sub>0..1</sub><ul>
-<li>Description: a property to be used to provide the source of the data as String</li>
+<li><a href="../provenance__source/">provenance➞source</a>  <sub>1..1</sub><ul>
+<li>Description: This property is used to describe the source of the data as string (e.g. "Chemotion Repository").</li>
 <li>Range: <a href="../String/">String</a></li>
 </ul>
 </li>
 </ul>
-<h3 id="mixed-in-from-provenancedata_1">Mixed in from ProvenanceData:</h3>
+<h3 id="mixed-in-from-provenance_1">Mixed in from provenance:</h3>
 <ul>
-<li><a href="../provenanceData__source_uri/">➞source_uri</a>  <sub>0..1</sub><ul>
-<li>Description: a property to be used to provide the source of the data as URL or CURIE</li>
+<li><a href="../provenance__source_file/">provenance➞source_file</a>  <sub>1..1</sub><ul>
+<li>Description: This property must be used to describe the name of the source file (e.g. SG-V3259 (41-52)_11.dx) from which the metadata is to be parsed.</li>
+<li>Range: <a href="../String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-provenance_2">Mixed in from provenance:</h3>
+<ul>
+<li><a href="../provenance__source_uri/">provenance➞source_uri</a>  <sub>0..1</sub><ul>
+<li>Description: This property can be used to provide the URL or CURIE of the the source file, if it has one.</li>
 <li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
 </ul>
 </li>
 </ul>
-<h3 id="mixed-in-from-provenancedata_2">Mixed in from ProvenanceData:</h3>
+<h3 id="mixed-in-from-provenance_3">Mixed in from provenance:</h3>
 <ul>
-<li><a href="../provenanceData__date_retrieved/">➞date_retrieved</a>  <sub>0..1</sub><ul>
+<li><a href="../provenance__date_retrieved/">provenance➞date_retrieved</a>  <sub>0..1</sub><ul>
+<li>Description: the datetime when the source data has been retrieved</li>
 <li>Range: <a href="../Datetime/">Datetime</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-provenance_4">Mixed in from provenance:</h3>
+<ul>
+<li><a href="../provenance__licence_str/">provenance➞licence_str</a>  <sub>0..1</sub><ul>
+<li>Description: the licence of the ingested raw data as string</li>
+<li>Range: <a href="../String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-provenance_5">Mixed in from provenance:</h3>
+<ul>
+<li><a href="../provenance__licence_url/">provenance➞licence_url</a>  <sub>0..1</sub><ul>
+<li>Description: the licence of the ingested raw data in machine readable format as URL</li>
+<li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
 </ul>
 </li>
 </ul>

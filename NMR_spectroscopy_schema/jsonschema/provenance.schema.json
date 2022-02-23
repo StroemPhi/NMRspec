@@ -1,0 +1,13 @@
+{
+   "$defs": {},
+   "$id": "https://github.com/StroemPhi/NMR-spectroscopy-schema/provenance",
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "additionalProperties": true,
+   "metamodel_version": "1.7.0",
+   "properties": {},
+   "required": [],
+   "title": "provenance",
+   "type": "object",
+   "version": "0.0.1"
+}
+

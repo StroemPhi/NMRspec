@@ -1,12 +1,13 @@
 {
-   "_comments": "Auto generated from NMR-spectroscopy-schema.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-02-23T08:58:46\n    Schema: NMR-spectroscopy-schema\n    metamodel version: 1.7.0\n    model version: 0.0.1\n    \n    id: https://git.tib.eu/lab-linked-scientific-knowledge/nmr-research-data-semantification/-/blob/main/nmr_assay_schema.yaml\n    description: This model is to be used to semantify NMR spectroscopy research data.\n    license: https://creativecommons.org/licenses/by/4.0/\n    ",
+   "_comments": "Auto generated from NMR-spectroscopy-schema.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-02-23T15:21:30\n    Schema: NMR-spectroscopy-schema\n    metamodel version: 1.7.0\n    model version: 0.0.1\n    \n    id: https://github.com/StroemPhi/NMR-spectroscopy-schema/NMR-spectroscopy-schema\n    description: This model is to be used to semantify NMR spectroscopy research data.\n    license: https://creativecommons.org/licenses/by/4.0/\n    ",
    "@context": {
       "FAIRspec": "https://github.com/IUPAC/IUPAC-FAIRSpec/blob/main/src/main/java/org/iupac/fairspec/core/",
-      "NMRspec": "https://nfdi4chem/nmr/data/",
+      "NMRspec": "https://github.com/StroemPhi/NMR-spectroscopy-schema/",
       "bfo": {
          "@id": "http://purl.obolibrary.org/obo/BFO_",
          "@prefix": true
       },
+      "cc": "https://creativecommons.org/licenses/",
       "chebi": {
          "@id": "http://purl.obolibrary.org/obo/CHEBI_",
          "@prefix": true
@@ -15,7 +16,9 @@
          "@id": "http://purl.obolibrary.org/obo/CHEMINF_",
          "@prefix": true
       },
-      "chemotion": "https://chemotion.de/",
+      "chemotion_data": "https://www.chemotion-repository.net/home/publications/datasets/",
+      "chemotion_pid": "https://www.chemotion-repository.net/pid/",
+      "chemotion_reactions": "https://www.chemotion-repository.net/home/publications/reactions/",
       "chmo": {
          "@id": "http://purl.obolibrary.org/obo/CHMO_",
          "@prefix": true
@@ -30,6 +33,7 @@
       "jdx": "http://www.jcamp-dx.org/protocols/dxnmr01.pdf/",
       "linkml": "https://w3id.org/linkml/",
       "nmrCV": "http://nmrML.org/nmrCV#",
+      "nmrSPARQL": "https://nfdi4chem/sparql/",
       "obi": {
          "@id": "http://purl.obolibrary.org/obo/OBI_",
          "@prefix": true
@@ -40,7 +44,6 @@
          "@prefix": true
       },
       "prov": "http://www.w3.org/ns/prov#",
-      "pubchem": "https://pubchem.com/",
       "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
       "ro": {
          "@id": "http://purl.obolibrary.org/obo/RO_",
@@ -48,7 +51,7 @@
       },
       "sdo": "https://schema.org/",
       "skos": "http://www.w3.org/2004/02/skos/core#",
-      "@vocab": "https://nfdi4chem/nmr/data/",
+      "@vocab": "https://github.com/StroemPhi/NMR-spectroscopy-schema/",
       "id": "@id",
       "manufactured_by": {
          "@type": "@id",
@@ -74,6 +77,9 @@
       },
       "date_retrieved": {
          "@type": "xsd:dateTime"
+      },
+      "licence_url": {
+         "@type": "@id"
       },
       "source_uri": {
          "@type": "@id",

@@ -92,12 +92,8 @@
             <div class="section">
               
                 <h1 id="class-nmrspectrometer">Class: NmrSpectrometer</h1>
-<p>URI: <a href="https://nfdi4chem/nmr/data/NmrSpectrometer">NMRspec:NmrSpectrometer</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[Manufacturer]&lt;manufactured_by%200..1-++[NmrSpectrometer&#124;type:string%20%3F;id:uriorcurie;name:string%20%3F],[PulsedNmrAssay]++-%20spectrometer%201..1&gt;[NmrSpectrometer],[NmrSpectrometer]uses%20-.-&gt;[NamedThing],[NamedThing],[Manufacturer]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[Manufacturer]&lt;manufactured_by%200..1-++[NmrSpectrometer&#124;type:string%20%3F;id:uriorcurie;name:string%20%3F],[PulsedNmrAssay]++-%20spectrometer%201..1&gt;[NmrSpectrometer],[NmrSpectrometer]uses%20-.-&gt;[NamedThing],[NamedThing],[Manufacturer]" /></a></p>
-<h2 id="uses-mixin">Uses Mixin</h2>
-<ul>
-<li>mixin: <a href="../NamedThing/">NamedThing</a></li>
-</ul>
+<p>URI: <a href="https://github.com/StroemPhi/NMR-spectroscopy-schema/NmrSpectrometer">NMRspec:NmrSpectrometer</a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[Manufacturer]&lt;manufactured_by%200..1-++[NmrSpectrometer&#124;type:string%20%3F],[PulsedNmrAssay]++-%20spectrometer%201..1&gt;[NmrSpectrometer],[Manufacturer]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[Manufacturer]&lt;manufactured_by%200..1-++[NmrSpectrometer&#124;type:string%20%3F],[PulsedNmrAssay]++-%20spectrometer%201..1&gt;[NmrSpectrometer],[Manufacturer]" /></a></p>
 <h2 id="referenced-by-class">Referenced by Class</h2>
 <ul>
 <li><strong><a href="../PulsedNmrAssay/">PulsedNmrAssay</a></strong> <em><a href="../pulsedNmrAssay__spectrometer/">PulsedNmrAssay➞spectrometer</a></em>  <sub>1..1</sub>  <strong><a href="./">NmrSpectrometer</a></strong></li>
@@ -111,21 +107,7 @@
 </ul>
 </li>
 <li><a href="../NmrSpectrometer_type/">NmrSpectrometer➞type</a>  <sub>0..1</sub><ul>
-<li>Range: <a href="../String/">String</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="mixed-in-from-namedthing">Mixed in from NamedThing:</h3>
-<ul>
-<li><a href="../id/">id</a>  <sub>1..1</sub><ul>
-<li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="mixed-in-from-namedthing_1">Mixed in from NamedThing:</h3>
-<ul>
-<li><a href="../name/">name</a>  <sub>0..1</sub><ul>
-<li>Description: a generic property to provide a string that is used to name a something</li>
+<li>Description: This property represents the type of spectrometer used in the NMR assay as string. Often this information will not be present in the JCAMP-DX file, but it can be parsed from Bricker source files</li>
 <li>Range: <a href="../String/">String</a></li>
 </ul>
 </li>

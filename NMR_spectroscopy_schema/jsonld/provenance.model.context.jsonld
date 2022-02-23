@@ -1,0 +1,20 @@
+{
+   "_comments": "Auto generated from provenance.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-02-23T15:21:41\n    Schema: provenance\n    metamodel version: 1.7.0\n    model version: 0.0.1\n    \n    id: https://github.com/StroemPhi/NMR-spectroscopy-schema/provenance\n    description: provenance mixin\n    license: https://creativecommons.org/licenses/by/4.0/\n    ",
+   "@context": {
+      "NMRspec": "https://github.com/StroemPhi/NMR-spectroscopy-schema/",
+      "dct": "http://example.org/UNKNOWN/dct/",
+      "linkml": "https://w3id.org/linkml/",
+      "@vocab": "https://github.com/StroemPhi/NMR-spectroscopy-schema/",
+      "date_retrieved": {
+         "@type": "xsd:dateTime"
+      },
+      "licence_url": {
+         "@type": "@id"
+      },
+      "source_uri": {
+         "@type": "@id",
+         "@id": "dct:source"
+      }
+   }
+}
+

@@ -1,0 +1,51 @@
+id: https://github.com/StroemPhi/NMR-spectroscopy-schema/provenance
+name: provenance
+description: provenance mixin
+license: https://creativecommons.org/licenses/by/4.0/
+version: 0.0.1
+
+prefixes:
+  NMRspec: https://github.com/StroemPhi/NMR-spectroscopy-schema/
+  linkml: https://w3id.org/linkml/
+
+default_prefix: NMRspec
+default_curi_maps:
+ - semweb_context
+
+imports:
+ - linkml:types
+
+classes:
+  provenance:
+    mixin: true
+    description: >-
+      This is a mixin to be used by any class that is needed as part of an audit trail to ensure the provenance of the metadata.
+    attributes:       
+      source:
+        description: This property is used to describe the source of the data as string (e.g. "Chemotion Repository"). 
+        required: true
+        domain: provenance
+        range: string
+      source_file:
+        description: This property must be used to describe the name of the source file (e.g. SG-V3259 (41-52)_11.dx) from which the metadata is to be parsed.
+        required: true
+        domain: provenance
+        range: string
+      source_uri:
+        description: This property can be used to provide the URL or CURIE of the the source file, if it has one.
+        slot_uri: dct:source
+        domain: provenance
+        range: uriorcurie
+      date_retrieved:
+        description: the datetime when the source data has been retrieved
+        domain: provenance
+        range: datetime
+      licence_str: 
+        description: the licence of the ingested raw data as string
+        domain: provenance
+        range: string
+      licence_url:
+        description: the licence of the ingested raw data in machine readable format as URL
+        domain: provenance
+        range: uriorcurie
+    todos: # defined with PROVO or other adequate slot_uris

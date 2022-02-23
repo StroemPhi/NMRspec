@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Class: ProvenanceData - This model is to be used to semantify NMR spectroscopy research data.</title>
+  <title>Slot: licence_url - This model is to be used to semantify NMR spectroscopy research data.</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Class: ProvenanceData";
-    var mkdocs_page_input_path = "ProvenanceData.md";
+    var mkdocs_page_name = "Slot: licence_url";
+    var mkdocs_page_input_path = "provenance__licence_url.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -79,7 +79,7 @@
     
       
     
-    <li>Class: ProvenanceData</li>
+    <li>Slot: licence_url</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -91,32 +91,17 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="class-provenancedata">Class: ProvenanceData</h1>
-<p>This is a mixin to be used by any class that is needed as part of an audit trail to ensure the provenance of the metadata.</p>
-<p>URI: <a href="https://nfdi4chem/nmr/data/ProvenanceData">NMRspec:ProvenanceData</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[NmrSpecRecord]uses%20-.-&gt;[ProvenanceData&#124;source:string%20%3F;source_uri:uriorcurie%20%3F;date_retrieved:datetime%20%3F],[NmrSpecRecord]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[NmrSpecRecord]uses%20-.-&gt;[ProvenanceData&#124;source:string%20%3F;source_uri:uriorcurie%20%3F;date_retrieved:datetime%20%3F],[NmrSpecRecord]" /></a></p>
-<h2 id="mixin-for">Mixin for</h2>
+                <h1 id="slot-licence_url">Slot: licence_url</h1>
+<p>the licence of the ingested raw data in machine readable format as URL</p>
+<p>URI: <a href="https://github.com/StroemPhi/NMR-spectroscopy-schema/provenance__licence_url">NMRspec:provenance__licence_url</a></p>
+<h2 id="domain-and-range">Domain and Range</h2>
+<p><a href="../Provenance/">Provenance</a> &#8594;  <sub>0..1</sub> <a href="../Uriorcurie/">Uriorcurie</a></p>
+<h2 id="parents">Parents</h2>
+<h2 id="children">Children</h2>
+<h2 id="used-by">Used by</h2>
 <ul>
-<li><a href="../NmrSpecRecord/">NmrSpecRecord</a> (mixin)  - This is the tree root node of the schema. It is a data item that serves as a container for all relevant information about one NMR spectroscopy assay record. The properties of this class represent the required metadata of an NMR assay, such as:  * what kind of assay was performed (e.g. 2D 13C COSY) and what devices where used for that (e.g. spectrometer, magnet, solvent, buffer, ...) * what are the detail infos of the assayed sample (name, formula, structure, concentration, preperation process, ...)</li>
-</ul>
-<h2 id="referenced-by-class">Referenced by Class</h2>
-<h2 id="attributes">Attributes</h2>
-<h3 id="own">Own</h3>
-<ul>
-<li><a href="../provenanceData__source/">➞source</a>  <sub>0..1</sub><ul>
-<li>Description: a property to be used to provide the source of the data as String</li>
-<li>Range: <a href="../String/">String</a></li>
-</ul>
-</li>
-<li><a href="../provenanceData__source_uri/">➞source_uri</a>  <sub>0..1</sub><ul>
-<li>Description: a property to be used to provide the source of the data as URL or CURIE</li>
-<li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
-</ul>
-</li>
-<li><a href="../provenanceData__date_retrieved/">➞date_retrieved</a>  <sub>0..1</sub><ul>
-<li>Range: <a href="../Datetime/">Datetime</a></li>
-</ul>
-</li>
+<li><a href="../NmrSpecRecord/">NmrSpecRecord</a></li>
+<li><a href="../Provenance/">Provenance</a></li>
 </ul>
               
             </div>

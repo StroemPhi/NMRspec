@@ -49,24 +49,6 @@
          "title": "Manufacturer",
          "type": "object"
       },
-      "NamedThing": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {
-            "id": {
-               "type": "string"
-            },
-            "name": {
-               "description": "a generic property to provide a string that is used to name a something",
-               "type": "string"
-            }
-         },
-         "required": [
-            "id"
-         ],
-         "title": "NamedThing",
-         "type": "object"
-      },
       "NmrBuffer": {
          "additionalProperties": false,
          "description": "",
@@ -219,30 +201,46 @@
       },
       "NmrSpecRecord": {
          "additionalProperties": false,
-         "description": "This is the tree root node of the schema. It is a data item that serves as a container for all relevant information about one NMR spectroscopy assay record. The properties of this class represent the required metadata of an NMR assay, such as:  * what kind of assay was performed (e.g. 2D 13C COSY) and what devices where used for that (e.g. spectrometer, magnet, solvent, buffer, ...) * what are the detail infos of the assayed sample (name, formula, structure, concentration, preperation process, ...)",
+         "description": "This is the tree root node of the schema. It is a data item that serves as a container for all relevant information about *one* NMR spectroscopy assay record. The properties of this class represent the required metadata of an NMR assay, such as:  * what kind of assay was performed (e.g. 2D 13C COSY) and what devices where used for that (e.g. spectrometer, magnet, solvent, buffer, ...) * what are the detail infos of the assayed sample (name, formula, structure, concentration, preperation process, ...)",
          "properties": {
             "date_retrieved": {
+               "description": "the datetime when the source data has been retrieved",
                "format": "date-time",
                "type": "string"
             },
             "id": {
+               "description": "the URI of a NMR spectroscopy record, which gets generated upon ingest source data",
+               "type": "string"
+            },
+            "licence_str": {
+               "description": "the licence of the ingested raw data as string",
+               "type": "string"
+            },
+            "licence_url": {
+               "description": "the licence of the ingested raw data in machine readable format as URL",
                "type": "string"
             },
             "output_of_nmr_assay": {
                "$ref": "#/$defs/PulsedNmrAssay"
             },
             "source": {
-               "description": "a property to be used to provide the source of the data as String",
+               "description": "This property is used to describe the source of the data as string (e.g. \"Chemotion Repository\").",
+               "type": "string"
+            },
+            "source_file": {
+               "description": "This property must be used to describe the name of the source file (e.g. SG-V3259 (41-52)_11.dx) from which the metadata is to be parsed.",
                "type": "string"
             },
             "source_uri": {
-               "description": "a property to be used to provide the source of the data as URL or CURIE",
+               "description": "This property can be used to provide the URL or CURIE of the the source file, if it has one.",
                "type": "string"
             }
          },
          "required": [
             "id",
-            "output_of_nmr_assay"
+            "output_of_nmr_assay",
+            "source",
+            "source_file"
          ],
          "title": "NmrSpecRecord",
          "type": "object"
@@ -251,24 +249,16 @@
          "additionalProperties": false,
          "description": "",
          "properties": {
-            "id": {
-               "type": "string"
-            },
             "manufactured_by": {
                "$ref": "#/$defs/Manufacturer",
                "description": "a property to be used on any class that represents some form of atrefact, in order to refer to the artefacts maker."
             },
-            "name": {
-               "description": "a generic property to provide a string that is used to name a something",
-               "type": "string"
-            },
             "type": {
+               "description": "This property represents the type of spectrometer used in the NMR assay as string. Often this information will not be present in the JCAMP-DX file, but it can be parsed from Bricker source files",
                "type": "string"
             }
          },
-         "required": [
-            "id"
-         ],
+         "required": [],
          "title": "NmrSpectrometer",
          "type": "object"
       },
@@ -387,18 +377,18 @@
             }
          },
          "required": [
-            "id",
             "assayed_solution",
             "spectrometer",
             "has_dimension",
             "pulse_program",
-            "acuisition_nuclei"
+            "acuisition_nuclei",
+            "id"
          ],
          "title": "PulsedNmrAssay",
          "type": "object"
       }
    },
-   "$id": "https://git.tib.eu/lab-linked-scientific-knowledge/nmr-research-data-semantification/-/blob/main/nmr_assay_schema.yaml",
+   "$id": "https://github.com/StroemPhi/NMR-spectroscopy-schema/NMR-spectroscopy-schema",
    "$schema": "http://json-schema.org/draft-07/schema#",
    "additionalProperties": true,
    "metamodel_version": "1.7.0",
