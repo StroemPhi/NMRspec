@@ -95,8 +95,9 @@ classes:
         recommended: true
         range: string
   NamedThing:
-    class_uri:
-      sdo:Thing
+    description: a mixin to be used by any class that has a name and unique id
+    mixin: true
+    class_uri: sdo:Thing
     slots:
       - id
       - name
@@ -106,9 +107,6 @@ classes:
     mixins:
       - NamedThing
     class_uri: chmo:0000613
-    slots:
-      - id
-      - name
     attributes:
       assay_date:
         description: the date the assay was carried out by someone
@@ -193,8 +191,6 @@ classes:
       - ChemicalMetadata
       - NamedThing
   NmrSpectrometer:
-    mixins:
-      - NamedThing
     slots:  
       - manufactured_by
       - type
