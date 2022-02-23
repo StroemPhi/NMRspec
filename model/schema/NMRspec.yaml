@@ -200,7 +200,6 @@ classes:
     slots:
       - id
       - output_of_nmr_assay
-      - description
     slot_usage:
       id:
         description: the URI of a NMR spectroscopy record, which gets generated upon ingest source data 
