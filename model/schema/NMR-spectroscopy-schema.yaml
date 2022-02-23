@@ -200,9 +200,10 @@ classes:
         inlined: true
         domain: NmrSpectrometer
       type:
+        description: This property represents the type of spectrometer used in the NMR assay as string. Often this information will not be present in the JCAMP-DX file, but it can be parsed from Bricker source files
         domain: NmrSpectrometer
-        todos: >-
-          make the range an enum with allowed values from ontology, see also: https://github.com/StroemPhi/NMR-spectroscopy-schema/issues/2
+        todos: 
+          - make the range an enum with allowed values from ontology, see also https://github.com/StroemPhi/NMR-spectroscopy-schema/issues/2
 
     close_mappings:
       - obi:0000566
@@ -222,7 +223,7 @@ classes:
 # Information Content Entities
   NmrSpecRecord:
     description: >-
-      This is the tree root node of the schema. It is a data item that serves as a container for all relevant information about one NMR spectroscopy assay record. The properties of this class represent the required metadata of an NMR assay, such as: 
+      This is the tree root node of the schema. It is a data item that serves as a container for all relevant information about *one* NMR spectroscopy assay record. The properties of this class represent the required metadata of an NMR assay, such as: 
       * what kind of assay was performed (e.g. 2D 13C COSY) and what devices where used for that (e.g. spectrometer, magnet, solvent, buffer, ...)
       * what are the detail infos of the assayed sample (name, formula, structure, concentration, preperation process, ...)
     tree_root: true
@@ -232,6 +233,8 @@ classes:
       - id
       - output_of_nmr_assay
     slot_usage:
+      id:
+        description: the URI of a NMR spectroscopy record, which gets generated upon ingest source data 
       output_of_nmr_assay:
         inlined: true
         required: true
