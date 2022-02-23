@@ -1,8 +1,8 @@
-# Auto generated from NMR-spectroscopy-schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-02-23T15:21:53
-# Schema: NMR-spectroscopy-schema
+# Auto generated from NMRspec.yaml by pythongen.py version: 0.9.0
+# Generation date: 2022-02-23T16:52:50
+# Schema: NMRspec
 #
-# id: https://github.com/StroemPhi/NMR-spectroscopy-schema/NMR-spectroscopy-schema
+# id: https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/main/model/schema/NMR-assay-schema.yaml
 # description: This model is to be used to semantify NMR spectroscopy research data.
 # license: https://creativecommons.org/licenses/by/4.0/
 
@@ -33,7 +33,7 @@ dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
 FAIRSPEC = CurieNamespace('FAIRspec', 'https://github.com/IUPAC/IUPAC-FAIRSpec/blob/main/src/main/java/org/iupac/fairspec/core/')
-NMRSPEC = CurieNamespace('NMRspec', 'https://github.com/StroemPhi/NMR-spectroscopy-schema/')
+NMRSPEC = CurieNamespace('NMRspec', 'https://w3id.org/linkml/nmr-schema')
 BFO = CurieNamespace('bfo', 'http://purl.obolibrary.org/obo/BFO_')
 CC = CurieNamespace('cc', 'https://creativecommons.org/licenses/')
 CHEBI = CurieNamespace('chebi', 'http://purl.obolibrary.org/obo/CHEBI_')

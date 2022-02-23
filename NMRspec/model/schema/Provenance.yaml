@@ -1,14 +1,12 @@
-id: https://github.com/StroemPhi/NMR-spectroscopy-schema/provenance
+id: https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/1-make-schema-from-tbox/NMR_spectroscopy_schema/model/schema/provenance.yaml
 name: provenance
 description: provenance mixin
 license: https://creativecommons.org/licenses/by/4.0/
 version: 0.0.1
 
 prefixes:
-  NMRspec: https://github.com/StroemPhi/NMR-spectroscopy-schema/
   linkml: https://w3id.org/linkml/
 
-default_prefix: NMRspec
 default_curi_maps:
  - semweb_context
 

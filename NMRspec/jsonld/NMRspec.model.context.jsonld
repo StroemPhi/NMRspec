@@ -1,8 +1,11 @@
 {
-   "_comments": "Auto generated from NMR-spectroscopy-schema.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-02-23T15:21:30\n    Schema: NMR-spectroscopy-schema\n    metamodel version: 1.7.0\n    model version: 0.0.1\n    \n    id: https://github.com/StroemPhi/NMR-spectroscopy-schema/NMR-spectroscopy-schema\n    description: This model is to be used to semantify NMR spectroscopy research data.\n    license: https://creativecommons.org/licenses/by/4.0/\n    ",
+   "_comments": "Auto generated from NMRspec.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-02-23T16:52:34\n    Schema: NMRspec\n    metamodel version: 1.7.0\n    model version: 0.0.1\n    \n    id: https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/main/model/schema/NMR-assay-schema.yaml\n    description: This model is to be used to semantify NMR spectroscopy research data.\n    license: https://creativecommons.org/licenses/by/4.0/\n    ",
    "@context": {
       "FAIRspec": "https://github.com/IUPAC/IUPAC-FAIRSpec/blob/main/src/main/java/org/iupac/fairspec/core/",
-      "NMRspec": "https://github.com/StroemPhi/NMR-spectroscopy-schema/",
+      "NMRspec": {
+         "@id": "https://w3id.org/linkml/nmr-schema",
+         "@prefix": true
+      },
       "bfo": {
          "@id": "http://purl.obolibrary.org/obo/BFO_",
          "@prefix": true
@@ -51,7 +54,7 @@
       },
       "sdo": "https://schema.org/",
       "skos": "http://www.w3.org/2004/02/skos/core#",
-      "@vocab": "https://github.com/StroemPhi/NMR-spectroscopy-schema/",
+      "@vocab": "https://w3id.org/linkml/nmr-schema",
       "id": "@id",
       "manufactured_by": {
          "@type": "@id",
@@ -126,6 +129,9 @@
       },
       "NmrSolution": {
          "@id": "chebi:75958"
+      },
+      "Provenance": {
+         "@id": "https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/1-make-schema-from-tbox/NMR_spectroscopy_schema/model/schema/provenance.yaml/Provenance"
       },
       "PulsedNmrAssay": {
          "@id": "chmo:0000613"

@@ -1,8 +1,8 @@
-# Auto generated from provenance.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-02-23T15:21:57
+# Auto generated from Provenance.yaml by pythongen.py version: 0.9.0
+# Generation date: 2022-02-23T16:52:54
 # Schema: provenance
 #
-# id: https://github.com/StroemPhi/NMR-spectroscopy-schema/provenance
+# id: https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/1-make-schema-from-tbox/NMR_spectroscopy_schema/model/schema/provenance.yaml
 # description: provenance mixin
 # license: https://creativecommons.org/licenses/by/4.0/
 
@@ -32,10 +32,9 @@ version = "0.0.1"
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
-NMRSPEC = CurieNamespace('NMRspec', 'https://github.com/StroemPhi/NMR-spectroscopy-schema/')
 DCT = CurieNamespace('dct', 'http://example.org/UNKNOWN/dct/')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
-DEFAULT_ = NMRSPEC
+DEFAULT_ = CurieNamespace('', 'https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/1-make-schema-from-tbox/NMR_spectroscopy_schema/model/schema/provenance.yaml/')
 
 
 # Types
@@ -52,10 +51,10 @@ class Provenance(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = NMRSPEC.Provenance
-    class_class_curie: ClassVar[str] = "NMRspec:Provenance"
+    class_class_uri: ClassVar[URIRef] = URIRef("https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/1-make-schema-from-tbox/NMR_spectroscopy_schema/model/schema/provenance.yaml/Provenance")
+    class_class_curie: ClassVar[str] = None
     class_name: ClassVar[str] = "provenance"
-    class_model_uri: ClassVar[URIRef] = NMRSPEC.Provenance
+    class_model_uri: ClassVar[URIRef] = URIRef("https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/1-make-schema-from-tbox/NMR_spectroscopy_schema/model/schema/provenance.yaml/Provenance")
 
     source: str = None
     source_file: str = None

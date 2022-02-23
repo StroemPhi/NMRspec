@@ -1,16 +1,12 @@
-###########################################################
-#   schema header
-###########################################################
-id: https://github.com/StroemPhi/NMR-spectroscopy-schema/
-title: DRAFT:NMR spectroscopy schema (NMRspec)
-name: NMR-spectroscopy-schema
+id: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/NMRspec.yaml
+name: NMRspec
 description: |-
   This model is to be used to semantify NMR spectroscopy research data.
 license: https://creativecommons.org/licenses/by/4.0/
 version: 0.0.1
 
 prefixes:
-  NMRspec: https://github.com/StroemPhi/NMR-spectroscopy-schema/
+  NMRspec: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/
   linkml: https://w3id.org/linkml/
   sdo: https://schema.org/
   bfo: http://purl.obolibrary.org/obo/BFO_
@@ -32,7 +28,7 @@ prefixes:
   chemotion_data: https://www.chemotion-repository.net/home/publications/datasets/
   chemotion_reactions: https://www.chemotion-repository.net/home/publications/reactions/
   cc: https://creativecommons.org/licenses/
-# other NMR schema prefixes for mapping/interoperability purposes
+# other NMR schema prefixes for mapping purposes
   jdx: http://www.jcamp-dx.org/protocols/dxnmr01.pdf/
   isa: https://isa-specs.readthedocs.io/en/latest/isamodel.html#
   FAIRspec: https://github.com/IUPAC/IUPAC-FAIRSpec/blob/main/src/main/java/org/iupac/fairspec/core/
@@ -43,43 +39,13 @@ default_curi_maps:
 
 imports:
  - linkml:types
+ - ./Provenance
+
 
 #################################################
 classes:
 #################################################
 # Mixins
-  ProvenanceData:
-    mixin: true
-    description: >-
-      This is a mixin to be used by any class that is needed as part of an audit trail to ensure the provenance of the metadata.
-    attributes:       
-      source:
-        description: the source of the data as string (e.g. "Chemotion Repository")
-        required: true
-        domain: ProvenanceData
-        range: string
-      source_file:
-        description: the name of the source file (e.g. SG-V3259 (41-52)_11.dx) from which metadata is automatically derived/parsed
-        domain: ProvenanceData
-        range: string
-      source_uri:
-        description: the URL or CURIE of the the source file
-        slot_uri: dct:source
-        domain: ProvenanceData
-        range: uriorcurie
-      date_retrieved:
-        description: the datetime when the source data has been retrieved
-        domain: ProvenanceData
-        range: datetime
-      licence_str: 
-        description: the licence of the ingested raw data as string
-        domain: ProvenanceData
-        range: string
-      licence_url:
-        description: the licence of the ingested raw data in machine readable format as URL
-        domain: ProvenanceData
-        range: uriorcurie
-    todos: # defined with PROVO or other adequate slot_uris
   ChemicalMetadata:
     attributes:
       formula:
@@ -112,6 +78,8 @@ classes:
         description: the date the assay was carried out by someone
         domain: PulsedNmrAssay
         range: datetime
+        exact_mappings:
+          - jdx:long date
       assayed_solution:
         description: the property refering to solution in which the assayed sample is disolved in
         slot_uri: obi:0000293
@@ -134,7 +102,7 @@ classes:
         domain: PulsedNmrAssay
         range: PulseProgram
         see_also:
-          - jdx:PULSE_SEQUENCE
+          - jdx:.pulse sequence
       acuisition_nuclei:
         required: true
         multivalued: true
@@ -144,7 +112,7 @@ classes:
         domain: PulsedNmrAssay
         range: string
         exact_mappings:
-          - jdx:OBSERVE_NUCLEUS
+          - jdx:.observe nucleus
       observed_frequencies:
         multivalued: true
         inlined_as_list: true
@@ -228,10 +196,11 @@ classes:
       * what are the detail infos of the assayed sample (name, formula, structure, concentration, preperation process, ...)
     tree_root: true
     mixins:
-      - ProvenanceData
+      - Provenance
     slots:
       - id
       - output_of_nmr_assay
+      - description
     slot_usage:
       id:
         description: the URI of a NMR spectroscopy record, which gets generated upon ingest source data 
@@ -239,6 +208,21 @@ classes:
         inlined: true
         required: true
         range: PulsedNmrAssay
+
+  NmrSpecRecordCollection:
+    mixins: 
+      - Provenance
+    description: This class represents a collection of NMR spectroscopy records. It is to be used when multiple NMR assays were made in order to analyse a given sample.
+    slot_usage:
+      has_part:
+        required: true
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+        domain: NmrSpecRecordCollection
+        range: NmrSpecRecord
+    todos: 
+      - outsource this into its own YAML!
 
 #################################################
 slots:
@@ -271,12 +255,15 @@ slots:
     range: Manufacturer
   type:
     range: string
+  has_part:
+    slot_uri: bfo:0000051
+  description:
+    slot_uri: dc:description
+    range: string
 # NmrSpecRecord
   output_of_nmr_assay:
     required: true
     slot_uri: obi:0000312
-# Instrument
-
 
 #################################################
 enums:

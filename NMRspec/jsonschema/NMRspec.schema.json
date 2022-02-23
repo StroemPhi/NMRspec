@@ -388,13 +388,13 @@
          "type": "object"
       }
    },
-   "$id": "https://github.com/StroemPhi/NMR-spectroscopy-schema/NMR-spectroscopy-schema",
+   "$id": "https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/main/model/schema/NMR-assay-schema.yaml",
    "$schema": "http://json-schema.org/draft-07/schema#",
    "additionalProperties": true,
    "metamodel_version": "1.7.0",
    "properties": {},
    "required": [],
-   "title": "NMR-spectroscopy-schema",
+   "title": "NMRspec",
    "type": "object",
    "version": "0.0.1"
 }
