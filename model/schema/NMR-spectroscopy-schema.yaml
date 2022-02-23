@@ -1,7 +1,7 @@
 ###########################################################
 #   schema header
 ###########################################################
-id: https://git.tib.eu/lab-linked-scientific-knowledge/nmr-research-data-semantification/-/blob/main/nmr_assay_schema.yaml
+id: https://github.com/StroemPhi/NMR-spectroscopy-schema/
 title: DRAFT:NMR spectroscopy schema (NMRspec)
 name: NMR-spectroscopy-schema
 description: |-
@@ -10,7 +10,7 @@ license: https://creativecommons.org/licenses/by/4.0/
 version: 0.0.1
 
 prefixes:
-  NMRspec: https://nfdi4chem/nmr/data/
+  NMRspec: https://github.com/StroemPhi/NMR-spectroscopy-schema/
   linkml: https://w3id.org/linkml/
   sdo: https://schema.org/
   bfo: http://purl.obolibrary.org/obo/BFO_
@@ -26,9 +26,12 @@ prefixes:
   om: http://www.ontology-of-units-of-measure.org/resource/om-2/
   dct: http://purl.org/dc/terms/
 # data prefixes
+  nmrSPARQL: https://nfdi4chem/sparql/ # not valid endpoint yet, just serves as an example for a 
   doi: https://doi.org/
-  chemotion: https://chemotion.de/
-  pubchem: https://pubchem.com/
+  chemotion_pid: https://www.chemotion-repository.net/pid/
+  chemotion_data: https://www.chemotion-repository.net/home/publications/datasets/
+  chemotion_reactions: https://www.chemotion-repository.net/home/publications/reactions/
+  cc: https://creativecommons.org/licenses/
 # other NMR schema prefixes for mapping/interoperability purposes
   jdx: http://www.jcamp-dx.org/protocols/dxnmr01.pdf/
   isa: https://isa-specs.readthedocs.io/en/latest/isamodel.html#
