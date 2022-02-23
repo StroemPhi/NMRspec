@@ -101,7 +101,7 @@ classes:
     slots:
       - id
       - name
-      
+
 # Processes
   PulsedNmrAssay:
     mixins:
@@ -286,6 +286,7 @@ enums:
         see_also:
           - zgpg30
       COSY:
+
       COSY-DQF:
       COSY-DOSY:
       DOSY:
