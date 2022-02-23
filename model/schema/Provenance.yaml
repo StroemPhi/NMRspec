@@ -18,9 +18,12 @@ classes:
     mixin: true
     description: >-
       This is a mixin to be used by any class that is needed as part of an audit trail to ensure the provenance of the metadata.
-    attributes:       
+    attributes: 
+      description:
+        slot_uri: dc:description
+        range: string      
       source:
-        description: This property is used to describe the source of the data as string (e.g. "Chemotion Repository"). 
+        description: This property is used to describe the source of the data as string (e.g. "Chemotion Repository").
         required: true
         domain: Provenance
         range: string

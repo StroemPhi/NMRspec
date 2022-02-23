@@ -257,9 +257,6 @@ slots:
     range: string
   has_part:
     slot_uri: bfo:0000051
-  description:
-    slot_uri: dc:description
-    range: string
 # NmrSpecRecord
   output_of_nmr_assay:
     required: true
