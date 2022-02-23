@@ -54,14 +54,31 @@ classes:
       This is a mixin to be used by any class that is needed as part of an audit trail to ensure the provenance of the metadata.
     attributes:       
       source:
-        description: a property to be used to provide the source of the data as String
+        description: the source of the data as string (e.g. "Chemotion Repository")
+        required: true
+        domain: ProvenanceData
+        range: string
+      source_file:
+        description: the name of the source file (e.g. SG-V3259 (41-52)_11.dx) from which metadata is automatically derived/parsed
+        domain: ProvenanceData
         range: string
       source_uri:
-        description: a property to be used to provide the source of the data as URL or CURIE
+        description: the URL or CURIE of the the source file
         slot_uri: dct:source
+        domain: ProvenanceData
         range: uriorcurie
       date_retrieved:
+        description: the datetime when the source data has been retrieved
+        domain: ProvenanceData
         range: datetime
+      licence_str: 
+        description: the licence of the ingested raw data as string
+        domain: ProvenanceData
+        range: string
+      licence_url:
+        description: the licence of the ingested raw data in machine readable format as URL
+        domain: ProvenanceData
+        range: uriorcurie
     todos: # defined with PROVO or other adequate slot_uris
   ChemicalMetadata:
     attributes:
