@@ -55,18 +55,26 @@ classes:
         slot_uri: iao:0000235
         recommended: true
         range: MolecularFormula
+        close_mappings:
+          - chebi:fornula
       inchi:
         slot_uri: iao:0000235
         recommended: true
         range: InCHI
+        close_mappings:
+          - chebi:inchi
       inchikey:
         slot_uri: iao:0000235
         recommended: true
         range: InCHIKey
+        close_mappings:
+          - chebi:inchikey
       smiles:
         slot_uri: iao:0000235
         recommended: true
         range: SMILES
+        close_mappings:
+          - chebi:smiles
       mol_file:
         slot_uri: iao:0000235
         recommended: true
@@ -75,6 +83,10 @@ classes:
         slot_uri: iao:0000235
         recommended: true
         range: IUPACname
+        close_mappings:
+          - chebi:IUPAC_NAME
+    todos: 
+      - Find out if we want this complexity of using CHEMINF descriptor classes for the chemical descriptors or if ChEBI's annotation properties would suffice. For the purpose of being ready for future use cases. Using CHEMINF here seems better, but it does produce more triples and blank nodes.
 
   NamedThing:
     description: a mixin to be used by any class that has a name and unique id
