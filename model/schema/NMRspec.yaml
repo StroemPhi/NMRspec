@@ -240,27 +240,27 @@ classes:
       - outsource this into its own YAML!
         
   MolecularFormula:
-    class_uri:
+    class_uri: cheminf:000042
     slots:
       - has_representation
   InCHI:
-    class_uri:
+    class_uri: cheminf:000113
     slots:
       - has_representation
   InCHIKey:
-    class_uri:
+    class_uri: cheminf:000059
     slots:
       - has_representation
   SMILES:
-    class_uri:
+    class_uri: cheminf:000018
     slots:
       - has_representation
   MOLfile:
-    class_uri:
+    class_uri: cheminf:000114
     slots:
       - has_representation
   IUPACname:
-    class_uri:
+    class_uri: cheminf:000107
     slots:
       - has_representation
 
