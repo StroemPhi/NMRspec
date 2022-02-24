@@ -213,16 +213,16 @@ classes:
     tree_root: true
     mixins:
       - Provenance
-    slots:
-      - id
-      - output_of_nmr_assay
+      - NamedThing
+    attributes:
+      output_of_nmr_assay:
+        slot_uri: obi:0000312
+        required: true
+        inlined: true
+        range: PulsedNmrAssay
     slot_usage:
       id:
         description: the URI of a NMR spectroscopy record, which gets generated upon ingest source data 
-      output_of_nmr_assay:
-        inlined: true
-        required: true
-        range: PulsedNmrAssay
 
   NmrSpecRecordCollection:
     mixins: 
@@ -296,11 +296,6 @@ slots:
     range: Manufacturer
   type:
     range: string
-# NmrSpecRecord
-  output_of_nmr_assay:
-    required: true
-    slot_uri: obi:0000312
-
 # information content entity slots
   has_representation:
     description: >-
