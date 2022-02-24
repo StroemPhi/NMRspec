@@ -289,6 +289,7 @@ slots:
     exact_mappings:
       - sdo:identifier
   local_id:
+    slot_uri: sdo:identifier
     description: This property should be used to provide the local identifier with which something is denoted in a local context (e.g. your lab notebook).
     recommended: true
     range: string
