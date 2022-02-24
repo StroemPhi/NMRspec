@@ -25,7 +25,7 @@ output_of_nmr_assay:
   name: 13C_ns1024 CDCl3 /opt/topspin3.5pl6/data/complat/nmr SG 55
   pulse_program: NMR
   has_dimension: 1D   
-  acuisition_nuclei: 
+  acuisition_nuclei:
       - 13C
       - 1H
   observed_frequencies:

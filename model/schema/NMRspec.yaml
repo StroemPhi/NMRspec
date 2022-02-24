@@ -188,11 +188,11 @@ classes:
         domain: NmrSpectrometer
         todos: 
           - make the range an enum with allowed values from ontology, see also https://github.com/StroemPhi/NMR-spectroscopy-schema/issues/2
-
     close_mappings:
       - obi:0000566
       - nmrCV:1400059
       - chmo:0001807
+
   Manufacturer:
     class_uri: obi:0000835
     close_mappings:
@@ -289,6 +289,7 @@ slots:
     description: a generic property to be used in classes that represent something which has a website
     required: false
     range: uri
+# material entity slots
   manufactured_by:
     description: a property to be used on any class that represents some form of atrefact, in order to refer to the artefacts maker.
     slot_uri: obi:0000304
