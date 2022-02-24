@@ -6,6 +6,7 @@ version: 0.0.1
 
 prefixes:
   linkml: https://w3id.org/linkml/
+  dce: http://purl.org/dc/elements/1.1/
 
 default_curi_maps:
  - semweb_context
@@ -20,9 +21,10 @@ classes:
       This is a mixin to be used by any class that is needed as part of an audit trail to ensure the provenance of the metadata.
     attributes: 
       description:
-        slot_uri: dc:description
+        slot_uri: dce:description
         range: string      
       source:
+        slot_uri: dce:source
         description: This property is used to describe the source of the data as string (e.g. "Chemotion Repository").
         required: true
         domain: Provenance
@@ -34,18 +36,21 @@ classes:
         range: string
       source_uri:
         description: This property can be used to provide the URL or CURIE of the the source file, if it has one.
-        slot_uri: dct:source
+        slot_uri: dce:source
         domain: Provenance
         range: uriorcurie
-      date_retrieved:
-        description: the datetime when the source data has been retrieved
+      date_created:
+        slot_uri: sdo:dateCreated
+        description: The date on which the source file was processed according to this schema.
         domain: Provenance
         range: datetime
       licence_str: 
+        slot_uri: dce:license
         description: the licence of the ingested raw data as string
         domain: Provenance
         range: string
       licence_url:
+        slot_uri: dce:license
         description: the licence of the ingested raw data in machine readable format as URL
         domain: Provenance
         range: uriorcurie
