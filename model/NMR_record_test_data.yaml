@@ -14,9 +14,10 @@ source_file: SG-V3259 (41-52)_11.dx
 date_retrieved: "2022-02-22"  
 id: nmrSPARQL:named_graph_1   
 output_of_nmr_assay: 
-##########################
-# PulsedNmrAssay metadata#
-##########################
+
+###########################
+# PulsedNmrAssay metadata #
+###########################
 
   # derived from .dx file
   assay_date: "2019-07-18T02:18:49"
@@ -25,23 +26,40 @@ output_of_nmr_assay:
   has_dimension: 1D   
   acuisition_nuclei: 
       - 13C
+      - 1H
   observed_frequencies:
     - 100.623835930538
+    - 400.1316005
+  # either dependent on user input or autgenerated ID
   id: doi:10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N/CHMO0000595
-  assayed_solution:   
+
+  #################################
+  # PulsedNmrAssay Input metadata #
+  #################################
+
+  assayed_solution: 
+
+      # sample metadata  
       sample:
-      # sample metadata
+        # derived from .dx file
+        local_id: SG-V3259 (41-52)
+        # dependent on user input or some resolver
         id: doi:10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N.1
-        local_id: chemotion_pid:SG-V3259-A
         formula: C17H17NO2S
         name:  2-(2,6-dimethoxy-4-methylphenyl)-6-methyl-1,3-benzothiazole
+
+      # solvent metatada  
       solvent:
-        # solvent metatada
-        id: chebi:85365 # needs to be automatically derived from formula 
-        formula: CDCL3 # taken from .dx file
-        name: deuterated chloroform # needs to be automatically derived from formula
+        # derived from .dx file
+        formula: CDCL3 
+        # dependent on user input or some resolver
+        id: chebi:85365 
+        name: deuterated chloroform 
+  
+  # device metadata
   spectrometer:
-    type: Avance III 400 NMR spectrometer # taken from uxnmr.info in Brucker source files
+    # derived from Brukcer raw file
+    type: Avance III 400 NMR spectrometer 
     manufactured_by: 
       name: Bruker # needs to be automatically derived from type?
       website: https://www.bruker.com/
