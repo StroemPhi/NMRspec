@@ -59,7 +59,8 @@ output_of_nmr_assay:
         # dependent on user input or some resolver
         id: chebi:85365 
         iupac_name:
-          has_representation: deuterated chloroform 
+          has_representation: trichloro((2)H)methane
+        name: deuterated chloroform
   
   # device metadata
   spectrometer:
