@@ -46,16 +46,20 @@ output_of_nmr_assay:
         local_id: SG-V3259 (41-52)
         # dependent on user input or some resolver
         id: doi:10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N.1
-        formula: C17H17NO2S
-        name:  2-(2,6-dimethoxy-4-methylphenyl)-6-methyl-1,3-benzothiazole
+        formula: 
+          has_representation: C17H17NO2S
+        iupac_name:  
+          has_representation: 2-(2,6-dimethoxy-4-methylphenyl)-6-methyl-1,3-benzothiazole
 
       # solvent metatada  
       solvent:
         # derived from .dx file
-        formula: CDCL3 
+        formula: 
+          has_representation: CDCL3 
         # dependent on user input or some resolver
         id: chebi:85365 
-        name: deuterated chloroform 
+        iupac_name:
+          has_representation: deuterated chloroform 
   
   # device metadata
   spectrometer:
