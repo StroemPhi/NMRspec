@@ -6,6 +6,7 @@ license: https://creativecommons.org/licenses/by/4.0/
 version: 0.0.1
 
 prefixes:
+# ontologies
   NMRspec: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/
   linkml: https://w3id.org/linkml/
   sdo: https://schema.org/
@@ -20,13 +21,12 @@ prefixes:
   pato: http://purl.obolibrary.org/obo/PATO_
   prov: http://www.w3.org/ns/prov#
   om: http://www.ontology-of-units-of-measure.org/resource/om-2/
-  dct: http://purl.org/dc/terms/
 # data prefixes
   nmrSPARQL: https://nfdi4chem/sparql/ # not valid endpoint yet, just serves as an example for a 
   doi: https://doi.org/
-  chemotion_pid: https://www.chemotion-repository.net/pid/
-  chemotion_data: https://www.chemotion-repository.net/home/publications/datasets/
-  chemotion_reactions: https://www.chemotion-repository.net/home/publications/reactions/
+  chemotionPID: https://www.chemotion-repository.net/pid/
+  chemotionDATA: https://www.chemotion-repository.net/home/publications/datasets/
+  chemotion: https://www.chemotion-repository.net/home/publications/reactions/
   cc: https://creativecommons.org/licenses/
 # other NMR schema prefixes for mapping purposes
   jdx: http://www.jcamp-dx.org/protocols/dxnmr01.pdf/
