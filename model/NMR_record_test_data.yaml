@@ -1,6 +1,6 @@
-##########################
-# NmrSpecRecord Metadata #
-##########################
+#################
+# NmrSpecRecord #
+#################
 
 # dependent on user input
 source_uri: https://doi.org/10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N/CHMO0000595 
@@ -14,11 +14,11 @@ source_file: SG-V3259 (41-52)_11.dx
 date_created: "2022-02-22"  
 id: nmrSPARQL:named_graph_1 
 name: NMR_record_test_data
-output_of_nmr_assay: 
 
-###########################
-# PulsedNmrAssay metadata #
-###########################
+output_of_nmr_assay: 
+##################
+# PulsedNmrAssay #
+##################
 
   # derived from .dx file
   assay_date: "2019-07-18T02:18:49"
@@ -34,38 +34,49 @@ output_of_nmr_assay:
   # either dependent on user input or autgenerated ID
   id: doi:10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N/CHMO0000595
 
-  #################################
-  # PulsedNmrAssay Input metadata #
-  #################################
+  solution:
+  ####################
+  # assayed solution #
+  ####################
+  # solution metadata
+    molarity: # has quality
+      meassured_as_scalar: # has measurement datum
+          value: 21.55
+          unit: molar
+    pH:
+      meassured_as_scalar: # has measurement datum
+          value: 7.5
+          unit: pH
+  # sample metadata  
+    sample:
+      # derived from .dx file
+      local_id: SG-V3259 (41-52)
+      # dependent on user input, script or some resolver
+      id: doi:10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N.1
+      formula: 
+        has_representation: C17H17NO2S
+      iupac_name:  
+        has_representation: 2-(2,6-dimethoxy-4-methylphenyl)-6-methyl-1,3-benzothiazole
+  # solvent metatada  
+    solvent:
+      # derived from .dx file
+      formula: 
+        has_representation: CDCL3 
+      # dependent on user input, script or some resolver
+      id: chebi:85365 
+      iupac_name:
+        has_representation: trichloro((2)H)methane
+      name: deuterated chloroform
 
-  assayed_solution: 
-
-      # sample metadata  
-      sample:
-        # derived from .dx file
-        local_id: SG-V3259 (41-52)
-        # dependent on user input or some resolver
-        id: doi:10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N.1
-        formula: 
-          has_representation: C17H17NO2S
-        iupac_name:  
-          has_representation: 2-(2,6-dimethoxy-4-methylphenyl)-6-methyl-1,3-benzothiazole
-
-      # solvent metatada  
-      solvent:
-        # derived from .dx file
-        formula: 
-          has_representation: CDCL3 
-        # dependent on user input or some resolver
-        id: chebi:85365 
-        iupac_name:
-          has_representation: trichloro((2)H)methane
-        name: deuterated chloroform
-  
-  # device metadata
   spectrometer:
+  #####################
+  # used spectrometer #
+  #####################
     # derived from Brukcer raw file
     type: Avance III 400 NMR spectrometer 
     manufactured_by: 
       name: Bruker # needs to be automatically derived from type?
       website: https://www.bruker.com/
+  ####################
+  # used sample tube #
+  ####################

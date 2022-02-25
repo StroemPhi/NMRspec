@@ -21,6 +21,7 @@ prefixes:
   pato: http://purl.obolibrary.org/obo/PATO_
   prov: http://www.w3.org/ns/prov#
   om: http://www.ontology-of-units-of-measure.org/resource/om-2/
+  uo: http://purl.obolibrary.org/obo/
 # data prefixes
   nmrSPARQL: https://nfdi4chem/sparql/ # not valid endpoint yet, just serves as an example for a 
   doi: https://doi.org/
@@ -87,7 +88,6 @@ classes:
           - chebi:IUPAC_NAME
     todos: 
       - Find out if we want this complexity of using CHEMINF descriptor classes for the chemical descriptors or if ChEBI's annotation properties would suffice. For the purpose of being ready for future use cases. Using CHEMINF here seems better, but it does produce more triples and blank nodes.
-
   NamedThing:
     description: a mixin to be used by any class that has a name and unique id
     mixin: true
@@ -108,7 +108,7 @@ classes:
         range: datetime
         exact_mappings:
           - jdx:long date
-      assayed_solution:
+      solution:
         description: the property refering to solution in which the assayed sample is disolved in
         slot_uri: obi:0000293
         inlined: true
@@ -149,15 +149,18 @@ classes:
 
 # Material Entities
   NmrSolution:
+    description: A NMR sollution is the solution made up of the solvent in which the evaluated sample is dissolved in as well as possibly the buffer needed to adjust the pH value.
     class_uri: chebi:75958
     attributes:
       solvent:
+        description: The attribute needed to relate the NMR solution to its solvent.
         slot_uri: bfo:0000051
         inlined: true
         required: true
         domain: NmrSolution
         range: NmrSolvent
       sample:
+        description: The attribute needed to relate the NMR solution to its solvent.
         slot_uri: bfo:0000051
         inlined: true
         required: true
@@ -168,6 +171,15 @@ classes:
         inlined: true
         domain: NmrSolution
         range: NmrBuffer
+      molarity:
+        description: The predicate needed to relate to the concentration of the NMR solution.
+        slot_uri: ro:0000086 # has quality
+        range: Concentration
+      pH:
+        description: The predicate needed to relate to the concentration of the NMR solution.
+        slot_uri: ro:0000086 # has quality
+        range: Concentration
+
   NmrSample:
     mixins:
       - ChemicalDescriptor
@@ -216,7 +228,35 @@ classes:
       name: 
         range: NmrManufacturers
 
+# Qualities
+  Quality:
+    description: A quality is a specifically dependent continuant that, in contrast to roles and dispositions, does not require any further process in order to be realized. [IAO]
+    class_uri: bfo:0000019
+    attributes: 
+      is_quality_meassured_as:
+        slot_uri: iao:0000417
+        domain: Quality
+        range: ScalarMeasurementDatum
+
+  Concentration:
+    is_a: Quality
+    description: A quality inhering in a substance by virtue of the amount of the bearer's there is mixed with another substance. [Wikipedia:http://en.wikipedia.org/wiki/concentration]
+    class_uri: pato:0000033
+    attributes:
+      meassured_as_scalar:
+        range: ScalarMeasurementDatum
+
 # Information Content Entities
+  ScalarMeasurementDatum:
+    description: A scalar measurement datum is a measurement datum that is composed of two parts, numerals and a unit label. [IAO]
+    class_uri: iao:0000032
+    attributes:
+      value:
+        range: double
+      unit:
+        range: Unit
+
+
   NmrSpecRecord:
     description: >-
       This is the tree root node of the schema. It is a data item that serves as a container for all relevant information about *one* NMR spectroscopy assay record. The properties of this class represent the required metadata of an NMR assay, such as: 
@@ -320,12 +360,12 @@ slots:
 #################################################
 enums:
   PulseProgram:
+    description: Enum of the most commonly used pulse sequences that specify the type of pulsed NMR.
     permissible_values:
       NMR:
         see_also:
           - zgpg30
       COSY:
-
       COSY-DQF:
       COSY-DOSY:
       DOSY:
@@ -388,6 +428,7 @@ enums:
       DOSY-NOESY:
       DOSY-HMQC:
   NmrManufacturers:
+    description: Controlled list of manufacturers of NMR lab devices.
     notes: allowed values from nmrCV_1400255
     permissible_values:
       Acorn NMR Inc:
@@ -419,10 +460,25 @@ enums:
       micromass:
       tecmag:
   Dimension:
+    description: The dimensionality of the produced spectrum.
     permissible_values:
       1D:
       2D:
       3D:
       4D:
+  Unit:
+    description: Enums of needed units aligned with UO. *WIP:needs to be expanded*
+    permissible_values:
+      femtomolar:
+        meaning: uo:0000073
+      micromolar:
+      millimolar:
+      molar:
+        meaning: uo:0000062
+      nanomolar:
+      picomolar:
+      pH:
+        meaning: uo:0000196
+
 #################################################
 
