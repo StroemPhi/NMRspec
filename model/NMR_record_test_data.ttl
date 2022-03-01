@@ -1,6 +1,0 @@
-@prefix ns1: <https://nfdi4chem/nmr/data/> .
-
-<https://doi.org/10.2034/1234> a ns1:NMRspecRecord ;
-    ns1:sample_formula "CH4" ;
-    ns1:sample_name "Methan" .
-
