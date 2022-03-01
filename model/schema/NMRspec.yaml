@@ -204,26 +204,33 @@ classes:
       - type
     slot_usage:
       manufactured_by:
-        slot_uri: obi:0000304
-        inlined: true
-        domain: NmrSpectrometer
+        range: NmrManufacturers
       type:
         description: This property represents the type of spectrometer used in the NMR assay as string. Often this information will not be present in the JCAMP-DX file, but it can be parsed from Bricker source files
         domain: NmrSpectrometer
         todos: 
           - make the range an enum with allowed values from ontology, see also https://github.com/StroemPhi/NMR-spectroscopy-schema/issues/2
-      has_sample_tube:
+    attributes:
+      sample_tube:
         slot_uri: bfo:0000051
+        range: NmrSampleTube
     close_mappings:
       - obi:0000566
       - nmrCV:1400059
       - chmo:0001807
 
   NmrSampleTube:
+    class_uri: obi:0000578 
+    slots:  
+      - manufactured_by
+      - type
     attributes:
       measured_temperature:
         slot_uri: ro:0000086 # has quality
         range: Temperature
+    slot_usage:
+      manufactured_by:
+        range: NmrManufacturers
 
   Manufacturer:
     class_uri: obi:0000835
