@@ -171,11 +171,11 @@ classes:
         inlined: true
         domain: NmrSolution
         range: NmrBuffer
-      molarity:
+      measured_molarity:
         description: The predicate needed to relate to the concentration of the NMR solution.
         slot_uri: ro:0000086 # has quality
         range: MolarConcentration
-      pH:
+      measured_pH:
         description: The predicate needed to relate to the concentration of the NMR solution.
         slot_uri: ro:0000086 # has quality
         range: PhValue
