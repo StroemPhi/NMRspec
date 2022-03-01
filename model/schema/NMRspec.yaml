@@ -174,11 +174,11 @@ classes:
       molarity:
         description: The predicate needed to relate to the concentration of the NMR solution.
         slot_uri: ro:0000086 # has quality
-        range: Concentration
+        range: MolarConcentration
       pH:
         description: The predicate needed to relate to the concentration of the NMR solution.
         slot_uri: ro:0000086 # has quality
-        range: Concentration
+        range: PhValue
 
   NmrSample:
     mixins:
@@ -212,10 +212,18 @@ classes:
         domain: NmrSpectrometer
         todos: 
           - make the range an enum with allowed values from ontology, see also https://github.com/StroemPhi/NMR-spectroscopy-schema/issues/2
+      has_sample_tube:
+        slot_uri: bfo:0000051
     close_mappings:
       - obi:0000566
       - nmrCV:1400059
       - chmo:0001807
+
+  NmrSampleTube:
+    attributes:
+      measured_temperature:
+        slot_uri: ro:0000086 # has quality
+        range: Temperature
 
   Manufacturer:
     class_uri: obi:0000835
@@ -228,34 +236,83 @@ classes:
       name: 
         range: NmrManufacturers
 
-# Qualities
-  Quality:
-    description: A quality is a specifically dependent continuant that, in contrast to roles and dispositions, does not require any further process in order to be realized. [IAO]
-    class_uri: bfo:0000019
-    attributes: 
-      is_quality_meassured_as:
-        slot_uri: iao:0000417
-        domain: Quality
-        range: ScalarMeasurementDatum
-
-  Concentration:
-    is_a: Quality
+# Qualities    
+  MolarConcentration:
     description: A quality inhering in a substance by virtue of the amount of the bearer's there is mixed with another substance. [Wikipedia:http://en.wikipedia.org/wiki/concentration]
     class_uri: pato:0000033
-    attributes:
-      meassured_as_scalar:
-        range: ScalarMeasurementDatum
+    slots: 
+      - is_quality_measured_as
+    slot_usage:
+      is_quality_measured_as:
+        range: MolarityMeasurementDatum
+  PhValue:
+    class_uri: pato:0001842
+    slots: 
+      - is_quality_measured_as
+    slot_usage:
+      is_quality_measured_as:
+        range: PhMeasurementDatum
+  Temperature:
+    class_uri: pato:0000146
+    slots: 
+      - is_quality_measured_as
+    slot_usage:
+      is_quality_measured_as:
+        range: TemperatureMeasurementDatum
 
 # Information Content Entities
-  ScalarMeasurementDatum:
-    description: A scalar measurement datum is a measurement datum that is composed of two parts, numerals and a unit label. [IAO]
+  MolarityMeasurementDatum:
     class_uri: iao:0000032
-    attributes:
-      value:
-        range: double
+    description: A scalar measurement datum that is the result of measuring the molarity (aka volume concentration) of a chemical solution.
+    slots:
+      - value
+      - unit
+    slot_usage:
       unit:
-        range: Unit
+        range: MolarityUnit
+  PhMeasurementDatum:
+    class_uri: iao:0000032
+    description: A scalar measurement datum that is the result of measuring the pH value of a chemical solution.
+    slots:
+      - value
+      - unit
+    slot_usage:
+      unit:
+        range: PhValueUnit
+  TemperatureMeasurementDatum:
+    class_uri: obi:0003079
+    description: A scalar measurement datum that is the result of measuring temperature.
+    slots:
+      - value
+      - unit
+    slot_usage:
+      unit:
+        range: TemperatureUnit
 
+  MolecularFormula:
+    class_uri: cheminf:000042
+    slots:
+      - has_representation
+  InCHI:
+    class_uri: cheminf:000113
+    slots:
+      - has_representation
+  InCHIKey:
+    class_uri: cheminf:000059
+    slots:
+      - has_representation
+  SMILES:
+    class_uri: cheminf:000018
+    slots:
+      - has_representation
+  MOLfile: # only used by NmrSample
+    class_uri: cheminf:000114
+    slots:
+      - has_representation
+  IUPACname:
+    class_uri: cheminf:000107
+    slots:
+      - has_representation
 
   NmrSpecRecord:
     description: >-
@@ -275,7 +332,6 @@ classes:
     slot_usage:
       id:
         description: the URI of a NMR spectroscopy record, which gets generated upon ingest source data 
-
   NmrSpecRecordCollection:
     mixins: 
       - Provenance
@@ -291,31 +347,6 @@ classes:
     todos: 
       - outsource this into its own YAML!
         
-  MolecularFormula:
-    class_uri: cheminf:000042
-    slots:
-      - has_representation
-  InCHI:
-    class_uri: cheminf:000113
-    slots:
-      - has_representation
-  InCHIKey:
-    class_uri: cheminf:000059
-    slots:
-      - has_representation
-  SMILES:
-    class_uri: cheminf:000018
-    slots:
-      - has_representation
-  MOLfile:
-    class_uri: cheminf:000114
-    slots:
-      - has_representation
-  IUPACname:
-    class_uri: cheminf:000107
-    slots:
-      - has_representation
-
 
 #################################################
 slots:
@@ -329,7 +360,7 @@ slots:
     exact_mappings:
       - sdo:identifier
   local_id:
-    slot_uri: sdo:identifier
+    #slot_uri: sdo:identifier
     description: This property should be used to provide the local identifier with which something is denoted in a local context (e.g. your lab notebook).
     recommended: true
     range: string
@@ -356,7 +387,15 @@ slots:
       'has representation' is a data property that attaches between an information content entity and a value that contains linguistically or computationally coded text.
     slot_uri: obi:0002815
     range: string
-  
+  # scalar measurement datum slots 
+  value:
+    slot_uri: iao:0000004
+    range: double
+  unit:
+    slot_uri: iao:0000039
+# qualities
+  is_quality_measured_as:
+    slot_uri: iao:0000417
 #################################################
 enums:
   PulseProgram:
@@ -466,7 +505,7 @@ enums:
       2D:
       3D:
       4D:
-  Unit:
+  MolarityUnit:
     description: Enums of needed units aligned with UO. *WIP:needs to be expanded*
     permissible_values:
       femtomolar:
@@ -477,8 +516,15 @@ enums:
         meaning: uo:0000062
       nanomolar:
       picomolar:
+  PhValueUnit:
+    permissible_values:
       pH:
         meaning: uo:0000196
+  TemperatureUnit:
+    permissible_values:
+      Celsius:
+        meaning: uo:0000027
+      Kelvin:
 
 #################################################
 
