@@ -1,11 +1,12 @@
-id: https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/1-make-schema-from-tbox/NMR_spectroscopy_schema/model/schema/provenance.yaml
-name: provenance
-description: provenance mixin
+id: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/Provenance.yaml
+name: Provenance
+description: Provenance mixin
 license: https://creativecommons.org/licenses/by/4.0/
 version: 0.0.1
 
 prefixes:
   linkml: https://w3id.org/linkml/
+  dce: http://purl.org/dc/elements/1.1/
 
 default_curi_maps:
  - semweb_context
@@ -14,36 +15,43 @@ imports:
  - linkml:types
 
 classes:
-  provenance:
+  Provenance:
     mixin: true
     description: >-
       This is a mixin to be used by any class that is needed as part of an audit trail to ensure the provenance of the metadata.
-    attributes:       
+    attributes: 
+      description:
+        slot_uri: dce:description
+        range: string      
       source:
-        description: This property is used to describe the source of the data as string (e.g. "Chemotion Repository"). 
+        slot_uri: dce:source
+        description: This property is used to describe the source of the data as string (e.g. "Chemotion Repository").
         required: true
-        domain: provenance
+        domain: Provenance
         range: string
       source_file:
         description: This property must be used to describe the name of the source file (e.g. SG-V3259 (41-52)_11.dx) from which the metadata is to be parsed.
         required: true
-        domain: provenance
+        domain: Provenance
         range: string
       source_uri:
         description: This property can be used to provide the URL or CURIE of the the source file, if it has one.
-        slot_uri: dct:source
-        domain: provenance
+        slot_uri: dce:source
+        domain: Provenance
         range: uriorcurie
-      date_retrieved:
-        description: the datetime when the source data has been retrieved
-        domain: provenance
+      date_created:
+        slot_uri: sdo:dateCreated
+        description: The date on which the source file was processed according to this schema.
+        domain: Provenance
         range: datetime
       licence_str: 
+        slot_uri: dce:license
         description: the licence of the ingested raw data as string
-        domain: provenance
+        domain: Provenance
         range: string
       licence_url:
+        slot_uri: dce:license
         description: the licence of the ingested raw data in machine readable format as URL
-        domain: provenance
+        domain: Provenance
         range: uriorcurie
     todos: # defined with PROVO or other adequate slot_uris

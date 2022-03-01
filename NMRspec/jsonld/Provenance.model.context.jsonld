@@ -1,33 +1,36 @@
 {
-   "_comments": "Auto generated from Provenance.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-02-23T16:52:38\n    Schema: provenance\n    metamodel version: 1.7.0\n    model version: 0.0.1\n    \n    id: https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/1-make-schema-from-tbox/NMR_spectroscopy_schema/model/schema/provenance.yaml\n    description: provenance mixin\n    license: https://creativecommons.org/licenses/by/4.0/\n    ",
+   "_comments": "Auto generated from Provenance.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-03-01T10:34:30\n    Schema: Provenance\n    metamodel version: 1.7.0\n    model version: 0.0.1\n    \n    id: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/Provenance.yaml\n    description: Provenance mixin\n    license: https://creativecommons.org/licenses/by/4.0/\n    ",
    "@context": {
-      "dct": "http://example.org/UNKNOWN/dct/",
+      "Provenance": {
+         "@id": "https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/Provenance.yaml/Provenance"
+      },
+      "dce": "http://purl.org/dc/elements/1.1/",
       "linkml": "https://w3id.org/linkml/",
-      "provenance": "https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/1-make-schema-from-tbox/NMR_spectroscopy_schema/model/schema/provenance.yaml/",
-      "@vocab": "https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/1-make-schema-from-tbox/NMR_spectroscopy_schema/model/schema/provenance.yaml/",
-      "date_retrieved": {
+      "sdo": "http://example.org/UNKNOWN/sdo/",
+      "@vocab": "https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/Provenance.yaml/",
+      "date_created": {
          "@type": "xsd:dateTime",
-         "@id": "https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/1-make-schema-from-tbox/NMR_spectroscopy_schema/model/schema/provenance.yaml/date_retrieved"
+         "@id": "sdo:dateCreated"
+      },
+      "description": {
+         "@id": "dce:description"
       },
       "licence_str": {
-         "@id": "https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/1-make-schema-from-tbox/NMR_spectroscopy_schema/model/schema/provenance.yaml/licence_str"
+         "@id": "dce:license"
       },
       "licence_url": {
          "@type": "@id",
-         "@id": "https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/1-make-schema-from-tbox/NMR_spectroscopy_schema/model/schema/provenance.yaml/licence_url"
+         "@id": "dce:license"
       },
       "source": {
-         "@id": "https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/1-make-schema-from-tbox/NMR_spectroscopy_schema/model/schema/provenance.yaml/source"
+         "@id": "dce:source"
       },
       "source_file": {
-         "@id": "https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/1-make-schema-from-tbox/NMR_spectroscopy_schema/model/schema/provenance.yaml/source_file"
+         "@id": "https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/Provenance.yaml/source_file"
       },
       "source_uri": {
          "@type": "@id",
-         "@id": "dct:source"
-      },
-      "Provenance": {
-         "@id": "https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/1-make-schema-from-tbox/NMR_spectroscopy_schema/model/schema/provenance.yaml/Provenance"
+         "@id": "dce:source"
       }
    }
 }

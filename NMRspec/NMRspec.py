@@ -1,8 +1,8 @@
 # Auto generated from NMRspec.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-02-23T16:52:50
+# Generation date: 2022-03-01T10:34:42
 # Schema: NMRspec
 #
-# id: https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/main/model/schema/NMR-assay-schema.yaml
+# id: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/NMRspec.yaml
 # description: This model is to be used to semantify NMR spectroscopy research data.
 # license: https://creativecommons.org/licenses/by/4.0/
 
@@ -22,7 +22,7 @@ from linkml_runtime.utils.formatutils import camelcase, underscore, sfx
 from linkml_runtime.utils.enumerations import EnumDefinitionImpl
 from rdflib import Namespace, URIRef
 from linkml_runtime.utils.curienamespace import CurieNamespace
-from linkml_runtime.linkml_model.types import Datetime, Float, String, Uri, Uriorcurie
+from linkml_runtime.linkml_model.types import Datetime, Double, Float, String, Uri, Uriorcurie
 from linkml_runtime.utils.metamodelcore import URI, URIorCURIE, XSDDateTime
 
 metamodel_version = "1.7.0"
@@ -33,16 +33,15 @@ dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
 FAIRSPEC = CurieNamespace('FAIRspec', 'https://github.com/IUPAC/IUPAC-FAIRSpec/blob/main/src/main/java/org/iupac/fairspec/core/')
-NMRSPEC = CurieNamespace('NMRspec', 'https://w3id.org/linkml/nmr-schema')
+NMRSPEC = CurieNamespace('NMRspec', 'https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/')
 BFO = CurieNamespace('bfo', 'http://purl.obolibrary.org/obo/BFO_')
 CC = CurieNamespace('cc', 'https://creativecommons.org/licenses/')
 CHEBI = CurieNamespace('chebi', 'http://purl.obolibrary.org/obo/CHEBI_')
 CHEMINF = CurieNamespace('cheminf', 'http://purl.obolibrary.org/obo/CHEMINF_')
-CHEMOTION_DATA = CurieNamespace('chemotion_data', 'https://www.chemotion-repository.net/home/publications/datasets/')
-CHEMOTION_PID = CurieNamespace('chemotion_pid', 'https://www.chemotion-repository.net/pid/')
-CHEMOTION_REACTIONS = CurieNamespace('chemotion_reactions', 'https://www.chemotion-repository.net/home/publications/reactions/')
+CHEMOTION = CurieNamespace('chemotion', 'https://www.chemotion-repository.net/home/publications/reactions/')
+CHEMOTIONDATA = CurieNamespace('chemotionDATA', 'https://www.chemotion-repository.net/home/publications/datasets/')
+CHEMOTIONPID = CurieNamespace('chemotionPID', 'https://www.chemotion-repository.net/pid/')
 CHMO = CurieNamespace('chmo', 'http://purl.obolibrary.org/obo/CHMO_')
-DCT = CurieNamespace('dct', 'http://purl.org/dc/terms/')
 DOI = CurieNamespace('doi', 'https://doi.org/')
 IAO = CurieNamespace('iao', 'http://purl.obolibrary.org/obo/IAO_')
 ISA = CurieNamespace('isa', 'https://isa-specs.readthedocs.io/en/latest/isamodel.html#')
@@ -57,6 +56,7 @@ PROV = CurieNamespace('prov', 'http://www.w3.org/ns/prov#')
 RDFS = CurieNamespace('rdfs', 'http://www.w3.org/2000/01/rdf-schema#')
 RO = CurieNamespace('ro', 'http://purl.obolibrary.org/obo/RO_')
 SDO = CurieNamespace('sdo', 'https://schema.org/')
+UO = CurieNamespace('uo', 'http://purl.obolibrary.org/obo/')
 DEFAULT_ = NMRSPEC
 
 
@@ -88,31 +88,43 @@ class NmrSpecRecordId(URIorCURIE):
 
 
 @dataclass
-class ChemicalMetadata(YAMLRoot):
+class ChemicalDescriptor(YAMLRoot):
+    """
+    A chemical descriptor is a data item (quantity or value) about a chemical entity that conforms to a specification
+    for how it is calculated, measured or recorded.
+    """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = NMRSPEC.ChemicalMetadata
-    class_class_curie: ClassVar[str] = "NMRspec:ChemicalMetadata"
-    class_name: ClassVar[str] = "ChemicalMetadata"
-    class_model_uri: ClassVar[URIRef] = NMRSPEC.ChemicalMetadata
+    class_class_uri: ClassVar[URIRef] = CHEMINF["000123"]
+    class_class_curie: ClassVar[str] = "cheminf:000123"
+    class_name: ClassVar[str] = "ChemicalDescriptor"
+    class_model_uri: ClassVar[URIRef] = NMRSPEC.ChemicalDescriptor
 
-    formula: Optional[str] = None
-    inchi: Optional[str] = None
-    inchikey: Optional[str] = None
-    smiles: Optional[str] = None
+    formula: Optional[Union[dict, "MolecularFormula"]] = None
+    inchi: Optional[Union[dict, "InCHI"]] = None
+    inchikey: Optional[Union[dict, "InCHIKey"]] = None
+    smiles: Optional[Union[dict, "SMILES"]] = None
+    mol_file: Optional[Union[dict, "MOLfile"]] = None
+    iupac_name: Optional[Union[dict, "IUPACname"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.formula is not None and not isinstance(self.formula, str):
-            self.formula = str(self.formula)
+        if self.formula is not None and not isinstance(self.formula, MolecularFormula):
+            self.formula = MolecularFormula(**as_dict(self.formula))
 
-        if self.inchi is not None and not isinstance(self.inchi, str):
-            self.inchi = str(self.inchi)
+        if self.inchi is not None and not isinstance(self.inchi, InCHI):
+            self.inchi = InCHI(**as_dict(self.inchi))
 
-        if self.inchikey is not None and not isinstance(self.inchikey, str):
-            self.inchikey = str(self.inchikey)
+        if self.inchikey is not None and not isinstance(self.inchikey, InCHIKey):
+            self.inchikey = InCHIKey(**as_dict(self.inchikey))
 
-        if self.smiles is not None and not isinstance(self.smiles, str):
-            self.smiles = str(self.smiles)
+        if self.smiles is not None and not isinstance(self.smiles, SMILES):
+            self.smiles = SMILES(**as_dict(self.smiles))
+
+        if self.mol_file is not None and not isinstance(self.mol_file, MOLfile):
+            self.mol_file = MOLfile(**as_dict(self.mol_file))
+
+        if self.iupac_name is not None and not isinstance(self.iupac_name, IUPACname):
+            self.iupac_name = IUPACname(**as_dict(self.iupac_name))
 
         super().__post_init__(**kwargs)
 
@@ -154,7 +166,7 @@ class PulsedNmrAssay(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = NMRSPEC.PulsedNmrAssay
 
     id: Union[str, PulsedNmrAssayId] = None
-    assayed_solution: Union[dict, "NmrSolution"] = None
+    solution: Union[dict, "NmrSolution"] = None
     spectrometer: Union[dict, "NmrSpectrometer"] = None
     has_dimension: Union[str, "Dimension"] = None
     pulse_program: Union[str, "PulseProgram"] = None
@@ -169,10 +181,10 @@ class PulsedNmrAssay(YAMLRoot):
         if not isinstance(self.id, PulsedNmrAssayId):
             self.id = PulsedNmrAssayId(self.id)
 
-        if self._is_empty(self.assayed_solution):
-            self.MissingRequiredField("assayed_solution")
-        if not isinstance(self.assayed_solution, NmrSolution):
-            self.assayed_solution = NmrSolution(**as_dict(self.assayed_solution))
+        if self._is_empty(self.solution):
+            self.MissingRequiredField("solution")
+        if not isinstance(self.solution, NmrSolution):
+            self.solution = NmrSolution(**as_dict(self.solution))
 
         if self._is_empty(self.spectrometer):
             self.MissingRequiredField("spectrometer")
@@ -210,6 +222,10 @@ class PulsedNmrAssay(YAMLRoot):
 
 @dataclass
 class NmrSolution(YAMLRoot):
+    """
+    A NMR sollution is the solution made up of the solvent in which the evaluated sample is dissolved in as well as
+    possibly the buffer needed to adjust the pH value.
+    """
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = CHEBI["75958"]
@@ -220,6 +236,8 @@ class NmrSolution(YAMLRoot):
     solvent: Union[dict, "NmrSolvent"] = None
     sample: Union[dict, "NmrSample"] = None
     buffer: Optional[Union[dict, "NmrBuffer"]] = None
+    molarity: Optional[Union[dict, "Concentration"]] = None
+    pH: Optional[Union[dict, "Concentration"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.solvent):
@@ -235,6 +253,12 @@ class NmrSolution(YAMLRoot):
         if self.buffer is not None and not isinstance(self.buffer, NmrBuffer):
             self.buffer = NmrBuffer(**as_dict(self.buffer))
 
+        if self.molarity is not None and not isinstance(self.molarity, Concentration):
+            self.molarity = Concentration(**as_dict(self.molarity))
+
+        if self.pH is not None and not isinstance(self.pH, Concentration):
+            self.pH = Concentration(**as_dict(self.pH))
+
         super().__post_init__(**kwargs)
 
 
@@ -249,10 +273,12 @@ class NmrSample(YAMLRoot):
 
     id: Union[str, NmrSampleId] = None
     local_id: Optional[str] = None
-    formula: Optional[str] = None
-    inchi: Optional[str] = None
-    inchikey: Optional[str] = None
-    smiles: Optional[str] = None
+    formula: Optional[Union[dict, "MolecularFormula"]] = None
+    inchi: Optional[Union[dict, "InCHI"]] = None
+    inchikey: Optional[Union[dict, "InCHIKey"]] = None
+    smiles: Optional[Union[dict, "SMILES"]] = None
+    mol_file: Optional[Union[dict, "MOLfile"]] = None
+    iupac_name: Optional[Union[dict, "IUPACname"]] = None
     name: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -264,17 +290,23 @@ class NmrSample(YAMLRoot):
         if self.local_id is not None and not isinstance(self.local_id, str):
             self.local_id = str(self.local_id)
 
-        if self.formula is not None and not isinstance(self.formula, str):
-            self.formula = str(self.formula)
+        if self.formula is not None and not isinstance(self.formula, MolecularFormula):
+            self.formula = MolecularFormula(**as_dict(self.formula))
 
-        if self.inchi is not None and not isinstance(self.inchi, str):
-            self.inchi = str(self.inchi)
+        if self.inchi is not None and not isinstance(self.inchi, InCHI):
+            self.inchi = InCHI(**as_dict(self.inchi))
 
-        if self.inchikey is not None and not isinstance(self.inchikey, str):
-            self.inchikey = str(self.inchikey)
+        if self.inchikey is not None and not isinstance(self.inchikey, InCHIKey):
+            self.inchikey = InCHIKey(**as_dict(self.inchikey))
 
-        if self.smiles is not None and not isinstance(self.smiles, str):
-            self.smiles = str(self.smiles)
+        if self.smiles is not None and not isinstance(self.smiles, SMILES):
+            self.smiles = SMILES(**as_dict(self.smiles))
+
+        if self.mol_file is not None and not isinstance(self.mol_file, MOLfile):
+            self.mol_file = MOLfile(**as_dict(self.mol_file))
+
+        if self.iupac_name is not None and not isinstance(self.iupac_name, IUPACname):
+            self.iupac_name = IUPACname(**as_dict(self.iupac_name))
 
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)
@@ -293,10 +325,12 @@ class NmrSolvent(YAMLRoot):
 
     id: Union[str, NmrSolventId] = None
     name: Optional[str] = None
-    formula: Optional[str] = None
-    inchi: Optional[str] = None
-    inchikey: Optional[str] = None
-    smiles: Optional[str] = None
+    formula: Optional[Union[dict, "MolecularFormula"]] = None
+    inchi: Optional[Union[dict, "InCHI"]] = None
+    inchikey: Optional[Union[dict, "InCHIKey"]] = None
+    smiles: Optional[Union[dict, "SMILES"]] = None
+    mol_file: Optional[Union[dict, "MOLfile"]] = None
+    iupac_name: Optional[Union[dict, "IUPACname"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -307,17 +341,23 @@ class NmrSolvent(YAMLRoot):
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)
 
-        if self.formula is not None and not isinstance(self.formula, str):
-            self.formula = str(self.formula)
+        if self.formula is not None and not isinstance(self.formula, MolecularFormula):
+            self.formula = MolecularFormula(**as_dict(self.formula))
 
-        if self.inchi is not None and not isinstance(self.inchi, str):
-            self.inchi = str(self.inchi)
+        if self.inchi is not None and not isinstance(self.inchi, InCHI):
+            self.inchi = InCHI(**as_dict(self.inchi))
 
-        if self.inchikey is not None and not isinstance(self.inchikey, str):
-            self.inchikey = str(self.inchikey)
+        if self.inchikey is not None and not isinstance(self.inchikey, InCHIKey):
+            self.inchikey = InCHIKey(**as_dict(self.inchikey))
 
-        if self.smiles is not None and not isinstance(self.smiles, str):
-            self.smiles = str(self.smiles)
+        if self.smiles is not None and not isinstance(self.smiles, SMILES):
+            self.smiles = SMILES(**as_dict(self.smiles))
+
+        if self.mol_file is not None and not isinstance(self.mol_file, MOLfile):
+            self.mol_file = MOLfile(**as_dict(self.mol_file))
+
+        if self.iupac_name is not None and not isinstance(self.iupac_name, IUPACname):
+            self.iupac_name = IUPACname(**as_dict(self.iupac_name))
 
         super().__post_init__(**kwargs)
 
@@ -332,10 +372,12 @@ class NmrBuffer(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = NMRSPEC.NmrBuffer
 
     id: Union[str, NmrBufferId] = None
-    formula: Optional[str] = None
-    inchi: Optional[str] = None
-    inchikey: Optional[str] = None
-    smiles: Optional[str] = None
+    formula: Optional[Union[dict, "MolecularFormula"]] = None
+    inchi: Optional[Union[dict, "InCHI"]] = None
+    inchikey: Optional[Union[dict, "InCHIKey"]] = None
+    smiles: Optional[Union[dict, "SMILES"]] = None
+    mol_file: Optional[Union[dict, "MOLfile"]] = None
+    iupac_name: Optional[Union[dict, "IUPACname"]] = None
     name: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -344,17 +386,23 @@ class NmrBuffer(YAMLRoot):
         if not isinstance(self.id, NmrBufferId):
             self.id = NmrBufferId(self.id)
 
-        if self.formula is not None and not isinstance(self.formula, str):
-            self.formula = str(self.formula)
+        if self.formula is not None and not isinstance(self.formula, MolecularFormula):
+            self.formula = MolecularFormula(**as_dict(self.formula))
 
-        if self.inchi is not None and not isinstance(self.inchi, str):
-            self.inchi = str(self.inchi)
+        if self.inchi is not None and not isinstance(self.inchi, InCHI):
+            self.inchi = InCHI(**as_dict(self.inchi))
 
-        if self.inchikey is not None and not isinstance(self.inchikey, str):
-            self.inchikey = str(self.inchikey)
+        if self.inchikey is not None and not isinstance(self.inchikey, InCHIKey):
+            self.inchikey = InCHIKey(**as_dict(self.inchikey))
 
-        if self.smiles is not None and not isinstance(self.smiles, str):
-            self.smiles = str(self.smiles)
+        if self.smiles is not None and not isinstance(self.smiles, SMILES):
+            self.smiles = SMILES(**as_dict(self.smiles))
+
+        if self.mol_file is not None and not isinstance(self.mol_file, MOLfile):
+            self.mol_file = MOLfile(**as_dict(self.mol_file))
+
+        if self.iupac_name is not None and not isinstance(self.iupac_name, IUPACname):
+            self.iupac_name = IUPACname(**as_dict(self.iupac_name))
 
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)
@@ -407,6 +455,75 @@ class Manufacturer(YAMLRoot):
 
 
 @dataclass
+class Quality(YAMLRoot):
+    """
+    A quality is a specifically dependent continuant that, in contrast to roles and dispositions, does not require any
+    further process in order to be realized. [IAO]
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BFO["0000019"]
+    class_class_curie: ClassVar[str] = "bfo:0000019"
+    class_name: ClassVar[str] = "Quality"
+    class_model_uri: ClassVar[URIRef] = NMRSPEC.Quality
+
+    is_quality_meassured_as: Optional[Union[dict, "ScalarMeasurementDatum"]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.is_quality_meassured_as is not None and not isinstance(self.is_quality_meassured_as, ScalarMeasurementDatum):
+            self.is_quality_meassured_as = ScalarMeasurementDatum(**as_dict(self.is_quality_meassured_as))
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Concentration(Quality):
+    """
+    A quality inhering in a substance by virtue of the amount of the bearer's there is mixed with another substance.
+    [Wikipedia:http://en.wikipedia.org/wiki/concentration]
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PATO["0000033"]
+    class_class_curie: ClassVar[str] = "pato:0000033"
+    class_name: ClassVar[str] = "Concentration"
+    class_model_uri: ClassVar[URIRef] = NMRSPEC.Concentration
+
+    meassured_as_scalar: Optional[Union[dict, "ScalarMeasurementDatum"]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.meassured_as_scalar is not None and not isinstance(self.meassured_as_scalar, ScalarMeasurementDatum):
+            self.meassured_as_scalar = ScalarMeasurementDatum(**as_dict(self.meassured_as_scalar))
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class ScalarMeasurementDatum(YAMLRoot):
+    """
+    A scalar measurement datum is a measurement datum that is composed of two parts, numerals and a unit label. [IAO]
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = IAO["0000032"]
+    class_class_curie: ClassVar[str] = "iao:0000032"
+    class_name: ClassVar[str] = "ScalarMeasurementDatum"
+    class_model_uri: ClassVar[URIRef] = NMRSPEC.ScalarMeasurementDatum
+
+    value: Optional[float] = None
+    unit: Optional[Union[str, "Unit"]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.value is not None and not isinstance(self.value, float):
+            self.value = float(self.value)
+
+        if self.unit is not None and not isinstance(self.unit, Unit):
+            self.unit = Unit(self.unit)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
 class NmrSpecRecord(YAMLRoot):
     """
     This is the tree root node of the schema. It is a data item that serves as a container for all relevant
@@ -426,10 +543,12 @@ class NmrSpecRecord(YAMLRoot):
     output_of_nmr_assay: Union[dict, PulsedNmrAssay] = None
     source: str = None
     source_file: str = None
+    description: Optional[str] = None
     source_uri: Optional[Union[str, URIorCURIE]] = None
-    date_retrieved: Optional[Union[str, XSDDateTime]] = None
+    date_created: Optional[Union[str, XSDDateTime]] = None
     licence_str: Optional[str] = None
     licence_url: Optional[Union[str, URIorCURIE]] = None
+    name: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -452,11 +571,72 @@ class NmrSpecRecord(YAMLRoot):
         if not isinstance(self.source_file, str):
             self.source_file = str(self.source_file)
 
+        if self.description is not None and not isinstance(self.description, str):
+            self.description = str(self.description)
+
         if self.source_uri is not None and not isinstance(self.source_uri, URIorCURIE):
             self.source_uri = URIorCURIE(self.source_uri)
 
-        if self.date_retrieved is not None and not isinstance(self.date_retrieved, XSDDateTime):
-            self.date_retrieved = XSDDateTime(self.date_retrieved)
+        if self.date_created is not None and not isinstance(self.date_created, XSDDateTime):
+            self.date_created = XSDDateTime(self.date_created)
+
+        if self.licence_str is not None and not isinstance(self.licence_str, str):
+            self.licence_str = str(self.licence_str)
+
+        if self.licence_url is not None and not isinstance(self.licence_url, URIorCURIE):
+            self.licence_url = URIorCURIE(self.licence_url)
+
+        if self.name is not None and not isinstance(self.name, str):
+            self.name = str(self.name)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class NmrSpecRecordCollection(YAMLRoot):
+    """
+    This class represents a collection of NMR spectroscopy records. It is to be used when multiple NMR assays were
+    made in order to analyse a given sample.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = NMRSPEC.NmrSpecRecordCollection
+    class_class_curie: ClassVar[str] = "NMRspec:NmrSpecRecordCollection"
+    class_name: ClassVar[str] = "NmrSpecRecordCollection"
+    class_model_uri: ClassVar[URIRef] = NMRSPEC.NmrSpecRecordCollection
+
+    has_part: Union[Dict[Union[str, NmrSpecRecordId], Union[dict, NmrSpecRecord]], List[Union[dict, NmrSpecRecord]]] = empty_dict()
+    source: str = None
+    source_file: str = None
+    description: Optional[str] = None
+    source_uri: Optional[Union[str, URIorCURIE]] = None
+    date_created: Optional[Union[str, XSDDateTime]] = None
+    licence_str: Optional[str] = None
+    licence_url: Optional[Union[str, URIorCURIE]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.has_part):
+            self.MissingRequiredField("has_part")
+        self._normalize_inlined_as_list(slot_name="has_part", slot_type=NmrSpecRecord, key_name="id", keyed=True)
+
+        if self._is_empty(self.source):
+            self.MissingRequiredField("source")
+        if not isinstance(self.source, str):
+            self.source = str(self.source)
+
+        if self._is_empty(self.source_file):
+            self.MissingRequiredField("source_file")
+        if not isinstance(self.source_file, str):
+            self.source_file = str(self.source_file)
+
+        if self.description is not None and not isinstance(self.description, str):
+            self.description = str(self.description)
+
+        if self.source_uri is not None and not isinstance(self.source_uri, URIorCURIE):
+            self.source_uri = URIorCURIE(self.source_uri)
+
+        if self.date_created is not None and not isinstance(self.date_created, XSDDateTime):
+            self.date_created = XSDDateTime(self.date_created)
 
         if self.licence_str is not None and not isinstance(self.licence_str, str):
             self.licence_str = str(self.licence_str)
@@ -467,9 +647,119 @@ class NmrSpecRecord(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
+@dataclass
+class MolecularFormula(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = CHEMINF["000042"]
+    class_class_curie: ClassVar[str] = "cheminf:000042"
+    class_name: ClassVar[str] = "MolecularFormula"
+    class_model_uri: ClassVar[URIRef] = NMRSPEC.MolecularFormula
+
+    has_representation: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.has_representation is not None and not isinstance(self.has_representation, str):
+            self.has_representation = str(self.has_representation)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class InCHI(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = CHEMINF["000113"]
+    class_class_curie: ClassVar[str] = "cheminf:000113"
+    class_name: ClassVar[str] = "InCHI"
+    class_model_uri: ClassVar[URIRef] = NMRSPEC.InCHI
+
+    has_representation: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.has_representation is not None and not isinstance(self.has_representation, str):
+            self.has_representation = str(self.has_representation)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class InCHIKey(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = CHEMINF["000059"]
+    class_class_curie: ClassVar[str] = "cheminf:000059"
+    class_name: ClassVar[str] = "InCHIKey"
+    class_model_uri: ClassVar[URIRef] = NMRSPEC.InCHIKey
+
+    has_representation: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.has_representation is not None and not isinstance(self.has_representation, str):
+            self.has_representation = str(self.has_representation)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class SMILES(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = CHEMINF["000018"]
+    class_class_curie: ClassVar[str] = "cheminf:000018"
+    class_name: ClassVar[str] = "SMILES"
+    class_model_uri: ClassVar[URIRef] = NMRSPEC.SMILES
+
+    has_representation: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.has_representation is not None and not isinstance(self.has_representation, str):
+            self.has_representation = str(self.has_representation)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class MOLfile(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = CHEMINF["000114"]
+    class_class_curie: ClassVar[str] = "cheminf:000114"
+    class_name: ClassVar[str] = "MOLfile"
+    class_model_uri: ClassVar[URIRef] = NMRSPEC.MOLfile
+
+    has_representation: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.has_representation is not None and not isinstance(self.has_representation, str):
+            self.has_representation = str(self.has_representation)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class IUPACname(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = CHEMINF["000107"]
+    class_class_curie: ClassVar[str] = "cheminf:000107"
+    class_name: ClassVar[str] = "IUPACname"
+    class_model_uri: ClassVar[URIRef] = NMRSPEC.IUPACname
+
+    has_representation: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.has_representation is not None and not isinstance(self.has_representation, str):
+            self.has_representation = str(self.has_representation)
+
+        super().__post_init__(**kwargs)
+
+
 # Enumerations
 class PulseProgram(EnumDefinitionImpl):
-
+    """
+    Enum of the most commonly used pulse sequences that specify the type of pulsed NMR.
+    """
     NMR = PermissibleValue(text="NMR")
     COSY = PermissibleValue(text="COSY")
     DOSY = PermissibleValue(text="DOSY")
@@ -498,6 +788,7 @@ class PulseProgram(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="PulseProgram",
+        description="Enum of the most commonly used pulse sequences that specify the type of pulsed NMR.",
     )
 
     @classmethod
@@ -580,7 +871,9 @@ class PulseProgram(EnumDefinitionImpl):
                 PermissibleValue(text="DOSY-HMQC") )
 
 class NmrManufacturers(EnumDefinitionImpl):
-
+    """
+    Controlled list of manufacturers of NMR lab devices.
+    """
     Bruker = PermissibleValue(text="Bruker")
     FOSS = PermissibleValue(text="FOSS")
     JEOL = PermissibleValue(text="JEOL")
@@ -600,6 +893,7 @@ class NmrManufacturers(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="NmrManufacturers",
+        description="Controlled list of manufacturers of NMR lab devices.",
     )
 
     @classmethod
@@ -630,9 +924,12 @@ class NmrManufacturers(EnumDefinitionImpl):
                 PermissibleValue(text="Spinlock SRL") )
 
 class Dimension(EnumDefinitionImpl):
-
+    """
+    The dimensionality of the produced spectrum.
+    """
     _defn = EnumDefinition(
         name="Dimension",
+        description="The dimensionality of the produced spectrum.",
     )
 
     @classmethod
@@ -645,6 +942,26 @@ class Dimension(EnumDefinitionImpl):
                 PermissibleValue(text="3D") )
         setattr(cls, "4D",
                 PermissibleValue(text="4D") )
+
+class Unit(EnumDefinitionImpl):
+    """
+    Enums of needed units aligned with UO. *WIP:needs to be expanded*
+    """
+    femtomolar = PermissibleValue(text="femtomolar",
+                                           meaning=UO["0000073"])
+    micromolar = PermissibleValue(text="micromolar")
+    millimolar = PermissibleValue(text="millimolar")
+    molar = PermissibleValue(text="molar",
+                                 meaning=UO["0000062"])
+    nanomolar = PermissibleValue(text="nanomolar")
+    picomolar = PermissibleValue(text="picomolar")
+    pH = PermissibleValue(text="pH",
+                           meaning=UO["0000196"])
+
+    _defn = EnumDefinition(
+        name="Unit",
+        description="Enums of needed units aligned with UO. *WIP:needs to be expanded*",
+    )
 
 # Slots
 

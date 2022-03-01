@@ -92,15 +92,15 @@
             <div class="section">
               
                 <h1 id="class-pulsednmrassay">Class: PulsedNmrAssay</h1>
-<p>URI: <a href="https://w3id.org/linkml/nmr-schemaPulsedNmrAssay">NMRspec:PulsedNmrAssay</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[NmrSpectrometer]&lt;spectrometer%201..1-++[PulsedNmrAssay&#124;assay_date:datetime%20%3F;has_dimension:Dimension;pulse_program:PulseProgram;acuisition_nuclei:string%20%2B;observed_frequencies:float%20*;id:uriorcurie;name:string%20%3F],[NmrSolution]&lt;assayed_solution%201..1-++[PulsedNmrAssay],[NmrSpecRecord]++-%20output_of_nmr_assay%201..1&gt;[PulsedNmrAssay],[PulsedNmrAssay]uses%20-.-&gt;[NamedThing],[NmrSpectrometer],[NmrSpecRecord],[NmrSolution],[NamedThing]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[NmrSpectrometer]&lt;spectrometer%201..1-++[PulsedNmrAssay&#124;assay_date:datetime%20%3F;has_dimension:Dimension;pulse_program:PulseProgram;acuisition_nuclei:string%20%2B;observed_frequencies:float%20*;id:uriorcurie;name:string%20%3F],[NmrSolution]&lt;assayed_solution%201..1-++[PulsedNmrAssay],[NmrSpecRecord]++-%20output_of_nmr_assay%201..1&gt;[PulsedNmrAssay],[PulsedNmrAssay]uses%20-.-&gt;[NamedThing],[NmrSpectrometer],[NmrSpecRecord],[NmrSolution],[NamedThing]" /></a></p>
+<p>URI: <a href="https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/PulsedNmrAssay">NMRspec:PulsedNmrAssay</a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[NmrSpectrometer]&lt;spectrometer%201..1-++[PulsedNmrAssay&#124;assay_date:datetime%20%3F;has_dimension:Dimension;pulse_program:PulseProgram;acuisition_nuclei:string%20%2B;observed_frequencies:float%20*;id:uriorcurie;name:string%20%3F],[NmrSolution]&lt;solution%201..1-++[PulsedNmrAssay],[NmrSpecRecord]++-%20output_of_nmr_assay%201..1&gt;[PulsedNmrAssay],[PulsedNmrAssay]uses%20-.-&gt;[NamedThing],[NmrSpectrometer],[NmrSpecRecord],[NmrSolution],[NamedThing]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[NmrSpectrometer]&lt;spectrometer%201..1-++[PulsedNmrAssay&#124;assay_date:datetime%20%3F;has_dimension:Dimension;pulse_program:PulseProgram;acuisition_nuclei:string%20%2B;observed_frequencies:float%20*;id:uriorcurie;name:string%20%3F],[NmrSolution]&lt;solution%201..1-++[PulsedNmrAssay],[NmrSpecRecord]++-%20output_of_nmr_assay%201..1&gt;[PulsedNmrAssay],[PulsedNmrAssay]uses%20-.-&gt;[NamedThing],[NmrSpectrometer],[NmrSpecRecord],[NmrSolution],[NamedThing]" /></a></p>
 <h2 id="uses-mixin">Uses Mixin</h2>
 <ul>
 <li>mixin: <a href="../NamedThing/">NamedThing</a> - a mixin to be used by any class that has a name and unique id</li>
 </ul>
 <h2 id="referenced-by-class">Referenced by Class</h2>
 <ul>
-<li><strong><a href="../NmrSpecRecord/">NmrSpecRecord</a></strong> <em><a href="../NmrSpecRecord_output_of_nmr_assay/">NmrSpecRecord➞output_of_nmr_assay</a></em>  <sub>1..1</sub>  <strong><a href="./">PulsedNmrAssay</a></strong></li>
+<li><strong>None</strong> <em><a href="../nmrSpecRecord__output_of_nmr_assay/">➞output_of_nmr_assay</a></em>  <sub>1..1</sub>  <strong><a href="./">PulsedNmrAssay</a></strong></li>
 </ul>
 <h2 id="attributes">Attributes</h2>
 <h3 id="own">Own</h3>
@@ -110,7 +110,7 @@
 <li>Range: <a href="../Datetime/">Datetime</a></li>
 </ul>
 </li>
-<li><a href="../pulsedNmrAssay__assayed_solution/">PulsedNmrAssay➞assayed_solution</a>  <sub>1..1</sub><ul>
+<li><a href="../pulsedNmrAssay__solution/">PulsedNmrAssay➞solution</a>  <sub>1..1</sub><ul>
 <li>Description: the property refering to solution in which the assayed sample is disolved in</li>
 <li>Range: <a href="../NmrSolution/">NmrSolution</a></li>
 </ul>

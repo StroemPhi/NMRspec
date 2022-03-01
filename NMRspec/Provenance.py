@@ -1,9 +1,9 @@
 # Auto generated from Provenance.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-02-23T16:52:54
-# Schema: provenance
+# Generation date: 2022-03-01T10:34:47
+# Schema: Provenance
 #
-# id: https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/1-make-schema-from-tbox/NMR_spectroscopy_schema/model/schema/provenance.yaml
-# description: provenance mixin
+# id: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/Provenance.yaml
+# description: Provenance mixin
 # license: https://creativecommons.org/licenses/by/4.0/
 
 import dataclasses
@@ -32,9 +32,10 @@ version = "0.0.1"
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
-DCT = CurieNamespace('dct', 'http://example.org/UNKNOWN/dct/')
+DCE = CurieNamespace('dce', 'http://purl.org/dc/elements/1.1/')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
-DEFAULT_ = CurieNamespace('', 'https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/1-make-schema-from-tbox/NMR_spectroscopy_schema/model/schema/provenance.yaml/')
+SDO = CurieNamespace('sdo', 'http://example.org/UNKNOWN/sdo/')
+DEFAULT_ = CurieNamespace('', 'https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/Provenance.yaml/')
 
 
 # Types
@@ -51,15 +52,16 @@ class Provenance(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = URIRef("https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/1-make-schema-from-tbox/NMR_spectroscopy_schema/model/schema/provenance.yaml/Provenance")
+    class_class_uri: ClassVar[URIRef] = URIRef("https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/Provenance.yaml/Provenance")
     class_class_curie: ClassVar[str] = None
-    class_name: ClassVar[str] = "provenance"
-    class_model_uri: ClassVar[URIRef] = URIRef("https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/1-make-schema-from-tbox/NMR_spectroscopy_schema/model/schema/provenance.yaml/Provenance")
+    class_name: ClassVar[str] = "Provenance"
+    class_model_uri: ClassVar[URIRef] = URIRef("https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/Provenance.yaml/Provenance")
 
     source: str = None
     source_file: str = None
+    description: Optional[str] = None
     source_uri: Optional[Union[str, URIorCURIE]] = None
-    date_retrieved: Optional[Union[str, XSDDateTime]] = None
+    date_created: Optional[Union[str, XSDDateTime]] = None
     licence_str: Optional[str] = None
     licence_url: Optional[Union[str, URIorCURIE]] = None
 
@@ -74,11 +76,14 @@ class Provenance(YAMLRoot):
         if not isinstance(self.source_file, str):
             self.source_file = str(self.source_file)
 
+        if self.description is not None and not isinstance(self.description, str):
+            self.description = str(self.description)
+
         if self.source_uri is not None and not isinstance(self.source_uri, URIorCURIE):
             self.source_uri = URIorCURIE(self.source_uri)
 
-        if self.date_retrieved is not None and not isinstance(self.date_retrieved, XSDDateTime):
-            self.date_retrieved = XSDDateTime(self.date_retrieved)
+        if self.date_created is not None and not isinstance(self.date_created, XSDDateTime):
+            self.date_created = XSDDateTime(self.date_created)
 
         if self.licence_str is not None and not isinstance(self.licence_str, str):
             self.licence_str = str(self.licence_str)

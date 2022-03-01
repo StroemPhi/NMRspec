@@ -1,28 +1,22 @@
 {
    "$defs": {
-      "ChemicalMetadata": {
+      "Concentration": {
          "additionalProperties": false,
-         "description": "",
+         "description": "A quality inhering in a substance by virtue of the amount of the bearer's there is mixed with another substance. [Wikipedia:http://en.wikipedia.org/wiki/concentration]",
          "properties": {
-            "formula": {
-               "type": "string"
+            "is_quality_meassured_as": {
+               "$ref": "#/$defs/ScalarMeasurementDatum"
             },
-            "inchi": {
-               "type": "string"
-            },
-            "inchikey": {
-               "type": "string"
-            },
-            "smiles": {
-               "type": "string"
+            "meassured_as_scalar": {
+               "$ref": "#/$defs/ScalarMeasurementDatum"
             }
          },
          "required": [],
-         "title": "ChemicalMetadata",
+         "title": "Concentration",
          "type": "object"
       },
       "Dimension": {
-         "description": "",
+         "description": "The dimensionality of the produced spectrum.",
          "enum": [
             "1D",
             "2D",
@@ -31,6 +25,58 @@
          ],
          "title": "Dimension",
          "type": "string"
+      },
+      "IUPACname": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "has_representation": {
+               "description": "'has representation' is a data property that attaches between an information content entity and a value that contains linguistically or computationally coded text.",
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "IUPACname",
+         "type": "object"
+      },
+      "InCHI": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "has_representation": {
+               "description": "'has representation' is a data property that attaches between an information content entity and a value that contains linguistically or computationally coded text.",
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "InCHI",
+         "type": "object"
+      },
+      "InCHIKey": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "has_representation": {
+               "description": "'has representation' is a data property that attaches between an information content entity and a value that contains linguistically or computationally coded text.",
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "InCHIKey",
+         "type": "object"
+      },
+      "MOLfile": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "has_representation": {
+               "description": "'has representation' is a data property that attaches between an information content entity and a value that contains linguistically or computationally coded text.",
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "MOLfile",
+         "type": "object"
       },
       "Manufacturer": {
          "additionalProperties": false,
@@ -49,28 +95,47 @@
          "title": "Manufacturer",
          "type": "object"
       },
+      "MolecularFormula": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "has_representation": {
+               "description": "'has representation' is a data property that attaches between an information content entity and a value that contains linguistically or computationally coded text.",
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "MolecularFormula",
+         "type": "object"
+      },
       "NmrBuffer": {
          "additionalProperties": false,
          "description": "",
          "properties": {
             "formula": {
-               "type": "string"
+               "$ref": "#/$defs/MolecularFormula"
             },
             "id": {
                "type": "string"
             },
             "inchi": {
-               "type": "string"
+               "$ref": "#/$defs/InCHI"
             },
             "inchikey": {
-               "type": "string"
+               "$ref": "#/$defs/InCHIKey"
+            },
+            "iupac_name": {
+               "$ref": "#/$defs/IUPACname"
+            },
+            "mol_file": {
+               "$ref": "#/$defs/MOLfile"
             },
             "name": {
                "description": "a generic property to provide a string that is used to name a something",
                "type": "string"
             },
             "smiles": {
-               "type": "string"
+               "$ref": "#/$defs/SMILES"
             }
          },
          "required": [
@@ -80,7 +145,7 @@
          "type": "object"
       },
       "NmrManufacturers": {
-         "description": "",
+         "description": "Controlled list of manufacturers of NMR lab devices.",
          "enum": [
             "Acorn NMR Inc",
             "Agilent Technologies",
@@ -119,27 +184,33 @@
          "description": "",
          "properties": {
             "formula": {
-               "type": "string"
+               "$ref": "#/$defs/MolecularFormula"
             },
             "id": {
                "type": "string"
             },
             "inchi": {
-               "type": "string"
+               "$ref": "#/$defs/InCHI"
             },
             "inchikey": {
-               "type": "string"
+               "$ref": "#/$defs/InCHIKey"
+            },
+            "iupac_name": {
+               "$ref": "#/$defs/IUPACname"
             },
             "local_id": {
                "description": "This property should be used to provide the local identifier with which something is denoted in a local context (e.g. your lab notebook).",
                "type": "string"
+            },
+            "mol_file": {
+               "$ref": "#/$defs/MOLfile"
             },
             "name": {
                "description": "a generic property to provide a string that is used to name a something",
                "type": "string"
             },
             "smiles": {
-               "type": "string"
+               "$ref": "#/$defs/SMILES"
             }
          },
          "required": [
@@ -150,16 +221,26 @@
       },
       "NmrSolution": {
          "additionalProperties": false,
-         "description": "",
+         "description": "A NMR sollution is the solution made up of the solvent in which the evaluated sample is dissolved in as well as possibly the buffer needed to adjust the pH value.",
          "properties": {
             "buffer": {
                "$ref": "#/$defs/NmrBuffer"
             },
+            "molarity": {
+               "$ref": "#/$defs/Concentration",
+               "description": "The predicate needed to relate to the concentration of the NMR solution."
+            },
+            "pH": {
+               "$ref": "#/$defs/Concentration",
+               "description": "The predicate needed to relate to the concentration of the NMR solution."
+            },
             "sample": {
-               "$ref": "#/$defs/NmrSample"
+               "$ref": "#/$defs/NmrSample",
+               "description": "The attribute needed to relate the NMR solution to its solvent."
             },
             "solvent": {
-               "$ref": "#/$defs/NmrSolvent"
+               "$ref": "#/$defs/NmrSolvent",
+               "description": "The attribute needed to relate the NMR solution to its solvent."
             }
          },
          "required": [
@@ -174,23 +255,29 @@
          "description": "",
          "properties": {
             "formula": {
-               "type": "string"
+               "$ref": "#/$defs/MolecularFormula"
             },
             "id": {
                "type": "string"
             },
             "inchi": {
-               "type": "string"
+               "$ref": "#/$defs/InCHI"
             },
             "inchikey": {
-               "type": "string"
+               "$ref": "#/$defs/InCHIKey"
+            },
+            "iupac_name": {
+               "$ref": "#/$defs/IUPACname"
+            },
+            "mol_file": {
+               "$ref": "#/$defs/MOLfile"
             },
             "name": {
                "description": "a generic property to provide a string that is used to name a something",
                "type": "string"
             },
             "smiles": {
-               "type": "string"
+               "$ref": "#/$defs/SMILES"
             }
          },
          "required": [
@@ -203,9 +290,12 @@
          "additionalProperties": false,
          "description": "This is the tree root node of the schema. It is a data item that serves as a container for all relevant information about *one* NMR spectroscopy assay record. The properties of this class represent the required metadata of an NMR assay, such as:  * what kind of assay was performed (e.g. 2D 13C COSY) and what devices where used for that (e.g. spectrometer, magnet, solvent, buffer, ...) * what are the detail infos of the assayed sample (name, formula, structure, concentration, preperation process, ...)",
          "properties": {
-            "date_retrieved": {
-               "description": "the datetime when the source data has been retrieved",
+            "date_created": {
+               "description": "The date on which the source file was processed according to this schema.",
                "format": "date-time",
+               "type": "string"
+            },
+            "description": {
                "type": "string"
             },
             "id": {
@@ -218,6 +308,10 @@
             },
             "licence_url": {
                "description": "the licence of the ingested raw data in machine readable format as URL",
+               "type": "string"
+            },
+            "name": {
+               "description": "a generic property to provide a string that is used to name a something",
                "type": "string"
             },
             "output_of_nmr_assay": {
@@ -237,12 +331,59 @@
             }
          },
          "required": [
-            "id",
             "output_of_nmr_assay",
+            "id",
             "source",
             "source_file"
          ],
          "title": "NmrSpecRecord",
+         "type": "object"
+      },
+      "NmrSpecRecordCollection": {
+         "additionalProperties": false,
+         "description": "This class represents a collection of NMR spectroscopy records. It is to be used when multiple NMR assays were made in order to analyse a given sample.",
+         "properties": {
+            "date_created": {
+               "description": "The date on which the source file was processed according to this schema.",
+               "format": "date-time",
+               "type": "string"
+            },
+            "description": {
+               "type": "string"
+            },
+            "has_part": {
+               "items": {
+                  "$ref": "#/$defs/NmrSpecRecord"
+               },
+               "type": "array"
+            },
+            "licence_str": {
+               "description": "the licence of the ingested raw data as string",
+               "type": "string"
+            },
+            "licence_url": {
+               "description": "the licence of the ingested raw data in machine readable format as URL",
+               "type": "string"
+            },
+            "source": {
+               "description": "This property is used to describe the source of the data as string (e.g. \"Chemotion Repository\").",
+               "type": "string"
+            },
+            "source_file": {
+               "description": "This property must be used to describe the name of the source file (e.g. SG-V3259 (41-52)_11.dx) from which the metadata is to be parsed.",
+               "type": "string"
+            },
+            "source_uri": {
+               "description": "This property can be used to provide the URL or CURIE of the the source file, if it has one.",
+               "type": "string"
+            }
+         },
+         "required": [
+            "has_part",
+            "source",
+            "source_file"
+         ],
+         "title": "NmrSpecRecordCollection",
          "type": "object"
       },
       "NmrSpectrometer": {
@@ -263,7 +404,7 @@
          "type": "object"
       },
       "PulseProgram": {
-         "description": "",
+         "description": "Enum of the most commonly used pulse sequences that specify the type of pulsed NMR.",
          "enum": [
             "NMR",
             "COSY",
@@ -348,10 +489,6 @@
                "format": "date-time",
                "type": "string"
             },
-            "assayed_solution": {
-               "$ref": "#/$defs/NmrSolution",
-               "description": "the property refering to solution in which the assayed sample is disolved in"
-            },
             "has_dimension": {
                "$ref": "#/$defs/Dimension"
             },
@@ -372,12 +509,16 @@
                "$ref": "#/$defs/PulseProgram",
                "description": "The pulse program of a PulsedNmrAssay is a required property and must be conform to one of the values defined in the PulseProgram enum class. The possible values there are defined according to common pulse programs, e.g. NMR for basic 1H-NMR, or COSY and COSY-DOSY, etc."
             },
+            "solution": {
+               "$ref": "#/$defs/NmrSolution",
+               "description": "the property refering to solution in which the assayed sample is disolved in"
+            },
             "spectrometer": {
                "$ref": "#/$defs/NmrSpectrometer"
             }
          },
          "required": [
-            "assayed_solution",
+            "solution",
             "spectrometer",
             "has_dimension",
             "pulse_program",
@@ -386,9 +527,63 @@
          ],
          "title": "PulsedNmrAssay",
          "type": "object"
+      },
+      "Quality": {
+         "additionalProperties": false,
+         "description": "A quality is a specifically dependent continuant that, in contrast to roles and dispositions, does not require any further process in order to be realized. [IAO]",
+         "properties": {
+            "is_quality_meassured_as": {
+               "$ref": "#/$defs/ScalarMeasurementDatum"
+            }
+         },
+         "required": [],
+         "title": "Quality",
+         "type": "object"
+      },
+      "SMILES": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "has_representation": {
+               "description": "'has representation' is a data property that attaches between an information content entity and a value that contains linguistically or computationally coded text.",
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "SMILES",
+         "type": "object"
+      },
+      "ScalarMeasurementDatum": {
+         "additionalProperties": false,
+         "description": "A scalar measurement datum is a measurement datum that is composed of two parts, numerals and a unit label. [IAO]",
+         "properties": {
+            "unit": {
+               "$ref": "#/$defs/Unit"
+            },
+            "value": {
+               "type": "number"
+            }
+         },
+         "required": [],
+         "title": "ScalarMeasurementDatum",
+         "type": "object"
+      },
+      "Unit": {
+         "description": "Enums of needed units aligned with UO. *WIP:needs to be expanded*",
+         "enum": [
+            "femtomolar",
+            "micromolar",
+            "millimolar",
+            "molar",
+            "nanomolar",
+            "picomolar",
+            "pH"
+         ],
+         "title": "Unit",
+         "type": "string"
       }
    },
-   "$id": "https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/main/model/schema/NMR-assay-schema.yaml",
+   "$id": "https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/NMRspec.yaml",
    "$schema": "http://json-schema.org/draft-07/schema#",
    "additionalProperties": true,
    "metamodel_version": "1.7.0",

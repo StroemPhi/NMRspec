@@ -92,25 +92,38 @@
             <div class="section">
               
                 <h1 id="class-nmrsolution">Class: NmrSolution</h1>
-<p>URI: <a href="https://w3id.org/linkml/nmr-schemaNmrSolution">NMRspec:NmrSolution</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[NmrSolvent],[NmrBuffer]&lt;buffer%200..1-++[NmrSolution],[NmrSample]&lt;sample%201..1-++[NmrSolution],[NmrSolvent]&lt;solvent%201..1-++[NmrSolution],[PulsedNmrAssay]++-%20assayed_solution%201..1&gt;[NmrSolution],[NmrSample],[NmrBuffer]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[NmrSolvent],[NmrBuffer]&lt;buffer%200..1-++[NmrSolution],[NmrSample]&lt;sample%201..1-++[NmrSolution],[NmrSolvent]&lt;solvent%201..1-++[NmrSolution],[PulsedNmrAssay]++-%20assayed_solution%201..1&gt;[NmrSolution],[NmrSample],[NmrBuffer]" /></a></p>
+<p>A NMR sollution is the solution made up of the solvent in which the evaluated sample is dissolved in as well as possibly the buffer needed to adjust the pH value.</p>
+<p>URI: <a href="https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/NmrSolution">NMRspec:NmrSolution</a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[NmrSolvent],[Concentration]&lt;pH%200..1-++[NmrSolution],[Concentration]&lt;molarity%200..1-++[NmrSolution],[NmrBuffer]&lt;buffer%200..1-++[NmrSolution],[NmrSample]&lt;sample%201..1-++[NmrSolution],[NmrSolvent]&lt;solvent%201..1-++[NmrSolution],[PulsedNmrAssay]++-%20solution%201..1&gt;[NmrSolution],[NmrSample],[NmrBuffer],[Concentration]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[NmrSolvent],[Concentration]&lt;pH%200..1-++[NmrSolution],[Concentration]&lt;molarity%200..1-++[NmrSolution],[NmrBuffer]&lt;buffer%200..1-++[NmrSolution],[NmrSample]&lt;sample%201..1-++[NmrSolution],[NmrSolvent]&lt;solvent%201..1-++[NmrSolution],[PulsedNmrAssay]++-%20solution%201..1&gt;[NmrSolution],[NmrSample],[NmrBuffer],[Concentration]" /></a></p>
 <h2 id="referenced-by-class">Referenced by Class</h2>
 <ul>
-<li><strong><a href="../PulsedNmrAssay/">PulsedNmrAssay</a></strong> <em><a href="../pulsedNmrAssay__assayed_solution/">PulsedNmrAssay➞assayed_solution</a></em>  <sub>1..1</sub>  <strong><a href="./">NmrSolution</a></strong></li>
+<li><strong><a href="../PulsedNmrAssay/">PulsedNmrAssay</a></strong> <em><a href="../pulsedNmrAssay__solution/">PulsedNmrAssay➞solution</a></em>  <sub>1..1</sub>  <strong><a href="./">NmrSolution</a></strong></li>
 </ul>
 <h2 id="attributes">Attributes</h2>
 <h3 id="own">Own</h3>
 <ul>
 <li><a href="../nmrSolution__solvent/">NmrSolution➞solvent</a>  <sub>1..1</sub><ul>
+<li>Description: The attribute needed to relate the NMR solution to its solvent.</li>
 <li>Range: <a href="../NmrSolvent/">NmrSolvent</a></li>
 </ul>
 </li>
 <li><a href="../nmrSolution__sample/">NmrSolution➞sample</a>  <sub>1..1</sub><ul>
+<li>Description: The attribute needed to relate the NMR solution to its solvent.</li>
 <li>Range: <a href="../NmrSample/">NmrSample</a></li>
 </ul>
 </li>
 <li><a href="../nmrSolution__buffer/">NmrSolution➞buffer</a>  <sub>0..1</sub><ul>
 <li>Range: <a href="../NmrBuffer/">NmrBuffer</a></li>
+</ul>
+</li>
+<li><a href="../nmrSolution__molarity/">➞molarity</a>  <sub>0..1</sub><ul>
+<li>Description: The predicate needed to relate to the concentration of the NMR solution.</li>
+<li>Range: <a href="../Concentration/">Concentration</a></li>
+</ul>
+</li>
+<li><a href="../nmrSolution__pH/">➞pH</a>  <sub>0..1</sub><ul>
+<li>Description: The predicate needed to relate to the concentration of the NMR solution.</li>
+<li>Range: <a href="../Concentration/">Concentration</a></li>
 </ul>
 </li>
 </ul>

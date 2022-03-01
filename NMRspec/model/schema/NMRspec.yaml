@@ -1,5 +1,4 @@
-id: https://raw.githubusercontent.com/StroemPhi/NMR-spectroscopy-schema/main/model/schema/NMR-assay-schema.yaml
-title: DRAFT:NMR spectroscopy schema (NMRspec)
+id: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/NMRspec.yaml
 name: NMRspec
 description: |-
   This model is to be used to semantify NMR spectroscopy research data.
@@ -7,7 +6,8 @@ license: https://creativecommons.org/licenses/by/4.0/
 version: 0.0.1
 
 prefixes:
-  NMRspec: https://w3id.org/linkml/nmr-schema
+# ontologies
+  NMRspec: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/
   linkml: https://w3id.org/linkml/
   sdo: https://schema.org/
   bfo: http://purl.obolibrary.org/obo/BFO_
@@ -21,13 +21,13 @@ prefixes:
   pato: http://purl.obolibrary.org/obo/PATO_
   prov: http://www.w3.org/ns/prov#
   om: http://www.ontology-of-units-of-measure.org/resource/om-2/
-  dct: http://purl.org/dc/terms/
+  uo: http://purl.obolibrary.org/obo/
 # data prefixes
   nmrSPARQL: https://nfdi4chem/sparql/ # not valid endpoint yet, just serves as an example for a 
   doi: https://doi.org/
-  chemotion_pid: https://www.chemotion-repository.net/pid/
-  chemotion_data: https://www.chemotion-repository.net/home/publications/datasets/
-  chemotion_reactions: https://www.chemotion-repository.net/home/publications/reactions/
+  chemotionPID: https://www.chemotion-repository.net/pid/
+  chemotionDATA: https://www.chemotion-repository.net/home/publications/datasets/
+  chemotion: https://www.chemotion-repository.net/home/publications/reactions/
   cc: https://creativecommons.org/licenses/
 # other NMR schema prefixes for mapping purposes
   jdx: http://www.jcamp-dx.org/protocols/dxnmr01.pdf/
@@ -40,28 +40,54 @@ default_curi_maps:
 
 imports:
  - linkml:types
- - ./provenance
+ - ./Provenance
 
 
 #################################################
 classes:
 #################################################
 # Mixins
-
-  ChemicalMetadata:
+  ChemicalDescriptor:
+    mixin: true
+    class_uri: cheminf:000123
+    description: A chemical descriptor is a data item (quantity or value) about a chemical entity that conforms to a specification for how it is calculated, measured or recorded.
     attributes:
       formula:
+        slot_uri: iao:0000235
         recommended: true
-        range: string
+        range: MolecularFormula
+        close_mappings:
+          - chebi:fornula
       inchi:
+        slot_uri: iao:0000235
         recommended: true
-        range: string
+        range: InCHI
+        close_mappings:
+          - chebi:inchi
       inchikey:
+        slot_uri: iao:0000235
         recommended: true
-        range: string
+        range: InCHIKey
+        close_mappings:
+          - chebi:inchikey
       smiles:
+        slot_uri: iao:0000235
         recommended: true
-        range: string
+        range: SMILES
+        close_mappings:
+          - chebi:smiles
+      mol_file:
+        slot_uri: iao:0000235
+        recommended: true
+        range: MOLfile
+      iupac_name:
+        slot_uri: iao:0000235
+        recommended: true
+        range: IUPACname
+        close_mappings:
+          - chebi:IUPAC_NAME
+    todos: 
+      - Find out if we want this complexity of using CHEMINF descriptor classes for the chemical descriptors or if ChEBI's annotation properties would suffice. For the purpose of being ready for future use cases. Using CHEMINF here seems better, but it does produce more triples and blank nodes.
   NamedThing:
     description: a mixin to be used by any class that has a name and unique id
     mixin: true
@@ -82,7 +108,7 @@ classes:
         range: datetime
         exact_mappings:
           - jdx:long date
-      assayed_solution:
+      solution:
         description: the property refering to solution in which the assayed sample is disolved in
         slot_uri: obi:0000293
         inlined: true
@@ -121,18 +147,20 @@ classes:
         domain: PulsedNmrAssay
         range: float
 
-
 # Material Entities
   NmrSolution:
+    description: A NMR sollution is the solution made up of the solvent in which the evaluated sample is dissolved in as well as possibly the buffer needed to adjust the pH value.
     class_uri: chebi:75958
     attributes:
       solvent:
+        description: The attribute needed to relate the NMR solution to its solvent.
         slot_uri: bfo:0000051
         inlined: true
         required: true
         domain: NmrSolution
         range: NmrSolvent
       sample:
+        description: The attribute needed to relate the NMR solution to its solvent.
         slot_uri: bfo:0000051
         inlined: true
         required: true
@@ -143,15 +171,24 @@ classes:
         inlined: true
         domain: NmrSolution
         range: NmrBuffer
+      molarity:
+        description: The predicate needed to relate to the concentration of the NMR solution.
+        slot_uri: ro:0000086 # has quality
+        range: Concentration
+      pH:
+        description: The predicate needed to relate to the concentration of the NMR solution.
+        slot_uri: ro:0000086 # has quality
+        range: Concentration
+
   NmrSample:
     mixins:
-      - ChemicalMetadata
+      - ChemicalDescriptor
       - NamedThing
     slots:
-      - local_id 
+      - local_id
   NmrSolvent:
     mixins:
-      - ChemicalMetadata
+      - ChemicalDescriptor
       - NamedThing
     slot_usage:
       name:
@@ -159,7 +196,7 @@ classes:
           - jdx:SOLVENT_NAME
   NmrBuffer:
     mixins:
-      - ChemicalMetadata
+      - ChemicalDescriptor
       - NamedThing
   NmrSpectrometer:
     slots:  
@@ -175,11 +212,11 @@ classes:
         domain: NmrSpectrometer
         todos: 
           - make the range an enum with allowed values from ontology, see also https://github.com/StroemPhi/NMR-spectroscopy-schema/issues/2
-
     close_mappings:
       - obi:0000566
       - nmrCV:1400059
       - chmo:0001807
+
   Manufacturer:
     class_uri: obi:0000835
     close_mappings:
@@ -191,7 +228,35 @@ classes:
       name: 
         range: NmrManufacturers
 
+# Qualities
+  Quality:
+    description: A quality is a specifically dependent continuant that, in contrast to roles and dispositions, does not require any further process in order to be realized. [IAO]
+    class_uri: bfo:0000019
+    attributes: 
+      is_quality_meassured_as:
+        slot_uri: iao:0000417
+        domain: Quality
+        range: ScalarMeasurementDatum
+
+  Concentration:
+    is_a: Quality
+    description: A quality inhering in a substance by virtue of the amount of the bearer's there is mixed with another substance. [Wikipedia:http://en.wikipedia.org/wiki/concentration]
+    class_uri: pato:0000033
+    attributes:
+      meassured_as_scalar:
+        range: ScalarMeasurementDatum
+
 # Information Content Entities
+  ScalarMeasurementDatum:
+    description: A scalar measurement datum is a measurement datum that is composed of two parts, numerals and a unit label. [IAO]
+    class_uri: iao:0000032
+    attributes:
+      value:
+        range: double
+      unit:
+        range: Unit
+
+
   NmrSpecRecord:
     description: >-
       This is the tree root node of the schema. It is a data item that serves as a container for all relevant information about *one* NMR spectroscopy assay record. The properties of this class represent the required metadata of an NMR assay, such as: 
@@ -199,17 +264,58 @@ classes:
       * what are the detail infos of the assayed sample (name, formula, structure, concentration, preperation process, ...)
     tree_root: true
     mixins:
-      - provenance
-    slots:
-      - id
-      - output_of_nmr_assay
+      - Provenance
+      - NamedThing
+    attributes:
+      output_of_nmr_assay:
+        slot_uri: obi:0000312
+        required: true
+        inlined: true
+        range: PulsedNmrAssay
     slot_usage:
       id:
         description: the URI of a NMR spectroscopy record, which gets generated upon ingest source data 
-      output_of_nmr_assay:
-        inlined: true
+
+  NmrSpecRecordCollection:
+    mixins: 
+      - Provenance
+    description: This class represents a collection of NMR spectroscopy records. It is to be used when multiple NMR assays were made in order to analyse a given sample.
+    attributes:
+      has_part:
         required: true
-        range: PulsedNmrAssay
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+        domain: NmrSpecRecordCollection
+        range: NmrSpecRecord
+    todos: 
+      - outsource this into its own YAML!
+        
+  MolecularFormula:
+    class_uri: cheminf:000042
+    slots:
+      - has_representation
+  InCHI:
+    class_uri: cheminf:000113
+    slots:
+      - has_representation
+  InCHIKey:
+    class_uri: cheminf:000059
+    slots:
+      - has_representation
+  SMILES:
+    class_uri: cheminf:000018
+    slots:
+      - has_representation
+  MOLfile:
+    class_uri: cheminf:000114
+    slots:
+      - has_representation
+  IUPACname:
+    class_uri: cheminf:000107
+    slots:
+      - has_representation
+
 
 #################################################
 slots:
@@ -223,6 +329,7 @@ slots:
     exact_mappings:
       - sdo:identifier
   local_id:
+    slot_uri: sdo:identifier
     description: This property should be used to provide the local identifier with which something is denoted in a local context (e.g. your lab notebook).
     recommended: true
     range: string
@@ -235,6 +342,7 @@ slots:
     description: a generic property to be used in classes that represent something which has a website
     required: false
     range: uri
+# material entity slots
   manufactured_by:
     description: a property to be used on any class that represents some form of atrefact, in order to refer to the artefacts maker.
     slot_uri: obi:0000304
@@ -242,22 +350,22 @@ slots:
     range: Manufacturer
   type:
     range: string
-# NmrSpecRecord
-  output_of_nmr_assay:
-    required: true
-    slot_uri: obi:0000312
-# Instrument
-
-
+# information content entity slots
+  has_representation:
+    description: >-
+      'has representation' is a data property that attaches between an information content entity and a value that contains linguistically or computationally coded text.
+    slot_uri: obi:0002815
+    range: string
+  
 #################################################
 enums:
   PulseProgram:
+    description: Enum of the most commonly used pulse sequences that specify the type of pulsed NMR.
     permissible_values:
       NMR:
         see_also:
           - zgpg30
       COSY:
-
       COSY-DQF:
       COSY-DOSY:
       DOSY:
@@ -320,6 +428,7 @@ enums:
       DOSY-NOESY:
       DOSY-HMQC:
   NmrManufacturers:
+    description: Controlled list of manufacturers of NMR lab devices.
     notes: allowed values from nmrCV_1400255
     permissible_values:
       Acorn NMR Inc:
@@ -351,10 +460,25 @@ enums:
       micromass:
       tecmag:
   Dimension:
+    description: The dimensionality of the produced spectrum.
     permissible_values:
       1D:
       2D:
       3D:
       4D:
+  Unit:
+    description: Enums of needed units aligned with UO. *WIP:needs to be expanded*
+    permissible_values:
+      femtomolar:
+        meaning: uo:0000073
+      micromolar:
+      millimolar:
+      molar:
+        meaning: uo:0000062
+      nanomolar:
+      picomolar:
+      pH:
+        meaning: uo:0000196
+
 #################################################
 
