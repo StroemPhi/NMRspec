@@ -1,5 +1,5 @@
 # Auto generated from Provenance.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-03-01T10:34:47
+# Generation date: 2022-03-02T11:43:39
 # Schema: Provenance
 #
 # id: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/Provenance.yaml
@@ -58,7 +58,6 @@ class Provenance(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = URIRef("https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/Provenance.yaml/Provenance")
 
     source: str = None
-    source_file: str = None
     description: Optional[str] = None
     source_uri: Optional[Union[str, URIorCURIE]] = None
     date_created: Optional[Union[str, XSDDateTime]] = None
@@ -70,11 +69,6 @@ class Provenance(YAMLRoot):
             self.MissingRequiredField("source")
         if not isinstance(self.source, str):
             self.source = str(self.source)
-
-        if self._is_empty(self.source_file):
-            self.MissingRequiredField("source_file")
-        if not isinstance(self.source_file, str):
-            self.source_file = str(self.source_file)
 
         if self.description is not None and not isinstance(self.description, str):
             self.description = str(self.description)
