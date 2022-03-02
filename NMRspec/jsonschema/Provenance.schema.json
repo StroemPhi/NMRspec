@@ -1,0 +1,13 @@
+{
+   "$defs": {},
+   "$id": "https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/Provenance.yaml",
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "additionalProperties": true,
+   "metamodel_version": "1.7.0",
+   "properties": {},
+   "required": [],
+   "title": "Provenance",
+   "type": "object",
+   "version": "0.0.1"
+}
+

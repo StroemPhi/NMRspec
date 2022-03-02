@@ -1,0 +1,247 @@
+{
+   "_comments": "Auto generated from NMRspec.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-03-02T11:43:18\n    Schema: NMRspec\n    metamodel version: 1.7.0\n    model version: 0.0.1\n    \n    id: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/NMRspec.yaml\n    description: This model is to be used to semantify NMR spectroscopy research data.\n    license: https://creativecommons.org/licenses/by/4.0/\n    ",
+   "@context": {
+      "FAIRspec": "https://github.com/IUPAC/IUPAC-FAIRSpec/blob/main/src/main/java/org/iupac/fairspec/core/",
+      "NMRspec": "https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/",
+      "bfo": {
+         "@id": "http://purl.obolibrary.org/obo/BFO_",
+         "@prefix": true
+      },
+      "cc": "https://creativecommons.org/licenses/",
+      "chebi": {
+         "@id": "http://purl.obolibrary.org/obo/CHEBI_",
+         "@prefix": true
+      },
+      "cheminf": {
+         "@id": "http://purl.obolibrary.org/obo/CHEMINF_",
+         "@prefix": true
+      },
+      "chemotion": "https://www.chemotion-repository.net/home/publications/reactions/",
+      "chemotionDATA": "https://www.chemotion-repository.net/home/publications/datasets/",
+      "chemotionPID": "https://www.chemotion-repository.net/pid/",
+      "chmo": {
+         "@id": "http://purl.obolibrary.org/obo/CHMO_",
+         "@prefix": true
+      },
+      "dce": "http://purl.org/dc/elements/1.1/",
+      "doi": "https://doi.org/",
+      "iao": {
+         "@id": "http://purl.obolibrary.org/obo/IAO_",
+         "@prefix": true
+      },
+      "isa": "https://isa-specs.readthedocs.io/en/latest/isamodel.html#",
+      "jdx": "http://www.jcamp-dx.org/protocols/dxnmr01.pdf/",
+      "linkml": "https://w3id.org/linkml/",
+      "nmrCV": "http://nmrML.org/nmrCV#",
+      "nmrSPARQL": "https://nfdi4chem/sparql/",
+      "obi": {
+         "@id": "http://purl.obolibrary.org/obo/OBI_",
+         "@prefix": true
+      },
+      "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+      "pato": {
+         "@id": "http://purl.obolibrary.org/obo/PATO_",
+         "@prefix": true
+      },
+      "prov": "http://www.w3.org/ns/prov#",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "ro": {
+         "@id": "http://purl.obolibrary.org/obo/RO_",
+         "@prefix": true
+      },
+      "sdo": "https://schema.org/",
+      "skos": "http://www.w3.org/2004/02/skos/core#",
+      "uo": "http://purl.obolibrary.org/obo/",
+      "@vocab": "https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/",
+      "formula": {
+         "@type": "@id",
+         "@id": "iao:0000235"
+      },
+      "inchi": {
+         "@type": "@id",
+         "@id": "iao:0000235"
+      },
+      "inchikey": {
+         "@type": "@id",
+         "@id": "iao:0000235"
+      },
+      "iupac_name": {
+         "@type": "@id",
+         "@id": "iao:0000235"
+      },
+      "mol_file": {
+         "@type": "@id",
+         "@id": "iao:0000235"
+      },
+      "smiles": {
+         "@type": "@id",
+         "@id": "iao:0000235"
+      },
+      "has_representation": {
+         "@id": "obi:0002815"
+      },
+      "id": "@id",
+      "is_quality_measured_as": {
+         "@id": "iao:0000417"
+      },
+      "manufactured_by": {
+         "@type": "@id",
+         "@id": "obi:0000304"
+      },
+      "name": {
+         "@id": "rdfs:label"
+      },
+      "measured_temperature": {
+         "@type": "@id",
+         "@id": "ro:0000086"
+      },
+      "buffer": {
+         "@type": "@id",
+         "@id": "bfo:0000051"
+      },
+      "measured_molarity": {
+         "@type": "@id",
+         "@id": "ro:0000086"
+      },
+      "measured_pH": {
+         "@type": "@id",
+         "@id": "ro:0000086"
+      },
+      "sample": {
+         "@type": "@id",
+         "@id": "bfo:0000051"
+      },
+      "solvent": {
+         "@type": "@id",
+         "@id": "bfo:0000051"
+      },
+      "output_of_nmr_assay": {
+         "@type": "@id",
+         "@id": "obi:0000312"
+      },
+      "nmr_assay_records": {
+         "@type": "@id",
+         "@id": "bfo:0000051"
+      },
+      "sample_tube": {
+         "@type": "@id",
+         "@id": "bfo:0000051"
+      },
+      "date_created": {
+         "@type": "xsd:dateTime",
+         "@id": "sdo:dateCreated"
+      },
+      "description": {
+         "@id": "dce:description"
+      },
+      "licence_str": {
+         "@id": "dce:license"
+      },
+      "licence_url": {
+         "@type": "@id",
+         "@id": "dce:license"
+      },
+      "source": {
+         "@id": "dce:source"
+      },
+      "source_uri": {
+         "@type": "@id",
+         "@id": "dce:source"
+      },
+      "assay_date": {
+         "@type": "xsd:dateTime"
+      },
+      "has_dimension": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         }
+      },
+      "observed_frequencies": {
+         "@type": "xsd:float"
+      },
+      "pulse_program": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         }
+      },
+      "solution": {
+         "@type": "@id",
+         "@id": "obi:0000293"
+      },
+      "spectrometer": {
+         "@type": "@id",
+         "@id": "obi:0000293"
+      },
+      "unit": {
+         "@id": "iao:0000039"
+      },
+      "value": {
+         "@type": "xsd:double",
+         "@id": "iao:0000004"
+      },
+      "website": {
+         "@type": "@id"
+      },
+      "ChemicalDescriptor": {
+         "@id": "cheminf:000123"
+      },
+      "InCHI": {
+         "@id": "cheminf:000113"
+      },
+      "InCHIKey": {
+         "@id": "cheminf:000059"
+      },
+      "IUPACname": {
+         "@id": "cheminf:000107"
+      },
+      "Manufacturer": {
+         "@id": "obi:0000835"
+      },
+      "MolarConcentration": {
+         "@id": "pato:0000033"
+      },
+      "MolarityMeasurementDatum": {
+         "@id": "iao:0000032"
+      },
+      "MolecularFormula": {
+         "@id": "cheminf:000042"
+      },
+      "MOLfile": {
+         "@id": "cheminf:000114"
+      },
+      "NamedThing": {
+         "@id": "sdo:Thing"
+      },
+      "NmrSampleTube": {
+         "@id": "obi:0000578"
+      },
+      "NmrSolution": {
+         "@id": "chebi:75958"
+      },
+      "PhMeasurementDatum": {
+         "@id": "iao:0000032"
+      },
+      "PhValue": {
+         "@id": "pato:0001842"
+      },
+      "PulsedNmrAssay": {
+         "@id": "chmo:0000613"
+      },
+      "SMILES": {
+         "@id": "cheminf:000018"
+      },
+      "Temperature": {
+         "@id": "pato:0000146"
+      },
+      "TemperatureMeasurementDatum": {
+         "@id": "obi:0003079"
+      }
+   }
+}
+

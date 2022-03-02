@@ -1,0 +1,676 @@
+{
+   "$defs": {
+      "Dimension": {
+         "description": "The dimensionality of the produced spectrum.",
+         "enum": [
+            "1D",
+            "2D",
+            "3D",
+            "4D"
+         ],
+         "title": "Dimension",
+         "type": "string"
+      },
+      "IUPACname": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "has_representation": {
+               "description": "'has representation' is a data property that attaches between an information content entity and a value that contains linguistically or computationally coded text.",
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "IUPACname",
+         "type": "object"
+      },
+      "InCHI": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "has_representation": {
+               "description": "'has representation' is a data property that attaches between an information content entity and a value that contains linguistically or computationally coded text.",
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "InCHI",
+         "type": "object"
+      },
+      "InCHIKey": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "has_representation": {
+               "description": "'has representation' is a data property that attaches between an information content entity and a value that contains linguistically or computationally coded text.",
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "InCHIKey",
+         "type": "object"
+      },
+      "MOLfile": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "type": "string"
+            },
+            "name": {
+               "description": "a generic property to provide a string that is used to name a something",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "MOLfile",
+         "type": "object"
+      },
+      "Manufacturer": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "name": {
+               "$ref": "#/$defs/NmrManufacturers",
+               "description": "a generic property to provide a string that is used to name a something"
+            },
+            "website": {
+               "description": "a generic property to be used in classes that represent something which has a website",
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "Manufacturer",
+         "type": "object"
+      },
+      "MolarConcentration": {
+         "additionalProperties": false,
+         "description": "A quality inhering in a substance by virtue of the amount of the bearer's there is mixed with another substance. [Wikipedia:http://en.wikipedia.org/wiki/concentration]",
+         "properties": {
+            "is_quality_measured_as": {
+               "$ref": "#/$defs/MolarityMeasurementDatum"
+            }
+         },
+         "required": [],
+         "title": "MolarConcentration",
+         "type": "object"
+      },
+      "MolarityMeasurementDatum": {
+         "additionalProperties": false,
+         "description": "A scalar measurement datum that is the result of measuring the molarity (aka volume concentration) of a chemical solution.",
+         "properties": {
+            "unit": {
+               "$ref": "#/$defs/MolarityUnit"
+            },
+            "value": {
+               "type": "number"
+            }
+         },
+         "required": [],
+         "title": "MolarityMeasurementDatum",
+         "type": "object"
+      },
+      "MolarityUnit": {
+         "description": "Enums of needed units aligned with UO. *WIP:needs to be expanded*",
+         "enum": [
+            "femtomolar",
+            "micromolar",
+            "millimolar",
+            "molar",
+            "nanomolar",
+            "picomolar"
+         ],
+         "title": "MolarityUnit",
+         "type": "string"
+      },
+      "MolecularFormula": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "has_representation": {
+               "description": "'has representation' is a data property that attaches between an information content entity and a value that contains linguistically or computationally coded text.",
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "MolecularFormula",
+         "type": "object"
+      },
+      "NmrBuffer": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "formula": {
+               "$ref": "#/$defs/MolecularFormula"
+            },
+            "id": {
+               "type": "string"
+            },
+            "inchi": {
+               "$ref": "#/$defs/InCHI"
+            },
+            "inchikey": {
+               "$ref": "#/$defs/InCHIKey"
+            },
+            "iupac_name": {
+               "$ref": "#/$defs/IUPACname"
+            },
+            "mol_file": {
+               "type": "string"
+            },
+            "name": {
+               "description": "a generic property to provide a string that is used to name a something",
+               "type": "string"
+            },
+            "smiles": {
+               "$ref": "#/$defs/SMILES"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "NmrBuffer",
+         "type": "object"
+      },
+      "NmrManufacturers": {
+         "description": "Controlled list of manufacturers of NMR lab devices.",
+         "enum": [
+            "Acorn NMR Inc",
+            "Agilent Technologies",
+            "Applied Biosystems",
+            "Bruker",
+            "Doty Scientific",
+            "FOSS",
+            "General Electric",
+            "JEOL",
+            "JS Research",
+            "Jasco",
+            "Kimble Chase",
+            "MR Resources",
+            "OceanOptics",
+            "Oxford Instruments",
+            "Perkin Elmer",
+            "Phillips",
+            "Siemens AG",
+            "Spinlock SRL",
+            "TX",
+            "ThermoFinnigan",
+            "ThermoMattson",
+            "ThermoNicolet",
+            "Varian",
+            "Waters",
+            "Wilmad",
+            "acdlabs",
+            "micromass",
+            "tecmag"
+         ],
+         "title": "NmrManufacturers",
+         "type": "string"
+      },
+      "NmrSample": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "formula": {
+               "$ref": "#/$defs/MolecularFormula"
+            },
+            "id": {
+               "type": "string"
+            },
+            "inchi": {
+               "$ref": "#/$defs/InCHI"
+            },
+            "inchikey": {
+               "$ref": "#/$defs/InCHIKey"
+            },
+            "iupac_name": {
+               "$ref": "#/$defs/IUPACname"
+            },
+            "local_id": {
+               "description": "This property should be used to provide the local identifier with which something is denoted in a local context (e.g. your lab notebook).",
+               "type": "string"
+            },
+            "mol_file": {
+               "type": "string"
+            },
+            "name": {
+               "description": "a generic property to provide a string that is used to name a something",
+               "type": "string"
+            },
+            "smiles": {
+               "$ref": "#/$defs/SMILES"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "NmrSample",
+         "type": "object"
+      },
+      "NmrSampleTube": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "manufactured_by": {
+               "$ref": "#/$defs/Manufacturer",
+               "description": "a property to be used on any class that represents some form of atrefact, in order to refer to the artefacts maker."
+            },
+            "measured_temperature": {
+               "$ref": "#/$defs/Temperature"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "NmrSampleTube",
+         "type": "object"
+      },
+      "NmrSolution": {
+         "additionalProperties": false,
+         "description": "A NMR sollution is the solution made up of the solvent in which the evaluated sample is dissolved in as well as possibly the buffer needed to adjust the pH value.",
+         "properties": {
+            "buffer": {
+               "$ref": "#/$defs/NmrBuffer"
+            },
+            "measured_molarity": {
+               "$ref": "#/$defs/MolarConcentration",
+               "description": "The predicate needed to relate to the concentration of the NMR solution."
+            },
+            "measured_pH": {
+               "$ref": "#/$defs/PhValue",
+               "description": "The predicate needed to relate to the concentration of the NMR solution."
+            },
+            "sample": {
+               "$ref": "#/$defs/NmrSample",
+               "description": "The attribute needed to relate the NMR solution to its solvent."
+            },
+            "solvent": {
+               "$ref": "#/$defs/NmrSolvent",
+               "description": "The attribute needed to relate the NMR solution to its solvent."
+            }
+         },
+         "required": [
+            "solvent",
+            "sample"
+         ],
+         "title": "NmrSolution",
+         "type": "object"
+      },
+      "NmrSolvent": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "formula": {
+               "$ref": "#/$defs/MolecularFormula"
+            },
+            "id": {
+               "type": "string"
+            },
+            "inchi": {
+               "$ref": "#/$defs/InCHI"
+            },
+            "inchikey": {
+               "$ref": "#/$defs/InCHIKey"
+            },
+            "iupac_name": {
+               "$ref": "#/$defs/IUPACname"
+            },
+            "mol_file": {
+               "type": "string"
+            },
+            "name": {
+               "description": "a generic property to provide a string that is used to name a something",
+               "type": "string"
+            },
+            "smiles": {
+               "$ref": "#/$defs/SMILES"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "NmrSolvent",
+         "type": "object"
+      },
+      "NmrSpecRecord": {
+         "additionalProperties": false,
+         "description": "This is the tree root node of the schema. It is a data item that serves as a container for all relevant information about *one* NMR spectroscopy assay record. The properties of this class represent the required metadata of an NMR assay, such as:  * what kind of assay was performed (e.g. 2D 13C COSY) and what devices where used for that (e.g. spectrometer, magnet, solvent, buffer, ...) * what are the detail infos of the assayed sample (name, formula, structure, concentration, preperation process, ...)",
+         "properties": {
+            "date_created": {
+               "description": "The date on which the source file was processed according to this schema.",
+               "format": "date-time",
+               "type": "string"
+            },
+            "description": {
+               "type": "string"
+            },
+            "id": {
+               "description": "the URI of a NMR spectroscopy record, which gets generated upon ingest source data",
+               "type": "string"
+            },
+            "licence_str": {
+               "description": "the licence of the ingested raw data as string",
+               "type": "string"
+            },
+            "licence_url": {
+               "description": "the licence of the ingested raw data in machine readable format as URL",
+               "type": "string"
+            },
+            "name": {
+               "description": "a generic property to provide a string that is used to name a something",
+               "type": "string"
+            },
+            "output_of_nmr_assay": {
+               "$ref": "#/$defs/PulsedNmrAssay"
+            },
+            "source": {
+               "description": "This property is used to describe the source of the data as string (e.g. \"Chemotion Repository\").",
+               "type": "string"
+            },
+            "source_uri": {
+               "description": "This property can be used to provide the URL or CURIE of the the source file, if it has one.",
+               "type": "string"
+            }
+         },
+         "required": [
+            "output_of_nmr_assay",
+            "id",
+            "source"
+         ],
+         "title": "NmrSpecRecord",
+         "type": "object"
+      },
+      "NmrSpecRecordCollection": {
+         "additionalProperties": false,
+         "description": "This class represents a collection of NMR spectroscopy records. It is to be used when multiple NMR assays were made in order to analyse a given sample.",
+         "properties": {
+            "date_created": {
+               "description": "The date on which the source file was processed according to this schema.",
+               "format": "date-time",
+               "type": "string"
+            },
+            "description": {
+               "type": "string"
+            },
+            "id": {
+               "type": "string"
+            },
+            "licence_str": {
+               "description": "the licence of the ingested raw data as string",
+               "type": "string"
+            },
+            "licence_url": {
+               "description": "the licence of the ingested raw data in machine readable format as URL",
+               "type": "string"
+            },
+            "name": {
+               "description": "a generic property to provide a string that is used to name a something",
+               "type": "string"
+            },
+            "nmr_assay_records": {
+               "items": {
+                  "$ref": "#/$defs/NmrSpecRecord"
+               },
+               "type": "array"
+            },
+            "source": {
+               "description": "This property is used to describe the source of the data as string (e.g. \"Chemotion Repository\").",
+               "type": "string"
+            },
+            "source_uri": {
+               "description": "This property can be used to provide the URL or CURIE of the the source file, if it has one.",
+               "type": "string"
+            }
+         },
+         "required": [
+            "nmr_assay_records",
+            "source",
+            "id"
+         ],
+         "title": "NmrSpecRecordCollection",
+         "type": "object"
+      },
+      "NmrSpectrometer": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "manufactured_by": {
+               "$ref": "#/$defs/Manufacturer",
+               "description": "a property to be used on any class that represents some form of atrefact, in order to refer to the artefacts maker."
+            },
+            "sample_tube": {
+               "$ref": "#/$defs/NmrSampleTube"
+            },
+            "type": {
+               "description": "This property represents the type of spectrometer used in the NMR assay as string. Often this information will not be present in the JCAMP-DX file, but it can be parsed from Bricker source files",
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "NmrSpectrometer",
+         "type": "object"
+      },
+      "PhMeasurementDatum": {
+         "additionalProperties": false,
+         "description": "A scalar measurement datum that is the result of measuring the pH value of a chemical solution.",
+         "properties": {
+            "unit": {
+               "$ref": "#/$defs/PhValueUnit"
+            },
+            "value": {
+               "type": "number"
+            }
+         },
+         "required": [],
+         "title": "PhMeasurementDatum",
+         "type": "object"
+      },
+      "PhValue": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "is_quality_measured_as": {
+               "$ref": "#/$defs/PhMeasurementDatum"
+            }
+         },
+         "required": [],
+         "title": "PhValue",
+         "type": "object"
+      },
+      "PhValueUnit": {
+         "description": "",
+         "enum": [
+            "pH"
+         ],
+         "title": "PhValueUnit",
+         "type": "string"
+      },
+      "PulseProgram": {
+         "description": "Enum of the most commonly used pulse sequences that specify the type of pulsed NMR.",
+         "enum": [
+            "NMR",
+            "COSY",
+            "COSY-DQF",
+            "COSY-DOSY",
+            "DOSY",
+            "SECSY",
+            "RELAY",
+            "TOCSY",
+            "ROESY",
+            "NOESY",
+            "Double-Quantum",
+            "J-Resolved",
+            "DEPT & INEPT",
+            "HECTOR",
+            "COLOC",
+            "Heteronuclear J-resolved",
+            "HOESY",
+            "INADEQUATE",
+            "Inverse 1H-NMR",
+            "HMQC",
+            "DEPT-HMQC",
+            "Multiplicity-edited HSQC",
+            "CT-HSQC",
+            "CT-HMBC",
+            "Inverse-INEPT",
+            "2D HSQC-\u03b1,\u03b2",
+            "2D IPAP-HSQC",
+            "2D J-modulated CT-HSQC",
+            "TROSY",
+            "CRINEPT",
+            "HMQC-COSY",
+            "H2BC",
+            "HQMC-TOSCY",
+            "HMQC-ROESY",
+            "HMQC-NOESY",
+            "HSQC-TOSCY",
+            "HSQC-ROESY",
+            "HSQC-NOESY",
+            "HMBC",
+            "Phase-sensitive HMBC",
+            "J-HMBC",
+            "Long-range HSQC (HSQMBC)",
+            "EXSIDE",
+            "HETLOC",
+            "HSQC-HECADE",
+            "ADEQUATE",
+            "1,1-ADEQUATE",
+            "1,n-ADEQUATE",
+            "n,1-ADEQUATE",
+            "n,n-ADEQUATE",
+            "STE",
+            "STEBP",
+            "STD-TOSCY",
+            "STD-NOESY",
+            "STD-HSQC",
+            "CLEANEX",
+            "CLEANEX-HSQC",
+            "CLEANEX-TROSY",
+            "DSTE",
+            "DSTEBP",
+            "DOSY-TOCSY",
+            "DOSY-NOESY",
+            "DOSY-HMQC"
+         ],
+         "title": "PulseProgram",
+         "type": "string"
+      },
+      "PulsedNmrAssay": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "acuisition_nuclei": {
+               "description": "the nuclei to be assayed as specified by the protocol",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "assay_date": {
+               "description": "the date the assay was carried out by someone",
+               "format": "date-time",
+               "type": "string"
+            },
+            "has_dimension": {
+               "$ref": "#/$defs/Dimension"
+            },
+            "id": {
+               "type": "string"
+            },
+            "name": {
+               "description": "a generic property to provide a string that is used to name a something",
+               "type": "string"
+            },
+            "observed_frequencies": {
+               "items": {
+                  "type": "number"
+               },
+               "type": "array"
+            },
+            "pulse_program": {
+               "$ref": "#/$defs/PulseProgram",
+               "description": "The pulse program of a PulsedNmrAssay is a required property and must be conform to one of the values defined in the PulseProgram enum class. The possible values there are defined according to common pulse programs, e.g. NMR for basic 1H-NMR, or COSY and COSY-DOSY, etc."
+            },
+            "solution": {
+               "$ref": "#/$defs/NmrSolution",
+               "description": "the property refering to solution in which the assayed sample is disolved in"
+            },
+            "spectrometer": {
+               "$ref": "#/$defs/NmrSpectrometer"
+            }
+         },
+         "required": [
+            "solution",
+            "spectrometer",
+            "has_dimension",
+            "pulse_program",
+            "acuisition_nuclei",
+            "id"
+         ],
+         "title": "PulsedNmrAssay",
+         "type": "object"
+      },
+      "SMILES": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "has_representation": {
+               "description": "'has representation' is a data property that attaches between an information content entity and a value that contains linguistically or computationally coded text.",
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "SMILES",
+         "type": "object"
+      },
+      "Temperature": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "is_quality_measured_as": {
+               "$ref": "#/$defs/TemperatureMeasurementDatum"
+            }
+         },
+         "required": [],
+         "title": "Temperature",
+         "type": "object"
+      },
+      "TemperatureMeasurementDatum": {
+         "additionalProperties": false,
+         "description": "A scalar measurement datum that is the result of measuring temperature.",
+         "properties": {
+            "unit": {
+               "$ref": "#/$defs/TemperatureUnit"
+            },
+            "value": {
+               "type": "number"
+            }
+         },
+         "required": [],
+         "title": "TemperatureMeasurementDatum",
+         "type": "object"
+      },
+      "TemperatureUnit": {
+         "description": "",
+         "enum": [
+            "Celsius",
+            "Kelvin"
+         ],
+         "title": "TemperatureUnit",
+         "type": "string"
+      }
+   },
+   "$id": "https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/NMRspec.yaml",
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "additionalProperties": true,
+   "metamodel_version": "1.7.0",
+   "properties": {},
+   "required": [],
+   "title": "NMRspec",
+   "type": "object",
+   "version": "0.0.1"
+}
+

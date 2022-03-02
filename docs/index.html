@@ -111,39 +111,115 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="nmr-spectroscopy-schema-schema">NMR-spectroscopy-schema schema</h1>
+                <h1 id="nmrspec">NMRspec</h1>
+<p><strong>metamodel version:</strong> 1.7.0</p>
+<p><strong>version:</strong> 0.0.1</p>
 <p>This model is to be used to semantify NMR spectroscopy research data.</p>
 <h3 id="classes">Classes</h3>
 <ul>
-<li><a href="Assay/">Assay</a> - A planned process with the objective to produce information about the material entity that is the evaluant, by physically examining it or its proxies.<ul>
-<li><a href="NMRspectroscopy/">NMRspectroscopy</a> - An assay that exploits the magnetic properties of certain nuclei (those with a spin) to resonate when placed in particular magnetic field conditions. Instruments recording NMR spectrum and sets of analysis can be used to deduce identity of chemical as well as composition of complex chemical mixtures.<ul>
-<li><a href="PulsedNMRspectroscopy/">PulsedNMRspectroscopy</a> - Spectroscopy where the energy states of spin-active nuclei placed in a static magnetic field are interrogated by inducing transitions between the states via radio frequency irradiation. Each experiment consists of a sequence of radio frequency pulses with delay periods in between them. [ rsc:pr ] </li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="AssayOutput/">AssayOutput</a> - A data item that is the specified output of an assay. May be a file, dataset etc.<ul>
-<li><a href="NMRspecRecord/">NMRspecRecord</a> - A data item that is an NMR assay output which represents the data produced by an NMR assay of a studied sample compound.</li>
-</ul>
-</li>
-<li><a href="NMRspecRecords/">NMRspecRecords</a> - A container for holding multiple NMR assay records.</li>
+<li><a href="IUPACname/">IUPACname</a></li>
+<li><a href="InCHI/">InCHI</a></li>
+<li><a href="InCHIKey/">InCHIKey</a></li>
+<li><a href="MOLfile/">MOLfile</a></li>
+<li><a href="Manufacturer/">Manufacturer</a></li>
+<li><a href="MolarConcentration/">MolarConcentration</a> - A quality inhering in a substance by virtue of the amount of the bearer's there is mixed with another substance. [Wikipedia:http://en.wikipedia.org/wiki/concentration]</li>
+<li><a href="MolarityMeasurementDatum/">MolarityMeasurementDatum</a> - A scalar measurement datum that is the result of measuring the molarity (aka volume concentration) of a chemical solution.</li>
+<li><a href="MolecularFormula/">MolecularFormula</a></li>
+<li><a href="NmrBuffer/">NmrBuffer</a></li>
+<li><a href="NmrSample/">NmrSample</a></li>
+<li><a href="NmrSampleTube/">NmrSampleTube</a></li>
+<li><a href="NmrSolution/">NmrSolution</a> - A NMR sollution is the solution made up of the solvent in which the evaluated sample is dissolved in as well as possibly the buffer needed to adjust the pH value.</li>
+<li><a href="NmrSolvent/">NmrSolvent</a></li>
+<li><a href="NmrSpecRecord/">NmrSpecRecord</a> - This is the tree root node of the schema. It is a data item that serves as a container for all relevant information about <em>one</em> NMR spectroscopy assay record. The properties of this class represent the required metadata of an NMR assay, such as:  * what kind of assay was performed (e.g. 2D 13C COSY) and what devices where used for that (e.g. spectrometer, magnet, solvent, buffer, ...) * what are the detail infos of the assayed sample (name, formula, structure, concentration, preperation process, ...)</li>
+<li><a href="NmrSpecRecordCollection/">NmrSpecRecordCollection</a> - This class represents a collection of NMR spectroscopy records. It is to be used when multiple NMR assays were made in order to analyse a given sample.</li>
+<li><a href="NmrSpectrometer/">NmrSpectrometer</a></li>
+<li><a href="PhMeasurementDatum/">PhMeasurementDatum</a> - A scalar measurement datum that is the result of measuring the pH value of a chemical solution.</li>
+<li><a href="PhValue/">PhValue</a></li>
+<li><a href="PulsedNmrAssay/">PulsedNmrAssay</a></li>
+<li><a href="SMILES/">SMILES</a></li>
+<li><a href="Temperature/">Temperature</a></li>
+<li><a href="TemperatureMeasurementDatum/">TemperatureMeasurementDatum</a> - A scalar measurement datum that is the result of measuring temperature.</li>
 </ul>
 <h3 id="mixins">Mixins</h3>
 <ul>
-<li><a href="HasProvenance/">HasProvenance</a> - This is  a mixin to be used by any class that is needed a part of an audit trail to ensure the provenance of the metadata.</li>
+<li><a href="ChemicalDescriptor/">ChemicalDescriptor</a> - A chemical descriptor is a data item (quantity or value) about a chemical entity that conforms to a specification for how it is calculated, measured or recorded.</li>
+<li><a href="NamedThing/">NamedThing</a> - a mixin to be used by any class that has a name and unique id</li>
+<li><a href="Provenance/">Provenance</a> - This is a mixin to be used by any class that is needed as part of an audit trail to ensure the provenance of the metadata.</li>
 </ul>
 <h3 id="slots">Slots</h3>
 <ul>
-<li><a href="hasProvenance__creator/">➞creator</a></li>
-<li><a href="hasProvenance__date_retrieved/">➞date_retrieved</a></li>
-<li><a href="hasProvenance__publisher/">➞publisher</a></li>
-<li><a href="hasProvenance__source/">➞source</a></li>
-<li><a href="hasProvenance__source_uri/">➞source_uri</a></li>
-<li><a href="id/">id</a></li>
-<li><a href="nMRspecRecord__records_nmr_spec/">➞records_nmr_spec</a></li>
-<li><a href="nmr_spec_records/">nmr_spec_records</a></li>
+<li><a href="chemicalDescriptor__formula/">➞formula</a></li>
+<li><a href="chemicalDescriptor__inchi/">➞inchi</a></li>
+<li><a href="chemicalDescriptor__inchikey/">➞inchikey</a></li>
+<li><a href="chemicalDescriptor__iupac_name/">➞iupac_name</a></li>
+<li><a href="chemicalDescriptor__mol_file/">➞mol_file</a></li>
+<li><a href="chemicalDescriptor__smiles/">➞smiles</a></li>
+<li><a href="has_representation/">has_representation</a> - 'has representation' is a data property that attaches between an information content entity and a value that contains linguistically or computationally coded text.</li>
+<li><a href="id/">id</a><ul>
+<li><a href="NmrSpecRecord_id/">NmrSpecRecord➞id</a> - the URI of a NMR spectroscopy record, which gets generated upon ingest source data</li>
+</ul>
+</li>
+<li><a href="is_quality_measured_as/">is_quality_measured_as</a><ul>
+<li><a href="MolarConcentration_is_quality_measured_as/">MolarConcentration➞is_quality_measured_as</a></li>
+<li><a href="PhValue_is_quality_measured_as/">PhValue➞is_quality_measured_as</a></li>
+<li><a href="Temperature_is_quality_measured_as/">Temperature➞is_quality_measured_as</a></li>
+</ul>
+</li>
+<li><a href="local_id/">local_id</a> - This property should be used to provide the local identifier with which something is denoted in a local context (e.g. your lab notebook).</li>
+<li><a href="manufactured_by/">manufactured_by</a> - a property to be used on any class that represents some form of atrefact, in order to refer to the artefacts maker.<ul>
+<li><a href="NmrSampleTube_manufactured_by/">NmrSampleTube➞manufactured_by</a></li>
+<li><a href="NmrSpectrometer_manufactured_by/">NmrSpectrometer➞manufactured_by</a></li>
+</ul>
+</li>
+<li><a href="name/">name</a> - a generic property to provide a string that is used to name a something<ul>
+<li><a href="Manufacturer_name/">Manufacturer➞name</a></li>
+<li><a href="NmrSolvent_name/">NmrSolvent➞name</a></li>
+</ul>
+</li>
+<li><a href="nmrSampleTube__measured_temperature/">➞measured_temperature</a></li>
+<li><a href="nmrSolution__buffer/">NmrSolution➞buffer</a></li>
+<li><a href="nmrSolution__measured_molarity/">➞measured_molarity</a> - The predicate needed to relate to the concentration of the NMR solution.</li>
+<li><a href="nmrSolution__measured_pH/">➞measured_pH</a> - The predicate needed to relate to the concentration of the NMR solution.</li>
+<li><a href="nmrSolution__sample/">NmrSolution➞sample</a> - The attribute needed to relate the NMR solution to its solvent.</li>
+<li><a href="nmrSolution__solvent/">NmrSolution➞solvent</a> - The attribute needed to relate the NMR solution to its solvent.</li>
+<li><a href="nmrSpecRecordCollection__nmr_assay_records/">NmrSpecRecordCollection➞nmr_assay_records</a></li>
+<li><a href="nmrSpecRecord__output_of_nmr_assay/">➞output_of_nmr_assay</a></li>
+<li><a href="nmrSpectrometer__sample_tube/">➞sample_tube</a></li>
+<li><a href="provenance__date_created/">Provenance➞date_created</a> - The date on which the source file was processed according to this schema.</li>
+<li><a href="provenance__description/">➞description</a></li>
+<li><a href="provenance__licence_str/">Provenance➞licence_str</a> - the licence of the ingested raw data as string</li>
+<li><a href="provenance__licence_url/">Provenance➞licence_url</a> - the licence of the ingested raw data in machine readable format as URL</li>
+<li><a href="provenance__source/">Provenance➞source</a> - This property is used to describe the source of the data as string (e.g. "Chemotion Repository").</li>
+<li><a href="provenance__source_uri/">Provenance➞source_uri</a> - This property can be used to provide the URL or CURIE of the the source file, if it has one.</li>
+<li><a href="pulsedNmrAssay__acuisition_nuclei/">PulsedNmrAssay➞acuisition_nuclei</a> - the nuclei to be assayed as specified by the protocol</li>
+<li><a href="pulsedNmrAssay__assay_date/">PulsedNmrAssay➞assay_date</a> - the date the assay was carried out by someone</li>
+<li><a href="pulsedNmrAssay__has_dimension/">➞has_dimension</a></li>
+<li><a href="pulsedNmrAssay__observed_frequencies/">PulsedNmrAssay➞observed_frequencies</a></li>
+<li><a href="pulsedNmrAssay__pulse_program/">PulsedNmrAssay➞pulse_program</a> - The pulse program of a PulsedNmrAssay is a required property and must be conform to one of the values defined in the PulseProgram enum class. The possible values there are defined according to common pulse programs, e.g. NMR for basic 1H-NMR, or COSY and COSY-DOSY, etc.</li>
+<li><a href="pulsedNmrAssay__solution/">PulsedNmrAssay➞solution</a> - the property refering to solution in which the assayed sample is disolved in</li>
+<li><a href="pulsedNmrAssay__spectrometer/">PulsedNmrAssay➞spectrometer</a></li>
+<li><a href="type/">type</a><ul>
+<li><a href="NmrSpectrometer_type/">NmrSpectrometer➞type</a> - This property represents the type of spectrometer used in the NMR assay as string. Often this information will not be present in the JCAMP-DX file, but it can be parsed from Bricker source files</li>
+</ul>
+</li>
+<li><a href="unit/">unit</a><ul>
+<li><a href="MolarityMeasurementDatum_unit/">MolarityMeasurementDatum➞unit</a></li>
+<li><a href="PhMeasurementDatum_unit/">PhMeasurementDatum➞unit</a></li>
+<li><a href="TemperatureMeasurementDatum_unit/">TemperatureMeasurementDatum➞unit</a></li>
+</ul>
+</li>
+<li><a href="value/">value</a></li>
+<li><a href="website/">website</a> - a generic property to be used in classes that represent something which has a website</li>
 </ul>
 <h3 id="enums">Enums</h3>
+<ul>
+<li><a href="Dimension/">Dimension</a> - The dimensionality of the produced spectrum.</li>
+<li><a href="MolarityUnit/">MolarityUnit</a> - Enums of needed units aligned with UO. <em>WIP:needs to be expanded</em></li>
+<li><a href="NmrManufacturers/">NmrManufacturers</a> - Controlled list of manufacturers of NMR lab devices.</li>
+<li><a href="PhValueUnit/">PhValueUnit</a></li>
+<li><a href="PulseProgram/">PulseProgram</a> - Enum of the most commonly used pulse sequences that specify the type of pulsed NMR.</li>
+<li><a href="TemperatureUnit/">TemperatureUnit</a></li>
+</ul>
 <h3 id="subsets">Subsets</h3>
 <h3 id="types">Types</h3>
 <h4 id="built-in">Built in</h4>
@@ -237,5 +313,5 @@
 
 <!--
 MkDocs version : 1.2.3
-Build Date UTC : 2022-02-09 16:33:25.143571+00:00
+Build Date UTC : 2022-03-02 10:43:06.897562+00:00
 -->
