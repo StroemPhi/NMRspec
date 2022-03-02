@@ -27,7 +27,7 @@ jobs:
     - name: Run make file
       run: |
         pip install pipx
-        cd /home/runner/work/NMRspec/NMRspec/make-venv/.venv && source venv/bin/activate
+        pip install pipenv
         make
 
     - name: Run unit tests over output
