@@ -1,4 +1,4 @@
-from linkml_runtime.dumpers import yaml_dumper, rdf_dumper
+from linkml_runtime.dumpers import yaml_dumper
 from NMRspec import *
 
 
@@ -21,4 +21,4 @@ solution1 = NmrSolution(solvent=solvent1, sample=sample1,
                         measured_pH=PhValue(is_quality_measured_as=PhMeasurementDatum(value=7.5, unit="pH")))
 
 print("##################################################")
-print(rdf_dumper.dumps(solution1))
+print(yaml_dumper.dumps(solution1))
