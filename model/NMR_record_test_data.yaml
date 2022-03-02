@@ -7,6 +7,13 @@ description: A NMR dataset containing the metadata associated with many pulsed N
 date_created: "2022-01-10"  
 id: doi:10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N
 name:  2-(2,6-dimethoxy-4-methylphenyl)-6-methylbenzo[d]thiazole
+assays_sample:
+  local_id: SG-V3259 (41-52)
+  id: doi:10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N.1
+  formula: 
+    has_representation: C17H17NO2S
+  iupac_name:  
+    has_representation: 2-(2,6-dimethoxy-4-methylphenyl)-6-methyl-1,3-benzothiazole
 
 nmr_assay_records:
   #################
@@ -48,14 +55,7 @@ nmr_assay_records:
               value: 7.5
               unit: pH
           sample:
-            # derived from .dx file
-            local_id: SG-V3259 (41-52)
-            # dependent on user input, script or some resolver
             id: doi:10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N.1
-            formula: 
-              has_representation: C17H17NO2S
-            iupac_name:  
-              has_representation: 2-(2,6-dimethoxy-4-methylphenyl)-6-methyl-1,3-benzothiazole
           solvent:
             # derived from .dx file
             formula: 

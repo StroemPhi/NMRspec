@@ -343,6 +343,12 @@ classes:
         inlined_as_list: true
         domain: NmrSpecRecordCollection
         range: NmrSpecRecord
+      assays_sample:
+        slot_uri: iao:0000136 # is about
+        description: This property is used to provide metadata on the assayed NMR sample.
+        required: true
+        inlined: true
+        range: NmrSample
    
 #####################################
 slots:
