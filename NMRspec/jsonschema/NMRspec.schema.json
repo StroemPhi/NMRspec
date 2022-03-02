@@ -1,20 +1,5 @@
 {
    "$defs": {
-      "Concentration": {
-         "additionalProperties": false,
-         "description": "A quality inhering in a substance by virtue of the amount of the bearer's there is mixed with another substance. [Wikipedia:http://en.wikipedia.org/wiki/concentration]",
-         "properties": {
-            "is_quality_meassured_as": {
-               "$ref": "#/$defs/ScalarMeasurementDatum"
-            },
-            "meassured_as_scalar": {
-               "$ref": "#/$defs/ScalarMeasurementDatum"
-            }
-         },
-         "required": [],
-         "title": "Concentration",
-         "type": "object"
-      },
       "Dimension": {
          "description": "The dimensionality of the produced spectrum.",
          "enum": [
@@ -69,12 +54,17 @@
          "additionalProperties": false,
          "description": "",
          "properties": {
-            "has_representation": {
-               "description": "'has representation' is a data property that attaches between an information content entity and a value that contains linguistically or computationally coded text.",
+            "id": {
+               "type": "string"
+            },
+            "name": {
+               "description": "a generic property to provide a string that is used to name a something",
                "type": "string"
             }
          },
-         "required": [],
+         "required": [
+            "id"
+         ],
          "title": "MOLfile",
          "type": "object"
       },
@@ -94,6 +84,46 @@
          "required": [],
          "title": "Manufacturer",
          "type": "object"
+      },
+      "MolarConcentration": {
+         "additionalProperties": false,
+         "description": "A quality inhering in a substance by virtue of the amount of the bearer's there is mixed with another substance. [Wikipedia:http://en.wikipedia.org/wiki/concentration]",
+         "properties": {
+            "is_quality_measured_as": {
+               "$ref": "#/$defs/MolarityMeasurementDatum"
+            }
+         },
+         "required": [],
+         "title": "MolarConcentration",
+         "type": "object"
+      },
+      "MolarityMeasurementDatum": {
+         "additionalProperties": false,
+         "description": "A scalar measurement datum that is the result of measuring the molarity (aka volume concentration) of a chemical solution.",
+         "properties": {
+            "unit": {
+               "$ref": "#/$defs/MolarityUnit"
+            },
+            "value": {
+               "type": "number"
+            }
+         },
+         "required": [],
+         "title": "MolarityMeasurementDatum",
+         "type": "object"
+      },
+      "MolarityUnit": {
+         "description": "Enums of needed units aligned with UO. *WIP:needs to be expanded*",
+         "enum": [
+            "femtomolar",
+            "micromolar",
+            "millimolar",
+            "molar",
+            "nanomolar",
+            "picomolar"
+         ],
+         "title": "MolarityUnit",
+         "type": "string"
       },
       "MolecularFormula": {
          "additionalProperties": false,
@@ -128,7 +158,7 @@
                "$ref": "#/$defs/IUPACname"
             },
             "mol_file": {
-               "$ref": "#/$defs/MOLfile"
+               "type": "string"
             },
             "name": {
                "description": "a generic property to provide a string that is used to name a something",
@@ -203,7 +233,7 @@
                "type": "string"
             },
             "mol_file": {
-               "$ref": "#/$defs/MOLfile"
+               "type": "string"
             },
             "name": {
                "description": "a generic property to provide a string that is used to name a something",
@@ -219,6 +249,25 @@
          "title": "NmrSample",
          "type": "object"
       },
+      "NmrSampleTube": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "manufactured_by": {
+               "$ref": "#/$defs/Manufacturer",
+               "description": "a property to be used on any class that represents some form of atrefact, in order to refer to the artefacts maker."
+            },
+            "measured_temperature": {
+               "$ref": "#/$defs/Temperature"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "NmrSampleTube",
+         "type": "object"
+      },
       "NmrSolution": {
          "additionalProperties": false,
          "description": "A NMR sollution is the solution made up of the solvent in which the evaluated sample is dissolved in as well as possibly the buffer needed to adjust the pH value.",
@@ -226,12 +275,12 @@
             "buffer": {
                "$ref": "#/$defs/NmrBuffer"
             },
-            "molarity": {
-               "$ref": "#/$defs/Concentration",
+            "measured_molarity": {
+               "$ref": "#/$defs/MolarConcentration",
                "description": "The predicate needed to relate to the concentration of the NMR solution."
             },
-            "pH": {
-               "$ref": "#/$defs/Concentration",
+            "measured_pH": {
+               "$ref": "#/$defs/PhValue",
                "description": "The predicate needed to relate to the concentration of the NMR solution."
             },
             "sample": {
@@ -270,7 +319,7 @@
                "$ref": "#/$defs/IUPACname"
             },
             "mol_file": {
-               "$ref": "#/$defs/MOLfile"
+               "type": "string"
             },
             "name": {
                "description": "a generic property to provide a string that is used to name a something",
@@ -321,10 +370,6 @@
                "description": "This property is used to describe the source of the data as string (e.g. \"Chemotion Repository\").",
                "type": "string"
             },
-            "source_file": {
-               "description": "This property must be used to describe the name of the source file (e.g. SG-V3259 (41-52)_11.dx) from which the metadata is to be parsed.",
-               "type": "string"
-            },
             "source_uri": {
                "description": "This property can be used to provide the URL or CURIE of the the source file, if it has one.",
                "type": "string"
@@ -333,8 +378,7 @@
          "required": [
             "output_of_nmr_assay",
             "id",
-            "source",
-            "source_file"
+            "source"
          ],
          "title": "NmrSpecRecord",
          "type": "object"
@@ -351,11 +395,8 @@
             "description": {
                "type": "string"
             },
-            "has_part": {
-               "items": {
-                  "$ref": "#/$defs/NmrSpecRecord"
-               },
-               "type": "array"
+            "id": {
+               "type": "string"
             },
             "licence_str": {
                "description": "the licence of the ingested raw data as string",
@@ -365,12 +406,18 @@
                "description": "the licence of the ingested raw data in machine readable format as URL",
                "type": "string"
             },
-            "source": {
-               "description": "This property is used to describe the source of the data as string (e.g. \"Chemotion Repository\").",
+            "name": {
+               "description": "a generic property to provide a string that is used to name a something",
                "type": "string"
             },
-            "source_file": {
-               "description": "This property must be used to describe the name of the source file (e.g. SG-V3259 (41-52)_11.dx) from which the metadata is to be parsed.",
+            "nmr_assay_records": {
+               "items": {
+                  "$ref": "#/$defs/NmrSpecRecord"
+               },
+               "type": "array"
+            },
+            "source": {
+               "description": "This property is used to describe the source of the data as string (e.g. \"Chemotion Repository\").",
                "type": "string"
             },
             "source_uri": {
@@ -379,9 +426,9 @@
             }
          },
          "required": [
-            "has_part",
+            "nmr_assay_records",
             "source",
-            "source_file"
+            "id"
          ],
          "title": "NmrSpecRecordCollection",
          "type": "object"
@@ -394,6 +441,9 @@
                "$ref": "#/$defs/Manufacturer",
                "description": "a property to be used on any class that represents some form of atrefact, in order to refer to the artefacts maker."
             },
+            "sample_tube": {
+               "$ref": "#/$defs/NmrSampleTube"
+            },
             "type": {
                "description": "This property represents the type of spectrometer used in the NMR assay as string. Often this information will not be present in the JCAMP-DX file, but it can be parsed from Bricker source files",
                "type": "string"
@@ -402,6 +452,41 @@
          "required": [],
          "title": "NmrSpectrometer",
          "type": "object"
+      },
+      "PhMeasurementDatum": {
+         "additionalProperties": false,
+         "description": "A scalar measurement datum that is the result of measuring the pH value of a chemical solution.",
+         "properties": {
+            "unit": {
+               "$ref": "#/$defs/PhValueUnit"
+            },
+            "value": {
+               "type": "number"
+            }
+         },
+         "required": [],
+         "title": "PhMeasurementDatum",
+         "type": "object"
+      },
+      "PhValue": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "is_quality_measured_as": {
+               "$ref": "#/$defs/PhMeasurementDatum"
+            }
+         },
+         "required": [],
+         "title": "PhValue",
+         "type": "object"
+      },
+      "PhValueUnit": {
+         "description": "",
+         "enum": [
+            "pH"
+         ],
+         "title": "PhValueUnit",
+         "type": "string"
       },
       "PulseProgram": {
          "description": "Enum of the most commonly used pulse sequences that specify the type of pulsed NMR.",
@@ -528,18 +613,6 @@
          "title": "PulsedNmrAssay",
          "type": "object"
       },
-      "Quality": {
-         "additionalProperties": false,
-         "description": "A quality is a specifically dependent continuant that, in contrast to roles and dispositions, does not require any further process in order to be realized. [IAO]",
-         "properties": {
-            "is_quality_meassured_as": {
-               "$ref": "#/$defs/ScalarMeasurementDatum"
-            }
-         },
-         "required": [],
-         "title": "Quality",
-         "type": "object"
-      },
       "SMILES": {
          "additionalProperties": false,
          "description": "",
@@ -553,33 +626,40 @@
          "title": "SMILES",
          "type": "object"
       },
-      "ScalarMeasurementDatum": {
+      "Temperature": {
          "additionalProperties": false,
-         "description": "A scalar measurement datum is a measurement datum that is composed of two parts, numerals and a unit label. [IAO]",
+         "description": "",
+         "properties": {
+            "is_quality_measured_as": {
+               "$ref": "#/$defs/TemperatureMeasurementDatum"
+            }
+         },
+         "required": [],
+         "title": "Temperature",
+         "type": "object"
+      },
+      "TemperatureMeasurementDatum": {
+         "additionalProperties": false,
+         "description": "A scalar measurement datum that is the result of measuring temperature.",
          "properties": {
             "unit": {
-               "$ref": "#/$defs/Unit"
+               "$ref": "#/$defs/TemperatureUnit"
             },
             "value": {
                "type": "number"
             }
          },
          "required": [],
-         "title": "ScalarMeasurementDatum",
+         "title": "TemperatureMeasurementDatum",
          "type": "object"
       },
-      "Unit": {
-         "description": "Enums of needed units aligned with UO. *WIP:needs to be expanded*",
+      "TemperatureUnit": {
+         "description": "",
          "enum": [
-            "femtomolar",
-            "micromolar",
-            "millimolar",
-            "molar",
-            "nanomolar",
-            "picomolar",
-            "pH"
+            "Celsius",
+            "Kelvin"
          ],
-         "title": "Unit",
+         "title": "TemperatureUnit",
          "type": "string"
       }
    },

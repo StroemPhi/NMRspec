@@ -94,13 +94,15 @@
                 <h1 id="class-namedthing">Class: NamedThing</h1>
 <p>a mixin to be used by any class that has a name and unique id</p>
 <p>URI: <a href="https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/NamedThing">NMRspec:NamedThing</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay]uses%20-.-&gt;[NamedThing&#124;id:uriorcurie;name:string%20%3F],[NmrSpecRecord]uses%20-.-&gt;[NamedThing],[NmrSolvent]uses%20-.-&gt;[NamedThing],[NmrSample]uses%20-.-&gt;[NamedThing],[NmrBuffer]uses%20-.-&gt;[NamedThing],[PulsedNmrAssay],[NmrSpecRecord],[NmrSolvent],[NmrSample],[NmrBuffer]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay]uses%20-.-&gt;[NamedThing&#124;id:uriorcurie;name:string%20%3F],[NmrSpecRecord]uses%20-.-&gt;[NamedThing],[NmrSolvent]uses%20-.-&gt;[NamedThing],[NmrSample]uses%20-.-&gt;[NamedThing],[NmrBuffer]uses%20-.-&gt;[NamedThing],[PulsedNmrAssay],[NmrSpecRecord],[NmrSolvent],[NmrSample],[NmrBuffer]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay]uses%20-.-&gt;[NamedThing&#124;id:uriorcurie;name:string%20%3F],[NmrSpecRecordCollection]uses%20-.-&gt;[NamedThing],[NmrSpecRecord]uses%20-.-&gt;[NamedThing],[NmrSolvent]uses%20-.-&gt;[NamedThing],[NmrSample]uses%20-.-&gt;[NamedThing],[NmrBuffer]uses%20-.-&gt;[NamedThing],[MOLfile]uses%20-.-&gt;[NamedThing],[PulsedNmrAssay],[NmrSpecRecordCollection],[NmrSpecRecord],[NmrSolvent],[NmrSample],[NmrBuffer],[MOLfile]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay]uses%20-.-&gt;[NamedThing&#124;id:uriorcurie;name:string%20%3F],[NmrSpecRecordCollection]uses%20-.-&gt;[NamedThing],[NmrSpecRecord]uses%20-.-&gt;[NamedThing],[NmrSolvent]uses%20-.-&gt;[NamedThing],[NmrSample]uses%20-.-&gt;[NamedThing],[NmrBuffer]uses%20-.-&gt;[NamedThing],[MOLfile]uses%20-.-&gt;[NamedThing],[PulsedNmrAssay],[NmrSpecRecordCollection],[NmrSpecRecord],[NmrSolvent],[NmrSample],[NmrBuffer],[MOLfile]" /></a></p>
 <h2 id="mixin-for">Mixin for</h2>
 <ul>
+<li><a href="../MOLfile/">MOLfile</a> (mixin) </li>
 <li><a href="../NmrBuffer/">NmrBuffer</a> (mixin) </li>
 <li><a href="../NmrSample/">NmrSample</a> (mixin) </li>
 <li><a href="../NmrSolvent/">NmrSolvent</a> (mixin) </li>
 <li><a href="../NmrSpecRecord/">NmrSpecRecord</a> (mixin)  - This is the tree root node of the schema. It is a data item that serves as a container for all relevant information about <em>one</em> NMR spectroscopy assay record. The properties of this class represent the required metadata of an NMR assay, such as:  * what kind of assay was performed (e.g. 2D 13C COSY) and what devices where used for that (e.g. spectrometer, magnet, solvent, buffer, ...) * what are the detail infos of the assayed sample (name, formula, structure, concentration, preperation process, ...)</li>
+<li><a href="../NmrSpecRecordCollection/">NmrSpecRecordCollection</a> (mixin)  - This class represents a collection of NMR spectroscopy records. It is to be used when multiple NMR assays were made in order to analyse a given sample.</li>
 <li><a href="../PulsedNmrAssay/">PulsedNmrAssay</a> (mixin) </li>
 </ul>
 <h2 id="referenced-by-class">Referenced by Class</h2>

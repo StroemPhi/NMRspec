@@ -93,7 +93,7 @@
               
                 <h1 id="class-nmrspectrometer">Class: NmrSpectrometer</h1>
 <p>URI: <a href="https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/NmrSpectrometer">NMRspec:NmrSpectrometer</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[Manufacturer]&lt;manufactured_by%200..1-++[NmrSpectrometer&#124;type:string%20%3F],[PulsedNmrAssay]++-%20spectrometer%201..1&gt;[NmrSpectrometer],[Manufacturer]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[Manufacturer]&lt;manufactured_by%200..1-++[NmrSpectrometer&#124;type:string%20%3F],[PulsedNmrAssay]++-%20spectrometer%201..1&gt;[NmrSpectrometer],[Manufacturer]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[NmrSampleTube]&lt;sample_tube%200..1-++[NmrSpectrometer&#124;type:string%20%3F],[Manufacturer]&lt;manufactured_by%200..1-++[NmrSpectrometer],[PulsedNmrAssay]++-%20spectrometer%201..1&gt;[NmrSpectrometer],[NmrSampleTube],[Manufacturer]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[NmrSampleTube]&lt;sample_tube%200..1-++[NmrSpectrometer&#124;type:string%20%3F],[Manufacturer]&lt;manufactured_by%200..1-++[NmrSpectrometer],[PulsedNmrAssay]++-%20spectrometer%201..1&gt;[NmrSpectrometer],[NmrSampleTube],[Manufacturer]" /></a></p>
 <h2 id="referenced-by-class">Referenced by Class</h2>
 <ul>
 <li><strong><a href="../PulsedNmrAssay/">PulsedNmrAssay</a></strong> <em><a href="../pulsedNmrAssay__spectrometer/">PulsedNmrAssay➞spectrometer</a></em>  <sub>1..1</sub>  <strong><a href="./">NmrSpectrometer</a></strong></li>
@@ -109,6 +109,10 @@
 <li><a href="../NmrSpectrometer_type/">NmrSpectrometer➞type</a>  <sub>0..1</sub><ul>
 <li>Description: This property represents the type of spectrometer used in the NMR assay as string. Often this information will not be present in the JCAMP-DX file, but it can be parsed from Bricker source files</li>
 <li>Range: <a href="../String/">String</a></li>
+</ul>
+</li>
+<li><a href="../nmrSpectrometer__sample_tube/">➞sample_tube</a>  <sub>0..1</sub><ul>
+<li>Range: <a href="../NmrSampleTube/">NmrSampleTube</a></li>
 </ul>
 </li>
 </ul>

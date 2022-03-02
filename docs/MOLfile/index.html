@@ -93,16 +93,27 @@
               
                 <h1 id="class-molfile">Class: MOLfile</h1>
 <p>URI: <a href="https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/MOLfile">NMRspec:MOLfile</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[ChemicalDescriptor]++-%20mol_file%200..1&gt;[MOLfile&#124;has_representation:string%20%3F],[ChemicalDescriptor]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[ChemicalDescriptor]++-%20mol_file%200..1&gt;[MOLfile&#124;has_representation:string%20%3F],[ChemicalDescriptor]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[ChemicalDescriptor]-%20mol_file%200..1&gt;[MOLfile&#124;id:uriorcurie;name:string%20%3F],[MOLfile]uses%20-.-&gt;[NamedThing],[ChemicalDescriptor]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[ChemicalDescriptor]-%20mol_file%200..1&gt;[MOLfile&#124;id:uriorcurie;name:string%20%3F],[MOLfile]uses%20-.-&gt;[NamedThing],[ChemicalDescriptor]" /></a></p>
+<h2 id="uses-mixin">Uses Mixin</h2>
+<ul>
+<li>mixin: <a href="../NamedThing/">NamedThing</a> - a mixin to be used by any class that has a name and unique id</li>
+</ul>
 <h2 id="referenced-by-class">Referenced by Class</h2>
 <ul>
 <li><strong>None</strong> <em><a href="../chemicalDescriptor__mol_file/">➞mol_file</a></em>  <sub>0..1</sub>  <strong><a href="./">MOLfile</a></strong></li>
 </ul>
 <h2 id="attributes">Attributes</h2>
-<h3 id="own">Own</h3>
+<h3 id="mixed-in-from-namedthing">Mixed in from NamedThing:</h3>
 <ul>
-<li><a href="../has_representation/">has_representation</a>  <sub>0..1</sub><ul>
-<li>Description: 'has representation' is a data property that attaches between an information content entity and a value that contains linguistically or computationally coded text.</li>
+<li><a href="../id/">id</a>  <sub>1..1</sub><ul>
+<li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-namedthing_1">Mixed in from NamedThing:</h3>
+<ul>
+<li><a href="../name/">name</a>  <sub>0..1</sub><ul>
+<li>Description: a generic property to provide a string that is used to name a something</li>
 <li>Range: <a href="../String/">String</a></li>
 </ul>
 </li>
