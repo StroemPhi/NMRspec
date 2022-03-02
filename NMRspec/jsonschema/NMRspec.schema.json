@@ -97,7 +97,7 @@
          "additionalProperties": false,
          "description": "A quality inhering in a substance by virtue of the amount of the bearer's there is mixed with another substance. [Wikipedia:http://en.wikipedia.org/wiki/concentration]",
          "properties": {
-            "is_quality_measured_as": {
+            "measured_as": {
                "$ref": "#/$defs/MolarityMeasurementDatum"
             }
          },
@@ -485,7 +485,7 @@
          "additionalProperties": false,
          "description": "",
          "properties": {
-            "is_quality_measured_as": {
+            "measured_as": {
                "$ref": "#/$defs/PhMeasurementDatum"
             }
          },
@@ -656,7 +656,7 @@
          "additionalProperties": false,
          "description": "",
          "properties": {
-            "is_quality_measured_as": {
+            "measured_as": {
                "$ref": "#/$defs/TemperatureMeasurementDatum"
             }
          },

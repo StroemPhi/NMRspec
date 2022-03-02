@@ -237,23 +237,23 @@ classes:
     description: A quality inhering in a substance by virtue of the amount of the bearer's there is mixed with another substance. [Wikipedia:http://en.wikipedia.org/wiki/concentration]
     class_uri: pato:0000033
     slots: 
-      - is_quality_measured_as
+      - measured_as
     slot_usage:
-      is_quality_measured_as:
+      measured_as:
         range: MolarityMeasurementDatum
   PhValue:
     class_uri: pato:0001842
     slots: 
-      - is_quality_measured_as
+      - measured_as
     slot_usage:
-      is_quality_measured_as:
+      measured_as:
         range: PhMeasurementDatum
   Temperature:
     class_uri: pato:0000146
     slots: 
-      - is_quality_measured_as
+      - measured_as
     slot_usage:
-      is_quality_measured_as:
+      measured_as:
         range: TemperatureMeasurementDatum
 # measurement data
   MolarityMeasurementDatum:
@@ -405,7 +405,7 @@ slots:
   unit:
     slot_uri: iao:0000039
 # qualities
-  is_quality_measured_as:
+  measured_as:
     slot_uri: iao:0000417
 #####################################
 enums:

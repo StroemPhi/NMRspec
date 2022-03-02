@@ -1,5 +1,5 @@
 # Auto generated from NMRspec.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-03-02T13:53:44
+# Generation date: 2022-03-02T14:46:46
 # Schema: NMRspec
 #
 # id: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/NMRspec.yaml
@@ -505,11 +505,11 @@ class MolarConcentration(YAMLRoot):
     class_name: ClassVar[str] = "MolarConcentration"
     class_model_uri: ClassVar[URIRef] = NMRSPEC.MolarConcentration
 
-    is_quality_measured_as: Optional[Union[dict, "MolarityMeasurementDatum"]] = None
+    measured_as: Optional[Union[dict, "MolarityMeasurementDatum"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.is_quality_measured_as is not None and not isinstance(self.is_quality_measured_as, MolarityMeasurementDatum):
-            self.is_quality_measured_as = MolarityMeasurementDatum(**as_dict(self.is_quality_measured_as))
+        if self.measured_as is not None and not isinstance(self.measured_as, MolarityMeasurementDatum):
+            self.measured_as = MolarityMeasurementDatum(**as_dict(self.measured_as))
 
         super().__post_init__(**kwargs)
 
@@ -523,11 +523,11 @@ class PhValue(YAMLRoot):
     class_name: ClassVar[str] = "PhValue"
     class_model_uri: ClassVar[URIRef] = NMRSPEC.PhValue
 
-    is_quality_measured_as: Optional[Union[dict, "PhMeasurementDatum"]] = None
+    measured_as: Optional[Union[dict, "PhMeasurementDatum"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.is_quality_measured_as is not None and not isinstance(self.is_quality_measured_as, PhMeasurementDatum):
-            self.is_quality_measured_as = PhMeasurementDatum(**as_dict(self.is_quality_measured_as))
+        if self.measured_as is not None and not isinstance(self.measured_as, PhMeasurementDatum):
+            self.measured_as = PhMeasurementDatum(**as_dict(self.measured_as))
 
         super().__post_init__(**kwargs)
 
@@ -541,11 +541,11 @@ class Temperature(YAMLRoot):
     class_name: ClassVar[str] = "Temperature"
     class_model_uri: ClassVar[URIRef] = NMRSPEC.Temperature
 
-    is_quality_measured_as: Optional[Union[dict, "TemperatureMeasurementDatum"]] = None
+    measured_as: Optional[Union[dict, "TemperatureMeasurementDatum"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.is_quality_measured_as is not None and not isinstance(self.is_quality_measured_as, TemperatureMeasurementDatum):
-            self.is_quality_measured_as = TemperatureMeasurementDatum(**as_dict(self.is_quality_measured_as))
+        if self.measured_as is not None and not isinstance(self.measured_as, TemperatureMeasurementDatum):
+            self.measured_as = TemperatureMeasurementDatum(**as_dict(self.measured_as))
 
         super().__post_init__(**kwargs)
 
