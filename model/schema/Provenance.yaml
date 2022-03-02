@@ -29,11 +29,6 @@ classes:
         required: true
         domain: Provenance
         range: string
-      source_file:
-        description: This property must be used to describe the name of the source file (e.g. SG-V3259 (41-52)_11.dx) from which the metadata is to be parsed.
-        required: true
-        domain: Provenance
-        range: string
       source_uri:
         description: This property can be used to provide the URL or CURIE of the the source file, if it has one.
         slot_uri: dce:source
