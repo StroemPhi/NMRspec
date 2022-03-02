@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Class: NmrBuffer - This model is to be used to semantify NMR spectroscopy research data.</title>
+  <title>Slot: has_representation - This model is to be used to semantify NMR spectroscopy research data.</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Class: NmrBuffer";
-    var mkdocs_page_input_path = "NmrBuffer.md";
+    var mkdocs_page_name = "Slot: has_representation";
+    var mkdocs_page_input_path = "SolventFormula_has_representation.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -79,7 +79,7 @@
     
       
     
-    <li>Class: NmrBuffer</li>
+    <li>Slot: has_representation</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -91,76 +91,37 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="class-nmrbuffer">Class: NmrBuffer</h1>
-<p>URI: <a href="https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/NmrBuffer">NMRspec:NmrBuffer</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[SMILES],[NmrSolution],[NmrSolution]++-%20buffer%200..1&gt;[NmrBuffer&#124;id:uriorcurie;name:string%20%3F],[NmrBuffer]uses%20-.-&gt;[ChemicalDescriptor],[NmrBuffer]uses%20-.-&gt;[NamedThing],[NamedThing],[MolecularFormula],[MOLfile],[InCHIKey],[InCHI],[IUPACname],[ChemicalDescriptor]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[SMILES],[NmrSolution],[NmrSolution]++-%20buffer%200..1&gt;[NmrBuffer&#124;id:uriorcurie;name:string%20%3F],[NmrBuffer]uses%20-.-&gt;[ChemicalDescriptor],[NmrBuffer]uses%20-.-&gt;[NamedThing],[NamedThing],[MolecularFormula],[MOLfile],[InCHIKey],[InCHI],[IUPACname],[ChemicalDescriptor]" /></a></p>
-<h2 id="uses-mixin">Uses Mixin</h2>
+                <h1 id="slot-has_representation">Slot: has_representation</h1>
+<p>'has representation' is a data property that attaches between an information content entity and a value that contains linguistically or computationally coded text.</p>
+<p>URI: <a href="https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/SolventFormula_has_representation">NMRspec:SolventFormula_has_representation</a></p>
+<h2 id="domain-and-range">Domain and Range</h2>
+<p><a href="../SolventFormula/">SolventFormula</a> &#8594;  <sub>0..1</sub> <a href="../AllowedSolvents/">AllowedSolvents</a></p>
+<h2 id="parents">Parents</h2>
 <ul>
-<li>mixin: <a href="../ChemicalDescriptor/">ChemicalDescriptor</a> - A chemical descriptor is a data item (quantity or value) about a chemical entity that conforms to a specification for how it is calculated, measured or recorded.</li>
-<li>mixin: <a href="../NamedThing/">NamedThing</a> - a mixin to be used by any class that has a name and unique id</li>
+<li>is_a: <a href="../has_representation/">has_representation</a></li>
 </ul>
-<h2 id="referenced-by-class">Referenced by Class</h2>
+<h2 id="children">Children</h2>
+<h2 id="used-by">Used by</h2>
 <ul>
-<li><strong><a href="../NmrSolution/">NmrSolution</a></strong> <em><a href="../nmrSolution__buffer/">NmrSolution➞buffer</a></em>  <sub>0..1</sub>  <strong><a href="./">NmrBuffer</a></strong></li>
+<li><a href="../SolventFormula/">SolventFormula</a></li>
 </ul>
-<h2 id="attributes">Attributes</h2>
-<h3 id="mixed-in-from-chemicaldescriptor">Mixed in from ChemicalDescriptor:</h3>
-<ul>
-<li><a href="../formula/">formula</a>  <sub>0..1</sub><ul>
-<li>Range: <a href="../MolecularFormula/">MolecularFormula</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="mixed-in-from-chemicaldescriptor_1">Mixed in from ChemicalDescriptor:</h3>
-<ul>
-<li><a href="../chemicalDescriptor__inchi/">➞inchi</a>  <sub>0..1</sub><ul>
-<li>Range: <a href="../InCHI/">InCHI</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="mixed-in-from-chemicaldescriptor_2">Mixed in from ChemicalDescriptor:</h3>
-<ul>
-<li><a href="../chemicalDescriptor__inchikey/">➞inchikey</a>  <sub>0..1</sub><ul>
-<li>Range: <a href="../InCHIKey/">InCHIKey</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="mixed-in-from-chemicaldescriptor_3">Mixed in from ChemicalDescriptor:</h3>
-<ul>
-<li><a href="../chemicalDescriptor__smiles/">➞smiles</a>  <sub>0..1</sub><ul>
-<li>Range: <a href="../SMILES/">SMILES</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="mixed-in-from-chemicaldescriptor_4">Mixed in from ChemicalDescriptor:</h3>
-<ul>
-<li><a href="../chemicalDescriptor__mol_file/">➞mol_file</a>  <sub>0..1</sub><ul>
-<li>Range: <a href="../MOLfile/">MOLfile</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="mixed-in-from-chemicaldescriptor_5">Mixed in from ChemicalDescriptor:</h3>
-<ul>
-<li><a href="../chemicalDescriptor__iupac_name/">➞iupac_name</a>  <sub>0..1</sub><ul>
-<li>Range: <a href="../IUPACname/">IUPACname</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="mixed-in-from-namedthing">Mixed in from NamedThing:</h3>
-<ul>
-<li><a href="../id/">id</a>  <sub>1..1</sub><ul>
-<li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="mixed-in-from-namedthing_1">Mixed in from NamedThing:</h3>
-<ul>
-<li><a href="../name/">name</a>  <sub>0..1</sub><ul>
-<li>Description: a generic property to provide a string that is used to name a something</li>
-<li>Range: <a href="../String/">String</a></li>
-</ul>
-</li>
-</ul>
+<h2 id="other-properties">Other properties</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mappings:</strong></td>
+<td></td>
+<td>obi:0002815</td>
+</tr>
+</tbody>
+</table>
               
             </div>
           </div>

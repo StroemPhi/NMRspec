@@ -93,7 +93,7 @@
               
                 <h1 id="class-nmrsample">Class: NmrSample</h1>
 <p>URI: <a href="https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/NmrSample">NMRspec:NmrSample</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[SMILES],[NmrSolution],[NmrSolution]++-%20sample%201..1&gt;[NmrSample&#124;local_id:string%20%3F;id:uriorcurie;name:string%20%3F],[NmrSample]uses%20-.-&gt;[ChemicalDescriptor],[NmrSample]uses%20-.-&gt;[NamedThing],[NamedThing],[MolecularFormula],[MOLfile],[InCHIKey],[InCHI],[IUPACname],[ChemicalDescriptor]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[SMILES],[NmrSolution],[NmrSolution]++-%20sample%201..1&gt;[NmrSample&#124;local_id:string%20%3F;id:uriorcurie;name:string%20%3F],[NmrSample]uses%20-.-&gt;[ChemicalDescriptor],[NmrSample]uses%20-.-&gt;[NamedThing],[NamedThing],[MolecularFormula],[MOLfile],[InCHIKey],[InCHI],[IUPACname],[ChemicalDescriptor]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[SMILES],[NmrSolution],[NmrSolution]++-%20sample%201..1&gt;[NmrSample&#124;local_id:string%20%3F;id:uriorcurie;name:string%20%3F],[NmrSpecRecordCollection]++-%20assays_sample%201..1&gt;[NmrSample],[NmrSample]uses%20-.-&gt;[ChemicalDescriptor],[NmrSample]uses%20-.-&gt;[NamedThing],[NmrSpecRecordCollection],[NamedThing],[MolecularFormula],[MOLfile],[InCHIKey],[InCHI],[IUPACname],[ChemicalDescriptor]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[SMILES],[NmrSolution],[NmrSolution]++-%20sample%201..1&gt;[NmrSample&#124;local_id:string%20%3F;id:uriorcurie;name:string%20%3F],[NmrSpecRecordCollection]++-%20assays_sample%201..1&gt;[NmrSample],[NmrSample]uses%20-.-&gt;[ChemicalDescriptor],[NmrSample]uses%20-.-&gt;[NamedThing],[NmrSpecRecordCollection],[NamedThing],[MolecularFormula],[MOLfile],[InCHIKey],[InCHI],[IUPACname],[ChemicalDescriptor]" /></a></p>
 <h2 id="uses-mixin">Uses Mixin</h2>
 <ul>
 <li>mixin: <a href="../ChemicalDescriptor/">ChemicalDescriptor</a> - A chemical descriptor is a data item (quantity or value) about a chemical entity that conforms to a specification for how it is calculated, measured or recorded.</li>
@@ -102,6 +102,7 @@
 <h2 id="referenced-by-class">Referenced by Class</h2>
 <ul>
 <li><strong><a href="../NmrSolution/">NmrSolution</a></strong> <em><a href="../nmrSolution__sample/">NmrSolution➞sample</a></em>  <sub>1..1</sub>  <strong><a href="./">NmrSample</a></strong></li>
+<li><strong>None</strong> <em><a href="../nmrSpecRecordCollection__assays_sample/">➞assays_sample</a></em>  <sub>1..1</sub>  <strong><a href="./">NmrSample</a></strong></li>
 </ul>
 <h2 id="attributes">Attributes</h2>
 <h3 id="own">Own</h3>
@@ -114,7 +115,7 @@
 </ul>
 <h3 id="mixed-in-from-chemicaldescriptor">Mixed in from ChemicalDescriptor:</h3>
 <ul>
-<li><a href="../chemicalDescriptor__formula/">➞formula</a>  <sub>0..1</sub><ul>
+<li><a href="../formula/">formula</a>  <sub>0..1</sub><ul>
 <li>Range: <a href="../MolecularFormula/">MolecularFormula</a></li>
 </ul>
 </li>

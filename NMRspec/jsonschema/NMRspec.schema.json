@@ -1,5 +1,13 @@
 {
    "$defs": {
+      "AllowedSolvents": {
+         "description": "",
+         "enum": [
+            "CDCL3"
+         ],
+         "title": "AllowedSolvents",
+         "type": "string"
+      },
       "Dimension": {
          "description": "The dimensionality of the produced spectrum.",
          "enum": [
@@ -304,7 +312,7 @@
          "description": "",
          "properties": {
             "formula": {
-               "$ref": "#/$defs/MolecularFormula"
+               "$ref": "#/$defs/SolventFormula"
             },
             "id": {
                "type": "string"
@@ -387,6 +395,10 @@
          "additionalProperties": false,
          "description": "This class represents a collection of NMR spectroscopy records. It is to be used when multiple NMR assays were made in order to analyse a given sample.",
          "properties": {
+            "assays_sample": {
+               "$ref": "#/$defs/NmrSample",
+               "description": "This property is used to provide metadata on the assayed NMR sample."
+            },
             "date_created": {
                "description": "The date on which the source file was processed according to this schema.",
                "format": "date-time",
@@ -427,6 +439,7 @@
          },
          "required": [
             "nmr_assay_records",
+            "assays_sample",
             "source",
             "id"
          ],
@@ -624,6 +637,19 @@
          },
          "required": [],
          "title": "SMILES",
+         "type": "object"
+      },
+      "SolventFormula": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "has_representation": {
+               "$ref": "#/$defs/AllowedSolvents",
+               "description": "'has representation' is a data property that attaches between an information content entity and a value that contains linguistically or computationally coded text."
+            }
+         },
+         "required": [],
+         "title": "SolventFormula",
          "type": "object"
       },
       "Temperature": {

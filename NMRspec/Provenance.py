@@ -1,5 +1,5 @@
 # Auto generated from Provenance.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-03-02T11:43:39
+# Generation date: 2022-03-02T13:53:48
 # Schema: Provenance
 #
 # id: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/Provenance.yaml
@@ -34,7 +34,7 @@ dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 # Namespaces
 DCE = CurieNamespace('dce', 'http://purl.org/dc/elements/1.1/')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
-SDO = CurieNamespace('sdo', 'http://example.org/UNKNOWN/sdo/')
+SDO = CurieNamespace('sdo', 'https://schema.org/')
 DEFAULT_ = CurieNamespace('', 'https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/Provenance.yaml/')
 
 

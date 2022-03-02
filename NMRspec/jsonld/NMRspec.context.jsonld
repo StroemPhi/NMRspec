@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from NMRspec.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-03-02T11:43:10\n    Schema: NMRspec\n    metamodel version: 1.7.0\n    model version: 0.0.1\n    \n    id: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/NMRspec.yaml\n    description: This model is to be used to semantify NMR spectroscopy research data.\n    license: https://creativecommons.org/licenses/by/4.0/\n    ",
+   "_comments": "Auto generated from NMRspec.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-03-02T13:53:21\n    Schema: NMRspec\n    metamodel version: 1.7.0\n    model version: 0.0.1\n    \n    id: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/NMRspec.yaml\n    description: This model is to be used to semantify NMR spectroscopy research data.\n    license: https://creativecommons.org/licenses/by/4.0/\n    ",
    "@context": {
       "FAIRspec": "https://github.com/IUPAC/IUPAC-FAIRSpec/blob/main/src/main/java/org/iupac/fairspec/core/",
       "NMRspec": "https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/",
@@ -53,10 +53,6 @@
       "skos": "http://www.w3.org/2004/02/skos/core#",
       "uo": "http://purl.obolibrary.org/obo/",
       "@vocab": "https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/",
-      "formula": {
-         "@type": "@id",
-         "@id": "iao:0000235"
-      },
       "inchi": {
          "@type": "@id",
          "@id": "iao:0000235"
@@ -74,6 +70,10 @@
          "@id": "iao:0000235"
       },
       "smiles": {
+         "@type": "@id",
+         "@id": "iao:0000235"
+      },
+      "formula": {
          "@type": "@id",
          "@id": "iao:0000235"
       },
@@ -118,6 +118,10 @@
       "output_of_nmr_assay": {
          "@type": "@id",
          "@id": "obi:0000312"
+      },
+      "assays_sample": {
+         "@type": "@id",
+         "@id": "iao:0000136"
       },
       "nmr_assay_records": {
          "@type": "@id",
@@ -235,6 +239,9 @@
       },
       "SMILES": {
          "@id": "cheminf:000018"
+      },
+      "SolventFormula": {
+         "@id": "cheminf:000042"
       },
       "Temperature": {
          "@id": "pato:0000146"

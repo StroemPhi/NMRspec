@@ -1,7 +1,7 @@
 model_organization: StroemPhi           # Name of github individual / organization where this clone exists (e.g. linkml / mygithub)   
 model_name:  NMRspec                    # Name of target repository (e.g. my-wonderful-model)
 root_schema: NMRspec                    # Name of the base schema file (w/o .yaml)
-model_root_class: NmrSpecRecord         # Name of the base class in the schema for testing
+model_root_class: NmrSpecRecordCollection         # Name of the base class in the schema for testing
 
 model_author: Philip Strömert                # Your name
 model_author_email: philip.stroemert@tib.eu          # Your email

@@ -1,5 +1,5 @@
 # Auto generated from NMRspec.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-03-02T11:43:35
+# Generation date: 2022-03-02T13:53:44
 # Schema: NMRspec
 #
 # id: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/NMRspec.yaml
@@ -333,7 +333,7 @@ class NmrSolvent(YAMLRoot):
 
     id: Union[str, NmrSolventId] = None
     name: Optional[str] = None
-    formula: Optional[Union[dict, "MolecularFormula"]] = None
+    formula: Optional[Union[dict, "SolventFormula"]] = None
     inchi: Optional[Union[dict, "InCHI"]] = None
     inchikey: Optional[Union[dict, "InCHIKey"]] = None
     smiles: Optional[Union[dict, "SMILES"]] = None
@@ -349,8 +349,8 @@ class NmrSolvent(YAMLRoot):
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)
 
-        if self.formula is not None and not isinstance(self.formula, MolecularFormula):
-            self.formula = MolecularFormula(**as_dict(self.formula))
+        if self.formula is not None and not isinstance(self.formula, SolventFormula):
+            self.formula = SolventFormula(**as_dict(self.formula))
 
         if self.inchi is not None and not isinstance(self.inchi, InCHI):
             self.inchi = InCHI(**as_dict(self.inchi))
@@ -645,6 +645,24 @@ class MolecularFormula(YAMLRoot):
 
 
 @dataclass
+class SolventFormula(MolecularFormula):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = CHEMINF["000042"]
+    class_class_curie: ClassVar[str] = "cheminf:000042"
+    class_name: ClassVar[str] = "SolventFormula"
+    class_model_uri: ClassVar[URIRef] = NMRSPEC.SolventFormula
+
+    has_representation: Optional[Union[str, "AllowedSolvents"]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.has_representation is not None and not isinstance(self.has_representation, AllowedSolvents):
+            self.has_representation = AllowedSolvents(self.has_representation)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
 class InCHI(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -818,6 +836,7 @@ class NmrSpecRecordCollection(YAMLRoot):
 
     id: Union[str, NmrSpecRecordCollectionId] = None
     nmr_assay_records: Union[Dict[Union[str, NmrSpecRecordId], Union[dict, NmrSpecRecord]], List[Union[dict, NmrSpecRecord]]] = empty_dict()
+    assays_sample: Union[dict, NmrSample] = None
     source: str = None
     description: Optional[str] = None
     source_uri: Optional[Union[str, URIorCURIE]] = None
@@ -835,6 +854,11 @@ class NmrSpecRecordCollection(YAMLRoot):
         if self._is_empty(self.nmr_assay_records):
             self.MissingRequiredField("nmr_assay_records")
         self._normalize_inlined_as_list(slot_name="nmr_assay_records", slot_type=NmrSpecRecord, key_name="id", keyed=True)
+
+        if self._is_empty(self.assays_sample):
+            self.MissingRequiredField("assays_sample")
+        if not isinstance(self.assays_sample, NmrSample):
+            self.assays_sample = NmrSample(**as_dict(self.assays_sample))
 
         if self._is_empty(self.source):
             self.MissingRequiredField("source")
@@ -1085,6 +1109,14 @@ class TemperatureUnit(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="TemperatureUnit",
+    )
+
+class AllowedSolvents(EnumDefinitionImpl):
+
+    CDCL3 = PermissibleValue(text="CDCL3")
+
+    _defn = EnumDefinition(
+        name="AllowedSolvents",
     )
 
 # Slots

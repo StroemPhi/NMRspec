@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Slot: formula - This model is to be used to semantify NMR spectroscopy research data.</title>
+  <title>Class: SolventFormula - This model is to be used to semantify NMR spectroscopy research data.</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Slot: formula";
-    var mkdocs_page_input_path = "chemicalDescriptor__formula.md";
+    var mkdocs_page_name = "Class: SolventFormula";
+    var mkdocs_page_input_path = "SolventFormula.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -79,7 +79,7 @@
     
       
     
-    <li>Slot: formula</li>
+    <li>Class: SolventFormula</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -91,18 +91,25 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="slot-formula">Slot: formula</h1>
-<p>URI: <a href="https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/chemicalDescriptor__formula">NMRspec:chemicalDescriptor__formula</a></p>
-<h2 id="domain-and-range">Domain and Range</h2>
-<p>None &#8594;  <sub>0..1</sub> <a href="../MolecularFormula/">MolecularFormula</a></p>
+                <h1 id="class-solventformula">Class: SolventFormula</h1>
+<p>URI: <a href="https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/SolventFormula">NMRspec:SolventFormula</a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[NmrSolvent]++-%20formula%200..1&gt;[SolventFormula&#124;has_representation:AllowedSolvents%20%3F],[MolecularFormula]^-[SolventFormula],[NmrSolvent],[MolecularFormula]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[NmrSolvent]++-%20formula%200..1&gt;[SolventFormula&#124;has_representation:AllowedSolvents%20%3F],[MolecularFormula]^-[SolventFormula],[NmrSolvent],[MolecularFormula]" /></a></p>
 <h2 id="parents">Parents</h2>
-<h2 id="children">Children</h2>
-<h2 id="used-by">Used by</h2>
 <ul>
-<li><a href="../ChemicalDescriptor/">ChemicalDescriptor</a></li>
-<li><a href="../NmrBuffer/">NmrBuffer</a></li>
-<li><a href="../NmrSample/">NmrSample</a></li>
-<li><a href="../NmrSolvent/">NmrSolvent</a></li>
+<li>is_a: <a href="../MolecularFormula/">MolecularFormula</a></li>
+</ul>
+<h2 id="referenced-by-class">Referenced by Class</h2>
+<ul>
+<li><strong><a href="../NmrSolvent/">NmrSolvent</a></strong> <em><a href="../NmrSolvent_formula/">NmrSolvent➞formula</a></em>  <sub>0..1</sub>  <strong><a href="./">SolventFormula</a></strong></li>
+</ul>
+<h2 id="attributes">Attributes</h2>
+<h3 id="own">Own</h3>
+<ul>
+<li><a href="../SolventFormula_has_representation/">SolventFormula➞has_representation</a>  <sub>0..1</sub><ul>
+<li>Description: 'has representation' is a data property that attaches between an information content entity and a value that contains linguistically or computationally coded text.</li>
+<li>Range: <a href="../AllowedSolvents/">AllowedSolvents</a></li>
+</ul>
+</li>
 </ul>
 <h2 id="other-properties">Other properties</h2>
 <table>
@@ -117,12 +124,7 @@
 <tr>
 <td><strong>Mappings:</strong></td>
 <td></td>
-<td>iao:0000235</td>
-</tr>
-<tr>
-<td><strong>Close Mappings:</strong></td>
-<td></td>
-<td>chebi:fornula</td>
+<td>cheminf:000042</td>
 </tr>
 </tbody>
 </table>

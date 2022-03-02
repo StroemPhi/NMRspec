@@ -7,9 +7,11 @@ version: 0.0.1
 prefixes:
   linkml: https://w3id.org/linkml/
   dce: http://purl.org/dc/elements/1.1/
+  sdo: https://schema.org/
 
 default_curi_maps:
  - semweb_context
+default_range: string
 
 imports:
  - linkml:types

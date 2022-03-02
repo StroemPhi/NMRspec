@@ -94,7 +94,7 @@
                 <h1 id="class-nmrspecrecordcollection">Class: NmrSpecRecordCollection</h1>
 <p>This class represents a collection of NMR spectroscopy records. It is to be used when multiple NMR assays were made in order to analyse a given sample.</p>
 <p>URI: <a href="https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/NmrSpecRecordCollection">NMRspec:NmrSpecRecordCollection</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Provenance],[NmrSpecRecord]&lt;nmr_assay_records%201..*-++[NmrSpecRecordCollection&#124;description:string%20%3F;source:string;source_uri:uriorcurie%20%3F;date_created:datetime%20%3F;licence_str:string%20%3F;licence_url:uriorcurie%20%3F;id:uriorcurie;name:string%20%3F],[NmrSpecRecordCollection]uses%20-.-&gt;[Provenance],[NmrSpecRecordCollection]uses%20-.-&gt;[NamedThing],[NmrSpecRecord],[NamedThing]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Provenance],[NmrSpecRecord]&lt;nmr_assay_records%201..*-++[NmrSpecRecordCollection&#124;description:string%20%3F;source:string;source_uri:uriorcurie%20%3F;date_created:datetime%20%3F;licence_str:string%20%3F;licence_url:uriorcurie%20%3F;id:uriorcurie;name:string%20%3F],[NmrSpecRecordCollection]uses%20-.-&gt;[Provenance],[NmrSpecRecordCollection]uses%20-.-&gt;[NamedThing],[NmrSpecRecord],[NamedThing]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Provenance],[NmrSample]&lt;assays_sample%201..1-++[NmrSpecRecordCollection&#124;description:string%20%3F;source:string;source_uri:uriorcurie%20%3F;date_created:datetime%20%3F;licence_str:string%20%3F;licence_url:uriorcurie%20%3F;id:uriorcurie;name:string%20%3F],[NmrSpecRecord]&lt;nmr_assay_records%201..*-++[NmrSpecRecordCollection],[NmrSpecRecordCollection]uses%20-.-&gt;[Provenance],[NmrSpecRecordCollection]uses%20-.-&gt;[NamedThing],[NmrSpecRecord],[NmrSample],[NamedThing]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Provenance],[NmrSample]&lt;assays_sample%201..1-++[NmrSpecRecordCollection&#124;description:string%20%3F;source:string;source_uri:uriorcurie%20%3F;date_created:datetime%20%3F;licence_str:string%20%3F;licence_url:uriorcurie%20%3F;id:uriorcurie;name:string%20%3F],[NmrSpecRecord]&lt;nmr_assay_records%201..*-++[NmrSpecRecordCollection],[NmrSpecRecordCollection]uses%20-.-&gt;[Provenance],[NmrSpecRecordCollection]uses%20-.-&gt;[NamedThing],[NmrSpecRecord],[NmrSample],[NamedThing]" /></a></p>
 <h2 id="uses-mixin">Uses Mixin</h2>
 <ul>
 <li>mixin: <a href="../Provenance/">Provenance</a> - This is a mixin to be used by any class that is needed as part of an audit trail to ensure the provenance of the metadata.</li>
@@ -106,6 +106,11 @@
 <ul>
 <li><a href="../nmrSpecRecordCollection__nmr_assay_records/">NmrSpecRecordCollection➞nmr_assay_records</a>  <sub>1..*</sub><ul>
 <li>Range: <a href="../NmrSpecRecord/">NmrSpecRecord</a></li>
+</ul>
+</li>
+<li><a href="../nmrSpecRecordCollection__assays_sample/">➞assays_sample</a>  <sub>1..1</sub><ul>
+<li>Description: This property is used to provide metadata on the assayed NMR sample.</li>
+<li>Range: <a href="../NmrSample/">NmrSample</a></li>
 </ul>
 </li>
 </ul>
