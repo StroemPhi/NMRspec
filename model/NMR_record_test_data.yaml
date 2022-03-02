@@ -59,7 +59,7 @@ nmr_assay_records:
           solvent:
             # derived from .dx file
             formula: 
-              has_representation: CDCL3 
+              has_representation: CDCl3 
             # dependent on user input, script or some resolver
             id: chebi:85365
             iupac_name:

@@ -538,6 +538,6 @@ enums:
       Kelvin:
   AllowedSolvents:
     permissible_values:
-      CDCL3:
+      CDCl3:
 
 

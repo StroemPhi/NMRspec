@@ -2,7 +2,8 @@ __all__ = ["MolecularFormula", "IUPACname", "InCHI", "InCHIKey", "SMILES", "MOLf
            "NmrSample", "NmrSolvent", "NmrSolution",
            "MolarConcentration", "PhValue", "Temperature",
            "MolarityMeasurementDatum", "PhMeasurementDatum","TemperatureMeasurementDatum",
-           "NmrSpecRecord", "NmrSpecRecordCollection", "MolarityUnit"]
+           "NmrSpecRecord", "NmrSpecRecordCollection", "MolarityUnit", "Provenance"]
 from NMRspec.NMRspec import *
+from NMRspec.Provenance import *
 
 

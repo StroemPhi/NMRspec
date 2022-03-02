@@ -3,7 +3,7 @@
       "AllowedSolvents": {
          "description": "",
          "enum": [
-            "CDCL3"
+            "CDCl3"
          ],
          "title": "AllowedSolvents",
          "type": "string"

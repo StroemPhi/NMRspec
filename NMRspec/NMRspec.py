@@ -1,5 +1,5 @@
 # Auto generated from NMRspec.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-03-02T14:46:46
+# Generation date: 2022-03-02T16:34:12
 # Schema: NMRspec
 #
 # id: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/NMRspec.yaml
@@ -1113,7 +1113,7 @@ class TemperatureUnit(EnumDefinitionImpl):
 
 class AllowedSolvents(EnumDefinitionImpl):
 
-    CDCL3 = PermissibleValue(text="CDCL3")
+    CDCl3 = PermissibleValue(text="CDCl3")
 
     _defn = EnumDefinition(
         name="AllowedSolvents",
