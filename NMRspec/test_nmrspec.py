@@ -17,8 +17,8 @@ solvent1 = NmrSolvent(id=solvent_id, formula=solvent_formula, iupac_name=solvent
 
 solution1 = NmrSolution(solvent=solvent1, sample=sample1,
                         measured_molarity=MolarConcentration(
-                            is_quality_measured_as=MolarityMeasurementDatum(value=21.55, unit="molar")),
-                        measured_pH=PhValue(is_quality_measured_as=PhMeasurementDatum(value=7.5, unit="pH")))
+                            measured_as=MolarityMeasurementDatum(value=21.55, unit="molar")),
+                        measured_pH=PhValue(measured_as=PhMeasurementDatum(value=7.5, unit="pH")))
 
 print("##################################################")
 print(yaml_dumper.dumps(solution1))

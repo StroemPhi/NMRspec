@@ -47,11 +47,11 @@ nmr_assay_records:
       ##################
         solution:
           measured_molarity: # has quality
-            is_quality_measured_as: 
+            measured_as: 
               value: 21.55
               unit: molar
           measured_pH:
-            is_quality_measured_as:
+            measured_as:
               value: 7.5
               unit: pH
           sample:
@@ -61,7 +61,7 @@ nmr_assay_records:
             formula: 
               has_representation: CDCL3 
             # dependent on user input, script or some resolver
-            id: chebi:85365 
+            id: chebi:85365
             iupac_name:
               has_representation: trichloro((2)H)methane
             name: deuterated chloroform
@@ -75,6 +75,6 @@ nmr_assay_records:
             manufactured_by:
               name: Bruker
             measured_temperature:
-              is_quality_measured_as:
+              measured_as:
                 value: 300.0006
                 unit: Kelvin
