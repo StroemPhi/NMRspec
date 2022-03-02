@@ -5,11 +5,10 @@ name = "pypi"
 
 [packages]
 linkml-runtime = "~=1.0, >=1.0.3"
+jcamp = "*"
 
 [dev-packages]
 tox = "*"
 
 [pipenv]
 allow_prereleases = true
-
-
