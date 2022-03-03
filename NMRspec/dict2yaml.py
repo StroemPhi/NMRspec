@@ -89,7 +89,7 @@ def get_solvent(jdx_dict) -> NmrSolvent:
                          iupac_name=IUPACname(has_representation=solvent_dict['iupac_name']),
                          smiles=SMILES(has_representation=solvent_dict['smiles']))
     return solvent
-solvent = get_solvent(solvent_name)
+solvent = get_solvent(jdx_dict)
 if debug is True:
     print(f"parsed solvent:\n{solvent}")
 
