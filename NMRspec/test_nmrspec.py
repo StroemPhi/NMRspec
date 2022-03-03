@@ -24,14 +24,14 @@ def parse_jdx(filepath="jdx_files"):
         pprint(jcamp_dict)
 
         jcamp_keys = sorted(list(jcamp_dict.keys()))  # jcamp_keys are the jcamp lib captured keys var from cell above
-        found_keys_regex = capture_keys_regex(f".\jdx_files\\{fn}")
+        found_keys_regex = capture_keys_regex(f".\{filepath}\\{fn}")
 
         missing_jcamp_keys = [k for k in found_keys_regex if k not in jcamp_keys]
         print(f'\nMissing keys: {missing_jcamp_keys}\n')
     return jcamp_dict
 
 
-jdx_data = parse_jdx()
+jdx_data = parse_jdx("NMRspec\jdx_files")
 #print(jdx_data['.solvent name'])
 
 
