@@ -1,13 +1,5 @@
 {
    "$defs": {
-      "AllowedSolvents": {
-         "description": "",
-         "enum": [
-            "CDCl3"
-         ],
-         "title": "AllowedSolvents",
-         "type": "string"
-      },
       "Dimension": {
          "description": "The dimensionality of the produced spectrum.",
          "enum": [
@@ -312,7 +304,7 @@
          "description": "",
          "properties": {
             "formula": {
-               "$ref": "#/$defs/SolventFormula"
+               "$ref": "#/$defs/MolecularFormula"
             },
             "id": {
                "type": "string"
@@ -347,6 +339,10 @@
          "additionalProperties": false,
          "description": "This is the tree root node of the schema. It is a data item that serves as a container for all relevant information about *one* NMR spectroscopy assay record. The properties of this class represent the required metadata of an NMR assay, such as:  * what kind of assay was performed (e.g. 2D 13C COSY) and what devices where used for that (e.g. spectrometer, magnet, solvent, buffer, ...) * what are the detail infos of the assayed sample (name, formula, structure, concentration, preperation process, ...)",
          "properties": {
+            "created_by": {
+               "description": "the creator of the ressource",
+               "type": "string"
+            },
             "date_created": {
                "description": "The date on which the source file was processed according to this schema.",
                "format": "date-time",
@@ -398,6 +394,10 @@
             "assays_sample": {
                "$ref": "#/$defs/NmrSample",
                "description": "This property is used to provide metadata on the assayed NMR sample."
+            },
+            "created_by": {
+               "description": "the creator of the ressource",
+               "type": "string"
             },
             "date_created": {
                "description": "The date on which the source file was processed according to this schema.",
@@ -637,19 +637,6 @@
          },
          "required": [],
          "title": "SMILES",
-         "type": "object"
-      },
-      "SolventFormula": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {
-            "has_representation": {
-               "$ref": "#/$defs/AllowedSolvents",
-               "description": "'has representation' is a data property that attaches between an information content entity and a value that contains linguistically or computationally coded text."
-            }
-         },
-         "required": [],
-         "title": "SolventFormula",
          "type": "object"
       },
       "Temperature": {

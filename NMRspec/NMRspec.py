@@ -1,5 +1,5 @@
 # Auto generated from NMRspec.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-03-02T16:34:12
+# Generation date: 2022-03-03T14:46:34
 # Schema: NMRspec
 #
 # id: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/NMRspec.yaml
@@ -333,7 +333,7 @@ class NmrSolvent(YAMLRoot):
 
     id: Union[str, NmrSolventId] = None
     name: Optional[str] = None
-    formula: Optional[Union[dict, "SolventFormula"]] = None
+    formula: Optional[Union[dict, "MolecularFormula"]] = None
     inchi: Optional[Union[dict, "InCHI"]] = None
     inchikey: Optional[Union[dict, "InCHIKey"]] = None
     smiles: Optional[Union[dict, "SMILES"]] = None
@@ -349,8 +349,8 @@ class NmrSolvent(YAMLRoot):
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)
 
-        if self.formula is not None and not isinstance(self.formula, SolventFormula):
-            self.formula = SolventFormula(**as_dict(self.formula))
+        if self.formula is not None and not isinstance(self.formula, MolecularFormula):
+            self.formula = MolecularFormula(**as_dict(self.formula))
 
         if self.inchi is not None and not isinstance(self.inchi, InCHI):
             self.inchi = InCHI(**as_dict(self.inchi))
@@ -645,24 +645,6 @@ class MolecularFormula(YAMLRoot):
 
 
 @dataclass
-class SolventFormula(MolecularFormula):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = CHEMINF["000042"]
-    class_class_curie: ClassVar[str] = "cheminf:000042"
-    class_name: ClassVar[str] = "SolventFormula"
-    class_model_uri: ClassVar[URIRef] = NMRSPEC.SolventFormula
-
-    has_representation: Optional[Union[str, "AllowedSolvents"]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.has_representation is not None and not isinstance(self.has_representation, AllowedSolvents):
-            self.has_representation = AllowedSolvents(self.has_representation)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
 class InCHI(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -782,6 +764,7 @@ class NmrSpecRecord(YAMLRoot):
     date_created: Optional[Union[str, XSDDateTime]] = None
     licence_str: Optional[str] = None
     licence_url: Optional[Union[str, URIorCURIE]] = None
+    created_by: Optional[str] = None
     name: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -815,6 +798,9 @@ class NmrSpecRecord(YAMLRoot):
         if self.licence_url is not None and not isinstance(self.licence_url, URIorCURIE):
             self.licence_url = URIorCURIE(self.licence_url)
 
+        if self.created_by is not None and not isinstance(self.created_by, str):
+            self.created_by = str(self.created_by)
+
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)
 
@@ -843,6 +829,7 @@ class NmrSpecRecordCollection(YAMLRoot):
     date_created: Optional[Union[str, XSDDateTime]] = None
     licence_str: Optional[str] = None
     licence_url: Optional[Union[str, URIorCURIE]] = None
+    created_by: Optional[str] = None
     name: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -879,6 +866,9 @@ class NmrSpecRecordCollection(YAMLRoot):
 
         if self.licence_url is not None and not isinstance(self.licence_url, URIorCURIE):
             self.licence_url = URIorCURIE(self.licence_url)
+
+        if self.created_by is not None and not isinstance(self.created_by, str):
+            self.created_by = str(self.created_by)
 
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)
@@ -1109,14 +1099,6 @@ class TemperatureUnit(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="TemperatureUnit",
-    )
-
-class AllowedSolvents(EnumDefinitionImpl):
-
-    CDCl3 = PermissibleValue(text="CDCl3")
-
-    _defn = EnumDefinition(
-        name="AllowedSolvents",
     )
 
 # Slots

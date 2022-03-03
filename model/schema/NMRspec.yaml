@@ -183,8 +183,6 @@ classes:
       name:
         close_mappings:
           - jdx:SOLVENT_NAME
-      formula:
-        range: SolventFormula
   NmrBuffer:
     mixins:
       - ChemicalDescriptor
@@ -288,12 +286,6 @@ classes:
     class_uri: cheminf:000042
     slots:
       - has_representation
-  SolventFormula:
-    is_a: MolecularFormula
-    class_uri: cheminf:000042
-    slot_usage:
-      has_representation:
-        range: AllowedSolvents
   InCHI:
     class_uri: cheminf:000113
     slots:
@@ -536,8 +528,5 @@ enums:
       Celsius:
         meaning: uo:0000027
       Kelvin:
-  AllowedSolvents:
-    permissible_values:
-      CDCl3:
 
 

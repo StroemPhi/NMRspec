@@ -52,7 +52,7 @@ classes:
         domain: Provenance
         range: uriorcurie
       created_by:
-        slot_uri: dct:creator
+        slot_uri: dce:creator
         description: the creator of the ressource
         domain: Provenance
         range: string

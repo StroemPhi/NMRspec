@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from NMRspec.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-03-02T16:33:47\n    Schema: NMRspec\n    metamodel version: 1.7.0\n    model version: 0.0.1\n    \n    id: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/NMRspec.yaml\n    description: This model is to be used to semantify NMR spectroscopy research data.\n    license: https://creativecommons.org/licenses/by/4.0/\n    ",
+   "_comments": "Auto generated from NMRspec.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-03-03T14:46:11\n    Schema: NMRspec\n    metamodel version: 1.7.0\n    model version: 0.0.1\n    \n    id: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/NMRspec.yaml\n    description: This model is to be used to semantify NMR spectroscopy research data.\n    license: https://creativecommons.org/licenses/by/4.0/\n    ",
    "@context": {
       "FAIRspec": "https://github.com/IUPAC/IUPAC-FAIRSpec/blob/main/src/main/java/org/iupac/fairspec/core/",
       "NMRspec": "https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/",
@@ -131,6 +131,9 @@
          "@type": "@id",
          "@id": "bfo:0000051"
       },
+      "created_by": {
+         "@id": "dce:creator"
+      },
       "date_created": {
          "@type": "xsd:dateTime",
          "@id": "sdo:dateCreated"
@@ -239,9 +242,6 @@
       },
       "SMILES": {
          "@id": "cheminf:000018"
-      },
-      "SolventFormula": {
-         "@id": "cheminf:000042"
       },
       "Temperature": {
          "@id": "pato:0000146"
