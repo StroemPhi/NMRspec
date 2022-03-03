@@ -17,7 +17,7 @@ sample = yaml_loader.loads(source="NMRspec/jdx_files/sample_info.yaml", target_c
 # load the jdx data into a dict
 jdx_dict = jdx2dict(filepath="NMRspec/jdx_files/SG-V3259 (41-52)_10.dx")
 
-# get solvent from jdx
+# get solvent from jdx_dict
 def get_solvent(jdx_dict) -> NmrSolvent:
     """A function to get the detail infos on the solvent bases on looking up the value provided in the JCAMP-DX file
     in the dictionary "nmrSolvents" defined here. As the value in the .jdx could be a synonym of the name,
@@ -88,9 +88,11 @@ def get_solvent(jdx_dict) -> NmrSolvent:
                          inchikey=InCHIKey(has_representation=solvent_dict['inchikey']),
                          iupac_name=IUPACname(has_representation=solvent_dict['iupac_name']),
                          smiles=SMILES(has_representation=solvent_dict['smiles']))
+    if debug is True:
+        print(f"parsed solvent:\n{solvent}")
+
     return solvent
 solvent = get_solvent(jdx_dict)
-if debug is True:
-    print(f"parsed solvent:\n{solvent}")
+
 
 
