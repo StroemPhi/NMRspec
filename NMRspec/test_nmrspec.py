@@ -7,7 +7,7 @@ from pprint import pprint
 
 
 def capture_keys_regex(filename):
-    """Some function André wrote to get the JCAMP-DX keys"""
+    """A function to get the JCAMP-DX keys"""
     with open(filename, "r") as jdx:
         jdx_content = jdx.read()
     exp_jdx_keys = re.compile(r'^##(?P<key>.*?)=', re.M)
@@ -16,23 +16,25 @@ def capture_keys_regex(filename):
     return found_keys
 
 
-def parse_jdx(filepath="jdx_files"):
+def parse_jdx_folder(filepath="NMRspec\jdx_files"):
     """A function to parse JCAMP files contained in the passed filepath"""
     for fn in os.listdir(f".\{filepath}\\"):
-        print(f"--------\n.\{filepath}\\{fn}\n")
-        jcamp_dict = JCAMP_reader(f".\{filepath}\\{fn}")
-        pprint(jcamp_dict)
+        if ".dx" or ".jdx" in fn:
+            parse_jdx(f"{filepath}\\{fn}")
 
-        jcamp_keys = sorted(list(jcamp_dict.keys()))  # jcamp_keys are the jcamp lib captured keys var from cell above
-        found_keys_regex = capture_keys_regex(f".\{filepath}\\{fn}")
 
-        missing_jcamp_keys = [k for k in found_keys_regex if k not in jcamp_keys]
-        print(f'\nMissing keys: {missing_jcamp_keys}\n')
+def parse_jdx(filepath="NMRspec\jdx_files\SG-V3259 (41-52)_11.jdx"):
+    print(f"\nprocessing file: '{filepath}'")
+    jcamp_dict = JCAMP_reader(f"{filepath}")
+    # pprint(jcamp_dict)
+    print(f"test output: SOLVENT --> '{jcamp_dict['.solvent name']}'")
+
+    jcamp_keys = sorted(list(jcamp_dict.keys()))  # jcamp_keys are the jcamp lib captured keys var from cell above
+    found_keys_regex = capture_keys_regex(f"{filepath}")
+
+    missing_jcamp_keys = [k for k in found_keys_regex if k not in jcamp_keys]
+    # print(f'\nMissing keys: {missing_jcamp_keys}\n')
     return jcamp_dict
-
-
-jdx_data = parse_jdx("NMRspec\jdx_files")
-#print(jdx_data['.solvent name'])
 
 
 def set_solvent_info(id=None, local_id=None, formula=None, iupac_name=None, name=None):
@@ -51,6 +53,10 @@ def set_sample_info(id=None, local_id=None, formula=None, iupac_name=None):
                        iupac_name=IUPACname(has_representation=iupac_name))
     return sample
 
+
+# parse jdx files into dict
+jdx_data = parse_jdx()
+# print(jdx_data['.solvent name'])
 
 # Setting some test data values
 provenance_info1 = Provenance(
@@ -71,5 +77,5 @@ solution1 = NmrSolution(solvent=solvent1, sample=sample1,
                             measured_as=MolarityMeasurementDatum(value=21.55, unit="molar")),
                         measured_pH=PhValue(measured_as=PhMeasurementDatum(value=7.5, unit="pH")))
 
-print("##################################################")
-print(yaml_dumper.dumps(solution1))
+# print("##################################################")
+# print(yaml_dumper.dumps(solution1))
