@@ -1642,7 +1642,7 @@ $$ INSTRUM           spect
 $$ PROBHD   Z116098_0570 (              
 $$ PULPROG            zg30              
 $$ TD                65536              
-$$ SOLVENT           CDCl3
+$$ SOLVENT           CDCl3              
 $$ NS                   16              
 $$ DS                    2              
 $$ SWH            8012.820 Hz           
