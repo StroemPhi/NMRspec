@@ -1,5 +1,5 @@
 # Auto generated from Provenance.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-03-02T16:34:16
+# Generation date: 2022-03-03T10:33:52
 # Schema: Provenance
 #
 # id: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/Provenance.yaml
@@ -33,6 +33,7 @@ dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
 DCE = CurieNamespace('dce', 'http://purl.org/dc/elements/1.1/')
+DCT = CurieNamespace('dct', 'http://example.org/UNKNOWN/dct/')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
 SDO = CurieNamespace('sdo', 'https://schema.org/')
 DEFAULT_ = CurieNamespace('', 'https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/Provenance.yaml/')
@@ -63,6 +64,7 @@ class Provenance(YAMLRoot):
     date_created: Optional[Union[str, XSDDateTime]] = None
     licence_str: Optional[str] = None
     licence_url: Optional[Union[str, URIorCURIE]] = None
+    created_by: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.source):
@@ -84,6 +86,9 @@ class Provenance(YAMLRoot):
 
         if self.licence_url is not None and not isinstance(self.licence_url, URIorCURIE):
             self.licence_url = URIorCURIE(self.licence_url)
+
+        if self.created_by is not None and not isinstance(self.created_by, str):
+            self.created_by = str(self.created_by)
 
         super().__post_init__(**kwargs)
 

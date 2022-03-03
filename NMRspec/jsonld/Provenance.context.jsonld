@@ -1,13 +1,17 @@
 {
-   "_comments": "Auto generated from Provenance.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-03-02T16:33:51\n    Schema: Provenance\n    metamodel version: 1.7.0\n    model version: 0.0.1\n    \n    id: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/Provenance.yaml\n    description: Provenance mixin\n    license: https://creativecommons.org/licenses/by/4.0/\n    ",
+   "_comments": "Auto generated from Provenance.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-03-03T10:33:34\n    Schema: Provenance\n    metamodel version: 1.7.0\n    model version: 0.0.1\n    \n    id: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/Provenance.yaml\n    description: Provenance mixin\n    license: https://creativecommons.org/licenses/by/4.0/\n    ",
    "@context": {
       "Provenance": {
          "@id": "https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/Provenance.yaml/Provenance"
       },
       "dce": "http://purl.org/dc/elements/1.1/",
+      "dct": "http://example.org/UNKNOWN/dct/",
       "linkml": "https://w3id.org/linkml/",
       "sdo": "https://schema.org/",
       "@vocab": "https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/Provenance.yaml/",
+      "created_by": {
+         "@id": "dct:creator"
+      },
       "date_created": {
          "@type": "xsd:dateTime",
          "@id": "sdo:dateCreated"

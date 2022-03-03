@@ -51,4 +51,9 @@ classes:
         description: the licence of the ingested raw data in machine readable format as URL
         domain: Provenance
         range: uriorcurie
+      created_by:
+        slot_uri: dct:creator
+        description: the creator of the ressource
+        domain: Provenance
+        range: string
     todos: # defined with PROVO or other adequate slot_uris
