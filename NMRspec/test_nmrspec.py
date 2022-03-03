@@ -16,7 +16,7 @@ def capture_keys_regex(filename):
     return found_keys
 
 
-def parse_jdx_folder(filepath="NMRspec\jdx_files"):
+def read_files_from_folder(filepath="NMRspec\jdx_files"):
     """A function to parse JCAMP files contained in the passed filepath"""
     for fn in os.listdir(f".\{filepath}\\"):
         if ".dx" or ".jdx" in fn:
@@ -29,9 +29,9 @@ def parse_jdx(filepath="NMRspec\jdx_files\SG-V3259 (41-52)_11.jdx"):
     # pprint(jcamp_dict)
     print(f"test output: SOLVENT --> '{jcamp_dict['.solvent name']}'")
 
+    # NOTE
     jcamp_keys = sorted(list(jcamp_dict.keys()))  # jcamp_keys are the jcamp lib captured keys var from cell above
     found_keys_regex = capture_keys_regex(f"{filepath}")
-
     missing_jcamp_keys = [k for k in found_keys_regex if k not in jcamp_keys]
     # print(f'\nMissing keys: {missing_jcamp_keys}\n')
     return jcamp_dict
