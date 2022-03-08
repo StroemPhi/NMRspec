@@ -95,14 +95,16 @@ def get_assay_data(jdx_dict) -> PulsedNmrAssay:
     print(f"----\nassay_date: {get_assay_date()}")
 
     # parse the manufacturer in the jdx, by looking for its name in any of the jdx fields
+    # TODO: make the list a list of dicts by adding websites to each manufacturer as default values,
+    #  analog to nmr_solvents and nmr_pulse_programs
     def get_manufacturer() -> Manufacturer:
-        nmrManufacturers = ["Acorn NMR Inc", "Agilent Technologies", "Applied Biosystems", "Bruker", "Doty Scientific",
+        nmr_manufacturers = ["Acorn NMR Inc", "Agilent Technologies", "Applied Biosystems", "Bruker", "Doty Scientific",
                             "FOSS", "General Electric", "JEOL", "JS Research", "Jasco", "Kimble Chase", "MR Resources",
                             "OceanOptics", "Oxford Instruments", "Perkin Elmer", "Phillips", "Siemens AG",
                             "Spinlock SRL",
                             "TX", "ThermoFinnigan", "ThermoMattson", "ThermoNicolet", "Varian", "Waters", "Wilmad",
                             "acdlabs", "micromass", "tecmag"]
-        for possible_manufacturer in nmrManufacturers:
+        for possible_manufacturer in nmr_manufacturers:
             if in_dict(jdx_dict, possible_manufacturer):
                 manufacturer = Manufacturer(name=possible_manufacturer)
         return manufacturer
