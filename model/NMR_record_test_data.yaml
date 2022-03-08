@@ -29,7 +29,8 @@ nmr_assay_records:
     # dependent on user input
     - id: doi:10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N/CHMO0000595 
       source_uri: doi:10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N/CHMO0000595
-      source: Chemotion Repository
+      source: 
+        - Chemotion Repository
       licence_str: Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
       licence_url: https://creativecommons.org/licenses/by-sa/4.0/
       description: A test record of the metadata associated with a pulsed NMR spectroscopy assay according to the schema defined in https://github.com/StroemPhi/NMRspec/tree/main/model/schema/NMRspec.yaml

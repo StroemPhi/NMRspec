@@ -372,7 +372,10 @@
             },
             "source": {
                "description": "This property is used to describe the source of the data as string (e.g. \"Chemotion Repository\").",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "source_uri": {
                "description": "This property can be used to provide the URL or CURIE of the the source file, if it has one.",
@@ -430,7 +433,10 @@
             },
             "source": {
                "description": "This property is used to describe the source of the data as string (e.g. \"Chemotion Repository\").",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "source_uri": {
                "description": "This property can be used to provide the URL or CURIE of the the source file, if it has one.",

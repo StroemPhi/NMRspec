@@ -1,5 +1,5 @@
 # Auto generated from NMRspec.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-03-03T14:46:34
+# Generation date: 2022-03-03T23:27:52
 # Schema: NMRspec
 #
 # id: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/NMRspec.yaml
@@ -758,7 +758,7 @@ class NmrSpecRecord(YAMLRoot):
 
     id: Union[str, NmrSpecRecordId] = None
     output_of_nmr_assay: Union[dict, PulsedNmrAssay] = None
-    source: str = None
+    source: Union[str, List[str]] = None
     description: Optional[str] = None
     source_uri: Optional[Union[str, URIorCURIE]] = None
     date_created: Optional[Union[str, XSDDateTime]] = None
@@ -780,8 +780,9 @@ class NmrSpecRecord(YAMLRoot):
 
         if self._is_empty(self.source):
             self.MissingRequiredField("source")
-        if not isinstance(self.source, str):
-            self.source = str(self.source)
+        if not isinstance(self.source, list):
+            self.source = [self.source] if self.source is not None else []
+        self.source = [v if isinstance(v, str) else str(v) for v in self.source]
 
         if self.description is not None and not isinstance(self.description, str):
             self.description = str(self.description)
@@ -823,7 +824,7 @@ class NmrSpecRecordCollection(YAMLRoot):
     id: Union[str, NmrSpecRecordCollectionId] = None
     nmr_assay_records: Union[Dict[Union[str, NmrSpecRecordId], Union[dict, NmrSpecRecord]], List[Union[dict, NmrSpecRecord]]] = empty_dict()
     assays_sample: Union[dict, NmrSample] = None
-    source: str = None
+    source: Union[str, List[str]] = None
     description: Optional[str] = None
     source_uri: Optional[Union[str, URIorCURIE]] = None
     date_created: Optional[Union[str, XSDDateTime]] = None
@@ -849,8 +850,9 @@ class NmrSpecRecordCollection(YAMLRoot):
 
         if self._is_empty(self.source):
             self.MissingRequiredField("source")
-        if not isinstance(self.source, str):
-            self.source = str(self.source)
+        if not isinstance(self.source, list):
+            self.source = [self.source] if self.source is not None else []
+        self.source = [v if isinstance(v, str) else str(v) for v in self.source]
 
         if self.description is not None and not isinstance(self.description, str):
             self.description = str(self.description)
