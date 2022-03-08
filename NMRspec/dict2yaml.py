@@ -8,6 +8,7 @@ import os
 
 today_str = str(date.today())
 
+
 def get_solvent(jdx_dict) -> NmrSolvent:
     """A function to get the detail infos on the solvent bases on looking up the value provided in the JCAMP-DX file
     in the dictionary "nmrSolvents" defined here. As the value in the .jdx could be a synonym of the name,
@@ -82,6 +83,16 @@ def get_solvent(jdx_dict) -> NmrSolvent:
 
     return parsed_solvent
 
+
+def get_assay_data(jdx_dict) -> PulsedNmrAssay:
+    # parse the date of the assay
+    def get_assay_date(jdx: dict) -> str:
+        if 'long date' in jdx_dict.keys():
+            assay_date = str(jdx_dict['long date'])
+        elif 'longdate' in jdx_dict.keys():
+            assay_date = str(jdx_dict['longdate'])
+        return assay_date
+    print(f"----\nassay_date: {get_assay_date(jdx_dict)}")
 
 if __name__ == '__main__':
     # loading provenance metadata provided in manually generated files
