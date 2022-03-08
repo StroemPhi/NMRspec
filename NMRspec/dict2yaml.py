@@ -86,16 +86,16 @@ def get_solvent(jdx_dict) -> NmrSolvent:
 
 def get_assay_data(jdx_dict) -> PulsedNmrAssay:
     # parse the date of the assay
-    def get_assay_date(jdx: dict) -> str:
+    def get_assay_date() -> str:
         if 'long date' in jdx_dict.keys():
             assay_date = str(jdx_dict['long date'])
         elif 'longdate' in jdx_dict.keys():
             assay_date = str(jdx_dict['longdate'])
         return assay_date
-    print(f"----\nassay_date: {get_assay_date(jdx_dict)}")
+    print(f"----\nassay_date: {get_assay_date()}")
 
     # parse the manufacturer in the jdx, by looking for its name in any of the jdx fields
-    def get_manufacturer(jdx_dict) -> Manufacturer:
+    def get_manufacturer() -> Manufacturer:
         nmrManufacturers = ["Acorn NMR Inc", "Agilent Technologies", "Applied Biosystems", "Bruker", "Doty Scientific",
                             "FOSS", "General Electric", "JEOL", "JS Research", "Jasco", "Kimble Chase", "MR Resources",
                             "OceanOptics", "Oxford Instruments", "Perkin Elmer", "Phillips", "Siemens AG",
@@ -106,7 +106,7 @@ def get_assay_data(jdx_dict) -> PulsedNmrAssay:
             if in_dict(jdx_dict, possible_manufacturer):
                 manufacturer = Manufacturer(name=possible_manufacturer)
         return manufacturer
-    print(f"-----\nparsed manufacturer: {get_manufacturer(jdx_dict)}")
+    print(f"-----\nparsed manufacturer: {get_manufacturer()}")
 
     # parse the aquisition nuclei
     def get_aquisition_nuclei() -> list:
@@ -139,7 +139,7 @@ def get_assay_data(jdx_dict) -> PulsedNmrAssay:
 
 
     # parse pulse program
-    def get_pulse_program(jdx_dict) -> str:
+    def get_pulse_program() -> str:
         pulse_program = jdx_dict['.pulse sequence']
         print(pulse_program)
         nmr_pulse_programs = [{"name": "NMR", "bruker": ["zg30", "zgpg30"], "jeol": ["proton.jxp", "carbon.jxp"]},
@@ -216,7 +216,7 @@ def get_assay_data(jdx_dict) -> PulsedNmrAssay:
                 elif value == pulse_program:
                     pulse_program = possible_pulse_program['name']
         return pulse_program
-    print(f"-----\npulse program: {get_pulse_program(jdx_dict)}")
+    print(f"-----\npulse program: {get_pulse_program()}")
 
 
 
