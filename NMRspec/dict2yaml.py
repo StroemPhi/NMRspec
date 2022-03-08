@@ -3,10 +3,10 @@ from Provenance import *
 from linkml_runtime.dumpers import yaml_dumper
 from linkml_runtime.loaders import yaml_loader
 from datetime import date
-from jdx import jdx2dict
+from jdx import jdx2dict, in_dict
+import os
 
 today_str = str(date.today())
-debug = True
 
 def get_solvent(jdx_dict) -> NmrSolvent:
     """A function to get the detail infos on the solvent bases on looking up the value provided in the JCAMP-DX file
