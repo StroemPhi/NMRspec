@@ -138,6 +138,86 @@ def get_assay_data(jdx_dict) -> PulsedNmrAssay:
     print(f"-----\naquisition nuclei: {get_aquisition_nuclei()}")
 
 
+    # parse pulse program
+    def get_pulse_program(jdx_dict) -> str:
+        pulse_program = jdx_dict['.pulse sequence']
+        print(pulse_program)
+        nmr_pulse_programs = [{"name": "NMR", "bruker": ["zg30", "zgpg30"], "jeol": ["proton.jxp", "carbon.jxp"]},
+                              {"name": "COSY"},
+                              {"name": "COSY-DQF"},
+                              {"name": "COSY-DOSY"},
+                              {"name": "DOSY"},
+                              {"name": "SECSY"},
+                              {"name": "RELAY"},
+                              {"name": "TOCSY"},
+                              {"name": "ROESY"},
+                              {"name": "NOESY"},
+                              {"name": "Double-Quantum"},
+                              {"name": "J-Resolved"},
+                              {"name": "DEPT & INEPT"},
+                              {"name": "HECTOR"},
+                              {"name": "COLOC"},
+                              {"name": "Heteronuclear J-resolved"},
+                              {"name": "HOESY"},
+                              {"name": "INADEQUATE"},
+                              {"name": "Inverse 1H-NMR"},
+                              {"name": "HMQC"},
+                              {"name": "DEPT-HMQC"},
+                              {"name": "Multiplicity-edited HSQC"},
+                              {"name": "CT-HSQC"},
+                              {"name": "CT-HMBC"},
+                              {"name": "Inverse-INEPT"},
+                              {"name": "2D HSQC-α,β"},
+                              {"name": "2D IPAP-HSQC"},
+                              {"name": "2D J-modulated CT-HSQC"},
+                              {"name": "TROSY"},
+                              {"name": "CRINEPT"},
+                              {"name": "HMQC-COSY"},
+                              {"name": "H2BC"},
+                              {"name": "HQMC-TOSCY"},
+                              {"name": "HMQC-ROESY"},
+                              {"name": "HMQC-NOESY"},
+                              {"name": "HSQC-TOSCY"},
+                              {"name": "HSQC-ROESY"},
+                              {"name": "HSQC-NOESY"},
+                              {"name": "HMBC"},
+                              {"name": "Phase-sensitive HMBC"},
+                              {"name": "J-HMBC"},
+                              {"name": "Long-range HSQC (HSQMBC)"},
+                              {"name": "EXSIDE"},
+                              {"name": "HETLOC"},
+                              {"name": "HSQC-HECADE"},
+                              {"name": "ADEQUATE"},
+                              {"name": "1,1-ADEQUATE"},
+                              {"name": "1,n-ADEQUATE"},
+                              {"name": "n,1-ADEQUATE"},
+                              {"name": "n,n-ADEQUATE"},
+                              {"name": "STE"},
+                              {"name": "STEBP"},
+                              {"name": "STD-TOSCY"},
+                              {"name": "STD-NOESY"},
+                              {"name": "STD-HSQC"},
+                              {"name": "CLEANEX"},
+                              {"name": "CLEANEX-HSQC"},
+                              {"name": "CLEANEX-TROSY"},
+                              {"name": "DSTE"},
+                              {"name": "DSTEBP"},
+                              {"name": "DOSY-TOCSY"},
+                              {"name": "DOSY-NOESY"},
+                              {"name": "DOSY-HMQC"}]
+        for possible_pulse_program in nmr_pulse_programs:
+            for key, value in possible_pulse_program.items():
+                if key == "bruker":
+                    if pulse_program in value:
+                        pulse_program = possible_pulse_program['name']
+                if key == "jeol":
+                    if pulse_program in value:
+                        pulse_program = possible_pulse_program['name']
+                elif value == pulse_program:
+                    pulse_program = possible_pulse_program['name']
+        return pulse_program
+    print(f"-----\npulse program: {get_pulse_program(jdx_dict)}")
+
 
 
 if __name__ == '__main__':
@@ -163,4 +243,6 @@ if __name__ == '__main__':
     solution = NmrSolution(solvent=solvent, sample=sample)
     print(f"-----\ndeclared solution:\n{yaml_dumper.dumps(solution)}")
 
+    #get assay metadata from jdx_dict
+    get_assay_data(jdx_dict)
 
