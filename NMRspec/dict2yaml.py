@@ -8,16 +8,6 @@ from jdx import jdx2dict
 today_str = str(date.today())
 debug = True
 
-# Setting provenance metadata values from manually pre generated files
-assay_info = yaml_loader.loads(source="NMRspec/jdx_files/SG-V3259 (41-52)_10.yaml", target_class=Provenance)
-dataset_info = yaml_loader.loads(source="NMRspec/jdx_files/dataset_info.yaml", target_class=Provenance)
-# TODO: get sample info from some API like ChEBI or PubChem
-sample = yaml_loader.loads(source="NMRspec/jdx_files/sample_info.yaml", target_class=NmrSample)
-
-# load the jdx data into a dict
-jdx_dict = jdx2dict(filepath="NMRspec/jdx_files/SG-V3259 (41-52)_10.dx")
-
-# get solvent from jdx_dict
 def get_solvent(jdx_dict) -> NmrSolvent:
     """A function to get the detail infos on the solvent bases on looking up the value provided in the JCAMP-DX file
     in the dictionary "nmrSolvents" defined here. As the value in the .jdx could be a synonym of the name,
@@ -92,8 +82,28 @@ def get_solvent(jdx_dict) -> NmrSolvent:
 
     return parsed_solvent
 
-    return solvent
-solvent = get_solvent(jdx_dict)
 
+if __name__ == '__main__':
+    # loading provenance metadata provided in manually generated files
+    assay_info = yaml_loader.loads(source="./jdx_files/SG-V3259 (41-52)_10.yaml", target_class=Provenance)
+    #print(f"-----\nloaded assay_info:\n{yaml_dumper.dumps(assay_info)}")
+    dataset_info = yaml_loader.loads(source="./jdx_files/dataset_info.yaml", target_class=Provenance)
+    #print(f"-----\nloaded dataset_info:\n{yaml_dumper.dumps(dataset_info)}")
+
+    # loading sample metadata provided in manually generated file
+    # TODO: get further sample infos from some API like ChEBI or PubChem
+    sample = yaml_loader.loads(source="./jdx_files/sample_info.yaml", target_class=NmrSample)
+
+    # parse the jdx file into Python dict
+    jdx_dict = jdx2dict(filepath="./jdx_files/SG-V3259 (41-52)_10.dx")
+    print(f"-----\nloading '{os.path.basename(jdx_dict['filename'])}' into dict:\n{jdx_dict}")
+
+    # get solvent from jdx_dict
+    solvent = get_solvent(jdx_dict)
+    #print(f"-----\nparsed solvent:\n{yaml_dumper.dumps(solvent)}")
+
+    # declare assayed solution
+    solution = NmrSolution(solvent=solvent, sample=sample)
+    print(f"-----\ndeclared solution:\n{yaml_dumper.dumps(solution)}")
 
 
