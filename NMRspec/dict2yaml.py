@@ -94,6 +94,22 @@ def get_assay_data(jdx_dict) -> PulsedNmrAssay:
         return assay_date
     print(f"----\nassay_date: {get_assay_date(jdx_dict)}")
 
+    # parse the manufacturer in the jdx, by looking for its name in any of the jdx fields
+    def get_manufacturer(jdx_dict) -> Manufacturer:
+        nmrManufacturers = ["Acorn NMR Inc", "Agilent Technologies", "Applied Biosystems", "Bruker", "Doty Scientific",
+                            "FOSS", "General Electric", "JEOL", "JS Research", "Jasco", "Kimble Chase", "MR Resources",
+                            "OceanOptics", "Oxford Instruments", "Perkin Elmer", "Phillips", "Siemens AG",
+                            "Spinlock SRL",
+                            "TX", "ThermoFinnigan", "ThermoMattson", "ThermoNicolet", "Varian", "Waters", "Wilmad",
+                            "acdlabs", "micromass", "tecmag"]
+        for possible_manufacturer in nmrManufacturers:
+            if in_dict(jdx_dict, possible_manufacturer):
+                manufacturer = Manufacturer(name=possible_manufacturer)
+        return manufacturer
+    print(f"-----\nparsed manufacturer: {get_manufacturer(jdx_dict)}")
+
+
+
 if __name__ == '__main__':
     # loading provenance metadata provided in manually generated files
     assay_info = yaml_loader.loads(source="./jdx_files/SG-V3259 (41-52)_10.yaml", target_class=Provenance)

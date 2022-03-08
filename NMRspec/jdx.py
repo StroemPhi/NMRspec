@@ -1,5 +1,4 @@
 """in here are methods to read JCAMP-DX files from a folder and to convert each into a pythin dictionary"""
-
 import os, re
 from jcamp import JCAMP_reader
 
@@ -21,7 +20,7 @@ def read_jdx_files_from_folder(filepath="NMRspec\jdx_files"):
 
 
 def jdx2dict(filepath="NMRspec\jdx_files\\000000012.jdx"):
-    print(f"\nprocessing file: '{filepath}'")
+    print(f"-----\nprocessing file: '{filepath}'")
     jcamp_dict = JCAMP_reader(f"{filepath}")
     # pprint(jcamp_dict)
     #print(f"test output: SOLVENT --> '{jcamp_dict['.solvent name']}'")
@@ -30,6 +29,12 @@ def jdx2dict(filepath="NMRspec\jdx_files\\000000012.jdx"):
     jcamp_keys = sorted(list(jcamp_dict.keys()))  # jcamp_keys are the jcamp lib captured keys var from cell above
     found_keys_regex = capture_keys_regex(f"{filepath}")
     missing_jcamp_keys = [k for k in found_keys_regex if k not in jcamp_keys]
-    # print(f'\nMissing keys: {missing_jcamp_keys}\n')
+    #print(f'\nMissing keys: {missing_jcamp_keys}\n')
 
     return jcamp_dict
+
+
+def in_dict(myDict, lookup):
+    for key, value in myDict.items():
+        if lookup in str(value):
+            return True
