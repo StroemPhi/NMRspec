@@ -464,7 +464,7 @@
                "$ref": "#/$defs/NmrSampleTube"
             },
             "type": {
-               "description": "This property represents the type of spectrometer used in the NMR assay as string. Often this information will not be present in the JCAMP-DX file, but it can be parsed from Bricker source files",
+               "description": "This property represents the type of spectrometer used in the NMR assay as string. Often this information will not be present in the JCAMP-DX file, but it can be parsed from Brucker source files",
                "type": "string"
             }
          },
