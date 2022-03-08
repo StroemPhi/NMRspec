@@ -108,6 +108,36 @@ def get_assay_data(jdx_dict) -> PulsedNmrAssay:
         return manufacturer
     print(f"-----\nparsed manufacturer: {get_manufacturer(jdx_dict)}")
 
+    # parse the aquisition nuclei
+    def get_aquisition_nuclei():
+        acuisition_nuclei = []
+        if '$nuc1' in jdx_dict:
+            if jdx_dict['$nuc1'] != '<off>':
+                acuisition_nuclei.append(jdx_dict['$nuc1'].replace('<', '').replace('>', ''))
+            if jdx_dict['$nuc2'] != '<off>':
+                acuisition_nuclei.append(jdx_dict['$nuc2'].replace('<', '').replace('>', ''))
+            if jdx_dict['$nuc3'] != '<off>':
+                acuisition_nuclei.append(jdx_dict['$nuc3'].replace('<', '').replace('>', ''))
+            if jdx_dict['$nuc4'] != '<off>':
+                acuisition_nuclei.append(jdx_dict['$nuc4'].replace('<', '').replace('>', ''))
+            if jdx_dict['$nuc5'] != '<off>':
+                acuisition_nuclei.append(jdx_dict['$nuc5'].replace('<', '').replace('>', ''))
+            if jdx_dict['$nuc6'] != '<off>':
+                acuisition_nuclei.append(jdx_dict['$nuc6'].replace('<', '').replace('>', ''))
+            if jdx_dict['$nuc7'] != '<off>':
+                acuisition_nuclei.append(jdx_dict['$nuc7'].replace('<', '').replace('>', ''))
+            if jdx_dict['$nuc8'] != '<off>':
+                acuisition_nuclei.append(jdx_dict['$nuc8'].replace('<', '').replace('>', ''))
+        elif '.nucleus' in jdx_dict:
+            nuclei = jdx_dict['.nucleus'].split(',')
+            nuclei[1] = nuclei[1].strip()
+            acuisition_nuclei.extend(nuclei)
+        else:
+            acuisition_nuclei.append(jdx_dict['.observe nucleus'].replace('^', ''))
+        return acuisition_nuclei
+    print(f"-----\naquisition nuclei: {get_aquisition_nuclei()}")
+
+
 
 
 if __name__ == '__main__':
