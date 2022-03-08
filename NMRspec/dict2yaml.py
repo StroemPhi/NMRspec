@@ -109,7 +109,7 @@ def get_assay_data(jdx_dict) -> PulsedNmrAssay:
     print(f"-----\nparsed manufacturer: {get_manufacturer(jdx_dict)}")
 
     # parse the aquisition nuclei
-    def get_aquisition_nuclei():
+    def get_aquisition_nuclei() -> list:
         acuisition_nuclei = []
         if '$nuc1' in jdx_dict:
             if jdx_dict['$nuc1'] != '<off>':
