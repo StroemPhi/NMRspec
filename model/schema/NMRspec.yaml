@@ -92,6 +92,9 @@ classes:
     mixins:
       - NamedThing
     class_uri: chmo:0000613
+    slot_usage:
+      id: 
+        ifabsent: uri(nmrSPARQL:PulsedNmrAssay)
     attributes:
       assay_date:
         description: the date the assay was carried out by someone
