@@ -5,6 +5,7 @@ from linkml_runtime.loaders import yaml_loader
 from datetime import date
 from jdx import jdx2dict, in_dict
 import os
+import re
 
 today_str = str(date.today())
 
@@ -142,36 +143,30 @@ def get_assay_data(jdx_dict) -> PulsedNmrAssay:
 
     # parse pulse program
     def get_pulse_program() -> str:
-        pulse_program = jdx_dict['.pulse sequence']
-        print(pulse_program)
-        nmr_pulse_programs = [{"name": "NMR", "bruker": ["zg30", "zgpg30"], "jeol": ["proton.jxp", "carbon.jxp"]},
+        # pulse program as stored in jdx
+        pulse_program_jdx = jdx_dict['.pulse sequence'].lower()
+        # controlled list of dicts for looking up and normalizing possible pulse programs = Enums of schema
+        # TODO: document better how this is needed, in order to ground all possible vendor specific pulse programs to a
+        #  certain standard. See also https://github.com/StroemPhi/NMRspec/issues/5
+        nmr_pulse_program_cv = [{"name": "NMR", "bruker": "zg", "jeol_h": "proton", "jeol_c": "carbon"},
+                              {"name": "Inverse NMR"},
                               {"name": "COSY"},
-                              {"name": "COSY-DQF"},
-                              {"name": "COSY-DOSY"},
-                              {"name": "DOSY"},
                               {"name": "SECSY"},
                               {"name": "RELAY"},
                               {"name": "TOCSY"},
                               {"name": "ROESY"},
                               {"name": "NOESY"},
-                              {"name": "Double-Quantum"},
-                              {"name": "J-Resolved"},
-                              {"name": "DEPT & INEPT"},
+                              {"name": "J_Resolved", "bruker": "jres"},
+                              {"name": "DEPT"},
+                              {"name": "INEPT"},
                               {"name": "HECTOR"},
                               {"name": "COLOC"},
-                              {"name": "Heteronuclear J-resolved"},
                               {"name": "HOESY"},
                               {"name": "INADEQUATE"},
-                              {"name": "Inverse 1H-NMR"},
                               {"name": "HMQC"},
                               {"name": "DEPT-HMQC"},
-                              {"name": "Multiplicity-edited HSQC"},
-                              {"name": "CT-HSQC"},
-                              {"name": "CT-HMBC"},
+                              {"name": "HSQC"},
                               {"name": "Inverse-INEPT"},
-                              {"name": "2D HSQC-α,β"},
-                              {"name": "2D IPAP-HSQC"},
-                              {"name": "2D J-modulated CT-HSQC"},
                               {"name": "TROSY"},
                               {"name": "CRINEPT"},
                               {"name": "HMQC-COSY"},
@@ -183,40 +178,46 @@ def get_assay_data(jdx_dict) -> PulsedNmrAssay:
                               {"name": "HSQC-ROESY"},
                               {"name": "HSQC-NOESY"},
                               {"name": "HMBC"},
-                              {"name": "Phase-sensitive HMBC"},
-                              {"name": "J-HMBC"},
-                              {"name": "Long-range HSQC (HSQMBC)"},
+                              {"name": "HSQMBC"},
                               {"name": "EXSIDE"},
                               {"name": "HETLOC"},
                               {"name": "HSQC-HECADE"},
                               {"name": "ADEQUATE"},
-                              {"name": "1,1-ADEQUATE"},
-                              {"name": "1,n-ADEQUATE"},
-                              {"name": "n,1-ADEQUATE"},
-                              {"name": "n,n-ADEQUATE"},
+                              {"name": "DOSY"},
                               {"name": "STE"},
                               {"name": "STEBP"},
+                              {"name": "DSTE"},
+                              {"name": "DSTEBP"},
+                              {"name": "COSY-DOSY"},
+                              {"name": "DOSY-TOCSY"},
+                              {"name": "DOSY-NOESY"},
+                              {"name": "DOSY-HMQC"},
                               {"name": "STD-TOSCY"},
                               {"name": "STD-NOESY"},
                               {"name": "STD-HSQC"},
                               {"name": "CLEANEX"},
                               {"name": "CLEANEX-HSQC"},
-                              {"name": "CLEANEX-TROSY"},
-                              {"name": "DSTE"},
-                              {"name": "DSTEBP"},
-                              {"name": "DOSY-TOCSY"},
-                              {"name": "DOSY-NOESY"},
-                              {"name": "DOSY-HMQC"}]
-        for possible_pulse_program in nmr_pulse_programs:
+                              {"name": "CLEANEX-TROSY"}
+                              ]
+        pulse_program = None  # return variable
+        for possible_pulse_program in nmr_pulse_program_cv:
             for key, value in possible_pulse_program.items():
-                if key == "bruker":
-                    if pulse_program in value:
-                        pulse_program = possible_pulse_program['name']
-                if key == "jeol":
-                    if pulse_program in value:
-                        pulse_program = possible_pulse_program['name']
-                elif value == pulse_program:
-                    pulse_program = possible_pulse_program['name']
+                # normalize controlled terms to be able to match to manufacturer codes
+                value = value.lower()
+                # split controlled term of combined pulse programs, as the order might be different in Bruker & JEOl
+                # (e.g. DOSY-COSY vs cosy-dosy)
+                if '-' in value:
+                    value = value.split('-')
+                    # return controlled term if the combined pulse program could be matched
+                    if value[0] in pulse_program_jdx and value[1] in pulse_program_jdx:
+                        pulse_program = possible_pulse_program["name"]
+                # return controlled term if there is a pulse program match
+                else:
+                    if re.match(rf"(^{value})", pulse_program_jdx):
+                        pulse_program = possible_pulse_program["name"]
+        # return initial
+        if not pulse_program:
+            pulse_program = pulse_program_jdx
         return pulse_program
     print(f"-----\npulse program: {get_pulse_program()}")
 
