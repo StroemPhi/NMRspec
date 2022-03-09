@@ -124,6 +124,7 @@ classes:
         required: true
         domain: PulsedNmrAssay
         range: PulseProgram
+        ifabsent: string(not provided)
         see_also:
           - jdx:.pulse sequence
       pulse_program_custom:
