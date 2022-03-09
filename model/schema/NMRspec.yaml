@@ -150,6 +150,11 @@ classes:
   NmrSolution:
     description: A NMR sollution is the solution made up of the solvent in which the evaluated sample is dissolved in as well as possibly the buffer needed to adjust the pH value.
     class_uri: chebi:75958
+    mixins:
+      - NamedThing
+    slot_usage:
+      id: 
+        ifabsent: uri(nmrSPARQL:Solution)
     attributes:
       solvent:
         description: The attribute needed to relate the NMR solution to its solvent.
