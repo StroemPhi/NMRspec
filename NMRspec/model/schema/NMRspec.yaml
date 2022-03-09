@@ -122,6 +122,10 @@ classes:
         range: PulseProgram
         see_also:
           - jdx:.pulse sequence
+      pulse_program_custom:
+        description: A custom pulse program specification that is not yet in our list of allowed values for the pulse program parameter.
+        domain: PulsedNmrAssay
+        range: string
       acuisition_nuclei:
         required: true
         multivalued: true
@@ -403,7 +407,7 @@ slots:
 #####################################
 enums:
   PulseProgram:
-    description: Enum of the most commonly used pulse sequences that specify the type of pulsed NMR.
+    description: Enum of the most commonly used pulse sequences that specify the type of pulsed NMR. Based on a mix of Bruker specs (https://pharm.ucsf.edu/sites/pharm.ucsf.edu/files/Pulse%20Program%20Catalog%201%20%281D%20and%202D%20Experiments%29.pdf), IUPAC specs (http://www.jcamp-dx.org/protocols/NMR%20Pulse%20Sequences%20PAC%2079(11)%20pp1748-1764%202001.pdf) and JEOL specs (https://www.uh.edu/nsm/chemistry/resources/nmr/ECAXSII_Advanced_Mode_Tutorial_Manual.pdf)
     permissible_values:
       NMR:
         examples:
@@ -415,33 +419,23 @@ enums:
             description: JOEL coding for conventional 1H spectrum
           - value: carbon.jxp
             description: JOEL coding for conventional 13C spectrum
+      Inverse NMR:
       COSY:
       COSY-DQF:
-      COSY-DOSY:
-      DOSY:
       SECSY:
       RELAY:
       TOCSY:
       ROESY:
       NOESY:
-      Double-Quantum:
       J-Resolved:
       DEPT & INEPT:
       HECTOR:
       COLOC:
-      Heteronuclear J-resolved:
       HOESY:
       INADEQUATE:
-      Inverse 1H-NMR:
       HMQC:
       DEPT-HMQC:
-      Multiplicity-edited HSQC:
-      CT-HSQC:
-      CT-HMBC:
       Inverse-INEPT:
-      2D HSQC-α,β:
-      2D IPAP-HSQC:
-      2D J-modulated CT-HSQC:
       TROSY:
       CRINEPT:
       HMQC-COSY:
@@ -453,30 +447,28 @@ enums:
       HSQC-ROESY:
       HSQC-NOESY:
       HMBC:
-      Phase-sensitive HMBC:
-      J-HMBC:
-      Long-range HSQC (HSQMBC):
+      HSQMBC:
       EXSIDE:
       HETLOC:
       HSQC-HECADE:
       ADEQUATE:
-      1,1-ADEQUATE:
-      1,n-ADEQUATE:
-      n,1-ADEQUATE:
-      n,n-ADEQUATE:
+      DOSY:
       STE:
       STEBP:
+      DSTE:
+      DSTEBP:
+      COSY-DOSY:
+      DOSY-TOCSY:
+      DOSY-NOESY:
+      DOSY-HMQC:
       STD-TOSCY:
       STD-NOESY:
       STD-HSQC:
       CLEANEX:
       CLEANEX-HSQC:
       CLEANEX-TROSY:
-      DSTE:
-      DSTEBP:
-      DOSY-TOCSY:
-      DOSY-NOESY:
-      DOSY-HMQC:
+      Custom:
+        description: To be used, if the pulse program is not in this list.
   NmrManufacturers:
     description: Controlled list of manufacturers of NMR lab devices.
     notes: allowed values from nmrCV_1400255

@@ -198,6 +198,7 @@
 <li><a href="pulsedNmrAssay__has_dimension/">➞has_dimension</a></li>
 <li><a href="pulsedNmrAssay__observed_frequencies/">PulsedNmrAssay➞observed_frequencies</a></li>
 <li><a href="pulsedNmrAssay__pulse_program/">PulsedNmrAssay➞pulse_program</a> - The pulse program of a PulsedNmrAssay is a required property and must be conform to one of the values defined in the PulseProgram enum class. The possible values there are defined according to common pulse programs, e.g. NMR for basic 1H-NMR, or COSY and COSY-DOSY, etc.</li>
+<li><a href="pulsedNmrAssay__pulse_program_custom/">PulsedNmrAssay➞pulse_program_custom</a> - A custom pulse program specification that is not yet in our list of allowed values for the pulse program parameter.</li>
 <li><a href="pulsedNmrAssay__solution/">PulsedNmrAssay➞solution</a> - the property refering to solution in which the assayed sample is disolved in</li>
 <li><a href="pulsedNmrAssay__spectrometer/">PulsedNmrAssay➞spectrometer</a></li>
 <li><a href="type/">type</a><ul>
@@ -219,7 +220,7 @@
 <li><a href="MolarityUnit/">MolarityUnit</a> - Enums of needed units aligned with UO. <em>WIP:needs to be expanded</em></li>
 <li><a href="NmrManufacturers/">NmrManufacturers</a> - Controlled list of manufacturers of NMR lab devices.</li>
 <li><a href="PhValueUnit/">PhValueUnit</a></li>
-<li><a href="PulseProgram/">PulseProgram</a> - Enum of the most commonly used pulse sequences that specify the type of pulsed NMR.</li>
+<li><a href="PulseProgram/">PulseProgram</a> - Enum of the most commonly used pulse sequences that specify the type of pulsed NMR. Based on a mix of Bruker specs (https://pharm.ucsf.edu/sites/pharm.ucsf.edu/files/Pulse%20Program%20Catalog%201%20%281D%20and%202D%20Experiments%29.pdf), IUPAC specs (http://www.jcamp-dx.org/protocols/NMR%20Pulse%20Sequences%20PAC%2079(11)%20pp1748-1764%202001.pdf) and JEOL specs (https://www.uh.edu/nsm/chemistry/resources/nmr/ECAXSII_Advanced_Mode_Tutorial_Manual.pdf)</li>
 <li><a href="TemperatureUnit/">TemperatureUnit</a></li>
 </ul>
 <h3 id="subsets">Subsets</h3>
@@ -315,5 +316,5 @@
 
 <!--
 MkDocs version : 1.2.3
-Build Date UTC : 2022-03-08 10:05:55.013861+00:00
+Build Date UTC : 2022-03-09 07:40:29.191997+00:00
 -->

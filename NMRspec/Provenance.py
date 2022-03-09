@@ -1,5 +1,5 @@
 # Auto generated from Provenance.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-03-03T23:27:57
+# Generation date: 2022-03-08T15:02:14
 # Schema: Provenance
 #
 # id: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/Provenance.yaml

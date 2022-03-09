@@ -92,7 +92,7 @@
             <div class="section">
               
                 <h1 id="enum-pulseprogram">Enum: PulseProgram</h1>
-<p>Enum of the most commonly used pulse sequences that specify the type of pulsed NMR.</p>
+<p>Enum of the most commonly used pulse sequences that specify the type of pulsed NMR. Based on a mix of Bruker specs (https://pharm.ucsf.edu/sites/pharm.ucsf.edu/files/Pulse%20Program%20Catalog%201%20%281D%20and%202D%20Experiments%29.pdf), IUPAC specs (http://www.jcamp-dx.org/protocols/NMR%20Pulse%20Sequences%20PAC%2079(11)%20pp1748-1764%202001.pdf) and JEOL specs (https://www.uh.edu/nsm/chemistry/resources/nmr/ECAXSII_Advanced_Mode_Tutorial_Manual.pdf)</p>
 <p>URI: <a href="https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/PulseProgram">NMRspec:PulseProgram</a></p>
 <h2 id="other-properties">Other properties</h2>
 <table>
@@ -129,6 +129,12 @@
 <td align="right">{'examples': [Example(value='zg30', description='Brucker coding for conventional 1H spectrum'), Example(value='zgpg30', description='Brucker coding for 1H-decoupled spectrum'), Example(value='proton.jxp', description='JOEL coding for conventional 1H spectrum'), Example(value='carbon.jxp', description='JOEL coding for conventional 13C spectrum')]}</td>
 </tr>
 <tr>
+<td align="left">Inverse NMR</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="right"></td>
+</tr>
+<tr>
 <td align="left">COSY</td>
 <td align="center"></td>
 <td align="center"></td>
@@ -136,18 +142,6 @@
 </tr>
 <tr>
 <td align="left">COSY-DQF</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="right"></td>
-</tr>
-<tr>
-<td align="left">COSY-DOSY</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="right"></td>
-</tr>
-<tr>
-<td align="left">DOSY</td>
 <td align="center"></td>
 <td align="center"></td>
 <td align="right"></td>
@@ -183,12 +177,6 @@
 <td align="right"></td>
 </tr>
 <tr>
-<td align="left">Double-Quantum</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="right"></td>
-</tr>
-<tr>
 <td align="left">J-Resolved</td>
 <td align="center"></td>
 <td align="center"></td>
@@ -213,12 +201,6 @@
 <td align="right"></td>
 </tr>
 <tr>
-<td align="left">Heteronuclear J-resolved</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="right"></td>
-</tr>
-<tr>
 <td align="left">HOESY</td>
 <td align="center"></td>
 <td align="center"></td>
@@ -226,12 +208,6 @@
 </tr>
 <tr>
 <td align="left">INADEQUATE</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="right"></td>
-</tr>
-<tr>
-<td align="left">Inverse 1H-NMR</td>
 <td align="center"></td>
 <td align="center"></td>
 <td align="right"></td>
@@ -249,43 +225,7 @@
 <td align="right"></td>
 </tr>
 <tr>
-<td align="left">Multiplicity-edited HSQC</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="right"></td>
-</tr>
-<tr>
-<td align="left">CT-HSQC</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="right"></td>
-</tr>
-<tr>
-<td align="left">CT-HMBC</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="right"></td>
-</tr>
-<tr>
 <td align="left">Inverse-INEPT</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="right"></td>
-</tr>
-<tr>
-<td align="left">2D HSQC-α,β</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="right"></td>
-</tr>
-<tr>
-<td align="left">2D IPAP-HSQC</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="right"></td>
-</tr>
-<tr>
-<td align="left">2D J-modulated CT-HSQC</td>
 <td align="center"></td>
 <td align="center"></td>
 <td align="right"></td>
@@ -357,19 +297,7 @@
 <td align="right"></td>
 </tr>
 <tr>
-<td align="left">Phase-sensitive HMBC</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="right"></td>
-</tr>
-<tr>
-<td align="left">J-HMBC</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="right"></td>
-</tr>
-<tr>
-<td align="left">Long-range HSQC (HSQMBC)</td>
+<td align="left">HSQMBC</td>
 <td align="center"></td>
 <td align="center"></td>
 <td align="right"></td>
@@ -399,25 +327,7 @@
 <td align="right"></td>
 </tr>
 <tr>
-<td align="left">1,1-ADEQUATE</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="right"></td>
-</tr>
-<tr>
-<td align="left">1,n-ADEQUATE</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="right"></td>
-</tr>
-<tr>
-<td align="left">n,1-ADEQUATE</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="right"></td>
-</tr>
-<tr>
-<td align="left">n,n-ADEQUATE</td>
+<td align="left">DOSY</td>
 <td align="center"></td>
 <td align="center"></td>
 <td align="right"></td>
@@ -430,6 +340,42 @@
 </tr>
 <tr>
 <td align="left">STEBP</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td align="left">DSTE</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td align="left">DSTEBP</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td align="left">COSY-DOSY</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td align="left">DOSY-TOCSY</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td align="left">DOSY-NOESY</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td align="left">DOSY-HMQC</td>
 <td align="center"></td>
 <td align="center"></td>
 <td align="right"></td>
@@ -471,32 +417,8 @@
 <td align="right"></td>
 </tr>
 <tr>
-<td align="left">DSTE</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="right"></td>
-</tr>
-<tr>
-<td align="left">DSTEBP</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="right"></td>
-</tr>
-<tr>
-<td align="left">DOSY-TOCSY</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="right"></td>
-</tr>
-<tr>
-<td align="left">DOSY-NOESY</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="right"></td>
-</tr>
-<tr>
-<td align="left">DOSY-HMQC</td>
-<td align="center"></td>
+<td align="left">Custom</td>
+<td align="center">To be used, if the pulse program is not in this list.</td>
 <td align="center"></td>
 <td align="right"></td>
 </tr>

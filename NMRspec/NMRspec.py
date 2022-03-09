@@ -1,5 +1,5 @@
 # Auto generated from NMRspec.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-03-03T23:27:52
+# Generation date: 2022-03-08T15:02:10
 # Schema: NMRspec
 #
 # id: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/NMRspec.yaml
@@ -180,6 +180,7 @@ class PulsedNmrAssay(YAMLRoot):
     pulse_program: Union[str, "PulseProgram"] = None
     acuisition_nuclei: Union[str, List[str]] = None
     assay_date: Optional[Union[str, XSDDateTime]] = None
+    pulse_program_custom: Optional[str] = None
     observed_frequencies: Optional[Union[float, List[float]]] = empty_list()
     name: Optional[str] = None
 
@@ -217,6 +218,9 @@ class PulsedNmrAssay(YAMLRoot):
 
         if self.assay_date is not None and not isinstance(self.assay_date, XSDDateTime):
             self.assay_date = XSDDateTime(self.assay_date)
+
+        if self.pulse_program_custom is not None and not isinstance(self.pulse_program_custom, str):
+            self.pulse_program_custom = str(self.pulse_program_custom)
 
         if not isinstance(self.observed_frequencies, list):
             self.observed_frequencies = [self.observed_frequencies] if self.observed_frequencies is not None else []
@@ -881,11 +885,13 @@ class NmrSpecRecordCollection(YAMLRoot):
 # Enumerations
 class PulseProgram(EnumDefinitionImpl):
     """
-    Enum of the most commonly used pulse sequences that specify the type of pulsed NMR.
+    Enum of the most commonly used pulse sequences that specify the type of pulsed NMR. Based on a mix of Bruker specs
+    (https://pharm.ucsf.edu/sites/pharm.ucsf.edu/files/Pulse%20Program%20Catalog%201%20%281D%20and%202D%20Experiments%29.pdf),
+    IUPAC specs (http://www.jcamp-dx.org/protocols/NMR%20Pulse%20Sequences%20PAC%2079(11)%20pp1748-1764%202001.pdf)
+    and JEOL specs (https://www.uh.edu/nsm/chemistry/resources/nmr/ECAXSII_Advanced_Mode_Tutorial_Manual.pdf)
     """
     NMR = PermissibleValue(text="NMR")
     COSY = PermissibleValue(text="COSY")
-    DOSY = PermissibleValue(text="DOSY")
     SECSY = PermissibleValue(text="SECSY")
     RELAY = PermissibleValue(text="RELAY")
     TOCSY = PermissibleValue(text="TOCSY")
@@ -900,52 +906,38 @@ class PulseProgram(EnumDefinitionImpl):
     CRINEPT = PermissibleValue(text="CRINEPT")
     H2BC = PermissibleValue(text="H2BC")
     HMBC = PermissibleValue(text="HMBC")
+    HSQMBC = PermissibleValue(text="HSQMBC")
     EXSIDE = PermissibleValue(text="EXSIDE")
     HETLOC = PermissibleValue(text="HETLOC")
     ADEQUATE = PermissibleValue(text="ADEQUATE")
+    DOSY = PermissibleValue(text="DOSY")
     STE = PermissibleValue(text="STE")
     STEBP = PermissibleValue(text="STEBP")
-    CLEANEX = PermissibleValue(text="CLEANEX")
     DSTE = PermissibleValue(text="DSTE")
     DSTEBP = PermissibleValue(text="DSTEBP")
+    CLEANEX = PermissibleValue(text="CLEANEX")
+    Custom = PermissibleValue(text="Custom",
+                                   description="To be used, if the pulse program is not in this list.")
 
     _defn = EnumDefinition(
         name="PulseProgram",
-        description="Enum of the most commonly used pulse sequences that specify the type of pulsed NMR.",
+        description="Enum of the most commonly used pulse sequences that specify the type of pulsed NMR. Based on a mix of Bruker specs (https://pharm.ucsf.edu/sites/pharm.ucsf.edu/files/Pulse%20Program%20Catalog%201%20%281D%20and%202D%20Experiments%29.pdf), IUPAC specs (http://www.jcamp-dx.org/protocols/NMR%20Pulse%20Sequences%20PAC%2079(11)%20pp1748-1764%202001.pdf) and JEOL specs (https://www.uh.edu/nsm/chemistry/resources/nmr/ECAXSII_Advanced_Mode_Tutorial_Manual.pdf)",
     )
 
     @classmethod
     def _addvals(cls):
+        setattr(cls, "Inverse NMR",
+                PermissibleValue(text="Inverse NMR") )
         setattr(cls, "COSY-DQF",
                 PermissibleValue(text="COSY-DQF") )
-        setattr(cls, "COSY-DOSY",
-                PermissibleValue(text="COSY-DOSY") )
-        setattr(cls, "Double-Quantum",
-                PermissibleValue(text="Double-Quantum") )
         setattr(cls, "J-Resolved",
                 PermissibleValue(text="J-Resolved") )
         setattr(cls, "DEPT & INEPT",
                 PermissibleValue(text="DEPT & INEPT") )
-        setattr(cls, "Heteronuclear J-resolved",
-                PermissibleValue(text="Heteronuclear J-resolved") )
-        setattr(cls, "Inverse 1H-NMR",
-                PermissibleValue(text="Inverse 1H-NMR") )
         setattr(cls, "DEPT-HMQC",
                 PermissibleValue(text="DEPT-HMQC") )
-        setattr(cls, "Multiplicity-edited HSQC",
-                PermissibleValue(text="Multiplicity-edited HSQC") )
-        setattr(cls, "CT-HSQC",
-                PermissibleValue(text="CT-HSQC") )
-        setattr(cls, "CT-HMBC",
-                PermissibleValue(text="CT-HMBC") )
         setattr(cls, "Inverse-INEPT",
                 PermissibleValue(text="Inverse-INEPT") )
-        setattr(cls, "2D HSQC-α,β",
-                PermissibleValue(text="2D HSQC-α,β") )
-        setattr(cls, "2D IPAP-HSQC",
-                PermissibleValue(text="2D IPAP-HSQC") )
-        setattr(cls, "2D J-modulated CT-HSQC",
-                PermissibleValue(text="2D J-modulated CT-HSQC") )
         setattr(cls, "HMQC-COSY",
                 PermissibleValue(text="HMQC-COSY") )
         setattr(cls, "HQMC-TOSCY",
@@ -960,22 +952,16 @@ class PulseProgram(EnumDefinitionImpl):
                 PermissibleValue(text="HSQC-ROESY") )
         setattr(cls, "HSQC-NOESY",
                 PermissibleValue(text="HSQC-NOESY") )
-        setattr(cls, "Phase-sensitive HMBC",
-                PermissibleValue(text="Phase-sensitive HMBC") )
-        setattr(cls, "J-HMBC",
-                PermissibleValue(text="J-HMBC") )
-        setattr(cls, "Long-range HSQC (HSQMBC)",
-                PermissibleValue(text="Long-range HSQC (HSQMBC)") )
         setattr(cls, "HSQC-HECADE",
                 PermissibleValue(text="HSQC-HECADE") )
-        setattr(cls, "1,1-ADEQUATE",
-                PermissibleValue(text="1,1-ADEQUATE") )
-        setattr(cls, "1,n-ADEQUATE",
-                PermissibleValue(text="1,n-ADEQUATE") )
-        setattr(cls, "n,1-ADEQUATE",
-                PermissibleValue(text="n,1-ADEQUATE") )
-        setattr(cls, "n,n-ADEQUATE",
-                PermissibleValue(text="n,n-ADEQUATE") )
+        setattr(cls, "COSY-DOSY",
+                PermissibleValue(text="COSY-DOSY") )
+        setattr(cls, "DOSY-TOCSY",
+                PermissibleValue(text="DOSY-TOCSY") )
+        setattr(cls, "DOSY-NOESY",
+                PermissibleValue(text="DOSY-NOESY") )
+        setattr(cls, "DOSY-HMQC",
+                PermissibleValue(text="DOSY-HMQC") )
         setattr(cls, "STD-TOSCY",
                 PermissibleValue(text="STD-TOSCY") )
         setattr(cls, "STD-NOESY",
@@ -986,12 +972,6 @@ class PulseProgram(EnumDefinitionImpl):
                 PermissibleValue(text="CLEANEX-HSQC") )
         setattr(cls, "CLEANEX-TROSY",
                 PermissibleValue(text="CLEANEX-TROSY") )
-        setattr(cls, "DOSY-TOCSY",
-                PermissibleValue(text="DOSY-TOCSY") )
-        setattr(cls, "DOSY-NOESY",
-                PermissibleValue(text="DOSY-NOESY") )
-        setattr(cls, "DOSY-HMQC",
-                PermissibleValue(text="DOSY-HMQC") )
 
 class NmrManufacturers(EnumDefinitionImpl):
     """
