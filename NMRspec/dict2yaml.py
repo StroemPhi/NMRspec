@@ -99,21 +99,28 @@ def get_assay_data(jdx_dict) -> PulsedNmrAssay:
             print(f"----\nassay_date: {assay_date}")
         return assay_date
 
-    # parse the manufacturer in the jdx, by looking for its name in any of the jdx fields
-    # TODO: make the list a list of dicts by adding websites to each manufacturer as default values,
-    #  analog to nmr_solvents and nmr_pulse_programs
     def get_manufacturer() -> Manufacturer:
+        """
+        function to parse the manufacturer  of the use NMR device from the jdx, by looking for its name in any of the
+        jdx_dict values.
+        TODO:
+            make the list a list of dicts by adding websites to each manufacturer as default values, analog to
+            nmr_solvents and nmr_pulse_programs
+        """
         nmr_manufacturers = ["Acorn NMR Inc", "Agilent Technologies", "Applied Biosystems", "Bruker", "Doty Scientific",
-                            "FOSS", "General Electric", "JEOL", "JS Research", "Jasco", "Kimble Chase", "MR Resources",
-                            "OceanOptics", "Oxford Instruments", "Perkin Elmer", "Phillips", "Siemens AG",
-                            "Spinlock SRL",
-                            "TX", "ThermoFinnigan", "ThermoMattson", "ThermoNicolet", "Varian", "Waters", "Wilmad",
-                            "acdlabs", "micromass", "tecmag"]
+                             "FOSS", "General Electric", "JEOL", "JS Research", "Jasco", "Kimble Chase", "MR Resources",
+                             "OceanOptics", "Oxford Instruments", "Perkin Elmer", "Phillips", "Siemens AG",
+                             "Spinlock SRL", "TX", "ThermoFinnigan", "ThermoMattson", "ThermoNicolet", "Varian",
+                             "Waters", "Wilmad", "acdlabs", "micromass", "tecmag"]
         for possible_manufacturer in nmr_manufacturers:
             if in_dict(jdx_dict, possible_manufacturer):
                 manufacturer = Manufacturer(name=possible_manufacturer)
+                return manufacturer
+            else:
+                manufacturer = Manufacturer()
+        if debug is True:
+            print(f"-----\nmanufacturer: {manufacturer}")
         return manufacturer
-    print(f"-----\nparsed manufacturer: {get_manufacturer()}")
 
     # parse the aquisition nuclei
     def get_aquisition_nuclei() -> list:
