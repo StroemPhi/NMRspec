@@ -86,12 +86,18 @@ def get_assay_data(jdx_dict) -> PulsedNmrAssay:
         return parsed_solvent
 
     def get_assay_date() -> str:
+        """function to parse the date of the NMR assay from the jdx file"""
         if 'long date' in jdx_dict.keys():
             assay_date = str(jdx_dict['long date'])
         elif 'longdate' in jdx_dict.keys():
             assay_date = str(jdx_dict['longdate'])
+            jdx_dict['longdate']
+        elif 'date' in jdx_dict.keys():
+            assay_date = str(jdx_dict['date'])
+            jdx_dict['date']
+        if debug is True:
+            print(f"----\nassay_date: {assay_date}")
         return assay_date
-    print(f"----\nassay_date: {get_assay_date()}")
 
     # parse the manufacturer in the jdx, by looking for its name in any of the jdx fields
     # TODO: make the list a list of dicts by adding websites to each manufacturer as default values,
