@@ -31,7 +31,7 @@ def get_assay_data(jdx_dict) -> PulsedNmrAssay:
              "iupac_name": "1,1,1,3,3,3-hexadeuteriopropan-2-one",
              "inchi": "InChI=1S/C3H6O/c1-3(2)4/h1-2H3/i1D3,2D3",
              "inchikey": "CSCPPACGZOOCGX-WFGJKAKNSA-N"},
-            {"name": ["dimethyl sulfoxide-d6", "d6-DMSO", "DMSO-d6", "DMSO-D6", "C2H6OS",
+            {"name": ["dimethyl sulfoxide-d6", "DMSO", "d6-DMSO", "DMSO-d6", "DMSO-D6", "C2H6OS",
                       "Dimethylsulfoxide-D6",
                       "deuterated dmso"],
              "id": "https://pubchem.ncbi.nlm.nih.gov/compound/75151",
@@ -69,7 +69,7 @@ def get_assay_data(jdx_dict) -> PulsedNmrAssay:
             {"name": ["benzene-d6", "C6D6"],
              "id": "https://pubchem.ncbi.nlm.nih.gov/compound/71601",
              "smiles": "C1([2H])=C([2H])C([2H])=C([2H])C([2H])=C1[2H]"}
-            ]
+        ]
         solvent_name = jdx_dict['.solvent name']
         solvent_dict = {}
         for possible_solvent in nmr_solvents:
