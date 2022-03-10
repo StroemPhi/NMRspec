@@ -9,6 +9,9 @@ import re
 
 today_str = str(date.today())
 debug = True
+inputpath = "./jdx_files/input/"
+outputpath = "./jdx_files/output/"
+
 
 def get_assay_data(jdx_dict) -> PulsedNmrAssay:
     def get_solvent() -> NmrSolvent:

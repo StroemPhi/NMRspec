@@ -8,7 +8,7 @@
 ##DATA CLASS= NTUPLES
 ##ORIGIN= SG
 ##OWNER= SG
-##LONG DATE= 2019/07/18 01:16:26default
+##LONG DATE= 2019/07/18 01:16:26+0000
 $$ 1.90.2.2 TopSpin 3.5 pl 6
 $$ 2019-07-18 03:16:27.673 +0200  nmr@ibg-4-babsi
 $$ Compression mode = diff/dup
@@ -7807,7 +7807,7 @@ $$
 ##DATA CLASS= NTUPLES
 ##ORIGIN= SG
 ##OWNER= SG
-##LONG DATE= 2019/07/18 01:16:26
+##LONG DATE= 2019/07/18 01:16:26+0000
 $$ 1.90.2.2 TopSpin 3.5 pl 6
 $$ 2019-07-18 03:16:27.700 +0200  nmr@ibg-4-babsi
 $$ Compression mode = diff/dup
