@@ -286,6 +286,8 @@ def get_assay_data(jdx_dict) -> PulsedNmrAssay:
     else:
         pulse_program_custom = get_pulse_program()[1]
 
+    jdx_filename = os.path.basename(jdx_dict['filename'])
+    print(f"----\njdx_filename: {jdx_filename}")
 
     # loading provenance metadata provided in manually generated files
     assay_info = yaml_loader.loads(source="./jdx_files/SG-V3259 (41-52)_10.yaml", target_class=Provenance)
