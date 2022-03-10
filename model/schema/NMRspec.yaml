@@ -359,7 +359,7 @@ classes:
       - NamedThing
     description: This class represents a collection of NMR spectroscopy records. It is to be used when multiple NMR assays were made in order to analyse a given sample.
     attributes:
-      nmr_assay_records:
+      contains_assay_records:
         slot_uri: bfo:0000051
         required: true
         multivalued: true
