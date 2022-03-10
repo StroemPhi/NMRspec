@@ -401,7 +401,6 @@
             }
          },
          "required": [
-            "output_of_nmr_assay",
             "id",
             "source"
          ],
@@ -415,6 +414,12 @@
             "assays_sample": {
                "$ref": "#/$defs/NmrSample",
                "description": "This property is used to provide metadata on the assayed NMR sample."
+            },
+            "contains_assay_records": {
+               "items": {
+                  "$ref": "#/$defs/NmrSpecRecord"
+               },
+               "type": "array"
             },
             "created_by": {
                "description": "the creator of the ressource",
@@ -443,12 +448,6 @@
                "description": "a generic property to provide a string that is used to name a something",
                "type": "string"
             },
-            "nmr_assay_records": {
-               "items": {
-                  "$ref": "#/$defs/NmrSpecRecord"
-               },
-               "type": "array"
-            },
             "source": {
                "description": "This property is used to describe the source of the data as string (e.g. \"Chemotion Repository\").",
                "items": {
@@ -462,7 +461,7 @@
             }
          },
          "required": [
-            "nmr_assay_records",
+            "contains_assay_records",
             "assays_sample",
             "source",
             "id"

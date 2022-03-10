@@ -1,5 +1,5 @@
 # Auto generated from NMRspec.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-03-10T00:07:41
+# Generation date: 2022-03-10T11:52:21
 # Schema: NMRspec
 #
 # id: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/NMRspec.yaml
@@ -804,9 +804,9 @@ class NmrSpecRecord(YAMLRoot):
     class_name: ClassVar[str] = "NmrSpecRecord"
     class_model_uri: ClassVar[URIRef] = NMRSPEC.NmrSpecRecord
 
-    id: Union[str, NmrSpecRecordId] = None
-    output_of_nmr_assay: Union[dict, PulsedNmrAssay] = None
     source: Union[str, List[str]] = None
+    id: Union[str, NmrSpecRecordId] = NMRSPARQL.recordID
+    output_of_nmr_assay: Optional[Union[dict, PulsedNmrAssay]] = None
     description: Optional[str] = None
     source_uri: Optional[Union[str, URIorCURIE]] = None
     date_created: Optional[Union[str, XSDDateTime]] = None
@@ -821,16 +821,14 @@ class NmrSpecRecord(YAMLRoot):
         if not isinstance(self.id, NmrSpecRecordId):
             self.id = NmrSpecRecordId(self.id)
 
-        if self._is_empty(self.output_of_nmr_assay):
-            self.MissingRequiredField("output_of_nmr_assay")
-        if not isinstance(self.output_of_nmr_assay, PulsedNmrAssay):
-            self.output_of_nmr_assay = PulsedNmrAssay(**as_dict(self.output_of_nmr_assay))
-
         if self._is_empty(self.source):
             self.MissingRequiredField("source")
         if not isinstance(self.source, list):
             self.source = [self.source] if self.source is not None else []
         self.source = [v if isinstance(v, str) else str(v) for v in self.source]
+
+        if self.output_of_nmr_assay is not None and not isinstance(self.output_of_nmr_assay, PulsedNmrAssay):
+            self.output_of_nmr_assay = PulsedNmrAssay(**as_dict(self.output_of_nmr_assay))
 
         if self.description is not None and not isinstance(self.description, str):
             self.description = str(self.description)
@@ -870,7 +868,7 @@ class NmrSpecRecordCollection(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = NMRSPEC.NmrSpecRecordCollection
 
     id: Union[str, NmrSpecRecordCollectionId] = None
-    nmr_assay_records: Union[Dict[Union[str, NmrSpecRecordId], Union[dict, NmrSpecRecord]], List[Union[dict, NmrSpecRecord]]] = empty_dict()
+    contains_assay_records: Union[Dict[Union[str, NmrSpecRecordId], Union[dict, NmrSpecRecord]], List[Union[dict, NmrSpecRecord]]] = empty_dict()
     assays_sample: Union[dict, NmrSample] = None
     source: Union[str, List[str]] = None
     description: Optional[str] = None
@@ -887,9 +885,9 @@ class NmrSpecRecordCollection(YAMLRoot):
         if not isinstance(self.id, NmrSpecRecordCollectionId):
             self.id = NmrSpecRecordCollectionId(self.id)
 
-        if self._is_empty(self.nmr_assay_records):
-            self.MissingRequiredField("nmr_assay_records")
-        self._normalize_inlined_as_list(slot_name="nmr_assay_records", slot_type=NmrSpecRecord, key_name="id", keyed=True)
+        if self._is_empty(self.contains_assay_records):
+            self.MissingRequiredField("contains_assay_records")
+        self._normalize_inlined_as_list(slot_name="contains_assay_records", slot_type=NmrSpecRecord, key_name="id", keyed=True)
 
         if self._is_empty(self.assays_sample):
             self.MissingRequiredField("assays_sample")
