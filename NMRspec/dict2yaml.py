@@ -8,6 +8,7 @@ import os
 import re
 
 today_str = str(date.today())
+debug = True
 
 def get_assay_data(jdx_dict) -> PulsedNmrAssay:
     def get_solvent() -> NmrSolvent:
