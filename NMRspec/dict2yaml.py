@@ -176,6 +176,19 @@ def get_assay_data(jdx_dict) -> PulsedNmrAssay:
         else:
             return "1D"
 
+    def get_observed_frequencies() -> list:
+        """function to parse observed frequencies from the jdx file"""
+        if '$sfo1' in jdx_dict:
+            observed_frequencies = [jdx_dict['$sfo1']]
+            observed_frequencies.append(jdx_dict['$sfo2'])
+            if jdx_dict['$sfo3'] != jdx_dict['$sfo1']:
+                observed_frequencies.append(jdx_dict['$sfo3'])
+                print(jdx_dict['.observe frequency'])
+        else:
+            observed_frequencies = [jdx_dict['.observe frequency']]
+        if debug is True:
+            print(f"-----\nobserved frequencies: {observed_frequencies}")
+        return observed_frequencies
 
     # parse pulse program
     def get_pulse_program() -> str:
