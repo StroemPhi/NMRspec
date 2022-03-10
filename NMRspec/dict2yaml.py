@@ -166,6 +166,16 @@ def get_assay_data(jdx_dict) -> PulsedNmrAssay:
             print(f"-----\naquisition nuclei: {acquisition_nuclei}")
         return acquisition_nuclei
 
+    def get_dimension() -> str:
+        """Function to parse the dimensionality of the pulsed NMR assay from the jdx file,
+        if the key for this is present. If it is missing, it'll default to "1D."""
+        if 'numdim' in jdx_dict:
+            if debug is True:
+                print(f"-----\ndimensionality: {jdx_dict['numdim']}D")
+            return f"{jdx_dict['numdim']}D"
+        else:
+            return "1D"
+
 
     # parse pulse program
     def get_pulse_program() -> str:
