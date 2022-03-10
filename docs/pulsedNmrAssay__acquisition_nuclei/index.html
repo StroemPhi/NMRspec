@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Class: NmrSpectrometer - This model is to be used to semantify NMR spectroscopy research data.</title>
+  <title>Slot: acquisition_nuclei - This model is to be used to semantify NMR spectroscopy research data.</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Class: NmrSpectrometer";
-    var mkdocs_page_input_path = "NmrSpectrometer.md";
+    var mkdocs_page_name = "Slot: acquisition_nuclei";
+    var mkdocs_page_input_path = "pulsedNmrAssay__acquisition_nuclei.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -79,7 +79,7 @@
     
       
     
-    <li>Class: NmrSpectrometer</li>
+    <li>Slot: acquisition_nuclei</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -91,34 +91,16 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="class-nmrspectrometer">Class: NmrSpectrometer</h1>
-<p>URI: <a href="https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/NmrSpectrometer">NMRspec:NmrSpectrometer</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[NmrSampleTube]&lt;sample_tube%200..1-++[NmrSpectrometer&#124;type:string%20%3F;id:uriorcurie],[Manufacturer]&lt;manufactured_by%200..1-++[NmrSpectrometer],[PulsedNmrAssay]++-%20spectrometer%201..1&gt;[NmrSpectrometer],[NmrSampleTube],[Manufacturer]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[NmrSampleTube]&lt;sample_tube%200..1-++[NmrSpectrometer&#124;type:string%20%3F;id:uriorcurie],[Manufacturer]&lt;manufactured_by%200..1-++[NmrSpectrometer],[PulsedNmrAssay]++-%20spectrometer%201..1&gt;[NmrSpectrometer],[NmrSampleTube],[Manufacturer]" /></a></p>
-<h2 id="referenced-by-class">Referenced by Class</h2>
+                <h1 id="slot-acquisition_nuclei">Slot: acquisition_nuclei</h1>
+<p>the nuclei to be assayed as specified by the protocol</p>
+<p>URI: <a href="https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/pulsedNmrAssay__acquisition_nuclei">NMRspec:pulsedNmrAssay__acquisition_nuclei</a></p>
+<h2 id="domain-and-range">Domain and Range</h2>
+<p><a href="../PulsedNmrAssay/">PulsedNmrAssay</a> &#8594;  <sub>1..*</sub> <a href="../String/">String</a></p>
+<h2 id="parents">Parents</h2>
+<h2 id="children">Children</h2>
+<h2 id="used-by">Used by</h2>
 <ul>
-<li><strong><a href="../PulsedNmrAssay/">PulsedNmrAssay</a></strong> <em><a href="../pulsedNmrAssay__spectrometer/">PulsedNmrAssay➞spectrometer</a></em>  <sub>1..1</sub>  <strong><a href="./">NmrSpectrometer</a></strong></li>
-</ul>
-<h2 id="attributes">Attributes</h2>
-<h3 id="own">Own</h3>
-<ul>
-<li><a href="../NmrSpectrometer_manufactured_by/">NmrSpectrometer➞manufactured_by</a>  <sub>0..1</sub><ul>
-<li>Description: a property to be used on any class that represents some form of atrefact, in order to refer to the artefacts maker.</li>
-<li>Range: <a href="../Manufacturer/">Manufacturer</a></li>
-</ul>
-</li>
-<li><a href="../NmrSpectrometer_type/">NmrSpectrometer➞type</a>  <sub>0..1</sub><ul>
-<li>Description: This property represents the type of spectrometer used in the NMR assay as string. Often this information will not be present in the JCAMP-DX file, but it can be parsed from Brucker source files</li>
-<li>Range: <a href="../String/">String</a></li>
-</ul>
-</li>
-<li><a href="../NmrSpectrometer_id/">NmrSpectrometer➞id</a>  <sub>1..1</sub><ul>
-<li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
-</ul>
-</li>
-<li><a href="../nmrSpectrometer__sample_tube/">➞sample_tube</a>  <sub>0..1</sub><ul>
-<li>Range: <a href="../NmrSampleTube/">NmrSampleTube</a></li>
-</ul>
-</li>
+<li><a href="../PulsedNmrAssay/">PulsedNmrAssay</a></li>
 </ul>
 <h2 id="other-properties">Other properties</h2>
 <table>
@@ -131,19 +113,9 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Mappings:</strong></td>
+<td><strong>Exact Mappings:</strong></td>
 <td></td>
-<td>obi:0000566</td>
-</tr>
-<tr>
-<td><strong>Close Mappings:</strong></td>
-<td></td>
-<td>nmrCV:1400059</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>chmo:0001807</td>
+<td>jdx:.observe nucleus</td>
 </tr>
 </tbody>
 </table>

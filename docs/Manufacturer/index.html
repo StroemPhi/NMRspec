@@ -93,7 +93,7 @@
               
                 <h1 id="class-manufacturer">Class: Manufacturer</h1>
 <p>URI: <a href="https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/Manufacturer">NMRspec:Manufacturer</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[NmrSpectrometer],[NmrSampleTube],[NmrSampleTube]++-%20manufactured_by%200..1&gt;[Manufacturer&#124;name:NmrManufacturers%20%3F;website:uri%20%3F],[NmrSpectrometer]++-%20manufactured_by%200..1&gt;[Manufacturer],[NmrSpectrometer]++-%20manufactured_by(i)%200..1&gt;[Manufacturer],[NmrSampleTube]++-%20manufactured_by(i)%200..1&gt;[Manufacturer]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[NmrSpectrometer],[NmrSampleTube],[NmrSampleTube]++-%20manufactured_by%200..1&gt;[Manufacturer&#124;name:NmrManufacturers%20%3F;website:uri%20%3F],[NmrSpectrometer]++-%20manufactured_by%200..1&gt;[Manufacturer],[NmrSpectrometer]++-%20manufactured_by(i)%200..1&gt;[Manufacturer],[NmrSampleTube]++-%20manufactured_by(i)%200..1&gt;[Manufacturer]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[NmrSpectrometer],[NmrSampleTube],[NmrSampleTube]++-%20manufactured_by%200..1&gt;[Manufacturer&#124;name:NmrManufacturers%20%3F;website:uri%20%3F;id:uriorcurie],[NmrSpectrometer]++-%20manufactured_by%200..1&gt;[Manufacturer],[NmrSpectrometer]++-%20manufactured_by(i)%200..1&gt;[Manufacturer],[NmrSampleTube]++-%20manufactured_by(i)%200..1&gt;[Manufacturer]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[NmrSpectrometer],[NmrSampleTube],[NmrSampleTube]++-%20manufactured_by%200..1&gt;[Manufacturer&#124;name:NmrManufacturers%20%3F;website:uri%20%3F;id:uriorcurie],[NmrSpectrometer]++-%20manufactured_by%200..1&gt;[Manufacturer],[NmrSpectrometer]++-%20manufactured_by(i)%200..1&gt;[Manufacturer],[NmrSampleTube]++-%20manufactured_by(i)%200..1&gt;[Manufacturer]" /></a></p>
 <h2 id="referenced-by-class">Referenced by Class</h2>
 <ul>
 <li><strong><a href="../NmrSampleTube/">NmrSampleTube</a></strong> <em><a href="../NmrSampleTube_manufactured_by/">NmrSampleTube➞manufactured_by</a></em>  <sub>0..1</sub>  <strong><a href="./">Manufacturer</a></strong></li>
@@ -111,6 +111,10 @@
 <li><a href="../website/">website</a>  <sub>0..1</sub><ul>
 <li>Description: a generic property to be used in classes that represent something which has a website</li>
 <li>Range: <a href="../Uri/">Uri</a></li>
+</ul>
+</li>
+<li><a href="../Manufacturer_id/">Manufacturer➞id</a>  <sub>1..1</sub><ul>
+<li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
 </ul>
 </li>
 </ul>

@@ -72,6 +72,9 @@
          "additionalProperties": false,
          "description": "",
          "properties": {
+            "id": {
+               "type": "string"
+            },
             "name": {
                "$ref": "#/$defs/NmrManufacturers",
                "description": "a generic property to provide a string that is used to name a something"
@@ -81,7 +84,9 @@
                "type": "string"
             }
          },
-         "required": [],
+         "required": [
+            "id"
+         ],
          "title": "Manufacturer",
          "type": "object"
       },
@@ -253,6 +258,9 @@
          "additionalProperties": false,
          "description": "",
          "properties": {
+            "id": {
+               "type": "string"
+            },
             "manufactured_by": {
                "$ref": "#/$defs/Manufacturer",
                "description": "a property to be used on any class that represents some form of atrefact, in order to refer to the artefacts maker."
@@ -264,7 +272,9 @@
                "type": "string"
             }
          },
-         "required": [],
+         "required": [
+            "id"
+         ],
          "title": "NmrSampleTube",
          "type": "object"
       },
@@ -275,6 +285,9 @@
             "buffer": {
                "$ref": "#/$defs/NmrBuffer"
             },
+            "id": {
+               "type": "string"
+            },
             "measured_molarity": {
                "$ref": "#/$defs/MolarConcentration",
                "description": "The predicate needed to relate to the concentration of the NMR solution."
@@ -282,6 +295,10 @@
             "measured_pH": {
                "$ref": "#/$defs/PhValue",
                "description": "The predicate needed to relate to the concentration of the NMR solution."
+            },
+            "name": {
+               "description": "a generic property to provide a string that is used to name a something",
+               "type": "string"
             },
             "sample": {
                "$ref": "#/$defs/NmrSample",
@@ -294,7 +311,8 @@
          },
          "required": [
             "solvent",
-            "sample"
+            "sample",
+            "id"
          ],
          "title": "NmrSolution",
          "type": "object"
@@ -456,6 +474,9 @@
          "additionalProperties": false,
          "description": "",
          "properties": {
+            "id": {
+               "type": "string"
+            },
             "manufactured_by": {
                "$ref": "#/$defs/Manufacturer",
                "description": "a property to be used on any class that represents some form of atrefact, in order to refer to the artefacts maker."
@@ -468,7 +489,9 @@
                "type": "string"
             }
          },
-         "required": [],
+         "required": [
+            "id"
+         ],
          "title": "NmrSpectrometer",
          "type": "object"
       },
@@ -559,7 +582,8 @@
             "CLEANEX",
             "CLEANEX-HSQC",
             "CLEANEX-TROSY",
-            "Custom"
+            "Custom",
+            "not provided"
          ],
          "title": "PulseProgram",
          "type": "string"
@@ -568,7 +592,7 @@
          "additionalProperties": false,
          "description": "",
          "properties": {
-            "acuisition_nuclei": {
+            "acquisition_nuclei": {
                "description": "the nuclei to be assayed as specified by the protocol",
                "items": {
                   "type": "string"
@@ -617,7 +641,7 @@
             "spectrometer",
             "has_dimension",
             "pulse_program",
-            "acuisition_nuclei",
+            "acquisition_nuclei",
             "id"
          ],
          "title": "PulsedNmrAssay",

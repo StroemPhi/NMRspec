@@ -93,7 +93,7 @@
               
                 <h1 id="class-nmrsampletube">Class: NmrSampleTube</h1>
 <p>URI: <a href="https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/NmrSampleTube">NMRspec:NmrSampleTube</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Temperature],[Temperature]&lt;measured_temperature%200..1-++[NmrSampleTube&#124;type:string%20%3F],[Manufacturer]&lt;manufactured_by%200..1-++[NmrSampleTube],[NmrSpectrometer]++-%20sample_tube%200..1&gt;[NmrSampleTube],[NmrSpectrometer],[Manufacturer]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Temperature],[Temperature]&lt;measured_temperature%200..1-++[NmrSampleTube&#124;type:string%20%3F],[Manufacturer]&lt;manufactured_by%200..1-++[NmrSampleTube],[NmrSpectrometer]++-%20sample_tube%200..1&gt;[NmrSampleTube],[NmrSpectrometer],[Manufacturer]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Temperature],[Temperature]&lt;measured_temperature%200..1-++[NmrSampleTube&#124;type:string%20%3F;id:uriorcurie],[Manufacturer]&lt;manufactured_by%200..1-++[NmrSampleTube],[NmrSpectrometer]++-%20sample_tube%200..1&gt;[NmrSampleTube],[NmrSpectrometer],[Manufacturer]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Temperature],[Temperature]&lt;measured_temperature%200..1-++[NmrSampleTube&#124;type:string%20%3F;id:uriorcurie],[Manufacturer]&lt;manufactured_by%200..1-++[NmrSampleTube],[NmrSpectrometer]++-%20sample_tube%200..1&gt;[NmrSampleTube],[NmrSpectrometer],[Manufacturer]" /></a></p>
 <h2 id="referenced-by-class">Referenced by Class</h2>
 <ul>
 <li><strong>None</strong> <em><a href="../nmrSpectrometer__sample_tube/">➞sample_tube</a></em>  <sub>0..1</sub>  <strong><a href="./">NmrSampleTube</a></strong></li>
@@ -108,6 +108,10 @@
 </li>
 <li><a href="../type/">type</a>  <sub>0..1</sub><ul>
 <li>Range: <a href="../String/">String</a></li>
+</ul>
+</li>
+<li><a href="../NmrSampleTube_id/">NmrSampleTube➞id</a>  <sub>1..1</sub><ul>
+<li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
 </ul>
 </li>
 <li><a href="../nmrSampleTube__measured_temperature/">➞measured_temperature</a>  <sub>0..1</sub><ul>

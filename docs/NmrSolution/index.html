@@ -94,7 +94,11 @@
                 <h1 id="class-nmrsolution">Class: NmrSolution</h1>
 <p>A NMR sollution is the solution made up of the solvent in which the evaluated sample is dissolved in as well as possibly the buffer needed to adjust the pH value.</p>
 <p>URI: <a href="https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/NmrSolution">NMRspec:NmrSolution</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[PhValue],[NmrSolvent],[PhValue]&lt;measured_pH%200..1-++[NmrSolution],[MolarConcentration]&lt;measured_molarity%200..1-++[NmrSolution],[NmrBuffer]&lt;buffer%200..1-++[NmrSolution],[NmrSample]&lt;sample%201..1-++[NmrSolution],[NmrSolvent]&lt;solvent%201..1-++[NmrSolution],[PulsedNmrAssay]++-%20solution%201..1&gt;[NmrSolution],[NmrSample],[NmrBuffer],[MolarConcentration]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[PhValue],[NmrSolvent],[PhValue]&lt;measured_pH%200..1-++[NmrSolution],[MolarConcentration]&lt;measured_molarity%200..1-++[NmrSolution],[NmrBuffer]&lt;buffer%200..1-++[NmrSolution],[NmrSample]&lt;sample%201..1-++[NmrSolution],[NmrSolvent]&lt;solvent%201..1-++[NmrSolution],[PulsedNmrAssay]++-%20solution%201..1&gt;[NmrSolution],[NmrSample],[NmrBuffer],[MolarConcentration]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[PhValue],[NmrSolvent],[PhValue]&lt;measured_pH%200..1-++[NmrSolution&#124;id:uriorcurie;name:string%20%3F],[MolarConcentration]&lt;measured_molarity%200..1-++[NmrSolution],[NmrBuffer]&lt;buffer%200..1-++[NmrSolution],[NmrSample]&lt;sample%201..1-++[NmrSolution],[NmrSolvent]&lt;solvent%201..1-++[NmrSolution],[PulsedNmrAssay]++-%20solution%201..1&gt;[NmrSolution],[NmrSolution]uses%20-.-&gt;[NamedThing],[NmrSample],[NmrBuffer],[NamedThing],[MolarConcentration]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PulsedNmrAssay],[PhValue],[NmrSolvent],[PhValue]&lt;measured_pH%200..1-++[NmrSolution&#124;id:uriorcurie;name:string%20%3F],[MolarConcentration]&lt;measured_molarity%200..1-++[NmrSolution],[NmrBuffer]&lt;buffer%200..1-++[NmrSolution],[NmrSample]&lt;sample%201..1-++[NmrSolution],[NmrSolvent]&lt;solvent%201..1-++[NmrSolution],[PulsedNmrAssay]++-%20solution%201..1&gt;[NmrSolution],[NmrSolution]uses%20-.-&gt;[NamedThing],[NmrSample],[NmrBuffer],[NamedThing],[MolarConcentration]" /></a></p>
+<h2 id="uses-mixin">Uses Mixin</h2>
+<ul>
+<li>mixin: <a href="../NamedThing/">NamedThing</a> - a mixin to be used by any class that has a name and unique id</li>
+</ul>
 <h2 id="referenced-by-class">Referenced by Class</h2>
 <ul>
 <li><strong><a href="../PulsedNmrAssay/">PulsedNmrAssay</a></strong> <em><a href="../pulsedNmrAssay__solution/">PulsedNmrAssay➞solution</a></em>  <sub>1..1</sub>  <strong><a href="./">NmrSolution</a></strong></li>
@@ -124,6 +128,18 @@
 <li><a href="../nmrSolution__measured_pH/">➞measured_pH</a>  <sub>0..1</sub><ul>
 <li>Description: The predicate needed to relate to the concentration of the NMR solution.</li>
 <li>Range: <a href="../PhValue/">PhValue</a></li>
+</ul>
+</li>
+<li><a href="../NmrSolution_id/">NmrSolution➞id</a>  <sub>1..1</sub><ul>
+<li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-namedthing">Mixed in from NamedThing:</h3>
+<ul>
+<li><a href="../name/">name</a>  <sub>0..1</sub><ul>
+<li>Description: a generic property to provide a string that is used to name a something</li>
+<li>Range: <a href="../String/">String</a></li>
 </ul>
 </li>
 </ul>

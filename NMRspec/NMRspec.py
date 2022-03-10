@@ -1,5 +1,5 @@
 # Auto generated from NMRspec.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-03-08T15:02:10
+# Generation date: 2022-03-10T00:07:41
 # Schema: NMRspec
 #
 # id: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/NMRspec.yaml
@@ -71,6 +71,10 @@ class PulsedNmrAssayId(URIorCURIE):
     pass
 
 
+class NmrSolutionId(URIorCURIE):
+    pass
+
+
 class NmrSampleId(URIorCURIE):
     pass
 
@@ -80,6 +84,18 @@ class NmrSolventId(URIorCURIE):
 
 
 class NmrBufferId(URIorCURIE):
+    pass
+
+
+class NmrSpectrometerId(URIorCURIE):
+    pass
+
+
+class NmrSampleTubeId(URIorCURIE):
+    pass
+
+
+class ManufacturerId(URIorCURIE):
     pass
 
 
@@ -173,12 +189,12 @@ class PulsedNmrAssay(YAMLRoot):
     class_name: ClassVar[str] = "PulsedNmrAssay"
     class_model_uri: ClassVar[URIRef] = NMRSPEC.PulsedNmrAssay
 
-    id: Union[str, PulsedNmrAssayId] = None
     solution: Union[dict, "NmrSolution"] = None
     spectrometer: Union[dict, "NmrSpectrometer"] = None
-    has_dimension: Union[str, "Dimension"] = None
-    pulse_program: Union[str, "PulseProgram"] = None
-    acuisition_nuclei: Union[str, List[str]] = None
+    acquisition_nuclei: Union[str, List[str]] = None
+    has_dimension: Union[str, "Dimension"] = "1D"
+    pulse_program: Union[str, "PulseProgram"] = "not provided"
+    id: Union[str, PulsedNmrAssayId] = NMRSPARQL.PulsedNmrAssay
     assay_date: Optional[Union[str, XSDDateTime]] = None
     pulse_program_custom: Optional[str] = None
     observed_frequencies: Optional[Union[float, List[float]]] = empty_list()
@@ -210,11 +226,11 @@ class PulsedNmrAssay(YAMLRoot):
         if not isinstance(self.pulse_program, PulseProgram):
             self.pulse_program = PulseProgram(self.pulse_program)
 
-        if self._is_empty(self.acuisition_nuclei):
-            self.MissingRequiredField("acuisition_nuclei")
-        if not isinstance(self.acuisition_nuclei, list):
-            self.acuisition_nuclei = [self.acuisition_nuclei] if self.acuisition_nuclei is not None else []
-        self.acuisition_nuclei = [v if isinstance(v, str) else str(v) for v in self.acuisition_nuclei]
+        if self._is_empty(self.acquisition_nuclei):
+            self.MissingRequiredField("acquisition_nuclei")
+        if not isinstance(self.acquisition_nuclei, list):
+            self.acquisition_nuclei = [self.acquisition_nuclei] if self.acquisition_nuclei is not None else []
+        self.acquisition_nuclei = [v if isinstance(v, str) else str(v) for v in self.acquisition_nuclei]
 
         if self.assay_date is not None and not isinstance(self.assay_date, XSDDateTime):
             self.assay_date = XSDDateTime(self.assay_date)
@@ -247,11 +263,18 @@ class NmrSolution(YAMLRoot):
 
     solvent: Union[dict, "NmrSolvent"] = None
     sample: Union[dict, "NmrSample"] = None
+    id: Union[str, NmrSolutionId] = NMRSPARQL.Solution
     buffer: Optional[Union[dict, "NmrBuffer"]] = None
     measured_molarity: Optional[Union[dict, "MolarConcentration"]] = None
     measured_pH: Optional[Union[dict, "PhValue"]] = None
+    name: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, NmrSolutionId):
+            self.id = NmrSolutionId(self.id)
+
         if self._is_empty(self.solvent):
             self.MissingRequiredField("solvent")
         if not isinstance(self.solvent, NmrSolvent):
@@ -271,6 +294,9 @@ class NmrSolution(YAMLRoot):
         if self.measured_pH is not None and not isinstance(self.measured_pH, PhValue):
             self.measured_pH = PhValue(**as_dict(self.measured_pH))
 
+        if self.name is not None and not isinstance(self.name, str):
+            self.name = str(self.name)
+
         super().__post_init__(**kwargs)
 
 
@@ -283,7 +309,7 @@ class NmrSample(YAMLRoot):
     class_name: ClassVar[str] = "NmrSample"
     class_model_uri: ClassVar[URIRef] = NMRSPEC.NmrSample
 
-    id: Union[str, NmrSampleId] = None
+    id: Union[str, NmrSampleId] = NMRSPARQL.Sample
     local_id: Optional[str] = None
     formula: Optional[Union[dict, "MolecularFormula"]] = None
     inchi: Optional[Union[dict, "InCHI"]] = None
@@ -426,16 +452,22 @@ class NmrBuffer(YAMLRoot):
 class NmrSpectrometer(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = NMRSPEC.NmrSpectrometer
-    class_class_curie: ClassVar[str] = "NMRspec:NmrSpectrometer"
+    class_class_uri: ClassVar[URIRef] = OBI["0000566"]
+    class_class_curie: ClassVar[str] = "obi:0000566"
     class_name: ClassVar[str] = "NmrSpectrometer"
     class_model_uri: ClassVar[URIRef] = NMRSPEC.NmrSpectrometer
 
+    id: Union[str, NmrSpectrometerId] = NMRSPARQL.spectrometer
     manufactured_by: Optional[Union[dict, "Manufacturer"]] = None
     type: Optional[str] = None
     sample_tube: Optional[Union[dict, "NmrSampleTube"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, NmrSpectrometerId):
+            self.id = NmrSpectrometerId(self.id)
+
         if self.manufactured_by is not None and not isinstance(self.manufactured_by, Manufacturer):
             self.manufactured_by = Manufacturer(**as_dict(self.manufactured_by))
 
@@ -457,11 +489,17 @@ class NmrSampleTube(YAMLRoot):
     class_name: ClassVar[str] = "NmrSampleTube"
     class_model_uri: ClassVar[URIRef] = NMRSPEC.NmrSampleTube
 
+    id: Union[str, NmrSampleTubeId] = NMRSPARQL.sampletube
     manufactured_by: Optional[Union[dict, "Manufacturer"]] = None
     type: Optional[str] = None
     measured_temperature: Optional[Union[dict, "Temperature"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, NmrSampleTubeId):
+            self.id = NmrSampleTubeId(self.id)
+
         if self.manufactured_by is not None and not isinstance(self.manufactured_by, Manufacturer):
             self.manufactured_by = Manufacturer(**as_dict(self.manufactured_by))
 
@@ -483,10 +521,16 @@ class Manufacturer(YAMLRoot):
     class_name: ClassVar[str] = "Manufacturer"
     class_model_uri: ClassVar[URIRef] = NMRSPEC.Manufacturer
 
+    id: Union[str, ManufacturerId] = NMRSPARQL.Manufacturer
     name: Optional[Union[str, "NmrManufacturers"]] = None
     website: Optional[Union[str, URI]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, ManufacturerId):
+            self.id = ManufacturerId(self.id)
+
         if self.name is not None and not isinstance(self.name, NmrManufacturers):
             self.name = NmrManufacturers(self.name)
 
@@ -972,6 +1016,9 @@ class PulseProgram(EnumDefinitionImpl):
                 PermissibleValue(text="CLEANEX-HSQC") )
         setattr(cls, "CLEANEX-TROSY",
                 PermissibleValue(text="CLEANEX-TROSY") )
+        setattr(cls, "not provided",
+                PermissibleValue(text="not provided",
+                                 description="This is only to be used, if there no way to derive which pulse program has been used.") )
 
 class NmrManufacturers(EnumDefinitionImpl):
     """
