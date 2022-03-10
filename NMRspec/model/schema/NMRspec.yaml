@@ -346,12 +346,13 @@ classes:
     attributes:
       output_of_nmr_assay:
         slot_uri: obi:0000312
-        required: true
+        #required: true
         inlined: true
         range: PulsedNmrAssay
     slot_usage:
       id:
-        description: the URI of a NMR spectroscopy record, which gets generated upon ingest source data 
+        description: the URI of a NMR spectroscopy record, which gets generated upon ingest source data
+        ifabsent: uri(nmrSPARQL:recordID) 
   NmrSpecRecordCollection:
     tree_root: true
     mixins: 
