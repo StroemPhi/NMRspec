@@ -287,29 +287,35 @@ def get_assay_data(jdx_dict) -> PulsedNmrAssay:
         pulse_program_custom = get_pulse_program()[1]
 
 
-if __name__ == '__main__':
     # loading provenance metadata provided in manually generated files
     assay_info = yaml_loader.loads(source="./jdx_files/SG-V3259 (41-52)_10.yaml", target_class=Provenance)
-    #print(f"-----\nloaded assay_info:\n{yaml_dumper.dumps(assay_info)}")
+    # print(f"-----\nloaded assay_info:\n{yaml_dumper.dumps(assay_info)}")
     dataset_info = yaml_loader.loads(source="./jdx_files/dataset_info.yaml", target_class=Provenance)
-    #print(f"-----\nloaded dataset_info:\n{yaml_dumper.dumps(dataset_info)}")
+    # print(f"-----\nloaded dataset_info:\n{yaml_dumper.dumps(dataset_info)}")
 
     # loading sample metadata provided in manually generated file
     # TODO: get further sample infos from some API like ChEBI or PubChem
     sample = yaml_loader.loads(source="./jdx_files/sample_info.yaml", target_class=NmrSample)
+    # declare assayed solution
+    solution = NmrSolution(solvent=get_solvent(), sample=sample)
 
+    assay = PulsedNmrAssay(solution=solution, spectrometer=get_spectrometer(), has_dimension=get_dimension(),
+                           pulse_program=pulse_program, pulse_program_custom=pulse_program_custom, name=jdx_filename,
+                           assay_date=get_assay_date(), acquisition_nuclei=get_acquisition_nuclei(),
+                           observed_frequencies=get_observed_frequencies())
+    return assay
+
+if __name__ == '__main__':
     # parse the jdx file into Python dict
     jdx_dict = jdx2dict(filepath="./jdx_files/SG-V3259 (41-52)_10.dx")
+    jdx_dict = jdx2dict(filepath="./jdx_files/SG-V3259 (41-52)_11.dx")
+    # jdx_dict = jdx2dict(filepath="./jdx_files/000000012.jdx")
+    # jdx_dict = jdx2dict(filepath="./jdx_files/000000020.jdx")
+    # jdx_dict = jdx2dict(filepath="./jdx_files/Rutin_3080ug200uL_DMSOd6_13CNMR_400MHz_JDX.jdx")
+    # jdx_dict = jdx2dict(filepath="./jdx_files/Rutin_3080ug200uL_DMSOd6_HSQC_400MHz_JDX.jdx")
+    # jdx_dict = jdx2dict(filepath="./jdx_files/070307_P00_01_1DP_29920121204-3960-iqyayg.jdx")
+    # jdx_dict = jdx2dict(filepath="./jdx_files/gh37cj.jdx")
+    # jdx_dict = jdx2dict(filepath="./jdx_files/gh59cj.jdx")
     print(f"-----\nloading '{os.path.basename(jdx_dict['filename'])}' into dict:\n{jdx_dict}")
-
-    # get solvent from jdx_dict
-    solvent = get_solvent(jdx_dict)
-    #print(f"-----\nparsed solvent:\n{yaml_dumper.dumps(solvent)}")
-
-    # declare assayed solution
-    solution = NmrSolution(solvent=solvent, sample=sample)
-    print(f"-----\ndeclared solution:\n{yaml_dumper.dumps(solution)}")
-
-    #get assay metadata from jdx_dict
     get_assay_data(jdx_dict)
 
