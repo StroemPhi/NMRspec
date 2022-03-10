@@ -122,6 +122,15 @@ def get_assay_data(jdx_dict) -> PulsedNmrAssay:
             print(f"-----\nmanufacturer: {manufacturer}")
         return manufacturer
 
+    def get_spectrometer() -> NmrSpectrometer:
+        """
+        function to parse the spectrometer data from the jdx file if it is present in there
+        """
+        if "SPECTROMETER/DATA SYSTEM".lower() in jdx_dict:
+            if debug is True:
+                print(f"-----\nparsed spectrometer: {jdx_dict['spectrometer/data system']}")
+            return NmrSpectrometer(type=jdx_dict['spectrometer/data system'], manufactured_by=get_manufacturer())
+
     def get_acquisition_nuclei() -> list:
         """
         function to parse the aquisition nuclei from the jdx file by looking for three possible jdx fields
