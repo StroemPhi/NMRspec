@@ -131,7 +131,7 @@ classes:
         description: A custom pulse program specification that is not yet in our list of allowed values for the pulse program parameter.
         domain: PulsedNmrAssay
         range: string
-      acuisition_nuclei:
+      acquisition_nuclei:
         required: true
         multivalued: true
         inlined_as_list: true
@@ -189,6 +189,9 @@ classes:
       - NamedThing
     slots:
       - local_id
+    slot_usage:
+      id: 
+        ifabsent: uri(nmrSPARQL:Sample)
   NmrSolvent:
     mixins:
       - ChemicalDescriptor
@@ -203,10 +206,14 @@ classes:
       - NamedThing
 # devices
   NmrSpectrometer:
+    class_uri: obi:0000566
     slots:  
       - manufactured_by
       - type
+      - id
     slot_usage:
+      id:
+        ifabsent: uri(nmrSPARQL:spectrometer)
       manufactured_by:
         range: Manufacturer
       type:
@@ -216,10 +223,10 @@ classes:
           - make the range an enum with allowed values from ontology, see also https://github.com/StroemPhi/NMR-spectroscopy-schema/issues/2
     attributes:
       sample_tube:
+        inlined: true
         slot_uri: bfo:0000051
         range: NmrSampleTube
     close_mappings:
-      - obi:0000566
       - nmrCV:1400059
       - chmo:0001807
   NmrSampleTube:
@@ -227,13 +234,16 @@ classes:
     slots:  
       - manufactured_by
       - type
+      - id
+    slot_usage:
+      id:
+        ifabsent: uri(nmrSPARQL:sampletube)
+      manufactured_by:
+        range: Manufacturer
     attributes:
       measured_temperature:
         slot_uri: ro:0000086 # has quality
         range: Temperature
-    slot_usage:
-      manufactured_by:
-        range: Manufacturer
 # Organisations
   Manufacturer:
     class_uri: obi:0000835
@@ -242,7 +252,10 @@ classes:
     slots:
       - name
       - website
+      - id
     slot_usage:
+      id:
+        ifabsent: uri(nmrSPARQL:Manufacturer)
       name: 
         range: NmrManufacturers
 # qualities    
@@ -479,6 +492,8 @@ enums:
       CLEANEX-TROSY:
       Custom:
         description: To be used, if the pulse program is not in this list.
+      not provided:
+        description: This is only to be used, if there no way to derive which pulse program has been used.
   NmrManufacturers:
     description: Controlled list of manufacturers of NMR lab devices.
     notes: allowed values from nmrCV_1400255
