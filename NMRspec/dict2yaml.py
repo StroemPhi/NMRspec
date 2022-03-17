@@ -130,10 +130,10 @@ def get_sample(nmr_dataset) -> NmrSample:
                     solvent_dict = possible_solvent
         parsed_solvent = NmrSolvent(id=solvent_dict['id'],
                                     name=solvent_dict['name'][0],
-                                    inchi=InCHI(has_representation=solvent_dict['inchi']),
-                                    inchikey=InCHIKey(has_representation=solvent_dict['inchikey']),
-                                    iupac_name=IUPACname(has_representation=solvent_dict['iupac_name']),
-                                    smiles=SMILES(has_representation=solvent_dict['smiles']))
+                                    inchi=solvent_dict['inchi'],
+                                    inchikey=solvent_dict['inchikey'],
+                                    iupac_name=solvent_dict['iupac_name'],
+                                    smiles=solvent_dict['smiles'])
         if debug is True:
             print(f"----\nparsed_solvent: {parsed_solvent}")
         return parsed_solvent
@@ -337,27 +337,24 @@ def get_sample(nmr_dataset) -> NmrSample:
                         value = value.split('-')
                         # return controlled term if the combined pulse program could be matched
                         if value[0] in pulse_program_jdx and value[1] in pulse_program_jdx:
-                            pulse_program = True, possible_pulse_program["name"]
                     # return controlled term if there is a pulse program match
                     else:
                         if re.match(rf"(^{value})", pulse_program_jdx):
                             pulse_program = True, possible_pulse_program["name"]
             # return unknown jdx pulse program code
             if not pulse_program:
-                pulse_program = False, jdx_dict['.pulse sequence']
+                    elif re.match(rf"(^{value})", pulse_program_jdx):
+                    # return unknown jdx pulse program code
+            if not pulse_program_parsed:
+                pulse_program_custom = jdx_dict['.pulse sequence']
+                pulse_program_parsed = "Custom"
         else:
             print("-----\nError: There is no pulse program specified in the jdx file!")
+            pulse_program_parsed = "not provided"
         if debug is True:
-            print(f"-----\npulse program: {pulse_program}")
-        return pulse_program
-
-    pulse_program_custom = None
     if get_pulse_program()[0] is True:
         pulse_program = get_pulse_program()[1]
-    else:
         pulse_program_custom = get_pulse_program()[1]
-
-    jdx_filename = os.path.basename(jdx_dict['filename'])
     print(f"----\njdx_filename: {jdx_filename}")
 
     # loading provenance metadata provided in manually generated files
