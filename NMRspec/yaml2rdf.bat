@@ -4,4 +4,3 @@ FOR %%f IN (.\jdx_files\output\*.yaml) DO (
    	linkml-convert -s .\model\schema\NMRspec.yaml -t ttl .\jdx_files\output\%%~nf.yaml -o .\jdx_files\output\%%~nf.ttl
 )
 echo all done
-pause
