@@ -12,7 +12,7 @@ prefixes:
   bfo: http://purl.obolibrary.org/obo/BFO_
   chmo: http://purl.obolibrary.org/obo/CHMO_
   nmrCV: http://nmrML.org/nmrCV#
-  chebi: http://purl.obolibrary.org/obo/CHEBI_
+  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
   cheminf: http://purl.obolibrary.org/obo/CHEMINF_
   ro: http://purl.obolibrary.org/obo/RO_
   iao: http://purl.obolibrary.org/obo/IAO_
@@ -28,6 +28,7 @@ prefixes:
   chemotionDATA: https://www.chemotion-repository.net/home/publications/datasets/
   chemotion: https://www.chemotion-repository.net/home/publications/reactions/
   cc: https://creativecommons.org/licenses/
+  pubchemCID: https://pubchem.ncbi.nlm.nih.gov/compound/
 # other NMR schema prefixes for mapping purposes
   jdx: http://www.jcamp-dx.org/protocols/dxnmr01.pdf/
   isa: https://isa-specs.readthedocs.io/en/latest/isamodel.html#
@@ -39,6 +40,8 @@ default_curi_maps:
 imports:
  - linkml:types
  - ./Provenance
+emit_prefixes:
+  nmrSPARQL
 #####################################
 classes:
 # Mixins
