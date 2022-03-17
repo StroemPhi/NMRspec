@@ -8,7 +8,7 @@ source: Harvard Dataverse
 licence_str: CC0 - "Public Domain Dedication"
 licence_url: https://creativecommons.org/share-your-work/public-domain/cc0
 date_created: "2019-10-28"  
-description: "NMR data of (+)-tetrandrine in DMSOd6. The dataset contains 1D 1H 13C as well as 2D COSY, HSQC, HMBC, all acquired at 400MHz (Jeol 400 MHz spectrometer with Royal Probe) in addition the datasets contain 1D 1H and 13C at 600 MHz spectrometer with CryoProbe (CP DCH 600S3 C/H-D-05 Z) (2019-10-06). Related Publication: Can Invalid Bioactives Undermine Natural Product-Based Drug Discovery? J. Med. Chem. doi: 10.1021/acs.jmedchem.5b01009. Related Material   Indofine 518-34-3 Lot #1504577 3.09 mg 3mm Tube Cambridge Isotope DML-10-10X1 Lot #10E-645 Solvent volume 190 uL."
+description: "NMR data of (+)-tetrandrine in DMSOd6. The dataset contains 1D 1H 13C as well as 2D COSY, HSQC, HMBC, all acquired at 400MHz (Jeol 400 MHz spectrometer with Royal Probe) in addition the datasets contain 1D 1H and 13C at 600 MHz spectrometer with CryoProbe (CP DCH 600S3 C/H-D-05 Z) (2019-10-06). Related Publication: Can Invalid Bioactives Undermine Natural Product-Based Drug Discovery? J. Med. Chem. doi: 10.1021/acs.jmedchem.5b01009. Related Material   Indofine 518-34-3 Lot #1504577 3.09 mg 3mm Tube Cambridge Isotope DML-10-10X1 Lot #10E-645 Solvent volume 190 μL."
 id: doi:10.7910/DVN/SAC0TQ
 name: (+)-Tetrandrine 400/600 MHz in DMSOd6 NMR data
 created_by: 
@@ -25,11 +25,12 @@ created_by:
 assays_sample:
   # you MUST provide at least one of the following metadata on the assayed sample
   name: (+)-Tetrandrine
-  id: CHEBI:49
+  id: pubchemCID:73078
   formula: C38H42N2O6
-  iupac_name: 3,7-dimethylocta-1,6-dien-3-ol
+  iupac_name: (1S,14S)-9,20,21,25-tetramethoxy-15,30-dimethyl-7,23-dioxa-15,30-diazaheptacyclo[22.6.2.23,6.18,12.114,18.027,31.022,33]hexatriaconta-3(36),4,6(35),8,10,12(34),18,20,22(33),24,26,31-dodecaene
   inchi: InChI=1S/C38H42N2O6/c1-39-15-13-25-20-32(42-4)34-22-28(25)29(39)17-23-7-10-27(11-8-23)45-33-19-24(9-12-31(33)41-3)18-30-36-26(14-16-40(30)2)21-35(43-5)37(44-6)38(36)46-34/h7-12,19-22,29-30H,13-18H2,1-6H3/t29-,30-/m0/s1
   inchikey: WVTKBKWTSCPRNU-KYJUHHDHSA-N
+  smiles: CN1CCC2=CC(=C3C=C2C1CC4=CC=C(C=C4)OC5=C(C=CC(=C5)CC6C7=C(O3)C(=C(C=C7CCN6C)OC)OC)OC)OC
   mol_file: 
     id: doi:10.7910/DVN/SAC0TQ/HXKHQP  
     name: (+)-Tetrandrine.mol

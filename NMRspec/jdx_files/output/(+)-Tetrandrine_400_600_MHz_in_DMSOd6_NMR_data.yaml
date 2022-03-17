@@ -20,14 +20,15 @@ contains_assay_records:
         smiles: '[2H]C([2H])([2H])S(=O)C([2H])([2H])[2H]'
         iupac_name: trideuterio(trideuteriomethylsulfinyl)methane
       sample:
-        id: CHEBI:49
+        id: pubchemCID:73078
         inchi: InChI=1S/C38H42N2O6/c1-39-15-13-25-20-32(42-4)34-22-28(25)29(39)17-23-7-10-27(11-8-23)45-33-19-24(9-12-31(33)41-3)18-30-36-26(14-16-40(30)2)21-35(43-5)37(44-6)38(36)46-34/h7-12,19-22,29-30H,13-18H2,1-6H3/t29-,30-/m0/s1
         inchikey: WVTKBKWTSCPRNU-KYJUHHDHSA-N
+        smiles: CN1CCC2=CC(=C3C=C2C1CC4=CC=C(C=C4)OC5=C(C=CC(=C5)CC6C7=C(O3)C(=C(C=C7CCN6C)OC)OC)OC)OC
         mol_file:
           id: doi:10.7910/DVN/SAC0TQ/HXKHQP
           name: (+)-Tetrandrine.mol
         formula: C38H42N2O6
-        iupac_name: 3,7-dimethylocta-1,6-dien-3-ol
+        iupac_name: (1S,14S)-9,20,21,25-tetramethoxy-15,30-dimethyl-7,23-dioxa-15,30-diazaheptacyclo[22.6.2.23,6.18,12.114,18.027,31.022,33]hexatriaconta-3(36),4,6(35),8,10,12(34),18,20,22(33),24,26,31-dodecaene
         name: (+)-Tetrandrine
       id: doi:10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_13CNMR_400MHz_JDX/Solution
     spectrometer:
@@ -51,14 +52,15 @@ contains_assay_records:
         smiles: '[2H]C([2H])([2H])S(=O)C([2H])([2H])[2H]'
         iupac_name: trideuterio(trideuteriomethylsulfinyl)methane
       sample:
-        id: CHEBI:49
+        id: pubchemCID:73078
         inchi: InChI=1S/C38H42N2O6/c1-39-15-13-25-20-32(42-4)34-22-28(25)29(39)17-23-7-10-27(11-8-23)45-33-19-24(9-12-31(33)41-3)18-30-36-26(14-16-40(30)2)21-35(43-5)37(44-6)38(36)46-34/h7-12,19-22,29-30H,13-18H2,1-6H3/t29-,30-/m0/s1
         inchikey: WVTKBKWTSCPRNU-KYJUHHDHSA-N
+        smiles: CN1CCC2=CC(=C3C=C2C1CC4=CC=C(C=C4)OC5=C(C=CC(=C5)CC6C7=C(O3)C(=C(C=C7CCN6C)OC)OC)OC)OC
         mol_file:
           id: doi:10.7910/DVN/SAC0TQ/HXKHQP
           name: (+)-Tetrandrine.mol
         formula: C38H42N2O6
-        iupac_name: 3,7-dimethylocta-1,6-dien-3-ol
+        iupac_name: (1S,14S)-9,20,21,25-tetramethoxy-15,30-dimethyl-7,23-dioxa-15,30-diazaheptacyclo[22.6.2.23,6.18,12.114,18.027,31.022,33]hexatriaconta-3(36),4,6(35),8,10,12(34),18,20,22(33),24,26,31-dodecaene
         name: (+)-Tetrandrine
       id: doi:10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_13CNMR_600MHz_JDX/Solution
     spectrometer:
@@ -82,14 +84,15 @@ contains_assay_records:
         smiles: '[2H]C([2H])([2H])S(=O)C([2H])([2H])[2H]'
         iupac_name: trideuterio(trideuteriomethylsulfinyl)methane
       sample:
-        id: CHEBI:49
+        id: pubchemCID:73078
         inchi: InChI=1S/C38H42N2O6/c1-39-15-13-25-20-32(42-4)34-22-28(25)29(39)17-23-7-10-27(11-8-23)45-33-19-24(9-12-31(33)41-3)18-30-36-26(14-16-40(30)2)21-35(43-5)37(44-6)38(36)46-34/h7-12,19-22,29-30H,13-18H2,1-6H3/t29-,30-/m0/s1
         inchikey: WVTKBKWTSCPRNU-KYJUHHDHSA-N
+        smiles: CN1CCC2=CC(=C3C=C2C1CC4=CC=C(C=C4)OC5=C(C=CC(=C5)CC6C7=C(O3)C(=C(C=C7CCN6C)OC)OC)OC)OC
         mol_file:
           id: doi:10.7910/DVN/SAC0TQ/HXKHQP
           name: (+)-Tetrandrine.mol
         formula: C38H42N2O6
-        iupac_name: 3,7-dimethylocta-1,6-dien-3-ol
+        iupac_name: (1S,14S)-9,20,21,25-tetramethoxy-15,30-dimethyl-7,23-dioxa-15,30-diazaheptacyclo[22.6.2.23,6.18,12.114,18.027,31.022,33]hexatriaconta-3(36),4,6(35),8,10,12(34),18,20,22(33),24,26,31-dodecaene
         name: (+)-Tetrandrine
       id: doi:10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_1HNMR_400MHz_JDX/Solution
     spectrometer:
@@ -114,14 +117,15 @@ contains_assay_records:
         smiles: '[2H]C([2H])([2H])S(=O)C([2H])([2H])[2H]'
         iupac_name: trideuterio(trideuteriomethylsulfinyl)methane
       sample:
-        id: CHEBI:49
+        id: pubchemCID:73078
         inchi: InChI=1S/C38H42N2O6/c1-39-15-13-25-20-32(42-4)34-22-28(25)29(39)17-23-7-10-27(11-8-23)45-33-19-24(9-12-31(33)41-3)18-30-36-26(14-16-40(30)2)21-35(43-5)37(44-6)38(36)46-34/h7-12,19-22,29-30H,13-18H2,1-6H3/t29-,30-/m0/s1
         inchikey: WVTKBKWTSCPRNU-KYJUHHDHSA-N
+        smiles: CN1CCC2=CC(=C3C=C2C1CC4=CC=C(C=C4)OC5=C(C=CC(=C5)CC6C7=C(O3)C(=C(C=C7CCN6C)OC)OC)OC)OC
         mol_file:
           id: doi:10.7910/DVN/SAC0TQ/HXKHQP
           name: (+)-Tetrandrine.mol
         formula: C38H42N2O6
-        iupac_name: 3,7-dimethylocta-1,6-dien-3-ol
+        iupac_name: (1S,14S)-9,20,21,25-tetramethoxy-15,30-dimethyl-7,23-dioxa-15,30-diazaheptacyclo[22.6.2.23,6.18,12.114,18.027,31.022,33]hexatriaconta-3(36),4,6(35),8,10,12(34),18,20,22(33),24,26,31-dodecaene
         name: (+)-Tetrandrine
       id: doi:10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_1HNMR_600MHz_JDX/Solution
     spectrometer:
@@ -145,14 +149,15 @@ contains_assay_records:
         smiles: '[2H]C([2H])([2H])S(=O)C([2H])([2H])[2H]'
         iupac_name: trideuterio(trideuteriomethylsulfinyl)methane
       sample:
-        id: CHEBI:49
+        id: pubchemCID:73078
         inchi: InChI=1S/C38H42N2O6/c1-39-15-13-25-20-32(42-4)34-22-28(25)29(39)17-23-7-10-27(11-8-23)45-33-19-24(9-12-31(33)41-3)18-30-36-26(14-16-40(30)2)21-35(43-5)37(44-6)38(36)46-34/h7-12,19-22,29-30H,13-18H2,1-6H3/t29-,30-/m0/s1
         inchikey: WVTKBKWTSCPRNU-KYJUHHDHSA-N
+        smiles: CN1CCC2=CC(=C3C=C2C1CC4=CC=C(C=C4)OC5=C(C=CC(=C5)CC6C7=C(O3)C(=C(C=C7CCN6C)OC)OC)OC)OC
         mol_file:
           id: doi:10.7910/DVN/SAC0TQ/HXKHQP
           name: (+)-Tetrandrine.mol
         formula: C38H42N2O6
-        iupac_name: 3,7-dimethylocta-1,6-dien-3-ol
+        iupac_name: (1S,14S)-9,20,21,25-tetramethoxy-15,30-dimethyl-7,23-dioxa-15,30-diazaheptacyclo[22.6.2.23,6.18,12.114,18.027,31.022,33]hexatriaconta-3(36),4,6(35),8,10,12(34),18,20,22(33),24,26,31-dodecaene
         name: (+)-Tetrandrine
       id: doi:10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_COSY_400MHz_JDX/Solution
     spectrometer:
@@ -177,14 +182,15 @@ contains_assay_records:
         smiles: '[2H]C([2H])([2H])S(=O)C([2H])([2H])[2H]'
         iupac_name: trideuterio(trideuteriomethylsulfinyl)methane
       sample:
-        id: CHEBI:49
+        id: pubchemCID:73078
         inchi: InChI=1S/C38H42N2O6/c1-39-15-13-25-20-32(42-4)34-22-28(25)29(39)17-23-7-10-27(11-8-23)45-33-19-24(9-12-31(33)41-3)18-30-36-26(14-16-40(30)2)21-35(43-5)37(44-6)38(36)46-34/h7-12,19-22,29-30H,13-18H2,1-6H3/t29-,30-/m0/s1
         inchikey: WVTKBKWTSCPRNU-KYJUHHDHSA-N
+        smiles: CN1CCC2=CC(=C3C=C2C1CC4=CC=C(C=C4)OC5=C(C=CC(=C5)CC6C7=C(O3)C(=C(C=C7CCN6C)OC)OC)OC)OC
         mol_file:
           id: doi:10.7910/DVN/SAC0TQ/HXKHQP
           name: (+)-Tetrandrine.mol
         formula: C38H42N2O6
-        iupac_name: 3,7-dimethylocta-1,6-dien-3-ol
+        iupac_name: (1S,14S)-9,20,21,25-tetramethoxy-15,30-dimethyl-7,23-dioxa-15,30-diazaheptacyclo[22.6.2.23,6.18,12.114,18.027,31.022,33]hexatriaconta-3(36),4,6(35),8,10,12(34),18,20,22(33),24,26,31-dodecaene
         name: (+)-Tetrandrine
       id: doi:10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_HMBC_400MHz_JDX/Solution
     spectrometer:
@@ -209,14 +215,15 @@ contains_assay_records:
         smiles: '[2H]C([2H])([2H])S(=O)C([2H])([2H])[2H]'
         iupac_name: trideuterio(trideuteriomethylsulfinyl)methane
       sample:
-        id: CHEBI:49
+        id: pubchemCID:73078
         inchi: InChI=1S/C38H42N2O6/c1-39-15-13-25-20-32(42-4)34-22-28(25)29(39)17-23-7-10-27(11-8-23)45-33-19-24(9-12-31(33)41-3)18-30-36-26(14-16-40(30)2)21-35(43-5)37(44-6)38(36)46-34/h7-12,19-22,29-30H,13-18H2,1-6H3/t29-,30-/m0/s1
         inchikey: WVTKBKWTSCPRNU-KYJUHHDHSA-N
+        smiles: CN1CCC2=CC(=C3C=C2C1CC4=CC=C(C=C4)OC5=C(C=CC(=C5)CC6C7=C(O3)C(=C(C=C7CCN6C)OC)OC)OC)OC
         mol_file:
           id: doi:10.7910/DVN/SAC0TQ/HXKHQP
           name: (+)-Tetrandrine.mol
         formula: C38H42N2O6
-        iupac_name: 3,7-dimethylocta-1,6-dien-3-ol
+        iupac_name: (1S,14S)-9,20,21,25-tetramethoxy-15,30-dimethyl-7,23-dioxa-15,30-diazaheptacyclo[22.6.2.23,6.18,12.114,18.027,31.022,33]hexatriaconta-3(36),4,6(35),8,10,12(34),18,20,22(33),24,26,31-dodecaene
         name: (+)-Tetrandrine
       id: doi:10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_HSQC_400MHz_JDX/Solution
     spectrometer:
@@ -230,14 +237,15 @@ contains_assay_records:
     observed_frequencies:
     - 399.78219837825
 assays_sample:
-  id: CHEBI:49
+  id: pubchemCID:73078
   inchi: InChI=1S/C38H42N2O6/c1-39-15-13-25-20-32(42-4)34-22-28(25)29(39)17-23-7-10-27(11-8-23)45-33-19-24(9-12-31(33)41-3)18-30-36-26(14-16-40(30)2)21-35(43-5)37(44-6)38(36)46-34/h7-12,19-22,29-30H,13-18H2,1-6H3/t29-,30-/m0/s1
   inchikey: WVTKBKWTSCPRNU-KYJUHHDHSA-N
+  smiles: CN1CCC2=CC(=C3C=C2C1CC4=CC=C(C=C4)OC5=C(C=CC(=C5)CC6C7=C(O3)C(=C(C=C7CCN6C)OC)OC)OC)OC
   mol_file:
     id: doi:10.7910/DVN/SAC0TQ/HXKHQP
     name: (+)-Tetrandrine.mol
   formula: C38H42N2O6
-  iupac_name: 3,7-dimethylocta-1,6-dien-3-ol
+  iupac_name: (1S,14S)-9,20,21,25-tetramethoxy-15,30-dimethyl-7,23-dioxa-15,30-diazaheptacyclo[22.6.2.23,6.18,12.114,18.027,31.022,33]hexatriaconta-3(36),4,6(35),8,10,12(34),18,20,22(33),24,26,31-dodecaene
   name: (+)-Tetrandrine
 source: Harvard Dataverse
 description: 'NMR data of (+)-tetrandrine in DMSOd6. The dataset contains 1D 1H 13C
@@ -246,7 +254,7 @@ description: 'NMR data of (+)-tetrandrine in DMSOd6. The dataset contains 1D 1H 
   with CryoProbe (CP DCH 600S3 C/H-D-05 Z) (2019-10-06). Related Publication: Can
   Invalid Bioactives Undermine Natural Product-Based Drug Discovery? J. Med. Chem.
   doi: 10.1021/acs.jmedchem.5b01009. Related Material   Indofine 518-34-3 Lot #1504577
-  3.09 mg 3mm Tube Cambridge Isotope DML-10-10X1 Lot #10E-645 Solvent volume 190 uL.'
+  3.09 mg 3mm Tube Cambridge Isotope DML-10-10X1 Lot #10E-645 Solvent volume 190 μL.'
 source_uri: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/SAC0TQ
 date_created: '2019-10-28T00:00:00'
 licence_str: CC0 - "Public Domain Dedication"
