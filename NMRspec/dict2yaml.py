@@ -40,7 +40,7 @@ def load_dataset_metadata() -> NmrSpecRecordCollection:
     source = f"{input_path}dataset_info.yaml"
     nmr_record_collection = yaml_loader.loads(source=source, target_class=NmrSpecRecordCollection)
     if debug is True:
-        print(f"-----\nloaded dataset_info:\n\n{yaml_dumper.dumps(nmr_record_collection, allow_unicode=True)}")
+        print(f"-----\nloaded dataset_info:\n\n{yaml_dumper.dumps(nmr_record_collection)}")
     return nmr_record_collection
 
 
@@ -374,7 +374,7 @@ def get_assay_data(jdx_dict, nmr_record) -> PulsedNmrAssay:
     nmr_assay['id'] = check_id(nmr_record['id'], nmr_assay['id'])
 
     if debug is True:
-        print(f"-----\nparsed assay metadata:\n\n{yaml_dumper.dumps(nmr_assay, allow_unicode=True)}")
+        print(f"-----\nparsed assay metadata:\n\n{yaml_dumper.dumps(nmr_assay)}")
     return nmr_assay
 
 
@@ -405,7 +405,7 @@ if __name__ == '__main__':
             f"# created: {today_str}\n" 
             "#################################################\n\n"
         )
-        f.write(yaml_dumper.dumps(dataset))
+        f.write(yaml_dumper.dumps(dataset)
 
         print("-----\nAll went according to the plan! And the parsed dataset was saved to:\n"
               f"{output_path}{output_file}.yaml")
