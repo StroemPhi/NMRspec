@@ -138,6 +138,10 @@ def get_sample(nmr_dataset) -> NmrSample:
             print(f"----\nparsed_solvent: {parsed_solvent}")
         return parsed_solvent
 
+    def get_solution() -> NmrSolution:
+        nmr_solution = NmrSolution(solvent=get_solvent(), sample=sample)
+        nmr_solution['id'] = check_id(nmr_record['id'], nmr_solution['id'])
+        return nmr_solution
 
     def get_manufacturer() -> Manufacturer:
         """
