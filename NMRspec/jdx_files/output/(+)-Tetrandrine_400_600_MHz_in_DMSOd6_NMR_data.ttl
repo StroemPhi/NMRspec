@@ -1,0 +1,177 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ns1: <https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/> .
+@prefix ns2: <http://purl.obolibrary.org/obo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://doi.org/10.7910/DVN/SAC0TQ> a ns1:NmrSpecRecordCollection ;
+    rdfs:label "(+)-Tetrandrine 400/600 MHz in DMSOd6 NMR data" ;
+    ns2:BFO_0000051 <https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_13CNMR_400MHz_JDX>,
+        <https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_13CNMR_600MHz_JDX>,
+        <https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_1HNMR_400MHz_JDX>,
+        <https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_1HNMR_600MHz_JDX>,
+        <https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_COSY_400MHz_JDX>,
+        <https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_HMBC_400MHz_JDX>,
+        <https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_HSQC_400MHz_JDX> ;
+    ns2:IAO_0000136 ns2:CHEBI_49 ;
+    dc:creator "Bisson, Jonathan (University of Illinois at Chicago) - ORCID: 0000-0003-1640-9989",
+        "Chen, Shao Nong (University of Illinois at Chicago) - ORCID: 0000-0003-0748-0863",
+        "Kim, Seon Beom (University of Illinois at Chicago) - ORCID: 0000-0001-8015-1404",
+        "Pauli, Guido (University of Illinois at Chicago) - ORCID: 0000-0003-1022-4326",
+        "Ray, Joseph (University of Illinois at Chicago) - ORCID: 0000-0002-7694-3174",
+        "Simmler, Charlotte (University of Illinois at Chicago) - ORCID: 0000-0002-6923-2630" ;
+    dc:description "NMR data of (+)-tetrandrine in DMSOd6. The dataset contains 1D 1H 13C as well as 2D COSY, HSQC, HMBC, all acquired at 400MHz (Jeol 400 MHz spectrometer with Royal Probe) in addition the datasets contain 1D 1H and 13C at 600 MHz spectrometer with CryoProbe (CP DCH 600S3 C/H-D-05 Z) (2019-10-06). Related Publication: Can Invalid Bioactives Undermine Natural Product-Based Drug Discovery? J. Med. Chem. doi: 10.1021/acs.jmedchem.5b01009. Related Material   Indofine 518-34-3 Lot #1504577 3.09 mg 3mm Tube Cambridge Isotope DML-10-10X1 Lot #10E-645 Solvent volume 190 uL." ;
+    dc:license "https://creativecommons.org/share-your-work/public-domain/cc0"^^xsd:anyURI,
+        "CC0 - \"Public Domain Dedication\"" ;
+    dc:source "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/SAC0TQ"^^xsd:anyURI,
+        "Harvard Dataverse" ;
+    schema:dateCreated "2019-10-28T00:00:00"^^xsd:dateTime .
+
+<https://doi.org/10.7910/DVN/SAC0TQ/HXKHQP> a ns2:CHEMINF_000114 ;
+    rdfs:label "(+)-Tetrandrine.mol" .
+
+<https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_13CNMR_400MHz_JDX> a ns1:NmrSpecRecord ;
+    ns2:OBI_0000312 <https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_13CNMR_400MHz_JDX/Assay> ;
+    dc:source "Tetrandrine_3090ug200uL_DMSOd6_13CNMR_400MHz_JDX.jdx" .
+
+<https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_13CNMR_400MHz_JDX/Assay> a ns2:CHMO_0000613 ;
+    ns2:OBI_0000293 <https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_13CNMR_400MHz_JDX/Solution>,
+        <https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_13CNMR_400MHz_JDX/Spectrometer> ;
+    ns1:acquisition_nuclei "13C" ;
+    ns1:has_dimension "1D" ;
+    ns1:observed_frequencies "100.525303325165"^^xsd:float ;
+    ns1:pulse_program "NMR" .
+
+<https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_13CNMR_400MHz_JDX/Solution> a ns2:CHEBI_75958 ;
+    ns2:BFO_0000051 ns2:CHEBI_49,
+        <https://pubchem.ncbi.nlm.nih.gov/compound/75151> .
+
+<https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_13CNMR_400MHz_JDX/Spectrometer> a ns2:OBI_0000566 .
+
+<https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_13CNMR_600MHz_JDX> a ns1:NmrSpecRecord ;
+    ns2:OBI_0000312 <https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_13CNMR_600MHz_JDX/Assay> ;
+    dc:source "Tetrandrine_3090ug200uL_DMSOd6_13CNMR_600MHz_JDX.jdx" .
+
+<https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_13CNMR_600MHz_JDX/Assay> a ns2:CHMO_0000613 ;
+    ns2:OBI_0000293 <https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_13CNMR_600MHz_JDX/Solution>,
+        <https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_13CNMR_600MHz_JDX/Spectrometer> ;
+    ns1:acquisition_nuclei "13C" ;
+    ns1:has_dimension "1D" ;
+    ns1:observed_frequencies "150.9229287838"^^xsd:float ;
+    ns1:pulse_program "NMR" .
+
+<https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_13CNMR_600MHz_JDX/Solution> a ns2:CHEBI_75958 ;
+    ns2:BFO_0000051 ns2:CHEBI_49,
+        <https://pubchem.ncbi.nlm.nih.gov/compound/75151> .
+
+<https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_13CNMR_600MHz_JDX/Spectrometer> a ns2:OBI_0000566 .
+
+<https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_1HNMR_400MHz_JDX> a ns1:NmrSpecRecord ;
+    ns2:OBI_0000312 <https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_1HNMR_400MHz_JDX/Assay> ;
+    dc:source "Tetrandrine_3090ug200uL_DMSOd6_1HNMR_400MHz_JDX.jdx" .
+
+<https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_1HNMR_400MHz_JDX/Assay> a ns2:CHMO_0000613 ;
+    ns2:OBI_0000293 <https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_1HNMR_400MHz_JDX/Solution>,
+        <https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_1HNMR_400MHz_JDX/Spectrometer> ;
+    ns1:acquisition_nuclei "1H" ;
+    ns1:has_dimension "1D" ;
+    ns1:observed_frequencies "399.78219837825"^^xsd:float ;
+    ns1:pulse_program "Custom" ;
+    ns1:pulse_program_custom "single_pulse_dec" .
+
+<https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_1HNMR_400MHz_JDX/Solution> a ns2:CHEBI_75958 ;
+    ns2:BFO_0000051 ns2:CHEBI_49,
+        <https://pubchem.ncbi.nlm.nih.gov/compound/75151> .
+
+<https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_1HNMR_400MHz_JDX/Spectrometer> a ns2:OBI_0000566 .
+
+<https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_1HNMR_600MHz_JDX> a ns1:NmrSpecRecord ;
+    ns2:OBI_0000312 <https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_1HNMR_600MHz_JDX/Assay> ;
+    dc:source "Tetrandrine_3090ug200uL_DMSOd6_1HNMR_600MHz_JDX.jdx" .
+
+<https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_1HNMR_600MHz_JDX/Assay> a ns2:CHMO_0000613 ;
+    ns2:OBI_0000293 <https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_1HNMR_600MHz_JDX/Solution>,
+        <https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_1HNMR_600MHz_JDX/Spectrometer> ;
+    ns1:acquisition_nuclei "1H" ;
+    ns1:has_dimension "1D" ;
+    ns1:observed_frequencies "600.1536009"^^xsd:float ;
+    ns1:pulse_program "NMR" .
+
+<https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_1HNMR_600MHz_JDX/Solution> a ns2:CHEBI_75958 ;
+    ns2:BFO_0000051 ns2:CHEBI_49,
+        <https://pubchem.ncbi.nlm.nih.gov/compound/75151> .
+
+<https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_1HNMR_600MHz_JDX/Spectrometer> a ns2:OBI_0000566 .
+
+<https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_COSY_400MHz_JDX> a ns1:NmrSpecRecord ;
+    ns2:OBI_0000312 <https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_COSY_400MHz_JDX/Assay> ;
+    dc:source "Tetrandrine_3090ug200uL_DMSOd6_COSY_400MHz_JDX.jdx" .
+
+<https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_COSY_400MHz_JDX/Assay> a ns2:CHMO_0000613 ;
+    ns2:OBI_0000293 <https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_COSY_400MHz_JDX/Solution>,
+        <https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_COSY_400MHz_JDX/Spectrometer> ;
+    ns1:acquisition_nuclei "1H" ;
+    ns1:has_dimension "2D" ;
+    ns1:observed_frequencies "399.78219837825"^^xsd:float ;
+    ns1:pulse_program "COSY" .
+
+<https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_COSY_400MHz_JDX/Solution> a ns2:CHEBI_75958 ;
+    ns2:BFO_0000051 ns2:CHEBI_49,
+        <https://pubchem.ncbi.nlm.nih.gov/compound/75151> .
+
+<https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_COSY_400MHz_JDX/Spectrometer> a ns2:OBI_0000566 .
+
+<https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_HMBC_400MHz_JDX> a ns1:NmrSpecRecord ;
+    ns2:OBI_0000312 <https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_HMBC_400MHz_JDX/Assay> ;
+    dc:source "Tetrandrine_3090ug200uL_DMSOd6_HMBC_400MHz_JDX.jdx" .
+
+<https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_HMBC_400MHz_JDX/Assay> a ns2:CHMO_0000613 ;
+    ns2:OBI_0000293 <https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_HMBC_400MHz_JDX/Solution>,
+        <https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_HMBC_400MHz_JDX/Spectrometer> ;
+    ns1:acquisition_nuclei "13C",
+        "1H" ;
+    ns1:has_dimension "2D" ;
+    ns1:observed_frequencies "399.78219837825"^^xsd:float ;
+    ns1:pulse_program "HMBC" .
+
+<https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_HMBC_400MHz_JDX/Solution> a ns2:CHEBI_75958 ;
+    ns2:BFO_0000051 ns2:CHEBI_49,
+        <https://pubchem.ncbi.nlm.nih.gov/compound/75151> .
+
+<https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_HMBC_400MHz_JDX/Spectrometer> a ns2:OBI_0000566 .
+
+<https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_HSQC_400MHz_JDX> a ns1:NmrSpecRecord ;
+    ns2:OBI_0000312 <https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_HSQC_400MHz_JDX/Assay> ;
+    dc:source "Tetrandrine_3090ug200uL_DMSOd6_HSQC_400MHz_JDX.jdx" .
+
+<https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_HSQC_400MHz_JDX/Assay> a ns2:CHMO_0000613 ;
+    ns2:OBI_0000293 <https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_HSQC_400MHz_JDX/Solution>,
+        <https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_HSQC_400MHz_JDX/Spectrometer> ;
+    ns1:acquisition_nuclei "13C",
+        "1H" ;
+    ns1:has_dimension "2D" ;
+    ns1:observed_frequencies "399.78219837825"^^xsd:float ;
+    ns1:pulse_program "HSQC" .
+
+<https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_HSQC_400MHz_JDX/Solution> a ns2:CHEBI_75958 ;
+    ns2:BFO_0000051 ns2:CHEBI_49,
+        <https://pubchem.ncbi.nlm.nih.gov/compound/75151> .
+
+<https://doi.org/10.7910/DVN/SAC0TQ/Tetrandrine_3090ug200uL_DMSOd6_HSQC_400MHz_JDX/Spectrometer> a ns2:OBI_0000566 .
+
+<https://pubchem.ncbi.nlm.nih.gov/compound/75151> a ns1:NmrSolvent ;
+    rdfs:label "dimethyl sulfoxide-d6" ;
+    ns2:CHEBI_IUPAC_NAME "trideuterio(trideuteriomethylsulfinyl)methane" ;
+    ns2:CHEBI_inchi "InChI=1S/C2H6OS/c1-4(2)3/h1-2H3/i1D3,2D3" ;
+    ns2:CHEBI_inchikey "IAZDPXIOMUYVGZ-WFGJKAKNSA-N" ;
+    ns2:CHEBI_smiles "[2H]C([2H])([2H])S(=O)C([2H])([2H])[2H]" .
+
+ns2:CHEBI_49 a ns1:NmrSample ;
+    rdfs:label "(+)-Tetrandrine" ;
+    ns2:CHEBI_IUPAC_NAME "3,7-dimethylocta-1,6-dien-3-ol" ;
+    ns2:CHEBI_formula "C38H42N2O6" ;
+    ns2:CHEBI_inchi "InChI=1S/C38H42N2O6/c1-39-15-13-25-20-32(42-4)34-22-28(25)29(39)17-23-7-10-27(11-8-23)45-33-19-24(9-12-31(33)41-3)18-30-36-26(14-16-40(30)2)21-35(43-5)37(44-6)38(36)46-34/h7-12,19-22,29-30H,13-18H2,1-6H3/t29-,30-/m0/s1" ;
+    ns2:CHEBI_inchikey "WVTKBKWTSCPRNU-KYJUHHDHSA-N" ;
+    ns2:IAO_0000235 <https://doi.org/10.7910/DVN/SAC0TQ/HXKHQP> .
+
