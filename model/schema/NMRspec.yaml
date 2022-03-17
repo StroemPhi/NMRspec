@@ -335,7 +335,7 @@ classes:
     attributes:
       output_of_nmr_assay:
         slot_uri: obi:0000312
-        required: true
+        #required: true
         inlined: true
         range: PulsedNmrAssay
     slot_usage:
