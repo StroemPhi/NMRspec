@@ -27,12 +27,12 @@ created_by:
 assays_sample:
   # you MUST provide at least one of the following metadata on the assayed sample
   name: Linalool
-  id: CHEBI:17580
+  id: pubchemCID:6549
   formula: C10H18O
   iupac_name: 3,7-dimethylocta-1,6-dien-3-ol
   inchi: InChI=1S/C10H18O/c1-5-10(4,11)8-6-7-9(2)3/h5,7,11H,1,6,8H2,2-4H3
   inchikey: CDOSHBSSFJOMGT-UHFFFAOYSA-N
-  smiles: CC(C)=CCCC(C)(O)C=C
+  smiles: CC(=CCCC(C)(C=C)O)C
   mol_file: 
     id: doi:10.7910/DVN/KUEDTG/L6MKSF   
     name: Linanool.mol

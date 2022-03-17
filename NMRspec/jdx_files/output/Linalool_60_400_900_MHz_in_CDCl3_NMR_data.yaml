@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 #################################################
 # a JCAMP-DX dataset parsed to YAML
 # using https://github.com/StroemPhi/NMRspec
@@ -18,10 +20,10 @@ contains_assay_records:
         smiles: '[2H]C(Cl)(Cl)Cl'
         iupac_name: trichloro(deuterio)methane
       sample:
-        id: CHEBI:17580
+        id: pubchemCID:6549
         inchi: InChI=1S/C10H18O/c1-5-10(4,11)8-6-7-9(2)3/h5,7,11H,1,6,8H2,2-4H3
         inchikey: CDOSHBSSFJOMGT-UHFFFAOYSA-N
-        smiles: CC(C)=CCCC(C)(O)C=C
+        smiles: CC(=CCCC(C)(C=C)O)C
         mol_file:
           id: doi:10.7910/DVN/KUEDTG/L6MKSF
           name: Linanool.mol
@@ -50,10 +52,10 @@ contains_assay_records:
         smiles: '[2H]C(Cl)(Cl)Cl'
         iupac_name: trichloro(deuterio)methane
       sample:
-        id: CHEBI:17580
+        id: pubchemCID:6549
         inchi: InChI=1S/C10H18O/c1-5-10(4,11)8-6-7-9(2)3/h5,7,11H,1,6,8H2,2-4H3
         inchikey: CDOSHBSSFJOMGT-UHFFFAOYSA-N
-        smiles: CC(C)=CCCC(C)(O)C=C
+        smiles: CC(=CCCC(C)(C=C)O)C
         mol_file:
           id: doi:10.7910/DVN/KUEDTG/L6MKSF
           name: Linanool.mol
@@ -83,10 +85,10 @@ contains_assay_records:
         smiles: '[2H]C(Cl)(Cl)Cl'
         iupac_name: trichloro(deuterio)methane
       sample:
-        id: CHEBI:17580
+        id: pubchemCID:6549
         inchi: InChI=1S/C10H18O/c1-5-10(4,11)8-6-7-9(2)3/h5,7,11H,1,6,8H2,2-4H3
         inchikey: CDOSHBSSFJOMGT-UHFFFAOYSA-N
-        smiles: CC(C)=CCCC(C)(O)C=C
+        smiles: CC(=CCCC(C)(C=C)O)C
         mol_file:
           id: doi:10.7910/DVN/KUEDTG/L6MKSF
           name: Linanool.mol
@@ -116,10 +118,10 @@ contains_assay_records:
         smiles: '[2H]C(Cl)(Cl)Cl'
         iupac_name: trichloro(deuterio)methane
       sample:
-        id: CHEBI:17580
+        id: pubchemCID:6549
         inchi: InChI=1S/C10H18O/c1-5-10(4,11)8-6-7-9(2)3/h5,7,11H,1,6,8H2,2-4H3
         inchikey: CDOSHBSSFJOMGT-UHFFFAOYSA-N
-        smiles: CC(C)=CCCC(C)(O)C=C
+        smiles: CC(=CCCC(C)(C=C)O)C
         mol_file:
           id: doi:10.7910/DVN/KUEDTG/L6MKSF
           name: Linanool.mol
@@ -149,10 +151,10 @@ contains_assay_records:
         smiles: '[2H]C(Cl)(Cl)Cl'
         iupac_name: trichloro(deuterio)methane
       sample:
-        id: CHEBI:17580
+        id: pubchemCID:6549
         inchi: InChI=1S/C10H18O/c1-5-10(4,11)8-6-7-9(2)3/h5,7,11H,1,6,8H2,2-4H3
         inchikey: CDOSHBSSFJOMGT-UHFFFAOYSA-N
-        smiles: CC(C)=CCCC(C)(O)C=C
+        smiles: CC(=CCCC(C)(C=C)O)C
         mol_file:
           id: doi:10.7910/DVN/KUEDTG/L6MKSF
           name: Linanool.mol
@@ -182,10 +184,10 @@ contains_assay_records:
         smiles: '[2H]C(Cl)(Cl)Cl'
         iupac_name: trichloro(deuterio)methane
       sample:
-        id: CHEBI:17580
+        id: pubchemCID:6549
         inchi: InChI=1S/C10H18O/c1-5-10(4,11)8-6-7-9(2)3/h5,7,11H,1,6,8H2,2-4H3
         inchikey: CDOSHBSSFJOMGT-UHFFFAOYSA-N
-        smiles: CC(C)=CCCC(C)(O)C=C
+        smiles: CC(=CCCC(C)(C=C)O)C
         mol_file:
           id: doi:10.7910/DVN/KUEDTG/L6MKSF
           name: Linanool.mol
@@ -214,10 +216,10 @@ contains_assay_records:
         smiles: '[2H]C(Cl)(Cl)Cl'
         iupac_name: trichloro(deuterio)methane
       sample:
-        id: CHEBI:17580
+        id: pubchemCID:6549
         inchi: InChI=1S/C10H18O/c1-5-10(4,11)8-6-7-9(2)3/h5,7,11H,1,6,8H2,2-4H3
         inchikey: CDOSHBSSFJOMGT-UHFFFAOYSA-N
-        smiles: CC(C)=CCCC(C)(O)C=C
+        smiles: CC(=CCCC(C)(C=C)O)C
         mol_file:
           id: doi:10.7910/DVN/KUEDTG/L6MKSF
           name: Linanool.mol
@@ -248,10 +250,10 @@ contains_assay_records:
         smiles: '[2H]C(Cl)(Cl)Cl'
         iupac_name: trichloro(deuterio)methane
       sample:
-        id: CHEBI:17580
+        id: pubchemCID:6549
         inchi: InChI=1S/C10H18O/c1-5-10(4,11)8-6-7-9(2)3/h5,7,11H,1,6,8H2,2-4H3
         inchikey: CDOSHBSSFJOMGT-UHFFFAOYSA-N
-        smiles: CC(C)=CCCC(C)(O)C=C
+        smiles: CC(=CCCC(C)(C=C)O)C
         mol_file:
           id: doi:10.7910/DVN/KUEDTG/L6MKSF
           name: Linanool.mol
@@ -270,10 +272,10 @@ contains_assay_records:
     observed_frequencies:
     - 399.78219837825
 assays_sample:
-  id: CHEBI:17580
+  id: pubchemCID:6549
   inchi: InChI=1S/C10H18O/c1-5-10(4,11)8-6-7-9(2)3/h5,7,11H,1,6,8H2,2-4H3
   inchikey: CDOSHBSSFJOMGT-UHFFFAOYSA-N
-  smiles: CC(C)=CCCC(C)(O)C=C
+  smiles: CC(=CCCC(C)(C=C)O)C
   mol_file:
     id: doi:10.7910/DVN/KUEDTG/L6MKSF
     name: Linanool.mol
