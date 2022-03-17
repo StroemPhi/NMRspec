@@ -11,7 +11,7 @@ contains_assay_records:
   output_of_nmr_assay:
     solution:
       solvent:
-        id: https://pubchem.ncbi.nlm.nih.gov/compound/71583
+        id: chebi:85365
         name: chloroform-d
         inchi: InChI=1S/CHCl3/c2-1(3)4/h1H/i1D
         inchikey: HEDRZPFGACZZDS-MICDWDOJSA-N
@@ -43,7 +43,7 @@ contains_assay_records:
   output_of_nmr_assay:
     solution:
       solvent:
-        id: https://pubchem.ncbi.nlm.nih.gov/compound/71583
+        id: chebi:85365
         name: chloroform-d
         inchi: InChI=1S/CHCl3/c2-1(3)4/h1H/i1D
         inchikey: HEDRZPFGACZZDS-MICDWDOJSA-N

@@ -1,0 +1,97 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ns1: <https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/> .
+@prefix ns2: <http://purl.obolibrary.org/obo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://doi.org/10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N> a ns1:NmrSpecRecordCollection ;
+    rdfs:label "2-(2,6-dimethoxy-4-methylphenyl)-6-methylbenzo[d]thiazole" ;
+    ns2:BFO_0000051 <https://doi.org/10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N/CHMO0000593>,
+        <https://doi.org/10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N/CHMO0000595> ;
+    ns2:IAO_0000136 <https://doi.org/10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N/Sample> ;
+    dc:creator "Simone Gr‰ﬂle" ;
+    dc:license "https://creativecommons.org/licenses/by-sa/4.0/"^^xsd:anyURI,
+        "Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)" ;
+    dc:source "https://www.chemotion-repository.net/home/publications/molecules/3366"^^xsd:anyURI,
+        "Chemotion Repository" ;
+    schema:dateCreated "2022-01-10T00:00:00"^^xsd:dateTime .
+
+<https://doi.org/10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N/CHMO0000593> a ns1:NmrSpecRecord ;
+    ns2:OBI_0000312 <https://doi.org/10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N/CHMO0000593/Assay> ;
+    dc:creator "Simone Gr‰ﬂle" ;
+    dc:license "https://creativecommons.org/licenses/by-sa/4.0/"^^xsd:anyURI,
+        "Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)" ;
+    dc:source "doi:10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N/CHMO0000593"^^xsd:anyURI,
+        "SG-V3259 (41-52)_10.dx" ;
+    schema:dateCreated "2022-01-10T00:00:00"^^xsd:dateTime .
+
+<https://doi.org/10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N/CHMO0000593/Assay> a ns2:CHMO_0000613 ;
+    ns2:OBI_0000293 <https://doi.org/10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N/CHMO0000593/Solution>,
+        <https://doi.org/10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N/CHMO0000593/Spectrometer> ;
+    ns1:acquisition_nuclei "1H" ;
+    ns1:assay_date "2019-07-17T13:17:11"^^xsd:dateTime ;
+    ns1:has_dimension "1D" ;
+    ns1:observed_frequencies "400.13240078"^^xsd:float,
+        "400.132470802"^^xsd:float ;
+    ns1:pulse_program "NMR" .
+
+<https://doi.org/10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N/CHMO0000593/Manufacturer> a ns2:OBI_0000835 ;
+    rdfs:label "Bruker" .
+
+<https://doi.org/10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N/CHMO0000593/Solution> a ns2:CHEBI_75958 ;
+    ns2:BFO_0000051 ns2:CHEBI_85365,
+        <https://doi.org/10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N/Sample> .
+
+<https://doi.org/10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N/CHMO0000593/Spectrometer> a ns2:OBI_0000566 ;
+    ns2:OBI_0000304 <https://doi.org/10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N/CHMO0000593/Manufacturer> ;
+    ns1:type "spect" .
+
+<https://doi.org/10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N/CHMO0000595> a ns1:NmrSpecRecord ;
+    ns2:OBI_0000312 <https://doi.org/10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N/CHMO0000595/Assay> ;
+    dc:creator "Simone Gr‰ﬂle" ;
+    dc:license "https://creativecommons.org/licenses/by-sa/4.0/"^^xsd:anyURI,
+        "Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)" ;
+    dc:source "doi:10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N/CHMO0000595"^^xsd:anyURI,
+        "SG-V3259 (41-52)_11.dx" ;
+    schema:dateCreated "2022-01-10T00:00:00"^^xsd:dateTime .
+
+<https://doi.org/10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N/CHMO0000595/Assay> a ns2:CHMO_0000613 ;
+    ns2:OBI_0000293 <https://doi.org/10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N/CHMO0000595/Solution>,
+        <https://doi.org/10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N/CHMO0000595/Spectrometer> ;
+    ns1:acquisition_nuclei "13C",
+        "1H" ;
+    ns1:assay_date "2019-07-18T01:16:26"^^xsd:dateTime ;
+    ns1:has_dimension "1D" ;
+    ns1:observed_frequencies "100.622829803"^^xsd:float,
+        "100.623835930538"^^xsd:float,
+        "400.13160052"^^xsd:float ;
+    ns1:pulse_program "NMR" .
+
+<https://doi.org/10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N/CHMO0000595/Manufacturer> a ns2:OBI_0000835 ;
+    rdfs:label "Bruker" .
+
+<https://doi.org/10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N/CHMO0000595/Solution> a ns2:CHEBI_75958 ;
+    ns2:BFO_0000051 ns2:CHEBI_85365,
+        <https://doi.org/10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N/Sample> .
+
+<https://doi.org/10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N/CHMO0000595/Spectrometer> a ns2:OBI_0000566 ;
+    ns2:OBI_0000304 <https://doi.org/10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N/CHMO0000595/Manufacturer> ;
+    ns1:type "spect" .
+
+ns2:CHEBI_85365 a ns1:NmrSolvent ;
+    rdfs:label "chloroform-d" ;
+    ns2:CHEBI_IUPAC_NAME "trichloro(deuterio)methane" ;
+    ns2:CHEBI_inchi "InChI=1S/CHCl3/c2-1(3)4/h1H/i1D" ;
+    ns2:CHEBI_inchikey "HEDRZPFGACZZDS-MICDWDOJSA-N" ;
+    ns2:CHEBI_smiles "[2H]C(Cl)(Cl)Cl" .
+
+<https://doi.org/10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N/Sample> a ns1:NmrSample ;
+    rdfs:label "sample XXX" ;
+    ns2:CHEBI_IUPAC_NAME "JsonObj(has_representation='2-(2,6-dimethoxy-4-methylphenyl)-6-methyl-1,3-benzothiazole')" ;
+    ns2:CHEBI_formula "JsonObj(has_representation='C17H17NO2S')" ;
+    ns2:CHEBI_inchi "JsonObj(has_representation='InChI=1S/C17H17NO2S/c1-10-5-6-12-15(9-10)21-17(18-12)16-13(19-3)7-11(2)8-14(16)20-4/h5-9H,1-4H3')" ;
+    ns2:CHEBI_inchikey "JsonObj(has_representation='QXXCRBSWGPRILJ-UHFFFAOYSA-N')" ;
+    ns2:CHEBI_smiles "JsonObj(has_representation='COc1cc(C)cc(c1c1sc2c(n1)ccc(c2)C)OC')" ;
+    ns1:local_id "SG-V3259 (41-52)" .
+
