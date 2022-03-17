@@ -1,0 +1,236 @@
+# -*- coding: utf-8 -*-
+
+#################################################
+# a JCAMP-DX dataset parsed to YAML
+# using https://github.com/StroemPhi/NMRspec
+# created: 2022-03-17
+#################################################
+
+id: doi:10.7910/DVN/F34GVS/KZOQZU
+contains_assay_records:
+- id: doi:10.7910/DVN/F34GVS/KZOQZU/13C_NMR
+  source: 13C_NMR.jdx
+  output_of_nmr_assay:
+    solution:
+      solvent:
+        id: https://pubchem.ncbi.nlm.nih.gov/compound/75151
+        name: dimethyl sulfoxide-d6
+        inchi: InChI=1S/C2H6OS/c1-4(2)3/h1-2H3/i1D3,2D3
+        inchikey: IAZDPXIOMUYVGZ-WFGJKAKNSA-N
+        smiles: '[2H]C([2H])([2H])S(=O)C([2H])([2H])[2H]'
+        iupac_name: trideuterio(trideuteriomethylsulfinyl)methane
+      sample:
+        id: pubchemCID:1548943
+        inchi: InChI=1S/C18H27NO3/c1-14(2)8-6-4-5-7-9-18(21)19-13-15-10-11-16(20)17(12-15)22-3/h6,8,10-12,14,20H,4-5,7,9,13H2,1-3H3,(H,19,21)/b8-6+
+        inchikey: YKPUWZUDDOIDPM-SOFGYWHQSA-N
+        smiles: CC(C)C=CCCCCC(=O)NCC1=CC(=C(C=C1)O)OC
+        mol_file:
+          id: doi:10.7910/DVN/F34GVS/M2OBED
+          name: capsaicin.mol
+        formula: C18H27NO3
+        iupac_name: (E)-N-[(4-hydroxy-3-methoxyphenyl)methyl]-8-methylnon-6-enamide
+        name: Capsaicin
+      id: doi:10.7910/DVN/F34GVS/KZOQZU/13C_NMR/Solution
+    spectrometer:
+      id: doi:10.7910/DVN/F34GVS/KZOQZU/13C_NMR/Spectrometer
+    acquisition_nuclei:
+    - 13C
+    has_dimension: 1D
+    pulse_program: NMR
+    id: doi:10.7910/DVN/F34GVS/KZOQZU/13C_NMR/Assay
+    observed_frequencies:
+    - 100.525303325165
+- id: doi:10.7910/DVN/F34GVS/KZOQZU/1HNMR_jdx
+  source: 1HNMR_jdx.jdx
+  output_of_nmr_assay:
+    solution:
+      solvent:
+        id: https://pubchem.ncbi.nlm.nih.gov/compound/75151
+        name: dimethyl sulfoxide-d6
+        inchi: InChI=1S/C2H6OS/c1-4(2)3/h1-2H3/i1D3,2D3
+        inchikey: IAZDPXIOMUYVGZ-WFGJKAKNSA-N
+        smiles: '[2H]C([2H])([2H])S(=O)C([2H])([2H])[2H]'
+        iupac_name: trideuterio(trideuteriomethylsulfinyl)methane
+      sample:
+        id: pubchemCID:1548943
+        inchi: InChI=1S/C18H27NO3/c1-14(2)8-6-4-5-7-9-18(21)19-13-15-10-11-16(20)17(12-15)22-3/h6,8,10-12,14,20H,4-5,7,9,13H2,1-3H3,(H,19,21)/b8-6+
+        inchikey: YKPUWZUDDOIDPM-SOFGYWHQSA-N
+        smiles: CC(C)C=CCCCCC(=O)NCC1=CC(=C(C=C1)O)OC
+        mol_file:
+          id: doi:10.7910/DVN/F34GVS/M2OBED
+          name: capsaicin.mol
+        formula: C18H27NO3
+        iupac_name: (E)-N-[(4-hydroxy-3-methoxyphenyl)methyl]-8-methylnon-6-enamide
+        name: Capsaicin
+      id: doi:10.7910/DVN/F34GVS/KZOQZU/1HNMR_jdx/Solution
+    spectrometer:
+      id: doi:10.7910/DVN/F34GVS/KZOQZU/1HNMR_jdx/Spectrometer
+    acquisition_nuclei:
+    - 1H
+    has_dimension: 1D
+    pulse_program: NMR
+    id: doi:10.7910/DVN/F34GVS/KZOQZU/1HNMR_jdx/Assay
+    observed_frequencies:
+    - 399.78219837825
+- id: doi:10.7910/DVN/F34GVS/KZOQZU/gCOSY
+  source: gCOSY.jdx
+  output_of_nmr_assay:
+    solution:
+      solvent:
+        id: https://pubchem.ncbi.nlm.nih.gov/compound/75151
+        name: dimethyl sulfoxide-d6
+        inchi: InChI=1S/C2H6OS/c1-4(2)3/h1-2H3/i1D3,2D3
+        inchikey: IAZDPXIOMUYVGZ-WFGJKAKNSA-N
+        smiles: '[2H]C([2H])([2H])S(=O)C([2H])([2H])[2H]'
+        iupac_name: trideuterio(trideuteriomethylsulfinyl)methane
+      sample:
+        id: pubchemCID:1548943
+        inchi: InChI=1S/C18H27NO3/c1-14(2)8-6-4-5-7-9-18(21)19-13-15-10-11-16(20)17(12-15)22-3/h6,8,10-12,14,20H,4-5,7,9,13H2,1-3H3,(H,19,21)/b8-6+
+        inchikey: YKPUWZUDDOIDPM-SOFGYWHQSA-N
+        smiles: CC(C)C=CCCCCC(=O)NCC1=CC(=C(C=C1)O)OC
+        mol_file:
+          id: doi:10.7910/DVN/F34GVS/M2OBED
+          name: capsaicin.mol
+        formula: C18H27NO3
+        iupac_name: (E)-N-[(4-hydroxy-3-methoxyphenyl)methyl]-8-methylnon-6-enamide
+        name: Capsaicin
+      id: doi:10.7910/DVN/F34GVS/KZOQZU/gCOSY/Solution
+    spectrometer:
+      id: doi:10.7910/DVN/F34GVS/KZOQZU/gCOSY/Spectrometer
+    acquisition_nuclei:
+    - 1H
+    - 1H
+    has_dimension: 2D
+    pulse_program: COSY
+    id: doi:10.7910/DVN/F34GVS/KZOQZU/gCOSY/Assay
+    observed_frequencies:
+    - 399.78219837825
+- id: doi:10.7910/DVN/F34GVS/KZOQZU/gHMBC
+  source: gHMBC.jdx
+  output_of_nmr_assay:
+    solution:
+      solvent:
+        id: https://pubchem.ncbi.nlm.nih.gov/compound/75151
+        name: dimethyl sulfoxide-d6
+        inchi: InChI=1S/C2H6OS/c1-4(2)3/h1-2H3/i1D3,2D3
+        inchikey: IAZDPXIOMUYVGZ-WFGJKAKNSA-N
+        smiles: '[2H]C([2H])([2H])S(=O)C([2H])([2H])[2H]'
+        iupac_name: trideuterio(trideuteriomethylsulfinyl)methane
+      sample:
+        id: pubchemCID:1548943
+        inchi: InChI=1S/C18H27NO3/c1-14(2)8-6-4-5-7-9-18(21)19-13-15-10-11-16(20)17(12-15)22-3/h6,8,10-12,14,20H,4-5,7,9,13H2,1-3H3,(H,19,21)/b8-6+
+        inchikey: YKPUWZUDDOIDPM-SOFGYWHQSA-N
+        smiles: CC(C)C=CCCCCC(=O)NCC1=CC(=C(C=C1)O)OC
+        mol_file:
+          id: doi:10.7910/DVN/F34GVS/M2OBED
+          name: capsaicin.mol
+        formula: C18H27NO3
+        iupac_name: (E)-N-[(4-hydroxy-3-methoxyphenyl)methyl]-8-methylnon-6-enamide
+        name: Capsaicin
+      id: doi:10.7910/DVN/F34GVS/KZOQZU/gHMBC/Solution
+    spectrometer:
+      id: doi:10.7910/DVN/F34GVS/KZOQZU/gHMBC/Spectrometer
+    acquisition_nuclei:
+    - 13C
+    - 1H
+    has_dimension: 2D
+    pulse_program: HMBC
+    id: doi:10.7910/DVN/F34GVS/KZOQZU/gHMBC/Assay
+    observed_frequencies:
+    - 399.78219837825
+- id: doi:10.7910/DVN/F34GVS/KZOQZU/HSQC
+  source: HSQC.jdx
+  output_of_nmr_assay:
+    solution:
+      solvent:
+        id: https://pubchem.ncbi.nlm.nih.gov/compound/75151
+        name: dimethyl sulfoxide-d6
+        inchi: InChI=1S/C2H6OS/c1-4(2)3/h1-2H3/i1D3,2D3
+        inchikey: IAZDPXIOMUYVGZ-WFGJKAKNSA-N
+        smiles: '[2H]C([2H])([2H])S(=O)C([2H])([2H])[2H]'
+        iupac_name: trideuterio(trideuteriomethylsulfinyl)methane
+      sample:
+        id: pubchemCID:1548943
+        inchi: InChI=1S/C18H27NO3/c1-14(2)8-6-4-5-7-9-18(21)19-13-15-10-11-16(20)17(12-15)22-3/h6,8,10-12,14,20H,4-5,7,9,13H2,1-3H3,(H,19,21)/b8-6+
+        inchikey: YKPUWZUDDOIDPM-SOFGYWHQSA-N
+        smiles: CC(C)C=CCCCCC(=O)NCC1=CC(=C(C=C1)O)OC
+        mol_file:
+          id: doi:10.7910/DVN/F34GVS/M2OBED
+          name: capsaicin.mol
+        formula: C18H27NO3
+        iupac_name: (E)-N-[(4-hydroxy-3-methoxyphenyl)methyl]-8-methylnon-6-enamide
+        name: Capsaicin
+      id: doi:10.7910/DVN/F34GVS/KZOQZU/HSQC/Solution
+    spectrometer:
+      id: doi:10.7910/DVN/F34GVS/KZOQZU/HSQC/Spectrometer
+    acquisition_nuclei:
+    - 13C
+    - 1H
+    has_dimension: 2D
+    pulse_program: HSQC
+    id: doi:10.7910/DVN/F34GVS/KZOQZU/HSQC/Assay
+    observed_frequencies:
+    - 399.78219837825
+- id: doi:10.7910/DVN/F34GVS/KZOQZU/q1HNMR_zg30
+  source: q1HNMR_zg30.jdx
+  output_of_nmr_assay:
+    solution:
+      solvent:
+        id: https://pubchem.ncbi.nlm.nih.gov/compound/75151
+        name: dimethyl sulfoxide-d6
+        inchi: InChI=1S/C2H6OS/c1-4(2)3/h1-2H3/i1D3,2D3
+        inchikey: IAZDPXIOMUYVGZ-WFGJKAKNSA-N
+        smiles: '[2H]C([2H])([2H])S(=O)C([2H])([2H])[2H]'
+        iupac_name: trideuterio(trideuteriomethylsulfinyl)methane
+      sample:
+        id: pubchemCID:1548943
+        inchi: InChI=1S/C18H27NO3/c1-14(2)8-6-4-5-7-9-18(21)19-13-15-10-11-16(20)17(12-15)22-3/h6,8,10-12,14,20H,4-5,7,9,13H2,1-3H3,(H,19,21)/b8-6+
+        inchikey: YKPUWZUDDOIDPM-SOFGYWHQSA-N
+        smiles: CC(C)C=CCCCCC(=O)NCC1=CC(=C(C=C1)O)OC
+        mol_file:
+          id: doi:10.7910/DVN/F34GVS/M2OBED
+          name: capsaicin.mol
+        formula: C18H27NO3
+        iupac_name: (E)-N-[(4-hydroxy-3-methoxyphenyl)methyl]-8-methylnon-6-enamide
+        name: Capsaicin
+      id: doi:10.7910/DVN/F34GVS/KZOQZU/q1HNMR_zg30/Solution
+    spectrometer:
+      id: doi:10.7910/DVN/F34GVS/KZOQZU/q1HNMR_zg30/Spectrometer
+    acquisition_nuclei:
+    - 1H
+    has_dimension: 1D
+    pulse_program: NMR
+    id: doi:10.7910/DVN/F34GVS/KZOQZU/q1HNMR_zg30/Assay
+    observed_frequencies:
+    - 399.78219837825
+assays_sample:
+  id: pubchemCID:1548943
+  inchi: InChI=1S/C18H27NO3/c1-14(2)8-6-4-5-7-9-18(21)19-13-15-10-11-16(20)17(12-15)22-3/h6,8,10-12,14,20H,4-5,7,9,13H2,1-3H3,(H,19,21)/b8-6+
+  inchikey: YKPUWZUDDOIDPM-SOFGYWHQSA-N
+  smiles: CC(C)C=CCCCCC(=O)NCC1=CC(=C(C=C1)O)OC
+  mol_file:
+    id: doi:10.7910/DVN/F34GVS/M2OBED
+    name: capsaicin.mol
+  formula: C18H27NO3
+  iupac_name: (E)-N-[(4-hydroxy-3-methoxyphenyl)methyl]-8-methylnon-6-enamide
+  name: Capsaicin
+source: Harvard Dataverse
+description: 'NMR data for Capsaicin Contains: 1D: 1H, 13C 2D: COSY, HSQC, HMBC in
+  raw JEOL format and jdx.files, assigned and annotated 1H and 13C spectra, as well
+  as Spin parameters for 1H and chemical shifts of carbon. (2018-03-26). Related Publication:
+  Can Invalid Bioactives Undermine Natural Product-Based Drug Discovery? J. Med. Chem.
+  doi: 10.1021/acs.jmedchem.5b01009 https://doi.org/10.1021/acs.jmedchem.5b01009.
+  Related Material: SIGMA 60376-250mg Lot #MKBV4243V 3.15mg 3mm Tube Cambridge Isotope
+  DML-10-10X1 Lot #10E-645 Solvent volume 200 μL.'
+source_uri: https://dataverse.harvard.edu/file.xhtml?persistentId=doi:10.7910/DVN/F34GVS/KZOQZU&version=2.0
+date_created: '2019-10-28T00:00:00'
+licence_str: CC0 - "Public Domain Dedication"
+licence_url: https://creativecommons.org/share-your-work/public-domain/cc0
+created_by:
+- 'Kim, Seon Beom (University of Illinois at Chicago) - ORCID: 0000-0001-8015-1404'
+- 'Youn, Isoo (University of Illinois at Chicago) - ORCID: 0000-0002-8851-0720'
+- 'Chen, Shao Nong (University of Illinois at Chicago) - ORCID: 0000-0003-0748-0863'
+- 'Simmler, Charlotte (University of Illinois at Chicago) - ORCID: 0000-0002-6923-2630'
+- 'Bisson, Jonathan (University of Illinois at Chicago) - ORCID: 0000-0003-1640-9989'
+- 'Pauli, Guido (University of Illinois at Chicago) - ORCID: 0000-0003-1022-4326'
+name: Capsaicin 400 MHz DMSOd6 NMR data

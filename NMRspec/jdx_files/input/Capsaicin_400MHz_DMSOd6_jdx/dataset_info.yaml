@@ -1,0 +1,54 @@
+####################
+# dataset metadata #
+####################
+
+# you MUST provide the following provenance metadata of the dataset
+source_uri: https://dataverse.harvard.edu/file.xhtml?persistentId=doi:10.7910/DVN/F34GVS/KZOQZU&version=2.0
+source: Harvard Dataverse
+licence_str: CC0 - "Public Domain Dedication"
+licence_url: https://creativecommons.org/share-your-work/public-domain/cc0
+date_created: "2019-10-28"  
+description: "NMR data for Capsaicin Contains: 1D: 1H, 13C 2D: COSY, HSQC, HMBC in raw JEOL format and jdx.files, assigned and annotated 1H and 13C spectra, as well as Spin parameters for 1H and chemical shifts of carbon. (2018-03-26). Related Publication: Can Invalid Bioactives Undermine Natural Product-Based Drug Discovery? J. Med. Chem. doi: 10.1021/acs.jmedchem.5b01009 https://doi.org/10.1021/acs.jmedchem.5b01009. Related Material: SIGMA 60376-250mg Lot #MKBV4243V 3.15mg 3mm Tube Cambridge Isotope DML-10-10X1 Lot #10E-645 Solvent volume 200 μL."
+id: doi:10.7910/DVN/F34GVS/KZOQZU
+name: Capsaicin 400 MHz DMSOd6 NMR data
+created_by:
+  - "Kim, Seon Beom (University of Illinois at Chicago) - ORCID: 0000-0001-8015-1404"
+  - "Youn, Isoo (University of Illinois at Chicago) - ORCID: 0000-0002-8851-0720"
+  - "Chen, Shao Nong (University of Illinois at Chicago) - ORCID: 0000-0003-0748-0863"
+  - "Simmler, Charlotte (University of Illinois at Chicago) - ORCID: 0000-0002-6923-2630"
+  - "Bisson, Jonathan (University of Illinois at Chicago) - ORCID: 0000-0003-1640-9989"
+  - "Pauli, Guido (University of Illinois at Chicago) - ORCID: 0000-0003-1022-4326"
+
+###################
+# sample metadata #
+###################
+assays_sample:
+  # you MUST provide at least one of the following metadata on the assayed sample
+  name: Capsaicin
+  id: pubchemCID:1548943
+  formula: C18H27NO3
+  iupac_name: (E)-N-[(4-hydroxy-3-methoxyphenyl)methyl]-8-methylnon-6-enamide
+  inchi: InChI=1S/C18H27NO3/c1-14(2)8-6-4-5-7-9-18(21)19-13-15-10-11-16(20)17(12-15)22-3/h6,8,10-12,14,20H,4-5,7,9,13H2,1-3H3,(H,19,21)/b8-6+
+  inchikey: YKPUWZUDDOIDPM-SOFGYWHQSA-N
+  smiles: CC(C)C=CCCCCC(=O)NCC1=CC(=C(C=C1)O)OC
+  mol_file: 
+    id: doi:10.7910/DVN/F34GVS/M2OBED
+    name: capsaicin.mol 
+
+######################
+# records in dataset #
+######################    
+contains_assay_records:
+ # you MUST provide at least an URI as the id of each assay record (.jdx) in this dataset. If the records do not have an URI, you must use "nmrSPARQL:" as prefix and the filename (e.g. "id: nmrSPARQL:filename1.jdx")
+  - id: nmrSPARQL:1HNMR_jdx
+    source: 1HNMR_jdx.jdx
+  - id: nmrSPARQL:13C_NMR
+    source: 13C_NMR.jdx
+  - id: nmrSPARQL:gCOSY
+    source: gCOSY.jdx
+  - id: nmrSPARQL:gHMBC
+    source: gHMBC.jdx
+  - id: nmrSPARQL:HSQC
+    source: HSQC.jdx
+  - id: nmrSPARQL:q1HNMR_zg30
+    source: q1HNMR_zg30.jdx

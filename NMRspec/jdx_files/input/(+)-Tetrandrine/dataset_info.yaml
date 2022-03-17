@@ -40,17 +40,17 @@ assays_sample:
 ######################    
 contains_assay_records:
  # you MUST provide at least an URI as the id of each assay record (.jdx) in this dataset. If the records do not have an URI, you must use "nmrSPARQL:" as prefix and the filename (e.g. "id: nmrSPARQL:filename1.jdx")
-  - id: nmrSPARQL:Tetrandrine_3090ug200uL_DMSOd6_1HNMR_400MHz_JDX
+  - id: doi:10.7910/DVN/SAC0TQ/YRW16X/Tetrandrine_3090ug200uL_DMSOd6_1HNMR_400MHz_JDX
     source: Tetrandrine_3090ug200uL_DMSOd6_1HNMR_400MHz_JDX.jdx
-  - id: nmrSPARQL:Tetrandrine_3090ug200uL_DMSOd6_1HNMR_600MHz_JDX
-    source: Tetrandrine_3090ug200uL_DMSOd6_1HNMR_600MHz_JDX.jdx
-  - id: nmrSPARQL:Tetrandrine_3090ug200uL_DMSOd6_13CNMR_400MHz_JDX
+  - id: doi:10.7910/DVN/SAC0TQ/YRW16X/Tetrandrine_3090ug200uL_DMSOd6_13CNMR_400MHz_JDX
     source: Tetrandrine_3090ug200uL_DMSOd6_13CNMR_400MHz_JDX.jdx
-  - id: nmrSPARQL:Tetrandrine_3090ug200uL_DMSOd6_13CNMR_600MHz_JDX
-    source: Tetrandrine_3090ug200uL_DMSOd6_13CNMR_600MHz_JDX.jdx
-  - id: nmrSPARQL:Tetrandrine_3090ug200uL_DMSOd6_COSY_400MHz_JDX
+  - id: doi:10.7910/DVN/SAC0TQ/YRW16X/Tetrandrine_3090ug200uL_DMSOd6_COSY_400MHz_JDX
     source: Tetrandrine_3090ug200uL_DMSOd6_COSY_400MHz_JDX.jdx
-  - id: nmrSPARQL:Tetrandrine_3090ug200uL_DMSOd6_HMBC_400MHz_JDX
+  - id: doi:10.7910/DVN/SAC0TQ/YRW16X/Tetrandrine_3090ug200uL_DMSOd6_HMBC_400MHz_JDX
     source: Tetrandrine_3090ug200uL_DMSOd6_HMBC_400MHz_JDX.jdx
-  - id: nmrSPARQL:Tetrandrine_3090ug200uL_DMSOd6_HSQC_400MHz_JDX
+  - id: doi:10.7910/DVN/SAC0TQ/YRW16X/Tetrandrine_3090ug200uL_DMSOd6_HSQC_400MHz_JDX
     source: Tetrandrine_3090ug200uL_DMSOd6_HSQC_400MHz_JDX.jdx
+  - id: doi:10.7910/DVN/SAC0TQ/SNCCAF/Tetrandrine_3090ug200uL_DMSOd6_13CNMR_600MHz_JDX
+    source: Tetrandrine_3090ug200uL_DMSOd6_13CNMR_600MHz_JDX.jdx
+  - id: doi:10.7910/DVN/SAC0TQ/SNCCAF/Tetrandrine_3090ug200uL_DMSOd6_1HNMR_600MHz_JDX
+    source: Tetrandrine_3090ug200uL_DMSOd6_1HNMR_600MHz_JDX.jdx

@@ -1,0 +1,372 @@
+# -*- coding: utf-8 -*-
+
+#################################################
+# a JCAMP-DX dataset parsed to YAML
+# using https://github.com/StroemPhi/NMRspec
+# created: 2022-03-17
+#################################################
+
+id: doi:10.7910/DVN/M8QR20
+contains_assay_records:
+- id: doi:10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_13C
+  source: Lupeol_LUPE01_13C.jdx
+  output_of_nmr_assay:
+    solution:
+      solvent:
+        id: https://pubchem.ncbi.nlm.nih.gov/compound/75151
+        name: dimethyl sulfoxide-d6
+        inchi: InChI=1S/C2H6OS/c1-4(2)3/h1-2H3/i1D3,2D3
+        inchikey: IAZDPXIOMUYVGZ-WFGJKAKNSA-N
+        smiles: '[2H]C([2H])([2H])S(=O)C([2H])([2H])[2H]'
+        iupac_name: trideuterio(trideuteriomethylsulfinyl)methane
+      sample:
+        id: pubchemCID:259846
+        inchi: InChI=1S/C30H50O/c1-19(2)20-11-14-27(5)17-18-29(7)21(25(20)27)9-10-23-28(6)15-13-24(31)26(3,4)22(28)12-16-30(23,29)8/h20-25,31H,1,9-18H2,2-8H3/t20-,21+,22-,23+,24-,25+,27+,28-,29+,30+/m0/s1
+        inchikey: MQYXUWHLBZFQQO-QGTGJCAVSA-N
+        smiles: CC(=C)C1CCC2(C1C3CCC4C5(CCC(C(C5CCC4(C3(CC2)C)C)(C)C)O)C)C
+        mol_file:
+          id: doi:10.7910/DVN/M8QR20/3ICGW8
+          name: lupeol.mol
+        formula: C30H50O
+        iupac_name: (1R,3aR,5aR,5bR,7aR,9S,11aR,11bR,13aR,13bR)-3a,5a,5b,8,8,11a-hexamethyl-1-prop-1-en-2-yl-1,2,3,4,5,6,7,7a,9,10,11,11b,12,13,13a,13b-hexadecahydrocyclopenta[a]chrysen-9-ol
+        name: Lupeol
+      id: doi:10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_13C/Solution
+    spectrometer:
+      id: doi:10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_13C/Spectrometer
+    acquisition_nuclei:
+    - 13C
+    has_dimension: 1D
+    pulse_program: NMR
+    id: doi:10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_13C/Assay
+    observed_frequencies:
+    - 100.525303325165
+- id: doi:10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_13CdeptQ
+  source: Lupeol_LUPE01_13CdeptQ.jdx
+  output_of_nmr_assay:
+    solution:
+      solvent:
+        id: CHEBI:85365
+        name: chloroform-d
+        inchi: InChI=1S/CHCl3/c2-1(3)4/h1H/i1D
+        inchikey: HEDRZPFGACZZDS-MICDWDOJSA-N
+        smiles: '[2H]C(Cl)(Cl)Cl'
+        iupac_name: trichloro(deuterio)methane
+      sample:
+        id: pubchemCID:259846
+        inchi: InChI=1S/C30H50O/c1-19(2)20-11-14-27(5)17-18-29(7)21(25(20)27)9-10-23-28(6)15-13-24(31)26(3,4)22(28)12-16-30(23,29)8/h20-25,31H,1,9-18H2,2-8H3/t20-,21+,22-,23+,24-,25+,27+,28-,29+,30+/m0/s1
+        inchikey: MQYXUWHLBZFQQO-QGTGJCAVSA-N
+        smiles: CC(=C)C1CCC2(C1C3CCC4C5(CCC(C(C5CCC4(C3(CC2)C)C)(C)C)O)C)C
+        mol_file:
+          id: doi:10.7910/DVN/M8QR20/3ICGW8
+          name: lupeol.mol
+        formula: C30H50O
+        iupac_name: (1R,3aR,5aR,5bR,7aR,9S,11aR,11bR,13aR,13bR)-3a,5a,5b,8,8,11a-hexamethyl-1-prop-1-en-2-yl-1,2,3,4,5,6,7,7a,9,10,11,11b,12,13,13a,13b-hexadecahydrocyclopenta[a]chrysen-9-ol
+        name: Lupeol
+      id: doi:10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_13CdeptQ/Solution
+    spectrometer:
+      id: doi:10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_13CdeptQ/Spectrometer
+    acquisition_nuclei:
+    - 13C
+    has_dimension: 1D
+    pulse_program: DEPT
+    id: doi:10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_13CdeptQ/Assay
+    observed_frequencies:
+    - 226.3464193787
+- id: doi:10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_400_1H
+  source: Lupeol_LUPE01_400_1H.jdx
+  output_of_nmr_assay:
+    solution:
+      solvent:
+        id: CHEBI:85365
+        name: chloroform-d
+        inchi: InChI=1S/CHCl3/c2-1(3)4/h1H/i1D
+        inchikey: HEDRZPFGACZZDS-MICDWDOJSA-N
+        smiles: '[2H]C(Cl)(Cl)Cl'
+        iupac_name: trichloro(deuterio)methane
+      sample:
+        id: pubchemCID:259846
+        inchi: InChI=1S/C30H50O/c1-19(2)20-11-14-27(5)17-18-29(7)21(25(20)27)9-10-23-28(6)15-13-24(31)26(3,4)22(28)12-16-30(23,29)8/h20-25,31H,1,9-18H2,2-8H3/t20-,21+,22-,23+,24-,25+,27+,28-,29+,30+/m0/s1
+        inchikey: MQYXUWHLBZFQQO-QGTGJCAVSA-N
+        smiles: CC(=C)C1CCC2(C1C3CCC4C5(CCC(C(C5CCC4(C3(CC2)C)C)(C)C)O)C)C
+        mol_file:
+          id: doi:10.7910/DVN/M8QR20/3ICGW8
+          name: lupeol.mol
+        formula: C30H50O
+        iupac_name: (1R,3aR,5aR,5bR,7aR,9S,11aR,11bR,13aR,13bR)-3a,5a,5b,8,8,11a-hexamethyl-1-prop-1-en-2-yl-1,2,3,4,5,6,7,7a,9,10,11,11b,12,13,13a,13b-hexadecahydrocyclopenta[a]chrysen-9-ol
+        name: Lupeol
+      id: doi:10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_400_1H/Solution
+    spectrometer:
+      id: doi:10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_400_1H/Spectrometer
+    acquisition_nuclei:
+    - Unknown
+    has_dimension: 1D
+    pulse_program: Custom
+    id: doi:10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_400_1H/Assay
+    pulse_program_custom: single_pulse_dec
+    observed_frequencies:
+    - 399.78219837825
+- id: doi:10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_400_gCOSY
+  source: Lupeol_LUPE01_400_gCOSY.jdx
+  output_of_nmr_assay:
+    solution:
+      solvent:
+        id: CHEBI:85365
+        name: chloroform-d
+        inchi: InChI=1S/CHCl3/c2-1(3)4/h1H/i1D
+        inchikey: HEDRZPFGACZZDS-MICDWDOJSA-N
+        smiles: '[2H]C(Cl)(Cl)Cl'
+        iupac_name: trichloro(deuterio)methane
+      sample:
+        id: pubchemCID:259846
+        inchi: InChI=1S/C30H50O/c1-19(2)20-11-14-27(5)17-18-29(7)21(25(20)27)9-10-23-28(6)15-13-24(31)26(3,4)22(28)12-16-30(23,29)8/h20-25,31H,1,9-18H2,2-8H3/t20-,21+,22-,23+,24-,25+,27+,28-,29+,30+/m0/s1
+        inchikey: MQYXUWHLBZFQQO-QGTGJCAVSA-N
+        smiles: CC(=C)C1CCC2(C1C3CCC4C5(CCC(C(C5CCC4(C3(CC2)C)C)(C)C)O)C)C
+        mol_file:
+          id: doi:10.7910/DVN/M8QR20/3ICGW8
+          name: lupeol.mol
+        formula: C30H50O
+        iupac_name: (1R,3aR,5aR,5bR,7aR,9S,11aR,11bR,13aR,13bR)-3a,5a,5b,8,8,11a-hexamethyl-1-prop-1-en-2-yl-1,2,3,4,5,6,7,7a,9,10,11,11b,12,13,13a,13b-hexadecahydrocyclopenta[a]chrysen-9-ol
+        name: Lupeol
+      id: doi:10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_400_gCOSY/Solution
+    spectrometer:
+      id: doi:10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_400_gCOSY/Spectrometer
+    acquisition_nuclei:
+    - Proton
+    - Proton
+    has_dimension: 2D
+    pulse_program: COSY
+    id: doi:10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_400_gCOSY/Assay
+    observed_frequencies:
+    - 399.78219837825
+- id: doi:10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_HMBC
+  source: Lupeol_LUPE01_400_HMBC.jdx
+  output_of_nmr_assay:
+    solution:
+      solvent:
+        id: CHEBI:85365
+        name: chloroform-d
+        inchi: InChI=1S/CHCl3/c2-1(3)4/h1H/i1D
+        inchikey: HEDRZPFGACZZDS-MICDWDOJSA-N
+        smiles: '[2H]C(Cl)(Cl)Cl'
+        iupac_name: trichloro(deuterio)methane
+      sample:
+        id: pubchemCID:259846
+        inchi: InChI=1S/C30H50O/c1-19(2)20-11-14-27(5)17-18-29(7)21(25(20)27)9-10-23-28(6)15-13-24(31)26(3,4)22(28)12-16-30(23,29)8/h20-25,31H,1,9-18H2,2-8H3/t20-,21+,22-,23+,24-,25+,27+,28-,29+,30+/m0/s1
+        inchikey: MQYXUWHLBZFQQO-QGTGJCAVSA-N
+        smiles: CC(=C)C1CCC2(C1C3CCC4C5(CCC(C(C5CCC4(C3(CC2)C)C)(C)C)O)C)C
+        mol_file:
+          id: doi:10.7910/DVN/M8QR20/3ICGW8
+          name: lupeol.mol
+        formula: C30H50O
+        iupac_name: (1R,3aR,5aR,5bR,7aR,9S,11aR,11bR,13aR,13bR)-3a,5a,5b,8,8,11a-hexamethyl-1-prop-1-en-2-yl-1,2,3,4,5,6,7,7a,9,10,11,11b,12,13,13a,13b-hexadecahydrocyclopenta[a]chrysen-9-ol
+        name: Lupeol
+      id: doi:10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_HMBC/Solution
+    spectrometer:
+      id: doi:10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_HMBC/Spectrometer
+    acquisition_nuclei:
+    - Carbon13
+    - Proton
+    has_dimension: 2D
+    pulse_program: HMBC
+    id: doi:10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_HMBC/Assay
+    observed_frequencies:
+    - 399.78219837825
+- id: doi:10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_400_HSQC
+  source: Lupeol_LUPE01_400_HSQC.jdx
+  output_of_nmr_assay:
+    solution:
+      solvent:
+        id: CHEBI:85365
+        name: chloroform-d
+        inchi: InChI=1S/CHCl3/c2-1(3)4/h1H/i1D
+        inchikey: HEDRZPFGACZZDS-MICDWDOJSA-N
+        smiles: '[2H]C(Cl)(Cl)Cl'
+        iupac_name: trichloro(deuterio)methane
+      sample:
+        id: pubchemCID:259846
+        inchi: InChI=1S/C30H50O/c1-19(2)20-11-14-27(5)17-18-29(7)21(25(20)27)9-10-23-28(6)15-13-24(31)26(3,4)22(28)12-16-30(23,29)8/h20-25,31H,1,9-18H2,2-8H3/t20-,21+,22-,23+,24-,25+,27+,28-,29+,30+/m0/s1
+        inchikey: MQYXUWHLBZFQQO-QGTGJCAVSA-N
+        smiles: CC(=C)C1CCC2(C1C3CCC4C5(CCC(C(C5CCC4(C3(CC2)C)C)(C)C)O)C)C
+        mol_file:
+          id: doi:10.7910/DVN/M8QR20/3ICGW8
+          name: lupeol.mol
+        formula: C30H50O
+        iupac_name: (1R,3aR,5aR,5bR,7aR,9S,11aR,11bR,13aR,13bR)-3a,5a,5b,8,8,11a-hexamethyl-1-prop-1-en-2-yl-1,2,3,4,5,6,7,7a,9,10,11,11b,12,13,13a,13b-hexadecahydrocyclopenta[a]chrysen-9-ol
+        name: Lupeol
+      id: doi:10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_400_HSQC/Solution
+    spectrometer:
+      id: doi:10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_400_HSQC/Spectrometer
+    acquisition_nuclei:
+    - Carbon13
+    - Proton
+    has_dimension: 2D
+    pulse_program: HSQC
+    id: doi:10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_400_HSQC/Assay
+    observed_frequencies:
+    - 399.78219837825
+- id: doi:10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_gCOSY
+  source: Lupeol_LUPE01_gCOSY.jdx
+  output_of_nmr_assay:
+    solution:
+      solvent:
+        id: CHEBI:85365
+        name: chloroform-d
+        inchi: InChI=1S/CHCl3/c2-1(3)4/h1H/i1D
+        inchikey: HEDRZPFGACZZDS-MICDWDOJSA-N
+        smiles: '[2H]C(Cl)(Cl)Cl'
+        iupac_name: trichloro(deuterio)methane
+      sample:
+        id: pubchemCID:259846
+        inchi: InChI=1S/C30H50O/c1-19(2)20-11-14-27(5)17-18-29(7)21(25(20)27)9-10-23-28(6)15-13-24(31)26(3,4)22(28)12-16-30(23,29)8/h20-25,31H,1,9-18H2,2-8H3/t20-,21+,22-,23+,24-,25+,27+,28-,29+,30+/m0/s1
+        inchikey: MQYXUWHLBZFQQO-QGTGJCAVSA-N
+        smiles: CC(=C)C1CCC2(C1C3CCC4C5(CCC(C(C5CCC4(C3(CC2)C)C)(C)C)O)C)C
+        mol_file:
+          id: doi:10.7910/DVN/M8QR20/3ICGW8
+          name: lupeol.mol
+        formula: C30H50O
+        iupac_name: (1R,3aR,5aR,5bR,7aR,9S,11aR,11bR,13aR,13bR)-3a,5a,5b,8,8,11a-hexamethyl-1-prop-1-en-2-yl-1,2,3,4,5,6,7,7a,9,10,11,11b,12,13,13a,13b-hexadecahydrocyclopenta[a]chrysen-9-ol
+        name: Lupeol
+      id: doi:10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_gCOSY/Solution
+    spectrometer:
+      id: doi:10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_gCOSY/Spectrometer
+    acquisition_nuclei:
+    - 1H
+    - 1H
+    has_dimension: 2D
+    pulse_program: COSY
+    id: doi:10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_gCOSY/Assay
+    observed_frequencies:
+    - 900.0764752035
+- id: doi:10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_gHSQC
+  source: Lupeol_LUPE01_gHSQC.jdx
+  output_of_nmr_assay:
+    solution:
+      solvent:
+        id: CHEBI:85365
+        name: chloroform-d
+        inchi: InChI=1S/CHCl3/c2-1(3)4/h1H/i1D
+        inchikey: HEDRZPFGACZZDS-MICDWDOJSA-N
+        smiles: '[2H]C(Cl)(Cl)Cl'
+        iupac_name: trichloro(deuterio)methane
+      sample:
+        id: pubchemCID:259846
+        inchi: InChI=1S/C30H50O/c1-19(2)20-11-14-27(5)17-18-29(7)21(25(20)27)9-10-23-28(6)15-13-24(31)26(3,4)22(28)12-16-30(23,29)8/h20-25,31H,1,9-18H2,2-8H3/t20-,21+,22-,23+,24-,25+,27+,28-,29+,30+/m0/s1
+        inchikey: MQYXUWHLBZFQQO-QGTGJCAVSA-N
+        smiles: CC(=C)C1CCC2(C1C3CCC4C5(CCC(C(C5CCC4(C3(CC2)C)C)(C)C)O)C)C
+        mol_file:
+          id: doi:10.7910/DVN/M8QR20/3ICGW8
+          name: lupeol.mol
+        formula: C30H50O
+        iupac_name: (1R,3aR,5aR,5bR,7aR,9S,11aR,11bR,13aR,13bR)-3a,5a,5b,8,8,11a-hexamethyl-1-prop-1-en-2-yl-1,2,3,4,5,6,7,7a,9,10,11,11b,12,13,13a,13b-hexadecahydrocyclopenta[a]chrysen-9-ol
+        name: Lupeol
+      id: doi:10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_gHSQC/Solution
+    spectrometer:
+      id: doi:10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_gHSQC/Spectrometer
+    acquisition_nuclei:
+    - 13C
+    - 1H
+    has_dimension: 2D
+    pulse_program: HSQC
+    id: doi:10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_gHSQC/Assay
+    observed_frequencies:
+    - 900.0764752035
+- id: doi:10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_HMBC
+  source: Lupeol_LUPE01_HMBC.jdx
+  output_of_nmr_assay:
+    solution:
+      solvent:
+        id: CHEBI:85365
+        name: chloroform-d
+        inchi: InChI=1S/CHCl3/c2-1(3)4/h1H/i1D
+        inchikey: HEDRZPFGACZZDS-MICDWDOJSA-N
+        smiles: '[2H]C(Cl)(Cl)Cl'
+        iupac_name: trichloro(deuterio)methane
+      sample:
+        id: pubchemCID:259846
+        inchi: InChI=1S/C30H50O/c1-19(2)20-11-14-27(5)17-18-29(7)21(25(20)27)9-10-23-28(6)15-13-24(31)26(3,4)22(28)12-16-30(23,29)8/h20-25,31H,1,9-18H2,2-8H3/t20-,21+,22-,23+,24-,25+,27+,28-,29+,30+/m0/s1
+        inchikey: MQYXUWHLBZFQQO-QGTGJCAVSA-N
+        smiles: CC(=C)C1CCC2(C1C3CCC4C5(CCC(C(C5CCC4(C3(CC2)C)C)(C)C)O)C)C
+        mol_file:
+          id: doi:10.7910/DVN/M8QR20/3ICGW8
+          name: lupeol.mol
+        formula: C30H50O
+        iupac_name: (1R,3aR,5aR,5bR,7aR,9S,11aR,11bR,13aR,13bR)-3a,5a,5b,8,8,11a-hexamethyl-1-prop-1-en-2-yl-1,2,3,4,5,6,7,7a,9,10,11,11b,12,13,13a,13b-hexadecahydrocyclopenta[a]chrysen-9-ol
+        name: Lupeol
+      id: doi:10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_HMBC/Solution
+    spectrometer:
+      id: doi:10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_HMBC/Spectrometer
+    acquisition_nuclei:
+    - 13C
+    - 1H
+    has_dimension: 2D
+    pulse_program: HMBC
+    id: doi:10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_HMBC/Assay
+    observed_frequencies:
+    - 900.0764752035
+- id: doi:10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_q1H
+  source: Lupeol_LUPE01_q1H.jdx
+  output_of_nmr_assay:
+    solution:
+      solvent:
+        id: CHEBI:85365
+        name: chloroform-d
+        inchi: InChI=1S/CHCl3/c2-1(3)4/h1H/i1D
+        inchikey: HEDRZPFGACZZDS-MICDWDOJSA-N
+        smiles: '[2H]C(Cl)(Cl)Cl'
+        iupac_name: trichloro(deuterio)methane
+      sample:
+        id: pubchemCID:259846
+        inchi: InChI=1S/C30H50O/c1-19(2)20-11-14-27(5)17-18-29(7)21(25(20)27)9-10-23-28(6)15-13-24(31)26(3,4)22(28)12-16-30(23,29)8/h20-25,31H,1,9-18H2,2-8H3/t20-,21+,22-,23+,24-,25+,27+,28-,29+,30+/m0/s1
+        inchikey: MQYXUWHLBZFQQO-QGTGJCAVSA-N
+        smiles: CC(=C)C1CCC2(C1C3CCC4C5(CCC(C(C5CCC4(C3(CC2)C)C)(C)C)O)C)C
+        mol_file:
+          id: doi:10.7910/DVN/M8QR20/3ICGW8
+          name: lupeol.mol
+        formula: C30H50O
+        iupac_name: (1R,3aR,5aR,5bR,7aR,9S,11aR,11bR,13aR,13bR)-3a,5a,5b,8,8,11a-hexamethyl-1-prop-1-en-2-yl-1,2,3,4,5,6,7,7a,9,10,11,11b,12,13,13a,13b-hexadecahydrocyclopenta[a]chrysen-9-ol
+        name: Lupeol
+      id: doi:10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_q1H/Solution
+    spectrometer:
+      id: doi:10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_q1H/Spectrometer
+    acquisition_nuclei:
+    - 1H
+    has_dimension: 1D
+    pulse_program: NMR
+    id: doi:10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_q1H/Assay
+    observed_frequencies:
+    - 900.077600296
+assays_sample:
+  id: pubchemCID:259846
+  inchi: InChI=1S/C30H50O/c1-19(2)20-11-14-27(5)17-18-29(7)21(25(20)27)9-10-23-28(6)15-13-24(31)26(3,4)22(28)12-16-30(23,29)8/h20-25,31H,1,9-18H2,2-8H3/t20-,21+,22-,23+,24-,25+,27+,28-,29+,30+/m0/s1
+  inchikey: MQYXUWHLBZFQQO-QGTGJCAVSA-N
+  smiles: CC(=C)C1CCC2(C1C3CCC4C5(CCC(C(C5CCC4(C3(CC2)C)C)(C)C)O)C)C
+  mol_file:
+    id: doi:10.7910/DVN/M8QR20/3ICGW8
+    name: lupeol.mol
+  formula: C30H50O
+  iupac_name: (1R,3aR,5aR,5bR,7aR,9S,11aR,11bR,13aR,13bR)-3a,5a,5b,8,8,11a-hexamethyl-1-prop-1-en-2-yl-1,2,3,4,5,6,7,7a,9,10,11,11b,12,13,13a,13b-hexadecahydrocyclopenta[a]chrysen-9-ol
+  name: Lupeol
+source: Harvard Dataverse
+description: 'NMR data for Lupeol Contains: 1D: 1H, 13C 2D: COSY, HSQC, HMBC acquired
+  at 400MHz in CDCl3, as well as 1D:1H, 2D: COSY acquired at 900MHz (2019-04-24).
+  Related Publication: Can Invalid Bioactives Undermine Natural Product-Based Drug
+  Discovery? J. Med. Chem. doi: 10.1021/acs.jmedchem.5b01009 https://doi.org/10.1021/acs.jmedchem.5b01009.
+  Related Material:  Chromadex ASB-00012392-025 Lot #00012392-701 lupeol 2.96 mg in
+  200 μL CDCl3 3mm Tube Cambridge ( ~ 180 μL) Solvent: 00626TA (Aldrich 494275-10g)
+  -- CAVE: In order to parse this dataset the ''Lupeol_LUPE01_HMBC.jdx'' from the
+  400MHz dataset needed to be renamed to ''Lupeol_LUPE01_400_HMBC.jdx'' as there is
+  a file with the same name also in the 900MHz dataset'
+source_uri: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/M8QR20
+date_created: '2019-10-28T00:00:00'
+licence_str: CC0 - "Public Domain Dedication"
+licence_url: https://creativecommons.org/share-your-work/public-domain/cc0
+created_by:
+- 'Lankin, David (University of Illinois at Chicago) - ORCID: 0000-0003-3166-5980'
+- Malca, Gonzalo (University of Illinois at Chicago)
+- 'Kim, Seon Beom (University of Illinois at Chicago) - ORCID: 0000-0001-8015-1404'
+- 'Youn, Isoo (University of Illinois at Chicago) - ORCID: 0000-0002-8851-0720'
+- 'Chen, Shao Nong (University of Illinois at Chicago) - ORCID: 0000-0003-0748-0863'
+- 'Simmler, Charlotte (University of Illinois at Chicago) - ORCID: 0000-0002-6923-2630'
+- 'Bisson, Jonathan (University of Illinois at Chicago) - ORCID: 0000-0003-1640-9989'
+- 'Pauli, Guido (University of Illinois at Chicago) - ORCID: 0000-0003-1022-4326'
+name: Lupeol 900MHz 400MHz CDCl3 NMR data

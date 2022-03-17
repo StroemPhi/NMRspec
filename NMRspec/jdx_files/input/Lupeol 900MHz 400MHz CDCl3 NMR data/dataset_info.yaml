@@ -1,0 +1,68 @@
+####################
+# dataset metadata #
+####################
+
+# you MUST provide the following provenance metadata of the dataset
+source_uri: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/M8QR20
+source: Harvard Dataverse
+licence_str: CC0 - "Public Domain Dedication"
+licence_url: https://creativecommons.org/share-your-work/public-domain/cc0
+date_created: "2019-10-28"  
+description: "NMR data for Lupeol Contains: 1D: 1H, 13C 2D: COSY, HSQC, HMBC acquired at 400MHz in CDCl3, as well as 1D:1H, 2D: COSY acquired at 900MHz (2019-04-24). Related Publication: Can Invalid Bioactives Undermine Natural Product-Based Drug Discovery? J. Med. Chem. doi: 10.1021/acs.jmedchem.5b01009 https://doi.org/10.1021/acs.jmedchem.5b01009. Related Material:  Chromadex ASB-00012392-025 Lot #00012392-701 lupeol 2.96 mg in 200 μL CDCl3 3mm Tube Cambridge ( ~ 180 μL) Solvent: 00626TA (Aldrich 494275-10g) -- CAVE: In order to parse this dataset the 'Lupeol_LUPE01_HMBC.jdx' from the 400MHz dataset needed to be renamed to 'Lupeol_LUPE01_400_HMBC.jdx' as there is a file with the same name also in the 900MHz dataset"
+id: doi:10.7910/DVN/M8QR20
+name: Lupeol 900MHz 400MHz CDCl3 NMR data
+created_by:
+  - "Lankin, David (University of Illinois at Chicago) - ORCID: 0000-0003-3166-5980"
+  - "Malca, Gonzalo (University of Illinois at Chicago)"
+  - "Kim, Seon Beom (University of Illinois at Chicago) - ORCID: 0000-0001-8015-1404"
+  - "Youn, Isoo (University of Illinois at Chicago) - ORCID: 0000-0002-8851-0720"
+  - "Chen, Shao Nong (University of Illinois at Chicago) - ORCID: 0000-0003-0748-0863"
+  - "Simmler, Charlotte (University of Illinois at Chicago) - ORCID: 0000-0002-6923-2630"
+  - "Bisson, Jonathan (University of Illinois at Chicago) - ORCID: 0000-0003-1640-9989"
+  - "Pauli, Guido (University of Illinois at Chicago) - ORCID: 0000-0003-1022-4326"
+
+###################
+# sample metadata #
+###################
+assays_sample:
+  # you MUST provide at least one of the following metadata on the assayed sample
+  name: Lupeol
+  id: pubchemCID:259846
+  formula: C30H50O
+  iupac_name: (1R,3aR,5aR,5bR,7aR,9S,11aR,11bR,13aR,13bR)-3a,5a,5b,8,8,11a-hexamethyl-1-prop-1-en-2-yl-1,2,3,4,5,6,7,7a,9,10,11,11b,12,13,13a,13b-hexadecahydrocyclopenta[a]chrysen-9-ol
+  inchi: InChI=1S/C30H50O/c1-19(2)20-11-14-27(5)17-18-29(7)21(25(20)27)9-10-23-28(6)15-13-24(31)26(3,4)22(28)12-16-30(23,29)8/h20-25,31H,1,9-18H2,2-8H3/t20-,21+,22-,23+,24-,25+,27+,28-,29+,30+/m0/s1
+  inchikey: MQYXUWHLBZFQQO-QGTGJCAVSA-N
+  smiles: CC(=C)C1CCC2(C1C3CCC4C5(CCC(C(C5CCC4(C3(CC2)C)C)(C)C)O)C)C
+  mol_file: 
+    id: doi:10.7910/DVN/M8QR20/3ICGW8
+    name: lupeol.mol 
+
+######################
+# records in dataset #
+######################    
+contains_assay_records:
+ # you MUST provide at least an URI as the id of each assay record (.jdx) in this dataset. If the records do not have an URI, you must use "nmrSPARQL:" as prefix and the filename (e.g. "id: nmrSPARQL:filename1.jdx")
+  - id: doi:10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_13C
+    source: Lupeol_LUPE01_13C.jdx
+  - id: doi:10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_400_1H
+    source: Lupeol_LUPE01_400_1H.jdx
+  - id: doi:10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_400_gCOSY
+    source: Lupeol_LUPE01_400_gCOSY.jdx
+  - id: doi:10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_400_HSQC
+    source: Lupeol_LUPE01_400_HSQC.jdx
+  - id: doi:10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_HMBC
+    source: Lupeol_LUPE01_400_HMBC.jdx
+  - id: doi:10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_13CdeptQ
+    source: Lupeol_LUPE01_13CdeptQ.jdx
+  - id: doi:10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_gCOSY
+    source: Lupeol_LUPE01_gCOSY.jdx
+  - id: doi:10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_400_gCOSY
+    source: Lupeol_LUPE01_400_gCOSY.jdx
+  - id: doi:10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_gHSQC
+    source: Lupeol_LUPE01_gHSQC.jdx
+  - id: doi:10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_HMBC
+    source: Lupeol_LUPE01_HMBC.jdx
+  - id: doi:10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_q1H
+    source: Lupeol_LUPE01_q1H.jdx
+    
+    

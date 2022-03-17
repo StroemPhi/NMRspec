@@ -1,0 +1,246 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ns1: <http://purl.obolibrary.org/obo/> .
+@prefix ns2: <https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://doi.org/10.7910/DVN/M8QR20> a ns2:NmrSpecRecordCollection ;
+    rdfs:label "Lupeol 900MHz 400MHz CDCl3 NMR data" ;
+    ns1:BFO_0000051 <https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_13CdeptQ>,
+        <https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_HMBC>,
+        <https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_gCOSY>,
+        <https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_gHSQC>,
+        <https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_q1H>,
+        <https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_13C>,
+        <https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_400_1H>,
+        <https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_400_HSQC>,
+        <https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_400_gCOSY>,
+        <https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_HMBC> ;
+    ns1:IAO_0000136 <https://pubchem.ncbi.nlm.nih.gov/compound/259846> ;
+    dc:creator "Bisson, Jonathan (University of Illinois at Chicago) - ORCID: 0000-0003-1640-9989",
+        "Chen, Shao Nong (University of Illinois at Chicago) - ORCID: 0000-0003-0748-0863",
+        "Kim, Seon Beom (University of Illinois at Chicago) - ORCID: 0000-0001-8015-1404",
+        "Lankin, David (University of Illinois at Chicago) - ORCID: 0000-0003-3166-5980",
+        "Malca, Gonzalo (University of Illinois at Chicago)",
+        "Pauli, Guido (University of Illinois at Chicago) - ORCID: 0000-0003-1022-4326",
+        "Simmler, Charlotte (University of Illinois at Chicago) - ORCID: 0000-0002-6923-2630",
+        "Youn, Isoo (University of Illinois at Chicago) - ORCID: 0000-0002-8851-0720" ;
+    dc:description "NMR data for Lupeol Contains: 1D: 1H, 13C 2D: COSY, HSQC, HMBC acquired at 400MHz in CDCl3, as well as 1D:1H, 2D: COSY acquired at 900MHz (2019-04-24). Related Publication: Can Invalid Bioactives Undermine Natural Product-Based Drug Discovery? J. Med. Chem. doi: 10.1021/acs.jmedchem.5b01009 https://doi.org/10.1021/acs.jmedchem.5b01009. Related Material:  Chromadex ASB-00012392-025 Lot #00012392-701 lupeol 2.96 mg in 200 μL CDCl3 3mm Tube Cambridge ( ~ 180 μL) Solvent: 00626TA (Aldrich 494275-10g) -- CAVE: In order to parse this dataset the 'Lupeol_LUPE01_HMBC.jdx' from the 400MHz dataset needed to be renamed to 'Lupeol_LUPE01_400_HMBC.jdx' as there is a file with the same name also in the 900MHz dataset" ;
+    dc:license "https://creativecommons.org/share-your-work/public-domain/cc0"^^xsd:anyURI,
+        "CC0 - \"Public Domain Dedication\"" ;
+    dc:source "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/M8QR20"^^xsd:anyURI,
+        "Harvard Dataverse" ;
+    schema:dateCreated "2019-10-28T00:00:00"^^xsd:dateTime .
+
+<https://doi.org/10.7910/DVN/M8QR20/3ICGW8> a ns1:CHEMINF_000114 ;
+    rdfs:label "lupeol.mol" .
+
+<https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_13CdeptQ> a ns2:NmrSpecRecord ;
+    ns1:OBI_0000312 <https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_13CdeptQ/Assay> ;
+    dc:source "Lupeol_LUPE01_13CdeptQ.jdx" .
+
+<https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_13CdeptQ/Assay> a ns1:CHMO_0000613 ;
+    ns1:OBI_0000293 <https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_13CdeptQ/Solution>,
+        <https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_13CdeptQ/Spectrometer> ;
+    ns2:acquisition_nuclei "13C" ;
+    ns2:has_dimension "1D" ;
+    ns2:observed_frequencies "226.3464193787"^^xsd:float ;
+    ns2:pulse_program "DEPT" .
+
+<https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_13CdeptQ/Solution> a ns1:CHEBI_75958 ;
+    ns1:BFO_0000051 ns1:CHEBI_85365,
+        <https://pubchem.ncbi.nlm.nih.gov/compound/259846> .
+
+<https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_13CdeptQ/Spectrometer> a ns1:OBI_0000566 .
+
+<https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_HMBC> a ns2:NmrSpecRecord ;
+    ns1:OBI_0000312 <https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_HMBC/Assay> ;
+    dc:source "Lupeol_LUPE01_HMBC.jdx" .
+
+<https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_HMBC/Assay> a ns1:CHMO_0000613 ;
+    ns1:OBI_0000293 <https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_HMBC/Solution>,
+        <https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_HMBC/Spectrometer> ;
+    ns2:acquisition_nuclei "13C",
+        "1H" ;
+    ns2:has_dimension "2D" ;
+    ns2:observed_frequencies "900.0764752035"^^xsd:float ;
+    ns2:pulse_program "HMBC" .
+
+<https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_HMBC/Solution> a ns1:CHEBI_75958 ;
+    ns1:BFO_0000051 ns1:CHEBI_85365,
+        <https://pubchem.ncbi.nlm.nih.gov/compound/259846> .
+
+<https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_HMBC/Spectrometer> a ns1:OBI_0000566 .
+
+<https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_gCOSY> a ns2:NmrSpecRecord ;
+    ns1:OBI_0000312 <https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_gCOSY/Assay> ;
+    dc:source "Lupeol_LUPE01_gCOSY.jdx" .
+
+<https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_gCOSY/Assay> a ns1:CHMO_0000613 ;
+    ns1:OBI_0000293 <https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_gCOSY/Solution>,
+        <https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_gCOSY/Spectrometer> ;
+    ns2:acquisition_nuclei "1H" ;
+    ns2:has_dimension "2D" ;
+    ns2:observed_frequencies "900.0764752035"^^xsd:float ;
+    ns2:pulse_program "COSY" .
+
+<https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_gCOSY/Solution> a ns1:CHEBI_75958 ;
+    ns1:BFO_0000051 ns1:CHEBI_85365,
+        <https://pubchem.ncbi.nlm.nih.gov/compound/259846> .
+
+<https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_gCOSY/Spectrometer> a ns1:OBI_0000566 .
+
+<https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_gHSQC> a ns2:NmrSpecRecord ;
+    ns1:OBI_0000312 <https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_gHSQC/Assay> ;
+    dc:source "Lupeol_LUPE01_gHSQC.jdx" .
+
+<https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_gHSQC/Assay> a ns1:CHMO_0000613 ;
+    ns1:OBI_0000293 <https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_gHSQC/Solution>,
+        <https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_gHSQC/Spectrometer> ;
+    ns2:acquisition_nuclei "13C",
+        "1H" ;
+    ns2:has_dimension "2D" ;
+    ns2:observed_frequencies "900.0764752035"^^xsd:float ;
+    ns2:pulse_program "HSQC" .
+
+<https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_gHSQC/Solution> a ns1:CHEBI_75958 ;
+    ns1:BFO_0000051 ns1:CHEBI_85365,
+        <https://pubchem.ncbi.nlm.nih.gov/compound/259846> .
+
+<https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_gHSQC/Spectrometer> a ns1:OBI_0000566 .
+
+<https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_q1H> a ns2:NmrSpecRecord ;
+    ns1:OBI_0000312 <https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_q1H/Assay> ;
+    dc:source "Lupeol_LUPE01_q1H.jdx" .
+
+<https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_q1H/Assay> a ns1:CHMO_0000613 ;
+    ns1:OBI_0000293 <https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_q1H/Solution>,
+        <https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_q1H/Spectrometer> ;
+    ns2:acquisition_nuclei "1H" ;
+    ns2:has_dimension "1D" ;
+    ns2:observed_frequencies "900.077600296"^^xsd:float ;
+    ns2:pulse_program "NMR" .
+
+<https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_q1H/Solution> a ns1:CHEBI_75958 ;
+    ns1:BFO_0000051 ns1:CHEBI_85365,
+        <https://pubchem.ncbi.nlm.nih.gov/compound/259846> .
+
+<https://doi.org/10.7910/DVN/M8QR20/VEIWX8/Lupeol_LUPE01_q1H/Spectrometer> a ns1:OBI_0000566 .
+
+<https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_13C> a ns2:NmrSpecRecord ;
+    ns1:OBI_0000312 <https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_13C/Assay> ;
+    dc:source "Lupeol_LUPE01_13C.jdx" .
+
+<https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_13C/Assay> a ns1:CHMO_0000613 ;
+    ns1:OBI_0000293 <https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_13C/Solution>,
+        <https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_13C/Spectrometer> ;
+    ns2:acquisition_nuclei "13C" ;
+    ns2:has_dimension "1D" ;
+    ns2:observed_frequencies "100.525303325165"^^xsd:float ;
+    ns2:pulse_program "NMR" .
+
+<https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_13C/Solution> a ns1:CHEBI_75958 ;
+    ns1:BFO_0000051 <https://pubchem.ncbi.nlm.nih.gov/compound/259846>,
+        <https://pubchem.ncbi.nlm.nih.gov/compound/75151> .
+
+<https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_13C/Spectrometer> a ns1:OBI_0000566 .
+
+<https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_400_1H> a ns2:NmrSpecRecord ;
+    ns1:OBI_0000312 <https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_400_1H/Assay> ;
+    dc:source "Lupeol_LUPE01_400_1H.jdx" .
+
+<https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_400_1H/Assay> a ns1:CHMO_0000613 ;
+    ns1:OBI_0000293 <https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_400_1H/Solution>,
+        <https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_400_1H/Spectrometer> ;
+    ns2:acquisition_nuclei "Unknown" ;
+    ns2:has_dimension "1D" ;
+    ns2:observed_frequencies "399.78219837825"^^xsd:float ;
+    ns2:pulse_program "Custom" ;
+    ns2:pulse_program_custom "single_pulse_dec" .
+
+<https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_400_1H/Solution> a ns1:CHEBI_75958 ;
+    ns1:BFO_0000051 ns1:CHEBI_85365,
+        <https://pubchem.ncbi.nlm.nih.gov/compound/259846> .
+
+<https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_400_1H/Spectrometer> a ns1:OBI_0000566 .
+
+<https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_400_HSQC> a ns2:NmrSpecRecord ;
+    ns1:OBI_0000312 <https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_400_HSQC/Assay> ;
+    dc:source "Lupeol_LUPE01_400_HSQC.jdx" .
+
+<https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_400_HSQC/Assay> a ns1:CHMO_0000613 ;
+    ns1:OBI_0000293 <https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_400_HSQC/Solution>,
+        <https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_400_HSQC/Spectrometer> ;
+    ns2:acquisition_nuclei "Carbon13",
+        "Proton" ;
+    ns2:has_dimension "2D" ;
+    ns2:observed_frequencies "399.78219837825"^^xsd:float ;
+    ns2:pulse_program "HSQC" .
+
+<https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_400_HSQC/Solution> a ns1:CHEBI_75958 ;
+    ns1:BFO_0000051 ns1:CHEBI_85365,
+        <https://pubchem.ncbi.nlm.nih.gov/compound/259846> .
+
+<https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_400_HSQC/Spectrometer> a ns1:OBI_0000566 .
+
+<https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_400_gCOSY> a ns2:NmrSpecRecord ;
+    ns1:OBI_0000312 <https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_400_gCOSY/Assay> ;
+    dc:source "Lupeol_LUPE01_400_gCOSY.jdx" .
+
+<https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_400_gCOSY/Assay> a ns1:CHMO_0000613 ;
+    ns1:OBI_0000293 <https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_400_gCOSY/Solution>,
+        <https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_400_gCOSY/Spectrometer> ;
+    ns2:acquisition_nuclei "Proton" ;
+    ns2:has_dimension "2D" ;
+    ns2:observed_frequencies "399.78219837825"^^xsd:float ;
+    ns2:pulse_program "COSY" .
+
+<https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_400_gCOSY/Solution> a ns1:CHEBI_75958 ;
+    ns1:BFO_0000051 ns1:CHEBI_85365,
+        <https://pubchem.ncbi.nlm.nih.gov/compound/259846> .
+
+<https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_400_gCOSY/Spectrometer> a ns1:OBI_0000566 .
+
+<https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_HMBC> a ns2:NmrSpecRecord ;
+    ns1:OBI_0000312 <https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_HMBC/Assay> ;
+    dc:source "Lupeol_LUPE01_400_HMBC.jdx" .
+
+<https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_HMBC/Assay> a ns1:CHMO_0000613 ;
+    ns1:OBI_0000293 <https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_HMBC/Solution>,
+        <https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_HMBC/Spectrometer> ;
+    ns2:acquisition_nuclei "Carbon13",
+        "Proton" ;
+    ns2:has_dimension "2D" ;
+    ns2:observed_frequencies "399.78219837825"^^xsd:float ;
+    ns2:pulse_program "HMBC" .
+
+<https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_HMBC/Solution> a ns1:CHEBI_75958 ;
+    ns1:BFO_0000051 ns1:CHEBI_85365,
+        <https://pubchem.ncbi.nlm.nih.gov/compound/259846> .
+
+<https://doi.org/10.7910/DVN/M8QR20/X3CSPV/Lupeol_LUPE01_HMBC/Spectrometer> a ns1:OBI_0000566 .
+
+<https://pubchem.ncbi.nlm.nih.gov/compound/75151> a ns2:NmrSolvent ;
+    rdfs:label "dimethyl sulfoxide-d6" ;
+    ns1:CHEBI_IUPAC_NAME "trideuterio(trideuteriomethylsulfinyl)methane" ;
+    ns1:CHEBI_inchi "InChI=1S/C2H6OS/c1-4(2)3/h1-2H3/i1D3,2D3" ;
+    ns1:CHEBI_inchikey "IAZDPXIOMUYVGZ-WFGJKAKNSA-N" ;
+    ns1:CHEBI_smiles "[2H]C([2H])([2H])S(=O)C([2H])([2H])[2H]" .
+
+ns1:CHEBI_85365 a ns2:NmrSolvent ;
+    rdfs:label "chloroform-d" ;
+    ns1:CHEBI_IUPAC_NAME "trichloro(deuterio)methane" ;
+    ns1:CHEBI_inchi "InChI=1S/CHCl3/c2-1(3)4/h1H/i1D" ;
+    ns1:CHEBI_inchikey "HEDRZPFGACZZDS-MICDWDOJSA-N" ;
+    ns1:CHEBI_smiles "[2H]C(Cl)(Cl)Cl" .
+
+<https://pubchem.ncbi.nlm.nih.gov/compound/259846> a ns2:NmrSample ;
+    rdfs:label "Lupeol" ;
+    ns1:CHEBI_IUPAC_NAME "(1R,3aR,5aR,5bR,7aR,9S,11aR,11bR,13aR,13bR)-3a,5a,5b,8,8,11a-hexamethyl-1-prop-1-en-2-yl-1,2,3,4,5,6,7,7a,9,10,11,11b,12,13,13a,13b-hexadecahydrocyclopenta[a]chrysen-9-ol" ;
+    ns1:CHEBI_formula "C30H50O" ;
+    ns1:CHEBI_inchi "InChI=1S/C30H50O/c1-19(2)20-11-14-27(5)17-18-29(7)21(25(20)27)9-10-23-28(6)15-13-24(31)26(3,4)22(28)12-16-30(23,29)8/h20-25,31H,1,9-18H2,2-8H3/t20-,21+,22-,23+,24-,25+,27+,28-,29+,30+/m0/s1" ;
+    ns1:CHEBI_inchikey "MQYXUWHLBZFQQO-QGTGJCAVSA-N" ;
+    ns1:CHEBI_smiles "CC(=C)C1CCC2(C1C3CCC4C5(CCC(C(C5CCC4(C3(CC2)C)C)(C)C)O)C)C" ;
+    ns1:IAO_0000235 <https://doi.org/10.7910/DVN/M8QR20/3ICGW8> .
+
