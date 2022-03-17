@@ -360,7 +360,10 @@ def get_assay_data(jdx_dict, nmr_record) -> PulsedNmrAssay:
                         pulse_program_parsed = possible_pulse_program["name"]
                     # return unknown jdx pulse program code
             if not pulse_program_parsed:
-                pulse_program_custom = jdx_dict['.pulse sequence']
+                if '.pulse sequence' in jdx_dict:
+                    pulse_program_custom = jdx_dict['.pulse sequence']
+                elif '.pulsesequence' in jdx_dict:
+                    pulse_program_custom = jdx_dict['.pulsesequence']
                 pulse_program_parsed = "Custom"
         else:
             print("-----\nError: There is no pulse program specified in the jdx file!")
@@ -370,13 +373,13 @@ def get_assay_data(jdx_dict, nmr_record) -> PulsedNmrAssay:
         return pulse_program_parsed, pulse_program_custom
 
     # parse the pulse program
-    pulse_program, pulse_program_custom = get_pulse_program()
+    pulprog, pulprog_custom = get_pulse_program()
 
     nmr_assay = PulsedNmrAssay(solution=get_solution(),
                                spectrometer=get_spectrometer(),
                                has_dimension=get_dimension(),
-                               pulse_program=pulse_program,
-                               pulse_program_custom=pulse_program_custom,
+                               pulse_program=pulprog,
+                               pulse_program_custom=pulprog_custom,
                                acquisition_nuclei=get_acquisition_nuclei(),
                                assay_date=get_assay_date(),
                                observed_frequencies=get_observed_frequencies())
