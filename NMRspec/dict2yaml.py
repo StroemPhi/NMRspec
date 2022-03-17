@@ -358,8 +358,24 @@ def get_assay_data(jdx_dict, nmr_record) -> PulsedNmrAssay:
             print(f"-----\npulse program: {pulse_program_parsed, pulse_program_custom}")
         return pulse_program_parsed, pulse_program_custom
 
+    # parse the pulse program
+    pulse_program, pulse_program_custom = get_pulse_program()
+
+    nmr_assay = PulsedNmrAssay(solution=get_solution(),
+                               spectrometer=get_spectrometer(),
+                               has_dimension=get_dimension(),
+                               pulse_program=pulse_program,
+                               pulse_program_custom=pulse_program_custom,
+                               acquisition_nuclei=get_acquisition_nuclei(),
+                               assay_date=get_assay_date(),
+                               observed_frequencies=get_observed_frequencies())
 
     nmr_assay['id'] = check_id(nmr_record['id'], nmr_assay['id'])
+
+    if debug is True:
+        print(f"-----\nparsed assay metadata:\n\n{yaml_dumper.dumps(nmr_assay, allow_unicode=True)}")
+    return nmr_assay
+
 
 if __name__ == '__main__':
     # parse the jdx file into Python dict
