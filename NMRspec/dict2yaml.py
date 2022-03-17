@@ -70,7 +70,7 @@ def get_assay_data(jdx_dict, nmr_record) -> PulsedNmrAssay:
         in the dictionary "nmrSolvents" defined here. As the value in the .jdx could be a synonym of the name,
         we need to include synonyms as a list of possible names in this dictionary"""
         nmr_solvents = [
-            {"name": ["chloroform-d", "CHLOROFORM-d", "CDCl3", "methanol-d4", "CD3OD", "deuterated chloroform"],
+            {"name": ["chloroform-d", "CDCl3", "methanol-d4", "CD3OD", "deuterated chloroform"],
              "id": "chebi:85365",
              "smiles": "[2H]C(Cl)(Cl)Cl",
              "iupac_name": "trichloro(deuterio)methane",
@@ -126,8 +126,9 @@ def get_assay_data(jdx_dict, nmr_record) -> PulsedNmrAssay:
         for possible_solvent in nmr_solvents:
             for key, value in possible_solvent.items():
                 if key == "name":
-                    if solvent_name in value:
-                        solvent_dict = possible_solvent
+                    for name in value:
+                        if solvent_name.lower() in name.lower():
+                            solvent_dict = possible_solvent
                 elif value == solvent_name:
                     solvent_dict = possible_solvent
         parsed_solvent = NmrSolvent(id=solvent_dict['id'],
