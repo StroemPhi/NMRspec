@@ -405,7 +405,7 @@ if __name__ == '__main__':
             f"# created: {today_str}\n" 
             "#################################################\n\n"
         )
-        f.write(yaml_dumper.dumps(dataset)
+        f.write(yaml_dumper.dumps(dataset))
 
         print("-----\nAll went according to the plan! And the parsed dataset was saved to:\n"
               f"{output_path}{output_file}.yaml")
