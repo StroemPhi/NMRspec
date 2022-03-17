@@ -383,13 +383,13 @@ if __name__ == '__main__':
 
     # get the context infos from the provided YAML
     dataset = load_dataset_metadata()
+    #print(dataset['description'])
     sample = get_sample(dataset)
     nmr_records = []
     for file in os.listdir(input_path):
         if file.endswith('.jdx') or file.endswith('.dx'):
             jdx_dict = jdx2dict(input_path + file)
             print(f"-----\nparsing: {file}")
-            #print(jdx_dict)
             record = get_record_provenance(dataset, jdx_dict)
             assay = get_assay_data(jdx_dict, record)
             record['output_of_nmr_assay'] = assay
@@ -398,6 +398,7 @@ if __name__ == '__main__':
     output_file = dataset['name'].replace(' ','_').replace('/','_')
     with open(f"{output_path}{output_file}.yaml", 'w', encoding='utf-8') as f:
         f.write(
+            "# -*- coding: utf-8 -*-\n\n"
             "#################################################\n"
             "# a JCAMP-DX dataset parsed to YAML\n" 
             "# using https://github.com/StroemPhi/NMRspec\n" 
