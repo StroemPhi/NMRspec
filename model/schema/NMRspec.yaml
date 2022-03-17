@@ -51,15 +51,15 @@ classes:
     description: A chemical descriptor is a data item (quantity or value) about a chemical entity that conforms to a specification for how it is calculated, measured or recorded.
     attributes:
       inchi:
-        slot_uri: chebi:inchi
+        slot_uri: CHEBI:inchi
         recommended: true
         range: string
       inchikey:
-        slot_uri: chebi:inchikey
+        slot_uri: CHEBI:inchikey
         recommended: true
         range: string
       smiles:
-        slot_uri: chebi:smiles
+        slot_uri: CHEBI:smiles
         recommended: true
         range: string
       mol_file:
@@ -68,11 +68,11 @@ classes:
         inlined: true
         range: MOLfile
       formula:
-        slot_uri: chebi:formula
+        slot_uri: CHEBI:formula
         recommended: true
         range: string
       iupac_name:
-        slot_uri: chebi:IUPAC_NAME
+        slot_uri: CHEBI:IUPAC_NAME
         recommended: true
         range: string
     todos: 
@@ -147,7 +147,7 @@ classes:
 # chemical entities
   NmrSolution:
     description: A NMR sollution is the solution made up of the solvent in which the evaluated sample is dissolved in as well as possibly the buffer needed to adjust the pH value.
-    class_uri: chebi:75958
+    class_uri: CHEBI:75958
     mixins:
       - NamedThing
     slot_usage:

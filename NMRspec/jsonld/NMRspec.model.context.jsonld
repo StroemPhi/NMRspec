@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from NMRspec.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-03-17T17:17:45\n    Schema: NMRspec\n    metamodel version: 1.7.0\n    model version: 0.0.1\n    \n    id: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/NMRspec.yaml\n    description: This model is to be used to semantify NMR spectroscopy research data.\n    license: https://creativecommons.org/licenses/by/4.0/\n    ",
+   "_comments": "Auto generated from NMRspec.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-03-17T21:00:53\n    Schema: NMRspec\n    metamodel version: 1.7.0\n    model version: 0.0.1\n    \n    id: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/NMRspec.yaml\n    description: This model is to be used to semantify NMR spectroscopy research data.\n    license: https://creativecommons.org/licenses/by/4.0/\n    ",
    "@context": {
       "CHEBI": {
          "@id": "http://purl.obolibrary.org/obo/CHEBI_",
@@ -12,10 +12,6 @@
          "@prefix": true
       },
       "cc": "https://creativecommons.org/licenses/",
-      "chebi": {
-         "@id": "http://purl.obolibrary.org/obo/CHEBI_",
-         "@prefix": true
-      },
       "cheminf": {
          "@id": "http://purl.obolibrary.org/obo/CHEMINF_",
          "@prefix": true
@@ -59,23 +55,23 @@
       "uo": "http://purl.obolibrary.org/obo/",
       "@vocab": "https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/",
       "formula": {
-         "@id": "chebi:formula"
+         "@id": "CHEBI:formula"
       },
       "inchi": {
-         "@id": "chebi:inchi"
+         "@id": "CHEBI:inchi"
       },
       "inchikey": {
-         "@id": "chebi:inchikey"
+         "@id": "CHEBI:inchikey"
       },
       "iupac_name": {
-         "@id": "chebi:IUPAC_NAME"
+         "@id": "CHEBI:IUPAC_NAME"
       },
       "mol_file": {
          "@type": "@id",
          "@id": "iao:0000235"
       },
       "smiles": {
-         "@id": "chebi:smiles"
+         "@id": "CHEBI:smiles"
       },
       "id": "@id",
       "manufactured_by": {

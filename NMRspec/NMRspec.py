@@ -1,5 +1,5 @@
 # Auto generated from NMRspec.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-03-17T17:18:02
+# Generation date: 2022-03-17T21:01:17
 # Schema: NMRspec
 #
 # id: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/NMRspec.yaml
@@ -37,7 +37,6 @@ FAIRSPEC = CurieNamespace('FAIRspec', 'https://github.com/IUPAC/IUPAC-FAIRSpec/b
 NMRSPEC = CurieNamespace('NMRspec', 'https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/')
 BFO = CurieNamespace('bfo', 'http://purl.obolibrary.org/obo/BFO_')
 CC = CurieNamespace('cc', 'https://creativecommons.org/licenses/')
-CHEBI = CurieNamespace('chebi', 'http://purl.obolibrary.org/obo/CHEBI_')
 CHEMINF = CurieNamespace('cheminf', 'http://purl.obolibrary.org/obo/CHEMINF_')
 CHEMOTION = CurieNamespace('chemotion', 'https://www.chemotion-repository.net/home/publications/reactions/')
 CHEMOTIONDATA = CurieNamespace('chemotionDATA', 'https://www.chemotion-repository.net/home/publications/datasets/')
