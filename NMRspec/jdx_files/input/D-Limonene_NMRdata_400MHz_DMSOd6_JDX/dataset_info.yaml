@@ -28,7 +28,7 @@ assays_sample:
   iupac_name: (4R)-1-methyl-4-prop-1-en-2-ylcyclohexene
   inchi: InChI=1S/C10H16/c1-8(2)10-6-4-9(3)5-7-10/h4,10H,1,5-7H2,2-3H3/t10-/m0/s1
   inchikey: XMGQYMWWDOXHJM-JTQLQIEISA-N
-  smiles: CC1=CC[C@@H](CC1)C(=C)C
+  smiles: CC1=CCC(CC1)C(=C)C
   mol_file: 
     id: doi:10.7910/DVN/2UEA9M/JOCQYF
     name: D-Limonene.mol

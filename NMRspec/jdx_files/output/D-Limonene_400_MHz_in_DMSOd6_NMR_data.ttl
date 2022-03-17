@@ -134,6 +134,6 @@ ns2:CHEBI_85365 a ns1:NmrSolvent ;
     ns2:CHEBI_formula "C10H16" ;
     ns2:CHEBI_inchi "InChI=1S/C10H16/c1-8(2)10-6-4-9(3)5-7-10/h4,10H,1,5-7H2,2-3H3/t10-/m0/s1" ;
     ns2:CHEBI_inchikey "XMGQYMWWDOXHJM-JTQLQIEISA-N" ;
-    ns2:CHEBI_smiles "CC1=CC[C@@H](CC1)C(=C)C" ;
+    ns2:CHEBI_smiles "CC1=CCC(CC1)C(=C)C" ;
     ns2:IAO_0000235 <https://doi.org/10.7910/DVN/2UEA9M/JOCQYF> .
 
