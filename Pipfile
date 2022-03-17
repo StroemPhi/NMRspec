@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 linkml-runtime = "~=1.0, >=1.0.3"
 jcamp = "*"
+linkml = "*"
 
 [dev-packages]
 tox = "*"
