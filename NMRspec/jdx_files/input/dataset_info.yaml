@@ -1,35 +1,48 @@
+####################
+# dataset metadata #
+####################
+
 # you MUST provide the following provenance metadata of the dataset
-source_uri: https://www.chemotion-repository.net/home/publications/molecules/3366
-source: Chemotion Repository
-licence_str: Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
-licence_url: https://creativecommons.org/licenses/by-sa/4.0/
-date_created: "2022-01-10"  
-id: doi:10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N
-name:  2-(2,6-dimethoxy-4-methylphenyl)-6-methylbenzo[d]thiazole
-created_by: "Simone Gräßle"
+source_uri: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/KUEDTG
+source: Harvard Dataverse
+licence_str: CC0 - "Public Domain Dedication"
+licence_url: https://creativecommons.org/share-your-work/public-domain/cc0
+date_created: "2019-10-28"  
+description: "NMR data for linalool contains: 1H NMR acquired at 60 MHz, as well as 1D: 1H,13C 2D: COSY, HSQC and HMBC acquired 400 MHz, as well as 1D: 1H 2D: COSY acquired 900 MHz (Bruker AVANCE NMR, 5mm TCI cryogenic probe) in CDCl3 (2019-10-07)"
+id: doi:10.7910/DVN/KUEDTG
+name: Linalool 60/400/900 MHz in CDCl3 NMR data 
+created_by: 
+  - "Kim, Seon Beom (University of Illinois at Chicago) - ORCID: 0000-0001-8015-1404"
+  - "Ray, Joseph (University of Illinois at Chicago) - ORCID: 0000-0002-7694-3174"
+  - "Lankin, David (University of Illinois at Chicago) - ORCID: 0000-0003-3166-5980"
+  - "Chen, Shao Nong (University of Illinois at Chicago) - ORCID: 0000-0003-0748-0863"
+  - "Achanta, Prabhakar (University of Illinois at Chicago) - ORCID: 0000-0003-1658-850X"
+  - "Simmler, Charlotte (University of Illinois at Chicago) - ORCID: 0000-0002-6923-2630"
+  - "Bisson, Jonathan (University of Illinois at Chicago) - ORCID: 0000-0003-1640-9989"
+  - "Pauli, Guido (University of Illinois at Chicago) - ORCID: 0000-0003-1022-4326"
+
+###################
+# sample metadata #
+###################
 assays_sample:
   # you MUST provide at least one of the following metadata on the assayed sample
-  local_id: SG-V3259 (41-52)
-  id: doi:10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N.1
-  formula: 
-    has_representation: C17H17NO2S
-  iupac_name:  
-    has_representation: 2-(2,6-dimethoxy-4-methylphenyl)-6-methyl-1,3-benzothiazole
-  inchi:
-    has_representation: InChI=1S/C17H17NO2S/c1-10-5-6-12-15(9-10)21-17(18-12)16-13(19-3)7-11(2)8-14(16)20-4/h5-9H,1-4H3
-  inchikey:
-    has_representation: QXXCRBSWGPRILJ-UHFFFAOYSA-N
-  smiles:
-    has_representation: COc1cc(C)cc(c1c1sc2c(n1)ccc(c2)C)OC 
+  name: Linalool
+  id: CHEBI:17580
+  formula: C10H18O
+  iupac_name: 3,7-dimethylocta-1,6-dien-3-ol
+  inchi: InChI=1S/C10H18O/c1-5-10(4,11)8-6-7-9(2)3/h5,7,11H,1,6,8H2,2-4H3
+  inchikey: CDOSHBSSFJOMGT-UHFFFAOYSA-N
+  smiles: CC(C)=CCCC(C)(O)C=C
+  mol_file: 
+    id: doi:10.7910/DVN/KUEDTG/L6MKSF   
+    name: Linanool.mol
 
+######################
+# records in dataset #
+######################    
 contains_assay_records:
- # you MUST provide at least one of the following metadata on each of the assay records (.jdx) in this dataset
-  - id: doi:10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N/CHMO0000595 
-    source_uri: doi:10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N/CHMO0000595
-    source: 
-      - Chemotion Repository
-      - SG-V3259 (41-52)_10.dx
-    licence_str: Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
-    licence_url: https://creativecommons.org/licenses/by-sa/4.0/
-    description: A test record of the metadata associated with a pulsed NMR spectroscopy assay according to the schema defined in https://github.com/StroemPhi/NMRspec/tree/main/model/schema/NMRspec.yaml
-    date_created: "2022-01-10"  
+ # you MUST provide at least an URI as the id of each assay record (.jdx) in this dataset. If the records do not have an URI, you must use "https://nfdi4chem/sparql/" as prefix and the filename (e.g. "id: https://nfdi4chem/sparql/filename1.jdx")
+  - id: https://nfdi4chem/sparql/Linalool_100000ug200uL_CDCl3_1HNMR_900MHz_JDX
+    source: Linalool_100000ug200uL_CDCl3_1HNMR_900MHz_JDX.jdx
+  - id: https://nfdi4chem/sparql/Linalool_100000ug200uL_CDCl3_COSY_900MHz_JDX
+    source: Linalool_100000ug200uL_CDCl3_COSY_900MHz_JDX.jdx

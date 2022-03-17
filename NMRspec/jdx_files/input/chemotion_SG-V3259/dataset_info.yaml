@@ -1,0 +1,53 @@
+####################
+# dataset metadata #
+####################
+
+# you MUST provide the following provenance metadata of the dataset
+id: doi:10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N
+source_uri: https://www.chemotion-repository.net/home/publications/molecules/3366
+source: Chemotion Repository
+licence_str: Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+licence_url: https://creativecommons.org/licenses/by-sa/4.0/
+date_created: "2022-01-10"  
+name:  2-(2,6-dimethoxy-4-methylphenyl)-6-methylbenzo[d]thiazole
+created_by: Simone Gräßle
+
+###################
+# sample metadata #
+###################
+assays_sample:
+  # you MUST provide at least one of the following metadata on the assayed sample
+  local_id: SG-V3259 (41-52)
+  name: sample XXX
+  #id: doi:10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N.1
+  formula: 
+    has_representation: C17H17NO2S
+  iupac_name:  
+    has_representation: 2-(2,6-dimethoxy-4-methylphenyl)-6-methyl-1,3-benzothiazole
+  inchi:
+    has_representation: InChI=1S/C17H17NO2S/c1-10-5-6-12-15(9-10)21-17(18-12)16-13(19-3)7-11(2)8-14(16)20-4/h5-9H,1-4H3
+  inchikey:
+    has_representation: QXXCRBSWGPRILJ-UHFFFAOYSA-N
+  smiles:
+    has_representation: COc1cc(C)cc(c1c1sc2c(n1)ccc(c2)C)OC
+
+######################
+# records in dataset #
+######################    
+contains_assay_records:
+ # you MUST provide at least an URI as the id of each assay record (.jdx) in this dataset. If the records do not have an URI, you must use "https://nfdi4chem/sparql/" as prefix and the filename without any characters prohibited in URLs liek spaces (e.g. "id: https://nfdi4chem/sparql/filename1.jdx")
+  - id: doi:10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N/CHMO0000595
+    source_uri: doi:10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N/CHMO0000595
+    source: SG-V3259 (41-52)_11.dx
+    licence_str: Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+    licence_url: https://creativecommons.org/licenses/by-sa/4.0/
+    date_created: "2022-01-10"
+    created_by: Simone Gräßle
+  - id: doi:10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N/CHMO0000593
+    source_uri: doi:10.14272/QXXCRBSWGPRILJ-UHFFFAOYSA-N/CHMO0000593
+    source: SG-V3259 (41-52)_10.dx
+    licence_str: Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+    licence_url: https://creativecommons.org/licenses/by-sa/4.0/
+    date_created: "2022-01-10"  
+    created_by: Simone Gräßle
+

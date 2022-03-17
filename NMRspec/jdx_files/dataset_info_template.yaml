@@ -1,0 +1,55 @@
+####################
+# dataset metadata #
+####################
+
+# you MUST provide the following provenance metadata of the dataset
+source_uri: 
+source: 
+licence_str: Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+licence_url: https://creativecommons.org/licenses/by-sa/4.0/
+date_created: ""  
+description:
+id: 
+name:  
+created_by: 
+  - 
+
+
+###################
+# sample metadata #
+###################
+assays_sample:
+  # you MUST provide at least one of the following metadata on the assayed sample
+  local_id: 
+  name: 
+  id: 
+  formula: 
+    has_representation: 
+  iupac_name:  
+    has_representation: 
+  inchi:
+    has_representation: 
+  inchikey:
+    has_representation: 
+  smiles:
+    has_representation: 
+  mol_file:
+    id: 
+    name:
+
+######################
+# records in dataset #
+######################    
+contains_assay_records:
+ # you MUST provide at least an URI as the id of each assay record (.jdx) in this dataset. If the records do not have an URI, you must use "nmrSPARQL" as prefix and the filename (e.g. "id: nmrSPARQL:filename1.jdx")
+  - id: 
+    source_uri: 
+    filename: 
+    description:
+    date_created: ""
+  - id: nmrSPARQL:
+    source_uri: 
+    filename: 
+    description:
+    date_created: ""  
+  

@@ -1,0 +1,47 @@
+####################
+# dataset metadata #
+####################
+
+# you MUST provide the following provenance metadata of the dataset
+source_uri: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/ZAZDNM
+source: Harvard Dataverse
+licence_str: CC0 - "Public Domain Dedication"
+licence_url: https://creativecommons.org/share-your-work/public-domain/cc0
+date_created: "2019-10-28"  
+description: NMR data of rutin in DMSOd6. The dataset contains 1D 1H 13C as well as 2D COSY, HSQC, HMBC, all acquired at 400 MHz (Jeol 400 MHz spectrometer with Royal Probe) (2019-10-06) 
+id: doi:10.7910/DVN/ZAZDNM
+name: Rutin 400 MHz in DMSOd6 NMR data
+created_by:
+  - ORCID:0000-0001-8015-1404
+  - ORCID:0000-0003-0748-0863
+  - ORCID:0000-0002-6923-2630
+  - ORCID:0000-0003-1640-9989
+  - ORCID:0000-0003-1022-4326
+
+
+###################
+# sample metadata #
+###################
+assays_sample:
+  # you MUST provide at least one of the following metadata on the assayed sample
+  name: Rutin
+  mol_file:
+    id: doi:10.7910/DVN/ZAZDNM/PNGSPO
+    name: Rutin.mol
+
+
+######################
+# records in dataset #
+######################    
+contains_assay_records:
+ # you MUST provide at an URI as the id and the filename as source of each assay record (.jdx) in this dataset. If the records do not have an URI, you can create a dummy ID by using "https://nfdi4chem/sparql/" as prefix and some unique string (e.g. "id: https://nfdi4chem/sparql/assay1")
+  - id: https://nfdi4chem/sparql/Rutin_3080ug200uL_DMSOd6_13CNMR_400MHz_JDX
+    source: Rutin_3080ug200uL_DMSOd6_13CNMR_400MHz_JDX.jdx
+  - id: https://nfdi4chem/sparql/Rutin_3080ug200uL_DMSOd6_COSY_400MHz_JDX
+    source: Rutin_3080ug200uL_DMSOd6_COSY_400MHz_JDX.jdx
+  - id: https://nfdi4chem/sparql/Rutin_3080ug200uL_DMSOd6_HMBC_400MHz_JDX
+    source: Rutin_3080ug200uL_DMSOd6_HMBC_400MHz_JDX.jdx
+  - id: https://nfdi4chem/sparql/Rutin_3080ug200uL_DMSOd6_HSQC_400MHz_JDX
+    source: Rutin_3080ug200uL_DMSOd6_HSQC_400MHz_JDX.jdx
+  - id: https://nfdi4chem/sparql/Rutin_3080ug200uL_DMSOd6_qHNMR_400MHz_JDX
+    source: Rutin_3080ug200uL_DMSOd6_qHNMR_400MHz_JDX.jdx
