@@ -378,16 +378,32 @@ def get_assay_data(jdx_dict, nmr_record) -> PulsedNmrAssay:
 
 
 if __name__ == '__main__':
-    # parse the jdx file into Python dict
-    jdx_dict = jdx2dict(filepath="./jdx_files/SG-V3259 (41-52)_10.dx")
-    jdx_dict = jdx2dict(filepath="./jdx_files/SG-V3259 (41-52)_11.dx")
-    # jdx_dict = jdx2dict(filepath="./jdx_files/000000012.jdx")
-    # jdx_dict = jdx2dict(filepath="./jdx_files/000000020.jdx")
-    # jdx_dict = jdx2dict(filepath="./jdx_files/Rutin_3080ug200uL_DMSOd6_13CNMR_400MHz_JDX.jdx")
-    # jdx_dict = jdx2dict(filepath="./jdx_files/Rutin_3080ug200uL_DMSOd6_HSQC_400MHz_JDX.jdx")
-    # jdx_dict = jdx2dict(filepath="./jdx_files/070307_P00_01_1DP_29920121204-3960-iqyayg.jdx")
-    # jdx_dict = jdx2dict(filepath="./jdx_files/gh37cj.jdx")
-    # jdx_dict = jdx2dict(filepath="./jdx_files/gh59cj.jdx")
-    print(f"-----\nloading '{os.path.basename(jdx_dict['filename'])}' into dict:\n{jdx_dict}")
-    get_assay_data(jdx_dict)
 
+
+    # get the context infos from the provided YAML
+    dataset = load_dataset_metadata()
+    sample = get_sample(dataset)
+    nmr_records = []
+    for file in os.listdir(input_path):
+        if file.endswith('.jdx') or file.endswith('.dx'):
+            jdx_dict = jdx2dict(input_path + file)
+            print(f"-----\nparsing: {file}")
+            #print(jdx_dict)
+            record = get_record_provenance(dataset, jdx_dict)
+            assay = get_assay_data(jdx_dict, record)
+            record['output_of_nmr_assay'] = assay
+            nmr_records.append(record)
+    dataset['contains_assay_records'] = nmr_records
+    output_file = dataset['name'].replace(' ','_').replace('/','_')
+    with open(f"{output_path}{output_file}.yaml", 'w', encoding='utf-8') as f:
+        f.write(
+            "#################################################\n"
+            "# a JCAMP-DX dataset parsed to YAML\n" 
+            "# using https://github.com/StroemPhi/NMRspec\n" 
+            f"# created: {today_str}\n" 
+            "#################################################\n\n"
+        )
+        f.write(yaml_dumper.dumps(dataset))
+
+        print("-----\nAll went according to the plan! And the parsed dataset was saved to:\n"
+              f"{output_path}{output_file}.yaml")
