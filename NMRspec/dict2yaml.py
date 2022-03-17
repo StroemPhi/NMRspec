@@ -16,6 +16,23 @@ id_default_prefix = "nmrSPARQL:"
 
 
 def get_assay_data(jdx_dict) -> PulsedNmrAssay:
+def check_id(source_id, target_id, base_uri=id_default_base_uri) -> str:
+    """
+    A Function to check if an instance of a schema class has been assigned a target_id.
+    If only the default target_id (as specified in the schema) is present,
+    its base_uri will be replaced with the source_id.
+
+        @param source_id               the id of a NMR spectroscopy dataset
+        @param target_id               the NMRspec schema data class to check/replace the id in
+        @param base_uri                the namespace of the dummy id
+    """
+    if id_default_base_uri in target_id:
+        target_id = target_id.replace(id_default_base_uri, f"{source_id}/")
+    elif id_default_prefix in target_id:
+        target_id = target_id.replace(id_default_prefix, f"{source_id}/")
+    return target_id
+
+
     def get_solvent() -> NmrSolvent:
         """A function to get the detail infos on the solvent bases on looking up the value provided in the JCAMP-DX file
         in the dictionary "nmrSolvents" defined here. As the value in the .jdx could be a synonym of the name,
