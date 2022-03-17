@@ -192,10 +192,15 @@ def get_sample(nmr_dataset) -> NmrSample:
         """
         function to parse the spectrometer data from the jdx file if it is present in there
         """
-        if "SPECTROMETER/DATA SYSTEM".lower() in jdx_dict:
-            if debug is True:
-                print(f"-----\nparsed spectrometer: {jdx_dict['spectrometer/data system']}")
-            return NmrSpectrometer(type=jdx_dict['spectrometer/data system'], manufactured_by=get_manufacturer())
+        if "spectrometer/data system" in jdx_dict:
+            nmr_spectrometer = NmrSpectrometer(type=jdx_dict['spectrometer/data system'],
+                                               manufactured_by=get_manufacturer())
+            nmr_spectrometer['id'] = check_id(nmr_record['id'], nmr_spectrometer['id'])
+        else:
+            nmr_spectrometer = NmrSpectrometer()
+            nmr_spectrometer['id'] = check_id(nmr_record['id'], nmr_spectrometer['id'])
+        return nmr_spectrometer
+
 
     def get_acquisition_nuclei() -> list:
         """
