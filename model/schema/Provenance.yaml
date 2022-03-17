@@ -57,5 +57,7 @@ classes:
         slot_uri: dce:creator
         description: the creator of the ressource
         domain: Provenance
+        multivalued: true
+        inlined_as_list: true
         range: string
     todos: # defined with PROVO or other adequate slot_uris
