@@ -437,7 +437,8 @@ enums:
       ROESY:
       NOESY:
       J-Resolved:
-      DEPT & INEPT:
+      DEPT:
+      INEPT:
       HECTOR:
       COLOC:
       HOESY:
