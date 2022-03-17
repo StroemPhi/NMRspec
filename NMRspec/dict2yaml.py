@@ -159,11 +159,11 @@ def get_sample(nmr_dataset) -> NmrSample:
         for possible_manufacturer in nmr_manufacturers:
             if in_dict(jdx_dict, possible_manufacturer):
                 manufacturer = Manufacturer(name=possible_manufacturer)
+                manufacturer['id'] = check_id(nmr_record['id'], manufacturer['id'])
                 return manufacturer
             else:
                 manufacturer = Manufacturer()
-        if debug is True:
-            print(f"-----\nmanufacturer: {manufacturer}")
+        manufacturer['id'] = check_id(nmr_record['id'], manufacturer['id'])
         return manufacturer
 
     def get_spectrometer() -> NmrSpectrometer:
@@ -378,6 +378,7 @@ def get_sample(nmr_dataset) -> NmrSample:
                            assay_date=get_assay_date(), acquisition_nuclei=get_acquisition_nuclei(),
                            observed_frequencies=get_observed_frequencies())
     return assay
+    nmr_assay['id'] = check_id(nmr_record['id'], nmr_assay['id'])
 
 if __name__ == '__main__':
     # parse the jdx file into Python dict
