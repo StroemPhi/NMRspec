@@ -121,7 +121,10 @@ def get_assay_data(jdx_dict, nmr_record) -> PulsedNmrAssay:
              "id": "https://pubchem.ncbi.nlm.nih.gov/compound/71601",
              "smiles": "C1([2H])=C([2H])C([2H])=C([2H])C([2H])=C1[2H]"}
         ]
-        solvent_name = jdx_dict['.solvent name']
+        if '.solvent name' in jdx_dict:
+            solvent_name = jdx_dict['.solvent name']
+        elif '.solventname' in jdx_dict:
+            solvent_name = jdx_dict['.solventname']
         solvent_dict = {}
         for possible_solvent in nmr_solvents:
             for key, value in possible_solvent.items():
@@ -239,6 +242,8 @@ def get_assay_data(jdx_dict, nmr_record) -> PulsedNmrAssay:
             nuclei = jdx_dict['.nucleus'].split(',')
             nuclei[1] = nuclei[1].strip()
             acquisition_nuclei.extend(nuclei)
+        elif '.observenucleus' in jdx_dict:
+            acquisition_nuclei.append(jdx_dict['.observenucleus'].replace('^', ''))
         else:
             acquisition_nuclei.append(jdx_dict['.observe nucleus'].replace('^', ''))
         if debug is True:
@@ -263,6 +268,8 @@ def get_assay_data(jdx_dict, nmr_record) -> PulsedNmrAssay:
             for n in range(1, 8):
                 observed_frequencies.add(jdx_dict[f"$sfo{n}"])
             observed_frequencies = list(observed_frequencies)
+        elif '.observefrequency' in jdx_dict:
+            observed_frequencies = [jdx_dict['.observefrequency']]
         else:
             observed_frequencies = [jdx_dict['.observe frequency']]
         if debug is True:
@@ -330,8 +337,11 @@ def get_assay_data(jdx_dict, nmr_record) -> PulsedNmrAssay:
                                 {"name": "CLEANEX-TROSY"}
                                 ]
         # pulse program as stored in jdx
-        if '.pulse sequence' in jdx_dict:
-            pulse_program_jdx = jdx_dict['.pulse sequence'].lower()
+        if '.pulse sequence' or '.pulsesequence' in jdx_dict:
+            if '.pulse sequence' in jdx_dict:
+                pulse_program_jdx = jdx_dict['.pulse sequence'].lower()
+            elif '.pulsesequence' in jdx_dict:
+                pulse_program_jdx = jdx_dict['.pulsesequence'].lower()
             pulse_program_parsed = None
             pulse_program_custom = None
             for possible_pulse_program in nmr_pulse_program_cv:
