@@ -8,9 +8,11 @@ import os
 import re
 
 today_str = str(date.today())
-debug = True
-inputpath = "./jdx_files/input/"
-outputpath = "./jdx_files/output/"
+debug = False
+output_path = "./jdx_files/output/"
+input_path = "./jdx_files/input/"
+id_default_base_uri = "https://nfdi4chem/sparql/"
+id_default_prefix = "nmrSPARQL:"
 
 
 def get_assay_data(jdx_dict) -> PulsedNmrAssay:
