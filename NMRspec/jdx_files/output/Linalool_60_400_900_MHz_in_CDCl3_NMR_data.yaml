@@ -71,6 +71,204 @@ contains_assay_records:
     id: doi:10.7910/DVN/KUEDTG/Linalool_100000ug200uL_CDCl3_COSY_900MHz_JDX/Assay
     observed_frequencies:
     - 900.077600296
+- id: doi:10.7910/DVN/KUEDTG/Linalool_100000ug700uL_CDCl3_1H_400MHz_JDX
+  source: Linalool_100000ug700uL_CDCl3_1H_400MHz_JDX.jdx
+  output_of_nmr_assay:
+    solution:
+      solvent:
+        id: chebi:85365
+        name: chloroform-d
+        inchi: InChI=1S/CHCl3/c2-1(3)4/h1H/i1D
+        inchikey: HEDRZPFGACZZDS-MICDWDOJSA-N
+        smiles: '[2H]C(Cl)(Cl)Cl'
+        iupac_name: trichloro(deuterio)methane
+      sample:
+        id: CHEBI:17580
+        inchi: InChI=1S/C10H18O/c1-5-10(4,11)8-6-7-9(2)3/h5,7,11H,1,6,8H2,2-4H3
+        inchikey: CDOSHBSSFJOMGT-UHFFFAOYSA-N
+        smiles: CC(C)=CCCC(C)(O)C=C
+        mol_file:
+          id: doi:10.7910/DVN/KUEDTG/L6MKSF
+          name: Linanool.mol
+        formula: C10H18O
+        iupac_name: 3,7-dimethylocta-1,6-dien-3-ol
+        name: Linalool
+      id: doi:10.7910/DVN/KUEDTG/Linalool_100000ug700uL_CDCl3_1H_400MHz_JDX/Solution
+    spectrometer:
+      id: doi:10.7910/DVN/KUEDTG/Linalool_100000ug700uL_CDCl3_1H_400MHz_JDX/Spectrometer
+    acquisition_nuclei:
+    - 1H
+    has_dimension: 1D
+    pulse_program: Custom
+    id: doi:10.7910/DVN/KUEDTG/Linalool_100000ug700uL_CDCl3_1H_400MHz_JDX/Assay
+    pulse_program_custom: single_pulse_dec
+    observed_frequencies:
+    - 399.78219837825
+- id: doi:10.7910/DVN/KUEDTG/Linalool_100000ug700uL_CDCl3_COSY_400MHz_JDX
+  source: Linalool_100000ug700uL_CDCl3_COSY_400MHz_JDX.jdx
+  output_of_nmr_assay:
+    solution:
+      solvent:
+        id: chebi:85365
+        name: chloroform-d
+        inchi: InChI=1S/CHCl3/c2-1(3)4/h1H/i1D
+        inchikey: HEDRZPFGACZZDS-MICDWDOJSA-N
+        smiles: '[2H]C(Cl)(Cl)Cl'
+        iupac_name: trichloro(deuterio)methane
+      sample:
+        id: CHEBI:17580
+        inchi: InChI=1S/C10H18O/c1-5-10(4,11)8-6-7-9(2)3/h5,7,11H,1,6,8H2,2-4H3
+        inchikey: CDOSHBSSFJOMGT-UHFFFAOYSA-N
+        smiles: CC(C)=CCCC(C)(O)C=C
+        mol_file:
+          id: doi:10.7910/DVN/KUEDTG/L6MKSF
+          name: Linanool.mol
+        formula: C10H18O
+        iupac_name: 3,7-dimethylocta-1,6-dien-3-ol
+        name: Linalool
+      id: doi:10.7910/DVN/KUEDTG/Linalool_100000ug700uL_CDCl3_COSY_400MHz_JDX/Solution
+    spectrometer:
+      id: doi:10.7910/DVN/KUEDTG/Linalool_100000ug700uL_CDCl3_COSY_400MHz_JDX/Spectrometer
+    acquisition_nuclei:
+    - 1H
+    - 1H
+    has_dimension: 2D
+    pulse_program: COSY
+    id: doi:10.7910/DVN/KUEDTG/Linalool_100000ug700uL_CDCl3_COSY_400MHz_JDX/Assay
+    observed_frequencies:
+    - 399.78219837825
+- id: doi:10.7910/DVN/KUEDTG/Linalool_3080ug200uL_CDCl3_1HNMR_60MHz_JDX
+  source: Linalool_3080ug200uL_CDCl3_1HNMR_60MHz_JDX.jdx
+  output_of_nmr_assay:
+    solution:
+      solvent:
+        id: chebi:85365
+        name: chloroform-d
+        inchi: InChI=1S/CHCl3/c2-1(3)4/h1H/i1D
+        inchikey: HEDRZPFGACZZDS-MICDWDOJSA-N
+        smiles: '[2H]C(Cl)(Cl)Cl'
+        iupac_name: trichloro(deuterio)methane
+      sample:
+        id: CHEBI:17580
+        inchi: InChI=1S/C10H18O/c1-5-10(4,11)8-6-7-9(2)3/h5,7,11H,1,6,8H2,2-4H3
+        inchikey: CDOSHBSSFJOMGT-UHFFFAOYSA-N
+        smiles: CC(C)=CCCC(C)(O)C=C
+        mol_file:
+          id: doi:10.7910/DVN/KUEDTG/L6MKSF
+          name: Linanool.mol
+        formula: C10H18O
+        iupac_name: 3,7-dimethylocta-1,6-dien-3-ol
+        name: Linalool
+      id: doi:10.7910/DVN/KUEDTG/Linalool_3080ug200uL_CDCl3_1HNMR_60MHz_JDX/Solution
+    spectrometer:
+      id: doi:10.7910/DVN/KUEDTG/Linalool_3080ug200uL_CDCl3_1HNMR_60MHz_JDX/Spectrometer
+    acquisition_nuclei:
+    - 1H
+    has_dimension: 1D
+    pulse_program: Custom
+    id: doi:10.7910/DVN/KUEDTG/Linalool_3080ug200uL_CDCl3_1HNMR_60MHz_JDX/Assay
+    pulse_program_custom: 1DPULSEACQUIRE
+    observed_frequencies:
+    - 60.7312025852042
+- id: doi:10.7910/DVN/KUEDTG/Linalool_3289ug200uL_CDCl3_13C_400MHz_JDX
+  source: Linalool_3289ug200uL_CDCl3_13C_400MHz_JDX.jdx
+  output_of_nmr_assay:
+    solution:
+      solvent:
+        id: chebi:85365
+        name: chloroform-d
+        inchi: InChI=1S/CHCl3/c2-1(3)4/h1H/i1D
+        inchikey: HEDRZPFGACZZDS-MICDWDOJSA-N
+        smiles: '[2H]C(Cl)(Cl)Cl'
+        iupac_name: trichloro(deuterio)methane
+      sample:
+        id: CHEBI:17580
+        inchi: InChI=1S/C10H18O/c1-5-10(4,11)8-6-7-9(2)3/h5,7,11H,1,6,8H2,2-4H3
+        inchikey: CDOSHBSSFJOMGT-UHFFFAOYSA-N
+        smiles: CC(C)=CCCC(C)(O)C=C
+        mol_file:
+          id: doi:10.7910/DVN/KUEDTG/L6MKSF
+          name: Linanool.mol
+        formula: C10H18O
+        iupac_name: 3,7-dimethylocta-1,6-dien-3-ol
+        name: Linalool
+      id: doi:10.7910/DVN/KUEDTG/Linalool_3289ug200uL_CDCl3_13C_400MHz_JDX/Solution
+    spectrometer:
+      id: doi:10.7910/DVN/KUEDTG/Linalool_3289ug200uL_CDCl3_13C_400MHz_JDX/Spectrometer
+    acquisition_nuclei:
+    - 13C
+    has_dimension: 1D
+    pulse_program: NMR
+    id: doi:10.7910/DVN/KUEDTG/Linalool_3289ug200uL_CDCl3_13C_400MHz_JDX/Assay
+    observed_frequencies:
+    - 100.525303325165
+- id: doi:10.7910/DVN/KUEDTG/Linalool_3289ug200uL_CDCl3_HMBC_400MHz_JDX
+  source: Linalool_3289ug200uL_CDCl3_HMBC_400MHz_JDX.jdx
+  output_of_nmr_assay:
+    solution:
+      solvent:
+        id: chebi:85365
+        name: chloroform-d
+        inchi: InChI=1S/CHCl3/c2-1(3)4/h1H/i1D
+        inchikey: HEDRZPFGACZZDS-MICDWDOJSA-N
+        smiles: '[2H]C(Cl)(Cl)Cl'
+        iupac_name: trichloro(deuterio)methane
+      sample:
+        id: CHEBI:17580
+        inchi: InChI=1S/C10H18O/c1-5-10(4,11)8-6-7-9(2)3/h5,7,11H,1,6,8H2,2-4H3
+        inchikey: CDOSHBSSFJOMGT-UHFFFAOYSA-N
+        smiles: CC(C)=CCCC(C)(O)C=C
+        mol_file:
+          id: doi:10.7910/DVN/KUEDTG/L6MKSF
+          name: Linanool.mol
+        formula: C10H18O
+        iupac_name: 3,7-dimethylocta-1,6-dien-3-ol
+        name: Linalool
+      id: doi:10.7910/DVN/KUEDTG/Linalool_3289ug200uL_CDCl3_HMBC_400MHz_JDX/Solution
+    spectrometer:
+      id: doi:10.7910/DVN/KUEDTG/Linalool_3289ug200uL_CDCl3_HMBC_400MHz_JDX/Spectrometer
+    acquisition_nuclei:
+    - 13C
+    - 1H
+    has_dimension: 2D
+    pulse_program: Custom
+    id: doi:10.7910/DVN/KUEDTG/Linalool_3289ug200uL_CDCl3_HMBC_400MHz_JDX/Assay
+    pulse_program_custom: ghmbcad_auto.jxp
+    observed_frequencies:
+    - 399.78219837825
+- id: doi:10.7910/DVN/KUEDTG/Linalool_3289ug200uL_CDCl3_HSQC_400MHz_JDX
+  source: Linalool_3289ug200uL_CDCl3_HSQC_400MHz_JDX.jdx
+  output_of_nmr_assay:
+    solution:
+      solvent:
+        id: chebi:85365
+        name: chloroform-d
+        inchi: InChI=1S/CHCl3/c2-1(3)4/h1H/i1D
+        inchikey: HEDRZPFGACZZDS-MICDWDOJSA-N
+        smiles: '[2H]C(Cl)(Cl)Cl'
+        iupac_name: trichloro(deuterio)methane
+      sample:
+        id: CHEBI:17580
+        inchi: InChI=1S/C10H18O/c1-5-10(4,11)8-6-7-9(2)3/h5,7,11H,1,6,8H2,2-4H3
+        inchikey: CDOSHBSSFJOMGT-UHFFFAOYSA-N
+        smiles: CC(C)=CCCC(C)(O)C=C
+        mol_file:
+          id: doi:10.7910/DVN/KUEDTG/L6MKSF
+          name: Linanool.mol
+        formula: C10H18O
+        iupac_name: 3,7-dimethylocta-1,6-dien-3-ol
+        name: Linalool
+      id: doi:10.7910/DVN/KUEDTG/Linalool_3289ug200uL_CDCl3_HSQC_400MHz_JDX/Solution
+    spectrometer:
+      id: doi:10.7910/DVN/KUEDTG/Linalool_3289ug200uL_CDCl3_HSQC_400MHz_JDX/Spectrometer
+    acquisition_nuclei:
+    - 13C
+    - 1H
+    has_dimension: 2D
+    pulse_program: HSQC
+    id: doi:10.7910/DVN/KUEDTG/Linalool_3289ug200uL_CDCl3_HSQC_400MHz_JDX/Assay
+    observed_frequencies:
+    - 399.78219837825
 assays_sample:
   id: CHEBI:17580
   inchi: InChI=1S/C10H18O/c1-5-10(4,11)8-6-7-9(2)3/h5,7,11H,1,6,8H2,2-4H3
