@@ -89,7 +89,7 @@ classes:
     class_uri: chmo:0000613
     slot_usage:
       id: 
-        ifabsent: uri(nmrSPARQL:PulsedNmrAssay)
+        ifabsent: uri(nmrSPARQL:Assay)
     attributes:
       assay_date:
         description: the date the assay was carried out by someone
@@ -192,10 +192,15 @@ classes:
       - ChemicalDescriptor
       - NamedThing
     slot_usage:
+      id: 
+        ifabsent: uri(nmrSPARQL:Solvent)
       name:
         close_mappings:
           - jdx:SOLVENT_NAME
   NmrBuffer:
+    slot_usage:
+      id: 
+        ifabsent: uri(nmrSPARQL:Buffer)
     mixins:
       - ChemicalDescriptor
       - NamedThing
@@ -208,7 +213,7 @@ classes:
       - id
     slot_usage:
       id:
-        ifabsent: uri(nmrSPARQL:spectrometer)
+        ifabsent: uri(nmrSPARQL:Spectrometer)
       manufactured_by:
         range: Manufacturer
       type:
@@ -232,7 +237,7 @@ classes:
       - id
     slot_usage:
       id:
-        ifabsent: uri(nmrSPARQL:sampletube)
+        ifabsent: uri(nmrSPARQL:SampleTube)
       manufactured_by:
         range: Manufacturer
     attributes:
@@ -258,22 +263,31 @@ classes:
     description: A quality inhering in a substance by virtue of the amount of the bearer's there is mixed with another substance. [Wikipedia:http://en.wikipedia.org/wiki/concentration]
     class_uri: pato:0000033
     slots: 
+      - id
       - measured_as
     slot_usage:
+      id: 
+        ifabsent: uri(nmrSPARQL:Concentration)
       measured_as:
         range: MolarityMeasurementDatum
   PhValue:
     class_uri: pato:0001842
     slots: 
+      - id
       - measured_as
     slot_usage:
+      id: 
+        ifabsent: uri(nmrSPARQL:PhValue)
       measured_as:
         range: PhMeasurementDatum
   Temperature:
     class_uri: pato:0000146
     slots: 
+      - id
       - measured_as
     slot_usage:
+      id: 
+        ifabsent: uri(nmrSPARQL:Temperature)
       measured_as:
         range: TemperatureMeasurementDatum
 # measurement data
@@ -326,7 +340,8 @@ classes:
         range: PulsedNmrAssay
     slot_usage:
       id:
-        description: the URI of a NMR spectroscopy record, which gets generated upon ingest source data 
+        description: >-
+          the URI of a NMR spectroscopy record. If a record does not have an URI, you must use "nmrSPARQL" as prefix and the filename (e.g. "nmrSPARQL:filename1.jdx") and an unresolvable URI will be minted upon ingest by replacing this prefix with the URI of the dataset.
   NmrSpecRecordCollection:
     tree_root: true
     mixins: 
