@@ -63,6 +63,9 @@ def get_sample(nmr_dataset) -> NmrSample:
     return nmr_sample
 
 
+def get_assay_data(jdx_dict, nmr_record) -> PulsedNmrAssay:
+    """The main function with which to parse a JCAMP-DX file according to the NMR schema and output a YAML"""
+
     def get_solvent() -> NmrSolvent:
         """A function to get the detail infos on the solvent bases on looking up the value provided in the JCAMP-DX file
         in the dictionary "nmrSolvents" defined here. As the value in the .jdx could be a synonym of the name,
@@ -250,6 +253,7 @@ def get_sample(nmr_dataset) -> NmrSample:
                 print(f"-----\ndimensionality: {jdx_dict['numdim']}D")
             return f"{jdx_dict['numdim']}D"
         else:
+            print("WARNING: no dimensionality statement found in jdx file, thus taking '1D' as default.")
             return "1D"
 
     def get_observed_frequencies() -> list:
