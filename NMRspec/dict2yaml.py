@@ -15,7 +15,6 @@ id_default_base_uri = "https://nfdi4chem/sparql/"
 id_default_prefix = "nmrSPARQL:"
 
 
-def get_assay_data(jdx_dict) -> PulsedNmrAssay:
 def check_id(source_id, target_id, base_uri=id_default_base_uri) -> str:
     """
     A Function to check if an instance of a schema class has been assigned a target_id.
@@ -329,11 +328,11 @@ def get_assay_data(jdx_dict, nmr_record) -> PulsedNmrAssay:
                                 {"name": "CLEANEX-HSQC"},
                                 {"name": "CLEANEX-TROSY"}
                                 ]
-        pulse_program = None
         # pulse program as stored in jdx
         if '.pulse sequence' in jdx_dict:
-            pulse_program = None
             pulse_program_jdx = jdx_dict['.pulse sequence'].lower()
+            pulse_program_parsed = None
+            pulse_program_custom = None
             for possible_pulse_program in nmr_pulse_program_cv:
                 for key, value in possible_pulse_program.items():
                     # normalize controlled terms to be able to match to manufacturer codes
@@ -344,13 +343,10 @@ def get_assay_data(jdx_dict, nmr_record) -> PulsedNmrAssay:
                         value = value.split('-')
                         # return controlled term if the combined pulse program could be matched
                         if value[0] in pulse_program_jdx and value[1] in pulse_program_jdx:
+                            pulse_program_parsed = possible_pulse_program["name"]
                     # return controlled term if there is a pulse program match
-                    else:
-                        if re.match(rf"(^{value})", pulse_program_jdx):
-                            pulse_program = True, possible_pulse_program["name"]
-            # return unknown jdx pulse program code
-            if not pulse_program:
                     elif re.match(rf"(^{value})", pulse_program_jdx):
+                        pulse_program_parsed = possible_pulse_program["name"]
                     # return unknown jdx pulse program code
             if not pulse_program_parsed:
                 pulse_program_custom = jdx_dict['.pulse sequence']
@@ -359,28 +355,10 @@ def get_assay_data(jdx_dict, nmr_record) -> PulsedNmrAssay:
             print("-----\nError: There is no pulse program specified in the jdx file!")
             pulse_program_parsed = "not provided"
         if debug is True:
-    if get_pulse_program()[0] is True:
-        pulse_program = get_pulse_program()[1]
-        pulse_program_custom = get_pulse_program()[1]
-    print(f"----\njdx_filename: {jdx_filename}")
+            print(f"-----\npulse program: {pulse_program_parsed, pulse_program_custom}")
+        return pulse_program_parsed, pulse_program_custom
 
-    # loading provenance metadata provided in manually generated files
-    assay_info = yaml_loader.loads(source="./jdx_files/SG-V3259 (41-52)_10.yaml", target_class=Provenance)
-    # print(f"-----\nloaded assay_info:\n{yaml_dumper.dumps(assay_info)}")
-    dataset_info = yaml_loader.loads(source="./jdx_files/dataset_info.yaml", target_class=Provenance)
-    # print(f"-----\nloaded dataset_info:\n{yaml_dumper.dumps(dataset_info)}")
 
-    # loading sample metadata provided in manually generated file
-    # TODO: get further sample infos from some API like ChEBI or PubChem
-    sample = yaml_loader.loads(source="./jdx_files/sample_info.yaml", target_class=NmrSample)
-    # declare assayed solution
-    solution = NmrSolution(solvent=get_solvent(), sample=sample)
-
-    assay = PulsedNmrAssay(solution=solution, spectrometer=get_spectrometer(), has_dimension=get_dimension(),
-                           pulse_program=pulse_program, pulse_program_custom=pulse_program_custom, name=jdx_filename,
-                           assay_date=get_assay_date(), acquisition_nuclei=get_acquisition_nuclei(),
-                           observed_frequencies=get_observed_frequencies())
-    return assay
     nmr_assay['id'] = check_id(nmr_record['id'], nmr_assay['id'])
 
 if __name__ == '__main__':
