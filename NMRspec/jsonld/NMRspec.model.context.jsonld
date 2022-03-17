@@ -1,6 +1,10 @@
 {
-   "_comments": "Auto generated from NMRspec.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-03-16T21:13:29\n    Schema: NMRspec\n    metamodel version: 1.7.0\n    model version: 0.0.1\n    \n    id: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/NMRspec.yaml\n    description: This model is to be used to semantify NMR spectroscopy research data.\n    license: https://creativecommons.org/licenses/by/4.0/\n    ",
+   "_comments": "Auto generated from NMRspec.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-03-17T17:17:45\n    Schema: NMRspec\n    metamodel version: 1.7.0\n    model version: 0.0.1\n    \n    id: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/NMRspec.yaml\n    description: This model is to be used to semantify NMR spectroscopy research data.\n    license: https://creativecommons.org/licenses/by/4.0/\n    ",
    "@context": {
+      "CHEBI": {
+         "@id": "http://purl.obolibrary.org/obo/CHEBI_",
+         "@prefix": true
+      },
       "FAIRspec": "https://github.com/IUPAC/IUPAC-FAIRSpec/blob/main/src/main/java/org/iupac/fairspec/core/",
       "NMRspec": "https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/",
       "bfo": {
@@ -210,7 +214,7 @@
          "@id": "obi:0000578"
       },
       "NmrSolution": {
-         "@id": "chebi:75958"
+         "@id": "CHEBI:75958"
       },
       "NmrSpectrometer": {
          "@id": "obi:0000566"

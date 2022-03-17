@@ -1,5 +1,5 @@
 # Auto generated from NMRspec.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-03-16T21:13:50
+# Generation date: 2022-03-17T17:18:02
 # Schema: NMRspec
 #
 # id: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/NMRspec.yaml
@@ -32,6 +32,7 @@ version = "0.0.1"
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
+CHEBI = CurieNamespace('CHEBI', 'http://purl.obolibrary.org/obo/CHEBI_')
 FAIRSPEC = CurieNamespace('FAIRspec', 'https://github.com/IUPAC/IUPAC-FAIRSpec/blob/main/src/main/java/org/iupac/fairspec/core/')
 NMRSPEC = CurieNamespace('NMRspec', 'https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/')
 BFO = CurieNamespace('bfo', 'http://purl.obolibrary.org/obo/BFO_')
@@ -270,7 +271,7 @@ class NmrSolution(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = CHEBI["75958"]
-    class_class_curie: ClassVar[str] = "chebi:75958"
+    class_class_curie: ClassVar[str] = "CHEBI:75958"
     class_name: ClassVar[str] = "NmrSolution"
     class_model_uri: ClassVar[URIRef] = NMRSPEC.NmrSolution
 
@@ -880,6 +881,8 @@ class PulseProgram(EnumDefinitionImpl):
     TOCSY = PermissibleValue(text="TOCSY")
     ROESY = PermissibleValue(text="ROESY")
     NOESY = PermissibleValue(text="NOESY")
+    DEPT = PermissibleValue(text="DEPT")
+    INEPT = PermissibleValue(text="INEPT")
     HECTOR = PermissibleValue(text="HECTOR")
     COLOC = PermissibleValue(text="COLOC")
     HOESY = PermissibleValue(text="HOESY")
@@ -916,8 +919,6 @@ class PulseProgram(EnumDefinitionImpl):
                 PermissibleValue(text="COSY-DQF") )
         setattr(cls, "J-Resolved",
                 PermissibleValue(text="J-Resolved") )
-        setattr(cls, "DEPT & INEPT",
-                PermissibleValue(text="DEPT & INEPT") )
         setattr(cls, "DEPT-HMQC",
                 PermissibleValue(text="DEPT-HMQC") )
         setattr(cls, "Inverse-INEPT",

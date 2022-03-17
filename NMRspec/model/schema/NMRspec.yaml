@@ -12,7 +12,7 @@ prefixes:
   bfo: http://purl.obolibrary.org/obo/BFO_
   chmo: http://purl.obolibrary.org/obo/CHMO_
   nmrCV: http://nmrML.org/nmrCV#
-  chebi: http://purl.obolibrary.org/obo/CHEBI_
+  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
   cheminf: http://purl.obolibrary.org/obo/CHEMINF_
   ro: http://purl.obolibrary.org/obo/RO_
   iao: http://purl.obolibrary.org/obo/IAO_
@@ -436,8 +436,9 @@ enums:
       TOCSY:
       ROESY:
       NOESY:
-      J-Resolved: 
-      DEPT & INEPT:
+      J-Resolved:
+      DEPT:
+      INEPT:
       HECTOR:
       COLOC:
       HOESY:
