@@ -24,15 +24,10 @@ assays_sample:
   name: 
   id: 
   formula: 
-    has_representation: 
-  iupac_name:  
-    has_representation: 
-  inchi:
-    has_representation: 
-  inchikey:
-    has_representation: 
-  smiles:
-    has_representation: 
+  iupac_name: 
+  inchi: 
+  inchikey: 
+  smiles:  
   mol_file:
     id: 
     name:
@@ -41,15 +36,10 @@ assays_sample:
 # records in dataset #
 ######################    
 contains_assay_records:
- # you MUST provide at least an URI as the id of each assay record (.jdx) in this dataset. If the records do not have an URI, you must use "nmrSPARQL" as prefix and the filename (e.g. "id: nmrSPARQL:filename1.jdx")
-  - id: 
-    source_uri: 
-    filename: 
-    description:
-    date_created: ""
+ # you MUST provide an URI as the id and the complete filename as the source of each assay record (.jdx) in this dataset. If the records do not have an URI, you must use "nmrSPARQL" as prefix and the filename (e.g. "id: nmrSPARQL:filename1.jdx")
   - id: nmrSPARQL:
-    source_uri: 
-    filename: 
-    description:
-    date_created: ""  
+    source: 
+  - id: nmrSPARQL:
+    source: 
+
   
