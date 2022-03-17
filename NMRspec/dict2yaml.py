@@ -138,32 +138,6 @@ def get_sample(nmr_dataset) -> NmrSample:
             print(f"----\nparsed_solvent: {parsed_solvent}")
         return parsed_solvent
 
-    def get_assay_date() -> str:
-        """function to parse the date of the NMR assay from the jdx file"""
-
-        def proper_datetime(datetime_str) -> Datetime:
-            """ugly helper function to prune the timezone from a datetime string like '2019/07/18 01:16:26+0000'.
-             TODO: check if this is an encoding error of the jdx writing software or if this should be actually
-              handled by the linkML code
-              ERROR in
-                'linkml_runtime/utils/metamodelcore.py", line 277,
-                        ValueError: 2019-07-18 01:16:26+0000 is not a valid datetime'
-            """
-
-            if '+' in datetime_str:
-                datetime = datetime_str.split('+')
-                return datetime[0]
-        if 'long date' in jdx_dict.keys():
-            assay_date = proper_datetime(str(jdx_dict['long date']).replace('/', '-'))
-        elif 'longdate' in jdx_dict.keys():
-            assay_date = proper_datetime(str(jdx_dict['longdate']).replace('/', '-'))
-            jdx_dict['longdate']
-        elif 'date' in jdx_dict.keys():
-            assay_date = proper_datetime(str(jdx_dict['date']).replace('/', '-'))
-            jdx_dict['date']
-        if debug is True:
-            print(f"----\nassay_date: {assay_date}")
-        return assay_date
 
     def get_manufacturer() -> Manufacturer:
         """
@@ -201,6 +175,33 @@ def get_sample(nmr_dataset) -> NmrSample:
             nmr_spectrometer['id'] = check_id(nmr_record['id'], nmr_spectrometer['id'])
         return nmr_spectrometer
 
+    def get_assay_date() -> str:
+        """function to parse the date of the NMR assay from the jdx file"""
+
+        def proper_datetime(datetime_str) -> Datetime:
+            """ugly helper function to prune the timezone from a datetime string like '2019/07/18 01:16:26+0000'.
+             TODO: check if this is an encoding error of the jdx writing software or if this should be actually
+              handled by the linkML code
+              ERROR in
+                'linkml_runtime/utils/metamodelcore.py", line 277,
+                        ValueError: 2019-07-18 01:16:26+0000 is not a valid datetime'
+            """
+
+            if '+' in datetime_str:
+                datetime = datetime_str.split('+')
+                return datetime[0]
+
+        if 'long date' in jdx_dict.keys():
+            assay_date = proper_datetime(str(jdx_dict['long date']).replace('/', '-'))
+        elif 'longdate' in jdx_dict.keys():
+            assay_date = proper_datetime(str(jdx_dict['longdate']).replace('/', '-'))
+            jdx_dict['longdate']
+        elif 'date' in jdx_dict.keys():
+            assay_date = proper_datetime(str(jdx_dict['date']).replace('/', '-'))
+            jdx_dict['date']
+        if debug is True:
+            print(f"----\nassay_date: {assay_date}")
+        return assay_date
 
     def get_acquisition_nuclei() -> list:
         """
