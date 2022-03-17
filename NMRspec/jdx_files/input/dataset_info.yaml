@@ -41,8 +41,8 @@ assays_sample:
 # records in dataset #
 ######################    
 contains_assay_records:
- # you MUST provide at least an URI as the id of each assay record (.jdx) in this dataset. If the records do not have an URI, you must use "https://nfdi4chem/sparql/" as prefix and the filename (e.g. "id: https://nfdi4chem/sparql/filename1.jdx")
-  - id: https://nfdi4chem/sparql/Linalool_100000ug200uL_CDCl3_1HNMR_900MHz_JDX
+ # you MUST provide at least an URI as the id of each assay record (.jdx) in this dataset. If the records do not have an URI, you must use "nmrSPARQL:" as prefix and the filename (e.g. "id: nmrSPARQL:filename1.jdx")
+  - id: nmrSPARQL:Linalool_100000ug200uL_CDCl3_1HNMR_900MHz_JDX
     source: Linalool_100000ug200uL_CDCl3_1HNMR_900MHz_JDX.jdx
-  - id: https://nfdi4chem/sparql/Linalool_100000ug200uL_CDCl3_COSY_900MHz_JDX
+  - id: nmrSPARQL:Linalool_100000ug200uL_CDCl3_COSY_900MHz_JDX
     source: Linalool_100000ug200uL_CDCl3_COSY_900MHz_JDX.jdx

@@ -46,37 +46,32 @@ classes:
     mixin: true
     class_uri: cheminf:000123
     description: A chemical descriptor is a data item (quantity or value) about a chemical entity that conforms to a specification for how it is calculated, measured or recorded.
-    slots: 
-      - formula
     attributes:
       inchi:
-        slot_uri: iao:0000235
+        slot_uri: chebi:inchi
         recommended: true
-        range: InCHI
-        close_mappings:
-          - chebi:inchi
+        range: string
       inchikey:
-        slot_uri: iao:0000235
+        slot_uri: chebi:inchikey
         recommended: true
-        range: InCHIKey
-        close_mappings:
-          - chebi:inchikey
+        range: string
       smiles:
-        slot_uri: iao:0000235
+        slot_uri: chebi:smiles
         recommended: true
-        range: SMILES
-        close_mappings:
-          - chebi:smiles
+        range: string
       mol_file:
         slot_uri: iao:0000235
         recommended: true
+        inlined: true
         range: MOLfile
-      iupac_name:
-        slot_uri: iao:0000235
+      formula:
+        slot_uri: chebi:formula
         recommended: true
-        range: IUPACname
-        close_mappings:
-          - chebi:IUPAC_NAME
+        range: string
+      iupac_name:
+        slot_uri: chebi:IUPAC_NAME
+        recommended: true
+        range: string
     todos: 
       - Find out if we want this complexity of using CHEMINF descriptor classes for the chemical descriptors or if ChEBI's annotation properties would suffice. For the purpose of being ready for future use cases. Using CHEMINF here seems better, but it does produce more triples and blank nodes.
   NamedThing:
@@ -310,30 +305,10 @@ classes:
       unit:
         range: TemperatureUnit
 # chemical descriptors
-  MolecularFormula:
-    class_uri: cheminf:000042
-    slots:
-      - has_representation
-  InCHI:
-    class_uri: cheminf:000113
-    slots:
-      - has_representation
-  InCHIKey:
-    class_uri: cheminf:000059
-    slots:
-      - has_representation
-  SMILES:
-    class_uri: cheminf:000018
-    slots:
-      - has_representation
   MOLfile: # only used by NmrSample
     class_uri: cheminf:000114
     mixins:
       - NamedThing
-  IUPACname:
-    class_uri: cheminf:000107
-    slots:
-      - has_representation
 # NMR spectroscopy data items
   NmrSpecRecord:
     description: >-
@@ -407,17 +382,7 @@ slots:
   type:
     range: string
 # information content entity slots
-  formula:
-    slot_uri: iao:0000235
-    recommended: true
-    range: MolecularFormula
-    close_mappings:
-      - chebi:fornula
-  has_representation:
-    description: >-
-      'has representation' is a data property that attaches between an information content entity and a value that contains linguistically or computationally coded text.
-    slot_uri: obi:0002815
-    range: string
+  
   # scalar measurement datum slots 
   value:
     slot_uri: iao:0000004
