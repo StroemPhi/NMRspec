@@ -11,45 +11,6 @@
          "title": "Dimension",
          "type": "string"
       },
-      "IUPACname": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {
-            "has_representation": {
-               "description": "'has representation' is a data property that attaches between an information content entity and a value that contains linguistically or computationally coded text.",
-               "type": "string"
-            }
-         },
-         "required": [],
-         "title": "IUPACname",
-         "type": "object"
-      },
-      "InCHI": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {
-            "has_representation": {
-               "description": "'has representation' is a data property that attaches between an information content entity and a value that contains linguistically or computationally coded text.",
-               "type": "string"
-            }
-         },
-         "required": [],
-         "title": "InCHI",
-         "type": "object"
-      },
-      "InCHIKey": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {
-            "has_representation": {
-               "description": "'has representation' is a data property that attaches between an information content entity and a value that contains linguistically or computationally coded text.",
-               "type": "string"
-            }
-         },
-         "required": [],
-         "title": "InCHIKey",
-         "type": "object"
-      },
       "MOLfile": {
          "additionalProperties": false,
          "description": "",
@@ -94,11 +55,16 @@
          "additionalProperties": false,
          "description": "A quality inhering in a substance by virtue of the amount of the bearer's there is mixed with another substance. [Wikipedia:http://en.wikipedia.org/wiki/concentration]",
          "properties": {
+            "id": {
+               "type": "string"
+            },
             "measured_as": {
                "$ref": "#/$defs/MolarityMeasurementDatum"
             }
          },
-         "required": [],
+         "required": [
+            "id"
+         ],
          "title": "MolarConcentration",
          "type": "object"
       },
@@ -130,47 +96,34 @@
          "title": "MolarityUnit",
          "type": "string"
       },
-      "MolecularFormula": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {
-            "has_representation": {
-               "description": "'has representation' is a data property that attaches between an information content entity and a value that contains linguistically or computationally coded text.",
-               "type": "string"
-            }
-         },
-         "required": [],
-         "title": "MolecularFormula",
-         "type": "object"
-      },
       "NmrBuffer": {
          "additionalProperties": false,
          "description": "",
          "properties": {
             "formula": {
-               "$ref": "#/$defs/MolecularFormula"
+               "type": "string"
             },
             "id": {
                "type": "string"
             },
             "inchi": {
-               "$ref": "#/$defs/InCHI"
+               "type": "string"
             },
             "inchikey": {
-               "$ref": "#/$defs/InCHIKey"
+               "type": "string"
             },
             "iupac_name": {
-               "$ref": "#/$defs/IUPACname"
+               "type": "string"
             },
             "mol_file": {
-               "type": "string"
+               "$ref": "#/$defs/MOLfile"
             },
             "name": {
                "description": "a generic property to provide a string that is used to name a something",
                "type": "string"
             },
             "smiles": {
-               "$ref": "#/$defs/SMILES"
+               "type": "string"
             }
          },
          "required": [
@@ -219,33 +172,33 @@
          "description": "",
          "properties": {
             "formula": {
-               "$ref": "#/$defs/MolecularFormula"
+               "type": "string"
             },
             "id": {
                "type": "string"
             },
             "inchi": {
-               "$ref": "#/$defs/InCHI"
+               "type": "string"
             },
             "inchikey": {
-               "$ref": "#/$defs/InCHIKey"
+               "type": "string"
             },
             "iupac_name": {
-               "$ref": "#/$defs/IUPACname"
+               "type": "string"
             },
             "local_id": {
                "description": "This property should be used to provide the local identifier with which something is denoted in a local context (e.g. your lab notebook).",
                "type": "string"
             },
             "mol_file": {
-               "type": "string"
+               "$ref": "#/$defs/MOLfile"
             },
             "name": {
                "description": "a generic property to provide a string that is used to name a something",
                "type": "string"
             },
             "smiles": {
-               "$ref": "#/$defs/SMILES"
+               "type": "string"
             }
          },
          "required": [
@@ -322,29 +275,29 @@
          "description": "",
          "properties": {
             "formula": {
-               "$ref": "#/$defs/MolecularFormula"
+               "type": "string"
             },
             "id": {
                "type": "string"
             },
             "inchi": {
-               "$ref": "#/$defs/InCHI"
+               "type": "string"
             },
             "inchikey": {
-               "$ref": "#/$defs/InCHIKey"
+               "type": "string"
             },
             "iupac_name": {
-               "$ref": "#/$defs/IUPACname"
+               "type": "string"
             },
             "mol_file": {
-               "type": "string"
+               "$ref": "#/$defs/MOLfile"
             },
             "name": {
                "description": "a generic property to provide a string that is used to name a something",
                "type": "string"
             },
             "smiles": {
-               "$ref": "#/$defs/SMILES"
+               "type": "string"
             }
          },
          "required": [
@@ -359,7 +312,10 @@
          "properties": {
             "created_by": {
                "description": "the creator of the ressource",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "date_created": {
                "description": "The date on which the source file was processed according to this schema.",
@@ -370,7 +326,7 @@
                "type": "string"
             },
             "id": {
-               "description": "the URI of a NMR spectroscopy record, which gets generated upon ingest source data",
+               "description": "the URI of a NMR spectroscopy record. If a record does not have an URI, you must use \"nmrSPARQL\" as prefix and the filename (e.g. \"nmrSPARQL:filename1.jdx\") and an unresolvable URI will be minted upon ingest by replacing this prefix with the URI of the dataset.",
                "type": "string"
             },
             "licence_str": {
@@ -389,11 +345,8 @@
                "$ref": "#/$defs/PulsedNmrAssay"
             },
             "source": {
-               "description": "This property is used to describe the source of the data as string (e.g. \"Chemotion Repository\").",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "description": "This property is used to describe the source of the data as string (e.g. \"Chemotion Repository\", the file name of a record).",
+               "type": "string"
             },
             "source_uri": {
                "description": "This property can be used to provide the URL or CURIE of the the source file, if it has one.",
@@ -423,7 +376,10 @@
             },
             "created_by": {
                "description": "the creator of the ressource",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "date_created": {
                "description": "The date on which the source file was processed according to this schema.",
@@ -449,11 +405,8 @@
                "type": "string"
             },
             "source": {
-               "description": "This property is used to describe the source of the data as string (e.g. \"Chemotion Repository\").",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "description": "This property is used to describe the source of the data as string (e.g. \"Chemotion Repository\", the file name of a record).",
+               "type": "string"
             },
             "source_uri": {
                "description": "This property can be used to provide the URL or CURIE of the the source file, if it has one.",
@@ -513,11 +466,16 @@
          "additionalProperties": false,
          "description": "",
          "properties": {
+            "id": {
+               "type": "string"
+            },
             "measured_as": {
                "$ref": "#/$defs/PhMeasurementDatum"
             }
          },
-         "required": [],
+         "required": [
+            "id"
+         ],
          "title": "PhValue",
          "type": "object"
       },
@@ -549,6 +507,7 @@
             "INADEQUATE",
             "HMQC",
             "DEPT-HMQC",
+            "HSQC",
             "Inverse-INEPT",
             "TROSY",
             "CRINEPT",
@@ -646,28 +605,20 @@
          "title": "PulsedNmrAssay",
          "type": "object"
       },
-      "SMILES": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {
-            "has_representation": {
-               "description": "'has representation' is a data property that attaches between an information content entity and a value that contains linguistically or computationally coded text.",
-               "type": "string"
-            }
-         },
-         "required": [],
-         "title": "SMILES",
-         "type": "object"
-      },
       "Temperature": {
          "additionalProperties": false,
          "description": "",
          "properties": {
+            "id": {
+               "type": "string"
+            },
             "measured_as": {
                "$ref": "#/$defs/TemperatureMeasurementDatum"
             }
          },
-         "required": [],
+         "required": [
+            "id"
+         ],
          "title": "Temperature",
          "type": "object"
       },

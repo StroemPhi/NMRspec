@@ -94,7 +94,7 @@
                 <h1 id="class-chemicaldescriptor">Class: ChemicalDescriptor</h1>
 <p>A chemical descriptor is a data item (quantity or value) about a chemical entity that conforms to a specification for how it is calculated, measured or recorded.</p>
 <p>URI: <a href="https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/ChemicalDescriptor">NMRspec:ChemicalDescriptor</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[SMILES],[MolecularFormula],[MOLfile],[InCHIKey],[InCHI],[IUPACname],[IUPACname]&lt;iupac_name%200..1-++[ChemicalDescriptor],[MOLfile]&lt;mol_file%200..1-%20[ChemicalDescriptor],[SMILES]&lt;smiles%200..1-++[ChemicalDescriptor],[InCHIKey]&lt;inchikey%200..1-++[ChemicalDescriptor],[InCHI]&lt;inchi%200..1-++[ChemicalDescriptor],[MolecularFormula]&lt;formula%200..1-++[ChemicalDescriptor],[NmrSolvent]uses%20-.-&gt;[ChemicalDescriptor],[NmrSample]uses%20-.-&gt;[ChemicalDescriptor],[NmrBuffer]uses%20-.-&gt;[ChemicalDescriptor],[NmrSolvent],[NmrSample],[NmrBuffer]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[SMILES],[MolecularFormula],[MOLfile],[InCHIKey],[InCHI],[IUPACname],[IUPACname]&lt;iupac_name%200..1-++[ChemicalDescriptor],[MOLfile]&lt;mol_file%200..1-%20[ChemicalDescriptor],[SMILES]&lt;smiles%200..1-++[ChemicalDescriptor],[InCHIKey]&lt;inchikey%200..1-++[ChemicalDescriptor],[InCHI]&lt;inchi%200..1-++[ChemicalDescriptor],[MolecularFormula]&lt;formula%200..1-++[ChemicalDescriptor],[NmrSolvent]uses%20-.-&gt;[ChemicalDescriptor],[NmrSample]uses%20-.-&gt;[ChemicalDescriptor],[NmrBuffer]uses%20-.-&gt;[ChemicalDescriptor],[NmrSolvent],[NmrSample],[NmrBuffer]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[MOLfile],[MOLfile]&lt;mol_file%200..1-++[ChemicalDescriptor&#124;inchi:string%20%3F;inchikey:string%20%3F;smiles:string%20%3F;formula:string%20%3F;iupac_name:string%20%3F],[NmrSolvent]uses%20-.-&gt;[ChemicalDescriptor],[NmrSample]uses%20-.-&gt;[ChemicalDescriptor],[NmrBuffer]uses%20-.-&gt;[ChemicalDescriptor],[NmrSolvent],[NmrSample],[NmrBuffer]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[MOLfile],[MOLfile]&lt;mol_file%200..1-++[ChemicalDescriptor&#124;inchi:string%20%3F;inchikey:string%20%3F;smiles:string%20%3F;formula:string%20%3F;iupac_name:string%20%3F],[NmrSolvent]uses%20-.-&gt;[ChemicalDescriptor],[NmrSample]uses%20-.-&gt;[ChemicalDescriptor],[NmrBuffer]uses%20-.-&gt;[ChemicalDescriptor],[NmrSolvent],[NmrSample],[NmrBuffer]" /></a></p>
 <h2 id="mixin-for">Mixin for</h2>
 <ul>
 <li><a href="../NmrBuffer/">NmrBuffer</a> (mixin) </li>
@@ -105,28 +105,28 @@
 <h2 id="attributes">Attributes</h2>
 <h3 id="own">Own</h3>
 <ul>
-<li><a href="../formula/">formula</a>  <sub>0..1</sub><ul>
-<li>Range: <a href="../MolecularFormula/">MolecularFormula</a></li>
-</ul>
-</li>
 <li><a href="../chemicalDescriptor__inchi/">➞inchi</a>  <sub>0..1</sub><ul>
-<li>Range: <a href="../InCHI/">InCHI</a></li>
+<li>Range: <a href="../String/">String</a></li>
 </ul>
 </li>
 <li><a href="../chemicalDescriptor__inchikey/">➞inchikey</a>  <sub>0..1</sub><ul>
-<li>Range: <a href="../InCHIKey/">InCHIKey</a></li>
+<li>Range: <a href="../String/">String</a></li>
 </ul>
 </li>
 <li><a href="../chemicalDescriptor__smiles/">➞smiles</a>  <sub>0..1</sub><ul>
-<li>Range: <a href="../SMILES/">SMILES</a></li>
+<li>Range: <a href="../String/">String</a></li>
 </ul>
 </li>
 <li><a href="../chemicalDescriptor__mol_file/">➞mol_file</a>  <sub>0..1</sub><ul>
 <li>Range: <a href="../MOLfile/">MOLfile</a></li>
 </ul>
 </li>
+<li><a href="../chemicalDescriptor__formula/">➞formula</a>  <sub>0..1</sub><ul>
+<li>Range: <a href="../String/">String</a></li>
+</ul>
+</li>
 <li><a href="../chemicalDescriptor__iupac_name/">➞iupac_name</a>  <sub>0..1</sub><ul>
-<li>Range: <a href="../IUPACname/">IUPACname</a></li>
+<li>Range: <a href="../String/">String</a></li>
 </ul>
 </li>
 </ul>

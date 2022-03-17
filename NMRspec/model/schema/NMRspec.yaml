@@ -28,6 +28,7 @@ prefixes:
   chemotionDATA: https://www.chemotion-repository.net/home/publications/datasets/
   chemotion: https://www.chemotion-repository.net/home/publications/reactions/
   cc: https://creativecommons.org/licenses/
+  pubchemCID: https://pubchem.ncbi.nlm.nih.gov/compound/
 # other NMR schema prefixes for mapping purposes
   jdx: http://www.jcamp-dx.org/protocols/dxnmr01.pdf/
   isa: https://isa-specs.readthedocs.io/en/latest/isamodel.html#
@@ -39,6 +40,8 @@ default_curi_maps:
 imports:
  - linkml:types
  - ./Provenance
+emit_prefixes:
+  nmrSPARQL
 #####################################
 classes:
 # Mixins
@@ -46,37 +49,32 @@ classes:
     mixin: true
     class_uri: cheminf:000123
     description: A chemical descriptor is a data item (quantity or value) about a chemical entity that conforms to a specification for how it is calculated, measured or recorded.
-    slots: 
-      - formula
     attributes:
       inchi:
-        slot_uri: iao:0000235
+        slot_uri: chebi:inchi
         recommended: true
-        range: InCHI
-        close_mappings:
-          - chebi:inchi
+        range: string
       inchikey:
-        slot_uri: iao:0000235
+        slot_uri: chebi:inchikey
         recommended: true
-        range: InCHIKey
-        close_mappings:
-          - chebi:inchikey
+        range: string
       smiles:
-        slot_uri: iao:0000235
+        slot_uri: chebi:smiles
         recommended: true
-        range: SMILES
-        close_mappings:
-          - chebi:smiles
+        range: string
       mol_file:
         slot_uri: iao:0000235
         recommended: true
+        inlined: true
         range: MOLfile
-      iupac_name:
-        slot_uri: iao:0000235
+      formula:
+        slot_uri: chebi:formula
         recommended: true
-        range: IUPACname
-        close_mappings:
-          - chebi:IUPAC_NAME
+        range: string
+      iupac_name:
+        slot_uri: chebi:IUPAC_NAME
+        recommended: true
+        range: string
     todos: 
       - Find out if we want this complexity of using CHEMINF descriptor classes for the chemical descriptors or if ChEBI's annotation properties would suffice. For the purpose of being ready for future use cases. Using CHEMINF here seems better, but it does produce more triples and blank nodes.
   NamedThing:
@@ -94,7 +92,7 @@ classes:
     class_uri: chmo:0000613
     slot_usage:
       id: 
-        ifabsent: uri(nmrSPARQL:PulsedNmrAssay)
+        ifabsent: uri(nmrSPARQL:Assay)
     attributes:
       assay_date:
         description: the date the assay was carried out by someone
@@ -179,10 +177,12 @@ classes:
         description: The predicate needed to relate to the concentration of the NMR solution.
         slot_uri: ro:0000086 # has quality
         range: MolarConcentration
+        inlined: true
       measured_pH:
         description: The predicate needed to relate to the concentration of the NMR solution.
         slot_uri: ro:0000086 # has quality
         range: PhValue
+        inlined: true
   NmrSample:
     mixins:
       - ChemicalDescriptor
@@ -197,10 +197,15 @@ classes:
       - ChemicalDescriptor
       - NamedThing
     slot_usage:
+      id: 
+        ifabsent: uri(nmrSPARQL:Solvent)
       name:
         close_mappings:
           - jdx:SOLVENT_NAME
   NmrBuffer:
+    slot_usage:
+      id: 
+        ifabsent: uri(nmrSPARQL:Buffer)
     mixins:
       - ChemicalDescriptor
       - NamedThing
@@ -213,7 +218,7 @@ classes:
       - id
     slot_usage:
       id:
-        ifabsent: uri(nmrSPARQL:spectrometer)
+        ifabsent: uri(nmrSPARQL:Spectrometer)
       manufactured_by:
         range: Manufacturer
       type:
@@ -237,12 +242,13 @@ classes:
       - id
     slot_usage:
       id:
-        ifabsent: uri(nmrSPARQL:sampletube)
+        ifabsent: uri(nmrSPARQL:SampleTube)
       manufactured_by:
         range: Manufacturer
     attributes:
       measured_temperature:
         slot_uri: ro:0000086 # has quality
+        inlined: true
         range: Temperature
 # Organisations
   Manufacturer:
@@ -263,22 +269,31 @@ classes:
     description: A quality inhering in a substance by virtue of the amount of the bearer's there is mixed with another substance. [Wikipedia:http://en.wikipedia.org/wiki/concentration]
     class_uri: pato:0000033
     slots: 
+      - id
       - measured_as
     slot_usage:
+      id: 
+        ifabsent: uri(nmrSPARQL:Concentration)
       measured_as:
         range: MolarityMeasurementDatum
   PhValue:
     class_uri: pato:0001842
     slots: 
+      - id
       - measured_as
     slot_usage:
+      id: 
+        ifabsent: uri(nmrSPARQL:PhValue)
       measured_as:
         range: PhMeasurementDatum
   Temperature:
     class_uri: pato:0000146
     slots: 
+      - id
       - measured_as
     slot_usage:
+      id: 
+        ifabsent: uri(nmrSPARQL:Temperature)
       measured_as:
         range: TemperatureMeasurementDatum
 # measurement data
@@ -310,30 +325,10 @@ classes:
       unit:
         range: TemperatureUnit
 # chemical descriptors
-  MolecularFormula:
-    class_uri: cheminf:000042
-    slots:
-      - has_representation
-  InCHI:
-    class_uri: cheminf:000113
-    slots:
-      - has_representation
-  InCHIKey:
-    class_uri: cheminf:000059
-    slots:
-      - has_representation
-  SMILES:
-    class_uri: cheminf:000018
-    slots:
-      - has_representation
   MOLfile: # only used by NmrSample
     class_uri: cheminf:000114
     mixins:
       - NamedThing
-  IUPACname:
-    class_uri: cheminf:000107
-    slots:
-      - has_representation
 # NMR spectroscopy data items
   NmrSpecRecord:
     description: >-
@@ -351,8 +346,8 @@ classes:
         range: PulsedNmrAssay
     slot_usage:
       id:
-        description: the URI of a NMR spectroscopy record, which gets generated upon ingest source data
-        ifabsent: uri(nmrSPARQL:recordID) 
+        description: >-
+          the URI of a NMR spectroscopy record. If a record does not have an URI, you must use "nmrSPARQL" as prefix and the filename (e.g. "nmrSPARQL:filename1.jdx") and an unresolvable URI will be minted upon ingest by replacing this prefix with the URI of the dataset.
   NmrSpecRecordCollection:
     tree_root: true
     mixins: 
@@ -408,17 +403,7 @@ slots:
   type:
     range: string
 # information content entity slots
-  formula:
-    slot_uri: iao:0000235
-    recommended: true
-    range: MolecularFormula
-    close_mappings:
-      - chebi:fornula
-  has_representation:
-    description: >-
-      'has representation' is a data property that attaches between an information content entity and a value that contains linguistically or computationally coded text.
-    slot_uri: obi:0002815
-    range: string
+  
   # scalar measurement datum slots 
   value:
     slot_uri: iao:0000004
@@ -451,7 +436,7 @@ enums:
       TOCSY:
       ROESY:
       NOESY:
-      J-Resolved:
+      J-Resolved: 
       DEPT & INEPT:
       HECTOR:
       COLOC:
@@ -459,6 +444,7 @@ enums:
       INADEQUATE:
       HMQC:
       DEPT-HMQC:
+      HSQC:
       Inverse-INEPT:
       TROSY:
       CRINEPT:

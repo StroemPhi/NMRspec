@@ -93,7 +93,7 @@
               
                 <h1 id="class-temperature">Class: Temperature</h1>
 <p>URI: <a href="https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/Temperature">NMRspec:Temperature</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[TemperatureMeasurementDatum],[TemperatureMeasurementDatum]&lt;measured_as%200..1-++[Temperature],[NmrSampleTube]++-%20measured_temperature%200..1&gt;[Temperature],[NmrSampleTube]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[TemperatureMeasurementDatum],[TemperatureMeasurementDatum]&lt;measured_as%200..1-++[Temperature],[NmrSampleTube]++-%20measured_temperature%200..1&gt;[Temperature],[NmrSampleTube]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[TemperatureMeasurementDatum],[TemperatureMeasurementDatum]&lt;measured_as%200..1-++[Temperature&#124;id:uriorcurie],[NmrSampleTube]++-%20measured_temperature%200..1&gt;[Temperature],[NmrSampleTube]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[TemperatureMeasurementDatum],[TemperatureMeasurementDatum]&lt;measured_as%200..1-++[Temperature&#124;id:uriorcurie],[NmrSampleTube]++-%20measured_temperature%200..1&gt;[Temperature],[NmrSampleTube]" /></a></p>
 <h2 id="referenced-by-class">Referenced by Class</h2>
 <ul>
 <li><strong>None</strong> <em><a href="../nmrSampleTube__measured_temperature/">➞measured_temperature</a></em>  <sub>0..1</sub>  <strong><a href="./">Temperature</a></strong></li>
@@ -101,6 +101,10 @@
 <h2 id="attributes">Attributes</h2>
 <h3 id="own">Own</h3>
 <ul>
+<li><a href="../Temperature_id/">Temperature➞id</a>  <sub>1..1</sub><ul>
+<li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
+</ul>
+</li>
 <li><a href="../Temperature_measured_as/">Temperature➞measured_as</a>  <sub>0..1</sub><ul>
 <li>Range: <a href="../TemperatureMeasurementDatum/">TemperatureMeasurementDatum</a></li>
 </ul>

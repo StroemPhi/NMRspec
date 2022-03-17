@@ -1,5 +1,5 @@
 # Auto generated from NMRspec.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-03-10T11:52:21
+# Generation date: 2022-03-16T21:13:50
 # Schema: NMRspec
 #
 # id: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/NMRspec.yaml
@@ -53,6 +53,7 @@ OBI = CurieNamespace('obi', 'http://purl.obolibrary.org/obo/OBI_')
 OM = CurieNamespace('om', 'http://www.ontology-of-units-of-measure.org/resource/om-2/')
 PATO = CurieNamespace('pato', 'http://purl.obolibrary.org/obo/PATO_')
 PROV = CurieNamespace('prov', 'http://www.w3.org/ns/prov#')
+PUBCHEMCID = CurieNamespace('pubchemCID', 'https://pubchem.ncbi.nlm.nih.gov/compound/')
 RDFS = CurieNamespace('rdfs', 'http://www.w3.org/2000/01/rdf-schema#')
 RO = CurieNamespace('ro', 'http://purl.obolibrary.org/obo/RO_')
 SDO = CurieNamespace('sdo', 'https://schema.org/')
@@ -99,6 +100,18 @@ class ManufacturerId(URIorCURIE):
     pass
 
 
+class MolarConcentrationId(URIorCURIE):
+    pass
+
+
+class PhValueId(URIorCURIE):
+    pass
+
+
+class TemperatureId(URIorCURIE):
+    pass
+
+
 class MOLfileId(URIorCURIE):
     pass
 
@@ -124,31 +137,31 @@ class ChemicalDescriptor(YAMLRoot):
     class_name: ClassVar[str] = "ChemicalDescriptor"
     class_model_uri: ClassVar[URIRef] = NMRSPEC.ChemicalDescriptor
 
-    formula: Optional[Union[dict, "MolecularFormula"]] = None
-    inchi: Optional[Union[dict, "InCHI"]] = None
-    inchikey: Optional[Union[dict, "InCHIKey"]] = None
-    smiles: Optional[Union[dict, "SMILES"]] = None
-    mol_file: Optional[Union[str, MOLfileId]] = None
-    iupac_name: Optional[Union[dict, "IUPACname"]] = None
+    inchi: Optional[str] = None
+    inchikey: Optional[str] = None
+    smiles: Optional[str] = None
+    mol_file: Optional[Union[dict, "MOLfile"]] = None
+    formula: Optional[str] = None
+    iupac_name: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.formula is not None and not isinstance(self.formula, MolecularFormula):
-            self.formula = MolecularFormula(**as_dict(self.formula))
+        if self.inchi is not None and not isinstance(self.inchi, str):
+            self.inchi = str(self.inchi)
 
-        if self.inchi is not None and not isinstance(self.inchi, InCHI):
-            self.inchi = InCHI(**as_dict(self.inchi))
+        if self.inchikey is not None and not isinstance(self.inchikey, str):
+            self.inchikey = str(self.inchikey)
 
-        if self.inchikey is not None and not isinstance(self.inchikey, InCHIKey):
-            self.inchikey = InCHIKey(**as_dict(self.inchikey))
+        if self.smiles is not None and not isinstance(self.smiles, str):
+            self.smiles = str(self.smiles)
 
-        if self.smiles is not None and not isinstance(self.smiles, SMILES):
-            self.smiles = SMILES(**as_dict(self.smiles))
+        if self.mol_file is not None and not isinstance(self.mol_file, MOLfile):
+            self.mol_file = MOLfile(**as_dict(self.mol_file))
 
-        if self.mol_file is not None and not isinstance(self.mol_file, MOLfileId):
-            self.mol_file = MOLfileId(self.mol_file)
+        if self.formula is not None and not isinstance(self.formula, str):
+            self.formula = str(self.formula)
 
-        if self.iupac_name is not None and not isinstance(self.iupac_name, IUPACname):
-            self.iupac_name = IUPACname(**as_dict(self.iupac_name))
+        if self.iupac_name is not None and not isinstance(self.iupac_name, str):
+            self.iupac_name = str(self.iupac_name)
 
         super().__post_init__(**kwargs)
 
@@ -194,7 +207,7 @@ class PulsedNmrAssay(YAMLRoot):
     acquisition_nuclei: Union[str, List[str]] = None
     has_dimension: Union[str, "Dimension"] = "1D"
     pulse_program: Union[str, "PulseProgram"] = "not provided"
-    id: Union[str, PulsedNmrAssayId] = NMRSPARQL.PulsedNmrAssay
+    id: Union[str, PulsedNmrAssayId] = NMRSPARQL.Assay
     assay_date: Optional[Union[str, XSDDateTime]] = None
     pulse_program_custom: Optional[str] = None
     observed_frequencies: Optional[Union[float, List[float]]] = empty_list()
@@ -311,12 +324,12 @@ class NmrSample(YAMLRoot):
 
     id: Union[str, NmrSampleId] = NMRSPARQL.Sample
     local_id: Optional[str] = None
-    formula: Optional[Union[dict, "MolecularFormula"]] = None
-    inchi: Optional[Union[dict, "InCHI"]] = None
-    inchikey: Optional[Union[dict, "InCHIKey"]] = None
-    smiles: Optional[Union[dict, "SMILES"]] = None
-    mol_file: Optional[Union[str, MOLfileId]] = None
-    iupac_name: Optional[Union[dict, "IUPACname"]] = None
+    inchi: Optional[str] = None
+    inchikey: Optional[str] = None
+    smiles: Optional[str] = None
+    mol_file: Optional[Union[dict, "MOLfile"]] = None
+    formula: Optional[str] = None
+    iupac_name: Optional[str] = None
     name: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -328,23 +341,23 @@ class NmrSample(YAMLRoot):
         if self.local_id is not None and not isinstance(self.local_id, str):
             self.local_id = str(self.local_id)
 
-        if self.formula is not None and not isinstance(self.formula, MolecularFormula):
-            self.formula = MolecularFormula(**as_dict(self.formula))
+        if self.inchi is not None and not isinstance(self.inchi, str):
+            self.inchi = str(self.inchi)
 
-        if self.inchi is not None and not isinstance(self.inchi, InCHI):
-            self.inchi = InCHI(**as_dict(self.inchi))
+        if self.inchikey is not None and not isinstance(self.inchikey, str):
+            self.inchikey = str(self.inchikey)
 
-        if self.inchikey is not None and not isinstance(self.inchikey, InCHIKey):
-            self.inchikey = InCHIKey(**as_dict(self.inchikey))
+        if self.smiles is not None and not isinstance(self.smiles, str):
+            self.smiles = str(self.smiles)
 
-        if self.smiles is not None and not isinstance(self.smiles, SMILES):
-            self.smiles = SMILES(**as_dict(self.smiles))
+        if self.mol_file is not None and not isinstance(self.mol_file, MOLfile):
+            self.mol_file = MOLfile(**as_dict(self.mol_file))
 
-        if self.mol_file is not None and not isinstance(self.mol_file, MOLfileId):
-            self.mol_file = MOLfileId(self.mol_file)
+        if self.formula is not None and not isinstance(self.formula, str):
+            self.formula = str(self.formula)
 
-        if self.iupac_name is not None and not isinstance(self.iupac_name, IUPACname):
-            self.iupac_name = IUPACname(**as_dict(self.iupac_name))
+        if self.iupac_name is not None and not isinstance(self.iupac_name, str):
+            self.iupac_name = str(self.iupac_name)
 
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)
@@ -361,14 +374,14 @@ class NmrSolvent(YAMLRoot):
     class_name: ClassVar[str] = "NmrSolvent"
     class_model_uri: ClassVar[URIRef] = NMRSPEC.NmrSolvent
 
-    id: Union[str, NmrSolventId] = None
+    id: Union[str, NmrSolventId] = NMRSPARQL.Solvent
     name: Optional[str] = None
-    formula: Optional[Union[dict, "MolecularFormula"]] = None
-    inchi: Optional[Union[dict, "InCHI"]] = None
-    inchikey: Optional[Union[dict, "InCHIKey"]] = None
-    smiles: Optional[Union[dict, "SMILES"]] = None
-    mol_file: Optional[Union[str, MOLfileId]] = None
-    iupac_name: Optional[Union[dict, "IUPACname"]] = None
+    inchi: Optional[str] = None
+    inchikey: Optional[str] = None
+    smiles: Optional[str] = None
+    mol_file: Optional[Union[dict, "MOLfile"]] = None
+    formula: Optional[str] = None
+    iupac_name: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -379,23 +392,23 @@ class NmrSolvent(YAMLRoot):
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)
 
-        if self.formula is not None and not isinstance(self.formula, MolecularFormula):
-            self.formula = MolecularFormula(**as_dict(self.formula))
+        if self.inchi is not None and not isinstance(self.inchi, str):
+            self.inchi = str(self.inchi)
 
-        if self.inchi is not None and not isinstance(self.inchi, InCHI):
-            self.inchi = InCHI(**as_dict(self.inchi))
+        if self.inchikey is not None and not isinstance(self.inchikey, str):
+            self.inchikey = str(self.inchikey)
 
-        if self.inchikey is not None and not isinstance(self.inchikey, InCHIKey):
-            self.inchikey = InCHIKey(**as_dict(self.inchikey))
+        if self.smiles is not None and not isinstance(self.smiles, str):
+            self.smiles = str(self.smiles)
 
-        if self.smiles is not None and not isinstance(self.smiles, SMILES):
-            self.smiles = SMILES(**as_dict(self.smiles))
+        if self.mol_file is not None and not isinstance(self.mol_file, MOLfile):
+            self.mol_file = MOLfile(**as_dict(self.mol_file))
 
-        if self.mol_file is not None and not isinstance(self.mol_file, MOLfileId):
-            self.mol_file = MOLfileId(self.mol_file)
+        if self.formula is not None and not isinstance(self.formula, str):
+            self.formula = str(self.formula)
 
-        if self.iupac_name is not None and not isinstance(self.iupac_name, IUPACname):
-            self.iupac_name = IUPACname(**as_dict(self.iupac_name))
+        if self.iupac_name is not None and not isinstance(self.iupac_name, str):
+            self.iupac_name = str(self.iupac_name)
 
         super().__post_init__(**kwargs)
 
@@ -409,13 +422,13 @@ class NmrBuffer(YAMLRoot):
     class_name: ClassVar[str] = "NmrBuffer"
     class_model_uri: ClassVar[URIRef] = NMRSPEC.NmrBuffer
 
-    id: Union[str, NmrBufferId] = None
-    formula: Optional[Union[dict, "MolecularFormula"]] = None
-    inchi: Optional[Union[dict, "InCHI"]] = None
-    inchikey: Optional[Union[dict, "InCHIKey"]] = None
-    smiles: Optional[Union[dict, "SMILES"]] = None
-    mol_file: Optional[Union[str, MOLfileId]] = None
-    iupac_name: Optional[Union[dict, "IUPACname"]] = None
+    id: Union[str, NmrBufferId] = NMRSPARQL.Buffer
+    inchi: Optional[str] = None
+    inchikey: Optional[str] = None
+    smiles: Optional[str] = None
+    mol_file: Optional[Union[dict, "MOLfile"]] = None
+    formula: Optional[str] = None
+    iupac_name: Optional[str] = None
     name: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -424,23 +437,23 @@ class NmrBuffer(YAMLRoot):
         if not isinstance(self.id, NmrBufferId):
             self.id = NmrBufferId(self.id)
 
-        if self.formula is not None and not isinstance(self.formula, MolecularFormula):
-            self.formula = MolecularFormula(**as_dict(self.formula))
+        if self.inchi is not None and not isinstance(self.inchi, str):
+            self.inchi = str(self.inchi)
 
-        if self.inchi is not None and not isinstance(self.inchi, InCHI):
-            self.inchi = InCHI(**as_dict(self.inchi))
+        if self.inchikey is not None and not isinstance(self.inchikey, str):
+            self.inchikey = str(self.inchikey)
 
-        if self.inchikey is not None and not isinstance(self.inchikey, InCHIKey):
-            self.inchikey = InCHIKey(**as_dict(self.inchikey))
+        if self.smiles is not None and not isinstance(self.smiles, str):
+            self.smiles = str(self.smiles)
 
-        if self.smiles is not None and not isinstance(self.smiles, SMILES):
-            self.smiles = SMILES(**as_dict(self.smiles))
+        if self.mol_file is not None and not isinstance(self.mol_file, MOLfile):
+            self.mol_file = MOLfile(**as_dict(self.mol_file))
 
-        if self.mol_file is not None and not isinstance(self.mol_file, MOLfileId):
-            self.mol_file = MOLfileId(self.mol_file)
+        if self.formula is not None and not isinstance(self.formula, str):
+            self.formula = str(self.formula)
 
-        if self.iupac_name is not None and not isinstance(self.iupac_name, IUPACname):
-            self.iupac_name = IUPACname(**as_dict(self.iupac_name))
+        if self.iupac_name is not None and not isinstance(self.iupac_name, str):
+            self.iupac_name = str(self.iupac_name)
 
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)
@@ -457,7 +470,7 @@ class NmrSpectrometer(YAMLRoot):
     class_name: ClassVar[str] = "NmrSpectrometer"
     class_model_uri: ClassVar[URIRef] = NMRSPEC.NmrSpectrometer
 
-    id: Union[str, NmrSpectrometerId] = NMRSPARQL.spectrometer
+    id: Union[str, NmrSpectrometerId] = NMRSPARQL.Spectrometer
     manufactured_by: Optional[Union[dict, "Manufacturer"]] = None
     type: Optional[str] = None
     sample_tube: Optional[Union[dict, "NmrSampleTube"]] = None
@@ -489,7 +502,7 @@ class NmrSampleTube(YAMLRoot):
     class_name: ClassVar[str] = "NmrSampleTube"
     class_model_uri: ClassVar[URIRef] = NMRSPEC.NmrSampleTube
 
-    id: Union[str, NmrSampleTubeId] = NMRSPARQL.sampletube
+    id: Union[str, NmrSampleTubeId] = NMRSPARQL.SampleTube
     manufactured_by: Optional[Union[dict, "Manufacturer"]] = None
     type: Optional[str] = None
     measured_temperature: Optional[Union[dict, "Temperature"]] = None
@@ -553,9 +566,15 @@ class MolarConcentration(YAMLRoot):
     class_name: ClassVar[str] = "MolarConcentration"
     class_model_uri: ClassVar[URIRef] = NMRSPEC.MolarConcentration
 
+    id: Union[str, MolarConcentrationId] = NMRSPARQL.Concentration
     measured_as: Optional[Union[dict, "MolarityMeasurementDatum"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, MolarConcentrationId):
+            self.id = MolarConcentrationId(self.id)
+
         if self.measured_as is not None and not isinstance(self.measured_as, MolarityMeasurementDatum):
             self.measured_as = MolarityMeasurementDatum(**as_dict(self.measured_as))
 
@@ -571,9 +590,15 @@ class PhValue(YAMLRoot):
     class_name: ClassVar[str] = "PhValue"
     class_model_uri: ClassVar[URIRef] = NMRSPEC.PhValue
 
+    id: Union[str, PhValueId] = NMRSPARQL.PhValue
     measured_as: Optional[Union[dict, "PhMeasurementDatum"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, PhValueId):
+            self.id = PhValueId(self.id)
+
         if self.measured_as is not None and not isinstance(self.measured_as, PhMeasurementDatum):
             self.measured_as = PhMeasurementDatum(**as_dict(self.measured_as))
 
@@ -589,9 +614,15 @@ class Temperature(YAMLRoot):
     class_name: ClassVar[str] = "Temperature"
     class_model_uri: ClassVar[URIRef] = NMRSPEC.Temperature
 
+    id: Union[str, TemperatureId] = NMRSPARQL.Temperature
     measured_as: Optional[Union[dict, "TemperatureMeasurementDatum"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, TemperatureId):
+            self.id = TemperatureId(self.id)
+
         if self.measured_as is not None and not isinstance(self.measured_as, TemperatureMeasurementDatum):
             self.measured_as = TemperatureMeasurementDatum(**as_dict(self.measured_as))
 
@@ -675,78 +706,6 @@ class TemperatureMeasurementDatum(YAMLRoot):
 
 
 @dataclass
-class MolecularFormula(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = CHEMINF["000042"]
-    class_class_curie: ClassVar[str] = "cheminf:000042"
-    class_name: ClassVar[str] = "MolecularFormula"
-    class_model_uri: ClassVar[URIRef] = NMRSPEC.MolecularFormula
-
-    has_representation: Optional[str] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.has_representation is not None and not isinstance(self.has_representation, str):
-            self.has_representation = str(self.has_representation)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class InCHI(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = CHEMINF["000113"]
-    class_class_curie: ClassVar[str] = "cheminf:000113"
-    class_name: ClassVar[str] = "InCHI"
-    class_model_uri: ClassVar[URIRef] = NMRSPEC.InCHI
-
-    has_representation: Optional[str] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.has_representation is not None and not isinstance(self.has_representation, str):
-            self.has_representation = str(self.has_representation)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class InCHIKey(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = CHEMINF["000059"]
-    class_class_curie: ClassVar[str] = "cheminf:000059"
-    class_name: ClassVar[str] = "InCHIKey"
-    class_model_uri: ClassVar[URIRef] = NMRSPEC.InCHIKey
-
-    has_representation: Optional[str] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.has_representation is not None and not isinstance(self.has_representation, str):
-            self.has_representation = str(self.has_representation)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class SMILES(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = CHEMINF["000018"]
-    class_class_curie: ClassVar[str] = "cheminf:000018"
-    class_name: ClassVar[str] = "SMILES"
-    class_model_uri: ClassVar[URIRef] = NMRSPEC.SMILES
-
-    has_representation: Optional[str] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.has_representation is not None and not isinstance(self.has_representation, str):
-            self.has_representation = str(self.has_representation)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
 class MOLfile(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -771,24 +730,6 @@ class MOLfile(YAMLRoot):
 
 
 @dataclass
-class IUPACname(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = CHEMINF["000107"]
-    class_class_curie: ClassVar[str] = "cheminf:000107"
-    class_name: ClassVar[str] = "IUPACname"
-    class_model_uri: ClassVar[URIRef] = NMRSPEC.IUPACname
-
-    has_representation: Optional[str] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.has_representation is not None and not isinstance(self.has_representation, str):
-            self.has_representation = str(self.has_representation)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
 class NmrSpecRecord(YAMLRoot):
     """
     This is the tree root node of the schema. It is a data item that serves as a container for all relevant
@@ -804,15 +745,15 @@ class NmrSpecRecord(YAMLRoot):
     class_name: ClassVar[str] = "NmrSpecRecord"
     class_model_uri: ClassVar[URIRef] = NMRSPEC.NmrSpecRecord
 
-    source: Union[str, List[str]] = None
-    id: Union[str, NmrSpecRecordId] = NMRSPARQL.recordID
+    id: Union[str, NmrSpecRecordId] = None
+    source: str = None
     output_of_nmr_assay: Optional[Union[dict, PulsedNmrAssay]] = None
     description: Optional[str] = None
     source_uri: Optional[Union[str, URIorCURIE]] = None
     date_created: Optional[Union[str, XSDDateTime]] = None
     licence_str: Optional[str] = None
     licence_url: Optional[Union[str, URIorCURIE]] = None
-    created_by: Optional[str] = None
+    created_by: Optional[Union[str, List[str]]] = empty_list()
     name: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -823,9 +764,8 @@ class NmrSpecRecord(YAMLRoot):
 
         if self._is_empty(self.source):
             self.MissingRequiredField("source")
-        if not isinstance(self.source, list):
-            self.source = [self.source] if self.source is not None else []
-        self.source = [v if isinstance(v, str) else str(v) for v in self.source]
+        if not isinstance(self.source, str):
+            self.source = str(self.source)
 
         if self.output_of_nmr_assay is not None and not isinstance(self.output_of_nmr_assay, PulsedNmrAssay):
             self.output_of_nmr_assay = PulsedNmrAssay(**as_dict(self.output_of_nmr_assay))
@@ -845,8 +785,9 @@ class NmrSpecRecord(YAMLRoot):
         if self.licence_url is not None and not isinstance(self.licence_url, URIorCURIE):
             self.licence_url = URIorCURIE(self.licence_url)
 
-        if self.created_by is not None and not isinstance(self.created_by, str):
-            self.created_by = str(self.created_by)
+        if not isinstance(self.created_by, list):
+            self.created_by = [self.created_by] if self.created_by is not None else []
+        self.created_by = [v if isinstance(v, str) else str(v) for v in self.created_by]
 
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)
@@ -870,13 +811,13 @@ class NmrSpecRecordCollection(YAMLRoot):
     id: Union[str, NmrSpecRecordCollectionId] = None
     contains_assay_records: Union[Dict[Union[str, NmrSpecRecordId], Union[dict, NmrSpecRecord]], List[Union[dict, NmrSpecRecord]]] = empty_dict()
     assays_sample: Union[dict, NmrSample] = None
-    source: Union[str, List[str]] = None
+    source: str = None
     description: Optional[str] = None
     source_uri: Optional[Union[str, URIorCURIE]] = None
     date_created: Optional[Union[str, XSDDateTime]] = None
     licence_str: Optional[str] = None
     licence_url: Optional[Union[str, URIorCURIE]] = None
-    created_by: Optional[str] = None
+    created_by: Optional[Union[str, List[str]]] = empty_list()
     name: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -896,9 +837,8 @@ class NmrSpecRecordCollection(YAMLRoot):
 
         if self._is_empty(self.source):
             self.MissingRequiredField("source")
-        if not isinstance(self.source, list):
-            self.source = [self.source] if self.source is not None else []
-        self.source = [v if isinstance(v, str) else str(v) for v in self.source]
+        if not isinstance(self.source, str):
+            self.source = str(self.source)
 
         if self.description is not None and not isinstance(self.description, str):
             self.description = str(self.description)
@@ -915,8 +855,9 @@ class NmrSpecRecordCollection(YAMLRoot):
         if self.licence_url is not None and not isinstance(self.licence_url, URIorCURIE):
             self.licence_url = URIorCURIE(self.licence_url)
 
-        if self.created_by is not None and not isinstance(self.created_by, str):
-            self.created_by = str(self.created_by)
+        if not isinstance(self.created_by, list):
+            self.created_by = [self.created_by] if self.created_by is not None else []
+        self.created_by = [v if isinstance(v, str) else str(v) for v in self.created_by]
 
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)
@@ -944,6 +885,7 @@ class PulseProgram(EnumDefinitionImpl):
     HOESY = PermissibleValue(text="HOESY")
     INADEQUATE = PermissibleValue(text="INADEQUATE")
     HMQC = PermissibleValue(text="HMQC")
+    HSQC = PermissibleValue(text="HSQC")
     TROSY = PermissibleValue(text="TROSY")
     CRINEPT = PermissibleValue(text="CRINEPT")
     H2BC = PermissibleValue(text="H2BC")

@@ -117,14 +117,10 @@
 <p>This model is to be used to semantify NMR spectroscopy research data.</p>
 <h3 id="classes">Classes</h3>
 <ul>
-<li><a href="IUPACname/">IUPACname</a></li>
-<li><a href="InCHI/">InCHI</a></li>
-<li><a href="InCHIKey/">InCHIKey</a></li>
 <li><a href="MOLfile/">MOLfile</a></li>
 <li><a href="Manufacturer/">Manufacturer</a></li>
 <li><a href="MolarConcentration/">MolarConcentration</a> - A quality inhering in a substance by virtue of the amount of the bearer's there is mixed with another substance. [Wikipedia:http://en.wikipedia.org/wiki/concentration]</li>
 <li><a href="MolarityMeasurementDatum/">MolarityMeasurementDatum</a> - A scalar measurement datum that is the result of measuring the molarity (aka volume concentration) of a chemical solution.</li>
-<li><a href="MolecularFormula/">MolecularFormula</a></li>
 <li><a href="NmrBuffer/">NmrBuffer</a></li>
 <li><a href="NmrSample/">NmrSample</a></li>
 <li><a href="NmrSampleTube/">NmrSampleTube</a></li>
@@ -136,7 +132,6 @@
 <li><a href="PhMeasurementDatum/">PhMeasurementDatum</a> - A scalar measurement datum that is the result of measuring the pH value of a chemical solution.</li>
 <li><a href="PhValue/">PhValue</a></li>
 <li><a href="PulsedNmrAssay/">PulsedNmrAssay</a></li>
-<li><a href="SMILES/">SMILES</a></li>
 <li><a href="Temperature/">Temperature</a></li>
 <li><a href="TemperatureMeasurementDatum/">TemperatureMeasurementDatum</a> - A scalar measurement datum that is the result of measuring temperature.</li>
 </ul>
@@ -148,21 +143,25 @@
 </ul>
 <h3 id="slots">Slots</h3>
 <ul>
+<li><a href="chemicalDescriptor__formula/">➞formula</a></li>
 <li><a href="chemicalDescriptor__inchi/">➞inchi</a></li>
 <li><a href="chemicalDescriptor__inchikey/">➞inchikey</a></li>
 <li><a href="chemicalDescriptor__iupac_name/">➞iupac_name</a></li>
 <li><a href="chemicalDescriptor__mol_file/">➞mol_file</a></li>
 <li><a href="chemicalDescriptor__smiles/">➞smiles</a></li>
-<li><a href="formula/">formula</a></li>
-<li><a href="has_representation/">has_representation</a> - 'has representation' is a data property that attaches between an information content entity and a value that contains linguistically or computationally coded text.</li>
 <li><a href="id/">id</a><ul>
 <li><a href="Manufacturer_id/">Manufacturer➞id</a></li>
+<li><a href="MolarConcentration_id/">MolarConcentration➞id</a></li>
+<li><a href="NmrBuffer_id/">NmrBuffer➞id</a></li>
 <li><a href="NmrSampleTube_id/">NmrSampleTube➞id</a></li>
 <li><a href="NmrSample_id/">NmrSample➞id</a></li>
 <li><a href="NmrSolution_id/">NmrSolution➞id</a></li>
-<li><a href="NmrSpecRecord_id/">NmrSpecRecord➞id</a> - the URI of a NMR spectroscopy record, which gets generated upon ingest source data</li>
+<li><a href="NmrSolvent_id/">NmrSolvent➞id</a></li>
+<li><a href="NmrSpecRecord_id/">NmrSpecRecord➞id</a> - the URI of a NMR spectroscopy record. If a record does not have an URI, you must use "nmrSPARQL" as prefix and the filename (e.g. "nmrSPARQL:filename1.jdx") and an unresolvable URI will be minted upon ingest by replacing this prefix with the URI of the dataset.</li>
 <li><a href="NmrSpectrometer_id/">NmrSpectrometer➞id</a></li>
+<li><a href="PhValue_id/">PhValue➞id</a></li>
 <li><a href="PulsedNmrAssay_id/">PulsedNmrAssay➞id</a></li>
+<li><a href="Temperature_id/">Temperature➞id</a></li>
 </ul>
 </li>
 <li><a href="local_id/">local_id</a> - This property should be used to provide the local identifier with which something is denoted in a local context (e.g. your lab notebook).</li>
@@ -197,7 +196,7 @@
 <li><a href="provenance__description/">➞description</a></li>
 <li><a href="provenance__licence_str/">Provenance➞licence_str</a> - the licence of the ingested raw data as string</li>
 <li><a href="provenance__licence_url/">Provenance➞licence_url</a> - the licence of the ingested raw data in machine readable format as URL</li>
-<li><a href="provenance__source/">Provenance➞source</a> - This property is used to describe the source of the data as string (e.g. "Chemotion Repository").</li>
+<li><a href="provenance__source/">Provenance➞source</a> - This property is used to describe the source of the data as string (e.g. "Chemotion Repository", the file name of a record).</li>
 <li><a href="provenance__source_uri/">Provenance➞source_uri</a> - This property can be used to provide the URL or CURIE of the the source file, if it has one.</li>
 <li><a href="pulsedNmrAssay__acquisition_nuclei/">PulsedNmrAssay➞acquisition_nuclei</a> - the nuclei to be assayed as specified by the protocol</li>
 <li><a href="pulsedNmrAssay__assay_date/">PulsedNmrAssay➞assay_date</a> - the date the assay was carried out by someone</li>
@@ -322,5 +321,5 @@
 
 <!--
 MkDocs version : 1.2.3
-Build Date UTC : 2022-03-10 10:51:55.251284+00:00
+Build Date UTC : 2022-03-17 08:22:10.127260+00:00
 -->

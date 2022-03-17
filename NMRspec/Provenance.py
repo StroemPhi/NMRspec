@@ -1,5 +1,5 @@
 # Auto generated from Provenance.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-03-10T11:52:25
+# Generation date: 2022-03-16T21:13:55
 # Schema: Provenance
 #
 # id: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/Provenance.yaml
@@ -57,20 +57,19 @@ class Provenance(YAMLRoot):
     class_name: ClassVar[str] = "Provenance"
     class_model_uri: ClassVar[URIRef] = URIRef("https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/Provenance.yaml/Provenance")
 
-    source: Union[str, List[str]] = None
+    source: str = None
     description: Optional[str] = None
     source_uri: Optional[Union[str, URIorCURIE]] = None
     date_created: Optional[Union[str, XSDDateTime]] = None
     licence_str: Optional[str] = None
     licence_url: Optional[Union[str, URIorCURIE]] = None
-    created_by: Optional[str] = None
+    created_by: Optional[Union[str, List[str]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.source):
             self.MissingRequiredField("source")
-        if not isinstance(self.source, list):
-            self.source = [self.source] if self.source is not None else []
-        self.source = [v if isinstance(v, str) else str(v) for v in self.source]
+        if not isinstance(self.source, str):
+            self.source = str(self.source)
 
         if self.description is not None and not isinstance(self.description, str):
             self.description = str(self.description)
@@ -87,8 +86,9 @@ class Provenance(YAMLRoot):
         if self.licence_url is not None and not isinstance(self.licence_url, URIorCURIE):
             self.licence_url = URIorCURIE(self.licence_url)
 
-        if self.created_by is not None and not isinstance(self.created_by, str):
-            self.created_by = str(self.created_by)
+        if not isinstance(self.created_by, list):
+            self.created_by = [self.created_by] if self.created_by is not None else []
+        self.created_by = [v if isinstance(v, str) else str(v) for v in self.created_by]
 
         super().__post_init__(**kwargs)
 

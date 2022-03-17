@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Class: InCHI - This model is to be used to semantify NMR spectroscopy research data.</title>
+  <title>Slot: id - This model is to be used to semantify NMR spectroscopy research data.</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Class: InCHI";
-    var mkdocs_page_input_path = "InCHI.md";
+    var mkdocs_page_name = "Slot: id";
+    var mkdocs_page_input_path = "NmrBuffer_id.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -79,7 +79,7 @@
     
       
     
-    <li>Class: InCHI</li>
+    <li>Slot: id</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -91,21 +91,18 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="class-inchi">Class: InCHI</h1>
-<p>URI: <a href="https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/InCHI">NMRspec:InCHI</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[ChemicalDescriptor]++-%20inchi%200..1&gt;[InCHI&#124;has_representation:string%20%3F],[ChemicalDescriptor]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[ChemicalDescriptor]++-%20inchi%200..1&gt;[InCHI&#124;has_representation:string%20%3F],[ChemicalDescriptor]" /></a></p>
-<h2 id="referenced-by-class">Referenced by Class</h2>
+                <h1 id="slot-id">Slot: id</h1>
+<p>URI: <a href="https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/NmrBuffer_id">NMRspec:NmrBuffer_id</a></p>
+<h2 id="domain-and-range">Domain and Range</h2>
+<p><a href="../NmrBuffer/">NmrBuffer</a> &#8594;  <sub>1..1</sub> <a href="../Uriorcurie/">Uriorcurie</a></p>
+<h2 id="parents">Parents</h2>
 <ul>
-<li><strong>None</strong> <em><a href="../chemicalDescriptor__inchi/">➞inchi</a></em>  <sub>0..1</sub>  <strong><a href="./">InCHI</a></strong></li>
+<li>is_a: <a href="../id/">id</a></li>
 </ul>
-<h2 id="attributes">Attributes</h2>
-<h3 id="own">Own</h3>
+<h2 id="children">Children</h2>
+<h2 id="used-by">Used by</h2>
 <ul>
-<li><a href="../has_representation/">has_representation</a>  <sub>0..1</sub><ul>
-<li>Description: 'has representation' is a data property that attaches between an information content entity and a value that contains linguistically or computationally coded text.</li>
-<li>Range: <a href="../String/">String</a></li>
-</ul>
-</li>
+<li><a href="../NmrBuffer/">NmrBuffer</a></li>
 </ul>
 <h2 id="other-properties">Other properties</h2>
 <table>
@@ -120,7 +117,12 @@
 <tr>
 <td><strong>Mappings:</strong></td>
 <td></td>
-<td>cheminf:000113</td>
+<td>iao:0000235</td>
+</tr>
+<tr>
+<td><strong>Exact Mappings:</strong></td>
+<td></td>
+<td>sdo:identifier</td>
 </tr>
 </tbody>
 </table>
