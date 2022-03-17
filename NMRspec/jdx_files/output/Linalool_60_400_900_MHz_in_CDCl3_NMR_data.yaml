@@ -1,0 +1,102 @@
+#################################################
+# a JCAMP-DX dataset parsed to YAML
+# using https://github.com/StroemPhi/NMRspec
+# created: 2022-03-17
+#################################################
+
+id: doi:10.7910/DVN/KUEDTG
+contains_assay_records:
+- id: doi:10.7910/DVN/KUEDTG/Linalool_100000ug200uL_CDCl3_1HNMR_900MHz_JDX
+  source: Linalool_100000ug200uL_CDCl3_1HNMR_900MHz_JDX.jdx
+  output_of_nmr_assay:
+    solution:
+      solvent:
+        id: https://pubchem.ncbi.nlm.nih.gov/compound/71583
+        name: chloroform-d
+        inchi: InChI=1S/CHCl3/c2-1(3)4/h1H/i1D
+        inchikey: HEDRZPFGACZZDS-MICDWDOJSA-N
+        smiles: '[2H]C(Cl)(Cl)Cl'
+        iupac_name: trichloro(deuterio)methane
+      sample:
+        id: CHEBI:17580
+        inchi: InChI=1S/C10H18O/c1-5-10(4,11)8-6-7-9(2)3/h5,7,11H,1,6,8H2,2-4H3
+        inchikey: CDOSHBSSFJOMGT-UHFFFAOYSA-N
+        smiles: CC(C)=CCCC(C)(O)C=C
+        mol_file:
+          id: doi:10.7910/DVN/KUEDTG/L6MKSF
+          name: Linanool.mol
+        formula: C10H18O
+        iupac_name: 3,7-dimethylocta-1,6-dien-3-ol
+        name: Linalool
+      id: doi:10.7910/DVN/KUEDTG/Linalool_100000ug200uL_CDCl3_1HNMR_900MHz_JDX/Solution
+    spectrometer:
+      id: doi:10.7910/DVN/KUEDTG/Linalool_100000ug200uL_CDCl3_1HNMR_900MHz_JDX/Spectrometer
+    acquisition_nuclei:
+    - 1H
+    has_dimension: 1D
+    pulse_program: NMR
+    id: doi:10.7910/DVN/KUEDTG/Linalool_100000ug200uL_CDCl3_1HNMR_900MHz_JDX/Assay
+    observed_frequencies:
+    - 900.077600296
+- id: doi:10.7910/DVN/KUEDTG/Linalool_100000ug200uL_CDCl3_COSY_900MHz_JDX
+  source: Linalool_100000ug200uL_CDCl3_COSY_900MHz_JDX.jdx
+  output_of_nmr_assay:
+    solution:
+      solvent:
+        id: https://pubchem.ncbi.nlm.nih.gov/compound/71583
+        name: chloroform-d
+        inchi: InChI=1S/CHCl3/c2-1(3)4/h1H/i1D
+        inchikey: HEDRZPFGACZZDS-MICDWDOJSA-N
+        smiles: '[2H]C(Cl)(Cl)Cl'
+        iupac_name: trichloro(deuterio)methane
+      sample:
+        id: CHEBI:17580
+        inchi: InChI=1S/C10H18O/c1-5-10(4,11)8-6-7-9(2)3/h5,7,11H,1,6,8H2,2-4H3
+        inchikey: CDOSHBSSFJOMGT-UHFFFAOYSA-N
+        smiles: CC(C)=CCCC(C)(O)C=C
+        mol_file:
+          id: doi:10.7910/DVN/KUEDTG/L6MKSF
+          name: Linanool.mol
+        formula: C10H18O
+        iupac_name: 3,7-dimethylocta-1,6-dien-3-ol
+        name: Linalool
+      id: doi:10.7910/DVN/KUEDTG/Linalool_100000ug200uL_CDCl3_COSY_900MHz_JDX/Solution
+    spectrometer:
+      id: doi:10.7910/DVN/KUEDTG/Linalool_100000ug200uL_CDCl3_COSY_900MHz_JDX/Spectrometer
+    acquisition_nuclei:
+    - 1H
+    - 1H
+    has_dimension: 2D
+    pulse_program: COSY
+    id: doi:10.7910/DVN/KUEDTG/Linalool_100000ug200uL_CDCl3_COSY_900MHz_JDX/Assay
+    observed_frequencies:
+    - 900.077600296
+assays_sample:
+  id: CHEBI:17580
+  inchi: InChI=1S/C10H18O/c1-5-10(4,11)8-6-7-9(2)3/h5,7,11H,1,6,8H2,2-4H3
+  inchikey: CDOSHBSSFJOMGT-UHFFFAOYSA-N
+  smiles: CC(C)=CCCC(C)(O)C=C
+  mol_file:
+    id: doi:10.7910/DVN/KUEDTG/L6MKSF
+    name: Linanool.mol
+  formula: C10H18O
+  iupac_name: 3,7-dimethylocta-1,6-dien-3-ol
+  name: Linalool
+source: Harvard Dataverse
+description: 'NMR data for linalool contains: 1H NMR acquired at 60 MHz, as well as
+  1D: 1H,13C 2D: COSY, HSQC and HMBC acquired 400 MHz, as well as 1D: 1H 2D: COSY
+  acquired 900 MHz (Bruker AVANCE NMR, 5mm TCI cryogenic probe) in CDCl3 (2019-10-07)'
+source_uri: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/KUEDTG
+date_created: '2019-10-28T00:00:00'
+licence_str: CC0 - "Public Domain Dedication"
+licence_url: https://creativecommons.org/share-your-work/public-domain/cc0
+created_by:
+- 'Kim, Seon Beom (University of Illinois at Chicago) - ORCID: 0000-0001-8015-1404'
+- 'Ray, Joseph (University of Illinois at Chicago) - ORCID: 0000-0002-7694-3174'
+- 'Lankin, David (University of Illinois at Chicago) - ORCID: 0000-0003-3166-5980'
+- 'Chen, Shao Nong (University of Illinois at Chicago) - ORCID: 0000-0003-0748-0863'
+- 'Achanta, Prabhakar (University of Illinois at Chicago) - ORCID: 0000-0003-1658-850X'
+- 'Simmler, Charlotte (University of Illinois at Chicago) - ORCID: 0000-0002-6923-2630'
+- 'Bisson, Jonathan (University of Illinois at Chicago) - ORCID: 0000-0003-1640-9989'
+- 'Pauli, Guido (University of Illinois at Chicago) - ORCID: 0000-0003-1022-4326'
+name: Linalool 60/400/900 MHz in CDCl3 NMR data
