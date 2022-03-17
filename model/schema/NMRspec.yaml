@@ -174,10 +174,12 @@ classes:
         description: The predicate needed to relate to the concentration of the NMR solution.
         slot_uri: ro:0000086 # has quality
         range: MolarConcentration
+        inlined: true
       measured_pH:
         description: The predicate needed to relate to the concentration of the NMR solution.
         slot_uri: ro:0000086 # has quality
         range: PhValue
+        inlined: true
   NmrSample:
     mixins:
       - ChemicalDescriptor
@@ -243,6 +245,7 @@ classes:
     attributes:
       measured_temperature:
         slot_uri: ro:0000086 # has quality
+        inlined: true
         range: Temperature
 # Organisations
   Manufacturer:
