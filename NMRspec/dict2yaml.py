@@ -345,6 +345,8 @@ def get_assay_data(jdx_dict, nmr_record) -> PulsedNmrAssay:
                 pulse_program_jdx = jdx_dict['.pulse sequence'].lower()
             elif '.pulsesequence' in jdx_dict:
                 pulse_program_jdx = jdx_dict['.pulsesequence'].lower()
+            else:
+                pulse_program_jdx = "N/A"
             pulse_program_parsed = None
             pulse_program_custom = None
             for possible_pulse_program in nmr_pulse_program_cv:
@@ -361,12 +363,14 @@ def get_assay_data(jdx_dict, nmr_record) -> PulsedNmrAssay:
                     # return controlled term if there is a pulse program match
                     elif re.match(rf"(^{value})", pulse_program_jdx):
                         pulse_program_parsed = possible_pulse_program["name"]
-                    # return unknown jdx pulse program code
+            # return unknown jdx pulse program code
             if not pulse_program_parsed:
                 if '.pulse sequence' in jdx_dict:
                     pulse_program_custom = jdx_dict['.pulse sequence']
                 elif '.pulsesequence' in jdx_dict:
                     pulse_program_custom = jdx_dict['.pulsesequence']
+                else:
+                    pulse_program_custom = pulse_program_jdx
                 pulse_program_parsed = "Custom"
         else:
             print("-----\nError: There is no pulse program specified in the jdx file!")
