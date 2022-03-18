@@ -1,0 +1,39 @@
+####################
+# dataset metadata #
+####################
+
+# you MUST provide the following provenance metadata of the dataset
+source_uri: https://osdb.stuchalk.domains.unf.edu/compounds/view/00010
+source: The open Spectra database
+licence_str: CC0 - "Public Domain Dedication"
+licence_url: https://creativecommons.org/share-your-work/public-domain/cc0
+date_created: "2018-04-20"  
+description: "NMR data for Contains: 1D: 1H, 13C 2D: COSY, HSQC, HMBC Attributed 13C spectrum (2018-03-23). Related Publication: Can Invalid Bioactives Undermine Natural Product-Based Drug Discovery? J. Med. Chem. doi: 10.1021/acs.jmedchem.5b01009 https://doi.org/10.1021/acs.jmedchem.5b01009. Related Material: <1707770> Lot # <3.16> mg 3mm Tube Cambridge Isotope DML-10-10X1 Lot #10E-645 Solvent volume 200 μL." 
+id: https://osdb.stuchalk.domains.unf.edu/compounds/view/00010
+name: 1H NMR spectrum of (+)-(r)-limonene
+created_by:
+  - "Stuart Chalk"
+
+
+###################
+# sample metadata #
+###################
+assays_sample:
+  # you MUST provide at least one of the following metadata on the assayed sample
+  name: D-Limonene
+  id: pubchemCID:440917
+  formula: C10H16
+  iupac_name: (4R)-1-methyl-4-prop-1-en-2-ylcyclohexene
+  inchi: InChI=1S/C10H16/c1-8(2)10-6-4-9(3)5-7-10/h4,10H,1,5-7H2,2-3H3/t10-/m0/s1
+  inchikey: XMGQYMWWDOXHJM-JTQLQIEISA-N
+  smiles: CC1=CCC(CC1)C(=C)C
+
+######################
+# records in dataset #
+######################    
+contains_assay_records:
+ # you MUST provide at an URI as the id and the filename as source of each assay record (.jdx) in this dataset. If the records do not have an URI, you can create a dummy ID by using "nmrSPARQL:" as prefix and some unique string (e.g. "id: nmrSPARQL:assay1")
+  - id: nmrSPARQL:000000012
+    source: 000000012.jdx
+  - id: nmrSPARQL:000000020
+    source: 000000020.jdx

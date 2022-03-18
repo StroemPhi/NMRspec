@@ -40,14 +40,14 @@ assays_sample:
 # records in dataset #
 ######################    
 contains_assay_records:
- # you MUST provide at an URI as the id and the filename as source of each assay record (.jdx) in this dataset. If the records do not have an URI, you can create a dummy ID by using "https://nfdi4chem/sparql/" as prefix and some unique string (e.g. "id: https://nfdi4chem/sparql/assay1")
-  - id: https://nfdi4chem/sparql/Rutin_3080ug200uL_DMSOd6_13CNMR_400MHz_JDX
+ # you MUST provide at an URI as the id and the filename as source of each assay record (.jdx) in this dataset. If the records do not have an URI, you can create a dummy ID by using "nmrSPARQL:" as prefix and some unique string (e.g. "id: nmrSPARQL:assay1")
+  - id: doi:10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_13CNMR_400MHz_JDX
     source: Rutin_3080ug200uL_DMSOd6_13CNMR_400MHz_JDX.jdx
-  - id: https://nfdi4chem/sparql/Rutin_3080ug200uL_DMSOd6_COSY_400MHz_JDX
+  - id: doi:10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_COSY_400MHz_JDX
     source: Rutin_3080ug200uL_DMSOd6_COSY_400MHz_JDX.jdx
-  - id: https://nfdi4chem/sparql/Rutin_3080ug200uL_DMSOd6_HMBC_400MHz_JDX
+  - id: doi:10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_HMBC_400MHz_JDX
     source: Rutin_3080ug200uL_DMSOd6_HMBC_400MHz_JDX.jdx
-  - id: https://nfdi4chem/sparql/Rutin_3080ug200uL_DMSOd6_HSQC_400MHz_JDX
+  - id: doi:10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_HSQC_400MHz_JDX
     source: Rutin_3080ug200uL_DMSOd6_HSQC_400MHz_JDX.jdx
-  - id: https://nfdi4chem/sparql/Rutin_3080ug200uL_DMSOd6_qHNMR_400MHz_JDX
+  - id: doi:10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_qHNMR_400MHz_JDX
     source: Rutin_3080ug200uL_DMSOd6_qHNMR_400MHz_JDX.jdx

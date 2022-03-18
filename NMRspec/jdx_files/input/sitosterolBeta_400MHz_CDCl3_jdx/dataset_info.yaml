@@ -1,0 +1,53 @@
+####################
+# dataset metadata #
+####################
+
+# you MUST provide the following provenance metadata of the dataset
+source_uri: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/BZYA8H
+source: Harvard Dataverse
+licence_str: CC0 - "Public Domain Dedication"
+licence_url: https://creativecommons.org/share-your-work/public-domain/cc0
+date_created: "2018-04-20"
+description: "NMR data for Beta-Sitosterol Contains: 1D: 1H, 13C 2D: COSY, HSQC, HMBC as raw NMR data in JEOL format, and jdx files. (2018-03-26). Related Publication: Can Invalid Bioactives Undermine Natural Product-Based Drug Discovery? J. Med. Chem. doi: 10.1021/acs.jmedchem.5b01009 https://doi.org/10.1021/acs.jmedchem.5b01009. Related Material: USP # 1612947 Lot # RO26A0 3.20 mg 3mm Tube Cambridge Isotope DML-10-10X1 Lot #00626TA (Aldrich 494275-10g) Solvent volume 200 μL." 
+id: doi:10.7910/DVN/BZYA8H
+name: SitosterolBeta 400MHz CDCl3 NMR data
+created_by:
+  - "Youn, Isoo (University of Illinois at Chicago) - ORCID: 0000-0002-8851-0720"
+  - "Chen, Shao Nong (University of Illinois at Chicago) - ORCID: 0000-0003-0748-0863"
+  - "Simmler, Charlotte (University of Illinois at Chicago) - ORCID: 0000-0002-6923-2630"
+  - "Bisson, Jonathan (University of Illinois at Chicago) - ORCID: 0000-0003-1640-9989"
+  - "Pauli, Guido (University of Illinois at Chicago) - ORCID: 0000-0003-1022-4326"
+
+
+###################
+# sample metadata #
+###################
+assays_sample:
+  # you MUST provide at least one of the following metadata on the assayed sample
+  name: beta-Sitosterol
+  id: pubchemCID:222284
+  formula: C29H50O
+  iupac_name: (3S,8S,9S,10R,13R,14S,17R)-17-[(2R,5R)-5-ethyl-6-methylheptan-2-yl]-10,13-dimethyl-2,3,4,7,8,9,11,12,14,15,16,17-dodecahydro-1H-cyclopenta[a]phenanthren-3-ol
+  inchi: InChI=1S/C29H50O/c1-7-21(19(2)3)9-8-20(4)25-12-13-26-24-11-10-22-18-23(30)14-16-28(22,5)27(24)15-17-29(25,26)6/h10,19-21,23-27,30H,7-9,11-18H2,1-6H3/t20-,21-,23+,24+,25-,26+,27+,28+,29-/m1/s1
+  inchikey: KZJWDPNRJALLNS-VJSFXXLFSA-N
+  smiles: CCC(CCC(C)C1CCC2C1(CCC3C2CC=C4C3(CCC(C4)O)C)C)C(C)C
+  mol_file:
+    id: doi:10.7910/DVN/BZYA8H/94ENZN
+    name:  sitosterol.mol 
+
+
+######################
+# records in dataset #
+######################    
+contains_assay_records:
+ # you MUST provide at an URI as the id and the filename as source of each assay record (.jdx) in this dataset. If the records do not have an URI, you can create a dummy ID by using "https://nfdi4chem/sparql/" as prefix and some unique string (e.g. "id: https://nfdi4chem/sparql/assay1")
+  - id: doi:10.7910/DVN/BZYA8H/S1SSIF/1H
+    source: 1H.jdx
+  - id: doi:10.7910/DVN/BZYA8H/S1SSIF/13C
+    source: 13C.jdx
+  - id: doi:10.7910/DVN/BZYA8H/S1SSIF/gCOSY
+    source: gCOSY.jdx
+  - id: doi:10.7910/DVN/BZYA8H/S1SSIF/HMBC
+    source: HMBC.jdx
+  - id: doi:10.7910/DVN/BZYA8H/S1SSIF/HSQC
+    source: HSQC.jdx
