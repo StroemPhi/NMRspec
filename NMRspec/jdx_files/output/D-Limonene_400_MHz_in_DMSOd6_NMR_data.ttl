@@ -1,18 +1,18 @@
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix ns1: <http://purl.obolibrary.org/obo/> .
-@prefix ns2: <https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/> .
+@prefix ns1: <https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/> .
+@prefix ns2: <http://purl.obolibrary.org/obo/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://doi.org/10.7910/DVN/2UEA9M> a ns2:NmrSpecRecordCollection ;
+<https://doi.org/10.7910/DVN/2UEA9M> a ns1:NmrSpecRecordCollection ;
     rdfs:label "D-Limonene 400 MHz in DMSOd6 NMR data" ;
-    ns1:BFO_0000051 <https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_13CNMR_400MHz_JDX>,
+    ns2:BFO_0000051 <https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_13CNMR_400MHz_JDX>,
         <https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_COSY_400MHz_JDX>,
         <https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_HMBC_400MHz_JDX>,
         <https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_HSQC_400MHz_JDX>,
         <https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_qHNMR_400MHz_JDX> ;
-    ns1:IAO_0000136 <https://pubchem.ncbi.nlm.nih.gov/compound/440917> ;
+    ns2:IAO_0000136 <https://pubchem.ncbi.nlm.nih.gov/compound/440917> ;
     dc:creator "Bisson, Jonathan (University of Illinois at Chicago) - ORCID: 0000-0003-1640-9989",
         "Kim, Seon Beom (University of Illinois at Chicago) - ORCID: 0000-0001-8015-1404",
         "Pauli, Guido (University of Illinois at Chicago) - ORCID: 0000-0003-1022-4326",
@@ -24,116 +24,116 @@
         "Harvard Dataverse" ;
     schema:dateCreated "2019-10-28T00:00:00"^^xsd:dateTime .
 
-<https://doi.org/10.7910/DVN/2UEA9M/JOCQYF> a ns1:CHEMINF_000114 ;
+<https://doi.org/10.7910/DVN/2UEA9M/JOCQYF> a ns2:CHEMINF_000114 ;
     rdfs:label "D-Limonene.mol" .
 
-<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_13CNMR_400MHz_JDX> a ns2:NmrSpecRecord ;
-    ns1:OBI_0000312 <https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_13CNMR_400MHz_JDX/Assay> ;
+<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_13CNMR_400MHz_JDX> a ns1:NmrSpecRecord ;
+    ns2:OBI_0000312 <https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_13CNMR_400MHz_JDX/Assay> ;
     dc:source "Limonene_7020ug200uL_CDCl3_13CNMR_400MHz_JDX.jdx" .
 
-<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_13CNMR_400MHz_JDX/Assay> a ns1:CHMO_0000613 ;
-    ns1:OBI_0000293 <https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_13CNMR_400MHz_JDX/Solution>,
+<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_13CNMR_400MHz_JDX/Assay> a ns2:CHMO_0000613 ;
+    ns2:OBI_0000293 <https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_13CNMR_400MHz_JDX/Solution>,
         <https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_13CNMR_400MHz_JDX/Spectrometer> ;
-    ns2:acquisition_nuclei "13C" ;
-    ns2:has_dimension "1D" ;
-    ns2:observed_frequencies "100.525303325165"^^xsd:float ;
-    ns2:pulse_program "NMR" .
+    ns1:acquisition_nuclei "13C" ;
+    ns1:has_dimension "1D" ;
+    ns1:observed_frequencies "100.525303325165"^^xsd:float ;
+    ns1:pulse_program "NMR" .
 
-<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_13CNMR_400MHz_JDX/Solution> a ns1:CHEBI_75958 ;
-    ns1:BFO_0000051 ns1:CHEBI_85365,
+<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_13CNMR_400MHz_JDX/Solution> a ns2:CHEBI_75958 ;
+    ns2:BFO_0000051 ns2:CHEBI_85365,
         <https://pubchem.ncbi.nlm.nih.gov/compound/440917> .
 
-<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_13CNMR_400MHz_JDX/Spectrometer> a ns1:OBI_0000566 .
+<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_13CNMR_400MHz_JDX/Spectrometer> a ns2:OBI_0000566 .
 
-<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_COSY_400MHz_JDX> a ns2:NmrSpecRecord ;
-    ns1:OBI_0000312 <https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_COSY_400MHz_JDX/Assay> ;
+<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_COSY_400MHz_JDX> a ns1:NmrSpecRecord ;
+    ns2:OBI_0000312 <https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_COSY_400MHz_JDX/Assay> ;
     dc:source "Limonene_7020ug200uL_CDCl3_COSY_400MHz_JDX.jdx" .
 
-<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_COSY_400MHz_JDX/Assay> a ns1:CHMO_0000613 ;
-    ns1:OBI_0000293 <https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_COSY_400MHz_JDX/Solution>,
+<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_COSY_400MHz_JDX/Assay> a ns2:CHMO_0000613 ;
+    ns2:OBI_0000293 <https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_COSY_400MHz_JDX/Solution>,
         <https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_COSY_400MHz_JDX/Spectrometer> ;
-    ns2:acquisition_nuclei "1H" ;
-    ns2:has_dimension "2D" ;
-    ns2:observed_frequencies "399.78219837825"^^xsd:float ;
-    ns2:pulse_program "COSY" .
+    ns1:acquisition_nuclei "1H" ;
+    ns1:has_dimension "2D" ;
+    ns1:observed_frequencies "399.78219837825"^^xsd:float ;
+    ns1:pulse_program "COSY" .
 
-<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_COSY_400MHz_JDX/Solution> a ns1:CHEBI_75958 ;
-    ns1:BFO_0000051 ns1:CHEBI_85365,
+<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_COSY_400MHz_JDX/Solution> a ns2:CHEBI_75958 ;
+    ns2:BFO_0000051 ns2:CHEBI_85365,
         <https://pubchem.ncbi.nlm.nih.gov/compound/440917> .
 
-<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_COSY_400MHz_JDX/Spectrometer> a ns1:OBI_0000566 .
+<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_COSY_400MHz_JDX/Spectrometer> a ns2:OBI_0000566 .
 
-<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_HMBC_400MHz_JDX> a ns2:NmrSpecRecord ;
-    ns1:OBI_0000312 <https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_HMBC_400MHz_JDX/Assay> ;
+<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_HMBC_400MHz_JDX> a ns1:NmrSpecRecord ;
+    ns2:OBI_0000312 <https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_HMBC_400MHz_JDX/Assay> ;
     dc:source "Limonene_7020ug200uL_CDCl3_HMBC_400MHz_JDX.jdx" .
 
-<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_HMBC_400MHz_JDX/Assay> a ns1:CHMO_0000613 ;
-    ns1:OBI_0000293 <https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_HMBC_400MHz_JDX/Solution>,
+<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_HMBC_400MHz_JDX/Assay> a ns2:CHMO_0000613 ;
+    ns2:OBI_0000293 <https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_HMBC_400MHz_JDX/Solution>,
         <https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_HMBC_400MHz_JDX/Spectrometer> ;
-    ns2:acquisition_nuclei "13C",
+    ns1:acquisition_nuclei "13C",
         "1H" ;
-    ns2:has_dimension "2D" ;
-    ns2:observed_frequencies "399.78219837825"^^xsd:float ;
-    ns2:pulse_program "Custom" ;
-    ns2:pulse_program_custom "ghmbcad_auto.jxp" .
+    ns1:has_dimension "2D" ;
+    ns1:observed_frequencies "399.78219837825"^^xsd:float ;
+    ns1:pulse_program "Custom" ;
+    ns1:pulse_program_custom "ghmbcad_auto.jxp" .
 
-<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_HMBC_400MHz_JDX/Solution> a ns1:CHEBI_75958 ;
-    ns1:BFO_0000051 ns1:CHEBI_85365,
+<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_HMBC_400MHz_JDX/Solution> a ns2:CHEBI_75958 ;
+    ns2:BFO_0000051 ns2:CHEBI_85365,
         <https://pubchem.ncbi.nlm.nih.gov/compound/440917> .
 
-<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_HMBC_400MHz_JDX/Spectrometer> a ns1:OBI_0000566 .
+<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_HMBC_400MHz_JDX/Spectrometer> a ns2:OBI_0000566 .
 
-<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_HSQC_400MHz_JDX> a ns2:NmrSpecRecord ;
-    ns1:OBI_0000312 <https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_HSQC_400MHz_JDX/Assay> ;
+<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_HSQC_400MHz_JDX> a ns1:NmrSpecRecord ;
+    ns2:OBI_0000312 <https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_HSQC_400MHz_JDX/Assay> ;
     dc:source "Limonene_7020ug200uL_CDCl3_HSQC_400MHz_JDX.jdx" .
 
-<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_HSQC_400MHz_JDX/Assay> a ns1:CHMO_0000613 ;
-    ns1:OBI_0000293 <https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_HSQC_400MHz_JDX/Solution>,
+<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_HSQC_400MHz_JDX/Assay> a ns2:CHMO_0000613 ;
+    ns2:OBI_0000293 <https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_HSQC_400MHz_JDX/Solution>,
         <https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_HSQC_400MHz_JDX/Spectrometer> ;
-    ns2:acquisition_nuclei "13C",
+    ns1:acquisition_nuclei "13C",
         "1H" ;
-    ns2:has_dimension "2D" ;
-    ns2:observed_frequencies "399.78219837825"^^xsd:float ;
-    ns2:pulse_program "HSQC" .
+    ns1:has_dimension "2D" ;
+    ns1:observed_frequencies "399.78219837825"^^xsd:float ;
+    ns1:pulse_program "HSQC" .
 
-<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_HSQC_400MHz_JDX/Solution> a ns1:CHEBI_75958 ;
-    ns1:BFO_0000051 ns1:CHEBI_85365,
+<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_HSQC_400MHz_JDX/Solution> a ns2:CHEBI_75958 ;
+    ns2:BFO_0000051 ns2:CHEBI_85365,
         <https://pubchem.ncbi.nlm.nih.gov/compound/440917> .
 
-<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_HSQC_400MHz_JDX/Spectrometer> a ns1:OBI_0000566 .
+<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_HSQC_400MHz_JDX/Spectrometer> a ns2:OBI_0000566 .
 
-<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_qHNMR_400MHz_JDX> a ns2:NmrSpecRecord ;
-    ns1:OBI_0000312 <https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_qHNMR_400MHz_JDX/Assay> ;
+<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_qHNMR_400MHz_JDX> a ns1:NmrSpecRecord ;
+    ns2:OBI_0000312 <https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_qHNMR_400MHz_JDX/Assay> ;
     dc:source "Limonene_7020ug200uL_CDCl3_qHNMR_400MHz_JDX.jdx" .
 
-<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_qHNMR_400MHz_JDX/Assay> a ns1:CHMO_0000613 ;
-    ns1:OBI_0000293 <https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_qHNMR_400MHz_JDX/Solution>,
+<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_qHNMR_400MHz_JDX/Assay> a ns2:CHMO_0000613 ;
+    ns2:OBI_0000293 <https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_qHNMR_400MHz_JDX/Solution>,
         <https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_qHNMR_400MHz_JDX/Spectrometer> ;
-    ns2:acquisition_nuclei "1H" ;
-    ns2:has_dimension "1D" ;
-    ns2:observed_frequencies "399.78219837825"^^xsd:float ;
-    ns2:pulse_program "Custom" ;
-    ns2:pulse_program_custom "single_pulse_dec" .
+    ns1:acquisition_nuclei "1H" ;
+    ns1:has_dimension "1D" ;
+    ns1:observed_frequencies "399.78219837825"^^xsd:float ;
+    ns1:pulse_program "Custom" ;
+    ns1:pulse_program_custom "single_pulse_dec" .
 
-<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_qHNMR_400MHz_JDX/Solution> a ns1:CHEBI_75958 ;
-    ns1:BFO_0000051 ns1:CHEBI_85365,
+<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_qHNMR_400MHz_JDX/Solution> a ns2:CHEBI_75958 ;
+    ns2:BFO_0000051 ns2:CHEBI_85365,
         <https://pubchem.ncbi.nlm.nih.gov/compound/440917> .
 
-<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_qHNMR_400MHz_JDX/Spectrometer> a ns1:OBI_0000566 .
+<https://doi.org/10.7910/DVN/2UEA9M/Limonene_7020ug200uL_CDCl3_qHNMR_400MHz_JDX/Spectrometer> a ns2:OBI_0000566 .
 
-ns1:CHEBI_85365 a ns2:NmrSolvent ;
+ns2:CHEBI_85365 a ns1:NmrSolvent ;
     rdfs:label "chloroform-d" ;
-    ns1:CHEBI_IUPAC_NAME "trichloro(deuterio)methane" ;
-    ns1:CHEBI_inchi "InChI=1S/CHCl3/c2-1(3)4/h1H/i1D" ;
-    ns1:CHEBI_inchikey "HEDRZPFGACZZDS-MICDWDOJSA-N" ;
-    ns1:CHEBI_smiles "[2H]C(Cl)(Cl)Cl" .
+    ns2:CHEBI_IUPAC_NAME "trichloro(deuterio)methane" ;
+    ns2:CHEBI_inchi "InChI=1S/CHCl3/c2-1(3)4/h1H/i1D" ;
+    ns2:CHEBI_inchikey "HEDRZPFGACZZDS-MICDWDOJSA-N" ;
+    ns2:CHEBI_smiles "[2H]C(Cl)(Cl)Cl" .
 
-<https://pubchem.ncbi.nlm.nih.gov/compound/440917> a ns2:NmrSample ;
+<https://pubchem.ncbi.nlm.nih.gov/compound/440917> a ns1:NmrSample ;
     rdfs:label "D-Limonene" ;
-    ns1:CHEBI_IUPAC_NAME "(4R)-1-methyl-4-prop-1-en-2-ylcyclohexene" ;
-    ns1:CHEBI_formula "C10H16" ;
-    ns1:CHEBI_inchi "InChI=1S/C10H16/c1-8(2)10-6-4-9(3)5-7-10/h4,10H,1,5-7H2,2-3H3/t10-/m0/s1" ;
-    ns1:CHEBI_inchikey "XMGQYMWWDOXHJM-JTQLQIEISA-N" ;
-    ns1:CHEBI_smiles "CC1=CCC(CC1)C(=C)C" ;
-    ns1:IAO_0000235 <https://doi.org/10.7910/DVN/2UEA9M/JOCQYF> .
+    ns2:CHEBI_IUPAC_NAME "(4R)-1-methyl-4-prop-1-en-2-ylcyclohexene" ;
+    ns2:CHEBI_formula "C10H16" ;
+    ns2:CHEBI_inchi "InChI=1S/C10H16/c1-8(2)10-6-4-9(3)5-7-10/h4,10H,1,5-7H2,2-3H3/t10-/m0/s1" ;
+    ns2:CHEBI_inchikey "XMGQYMWWDOXHJM-JTQLQIEISA-N" ;
+    ns2:CHEBI_smiles "CC1=CCC(CC1)C(=C)C" ;
+    ns2:IAO_0000235 <https://doi.org/10.7910/DVN/2UEA9M/JOCQYF> .
 

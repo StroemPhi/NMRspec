@@ -1,0 +1,138 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ns1: <https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/> .
+@prefix ns2: <http://purl.obolibrary.org/obo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://doi.org/10.7910/DVN/BZYA8H> a ns1:NmrSpecRecordCollection ;
+    rdfs:label "SitosterolBeta 400MHz CDCl3 NMR data" ;
+    ns2:BFO_0000051 <https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/13C>,
+        <https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/1H>,
+        <https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/HMBC>,
+        <https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/HSQC>,
+        <https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/gCOSY> ;
+    ns2:IAO_0000136 <https://pubchem.ncbi.nlm.nih.gov/compound/222284> ;
+    dc:creator "Bisson, Jonathan (University of Illinois at Chicago) - ORCID: 0000-0003-1640-9989",
+        "Chen, Shao Nong (University of Illinois at Chicago) - ORCID: 0000-0003-0748-0863",
+        "Pauli, Guido (University of Illinois at Chicago) - ORCID: 0000-0003-1022-4326",
+        "Simmler, Charlotte (University of Illinois at Chicago) - ORCID: 0000-0002-6923-2630",
+        "Youn, Isoo (University of Illinois at Chicago) - ORCID: 0000-0002-8851-0720" ;
+    dc:description "NMR data for Beta-Sitosterol Contains: 1D: 1H, 13C 2D: COSY, HSQC, HMBC as raw NMR data in JEOL format, and jdx files. (2018-03-26). Related Publication: Can Invalid Bioactives Undermine Natural Product-Based Drug Discovery? J. Med. Chem. doi: 10.1021/acs.jmedchem.5b01009 https://doi.org/10.1021/acs.jmedchem.5b01009. Related Material: USP # 1612947 Lot # RO26A0 3.20 mg 3mm Tube Cambridge Isotope DML-10-10X1 Lot #00626TA (Aldrich 494275-10g) Solvent volume 200 μL." ;
+    dc:license "https://creativecommons.org/share-your-work/public-domain/cc0"^^xsd:anyURI,
+        "CC0 - \"Public Domain Dedication\"" ;
+    dc:source "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/BZYA8H"^^xsd:anyURI,
+        "Harvard Dataverse" ;
+    schema:dateCreated "2018-04-20T00:00:00"^^xsd:dateTime .
+
+<https://doi.org/10.7910/DVN/BZYA8H/94ENZN> a ns2:CHEMINF_000114 ;
+    rdfs:label "sitosterol.mol" .
+
+<https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/13C> a ns1:NmrSpecRecord ;
+    ns2:OBI_0000312 <https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/13C/Assay> ;
+    dc:source "13C.jdx" .
+
+<https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/13C/Assay> a ns2:CHMO_0000613 ;
+    ns2:OBI_0000293 <https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/13C/Solution>,
+        <https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/13C/Spectrometer> ;
+    ns1:acquisition_nuclei "13C" ;
+    ns1:has_dimension "1D" ;
+    ns1:observed_frequencies "100.525303325165"^^xsd:float ;
+    ns1:pulse_program "NMR" .
+
+<https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/13C/Solution> a ns2:CHEBI_75958 ;
+    ns2:BFO_0000051 ns2:CHEBI_85365,
+        <https://pubchem.ncbi.nlm.nih.gov/compound/222284> .
+
+<https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/13C/Spectrometer> a ns2:OBI_0000566 .
+
+<https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/1H> a ns1:NmrSpecRecord ;
+    ns2:OBI_0000312 <https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/1H/Assay> ;
+    dc:source "1H.jdx" .
+
+<https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/1H/Assay> a ns2:CHMO_0000613 ;
+    ns2:OBI_0000293 <https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/1H/Solution>,
+        <https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/1H/Spectrometer> ;
+    ns1:acquisition_nuclei "1H" ;
+    ns1:has_dimension "1D" ;
+    ns1:observed_frequencies "399.78219837825"^^xsd:float ;
+    ns1:pulse_program "NMR" .
+
+<https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/1H/Solution> a ns2:CHEBI_75958 ;
+    ns2:BFO_0000051 ns2:CHEBI_85365,
+        <https://pubchem.ncbi.nlm.nih.gov/compound/222284> .
+
+<https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/1H/Spectrometer> a ns2:OBI_0000566 .
+
+<https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/HMBC> a ns1:NmrSpecRecord ;
+    ns2:OBI_0000312 <https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/HMBC/Assay> ;
+    dc:source "HMBC.jdx" .
+
+<https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/HMBC/Assay> a ns2:CHMO_0000613 ;
+    ns2:OBI_0000293 <https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/HMBC/Solution>,
+        <https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/HMBC/Spectrometer> ;
+    ns1:acquisition_nuclei "13C",
+        "1H" ;
+    ns1:has_dimension "2D" ;
+    ns1:observed_frequencies "399.78219837825"^^xsd:float ;
+    ns1:pulse_program "HMBC" .
+
+<https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/HMBC/Solution> a ns2:CHEBI_75958 ;
+    ns2:BFO_0000051 ns2:CHEBI_85365,
+        <https://pubchem.ncbi.nlm.nih.gov/compound/222284> .
+
+<https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/HMBC/Spectrometer> a ns2:OBI_0000566 .
+
+<https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/HSQC> a ns1:NmrSpecRecord ;
+    ns2:OBI_0000312 <https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/HSQC/Assay> ;
+    dc:source "HSQC.jdx" .
+
+<https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/HSQC/Assay> a ns2:CHMO_0000613 ;
+    ns2:OBI_0000293 <https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/HSQC/Solution>,
+        <https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/HSQC/Spectrometer> ;
+    ns1:acquisition_nuclei "13C",
+        "1H" ;
+    ns1:has_dimension "2D" ;
+    ns1:observed_frequencies "399.78219837825"^^xsd:float ;
+    ns1:pulse_program "HSQC" .
+
+<https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/HSQC/Solution> a ns2:CHEBI_75958 ;
+    ns2:BFO_0000051 ns2:CHEBI_85365,
+        <https://pubchem.ncbi.nlm.nih.gov/compound/222284> .
+
+<https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/HSQC/Spectrometer> a ns2:OBI_0000566 .
+
+<https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/gCOSY> a ns1:NmrSpecRecord ;
+    ns2:OBI_0000312 <https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/gCOSY/Assay> ;
+    dc:source "gCOSY.jdx" .
+
+<https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/gCOSY/Assay> a ns2:CHMO_0000613 ;
+    ns2:OBI_0000293 <https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/gCOSY/Solution>,
+        <https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/gCOSY/Spectrometer> ;
+    ns1:acquisition_nuclei "1H" ;
+    ns1:has_dimension "2D" ;
+    ns1:observed_frequencies "399.78219837825"^^xsd:float ;
+    ns1:pulse_program "COSY" .
+
+<https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/gCOSY/Solution> a ns2:CHEBI_75958 ;
+    ns2:BFO_0000051 ns2:CHEBI_85365,
+        <https://pubchem.ncbi.nlm.nih.gov/compound/222284> .
+
+<https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/gCOSY/Spectrometer> a ns2:OBI_0000566 .
+
+ns2:CHEBI_85365 a ns1:NmrSolvent ;
+    rdfs:label "chloroform-d" ;
+    ns2:CHEBI_IUPAC_NAME "trichloro(deuterio)methane" ;
+    ns2:CHEBI_inchi "InChI=1S/CHCl3/c2-1(3)4/h1H/i1D" ;
+    ns2:CHEBI_inchikey "HEDRZPFGACZZDS-MICDWDOJSA-N" ;
+    ns2:CHEBI_smiles "[2H]C(Cl)(Cl)Cl" .
+
+<https://pubchem.ncbi.nlm.nih.gov/compound/222284> a ns1:NmrSample ;
+    rdfs:label "beta-Sitosterol" ;
+    ns2:CHEBI_IUPAC_NAME "(3S,8S,9S,10R,13R,14S,17R)-17-[(2R,5R)-5-ethyl-6-methylheptan-2-yl]-10,13-dimethyl-2,3,4,7,8,9,11,12,14,15,16,17-dodecahydro-1H-cyclopenta[a]phenanthren-3-ol" ;
+    ns2:CHEBI_formula "C29H50O" ;
+    ns2:CHEBI_inchi "InChI=1S/C29H50O/c1-7-21(19(2)3)9-8-20(4)25-12-13-26-24-11-10-22-18-23(30)14-16-28(22,5)27(24)15-17-29(25,26)6/h10,19-21,23-27,30H,7-9,11-18H2,1-6H3/t20-,21-,23+,24+,25-,26+,27+,28+,29-/m1/s1" ;
+    ns2:CHEBI_inchikey "KZJWDPNRJALLNS-VJSFXXLFSA-N" ;
+    ns2:CHEBI_smiles "CCC(CCC(C)C1CCC2C1(CCC3C2CC=C4C3(CCC(C4)O)C)C)C(C)C" ;
+    ns2:IAO_0000235 <https://doi.org/10.7910/DVN/BZYA8H/94ENZN> .
+

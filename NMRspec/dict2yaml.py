@@ -121,10 +121,13 @@ def get_assay_data(jdx_dict, nmr_record) -> PulsedNmrAssay:
              "id": "https://pubchem.ncbi.nlm.nih.gov/compound/71601",
              "smiles": "C1([2H])=C([2H])C([2H])=C([2H])C([2H])=C1[2H]"}
         ]
+        solvent_name = None
         if '.solvent name' in jdx_dict:
             solvent_name = jdx_dict['.solvent name']
         elif '.solventname' in jdx_dict:
             solvent_name = jdx_dict['.solventname']
+        else:
+            exit(f"ERROR: no solvent provided in the JCAMP-DX -> {jdx_dict['filename']} cannot be parsed")
         solvent_dict = {}
         for possible_solvent in nmr_solvents:
             for key, value in possible_solvent.items():
