@@ -399,25 +399,28 @@ def get_assay_data(jdx_dict, nmr_record) -> PulsedNmrAssay:
 
 
 if __name__ == '__main__':
-
+    # traverse input folder to parse folders containing parsable datasets
     for root, subdirectories, files in os.walk(input_path):
         for subdirectory in subdirectories:
             directory = f"{os.path.join(root, subdirectory)}/"
-            # get the context infos from the provided YAML
-            dataset = load_dataset_metadata(directory)
-            # print(dataset['description'])
+            # get the context infos from the provided YAML, if the YAML doesn't exist, skip the folder
+            try:
+                dataset = load_dataset_metadata(directory)
+            except FileNotFoundError:
+                continue
             sample = get_sample(dataset)
+            # parse the JCAMP_DX files
             nmr_records = []
             for fname in os.listdir(os.path.join(directory)):
-                if fname.endswith('.jdx') or fname.endswith('.dx'):
+                if fname.lower().endswith('.jdx') or fname.lower().endswith('.dx'):
                     jdx_dict = jdx2dict(f"{directory}{fname}")
-                    print(f"-----\nparsing: {fname}")
+                    print(f"parsing: {fname}")
                     record = get_record_provenance(dataset, jdx_dict)
                     assay = get_assay_data(jdx_dict, record)
                     record['output_of_nmr_assay'] = assay
                     nmr_records.append(record)
             dataset['contains_assay_records'] = nmr_records
-            output_file = dataset['name'].replace(' ','_').replace('/','_')
+            output_file = dataset['name'].replace(' ', '_').replace('/', '_')
             with open(f"{output_path}{output_file}.yaml", 'w', encoding='utf-8') as f:
                 f.write(
                     "# -*- coding: utf-8 -*-\n\n"
@@ -429,5 +432,5 @@ if __name__ == '__main__':
                 )
                 f.write(yaml_dumper.dumps(dataset))
 
-                print("-----\nAll went according to the plan! And the parsed dataset was saved to:\n"
-                      f"{output_path}{output_file}.yaml")
+                print("All went according to the plan! And the parsed dataset was saved to:\n"
+                      f"{output_path}{output_file}.yaml\n-----")
