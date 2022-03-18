@@ -3,12 +3,12 @@
 #################################################
 # a JCAMP-DX dataset parsed to YAML
 # using https://github.com/StroemPhi/NMRspec
-# created: 2022-03-17
+# created: 2022-03-18
 #################################################
 
 id: doi:10.7910/DVN/ZAZDNM
 contains_assay_records:
-- id: doi:10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_13CNMR_400MHz_JDX
+- id: doi:10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_13CNMR_400MHz_JDX
   source: Rutin_3080ug200uL_DMSOd6_13CNMR_400MHz_JDX.jdx
   output_of_nmr_assay:
     solution:
@@ -30,17 +30,17 @@ contains_assay_records:
         formula: C27H30O16
         iupac_name: 2-(3,4-dihydroxyphenyl)-5,7-dihydroxy-3-[(2S,3R,4S,5S,6R)-3,4,5-trihydroxy-6-[[(2R,3R,4R,5R,6S)-3,4,5-trihydroxy-6-methyloxan-2-yl]oxymethyl]oxan-2-yl]oxychromen-4-one
         name: Rutin
-      id: doi:10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_13CNMR_400MHz_JDX/Solution
+      id: doi:10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_13CNMR_400MHz_JDX/Solution
     spectrometer:
-      id: doi:10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_13CNMR_400MHz_JDX/Spectrometer
+      id: doi:10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_13CNMR_400MHz_JDX/Spectrometer
     acquisition_nuclei:
     - 13C
     has_dimension: 1D
     pulse_program: NMR
-    id: doi:10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_13CNMR_400MHz_JDX/Assay
+    id: doi:10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_13CNMR_400MHz_JDX/Assay
     observed_frequencies:
     - 100.525303325165
-- id: doi:10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_COSY_400MHz_JDX
+- id: doi:10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_COSY_400MHz_JDX
   source: Rutin_3080ug200uL_DMSOd6_COSY_400MHz_JDX.jdx
   output_of_nmr_assay:
     solution:
@@ -62,18 +62,18 @@ contains_assay_records:
         formula: C27H30O16
         iupac_name: 2-(3,4-dihydroxyphenyl)-5,7-dihydroxy-3-[(2S,3R,4S,5S,6R)-3,4,5-trihydroxy-6-[[(2R,3R,4R,5R,6S)-3,4,5-trihydroxy-6-methyloxan-2-yl]oxymethyl]oxan-2-yl]oxychromen-4-one
         name: Rutin
-      id: doi:10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_COSY_400MHz_JDX/Solution
+      id: doi:10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_COSY_400MHz_JDX/Solution
     spectrometer:
-      id: doi:10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_COSY_400MHz_JDX/Spectrometer
+      id: doi:10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_COSY_400MHz_JDX/Spectrometer
     acquisition_nuclei:
     - 1H
     - 1H
     has_dimension: 2D
     pulse_program: COSY
-    id: doi:10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_COSY_400MHz_JDX/Assay
+    id: doi:10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_COSY_400MHz_JDX/Assay
     observed_frequencies:
     - 399.78219837825
-- id: doi:10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_HMBC_400MHz_JDX
+- id: doi:10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_HMBC_400MHz_JDX
   source: Rutin_3080ug200uL_DMSOd6_HMBC_400MHz_JDX.jdx
   output_of_nmr_assay:
     solution:
@@ -95,18 +95,18 @@ contains_assay_records:
         formula: C27H30O16
         iupac_name: 2-(3,4-dihydroxyphenyl)-5,7-dihydroxy-3-[(2S,3R,4S,5S,6R)-3,4,5-trihydroxy-6-[[(2R,3R,4R,5R,6S)-3,4,5-trihydroxy-6-methyloxan-2-yl]oxymethyl]oxan-2-yl]oxychromen-4-one
         name: Rutin
-      id: doi:10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_HMBC_400MHz_JDX/Solution
+      id: doi:10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_HMBC_400MHz_JDX/Solution
     spectrometer:
-      id: doi:10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_HMBC_400MHz_JDX/Spectrometer
+      id: doi:10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_HMBC_400MHz_JDX/Spectrometer
     acquisition_nuclei:
     - 13C
     - 1H
     has_dimension: 2D
     pulse_program: HMBC
-    id: doi:10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_HMBC_400MHz_JDX/Assay
+    id: doi:10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_HMBC_400MHz_JDX/Assay
     observed_frequencies:
     - 399.78219837825
-- id: doi:10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_HSQC_400MHz_JDX
+- id: doi:10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_HSQC_400MHz_JDX
   source: Rutin_3080ug200uL_DMSOd6_HSQC_400MHz_JDX.jdx
   output_of_nmr_assay:
     solution:
@@ -128,18 +128,18 @@ contains_assay_records:
         formula: C27H30O16
         iupac_name: 2-(3,4-dihydroxyphenyl)-5,7-dihydroxy-3-[(2S,3R,4S,5S,6R)-3,4,5-trihydroxy-6-[[(2R,3R,4R,5R,6S)-3,4,5-trihydroxy-6-methyloxan-2-yl]oxymethyl]oxan-2-yl]oxychromen-4-one
         name: Rutin
-      id: doi:10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_HSQC_400MHz_JDX/Solution
+      id: doi:10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_HSQC_400MHz_JDX/Solution
     spectrometer:
-      id: doi:10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_HSQC_400MHz_JDX/Spectrometer
+      id: doi:10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_HSQC_400MHz_JDX/Spectrometer
     acquisition_nuclei:
     - 13C
     - 1H
     has_dimension: 2D
     pulse_program: HSQC
-    id: doi:10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_HSQC_400MHz_JDX/Assay
+    id: doi:10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_HSQC_400MHz_JDX/Assay
     observed_frequencies:
     - 399.78219837825
-- id: doi:10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_qHNMR_400MHz_JDX
+- id: doi:10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_qHNMR_400MHz_JDX
   source: Rutin_3080ug200uL_DMSOd6_qHNMR_400MHz_JDX.jdx
   output_of_nmr_assay:
     solution:
@@ -161,14 +161,14 @@ contains_assay_records:
         formula: C27H30O16
         iupac_name: 2-(3,4-dihydroxyphenyl)-5,7-dihydroxy-3-[(2S,3R,4S,5S,6R)-3,4,5-trihydroxy-6-[[(2R,3R,4R,5R,6S)-3,4,5-trihydroxy-6-methyloxan-2-yl]oxymethyl]oxan-2-yl]oxychromen-4-one
         name: Rutin
-      id: doi:10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_qHNMR_400MHz_JDX/Solution
+      id: doi:10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_qHNMR_400MHz_JDX/Solution
     spectrometer:
-      id: doi:10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_qHNMR_400MHz_JDX/Spectrometer
+      id: doi:10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_qHNMR_400MHz_JDX/Spectrometer
     acquisition_nuclei:
     - 1H
     has_dimension: 1D
     pulse_program: Custom
-    id: doi:10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_qHNMR_400MHz_JDX/Assay
+    id: doi:10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_qHNMR_400MHz_JDX/Assay
     pulse_program_custom: single_pulse_dec
     observed_frequencies:
     - 399.78219837825

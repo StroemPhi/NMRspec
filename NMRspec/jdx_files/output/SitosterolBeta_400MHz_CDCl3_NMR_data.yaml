@@ -1,0 +1,202 @@
+# -*- coding: utf-8 -*-
+
+#################################################
+# a JCAMP-DX dataset parsed to YAML
+# using https://github.com/StroemPhi/NMRspec
+# created: 2022-03-18
+#################################################
+
+id: doi:10.7910/DVN/BZYA8H
+contains_assay_records:
+- id: doi:10.7910/DVN/BZYA8H/S1SSIF/13C
+  source: 13C.jdx
+  output_of_nmr_assay:
+    solution:
+      solvent:
+        id: CHEBI:85365
+        name: chloroform-d
+        inchi: InChI=1S/CHCl3/c2-1(3)4/h1H/i1D
+        inchikey: HEDRZPFGACZZDS-MICDWDOJSA-N
+        smiles: '[2H]C(Cl)(Cl)Cl'
+        iupac_name: trichloro(deuterio)methane
+      sample:
+        id: pubchemCID:222284
+        inchi: InChI=1S/C29H50O/c1-7-21(19(2)3)9-8-20(4)25-12-13-26-24-11-10-22-18-23(30)14-16-28(22,5)27(24)15-17-29(25,26)6/h10,19-21,23-27,30H,7-9,11-18H2,1-6H3/t20-,21-,23+,24+,25-,26+,27+,28+,29-/m1/s1
+        inchikey: KZJWDPNRJALLNS-VJSFXXLFSA-N
+        smiles: CCC(CCC(C)C1CCC2C1(CCC3C2CC=C4C3(CCC(C4)O)C)C)C(C)C
+        mol_file:
+          id: doi:10.7910/DVN/BZYA8H/94ENZN
+          name: sitosterol.mol
+        formula: C29H50O
+        iupac_name: (3S,8S,9S,10R,13R,14S,17R)-17-[(2R,5R)-5-ethyl-6-methylheptan-2-yl]-10,13-dimethyl-2,3,4,7,8,9,11,12,14,15,16,17-dodecahydro-1H-cyclopenta[a]phenanthren-3-ol
+        name: beta-Sitosterol
+      id: doi:10.7910/DVN/BZYA8H/S1SSIF/13C/Solution
+    spectrometer:
+      id: doi:10.7910/DVN/BZYA8H/S1SSIF/13C/Spectrometer
+    acquisition_nuclei:
+    - 13C
+    has_dimension: 1D
+    pulse_program: NMR
+    id: doi:10.7910/DVN/BZYA8H/S1SSIF/13C/Assay
+    observed_frequencies:
+    - 100.525303325165
+- id: doi:10.7910/DVN/BZYA8H/S1SSIF/1H
+  source: 1H.jdx
+  output_of_nmr_assay:
+    solution:
+      solvent:
+        id: CHEBI:85365
+        name: chloroform-d
+        inchi: InChI=1S/CHCl3/c2-1(3)4/h1H/i1D
+        inchikey: HEDRZPFGACZZDS-MICDWDOJSA-N
+        smiles: '[2H]C(Cl)(Cl)Cl'
+        iupac_name: trichloro(deuterio)methane
+      sample:
+        id: pubchemCID:222284
+        inchi: InChI=1S/C29H50O/c1-7-21(19(2)3)9-8-20(4)25-12-13-26-24-11-10-22-18-23(30)14-16-28(22,5)27(24)15-17-29(25,26)6/h10,19-21,23-27,30H,7-9,11-18H2,1-6H3/t20-,21-,23+,24+,25-,26+,27+,28+,29-/m1/s1
+        inchikey: KZJWDPNRJALLNS-VJSFXXLFSA-N
+        smiles: CCC(CCC(C)C1CCC2C1(CCC3C2CC=C4C3(CCC(C4)O)C)C)C(C)C
+        mol_file:
+          id: doi:10.7910/DVN/BZYA8H/94ENZN
+          name: sitosterol.mol
+        formula: C29H50O
+        iupac_name: (3S,8S,9S,10R,13R,14S,17R)-17-[(2R,5R)-5-ethyl-6-methylheptan-2-yl]-10,13-dimethyl-2,3,4,7,8,9,11,12,14,15,16,17-dodecahydro-1H-cyclopenta[a]phenanthren-3-ol
+        name: beta-Sitosterol
+      id: doi:10.7910/DVN/BZYA8H/S1SSIF/1H/Solution
+    spectrometer:
+      id: doi:10.7910/DVN/BZYA8H/S1SSIF/1H/Spectrometer
+    acquisition_nuclei:
+    - 1H
+    has_dimension: 1D
+    pulse_program: NMR
+    id: doi:10.7910/DVN/BZYA8H/S1SSIF/1H/Assay
+    observed_frequencies:
+    - 399.78219837825
+- id: doi:10.7910/DVN/BZYA8H/S1SSIF/gCOSY
+  source: gCOSY.jdx
+  output_of_nmr_assay:
+    solution:
+      solvent:
+        id: CHEBI:85365
+        name: chloroform-d
+        inchi: InChI=1S/CHCl3/c2-1(3)4/h1H/i1D
+        inchikey: HEDRZPFGACZZDS-MICDWDOJSA-N
+        smiles: '[2H]C(Cl)(Cl)Cl'
+        iupac_name: trichloro(deuterio)methane
+      sample:
+        id: pubchemCID:222284
+        inchi: InChI=1S/C29H50O/c1-7-21(19(2)3)9-8-20(4)25-12-13-26-24-11-10-22-18-23(30)14-16-28(22,5)27(24)15-17-29(25,26)6/h10,19-21,23-27,30H,7-9,11-18H2,1-6H3/t20-,21-,23+,24+,25-,26+,27+,28+,29-/m1/s1
+        inchikey: KZJWDPNRJALLNS-VJSFXXLFSA-N
+        smiles: CCC(CCC(C)C1CCC2C1(CCC3C2CC=C4C3(CCC(C4)O)C)C)C(C)C
+        mol_file:
+          id: doi:10.7910/DVN/BZYA8H/94ENZN
+          name: sitosterol.mol
+        formula: C29H50O
+        iupac_name: (3S,8S,9S,10R,13R,14S,17R)-17-[(2R,5R)-5-ethyl-6-methylheptan-2-yl]-10,13-dimethyl-2,3,4,7,8,9,11,12,14,15,16,17-dodecahydro-1H-cyclopenta[a]phenanthren-3-ol
+        name: beta-Sitosterol
+      id: doi:10.7910/DVN/BZYA8H/S1SSIF/gCOSY/Solution
+    spectrometer:
+      id: doi:10.7910/DVN/BZYA8H/S1SSIF/gCOSY/Spectrometer
+    acquisition_nuclei:
+    - 1H
+    - 1H
+    has_dimension: 2D
+    pulse_program: COSY
+    id: doi:10.7910/DVN/BZYA8H/S1SSIF/gCOSY/Assay
+    observed_frequencies:
+    - 399.78219837825
+- id: doi:10.7910/DVN/BZYA8H/S1SSIF/HMBC
+  source: HMBC.jdx
+  output_of_nmr_assay:
+    solution:
+      solvent:
+        id: CHEBI:85365
+        name: chloroform-d
+        inchi: InChI=1S/CHCl3/c2-1(3)4/h1H/i1D
+        inchikey: HEDRZPFGACZZDS-MICDWDOJSA-N
+        smiles: '[2H]C(Cl)(Cl)Cl'
+        iupac_name: trichloro(deuterio)methane
+      sample:
+        id: pubchemCID:222284
+        inchi: InChI=1S/C29H50O/c1-7-21(19(2)3)9-8-20(4)25-12-13-26-24-11-10-22-18-23(30)14-16-28(22,5)27(24)15-17-29(25,26)6/h10,19-21,23-27,30H,7-9,11-18H2,1-6H3/t20-,21-,23+,24+,25-,26+,27+,28+,29-/m1/s1
+        inchikey: KZJWDPNRJALLNS-VJSFXXLFSA-N
+        smiles: CCC(CCC(C)C1CCC2C1(CCC3C2CC=C4C3(CCC(C4)O)C)C)C(C)C
+        mol_file:
+          id: doi:10.7910/DVN/BZYA8H/94ENZN
+          name: sitosterol.mol
+        formula: C29H50O
+        iupac_name: (3S,8S,9S,10R,13R,14S,17R)-17-[(2R,5R)-5-ethyl-6-methylheptan-2-yl]-10,13-dimethyl-2,3,4,7,8,9,11,12,14,15,16,17-dodecahydro-1H-cyclopenta[a]phenanthren-3-ol
+        name: beta-Sitosterol
+      id: doi:10.7910/DVN/BZYA8H/S1SSIF/HMBC/Solution
+    spectrometer:
+      id: doi:10.7910/DVN/BZYA8H/S1SSIF/HMBC/Spectrometer
+    acquisition_nuclei:
+    - 13C
+    - 1H
+    has_dimension: 2D
+    pulse_program: HMBC
+    id: doi:10.7910/DVN/BZYA8H/S1SSIF/HMBC/Assay
+    observed_frequencies:
+    - 399.78219837825
+- id: doi:10.7910/DVN/BZYA8H/S1SSIF/HSQC
+  source: HSQC.jdx
+  output_of_nmr_assay:
+    solution:
+      solvent:
+        id: CHEBI:85365
+        name: chloroform-d
+        inchi: InChI=1S/CHCl3/c2-1(3)4/h1H/i1D
+        inchikey: HEDRZPFGACZZDS-MICDWDOJSA-N
+        smiles: '[2H]C(Cl)(Cl)Cl'
+        iupac_name: trichloro(deuterio)methane
+      sample:
+        id: pubchemCID:222284
+        inchi: InChI=1S/C29H50O/c1-7-21(19(2)3)9-8-20(4)25-12-13-26-24-11-10-22-18-23(30)14-16-28(22,5)27(24)15-17-29(25,26)6/h10,19-21,23-27,30H,7-9,11-18H2,1-6H3/t20-,21-,23+,24+,25-,26+,27+,28+,29-/m1/s1
+        inchikey: KZJWDPNRJALLNS-VJSFXXLFSA-N
+        smiles: CCC(CCC(C)C1CCC2C1(CCC3C2CC=C4C3(CCC(C4)O)C)C)C(C)C
+        mol_file:
+          id: doi:10.7910/DVN/BZYA8H/94ENZN
+          name: sitosterol.mol
+        formula: C29H50O
+        iupac_name: (3S,8S,9S,10R,13R,14S,17R)-17-[(2R,5R)-5-ethyl-6-methylheptan-2-yl]-10,13-dimethyl-2,3,4,7,8,9,11,12,14,15,16,17-dodecahydro-1H-cyclopenta[a]phenanthren-3-ol
+        name: beta-Sitosterol
+      id: doi:10.7910/DVN/BZYA8H/S1SSIF/HSQC/Solution
+    spectrometer:
+      id: doi:10.7910/DVN/BZYA8H/S1SSIF/HSQC/Spectrometer
+    acquisition_nuclei:
+    - 13C
+    - 1H
+    has_dimension: 2D
+    pulse_program: HSQC
+    id: doi:10.7910/DVN/BZYA8H/S1SSIF/HSQC/Assay
+    observed_frequencies:
+    - 399.78219837825
+assays_sample:
+  id: pubchemCID:222284
+  inchi: InChI=1S/C29H50O/c1-7-21(19(2)3)9-8-20(4)25-12-13-26-24-11-10-22-18-23(30)14-16-28(22,5)27(24)15-17-29(25,26)6/h10,19-21,23-27,30H,7-9,11-18H2,1-6H3/t20-,21-,23+,24+,25-,26+,27+,28+,29-/m1/s1
+  inchikey: KZJWDPNRJALLNS-VJSFXXLFSA-N
+  smiles: CCC(CCC(C)C1CCC2C1(CCC3C2CC=C4C3(CCC(C4)O)C)C)C(C)C
+  mol_file:
+    id: doi:10.7910/DVN/BZYA8H/94ENZN
+    name: sitosterol.mol
+  formula: C29H50O
+  iupac_name: (3S,8S,9S,10R,13R,14S,17R)-17-[(2R,5R)-5-ethyl-6-methylheptan-2-yl]-10,13-dimethyl-2,3,4,7,8,9,11,12,14,15,16,17-dodecahydro-1H-cyclopenta[a]phenanthren-3-ol
+  name: beta-Sitosterol
+source: Harvard Dataverse
+description: 'NMR data for Beta-Sitosterol Contains: 1D: 1H, 13C 2D: COSY, HSQC, HMBC
+  as raw NMR data in JEOL format, and jdx files. (2018-03-26). Related Publication:
+  Can Invalid Bioactives Undermine Natural Product-Based Drug Discovery? J. Med. Chem.
+  doi: 10.1021/acs.jmedchem.5b01009 https://doi.org/10.1021/acs.jmedchem.5b01009.
+  Related Material: USP # 1612947 Lot # RO26A0 3.20 mg 3mm Tube Cambridge Isotope
+  DML-10-10X1 Lot #00626TA (Aldrich 494275-10g) Solvent volume 200 μL.'
+source_uri: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/BZYA8H
+date_created: '2018-04-20T00:00:00'
+licence_str: CC0 - "Public Domain Dedication"
+licence_url: https://creativecommons.org/share-your-work/public-domain/cc0
+created_by:
+- 'Youn, Isoo (University of Illinois at Chicago) - ORCID: 0000-0002-8851-0720'
+- 'Chen, Shao Nong (University of Illinois at Chicago) - ORCID: 0000-0003-0748-0863'
+- 'Simmler, Charlotte (University of Illinois at Chicago) - ORCID: 0000-0002-6923-2630'
+- 'Bisson, Jonathan (University of Illinois at Chicago) - ORCID: 0000-0003-1640-9989'
+- 'Pauli, Guido (University of Illinois at Chicago) - ORCID: 0000-0003-1022-4326'
+name: SitosterolBeta 400MHz CDCl3 NMR data

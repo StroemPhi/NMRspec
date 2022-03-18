@@ -1,0 +1,139 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ns1: <http://purl.obolibrary.org/obo/> .
+@prefix ns2: <https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://doi.org/10.7910/DVN/RXF88X> a ns2:NmrSpecRecordCollection ;
+    rdfs:label "Ursolic Acid 400MHz DMSOd6 NMR data" ;
+    ns1:BFO_0000051 <https://doi.org/10.7910/DVN/RXF88X/VOSIBE/13C_NMR>,
+        <https://doi.org/10.7910/DVN/RXF88X/VOSIBE/HMBC>,
+        <https://doi.org/10.7910/DVN/RXF88X/VOSIBE/HSQC>,
+        <https://doi.org/10.7910/DVN/RXF88X/VOSIBE/Proton_NMR>,
+        <https://doi.org/10.7910/DVN/RXF88X/VOSIBE/gCOSY> ;
+    ns1:IAO_0000136 <https://pubchem.ncbi.nlm.nih.gov/compound/64945> ;
+    dc:creator "Bisson, Jonathan (University of Illinois at Chicago) - ORCID: 0000-0003-1640-9989",
+        "Chen, Shao Nong (University of Illinois at Chicago) - ORCID: 0000-0003-0748-0863",
+        "Pauli, Guido (University of Illinois at Chicago) - ORCID: 0000-0003-1022-4326",
+        "Simmler, Charlotte (University of Illinois at Chicago) - ORCID: 0000-0002-6923-2630",
+        "Youn, Isoo (University of Illinois at Chicago) - ORCID: 0000-0002-8851-0720" ;
+    dc:description "NMR data for Contains: 1D: 1H, 13C 2D: COSY, HSQC, HMBC Attributed 13C spectrum (2018-03-23). Related Publication: Can Invalid Bioactives Undermine Natural Product-Based Drug Discovery? J. Med. Chem. doi: 10.1021/acs.jmedchem.5b01009 https://doi.org/10.1021/acs.jmedchem.5b01009. Related Material: <1707770> Lot # <3.16> mg 3mm Tube Cambridge Isotope DML-10-10X1 Lot #10E-645 Solvent volume 200 μL." ;
+    dc:license "https://creativecommons.org/share-your-work/public-domain/cc0"^^xsd:anyURI,
+        "CC0 - \"Public Domain Dedication\"" ;
+    dc:source "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/RXF88X"^^xsd:anyURI,
+        "Harvard Dataverse" ;
+    schema:dateCreated "2018-04-20T00:00:00"^^xsd:dateTime .
+
+<https://doi.org/10.7910/DVN/RXF88X/5ASZET> a ns1:CHEMINF_000114 ;
+    rdfs:label "UrsolicAcid.mol" .
+
+<https://doi.org/10.7910/DVN/RXF88X/VOSIBE/13C_NMR> a ns2:NmrSpecRecord ;
+    ns1:OBI_0000312 <https://doi.org/10.7910/DVN/RXF88X/VOSIBE/13C_NMR/Assay> ;
+    dc:source "13C_NMR.jdx" .
+
+<https://doi.org/10.7910/DVN/RXF88X/VOSIBE/13C_NMR/Assay> a ns1:CHMO_0000613 ;
+    ns1:OBI_0000293 <https://doi.org/10.7910/DVN/RXF88X/VOSIBE/13C_NMR/Solution>,
+        <https://doi.org/10.7910/DVN/RXF88X/VOSIBE/13C_NMR/Spectrometer> ;
+    ns2:acquisition_nuclei "13C" ;
+    ns2:has_dimension "1D" ;
+    ns2:observed_frequencies "100.525303325165"^^xsd:float ;
+    ns2:pulse_program "NMR" .
+
+<https://doi.org/10.7910/DVN/RXF88X/VOSIBE/13C_NMR/Solution> a ns1:CHEBI_75958 ;
+    ns1:BFO_0000051 <https://pubchem.ncbi.nlm.nih.gov/compound/64945>,
+        <https://pubchem.ncbi.nlm.nih.gov/compound/75151> .
+
+<https://doi.org/10.7910/DVN/RXF88X/VOSIBE/13C_NMR/Spectrometer> a ns1:OBI_0000566 .
+
+<https://doi.org/10.7910/DVN/RXF88X/VOSIBE/HMBC> a ns2:NmrSpecRecord ;
+    ns1:OBI_0000312 <https://doi.org/10.7910/DVN/RXF88X/VOSIBE/HMBC/Assay> ;
+    dc:source "HMBC.jdx" .
+
+<https://doi.org/10.7910/DVN/RXF88X/VOSIBE/HMBC/Assay> a ns1:CHMO_0000613 ;
+    ns1:OBI_0000293 <https://doi.org/10.7910/DVN/RXF88X/VOSIBE/HMBC/Solution>,
+        <https://doi.org/10.7910/DVN/RXF88X/VOSIBE/HMBC/Spectrometer> ;
+    ns2:acquisition_nuclei "13C",
+        "1H" ;
+    ns2:has_dimension "2D" ;
+    ns2:observed_frequencies "399.78219837825"^^xsd:float ;
+    ns2:pulse_program "HMBC" .
+
+<https://doi.org/10.7910/DVN/RXF88X/VOSIBE/HMBC/Solution> a ns1:CHEBI_75958 ;
+    ns1:BFO_0000051 <https://pubchem.ncbi.nlm.nih.gov/compound/64945>,
+        <https://pubchem.ncbi.nlm.nih.gov/compound/75151> .
+
+<https://doi.org/10.7910/DVN/RXF88X/VOSIBE/HMBC/Spectrometer> a ns1:OBI_0000566 .
+
+<https://doi.org/10.7910/DVN/RXF88X/VOSIBE/HSQC> a ns2:NmrSpecRecord ;
+    ns1:OBI_0000312 <https://doi.org/10.7910/DVN/RXF88X/VOSIBE/HSQC/Assay> ;
+    dc:source "HSQC.jdx" .
+
+<https://doi.org/10.7910/DVN/RXF88X/VOSIBE/HSQC/Assay> a ns1:CHMO_0000613 ;
+    ns1:OBI_0000293 <https://doi.org/10.7910/DVN/RXF88X/VOSIBE/HSQC/Solution>,
+        <https://doi.org/10.7910/DVN/RXF88X/VOSIBE/HSQC/Spectrometer> ;
+    ns2:acquisition_nuclei "13C",
+        "1H" ;
+    ns2:has_dimension "2D" ;
+    ns2:observed_frequencies "399.78219837825"^^xsd:float ;
+    ns2:pulse_program "HSQC" .
+
+<https://doi.org/10.7910/DVN/RXF88X/VOSIBE/HSQC/Solution> a ns1:CHEBI_75958 ;
+    ns1:BFO_0000051 <https://pubchem.ncbi.nlm.nih.gov/compound/64945>,
+        <https://pubchem.ncbi.nlm.nih.gov/compound/75151> .
+
+<https://doi.org/10.7910/DVN/RXF88X/VOSIBE/HSQC/Spectrometer> a ns1:OBI_0000566 .
+
+<https://doi.org/10.7910/DVN/RXF88X/VOSIBE/Proton_NMR> a ns2:NmrSpecRecord ;
+    ns1:OBI_0000312 <https://doi.org/10.7910/DVN/RXF88X/VOSIBE/Proton_NMR/Assay> ;
+    dc:source "Proton_NMR.jdx" .
+
+<https://doi.org/10.7910/DVN/RXF88X/VOSIBE/Proton_NMR/Assay> a ns1:CHMO_0000613 ;
+    ns1:OBI_0000293 <https://doi.org/10.7910/DVN/RXF88X/VOSIBE/Proton_NMR/Solution>,
+        <https://doi.org/10.7910/DVN/RXF88X/VOSIBE/Proton_NMR/Spectrometer> ;
+    ns2:acquisition_nuclei "1H" ;
+    ns2:has_dimension "1D" ;
+    ns2:observed_frequencies "399.78219837825"^^xsd:float ;
+    ns2:pulse_program "Custom" ;
+    ns2:pulse_program_custom "single_pulse_dec" .
+
+<https://doi.org/10.7910/DVN/RXF88X/VOSIBE/Proton_NMR/Solution> a ns1:CHEBI_75958 ;
+    ns1:BFO_0000051 <https://pubchem.ncbi.nlm.nih.gov/compound/64945>,
+        <https://pubchem.ncbi.nlm.nih.gov/compound/75151> .
+
+<https://doi.org/10.7910/DVN/RXF88X/VOSIBE/Proton_NMR/Spectrometer> a ns1:OBI_0000566 .
+
+<https://doi.org/10.7910/DVN/RXF88X/VOSIBE/gCOSY> a ns2:NmrSpecRecord ;
+    ns1:OBI_0000312 <https://doi.org/10.7910/DVN/RXF88X/VOSIBE/gCOSY/Assay> ;
+    dc:source "gCOSY.jdx" .
+
+<https://doi.org/10.7910/DVN/RXF88X/VOSIBE/gCOSY/Assay> a ns1:CHMO_0000613 ;
+    ns1:OBI_0000293 <https://doi.org/10.7910/DVN/RXF88X/VOSIBE/gCOSY/Solution>,
+        <https://doi.org/10.7910/DVN/RXF88X/VOSIBE/gCOSY/Spectrometer> ;
+    ns2:acquisition_nuclei "1H" ;
+    ns2:has_dimension "2D" ;
+    ns2:observed_frequencies "399.78219837825"^^xsd:float ;
+    ns2:pulse_program "COSY" .
+
+<https://doi.org/10.7910/DVN/RXF88X/VOSIBE/gCOSY/Solution> a ns1:CHEBI_75958 ;
+    ns1:BFO_0000051 <https://pubchem.ncbi.nlm.nih.gov/compound/64945>,
+        <https://pubchem.ncbi.nlm.nih.gov/compound/75151> .
+
+<https://doi.org/10.7910/DVN/RXF88X/VOSIBE/gCOSY/Spectrometer> a ns1:OBI_0000566 .
+
+<https://pubchem.ncbi.nlm.nih.gov/compound/75151> a ns2:NmrSolvent ;
+    rdfs:label "dimethyl sulfoxide-d6" ;
+    ns1:CHEBI_IUPAC_NAME "trideuterio(trideuteriomethylsulfinyl)methane" ;
+    ns1:CHEBI_inchi "InChI=1S/C2H6OS/c1-4(2)3/h1-2H3/i1D3,2D3" ;
+    ns1:CHEBI_inchikey "IAZDPXIOMUYVGZ-WFGJKAKNSA-N" ;
+    ns1:CHEBI_smiles "[2H]C([2H])([2H])S(=O)C([2H])([2H])[2H]" .
+
+<https://pubchem.ncbi.nlm.nih.gov/compound/64945> a ns2:NmrSample ;
+    rdfs:label "Ursolic acid" ;
+    ns1:CHEBI_IUPAC_NAME "(1S,2R,4aS,6aR,6aS,6bR,8aR,10S,12aR,14bS)-10-hydroxy-1,2,6a,6b,9,9,12a-heptamethyl-2,3,4,5,6,6a,7,8,8a,10,11,12,13,14b-tetradecahydro-1H-picene-4a-carboxylic acid" ;
+    ns1:CHEBI_formula "C30H48O3" ;
+    ns1:CHEBI_inchi "InChI=1S/C30H48O3/c1-18-10-15-30(25(32)33)17-16-28(6)20(24(30)19(18)2)8-9-22-27(5)13-12-23(31)26(3,4)21(27)11-14-29(22,28)7/h8,18-19,21-24,31H,9-17H2,1-7H3,(H,32,33)/t18-,19+,21+,22-,23+,24+,27+,28-,29-,30+/m1/s1" ;
+    ns1:CHEBI_inchikey "WCGUUGGRBIKTOS-GPOJBZKASA-N" ;
+    ns1:CHEBI_smiles "CC1CCC2(CCC3(C(=CCC4C3(CCC5C4(CCC(C5(C)C)O)C)C)C2C1C)C)C(=O)O" ;
+    ns1:IAO_0000235 <https://doi.org/10.7910/DVN/RXF88X/5ASZET> .
+

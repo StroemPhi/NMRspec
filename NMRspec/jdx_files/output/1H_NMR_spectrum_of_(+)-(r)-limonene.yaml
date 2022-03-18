@@ -1,0 +1,99 @@
+# -*- coding: utf-8 -*-
+
+#################################################
+# a JCAMP-DX dataset parsed to YAML
+# using https://github.com/StroemPhi/NMRspec
+# created: 2022-03-18
+#################################################
+
+id: https://osdb.stuchalk.domains.unf.edu/compounds/view/00010
+contains_assay_records:
+- id: https://osdb.stuchalk.domains.unf.edu/compounds/view/00010/000000012
+  source: 000000012.jdx
+  output_of_nmr_assay:
+    solution:
+      solvent:
+        id: CHEBI:85365
+        name: chloroform-d
+        inchi: InChI=1S/CHCl3/c2-1(3)4/h1H/i1D
+        inchikey: HEDRZPFGACZZDS-MICDWDOJSA-N
+        smiles: '[2H]C(Cl)(Cl)Cl'
+        iupac_name: trichloro(deuterio)methane
+      sample:
+        id: pubchemCID:440917
+        inchi: InChI=1S/C10H16/c1-8(2)10-6-4-9(3)5-7-10/h4,10H,1,5-7H2,2-3H3/t10-/m0/s1
+        inchikey: XMGQYMWWDOXHJM-JTQLQIEISA-N
+        smiles: CC1=CCC(CC1)C(=C)C
+        formula: C10H16
+        iupac_name: (4R)-1-methyl-4-prop-1-en-2-ylcyclohexene
+        name: D-Limonene
+      id: https://osdb.stuchalk.domains.unf.edu/compounds/view/00010/000000012/Solution
+    spectrometer:
+      id: https://osdb.stuchalk.domains.unf.edu/compounds/view/00010/000000012/Spectrometer
+      manufactured_by:
+        id: https://osdb.stuchalk.domains.unf.edu/compounds/view/00010/000000012/Manufacturer
+        name: Bruker
+      type: ??
+    acquisition_nuclei:
+    - 1H
+    has_dimension: 1D
+    pulse_program: Custom
+    id: https://osdb.stuchalk.domains.unf.edu/compounds/view/00010/000000012/Assay
+    pulse_program_custom: N/A
+    observed_frequencies:
+    - 300.0318
+- id: https://osdb.stuchalk.domains.unf.edu/compounds/view/00010/000000020
+  source: 000000020.jdx
+  output_of_nmr_assay:
+    solution:
+      solvent:
+        id: CHEBI:85365
+        name: chloroform-d
+        inchi: InChI=1S/CHCl3/c2-1(3)4/h1H/i1D
+        inchikey: HEDRZPFGACZZDS-MICDWDOJSA-N
+        smiles: '[2H]C(Cl)(Cl)Cl'
+        iupac_name: trichloro(deuterio)methane
+      sample:
+        id: pubchemCID:440917
+        inchi: InChI=1S/C10H16/c1-8(2)10-6-4-9(3)5-7-10/h4,10H,1,5-7H2,2-3H3/t10-/m0/s1
+        inchikey: XMGQYMWWDOXHJM-JTQLQIEISA-N
+        smiles: CC1=CCC(CC1)C(=C)C
+        formula: C10H16
+        iupac_name: (4R)-1-methyl-4-prop-1-en-2-ylcyclohexene
+        name: D-Limonene
+      id: https://osdb.stuchalk.domains.unf.edu/compounds/view/00010/000000020/Solution
+    spectrometer:
+      id: https://osdb.stuchalk.domains.unf.edu/compounds/view/00010/000000020/Spectrometer
+      manufactured_by:
+        id: https://osdb.stuchalk.domains.unf.edu/compounds/view/00010/000000020/Manufacturer
+        name: Bruker
+      type: ??
+    acquisition_nuclei:
+    - 1H
+    has_dimension: 1D
+    pulse_program: Custom
+    id: https://osdb.stuchalk.domains.unf.edu/compounds/view/00010/000000020/Assay
+    pulse_program_custom: N/A
+    observed_frequencies:
+    - 300.0318
+assays_sample:
+  id: pubchemCID:440917
+  inchi: InChI=1S/C10H16/c1-8(2)10-6-4-9(3)5-7-10/h4,10H,1,5-7H2,2-3H3/t10-/m0/s1
+  inchikey: XMGQYMWWDOXHJM-JTQLQIEISA-N
+  smiles: CC1=CCC(CC1)C(=C)C
+  formula: C10H16
+  iupac_name: (4R)-1-methyl-4-prop-1-en-2-ylcyclohexene
+  name: D-Limonene
+source: The open Spectra database
+description: 'NMR data for Contains: 1D: 1H, 13C 2D: COSY, HSQC, HMBC Attributed 13C
+  spectrum (2018-03-23). Related Publication: Can Invalid Bioactives Undermine Natural
+  Product-Based Drug Discovery? J. Med. Chem. doi: 10.1021/acs.jmedchem.5b01009 https://doi.org/10.1021/acs.jmedchem.5b01009.
+  Related Material: <1707770> Lot # <3.16> mg 3mm Tube Cambridge Isotope DML-10-10X1
+  Lot #10E-645 Solvent volume 200 μL.'
+source_uri: https://osdb.stuchalk.domains.unf.edu/compounds/view/00010
+date_created: '2018-04-20T00:00:00'
+licence_str: CC0 - "Public Domain Dedication"
+licence_url: https://creativecommons.org/share-your-work/public-domain/cc0
+created_by:
+- Stuart Chalk
+name: 1H NMR spectrum of (+)-(r)-limonene

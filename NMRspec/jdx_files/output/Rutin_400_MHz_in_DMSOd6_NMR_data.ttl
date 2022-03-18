@@ -7,11 +7,11 @@
 
 <https://doi.org/10.7910/DVN/ZAZDNM> a ns2:NmrSpecRecordCollection ;
     rdfs:label "Rutin 400 MHz in DMSOd6 NMR data" ;
-    ns1:BFO_0000051 <https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_13CNMR_400MHz_JDX>,
-        <https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_COSY_400MHz_JDX>,
-        <https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_HMBC_400MHz_JDX>,
-        <https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_HSQC_400MHz_JDX>,
-        <https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_qHNMR_400MHz_JDX> ;
+    ns1:BFO_0000051 <https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_13CNMR_400MHz_JDX>,
+        <https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_COSY_400MHz_JDX>,
+        <https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_HMBC_400MHz_JDX>,
+        <https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_HSQC_400MHz_JDX>,
+        <https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_qHNMR_400MHz_JDX> ;
     ns1:IAO_0000136 <https://pubchem.ncbi.nlm.nih.gov/compound/5280805> ;
     dc:creator "Bisson, Jonathan (University of Illinois at Chicago) - ORCID: 0000-0003-1640-9989",
         "Chen, Shao Nong (University of Illinois at Chicago) - ORCID: 0000-0003-0748-0863",
@@ -25,101 +25,101 @@
         "Harvard Dataverse" ;
     schema:dateCreated "2019-10-28T00:00:00"^^xsd:dateTime .
 
-<https://doi.org/10.7910/DVN/ZAZDNM/PNGSPO> a ns1:CHEMINF_000114 ;
-    rdfs:label "Rutin.mol" .
-
-<https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_13CNMR_400MHz_JDX> a ns2:NmrSpecRecord ;
-    ns1:OBI_0000312 <https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_13CNMR_400MHz_JDX/Assay> ;
+<https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_13CNMR_400MHz_JDX> a ns2:NmrSpecRecord ;
+    ns1:OBI_0000312 <https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_13CNMR_400MHz_JDX/Assay> ;
     dc:source "Rutin_3080ug200uL_DMSOd6_13CNMR_400MHz_JDX.jdx" .
 
-<https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_13CNMR_400MHz_JDX/Assay> a ns1:CHMO_0000613 ;
-    ns1:OBI_0000293 <https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_13CNMR_400MHz_JDX/Solution>,
-        <https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_13CNMR_400MHz_JDX/Spectrometer> ;
+<https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_13CNMR_400MHz_JDX/Assay> a ns1:CHMO_0000613 ;
+    ns1:OBI_0000293 <https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_13CNMR_400MHz_JDX/Solution>,
+        <https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_13CNMR_400MHz_JDX/Spectrometer> ;
     ns2:acquisition_nuclei "13C" ;
     ns2:has_dimension "1D" ;
     ns2:observed_frequencies "100.525303325165"^^xsd:float ;
     ns2:pulse_program "NMR" .
 
-<https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_13CNMR_400MHz_JDX/Solution> a ns1:CHEBI_75958 ;
+<https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_13CNMR_400MHz_JDX/Solution> a ns1:CHEBI_75958 ;
     ns1:BFO_0000051 <https://pubchem.ncbi.nlm.nih.gov/compound/5280805>,
         <https://pubchem.ncbi.nlm.nih.gov/compound/75151> .
 
-<https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_13CNMR_400MHz_JDX/Spectrometer> a ns1:OBI_0000566 .
+<https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_13CNMR_400MHz_JDX/Spectrometer> a ns1:OBI_0000566 .
 
-<https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_COSY_400MHz_JDX> a ns2:NmrSpecRecord ;
-    ns1:OBI_0000312 <https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_COSY_400MHz_JDX/Assay> ;
+<https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_COSY_400MHz_JDX> a ns2:NmrSpecRecord ;
+    ns1:OBI_0000312 <https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_COSY_400MHz_JDX/Assay> ;
     dc:source "Rutin_3080ug200uL_DMSOd6_COSY_400MHz_JDX.jdx" .
 
-<https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_COSY_400MHz_JDX/Assay> a ns1:CHMO_0000613 ;
-    ns1:OBI_0000293 <https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_COSY_400MHz_JDX/Solution>,
-        <https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_COSY_400MHz_JDX/Spectrometer> ;
+<https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_COSY_400MHz_JDX/Assay> a ns1:CHMO_0000613 ;
+    ns1:OBI_0000293 <https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_COSY_400MHz_JDX/Solution>,
+        <https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_COSY_400MHz_JDX/Spectrometer> ;
     ns2:acquisition_nuclei "1H" ;
     ns2:has_dimension "2D" ;
     ns2:observed_frequencies "399.78219837825"^^xsd:float ;
     ns2:pulse_program "COSY" .
 
-<https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_COSY_400MHz_JDX/Solution> a ns1:CHEBI_75958 ;
+<https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_COSY_400MHz_JDX/Solution> a ns1:CHEBI_75958 ;
     ns1:BFO_0000051 <https://pubchem.ncbi.nlm.nih.gov/compound/5280805>,
         <https://pubchem.ncbi.nlm.nih.gov/compound/75151> .
 
-<https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_COSY_400MHz_JDX/Spectrometer> a ns1:OBI_0000566 .
+<https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_COSY_400MHz_JDX/Spectrometer> a ns1:OBI_0000566 .
 
-<https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_HMBC_400MHz_JDX> a ns2:NmrSpecRecord ;
-    ns1:OBI_0000312 <https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_HMBC_400MHz_JDX/Assay> ;
+<https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_HMBC_400MHz_JDX> a ns2:NmrSpecRecord ;
+    ns1:OBI_0000312 <https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_HMBC_400MHz_JDX/Assay> ;
     dc:source "Rutin_3080ug200uL_DMSOd6_HMBC_400MHz_JDX.jdx" .
 
-<https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_HMBC_400MHz_JDX/Assay> a ns1:CHMO_0000613 ;
-    ns1:OBI_0000293 <https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_HMBC_400MHz_JDX/Solution>,
-        <https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_HMBC_400MHz_JDX/Spectrometer> ;
+<https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_HMBC_400MHz_JDX/Assay> a ns1:CHMO_0000613 ;
+    ns1:OBI_0000293 <https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_HMBC_400MHz_JDX/Solution>,
+        <https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_HMBC_400MHz_JDX/Spectrometer> ;
     ns2:acquisition_nuclei "13C",
         "1H" ;
     ns2:has_dimension "2D" ;
     ns2:observed_frequencies "399.78219837825"^^xsd:float ;
     ns2:pulse_program "HMBC" .
 
-<https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_HMBC_400MHz_JDX/Solution> a ns1:CHEBI_75958 ;
+<https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_HMBC_400MHz_JDX/Solution> a ns1:CHEBI_75958 ;
     ns1:BFO_0000051 <https://pubchem.ncbi.nlm.nih.gov/compound/5280805>,
         <https://pubchem.ncbi.nlm.nih.gov/compound/75151> .
 
-<https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_HMBC_400MHz_JDX/Spectrometer> a ns1:OBI_0000566 .
+<https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_HMBC_400MHz_JDX/Spectrometer> a ns1:OBI_0000566 .
 
-<https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_HSQC_400MHz_JDX> a ns2:NmrSpecRecord ;
-    ns1:OBI_0000312 <https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_HSQC_400MHz_JDX/Assay> ;
+<https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_HSQC_400MHz_JDX> a ns2:NmrSpecRecord ;
+    ns1:OBI_0000312 <https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_HSQC_400MHz_JDX/Assay> ;
     dc:source "Rutin_3080ug200uL_DMSOd6_HSQC_400MHz_JDX.jdx" .
 
-<https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_HSQC_400MHz_JDX/Assay> a ns1:CHMO_0000613 ;
-    ns1:OBI_0000293 <https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_HSQC_400MHz_JDX/Solution>,
-        <https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_HSQC_400MHz_JDX/Spectrometer> ;
+<https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_HSQC_400MHz_JDX/Assay> a ns1:CHMO_0000613 ;
+    ns1:OBI_0000293 <https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_HSQC_400MHz_JDX/Solution>,
+        <https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_HSQC_400MHz_JDX/Spectrometer> ;
     ns2:acquisition_nuclei "13C",
         "1H" ;
     ns2:has_dimension "2D" ;
     ns2:observed_frequencies "399.78219837825"^^xsd:float ;
     ns2:pulse_program "HSQC" .
 
-<https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_HSQC_400MHz_JDX/Solution> a ns1:CHEBI_75958 ;
+<https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_HSQC_400MHz_JDX/Solution> a ns1:CHEBI_75958 ;
     ns1:BFO_0000051 <https://pubchem.ncbi.nlm.nih.gov/compound/5280805>,
         <https://pubchem.ncbi.nlm.nih.gov/compound/75151> .
 
-<https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_HSQC_400MHz_JDX/Spectrometer> a ns1:OBI_0000566 .
+<https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_HSQC_400MHz_JDX/Spectrometer> a ns1:OBI_0000566 .
 
-<https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_qHNMR_400MHz_JDX> a ns2:NmrSpecRecord ;
-    ns1:OBI_0000312 <https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_qHNMR_400MHz_JDX/Assay> ;
+<https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_qHNMR_400MHz_JDX> a ns2:NmrSpecRecord ;
+    ns1:OBI_0000312 <https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_qHNMR_400MHz_JDX/Assay> ;
     dc:source "Rutin_3080ug200uL_DMSOd6_qHNMR_400MHz_JDX.jdx" .
 
-<https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_qHNMR_400MHz_JDX/Assay> a ns1:CHMO_0000613 ;
-    ns1:OBI_0000293 <https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_qHNMR_400MHz_JDX/Solution>,
-        <https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_qHNMR_400MHz_JDX/Spectrometer> ;
+<https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_qHNMR_400MHz_JDX/Assay> a ns1:CHMO_0000613 ;
+    ns1:OBI_0000293 <https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_qHNMR_400MHz_JDX/Solution>,
+        <https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_qHNMR_400MHz_JDX/Spectrometer> ;
     ns2:acquisition_nuclei "1H" ;
     ns2:has_dimension "1D" ;
     ns2:observed_frequencies "399.78219837825"^^xsd:float ;
     ns2:pulse_program "Custom" ;
     ns2:pulse_program_custom "single_pulse_dec" .
 
-<https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_qHNMR_400MHz_JDX/Solution> a ns1:CHEBI_75958 ;
+<https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_qHNMR_400MHz_JDX/Solution> a ns1:CHEBI_75958 ;
     ns1:BFO_0000051 <https://pubchem.ncbi.nlm.nih.gov/compound/5280805>,
         <https://pubchem.ncbi.nlm.nih.gov/compound/75151> .
 
-<https://doi.org/10.7910/DVN/ZAZDNM/Rutin_3080ug200uL_DMSOd6_qHNMR_400MHz_JDX/Spectrometer> a ns1:OBI_0000566 .
+<https://doi.org/10.7910/DVN/ZAZDNM/AGUEUW/Rutin_3080ug200uL_DMSOd6_qHNMR_400MHz_JDX/Spectrometer> a ns1:OBI_0000566 .
+
+<https://doi.org/10.7910/DVN/ZAZDNM/PNGSPO> a ns1:CHEMINF_000114 ;
+    rdfs:label "Rutin.mol" .
 
 <https://pubchem.ncbi.nlm.nih.gov/compound/75151> a ns2:NmrSolvent ;
     rdfs:label "dimethyl sulfoxide-d6" ;
