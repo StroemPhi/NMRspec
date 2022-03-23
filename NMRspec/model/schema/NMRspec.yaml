@@ -196,7 +196,7 @@ classes:
       id: 
         ifabsent: uri(nmrSPARQL:Sample)
   NmrSolvent:
-    class_uri: MISIO:0000037
+    class_uri: MSIO:0000037
     mixins:
       - ChemicalDescriptor
       - NamedThing

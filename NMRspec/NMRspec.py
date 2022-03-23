@@ -1,5 +1,5 @@
 # Auto generated from NMRspec.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-03-23T11:21:02
+# Generation date: 2022-03-23T11:24:25
 # Schema: NMRspec
 #
 # id: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/NMRspec.yaml
@@ -34,7 +34,6 @@ dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 # Namespaces
 CHEBI = CurieNamespace('CHEBI', 'http://purl.obolibrary.org/obo/CHEBI_')
 FAIRSPEC = CurieNamespace('FAIRspec', 'https://github.com/IUPAC/IUPAC-FAIRSpec/blob/main/src/main/java/org/iupac/fairspec/core/')
-MISIO = CurieNamespace('MISIO', 'http://example.org/UNKNOWN/MISIO/')
 MSIO = CurieNamespace('MSIO', 'http://purl.obolibrary.org/obo/MSIO_')
 NMRSPEC = CurieNamespace('NMRspec', 'https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/')
 BFO = CurieNamespace('bfo', 'http://purl.obolibrary.org/obo/BFO_')
@@ -371,8 +370,8 @@ class NmrSample(YAMLRoot):
 class NmrSolvent(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = MISIO["0000037"]
-    class_class_curie: ClassVar[str] = "MISIO:0000037"
+    class_class_uri: ClassVar[URIRef] = MSIO["0000037"]
+    class_class_curie: ClassVar[str] = "MSIO:0000037"
     class_name: ClassVar[str] = "NmrSolvent"
     class_model_uri: ClassVar[URIRef] = NMRSPEC.NmrSolvent
 
