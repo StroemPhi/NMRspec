@@ -7,7 +7,7 @@ model_author: Philip Strömert                # Your name
 model_author_email: philip.stroemert@tib.eu          # Your email
 model_synopsis: This model is to be used to semantify NMR spectroscopy research data. # One liner about the model
 model_description: |-         # Longer description of the model
-  This model is to be used to semantify NMR spectroscopy research data.
+  This model is used to semantify NMR spectroscopy research data.
 
 # Trove Classifiers (https://pypi.org/classifiers/) -- these can be omitted if the elements below are sufficient
 classifiers:
