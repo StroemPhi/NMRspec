@@ -78,7 +78,7 @@ classes:
         recommended: true
         range: string
     todos: 
-      - Find out if we want this complexity of using CHEMINF descriptor classes for the chemical descriptors or if ChEBI's annotation properties would suffice. For the purpose of being ready for future use cases. Using CHEMINF here seems better, but it does produce more triples and blank nodes.
+      - Find out if we want the complexity of using CHEMINF descriptor classes for the chemical descriptors or if ChEBI's annotation properties would suffice. For the purpose of being ready for future use cases. Using CHEMINF here seems better, but it does produce more triples and blank nodes.
   NamedThing:
     description: a mixin to be used by any class that has a name and unique id
     mixin: true
@@ -407,14 +407,13 @@ slots:
   type:
     range: string
 # information content entity slots
-  
-  # scalar measurement datum slots 
+# scalar measurement datum slots 
   value:
     slot_uri: iao:0000004
     range: double
   unit:
     slot_uri: iao:0000039
-# qualities
+# quality slots
   measured_as:
     slot_uri: iao:0000417
 #####################################
