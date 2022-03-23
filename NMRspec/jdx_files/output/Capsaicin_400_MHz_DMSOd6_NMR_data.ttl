@@ -1,19 +1,19 @@
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix ns1: <https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/> .
-@prefix ns2: <http://purl.obolibrary.org/obo/> .
+@prefix ns1: <http://purl.obolibrary.org/obo/> .
+@prefix ns2: <https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://doi.org/10.7910/DVN/F34GVS/KZOQZU> a ns1:NmrSpecRecordCollection ;
+<https://doi.org/10.7910/DVN/F34GVS/KZOQZU> a ns2:NmrSpecRecordCollection ;
     rdfs:label "Capsaicin 400 MHz DMSOd6 NMR data" ;
-    ns2:BFO_0000051 <https://doi.org/10.7910/DVN/F34GVS/KZOQZU/13C_NMR>,
+    ns1:BFO_0000051 <https://doi.org/10.7910/DVN/F34GVS/KZOQZU/13C_NMR>,
         <https://doi.org/10.7910/DVN/F34GVS/KZOQZU/1HNMR_jdx>,
         <https://doi.org/10.7910/DVN/F34GVS/KZOQZU/HSQC>,
         <https://doi.org/10.7910/DVN/F34GVS/KZOQZU/gCOSY>,
         <https://doi.org/10.7910/DVN/F34GVS/KZOQZU/gHMBC>,
         <https://doi.org/10.7910/DVN/F34GVS/KZOQZU/q1HNMR_zg30> ;
-    ns2:IAO_0000136 <https://pubchem.ncbi.nlm.nih.gov/compound/1548943> ;
+    ns1:IAO_0000136 <https://pubchem.ncbi.nlm.nih.gov/compound/1548943> ;
     dc:creator "Bisson, Jonathan (University of Illinois at Chicago) - ORCID: 0000-0003-1640-9989",
         "Chen, Shao Nong (University of Illinois at Chicago) - ORCID: 0000-0003-0748-0863",
         "Kim, Seon Beom (University of Illinois at Chicago) - ORCID: 0000-0001-8015-1404",
@@ -27,132 +27,132 @@
         "Harvard Dataverse" ;
     schema:dateCreated "2019-10-28T00:00:00"^^xsd:dateTime .
 
-<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/13C_NMR> a ns1:NmrSpecRecord ;
-    ns2:OBI_0000312 <https://doi.org/10.7910/DVN/F34GVS/KZOQZU/13C_NMR/Assay> ;
+<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/13C_NMR> a ns2:NmrSpecRecord ;
+    ns1:OBI_0000312 <https://doi.org/10.7910/DVN/F34GVS/KZOQZU/13C_NMR/Assay> ;
     dc:source "13C_NMR.jdx" .
 
-<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/13C_NMR/Assay> a ns2:CHMO_0000613 ;
-    ns2:OBI_0000293 <https://doi.org/10.7910/DVN/F34GVS/KZOQZU/13C_NMR/Solution>,
+<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/13C_NMR/Assay> a ns1:CHMO_0000613 ;
+    ns1:OBI_0000293 <https://doi.org/10.7910/DVN/F34GVS/KZOQZU/13C_NMR/Solution>,
         <https://doi.org/10.7910/DVN/F34GVS/KZOQZU/13C_NMR/Spectrometer> ;
-    ns1:acquisition_nuclei "13C" ;
-    ns1:has_dimension "1D" ;
-    ns1:observed_frequencies "100.525303325165"^^xsd:float ;
-    ns1:pulse_program "NMR" .
+    ns2:acquisition_nuclei "13C" ;
+    ns2:has_dimension "1D" ;
+    ns2:observed_frequencies "100.525303325165"^^xsd:float ;
+    ns2:pulse_program "NMR" .
 
-<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/13C_NMR/Solution> a ns2:CHEBI_75958 ;
-    ns2:BFO_0000051 <https://pubchem.ncbi.nlm.nih.gov/compound/1548943>,
+<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/13C_NMR/Solution> a ns1:CHEBI_75958 ;
+    ns1:BFO_0000051 <https://pubchem.ncbi.nlm.nih.gov/compound/1548943>,
         <https://pubchem.ncbi.nlm.nih.gov/compound/75151> .
 
-<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/13C_NMR/Spectrometer> a ns2:OBI_0000566 .
+<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/13C_NMR/Spectrometer> a ns1:OBI_0000566 .
 
-<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/1HNMR_jdx> a ns1:NmrSpecRecord ;
-    ns2:OBI_0000312 <https://doi.org/10.7910/DVN/F34GVS/KZOQZU/1HNMR_jdx/Assay> ;
+<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/1HNMR_jdx> a ns2:NmrSpecRecord ;
+    ns1:OBI_0000312 <https://doi.org/10.7910/DVN/F34GVS/KZOQZU/1HNMR_jdx/Assay> ;
     dc:source "1HNMR_jdx.jdx" .
 
-<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/1HNMR_jdx/Assay> a ns2:CHMO_0000613 ;
-    ns2:OBI_0000293 <https://doi.org/10.7910/DVN/F34GVS/KZOQZU/1HNMR_jdx/Solution>,
+<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/1HNMR_jdx/Assay> a ns1:CHMO_0000613 ;
+    ns1:OBI_0000293 <https://doi.org/10.7910/DVN/F34GVS/KZOQZU/1HNMR_jdx/Solution>,
         <https://doi.org/10.7910/DVN/F34GVS/KZOQZU/1HNMR_jdx/Spectrometer> ;
-    ns1:acquisition_nuclei "1H" ;
-    ns1:has_dimension "1D" ;
-    ns1:observed_frequencies "399.78219837825"^^xsd:float ;
-    ns1:pulse_program "NMR" .
+    ns2:acquisition_nuclei "1H" ;
+    ns2:has_dimension "1D" ;
+    ns2:observed_frequencies "399.78219837825"^^xsd:float ;
+    ns2:pulse_program "NMR" .
 
-<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/1HNMR_jdx/Solution> a ns2:CHEBI_75958 ;
-    ns2:BFO_0000051 <https://pubchem.ncbi.nlm.nih.gov/compound/1548943>,
+<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/1HNMR_jdx/Solution> a ns1:CHEBI_75958 ;
+    ns1:BFO_0000051 <https://pubchem.ncbi.nlm.nih.gov/compound/1548943>,
         <https://pubchem.ncbi.nlm.nih.gov/compound/75151> .
 
-<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/1HNMR_jdx/Spectrometer> a ns2:OBI_0000566 .
+<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/1HNMR_jdx/Spectrometer> a ns1:OBI_0000566 .
 
-<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/HSQC> a ns1:NmrSpecRecord ;
-    ns2:OBI_0000312 <https://doi.org/10.7910/DVN/F34GVS/KZOQZU/HSQC/Assay> ;
+<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/HSQC> a ns2:NmrSpecRecord ;
+    ns1:OBI_0000312 <https://doi.org/10.7910/DVN/F34GVS/KZOQZU/HSQC/Assay> ;
     dc:source "HSQC.jdx" .
 
-<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/HSQC/Assay> a ns2:CHMO_0000613 ;
-    ns2:OBI_0000293 <https://doi.org/10.7910/DVN/F34GVS/KZOQZU/HSQC/Solution>,
+<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/HSQC/Assay> a ns1:CHMO_0000613 ;
+    ns1:OBI_0000293 <https://doi.org/10.7910/DVN/F34GVS/KZOQZU/HSQC/Solution>,
         <https://doi.org/10.7910/DVN/F34GVS/KZOQZU/HSQC/Spectrometer> ;
-    ns1:acquisition_nuclei "13C",
+    ns2:acquisition_nuclei "13C",
         "1H" ;
-    ns1:has_dimension "2D" ;
-    ns1:observed_frequencies "399.78219837825"^^xsd:float ;
-    ns1:pulse_program "HSQC" .
+    ns2:has_dimension "2D" ;
+    ns2:observed_frequencies "399.78219837825"^^xsd:float ;
+    ns2:pulse_program "HSQC" .
 
-<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/HSQC/Solution> a ns2:CHEBI_75958 ;
-    ns2:BFO_0000051 <https://pubchem.ncbi.nlm.nih.gov/compound/1548943>,
+<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/HSQC/Solution> a ns1:CHEBI_75958 ;
+    ns1:BFO_0000051 <https://pubchem.ncbi.nlm.nih.gov/compound/1548943>,
         <https://pubchem.ncbi.nlm.nih.gov/compound/75151> .
 
-<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/HSQC/Spectrometer> a ns2:OBI_0000566 .
+<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/HSQC/Spectrometer> a ns1:OBI_0000566 .
 
-<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/gCOSY> a ns1:NmrSpecRecord ;
-    ns2:OBI_0000312 <https://doi.org/10.7910/DVN/F34GVS/KZOQZU/gCOSY/Assay> ;
+<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/gCOSY> a ns2:NmrSpecRecord ;
+    ns1:OBI_0000312 <https://doi.org/10.7910/DVN/F34GVS/KZOQZU/gCOSY/Assay> ;
     dc:source "gCOSY.jdx" .
 
-<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/gCOSY/Assay> a ns2:CHMO_0000613 ;
-    ns2:OBI_0000293 <https://doi.org/10.7910/DVN/F34GVS/KZOQZU/gCOSY/Solution>,
+<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/gCOSY/Assay> a ns1:CHMO_0000613 ;
+    ns1:OBI_0000293 <https://doi.org/10.7910/DVN/F34GVS/KZOQZU/gCOSY/Solution>,
         <https://doi.org/10.7910/DVN/F34GVS/KZOQZU/gCOSY/Spectrometer> ;
-    ns1:acquisition_nuclei "1H" ;
-    ns1:has_dimension "2D" ;
-    ns1:observed_frequencies "399.78219837825"^^xsd:float ;
-    ns1:pulse_program "COSY" .
+    ns2:acquisition_nuclei "1H" ;
+    ns2:has_dimension "2D" ;
+    ns2:observed_frequencies "399.78219837825"^^xsd:float ;
+    ns2:pulse_program "COSY" .
 
-<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/gCOSY/Solution> a ns2:CHEBI_75958 ;
-    ns2:BFO_0000051 <https://pubchem.ncbi.nlm.nih.gov/compound/1548943>,
+<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/gCOSY/Solution> a ns1:CHEBI_75958 ;
+    ns1:BFO_0000051 <https://pubchem.ncbi.nlm.nih.gov/compound/1548943>,
         <https://pubchem.ncbi.nlm.nih.gov/compound/75151> .
 
-<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/gCOSY/Spectrometer> a ns2:OBI_0000566 .
+<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/gCOSY/Spectrometer> a ns1:OBI_0000566 .
 
-<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/gHMBC> a ns1:NmrSpecRecord ;
-    ns2:OBI_0000312 <https://doi.org/10.7910/DVN/F34GVS/KZOQZU/gHMBC/Assay> ;
+<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/gHMBC> a ns2:NmrSpecRecord ;
+    ns1:OBI_0000312 <https://doi.org/10.7910/DVN/F34GVS/KZOQZU/gHMBC/Assay> ;
     dc:source "gHMBC.jdx" .
 
-<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/gHMBC/Assay> a ns2:CHMO_0000613 ;
-    ns2:OBI_0000293 <https://doi.org/10.7910/DVN/F34GVS/KZOQZU/gHMBC/Solution>,
+<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/gHMBC/Assay> a ns1:CHMO_0000613 ;
+    ns1:OBI_0000293 <https://doi.org/10.7910/DVN/F34GVS/KZOQZU/gHMBC/Solution>,
         <https://doi.org/10.7910/DVN/F34GVS/KZOQZU/gHMBC/Spectrometer> ;
-    ns1:acquisition_nuclei "13C",
+    ns2:acquisition_nuclei "13C",
         "1H" ;
-    ns1:has_dimension "2D" ;
-    ns1:observed_frequencies "399.78219837825"^^xsd:float ;
-    ns1:pulse_program "HMBC" .
+    ns2:has_dimension "2D" ;
+    ns2:observed_frequencies "399.78219837825"^^xsd:float ;
+    ns2:pulse_program "HMBC" .
 
-<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/gHMBC/Solution> a ns2:CHEBI_75958 ;
-    ns2:BFO_0000051 <https://pubchem.ncbi.nlm.nih.gov/compound/1548943>,
+<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/gHMBC/Solution> a ns1:CHEBI_75958 ;
+    ns1:BFO_0000051 <https://pubchem.ncbi.nlm.nih.gov/compound/1548943>,
         <https://pubchem.ncbi.nlm.nih.gov/compound/75151> .
 
-<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/gHMBC/Spectrometer> a ns2:OBI_0000566 .
+<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/gHMBC/Spectrometer> a ns1:OBI_0000566 .
 
-<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/q1HNMR_zg30> a ns1:NmrSpecRecord ;
-    ns2:OBI_0000312 <https://doi.org/10.7910/DVN/F34GVS/KZOQZU/q1HNMR_zg30/Assay> ;
+<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/q1HNMR_zg30> a ns2:NmrSpecRecord ;
+    ns1:OBI_0000312 <https://doi.org/10.7910/DVN/F34GVS/KZOQZU/q1HNMR_zg30/Assay> ;
     dc:source "q1HNMR_zg30.jdx" .
 
-<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/q1HNMR_zg30/Assay> a ns2:CHMO_0000613 ;
-    ns2:OBI_0000293 <https://doi.org/10.7910/DVN/F34GVS/KZOQZU/q1HNMR_zg30/Solution>,
+<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/q1HNMR_zg30/Assay> a ns1:CHMO_0000613 ;
+    ns1:OBI_0000293 <https://doi.org/10.7910/DVN/F34GVS/KZOQZU/q1HNMR_zg30/Solution>,
         <https://doi.org/10.7910/DVN/F34GVS/KZOQZU/q1HNMR_zg30/Spectrometer> ;
-    ns1:acquisition_nuclei "1H" ;
-    ns1:has_dimension "1D" ;
-    ns1:observed_frequencies "399.78219837825"^^xsd:float ;
-    ns1:pulse_program "NMR" .
+    ns2:acquisition_nuclei "1H" ;
+    ns2:has_dimension "1D" ;
+    ns2:observed_frequencies "399.78219837825"^^xsd:float ;
+    ns2:pulse_program "NMR" .
 
-<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/q1HNMR_zg30/Solution> a ns2:CHEBI_75958 ;
-    ns2:BFO_0000051 <https://pubchem.ncbi.nlm.nih.gov/compound/1548943>,
+<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/q1HNMR_zg30/Solution> a ns1:CHEBI_75958 ;
+    ns1:BFO_0000051 <https://pubchem.ncbi.nlm.nih.gov/compound/1548943>,
         <https://pubchem.ncbi.nlm.nih.gov/compound/75151> .
 
-<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/q1HNMR_zg30/Spectrometer> a ns2:OBI_0000566 .
+<https://doi.org/10.7910/DVN/F34GVS/KZOQZU/q1HNMR_zg30/Spectrometer> a ns1:OBI_0000566 .
 
-<https://doi.org/10.7910/DVN/F34GVS/M2OBED> a ns2:CHEMINF_000114 ;
+<https://doi.org/10.7910/DVN/F34GVS/M2OBED> a ns1:CHEMINF_000114 ;
     rdfs:label "capsaicin.mol" .
 
-<https://pubchem.ncbi.nlm.nih.gov/compound/75151> a ns1:NmrSolvent ;
+<https://pubchem.ncbi.nlm.nih.gov/compound/75151> a ns1:MSIO_0000037 ;
     rdfs:label "dimethyl sulfoxide-d6" ;
-    ns2:CHEBI_IUPAC_NAME "trideuterio(trideuteriomethylsulfinyl)methane" ;
-    ns2:CHEBI_inchi "InChI=1S/C2H6OS/c1-4(2)3/h1-2H3/i1D3,2D3" ;
-    ns2:CHEBI_inchikey "IAZDPXIOMUYVGZ-WFGJKAKNSA-N" ;
-    ns2:CHEBI_smiles "[2H]C([2H])([2H])S(=O)C([2H])([2H])[2H]" .
+    ns1:CHEBI_IUPAC_NAME "trideuterio(trideuteriomethylsulfinyl)methane" ;
+    ns1:CHEBI_inchi "InChI=1S/C2H6OS/c1-4(2)3/h1-2H3/i1D3,2D3" ;
+    ns1:CHEBI_inchikey "IAZDPXIOMUYVGZ-WFGJKAKNSA-N" ;
+    ns1:CHEBI_smiles "[2H]C([2H])([2H])S(=O)C([2H])([2H])[2H]" .
 
-<https://pubchem.ncbi.nlm.nih.gov/compound/1548943> a ns1:NmrSample ;
+<https://pubchem.ncbi.nlm.nih.gov/compound/1548943> a <http://nmrML.org/nmrCV#NMR_1400128> ;
     rdfs:label "Capsaicin" ;
-    ns2:CHEBI_IUPAC_NAME "(E)-N-[(4-hydroxy-3-methoxyphenyl)methyl]-8-methylnon-6-enamide" ;
-    ns2:CHEBI_formula "C18H27NO3" ;
-    ns2:CHEBI_inchi "InChI=1S/C18H27NO3/c1-14(2)8-6-4-5-7-9-18(21)19-13-15-10-11-16(20)17(12-15)22-3/h6,8,10-12,14,20H,4-5,7,9,13H2,1-3H3,(H,19,21)/b8-6+" ;
-    ns2:CHEBI_inchikey "YKPUWZUDDOIDPM-SOFGYWHQSA-N" ;
-    ns2:CHEBI_smiles "CC(C)C=CCCCCC(=O)NCC1=CC(=C(C=C1)O)OC" ;
-    ns2:IAO_0000235 <https://doi.org/10.7910/DVN/F34GVS/M2OBED> .
+    ns1:CHEBI_IUPAC_NAME "(E)-N-[(4-hydroxy-3-methoxyphenyl)methyl]-8-methylnon-6-enamide" ;
+    ns1:CHEBI_formula "C18H27NO3" ;
+    ns1:CHEBI_inchi "InChI=1S/C18H27NO3/c1-14(2)8-6-4-5-7-9-18(21)19-13-15-10-11-16(20)17(12-15)22-3/h6,8,10-12,14,20H,4-5,7,9,13H2,1-3H3,(H,19,21)/b8-6+" ;
+    ns1:CHEBI_inchikey "YKPUWZUDDOIDPM-SOFGYWHQSA-N" ;
+    ns1:CHEBI_smiles "CC(C)C=CCCCCC(=O)NCC1=CC(=C(C=C1)O)OC" ;
+    ns1:IAO_0000235 <https://doi.org/10.7910/DVN/F34GVS/M2OBED> .
 

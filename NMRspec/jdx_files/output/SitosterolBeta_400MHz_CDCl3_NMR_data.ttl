@@ -120,14 +120,14 @@
 
 <https://doi.org/10.7910/DVN/BZYA8H/S1SSIF/gCOSY/Spectrometer> a ns2:OBI_0000566 .
 
-ns2:CHEBI_85365 a ns1:NmrSolvent ;
+ns2:CHEBI_85365 a ns2:MSIO_0000037 ;
     rdfs:label "chloroform-d" ;
     ns2:CHEBI_IUPAC_NAME "trichloro(deuterio)methane" ;
     ns2:CHEBI_inchi "InChI=1S/CHCl3/c2-1(3)4/h1H/i1D" ;
     ns2:CHEBI_inchikey "HEDRZPFGACZZDS-MICDWDOJSA-N" ;
     ns2:CHEBI_smiles "[2H]C(Cl)(Cl)Cl" .
 
-<https://pubchem.ncbi.nlm.nih.gov/compound/222284> a ns1:NmrSample ;
+<https://pubchem.ncbi.nlm.nih.gov/compound/222284> a <http://nmrML.org/nmrCV#NMR_1400128> ;
     rdfs:label "beta-Sitosterol" ;
     ns2:CHEBI_IUPAC_NAME "(3S,8S,9S,10R,13R,14S,17R)-17-[(2R,5R)-5-ethyl-6-methylheptan-2-yl]-10,13-dimethyl-2,3,4,7,8,9,11,12,14,15,16,17-dodecahydro-1H-cyclopenta[a]phenanthren-3-ol" ;
     ns2:CHEBI_formula "C29H50O" ;

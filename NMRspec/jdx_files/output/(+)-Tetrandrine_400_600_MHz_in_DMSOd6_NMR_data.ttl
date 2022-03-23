@@ -160,14 +160,14 @@
 
 <https://doi.org/10.7910/DVN/SAC0TQ/YRW16X/Tetrandrine_3090ug200uL_DMSOd6_HSQC_400MHz_JDX/Spectrometer> a ns2:OBI_0000566 .
 
-<https://pubchem.ncbi.nlm.nih.gov/compound/75151> a ns1:NmrSolvent ;
+<https://pubchem.ncbi.nlm.nih.gov/compound/75151> a ns2:MSIO_0000037 ;
     rdfs:label "dimethyl sulfoxide-d6" ;
     ns2:CHEBI_IUPAC_NAME "trideuterio(trideuteriomethylsulfinyl)methane" ;
     ns2:CHEBI_inchi "InChI=1S/C2H6OS/c1-4(2)3/h1-2H3/i1D3,2D3" ;
     ns2:CHEBI_inchikey "IAZDPXIOMUYVGZ-WFGJKAKNSA-N" ;
     ns2:CHEBI_smiles "[2H]C([2H])([2H])S(=O)C([2H])([2H])[2H]" .
 
-<https://pubchem.ncbi.nlm.nih.gov/compound/73078> a ns1:NmrSample ;
+<https://pubchem.ncbi.nlm.nih.gov/compound/73078> a <http://nmrML.org/nmrCV#NMR_1400128> ;
     rdfs:label "(+)-Tetrandrine" ;
     ns2:CHEBI_IUPAC_NAME "(1S,14S)-9,20,21,25-tetramethoxy-15,30-dimethyl-7,23-dioxa-15,30-diazaheptacyclo[22.6.2.23,6.18,12.114,18.027,31.022,33]hexatriaconta-3(36),4,6(35),8,10,12(34),18,20,22(33),24,26,31-dodecaene" ;
     ns2:CHEBI_formula "C38H42N2O6" ;
