@@ -21,6 +21,7 @@ prefixes:
   prov: http://www.w3.org/ns/prov#
   om: http://www.ontology-of-units-of-measure.org/resource/om-2/
   uo: http://purl.obolibrary.org/obo/
+  MSIO: http://purl.obolibrary.org/obo/MSIO_
 # data prefixes
   nmrSPARQL: https://nfdi4chem/sparql/ # not valid endpoint yet, just serves as an example for a 
   doi: https://doi.org/
@@ -59,6 +60,7 @@ classes:
         recommended: true
         range: string
       smiles:
+        description: The canocical SMILES of a compound (Sample, Solvent or Buffe)
         slot_uri: CHEBI:smiles
         recommended: true
         range: string
@@ -184,6 +186,7 @@ classes:
         range: PhValue
         inlined: true
   NmrSample:
+    class_uri: nmrCV:NMR_1400128
     mixins:
       - ChemicalDescriptor
       - NamedThing
@@ -193,6 +196,7 @@ classes:
       id: 
         ifabsent: uri(nmrSPARQL:Sample)
   NmrSolvent:
+    class_uri: MISIO:0000037
     mixins:
       - ChemicalDescriptor
       - NamedThing
