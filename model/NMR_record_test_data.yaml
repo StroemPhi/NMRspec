@@ -59,8 +59,7 @@ contains_assay_records:
             name: CDCl3 
             # dependent on user input, script or some resolver
             id: chebi:85365
-            iupac_name:
-              has_representation: trichloro((2)H)methane
+            iupac_name: trichloro((2)H)methane
         spectrometer:
           # derived from Brukcer raw file
           type: Avance III 400 NMR spectrometer 
