@@ -70,7 +70,7 @@ def get_assay_data(jdx_dict, nmr_record) -> PulsedNmrAssay:
         in the dictionary "nmrSolvents" defined here. As the value in the .jdx could be a synonym of the name,
         we need to include synonyms as a list of possible names in this dictionary"""
         nmr_solvents = [
-            {"name": ["chloroform-d", "CDCl3", "methanol-d4", "CD3OD", "deuterated chloroform"],
+            {"name": ["chloroform-d", "CDCl3", "trichloromethane-d", "deuterated chloroform"],
              "id": "CHEBI:85365",
              "smiles": "[2H]C(Cl)(Cl)Cl",
              "iupac_name": "trichloro(deuterio)methane",
