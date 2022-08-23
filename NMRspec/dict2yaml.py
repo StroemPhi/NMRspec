@@ -63,7 +63,8 @@ def get_sample(nmr_dataset) -> NmrSample:
 
 
 def get_assay_data(jdx_dict, nmr_record) -> PulsedNmrAssay:
-    """The main function with which to parse a JCAMP-DX file according to the NMR schema and output a YAML"""
+    """The main function with which to parse a JCAMP-DX file according to the NMR schema
+    into an instance of PulsedNmrAssay"""
 
     def get_solvent() -> NmrSolvent:
         """A function to get the detail infos on the solvent bases on looking up the value provided in the JCAMP-DX file
