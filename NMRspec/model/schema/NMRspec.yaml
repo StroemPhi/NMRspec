@@ -1,9 +1,9 @@
 id: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/NMRspec.yaml
 name: NMRspec
 description: |-
-  This model is to be used to semantify NMR spectroscopy research data.
+  This model can be used to semantify NMR spectroscopy research data.
 license: https://creativecommons.org/licenses/by/4.0/
-version: 0.0.1
+version: 0.0.2
 prefixes:
 # ontologies
   NMRspec: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/
@@ -22,13 +22,14 @@ prefixes:
   om: http://www.ontology-of-units-of-measure.org/resource/om-2/
   uo: http://purl.obolibrary.org/obo/
   MSIO: http://purl.obolibrary.org/obo/MSIO_
+  ERO:  http://purl.obolibrary.org/obo/ERO_
+  cc: https://creativecommons.org/licenses/
 # data prefixes
   nmrSPARQL: https://nfdi4chem/sparql/ # not valid endpoint yet, just serves as an example for a 
   doi: https://doi.org/
   chemotionPID: https://www.chemotion-repository.net/pid/
   chemotionDATA: https://www.chemotion-repository.net/home/publications/datasets/
   chemotion: https://www.chemotion-repository.net/home/publications/reactions/
-  cc: https://creativecommons.org/licenses/
   pubchemCID: https://pubchem.ncbi.nlm.nih.gov/compound/
 # other NMR schema prefixes for mapping purposes
   jdx: http://www.jcamp-dx.org/protocols/dxnmr01.pdf/
@@ -78,7 +79,7 @@ classes:
         recommended: true
         range: string
     todos: 
-      - Find out if we want this complexity of using CHEMINF descriptor classes for the chemical descriptors or if ChEBI's annotation properties would suffice. For the purpose of being ready for future use cases. Using CHEMINF here seems better, but it does produce more triples and blank nodes.
+      - Find out if we want the complexity of using CHEMINF descriptor classes for the chemical descriptors or if ChEBI's annotation properties would suffice. For the purpose of being ready for future use cases. Using CHEMINF here seems better, but it does produce more triples and blank nodes.
   NamedThing:
     description: a mixin to be used by any class that has a name and unique id
     mixin: true
@@ -164,24 +165,25 @@ classes:
         domain: NmrSolution
         range: NmrSolvent
       sample:
-        description: The attribute needed to relate the NMR solution to its solvent.
+        description: The attribute needed to relate the NMR solution to the sample it contains.
         slot_uri: bfo:0000051
         inlined: true
         required: true
         domain: NmrSolution
         range: NmrSample
       buffer:
+        description: The attribute needed to relate the NMR solution to the buffer it might contain.
         slot_uri: bfo:0000051
         inlined: true
         domain: NmrSolution
         range: NmrBuffer
       measured_molarity:
-        description: The predicate needed to relate to the concentration of the NMR solution.
+        description: The attribute needed to relate to the molarity of the NMR solution.
         slot_uri: ro:0000086 # has quality
         range: MolarConcentration
         inlined: true
       measured_pH:
-        description: The predicate needed to relate to the concentration of the NMR solution.
+        description: The attribute needed to relate to the pH of the NMR solution.
         slot_uri: ro:0000086 # has quality
         range: PhValue
         inlined: true
@@ -207,6 +209,7 @@ classes:
         close_mappings:
           - jdx:SOLVENT_NAME
   NmrBuffer:
+    class_uri: MSIO:0000015
     slot_usage:
       id: 
         ifabsent: uri(nmrSPARQL:Buffer)
@@ -335,8 +338,9 @@ classes:
       - NamedThing
 # NMR spectroscopy data items
   NmrSpecRecord:
+    class_uri: IAO:0000109
     description: >-
-      This is the tree root node of the schema. It is a data item that serves as a container for all relevant information about *one* NMR spectroscopy assay record. The properties of this class represent the required metadata of an NMR assay, such as: 
+      A data item that serves as a container for all relevant information about *one* NMR spectroscopy assay record. The properties of this class represent the required metadata of an NMR assay, such as: 
       * what kind of assay was performed (e.g. 2D 13C COSY) and what devices where used for that (e.g. spectrometer, magnet, solvent, buffer, ...)
       * what are the detail infos of the assayed sample (name, formula, structure, concentration, preperation process, ...)
     mixins:
@@ -353,6 +357,7 @@ classes:
         description: >-
           the URI of a NMR spectroscopy record. If a record does not have an URI, you must use "nmrSPARQL" as prefix and the filename (e.g. "nmrSPARQL:filename1.jdx") and an unresolvable URI will be minted upon ingest by replacing this prefix with the URI of the dataset.
   NmrSpecRecordCollection:
+    class_uri: IAO:0000100
     tree_root: true
     mixins: 
       - Provenance
@@ -385,7 +390,7 @@ slots:
     exact_mappings:
       - sdo:identifier
   local_id:
-    #slot_uri: sdo:identifier
+    slot_uri: iao:0000235
     description: This property should be used to provide the local identifier with which something is denoted in a local context (e.g. your lab notebook).
     recommended: true
     range: string
@@ -395,6 +400,7 @@ slots:
     recommended: true
     range: string
   website:
+    slot_uri: ERO:0000480
     description: a generic property to be used in classes that represent something which has a website
     required: false
     range: uri
@@ -485,7 +491,7 @@ enums:
       Custom:
         description: To be used, if the pulse program is not in this list.
       not provided:
-        description: This is only to be used, if there no way to derive which pulse program has been used.
+        description: This is only to be used, if there is no way to derive which pulse program has been used.
   NmrManufacturers:
     description: Controlled list of manufacturers of NMR lab devices.
     notes: allowed values from nmrCV_1400255
