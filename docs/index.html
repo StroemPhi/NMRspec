@@ -113,8 +113,8 @@
               
                 <h1 id="nmrspec">NMRspec</h1>
 <p><strong>metamodel version:</strong> 1.7.0</p>
-<p><strong>version:</strong> 0.0.1</p>
-<p>This model is to be used to semantify NMR spectroscopy research data.</p>
+<p><strong>version:</strong> 0.0.2</p>
+<p>This model can be used to semantify NMR spectroscopy research data.</p>
 <h3 id="classes">Classes</h3>
 <ul>
 <li><a href="MOLfile/">MOLfile</a></li>
@@ -126,7 +126,7 @@
 <li><a href="NmrSampleTube/">NmrSampleTube</a></li>
 <li><a href="NmrSolution/">NmrSolution</a> - A NMR sollution is the solution made up of the solvent in which the evaluated sample is dissolved in as well as possibly the buffer needed to adjust the pH value.</li>
 <li><a href="NmrSolvent/">NmrSolvent</a></li>
-<li><a href="NmrSpecRecord/">NmrSpecRecord</a> - This is the tree root node of the schema. It is a data item that serves as a container for all relevant information about <em>one</em> NMR spectroscopy assay record. The properties of this class represent the required metadata of an NMR assay, such as:  * what kind of assay was performed (e.g. 2D 13C COSY) and what devices where used for that (e.g. spectrometer, magnet, solvent, buffer, ...) * what are the detail infos of the assayed sample (name, formula, structure, concentration, preperation process, ...)</li>
+<li><a href="NmrSpecRecord/">NmrSpecRecord</a> - A data item that serves as a container for all relevant information about <em>one</em> NMR spectroscopy assay record. The properties of this class represent the required metadata of an NMR assay, such as:  * what kind of assay was performed (e.g. 2D 13C COSY) and what devices where used for that (e.g. spectrometer, magnet, solvent, buffer, ...) * what are the detail infos of the assayed sample (name, formula, structure, concentration, preperation process, ...)</li>
 <li><a href="NmrSpecRecordCollection/">NmrSpecRecordCollection</a> - This class represents a collection of NMR spectroscopy records. It is to be used when multiple NMR assays were made in order to analyse a given sample.</li>
 <li><a href="NmrSpectrometer/">NmrSpectrometer</a></li>
 <li><a href="PhMeasurementDatum/">PhMeasurementDatum</a> - A scalar measurement datum that is the result of measuring the pH value of a chemical solution.</li>
@@ -182,10 +182,10 @@
 </ul>
 </li>
 <li><a href="nmrSampleTube__measured_temperature/">➞measured_temperature</a></li>
-<li><a href="nmrSolution__buffer/">NmrSolution➞buffer</a></li>
-<li><a href="nmrSolution__measured_molarity/">➞measured_molarity</a> - The predicate needed to relate to the concentration of the NMR solution.</li>
-<li><a href="nmrSolution__measured_pH/">➞measured_pH</a> - The predicate needed to relate to the concentration of the NMR solution.</li>
-<li><a href="nmrSolution__sample/">NmrSolution➞sample</a> - The attribute needed to relate the NMR solution to its solvent.</li>
+<li><a href="nmrSolution__buffer/">NmrSolution➞buffer</a> - The attribute needed to relate the NMR solution to the buffer it might contain.</li>
+<li><a href="nmrSolution__measured_molarity/">➞measured_molarity</a> - The attribute needed to relate to the molarity of the NMR solution.</li>
+<li><a href="nmrSolution__measured_pH/">➞measured_pH</a> - The attribute needed to relate to the pH of the NMR solution.</li>
+<li><a href="nmrSolution__sample/">NmrSolution➞sample</a> - The attribute needed to relate the NMR solution to the sample it contains.</li>
 <li><a href="nmrSolution__solvent/">NmrSolution➞solvent</a> - The attribute needed to relate the NMR solution to its solvent.</li>
 <li><a href="nmrSpecRecordCollection__assays_sample/">➞assays_sample</a> - This property is used to provide metadata on the assayed NMR sample.</li>
 <li><a href="nmrSpecRecordCollection__contains_assay_records/">NmrSpecRecordCollection➞contains_assay_records</a></li>
@@ -250,6 +250,7 @@
 <ul>
 <li><a href="Boolean/">Boolean</a>  (<strong>Bool</strong>)  - A binary (true or false) value</li>
 <li><a href="Date/">Date</a>  (<strong>XSDDate</strong>)  - a date (year, month and day) in an idealized calendar</li>
+<li><a href="DateOrDatetime/">DateOrDatetime</a>  (<strong>str</strong>)  - Either a date or a datetime</li>
 <li><a href="Datetime/">Datetime</a>  (<strong>XSDDateTime</strong>)  - The combination of a date and time</li>
 <li><a href="Decimal/">Decimal</a>  (<strong>Decimal</strong>)  - A real number with arbitrary precision that conforms to the xsd:decimal specification</li>
 <li><a href="Double/">Double</a>  (<strong>float</strong>)  - A real number that conforms to the xsd:double specification</li>
@@ -321,5 +322,5 @@
 
 <!--
 MkDocs version : 1.2.3
-Build Date UTC : 2022-03-23 10:20:26.105207+00:00
+Build Date UTC : 2022-09-07 07:00:14.590235+00:00
 -->

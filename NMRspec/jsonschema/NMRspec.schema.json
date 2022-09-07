@@ -238,18 +238,19 @@
          "description": "A NMR sollution is the solution made up of the solvent in which the evaluated sample is dissolved in as well as possibly the buffer needed to adjust the pH value.",
          "properties": {
             "buffer": {
-               "$ref": "#/$defs/NmrBuffer"
+               "$ref": "#/$defs/NmrBuffer",
+               "description": "The attribute needed to relate the NMR solution to the buffer it might contain."
             },
             "id": {
                "type": "string"
             },
             "measured_molarity": {
                "$ref": "#/$defs/MolarConcentration",
-               "description": "The predicate needed to relate to the concentration of the NMR solution."
+               "description": "The attribute needed to relate to the molarity of the NMR solution."
             },
             "measured_pH": {
                "$ref": "#/$defs/PhValue",
-               "description": "The predicate needed to relate to the concentration of the NMR solution."
+               "description": "The attribute needed to relate to the pH of the NMR solution."
             },
             "name": {
                "description": "a generic property to provide a string that is used to name a something",
@@ -257,7 +258,7 @@
             },
             "sample": {
                "$ref": "#/$defs/NmrSample",
-               "description": "The attribute needed to relate the NMR solution to its solvent."
+               "description": "The attribute needed to relate the NMR solution to the sample it contains."
             },
             "solvent": {
                "$ref": "#/$defs/NmrSolvent",
@@ -311,7 +312,7 @@
       },
       "NmrSpecRecord": {
          "additionalProperties": false,
-         "description": "This is the tree root node of the schema. It is a data item that serves as a container for all relevant information about *one* NMR spectroscopy assay record. The properties of this class represent the required metadata of an NMR assay, such as:  * what kind of assay was performed (e.g. 2D 13C COSY) and what devices where used for that (e.g. spectrometer, magnet, solvent, buffer, ...) * what are the detail infos of the assayed sample (name, formula, structure, concentration, preperation process, ...)",
+         "description": "A data item that serves as a container for all relevant information about *one* NMR spectroscopy assay record. The properties of this class represent the required metadata of an NMR assay, such as:  * what kind of assay was performed (e.g. 2D 13C COSY) and what devices where used for that (e.g. spectrometer, magnet, solvent, buffer, ...) * what are the detail infos of the assayed sample (name, formula, structure, concentration, preperation process, ...)",
          "properties": {
             "created_by": {
                "description": "the creator of the ressource",
@@ -659,6 +660,6 @@
    "required": [],
    "title": "NMRspec",
    "type": "object",
-   "version": "0.0.1"
+   "version": "0.0.2"
 }
 

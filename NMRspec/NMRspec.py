@@ -1,9 +1,9 @@
 # Auto generated from NMRspec.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-03-23T11:24:25
+# Generation date: 2022-09-07T09:00:44
 # Schema: NMRspec
 #
 # id: https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/NMRspec.yaml
-# description: This model is to be used to semantify NMR spectroscopy research data.
+# description: This model can be used to semantify NMR spectroscopy research data.
 # license: https://creativecommons.org/licenses/by/4.0/
 
 import dataclasses
@@ -26,14 +26,16 @@ from linkml_runtime.linkml_model.types import Datetime, Double, Float, String, U
 from linkml_runtime.utils.metamodelcore import URI, URIorCURIE, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "0.0.1"
+version = "0.0.2"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
 CHEBI = CurieNamespace('CHEBI', 'http://purl.obolibrary.org/obo/CHEBI_')
+ERO = CurieNamespace('ERO', 'http://purl.obolibrary.org/obo/ERO_')
 FAIRSPEC = CurieNamespace('FAIRspec', 'https://github.com/IUPAC/IUPAC-FAIRSpec/blob/main/src/main/java/org/iupac/fairspec/core/')
+IAO = CurieNamespace('IAO', 'http://purl.obolibrary.org/obo/IAO_')
 MSIO = CurieNamespace('MSIO', 'http://purl.obolibrary.org/obo/MSIO_')
 NMRSPEC = CurieNamespace('NMRspec', 'https://raw.githubusercontent.com/StroemPhi/NMRspec/main/model/schema/')
 BFO = CurieNamespace('bfo', 'http://purl.obolibrary.org/obo/BFO_')
@@ -418,8 +420,8 @@ class NmrSolvent(YAMLRoot):
 class NmrBuffer(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = NMRSPEC.NmrBuffer
-    class_class_curie: ClassVar[str] = "NMRspec:NmrBuffer"
+    class_class_uri: ClassVar[URIRef] = MSIO["0000015"]
+    class_class_curie: ClassVar[str] = "MSIO:0000015"
     class_name: ClassVar[str] = "NmrBuffer"
     class_model_uri: ClassVar[URIRef] = NMRSPEC.NmrBuffer
 
@@ -733,16 +735,16 @@ class MOLfile(YAMLRoot):
 @dataclass
 class NmrSpecRecord(YAMLRoot):
     """
-    This is the tree root node of the schema. It is a data item that serves as a container for all relevant
-    information about *one* NMR spectroscopy assay record. The properties of this class represent the required
-    metadata of an NMR assay, such as: * what kind of assay was performed (e.g. 2D 13C COSY) and what devices where
-    used for that (e.g. spectrometer, magnet, solvent, buffer, ...) * what are the detail infos of the assayed sample
-    (name, formula, structure, concentration, preperation process, ...)
+    A data item that serves as a container for all relevant information about *one* NMR spectroscopy assay record. The
+    properties of this class represent the required metadata of an NMR assay, such as: * what kind of assay was
+    performed (e.g. 2D 13C COSY) and what devices where used for that (e.g. spectrometer, magnet, solvent, buffer,
+    ...) * what are the detail infos of the assayed sample (name, formula, structure, concentration, preperation
+    process, ...)
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = NMRSPEC.NmrSpecRecord
-    class_class_curie: ClassVar[str] = "NMRspec:NmrSpecRecord"
+    class_class_uri: ClassVar[URIRef] = IAO["0000109"]
+    class_class_curie: ClassVar[str] = "iao:0000109"
     class_name: ClassVar[str] = "NmrSpecRecord"
     class_model_uri: ClassVar[URIRef] = NMRSPEC.NmrSpecRecord
 
@@ -804,8 +806,8 @@ class NmrSpecRecordCollection(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = NMRSPEC.NmrSpecRecordCollection
-    class_class_curie: ClassVar[str] = "NMRspec:NmrSpecRecordCollection"
+    class_class_uri: ClassVar[URIRef] = IAO["0000100"]
+    class_class_curie: ClassVar[str] = "iao:0000100"
     class_name: ClassVar[str] = "NmrSpecRecordCollection"
     class_model_uri: ClassVar[URIRef] = NMRSPEC.NmrSpecRecordCollection
 
@@ -959,7 +961,7 @@ class PulseProgram(EnumDefinitionImpl):
                 PermissibleValue(text="CLEANEX-TROSY") )
         setattr(cls, "not provided",
                 PermissibleValue(text="not provided",
-                                 description="This is only to be used, if there no way to derive which pulse program has been used.") )
+                                 description="This is only to be used, if there is no way to derive which pulse program has been used.") )
 
 class NmrManufacturers(EnumDefinitionImpl):
     """
