@@ -1,4 +1,5 @@
-# A data model and code prototype for the semantification of NMR spectroscopy research data.
+# A use case to build a NMR research data knowledge graph
+This repository contains a data model and code prototype for the semantification of NMR spectroscopy research data.
 The present use case of this repository is the conversion of JCAMP-DX files, which contain research data of pulsed NMR assays, into RDF knowledge graphs. It is part of my work within the [NFDI4Chem](https://www.nfdi4chem.de/) project.
 
 The backbone is the LinkML based [data model](model/schema/), which is used for the automatic generation of its JSON-LD, JSON schema and Python data class representations (see [NMRspec](NMRspec/), as well as for the [**Documentation**](https://StroemPhi.github.io/NMRspec/) of the NMRspec model itself.
